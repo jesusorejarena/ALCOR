@@ -9,7 +9,8 @@
 		private $nom_bda;
 		private $con_bda;
 		public  $que_bda;
-		
+		public  $puntero;
+
 		public function __construct()
 		{
 			$this->nom_ser = "localhost";
@@ -26,8 +27,21 @@
 		
 		public function ejecutar()
 		{
-			echo $this->que_dba;
+			echo $this->que_bda;
 			return $this->con_bda->query($this->que_bda);
+		}
+
+		public function asignar_valor()
+		{
+			foreach ($_REQUEST as $atributo => $valor)
+			{
+				$this->$atributo = $valor;
+			}
+		}
+
+		public function extraer_dato()
+		{
+			return $this->puntero->fetch_assoc();
 		}
 		
 	}

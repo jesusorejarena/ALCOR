@@ -13,6 +13,7 @@
 		dir_ado		TEXT 			NO						->	Direccion del Empleado
 		car_ado		VARCHAR(20) 	NO						->	Cargo del Empleado
 		con_ado		DATE 			NO						->	Contrato del Empleado
+		est_ado		VARCHAR(1) 		NO					->	Estatus del Empleado
 
 	*/
 
@@ -30,6 +31,7 @@
 		public $dir_ado;
 		public $car_ado;
 		public $con_ado;
+		public $est_ado;
 		
 
 		function insertar()
@@ -43,7 +45,8 @@
 								cor_ado, 
 								dir_ado, 
 								car_ado, 
-								con_ado)
+								con_ado,
+								est_ado)
 							values
 								('$this->nom_ado', 
 								'$this->ape_ado', 
@@ -52,7 +55,8 @@
 								'$this->cor_ado', 
 								'$this->dir_ado', 
 								'$this->car_ado', 
-								'$this->con_ado');";
+								'$this->con_ado',
+								'A');";
 
 			return $this->ejecutar();
 
@@ -70,7 +74,8 @@
 									cor_ado='$this->cor_ado',
 									dir_ado='$this->dir_ado',
 									car_ado='$this->car_ado',
-									con_ado='$this->con_ado'
+									con_ado='$this->con_ado',
+									est_ado='$this->est_ado'
 								where
 									cod_ado='$this->cod_ado';";
 
@@ -110,8 +115,9 @@
 			$filtro7=($this->dir_ado!="")?"and dir_ado like '%$this->dir_ado%'":"";
 			$filtro8=($this->car_ado!="")?"and car_ado like '%$this->car_ado%'":"";
 			$filtro9=($this->con_ado!="")?"and con_ado like '%$this->con_ado%'":"";
+			$filtro10=($this->est_ado!="")?"and est_ado like '%$this->est_ado%'":"";
 
-            $this->que_bda = "select * from empleado where 1=1 $filtro1 $filtro2 $filtro3 $filtro4 $filtro5 $filtro6 $filtro7 $filtro8 $filtro9;";
+            $this->que_bda = "select * from empleado where 1=1 $filtro1 $filtro2 $filtro3 $filtro4 $filtro5 $filtro6 $filtro7 $filtro8 $filtro9 $filtro10;";
 
             return $this->ejecutar();
 
