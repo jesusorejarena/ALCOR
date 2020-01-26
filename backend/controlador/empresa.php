@@ -11,7 +11,7 @@
 		case 'insertar':	$obj_emp->insertar();
 		break;
 
-		case 'modificar':	$obj_emp->modificar();
+		case 'modificar_normal':	$obj_emp->modificar_normal();
 		break;
 
 		case 'eliminar':	$obj_emp->eliminar();

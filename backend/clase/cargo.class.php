@@ -30,7 +30,7 @@
 
 		}
 
-		function modificar()
+		function modificar_normal()
 		{
 
 			$this->que_bda="update cargo
@@ -41,7 +41,7 @@
 
 			return $this->ejecutar();
 
-		}// hasta aqui el modificar
+		}// hasta aqui el modificar normal
 
 		function listar()
 		{

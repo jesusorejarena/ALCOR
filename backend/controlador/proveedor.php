@@ -1,6 +1,6 @@
 <?php
 	
-	require("../clase/edoveedor.class.php");
+	require("../clase/proveedor.class.php");
 
 	$obj_edo = new proveedor;
 
@@ -8,13 +8,16 @@
 
 	switch ($_REQUEST["ejecutar"])
 	{
-		case 'insertar':	$obj_edo->insertar();
+		case 'insertar':			$obj_edo->insertar();
 		break;
 
-		case 'modificar':	$obj_edo->modificar();
+		case 'modificar_normal':	$obj_edo->modificar_normal();
 		break;
 
-		case 'eliminar':	$obj_edo->eliminar();
+		case 'modificar_eliminar':	$obj_edo->modificar_eliminar();
+		break;
+
+		case 'eliminar':			$obj_edo->eliminar();
 		break;
 	}
 	

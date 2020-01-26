@@ -54,7 +54,7 @@
 						<div class="col-6">
 							<div class="form-group">
 								<label for="car_ado" class="text-white text-left h5">Cargo:</label>
-								<select name="car_ado" id="car_ado" class="form-control bg-dark border border-top-0 border-left-0 border-right-0 border-success text-white">
+								<select name="car_ado" id="car_ado" class="text-white form-control bg-transparent border border-top-0 border-left-0 border-right-0 border-success">
 									<option value="">Seleccione...</option>
 									<?php while (($cargo=$obj_car->extraer_dato())>0)
 										{

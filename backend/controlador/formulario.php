@@ -8,10 +8,13 @@
 
 	switch ($_REQUEST["ejecutar"])
 	{
-		case 'insertar':	$obj_for->insertar();
+		case 'insertar':			$obj_for->insertar();
 		break;
 
-		case 'eliminar':	$obj_for->eliminar();
+		case 'modificar_eliminar':	$obj_for->modificar_eliminar();
+		break;
+
+		case 'eliminar':			$obj_for->eliminar();
 		break;
 	}
 	

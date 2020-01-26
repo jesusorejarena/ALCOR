@@ -11,7 +11,7 @@
 		case 'insertar':	$obj_car->insertar();
 		break;
 
-		case 'modificar':	$obj_car->modificar();
+		case 'modificar_normal':	$obj_car->modificar_normal();
 		break;
 
 		case 'eliminar':	$obj_car->eliminar();

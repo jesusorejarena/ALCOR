@@ -10,7 +10,8 @@
 		tel_emp		VARCHAR(12)		NO						->	Telefono de la Empresa
 		dir_emp		TEXT			NO						->	Direccion de la Empresa
 		cor_emp		VARCHAR(100)	NO						->	Correo de la Empresa
-		rif_emp		VARCHAR(12) 	NO						->	RIF de la Empresa
+		tip_emp		VARCHAR(1)		NO						->	Tipo de RIF de la Empresa
+		rif_emp		VARCHAR(9)	 	NO						->	RIF de la Empresa
 		hou_emp		VARCHAR(19) 	NO						->	Horario 1 de la Empresa
 		hod_emp		VARCHAR(19) 	SI						->	Horario 2 de la Empresa
 
@@ -27,6 +28,7 @@
 		public $tel_emp;
 		public $dir_emp;
 		public $cor_emp;
+		public $tip_emp;
 		public $rif_emp;
 		public $hou_emp;
 		public $hod_emp;
@@ -41,6 +43,7 @@
 								tel_emp, 
 								dir_emp, 
 								cor_emp, 
+								tip_emp,  
 								rif_emp, 
 								hou_emp, 
 								hod_emp)
@@ -50,6 +53,7 @@
 								'$this->tel_emp', 
 								'$this->dir_emp', 
 								'$this->cor_emp', 
+								'$this->tip_emp',  
 								'$this->rif_emp', 
 								'$this->hou_emp', 
 								'$this->hod_emp');";
@@ -58,7 +62,7 @@
 
 		}// fin de insertar
 
-		function modificar()
+		function modificar_normal()
 		{
 
 			$this->que_bda = "update empresa
@@ -68,6 +72,7 @@
 									tel_emp='$this->tel_emp',
 									dir_emp='$this->dir_emp',
 									cor_emp='$this->cor_emp',
+									tip_emp='$this->tip_emp',
 									rif_emp='$this->rif_emp',
 									hou_emp='$this->hou_emp',
 									hod_emp='$this->hod_emp'
@@ -76,7 +81,7 @@
 
 			return $this->ejecutar();
 
-		}// fin de modificar
+		}// fin de modificar normal
 
 		function listar()
 		{
