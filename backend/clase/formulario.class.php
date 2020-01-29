@@ -25,11 +25,11 @@
 		public $tel_for;
 		public $cor_for;
 		public $asu_for;
-		public $cre_for = date("y-m-d h:m:s");
 
 
 		function insertar()
 		{
+			$cre_for = date("y-m-d h:i:s");
 
 			$this->que_bda="insert into formulario 
 								(nom_for,
@@ -44,15 +44,14 @@
 								'$this->tel_for',
 								'$this->cor_for',
 								'$this->asu_for',
-								'$this->cre_for');";
+								'$cre_for');";
 
 			return $this->ejecutar();
 
 		}// fin de insertar
 
-		function listar()
+		function listar_normal()
 		{
-
 			$this->que_bda="select * from formulario";
 
 			return $this->ejecutar();
@@ -61,7 +60,6 @@
 
 		function eliminar()
 		{
-
 			$this->que_bda = "delete from formulario
 								where
 									cod_for='$this->cod_for';";
@@ -73,14 +71,14 @@
 		public function filtrar()
         {
 
-            $filtro1=($this->cod_for!="")?"and cod_for like '%$this->cod_for%'":"";
+            $filtro1=($this->cod_for!="")?"and cod_for='$this->cod_for'":"";
             $filtro2=($this->nom_for!="")?"and nom_for like '%$this->nom_for%'":"";
             $filtro3=($this->ape_for!="")?"and ape_for like '%$this->ape_for%'":"";
 			$filtro4=($this->tel_for!="")?"and tel_for like '%$this->tel_for%'":"";
 			$filtro5=($this->cor_for!="")?"and cor_for like '%$this->cor_for%'":"";
 			$filtro6=($this->asu_for!="")?"and asu_for like '%$this->asu_for%'":"";
 
-            $this->que_bda = "select * from formulario where 1=1 $filtro1 $filtro2 $filtro3 $filtro4 $filtro4 $filtro5 $filtro7;";
+            $this->que_bda = "select * from formulario where 1=1 $filtro1 $filtro2 $filtro3 $filtro4 $filtro4 $filtro5;";
 
             return $this->ejecutar();
 

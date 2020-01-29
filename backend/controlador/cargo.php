@@ -8,13 +8,13 @@
 
 	switch ($_REQUEST["ejecutar"])
 	{
-		case 'insertar':	$obj_car->insertar();
+		case 'insertar':			$obj_car->insertar();
 		break;
 
 		case 'modificar_normal':	$obj_car->modificar_normal();
 		break;
 
-		case 'eliminar':	$obj_car->eliminar();
+		case 'eliminar':			$obj_car->eliminar();
 		break;
 	}
 	

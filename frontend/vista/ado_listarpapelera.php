@@ -1,12 +1,12 @@
 <?php 
 
 	require("tema.php");
-	require("../../backend/clase/cargo.class.php");
+	require("../../backend/clase/empleado.class.php");
 
-	$obj_car = new cargo;
-	$obj_car->puntero=$obj_car->listar_normal();
+	$obj_ado = new empleado;
+	$obj_ado->puntero=$obj_ado->listar_eliminar();
 
-	encabezado("Registrar empleado - ALCOR C.A.");
+	encabezado("Empleados eliminados- ALCOR C.A.");
 
 ?>
 
@@ -16,10 +16,65 @@
 				<button class="btn btn-outline-success" onClick="window.location.href='ado_.php'">Atras</button>
 			</div>
 		</div>
-		<div class="card mx-auto bg-dark border border-success shadow-lg" style="width: 40rem">
-			<h2 class="card-title text-white text-center pt-3">Registrar empleado</h2>
+		<div class=" mx-auto bg-dark border border-success shadow-lg">
+			<h2 class="card-title text-white text-center pt-3">Empleados eliminados</h2>
 			<hr>
-			<div class="card-body">
+			<div class="row p-3 m-3">
+				<div class="col-12">
+					<div class="table-responsive">
+						<table class="table table-hover table-dark table-bordered text-center">
+							<thead>
+								<tr>
+									<th>Nombre</th>
+									<th>Apellido</th>
+									<th>Genero</th>
+									<th>Fecha de Nacimiento</th>
+									<th>Tipo</th>
+									<th>Cédula</th>
+									<th>Telefono</th>
+									<th>Correo</th>
+									<th>Cargo</th>
+									<th>Dirección</th>
+									<th>Fecha de Contrato</th>
+									<th>Ultima Modificación</th>
+									<th>Fecha de Eliminación</th>
+									<th>Restaurar</th>
+									<th>Eliminar</th>
+								</tr>
+							</thead>
+							<tbody>
+								<?php 
+									while(($empleado=$obj_ado->extraer_dato())>0)
+									{
+										echo "<form action='../../backend/controlador/empleado.php' method='POST'>
+												<tr>
+													<input type='hidden' name='cod_ado' value='$empleado[cod_ado]'>
+													<td>$empleado[nom_ado]</td>
+													<td>$empleado[ape_ado]</td>
+													<td>$empleado[gen_ado]</td>
+													<td>$empleado[nac_ado]</td>
+													<td>$empleado[tip_ado]</td>
+													<td>$empleado[ced_ado]</td>
+													<td>$empleado[tel_ado]</td>
+													<td>$empleado[cor_ado]</td>
+													<td>$empleado[car_ado]</td>
+													<td>$empleado[dir_ado]</td>
+													<td>$empleado[cre_ado]</td>
+													<td>$empleado[act_ado]</td>
+													<td>$empleado[eli_ado]</td>
+													<td><button type='submit' class='btn btn-success' name='ejecutar' value='modificar_restaurar'>Restaurar</button></td>
+													<td><button type='submit' class='btn btn-danger' name='ejecutar' value='eliminar'>Eliminar</button></td>
+												</tr>
+											</form>
+										";
+									}
+								?>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+			<!--<div class="card-body">
 				<form action="../../backend/controlador/empleado.php" method="POST">
 					<div class="row p-3">
 						<div class="col-6">
@@ -89,11 +144,11 @@
 								<label for="car_ado" class="text-white text-left h5">Cargo:</label>
 								<select name="car_ado" id="car_ado" class="text-white form-control bg-transparent border border-top-0 border-left-0 border-right-0 border-success">
 									<option value="">Seleccione...</option>
-									<?php while (($cargo=$obj_car->extraer_dato())>0)
+									<?php/* while (($cargo=$obj_car->extraer_dato())>0)
 										{
 											echo "<option value='$cargo[cod_car]'>$cargo[nom_car]</option>";
 										}
-									?>
+									*/?>
 								</select>
 							</div>
 						</div>
@@ -120,20 +175,11 @@
 							</div>
 						</div>
 					</div>
-					<div class="row p-3 text-center">
-						<div class="col-6">
-							<div class="form-group">
-								<button type="reset" name="ejecutar" id="ejecutar" value="limpiar" class="btn btn-success btn-lg">Limpiar</button>
-							</div>
-						</div>
-						<div class="col-6">
-							<div class="form-group">
-								<button type="submit" name="ejecutar" id="ejecutar" value="insertar" class="btn btn-outline-success btn-lg">Registrar</button>
-							</div>
-						</div>
+					<div class="form-group text-center">
+						<button type="submit" name="ejecutar" id="ejecutar" value="insertar" class="btn btn-outline-success btn-lg">Registrar</button>
 					</div>
 				</form>
-			</div>
+			</div>-->
 		</div>
 	</div>
 

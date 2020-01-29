@@ -17,7 +17,7 @@
 						<div class="col-12">
 							<div class="form-group">
 								<label for="ced_usu" class="text-white text-left h5">Cédula:</label>
-								<input type="text" name="ced_usu" id="ced_usu" placeholder="Correo:" minlength="3" maxlength="10" require="" class="text-white form-control bg-transparent border border-top-0 border-left-0 border-right-0 border-success">
+								<input type="text" name="ced_usu" id="ced_usu" placeholder="Correo:" minlength="3" maxlength="8" require="" class="text-white form-control bg-transparent border border-top-0 border-left-0 border-right-0 border-success">
 							</div>
 						</div>
 					</div>

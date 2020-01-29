@@ -1,16 +1,17 @@
 <?php 
 
 	require("tema.php");
-	require("../../backend/clase/cargo.class.php");
-
-	$obj_car = new cargo;
-	$obj_car->asignar_valor();
 
 	encabezado("Registrar cargo - ALCOR C.A.");
 
 ?>
 
 	<div class="container-fluid p-5 mt-5 bg-white">
+		<div class="row pb-3 mb-3 bg-white">
+			<div class="col-12 text-left">
+				<button class="btn btn-outline-success" onClick="window.location.href=''">Atras</button>
+			</div>
+		</div>
 		<div class="card mx-auto bg-dark border border-success shadow-lg" style="width: 40rem">
 			<h2 class="card-title text-white text-center pt-3">Registrar cargo</h2>
 			<hr>
@@ -24,9 +25,14 @@
 							</div>
 						</div>
 					</div>
-					<div class="row p-3">
-						<div class="col-12">
-							<div class="form-group text-center">
+					<div class="row p-3 text-center">
+						<div class="col-6">
+							<div class="form-group">
+								<button type="reset" name="ejecutar" id="ejecutar" value="limpiar" class="btn btn-success btn-lg">Limpiar</button>
+							</div>
+						</div>
+						<div class="col-6">
+							<div class="form-group">
 								<button type="submit" name="ejecutar" id="ejecutar" value="insertar" class="btn btn-outline-success btn-lg">Registrar</button>
 							</div>
 						</div>

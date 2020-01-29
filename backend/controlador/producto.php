@@ -14,6 +14,9 @@
 		case 'modificar_normal':	$obj_pro->modificar_normal();
 		break;
 
+		case 'modificar_restaurar':	$obj_pro->modificar_restaurar();
+		break;
+
 		case 'modificar_eliminar':	$obj_pro->modificar_eliminar();
 		break;
 

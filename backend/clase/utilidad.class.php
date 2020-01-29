@@ -18,6 +18,7 @@
 			$this->cla_ser = "";
 			$this->nom_bda = "ALCOR";
 			$this->conectar();
+			ini_set("date.timezone", "America/Caracas");
 		}
 		
 		public function conectar()
@@ -29,6 +30,12 @@
 		{
 			echo $this->que_bda;
 			return $this->con_bda->query($this->que_bda);
+		}
+
+		public function hora()
+		{
+			
+			return $this->time =date("y-m-d h:i:s");
 		}
 
 		public function asignar_valor()

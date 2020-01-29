@@ -7,7 +7,7 @@
 	$obj_edo->asignar_valor();
 	$obj_edo->puntero=$obj_edo->listar_normal();
 
-	encabezado("Registrar producto - ALCOR C.A.");
+	encabezado("Filtrar producto - ALCOR C.A.");
 
 ?>
 
@@ -18,15 +18,15 @@
 			</div>
 		</div>
 		<div class="card mx-auto bg-dark border border-success shadow-lg" style="width: 40rem">
-			<h2 class="card-title text-white text-center pt-3">Registrar producto</h2>
+			<h2 class="card-title text-white text-center pt-3">Filtrar producto</h2>
 			<hr>
 			<div class="card-body">
-				<form action="../../backend/controlador/producto.php" method="POST">
+				<form action="pro_filtrado.php" method="POST">
 					<div class="row p-3">
 						<div class="col-12">
 							<div class="form-group">
 								<label for="nom_pro" class="text-white text-left h5">Nombre:</label>
-								<input type="text" name="nom_pro" id="nom_pro" placeholder="Nombre:" minlength="2" maxlength="50" require="" class="text-white form-control bg-transparent border border-top-0 border-left-0 border-right-0 border-success">
+								<input type="text" name="nom_pro" id="nom_pro" placeholder="Nombre:" minlength="2" maxlength="50" class="text-white form-control bg-transparent border border-top-0 border-left-0 border-right-0 border-success">
 							</div>
 						</div>
 					</div>
@@ -34,7 +34,7 @@
 						<div class="col-12">
 							<div class="form-group">
 								<label for="ser_pro" class="text-white text-left h5">Código del producto:</label>
-								<input type="text" name="ser_pro" id="ser_pro" placeholder="Número de código del producto:" minlength="10" maxlength="10" require="" class="text-white form-control bg-transparent border border-top-0 border-left-0 border-right-0 border-success">
+								<input type="text" name="ser_pro" id="ser_pro" placeholder="Número de código del producto:" minlength="10" maxlength="10" class="text-white form-control bg-transparent border border-top-0 border-left-0 border-right-0 border-success">
 							</div>
 						</div>
 					</div>
@@ -50,18 +50,18 @@
 						<div class="col-6">
 							<div class="form-group">
 								<label for="pre_pro" class="text-white text-left h5">Precio:</label>
-								<input type="text" name="pre_pro" id="pre_pro" placeholder="Precio:" require="" class="text-white form-control bg-transparent border border-top-0 border-left-0 border-right-0 border-success">
+								<input type="text" name="pre_pro" id="pre_pro" placeholder="Precio:" class="text-white form-control bg-transparent border border-top-0 border-left-0 border-right-0 border-success">
 							</div>
 						</div>
 						<div class="col-6">
 							<div class="form-group">
 								<label for="can_pro" class="text-white text-left h5">Cantidad:</label>
-								<input type="text" name="can_pro" id="can_pro" placeholder="Cantidad:" require="" class="text-white form-control bg-transparent border border-top-0 border-left-0 border-right-0 border-success">
+								<input type="text" name="can_pro" id="can_pro" placeholder="Cantidad:" class="text-white form-control bg-transparent border border-top-0 border-left-0 border-right-0 border-success">
 							</div>
 						</div>
 					</div>
 					<div class="row p-3">
-						<div class="col-12">
+						<div class="col-6">
 							<div class="form-group">
 								<label for="fky_proveedor" class="text-white text-left h5">Proveedor:</label>
 								<select name="fky_proveedor" id="fky_proveedor" class="form-control bg-dark border border-top-0 border-left-0 border-right-0 border-success text-white">
@@ -74,6 +74,16 @@
 								</select>
 							</div>
 						</div>
+						<div class="col-6">
+							<div class="form-group">
+								<label for="bas_ado" class="text-white text-left h5">Activo/Papelera:</label>
+								<select name="bas_ado" id="bas_ado" class="text-white form-control bg-transparent border border-top-0 border-left-0 border-right-0 border-success">
+									<option value="">General</option>
+									<option value="A">Activo</option>
+									<option value="B">En papelera</option>
+								</select>
+							</div>
+						</div>
 					</div>
 					<div class="row p-3 text-center">
 						<div class="col-6">
@@ -83,7 +93,7 @@
 						</div>
 						<div class="col-6">
 							<div class="form-group">
-								<button type="submit" name="ejecutar" id="ejecutar" value="insertar" class="btn btn-outline-success btn-lg">Registrar</button>
+								<button type="submit" name="ejecutar" id="ejecutar" value="filtrar" class="btn btn-outline-success btn-lg">Filtrar</button>
 							</div>
 						</div>
 					</div>

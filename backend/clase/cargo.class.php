@@ -21,7 +21,7 @@
 		function insertar()
 		{
 
-			$this->que_bda="insert into cargo
+			$this->que_bda = "insert into cargo
 								(nom_car)
 							values
 								('$this->nom_car');";
@@ -33,7 +33,7 @@
 		function modificar_normal()
 		{
 
-			$this->que_bda="update cargo
+			$this->que_bda = "update cargo
 							set 
 								nom_car='$this->nom_car'
 							where
@@ -43,19 +43,17 @@
 
 		}// hasta aqui el modificar normal
 
-		function listar()
+		function listar_normal()
 		{
-
-			$this->que_bda="select * from cargo";
+			$this->que_bda = "select * from cargo";
 
 			return $this->ejecutar();
 
-		}// fin de listar
+		}// fin de listar normal
 
 		function eliminar()
 		{
-
-			$this->que_bda="delete from cargo
+			$this->que_bda = "delete from cargo
 								where
 									cod_car='$this->cod_car';";
 
@@ -63,13 +61,13 @@
 
 		}
 
-		function filtar()
+		function filtrar()
 		{
 
 			$filtro1=($this->cod_car!="")?"and cod_car='$this->cod_car'":"";
 			$filtro2=($this->nom_car!="")?"and nom_car like '%$this->nom_car%'":"";
 			
-			$this->que_bda="select * from cargo where	1=1 $filtro1 $filtro2;";
+			$this->que_bda = "select * from cargo where	1=1 $filtro1 $filtro2;";
 
 			return $this->ejecutar();
 

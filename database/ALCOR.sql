@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 26-01-2020 a las 07:24:44
+-- Tiempo de generación: 27-01-2020 a las 23:09:57
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.1
 
@@ -44,16 +44,17 @@ CREATE TABLE `empleado` (
   `nom_ado` varchar(50) NOT NULL,
   `ape_ado` varchar(50) NOT NULL,
   `gen_ado` varchar(1) NOT NULL,
+  `nac_ado` date NOT NULL DEFAULT current_timestamp(),
   `tip_ado` varchar(1) NOT NULL,
   `ced_ado` varchar(8) NOT NULL,
-  `tel_ado` varchar(12) NOT NULL,
+  `tel_ado` varchar(11) NOT NULL,
   `cor_ado` varchar(100) NOT NULL,
   `cla_ado` varchar(20) DEFAULT NULL,
   `dir_ado` varchar(100) NOT NULL,
   `car_ado` int(11) NOT NULL,
-  `con_ado` datetime NOT NULL DEFAULT current_timestamp(),
-  `act_ado` datetime DEFAULT current_timestamp(),
-  `eli_ado` datetime DEFAULT current_timestamp(),
+  `cre_ado` datetime NOT NULL DEFAULT current_timestamp(),
+  `act_ado` datetime DEFAULT NULL,
+  `eli_ado` datetime DEFAULT NULL,
   `est_ado` varchar(1) NOT NULL,
   `bas_ado` varchar(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -67,7 +68,6 @@ CREATE TABLE `empleado` (
 CREATE TABLE `empresa` (
   `cod_emp` int(11) NOT NULL,
   `nom_emp` varchar(50) NOT NULL,
-  `des_emp` varchar(100) DEFAULT NULL,
   `tel_emp` varchar(12) NOT NULL,
   `dir_emp` varchar(100) NOT NULL,
   `cor_emp` varchar(100) NOT NULL,
@@ -86,7 +86,7 @@ CREATE TABLE `formulario` (
   `cod_for` int(11) NOT NULL,
   `nom_for` varchar(50) DEFAULT NULL,
   `ape_for` varchar(50) DEFAULT NULL,
-  `tel_for` varchar(12) DEFAULT NULL,
+  `tel_for` varchar(11) DEFAULT NULL,
   `cor_for` varchar(100) NOT NULL,
   `asu_for` varchar(100) NOT NULL,
   `cre_for` datetime NOT NULL DEFAULT current_timestamp()
@@ -101,14 +101,14 @@ CREATE TABLE `formulario` (
 CREATE TABLE `producto` (
   `cod_pro` int(11) NOT NULL,
   `nom_pro` varchar(50) NOT NULL,
+  `ser_pro` int(10) NOT NULL,
   `des_pro` varchar(100) DEFAULT NULL,
   `pre_pro` float(11,2) NOT NULL,
   `can_pro` int(11) NOT NULL,
   `cre_pro` datetime NOT NULL DEFAULT current_timestamp(),
-  `act_pro` datetime DEFAULT current_timestamp(),
-  `eli_pro` datetime DEFAULT current_timestamp(),
-  `bas_pro` varchar(1) NOT NULL,
-  `fky_proveedor` int(11) NOT NULL
+  `act_pro` datetime DEFAULT NULL,
+  `eli_pro` datetime DEFAULT NULL,
+  `bas_pro` varchar(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -122,13 +122,13 @@ CREATE TABLE `proveedor` (
   `nom_edo` varchar(50) NOT NULL,
   `des_edo` varchar(100) DEFAULT NULL,
   `dir_edo` varchar(100) NOT NULL,
-  `tel_edo` varchar(12) NOT NULL,
+  `tel_edo` varchar(11) NOT NULL,
   `cor_edo` varchar(100) NOT NULL,
   `tip_edo` varchar(1) NOT NULL,
   `rif_edo` varchar(9) NOT NULL,
   `cre_edo` datetime NOT NULL DEFAULT current_timestamp(),
-  `act_edo` datetime DEFAULT current_timestamp(),
-  `eli_edo` datetime DEFAULT current_timestamp(),
+  `act_edo` datetime DEFAULT NULL,
+  `eli_edo` datetime DEFAULT NULL,
   `bas_edo` varchar(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -180,8 +180,8 @@ ALTER TABLE `formulario`
 --
 ALTER TABLE `producto`
   ADD PRIMARY KEY (`cod_pro`),
-  ADD KEY `nom_pro` (`nom_pro`),
-  ADD KEY `fky_proveedor` (`fky_proveedor`);
+  ADD UNIQUE KEY `ser_pro` (`ser_pro`),
+  ADD KEY `nom_pro` (`nom_pro`);
 
 --
 -- Indices de la tabla `proveedor`
@@ -196,7 +196,7 @@ ALTER TABLE `proveedor`
 ALTER TABLE `prov_prod`
   ADD PRIMARY KEY (`cod_ppr`),
   ADD KEY `fky_proveedor` (`fky_proveedor`),
-  ADD KEY `fky_usuario` (`fky_producto`);
+  ADD KEY `fky_producto` (`fky_producto`) USING BTREE;
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
@@ -258,7 +258,7 @@ ALTER TABLE `empleado`
 -- Filtros para la tabla `prov_prod`
 --
 ALTER TABLE `prov_prod`
-  ADD CONSTRAINT `prov_prod_ibfk_1` FOREIGN KEY (`fky_producto`) REFERENCES `producto` (`cod_pro`) ON DELETE CASCADE,
+  ADD CONSTRAINT `prov_prod_ibfk_1` FOREIGN KEY (`fky_producto`) REFERENCES `producto` (`cod_pro`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `prov_prod_ibfk_2` FOREIGN KEY (`fky_proveedor`) REFERENCES `proveedor` (`cod_edo`) ON DELETE CASCADE;
 COMMIT;
 

@@ -6,9 +6,9 @@
 
 		cod_emp		INT(11)			NO		A_I		PK		->	Codigo de la Empresa
 		nom_emp		VARCHAR(50)		NO						->	Nombre de la Empresa
-		des_emp		TEXT			SI						->	Descripcion de la Empresa
+		des_emp		VARCHAR(100)	SI						->	Descripcion de la Empresa
 		tel_emp		VARCHAR(12)		NO						->	Telefono de la Empresa
-		dir_emp		TEXT			NO						->	Direccion de la Empresa
+		dir_emp		VARCHAR(100)	NO						->	Direccion de la Empresa
 		cor_emp		VARCHAR(100)	NO						->	Correo de la Empresa
 		tip_emp		VARCHAR(1)		NO						->	Tipo de RIF de la Empresa
 		rif_emp		VARCHAR(9)	 	NO						->	RIF de la Empresa
@@ -83,9 +83,8 @@
 
 		}// fin de modificar normal
 
-		function listar()
+		function listar_normal()
 		{
-
 			$this->que_bda = "select * from empresa;";
 
 			return $this->ejecutar();
