@@ -4,6 +4,7 @@
 	require("../../backend/clase/producto.class.php");
 
 	$obj_pro = new producto;
+	$obj_pro->estandar();
 	$obj_pro->asignar_valor();
 	$obj_pro->puntero=$obj_pro->filtrar();
 
@@ -11,19 +12,19 @@
 
 ?>
 
-	<div class="container-fluid p-5 mt-5 bg-white">
+	<div class="<?php echo $obj_pro->container; ?>">
 		<div class="row pb-3 mb-3 bg-white">
 			<div class="col-12 text-left">
-				<button class="btn btn-outline-success" onClick="window.location.href='pro_filtrar.php'">Atras</button>
+				<button class="<?php echo $obj_pro->btn_atras; ?>" onClick="window.location.href='pro_filtrar.php'">Atras</button>
 			</div>
 		</div>
-		<div class=" mx-auto bg-dark border border-success shadow-lg">
-			<h2 class="card-title text-white text-center pt-3">Productos filtrados</h2>
+		<div class="<?php echo $obj_pro->card; ?>">
+			<h2 class="<?php echo $obj_pro->titulocard; ?>">Productos filtrados</h2>
 			<hr>
 			<div class="row p-3 m-3">
 				<div class="col-12">
 					<div class="table-responsive">
-						<table class="table table-hover table-dark table-bordered text-center">
+						<table class="<?php echo $obj_pro->tabla; ?>">
 							<thead>
 								<tr>
 									<th>Nombre</th>
@@ -56,9 +57,9 @@
 													<td>$producto[act_pro]</td>
 													<td>$producto[eli_pro]</td>
 													<td>$producto[bas_pro]</td>
-													<td><button type='submit' class='btn btn-warning' name='ejecutar' value='modificar_normal'>Editar</button></td>
-													<td><button type='submit' class='btn btn-success' name='ejecutar' value='modificar_restaurar'>Restaurar</button></td>
-													<td><button type='submit' class='btn btn-danger' name='ejecutar' value='modificar_eliminar'>Eliminar</button></td>
+													<td><button type='submit' class='$obj_pro->btn_editar' name='ejecutar' value='modificar_normal'>Editar</button></td>
+													<td><button type='submit' class='$obj_pro->btn_restaurar' name='ejecutar' value='modificar_restaurar'>Restaurar</button></td>
+													<td><button type='submit' class='$obj_pro->btn_eliminar' name='ejecutar' value='modificar_eliminar'>Eliminar</button></td>
 												</tr>
 											</form>
 										";

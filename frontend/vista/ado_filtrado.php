@@ -5,25 +5,26 @@
 
 	$obj_ado = new empleado;
 	$obj_ado->asignar_valor();
+	$obj_ado->estandar();
 	$obj_ado->puntero=$obj_ado->filtrar();
 
 	encabezado("Empleados filtrados - ALCOR C.A.");
 
 ?>
 
-	<div class="container-fluid p-5 mt-5 bg-white">
+	<div class="<?php echo $obj_ado->container; ?>">
 		<div class="row pb-3 mb-3 bg-white">
 			<div class="col-12 text-left">
-				<button class="btn btn-outline-success" onClick="window.location.href='ado_filtrar.php'">Atras</button>
+				<button class="<?php echo $obj_ado->btn_atras; ?>" onClick="window.location.href='ado_filtrar.php'">Atras</button>
 			</div>
 		</div>
-		<div class="card mx-auto bg-dark border border-success shadow-lg">
-			<h2 class="card-title text-white text-center pt-3">Empleados filtrados</h2>
+		<div class="<?php echo $obj_ado->card; ?>">
+			<h2 class="<?php echo $obj_ado->titulocard; ?>">Empleados filtrados</h2>
 			<hr>
 			<div class="row p-3 m-3">
 				<div class="col-12">
 					<div class="table-responsive">
-						<table class="table table-hover table-dark table-bordered text-center">
+						<table class="<?php echo $obj_ado->tabla; ?>">
 							<thead>
 								<tr>
 									<th>Nombre</th>
@@ -68,9 +69,9 @@
 													<td>$empleado[eli_ado]</td>
 													<td>$empleado[est_ado]</td>
 													<td>$empleado[bas_ado]</td>
-													<td><button type='submit' class='btn btn-warning' name='ejecutar' value='modificar_normal'>Editar</button></td>
-													<td><button type='submit' class='btn btn-success' name='ejecutar' value='modificar_restaurar'>Restaurar</button></td>
-													<td><button type='submit' class='btn btn-danger' name='ejecutar' value='modificar_eliminar'>Eliminar</button></td>
+													<td><button type='submit' class='$obj_ado->btn_editar' name='ejecutar' value='modificar_normal'>Editar</button></td>
+													<td><button type='submit' class='$obj_ado->btn_restaurar' name='ejecutar' value='modificar_restaurar'>Restaurar</button></td>
+													<td><button type='submit' class='$obj_ado->btn_eliminar' name='ejecutar' value='modificar_eliminar'>Eliminar</button></td>
 												</tr>
 											</form>
 										";

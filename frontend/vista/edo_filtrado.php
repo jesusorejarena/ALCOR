@@ -4,26 +4,27 @@
 	require("../../backend/clase/proveedor.class.php");
 
 	$obj_edo = new proveedor;
-	$obj_edo->asignar_valor();
+	$obj_edo->estandar();
+	$obj_edo->asignar_valor();	
 	$obj_edo->puntero=$obj_edo->filtrar();
 
 	encabezado("Proveedores filtrados - ALCOR C.A.");
 
 ?>
 
-	<div class="container-fluid p-5 mt-5 bg-white">
+	<div class="<?php echo $obj_edo->container; ?>">
 		<div class="row pb-3 mb-3 bg-white">
 			<div class="col-12 text-left">
-				<button class="btn btn-outline-success" onClick="window.location.href='edo_filtrar.php'">Atras</button>
+				<button class="<?php echo $obj_edo->btn_atras; ?>" onClick="window.location.href='edo_filtrar.php'">Atras</button>
 			</div>
 		</div>
-		<div class=" mx-auto bg-dark border border-success shadow-lg">
-			<h2 class="card-title text-white text-center pt-3">Proveedores filtrados</h2>
+		<div class="<?php echo $obj_edo->card; ?>">
+			<h2 class="<?php echo $obj_edo->titulocard; ?>">Proveedores filtrados</h2>
 			<hr>
 			<div class="row p-3 m-3">
 				<div class="col-12">
 					<div class="table-responsive">
-						<table class="table table-hover table-dark table-bordered text-center">
+						<table class="<?php echo $obj_edo->tabla; ?>">
 							<thead>
 								<tr>
 									<th>Código</th>
@@ -62,9 +63,9 @@
 													<td>$proveedor[act_edo]</td>
 													<td>$proveedor[eli_edo]</td>
 													<td>$proveedor[bas_edo]</td>
-													<td><button type='submit' class='btn btn-warning' name='ejecutar' value='modificar_normal'>Editar</button></td>
-													<td><button type='submit' class='btn btn-success' name='ejecutar' value='modificar_restaurar'>Restaurar</button></td>
-													<td><button type='submit' class='btn btn-danger' name='ejecutar' value='modificar_eliminar'>Eliminar</button></td>
+													<td><button type='submit' class='$obj_edo->btn_editar' name='ejecutar' value='modificar_normal'>Editar</button></td>
+													<td><button type='submit' class='$obj_edo->btn_restaurar' name='ejecutar' value='modificar_restaurar'>Restaurar</button></td>
+													<td><button type='submit' class='$obj_edo->btn_eliminar' name='ejecutar' value='modificar_eliminar'>Eliminar</button></td>
 												</tr>
 											</form>
 										";

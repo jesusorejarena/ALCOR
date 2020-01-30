@@ -4,6 +4,7 @@
 	require("../../backend/clase/cargo.class.php");
 
 	$obj_car = new cargo;
+	$obj_car->estandar();
 	$obj_car->asignar_valor();
 	$obj_car->puntero=$obj_car->filtrar();
 
@@ -11,19 +12,19 @@
 
 ?>
 
-	<div class="container-fluid p-5 mt-5 bg-white">
+	<div class="<?php echo $obj_car->container; ?>">
 		<div class="row pb-3 mb-3 bg-white">
 			<div class="col-12 text-left">
-				<button class="btn btn-outline-success" onClick="window.location.href='car_filtrar.php'">Atras</button>
+				<button class="<?php echo $obj_car->btn_atras; ?>" onClick="window.location.href='car_filtrar.php'">Atras</button>
 			</div>
 		</div>
-		<div class=" mx-auto bg-dark border border-success shadow-lg">
-			<h2 class="card-title text-white text-center pt-3">Cargos filtrados</h2>
+		<div class="<?php echo $obj_car->card; ?>">
+			<h2 class="<?php echo $obj_car->titulocard; ?>">Cargos filtrados</h2>
 			<hr>
 			<div class="row p-3 m-3">
 				<div class="col-12">
 					<div class="table-responsive">
-						<table class="table table-hover table-dark table-bordered text-center">
+						<table class="<?php echo $obj_car->tabla; ?>">
 							<thead>
 								<tr>
 									<th>Código</th>
@@ -41,8 +42,8 @@
 													<input type='hidden' name='cod_car' value='$cargo[cod_car]'>
 													<td>$cargo[cod_car]</td>
 													<td>$cargo[nom_car]</td>
-													<td><button type='submit' class='btn btn-warning' name='ejecutar' value='modificar_normal'>Editar</button></td>
-													<td><button type='submit' class='btn btn-danger' name='ejecutar' value='eliminar'>Eliminar</button></td>
+													<td><button type='submit' class='$obj_car->btn_editar' name='ejecutar' value='modificar_normal'>Editar</button></td>
+													<td><button type='submit' class='$obj_car->btn_eliminar' name='ejecutar' value='eliminar'>Eliminar</button></td>
 												</tr>
 											</form>
 										";

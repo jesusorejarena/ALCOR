@@ -4,25 +4,26 @@
 	require("../../backend/clase/empleado.class.php");
 
 	$obj_ado = new empleado;
+	$obj_ado->estandar();
 	$obj_ado->puntero=$obj_ado->listar_normal();
 
 	encabezado("Lista de empleados - ALCOR C.A.");
 
 ?>
 
-	<div class="container-fluid p-5 mt-5 bg-white">
+	<div class="<?php echo $obj_ado->container; ?>">
 		<div class="row pb-3 mb-3 bg-white">
 			<div class="col-12 text-left">
-				<button class="btn btn-outline-success" onClick="window.location.href='ado_.php'">Atras</button>
+				<button class="<?php echo $obj_ado->btn_atras; ?>" onClick="window.location.href='ado_.php'">Atras</button>
 			</div>
 		</div>
-		<div class=" mx-auto bg-dark border border-success shadow-lg">
-			<h2 class="card-title text-white text-center pt-3">Lista de empleados</h2>
+		<div class="<?php echo $obj_ado->card; ?>">
+			<h2 class="<?php echo $obj_ado->titulocard; ?>">Lista de empleados</h2>
 			<hr>
 			<div class="row p-3 m-3">
 				<div class="col-12">
 					<div class="table-responsive">
-						<table class="table table-hover table-dark table-bordered text-center">
+						<table class="<?php echo $obj_ado->tabla; ?>">
 							<thead>
 								<tr>
 									<th>Nombre</th>
@@ -60,8 +61,8 @@
 													<td>$empleado[dir_ado]</td>
 													<td>$empleado[cre_ado]</td>
 													<td>$empleado[act_ado]</td>
-													<td><a class='btn btn-warning' href='ado_modificar.php?cod_ado=$empleado[cod_ado]'>Editar</a></td>
-													<td><button type='submit' class='btn btn-danger' name='ejecutar' value='modificar_eliminar'>Eliminar</button></td>
+													<td><a class='$obj_ado->btn_editar' href='ado_modificar.php?cod_ado=$empleado[cod_ado]'>Editar</a></td>
+													<td><button type='submit' class='$obj_ado->btn_eliminar' name='ejecutar' value='modificar_eliminar'>Eliminar</button></td>
 												</tr>
 											</form>
 										";
