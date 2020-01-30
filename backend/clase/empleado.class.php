@@ -145,6 +145,14 @@
 
 		}// fin de listar normal
 
+		function listar_modificar()
+		{
+			$this->que_bda = "select * from empleado where bas_ado='A' and cod_ado='$this->cod_ado'";
+
+			return $this->ejecutar();
+
+		}// fin de listar modificar
+
 		function listar_eliminar()
 		{
 			$this->que_bda = "select * from empleado where bas_ado='B'";

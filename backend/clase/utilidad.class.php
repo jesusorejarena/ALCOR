@@ -51,6 +51,22 @@
 			return $this->puntero->fetch_assoc();
 		}
 		
+		public function estandar()
+		{
+			$this->container="container-fluid p-5 mt-5 bg-white";
+			$this->card="card mx-auto bg-dark border border-success shadow-lg";
+			$this->titulocard="card-title text-white text-center pt-3";
+			$this->tabla="table table-hover table-dark table-bordered text-center";
+			$this->input_normal="text-white form-control bg-transparent border border-top-0 border-left-0 border-right-0 border-success";
+			$this->input_text="text-white form-control bg-transparent border border-top-0 border-left-0 border-right-0 border-success";
+			$this->btn_limpiar="btn btn-outline-info btn-lg";
+			$this->btn_enviar="btn btn-success btn-lg";
+			$this->btn_editar="btn btn-warning";
+			$this->btn_restaurar="btn btn-success";
+			$this->btn_eliminar="btn btn-danger";
+			$this->btn_atras="btn btn-dark btn-lg";
+		}
+		
 	}
 	
 ?>

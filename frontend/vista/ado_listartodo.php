@@ -60,7 +60,7 @@
 													<td>$empleado[dir_ado]</td>
 													<td>$empleado[cre_ado]</td>
 													<td>$empleado[act_ado]</td>
-													<td><button type='submit' class='btn btn-warning' name='ejecutar' value='modificar_normal'>Editar</button></td>
+													<td><a class='btn btn-warning' href='ado_modificar.php?cod_ado=$empleado[cod_ado]'>Editar</a></td>
 													<td><button type='submit' class='btn btn-danger' name='ejecutar' value='modificar_eliminar'>Eliminar</button></td>
 												</tr>
 											</form>
