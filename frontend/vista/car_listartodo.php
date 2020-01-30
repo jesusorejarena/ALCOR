@@ -41,7 +41,7 @@
 													<input type='hidden' name='cod_car' value='$cargo[cod_car]'>
 													<td>$cargo[cod_car]</td>
 													<td>$cargo[nom_car]</td>
-													<td><button type='submit' class='$obj_car->btn_editar' name='ejecutar' value='modificar_normal'>Editar</button></td>
+													<td><a class='$obj_car->btn_editar' href='car_modificar.php?cod_car=$cargo[cod_car]'>Editar</a></td>
 													<td><button type='submit' class='$obj_car->btn_eliminar' name='ejecutar' value='eliminar'>Eliminar</button></td>
 												</tr>
 											</form>

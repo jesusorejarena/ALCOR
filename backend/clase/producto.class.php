@@ -112,6 +112,14 @@
 
 		}// fin de listar normal
 
+		function listar_modificar()
+		{
+			$this->que_bda = "select * from producto where bas_pro='A' and cod_pro='$this->cod_pro'";
+
+			return $this->ejecutar();
+
+		}// fin de listar modificar
+
 		function listar_eliminar()
 		{
 			$this->que_bda = "select * from producto where bas_pro='B'";

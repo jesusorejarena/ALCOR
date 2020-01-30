@@ -116,6 +116,23 @@
 							</div>
 						</div>
 					</div>
+					<div class="row p-3">
+						<div class="col-8">
+							<div class="form-group">
+								<label for="dir_ado" class="text-white text-left h5">Dirección:</label>
+								<input type="text" name="dir_ado" id="dir_ado" placeholder="Dirección:" minlength="3" maxlength="100" require="" value="<?php echo $empleado['dir_ado']; ?>"  class="<?php echo $obj_ado->input_normal; ?>">
+							</div>
+						</div>
+						<div class="col-4">
+							<div class="form-group">
+								<label for="est_ado" class="text-white text-left h5">Activo/Inactivo:</label>
+								<select name="est_ado" id="est_ado" class="<?php echo $obj_ado->input_normal; ?>">
+									<option value="A">Activo</option>
+									<option value="I">Inactivo</option>
+								</select>
+							</div>
+						</div>
+					</div>
 					<div class="row p-3 text-center">
 						<div class="col-6">
 							<div class="form-group">

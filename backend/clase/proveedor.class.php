@@ -77,7 +77,7 @@
 									cor_edo='$this->cor_edo',
 									rif_edo='$this->tip_edo',
 									rif_edo='$this->rif_edo',
-									act_edo='$this->act_edo'
+									act_edo='$act_edo'
 								where
 									cod_edo='$this->cod_edo';";
 
@@ -119,6 +119,14 @@
 			return $this->ejecutar();
 
 		}// fin de listar normal
+
+		function listar_modificar()
+		{
+			$this->que_bda = "select * from proveedor where bas_edo='A' and cod_edo='$this->cod_edo'";
+
+			return $this->ejecutar();
+
+		}// fin de listar modificar
 
 		function listar_eliminar()
 		{

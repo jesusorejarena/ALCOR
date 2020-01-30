@@ -63,7 +63,7 @@
 													<td>$proveedor[act_edo]</td>
 													<td>$proveedor[eli_edo]</td>
 													<td>$proveedor[bas_edo]</td>
-													<td><button type='submit' class='$obj_edo->btn_editar' name='ejecutar' value='modificar_normal'>Editar</button></td>
+													<td><a class='$obj_edo->btn_editar' href='edo_modificar.php?cod_edo=$proveedor[cod_edo]'>Editar</a></td>
 													<td><button type='submit' class='$obj_edo->btn_restaurar' name='ejecutar' value='modificar_restaurar'>Restaurar</button></td>
 													<td><button type='submit' class='$obj_edo->btn_eliminar' name='ejecutar' value='modificar_eliminar'>Eliminar</button></td>
 												</tr>

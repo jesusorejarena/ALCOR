@@ -69,7 +69,7 @@
 													<td>$empleado[eli_ado]</td>
 													<td>$empleado[est_ado]</td>
 													<td>$empleado[bas_ado]</td>
-													<td><button type='submit' class='$obj_ado->btn_editar' name='ejecutar' value='modificar_normal'>Editar</button></td>
+													<td><a class='$obj_ado->btn_editar' href='ado_modificar.php?cod_ado=$empleado[cod_ado]'>Editar</a></td>
 													<td><button type='submit' class='$obj_ado->btn_restaurar' name='ejecutar' value='modificar_restaurar'>Restaurar</button></td>
 													<td><button type='submit' class='$obj_ado->btn_eliminar' name='ejecutar' value='modificar_eliminar'>Eliminar</button></td>
 												</tr>

@@ -24,8 +24,8 @@
 					<div class="row p-3">
 						<div class="col-12">
 							<div class="form-group">
-								<label for="nom_car" class="text-white text-left h5">Nuevo cargo:</label>
-								<input type="text" name="nom_car" id="nom_car" placeholder="Nuevo:" minlength="3" maxlength="50" require="" class="<?php echo $obj_car->input_normal; ?>">
+								<label for="nom_car" class="text-white text-left h5">Cargo:</label>
+								<input type="text" name="nom_car" id="nom_car" placeholder="C minlength="3" maxlength="50" require="" class="<?php echo $obj_car->input_normal; ?>">
 							</div>
 						</div>
 					</div>

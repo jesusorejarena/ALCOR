@@ -57,7 +57,7 @@
 													<td>$producto[act_pro]</td>
 													<td>$producto[eli_pro]</td>
 													<td>$producto[bas_pro]</td>
-													<td><button type='submit' class='$obj_pro->btn_editar' name='ejecutar' value='modificar_normal'>Editar</button></td>
+													<td><a class='$obj_pro->btn_editar' href='pro_modificar.php?cod_pro=$producto[cod_pro]'>Editar</a></td>
 													<td><button type='submit' class='$obj_pro->btn_restaurar' name='ejecutar' value='modificar_restaurar'>Restaurar</button></td>
 													<td><button type='submit' class='$obj_pro->btn_eliminar' name='ejecutar' value='modificar_eliminar'>Eliminar</button></td>
 												</tr>

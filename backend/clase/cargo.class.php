@@ -51,6 +51,14 @@
 
 		}// fin de listar normal
 
+		function listar_modificar()
+		{
+			$this->que_bda = "select * from cargo where cod_car='$this->cod_car';";
+
+			return $this->ejecutar();
+
+		}// fin de listar modificar
+
 		function eliminar()
 		{
 			$this->que_bda = "delete from cargo
