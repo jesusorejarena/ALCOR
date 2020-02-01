@@ -1,6 +1,6 @@
-<?php 
+<?php
 
-	require("tema.php");
+	require("temainicio.php");
 
 	encabezado("Inicio - ALCOR C.A.");
 

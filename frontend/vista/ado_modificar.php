@@ -1,5 +1,7 @@
-<?php 
+<?php	
 
+	//session
+	
 	require("tema.php");
 	require("../../backend/clase/cargo.class.php");
 	require("../../backend/clase/empleado.class.php");
@@ -24,7 +26,7 @@
 	<div class="<?php echo $obj_ado->container; ?>">
 		<div class="row pb-3 mb-3 bg-white">
 			<div class="col-12 text-left">
-				<button class="<?php echo $obj_ado->btn_atras; ?>" onClick="window.location.href='ado_.php'">Atras</button>
+				<button class="<?php echo $obj_ado->btn_atras; ?>" onClick="window.location.href='ado_menu.php'">Atras</button>
 			</div>
 		</div>
 		<div class="<?php echo $obj_ado->card; ?>" style="width: 40rem">
@@ -52,8 +54,10 @@
 							<div class="form-group">
 								<label for="gen_ado" class="text-white text-left h5">Genero:</label>
 								<select name="gen_ado" id="gen_ado" class="<?php echo $obj_ado->input_normal; ?>">
-									<option value="H">Hombre</option>
-									<option value="M">Mujer</option>
+									<?php $seleccionado=($empleado["tip_ado"]=="H")?"selected":""; ?>
+									<option <?php echo $seleccionado; ?> value="H">Hombre</option>
+									<?php $seleccionado=($empleado["tip_ado"]=="M")?"selected":""; ?>
+									<option <?php echo $seleccionado; ?> value="M">Mujer</option>
 								</select>
 							</div>
 						</div>
@@ -69,8 +73,10 @@
 							<div class="form-group">
 								<label for="tip_ado" class="text-white text-left h5">Tipo:</label>
 								<select name="tip_ado" id="tip_ado" class="<?php echo $obj_ado->input_normal; ?>">
-									<option value="V">Venezolano</option>
-									<option value="E">Extranjero</option>
+									<?php $seleccionado=($empleado["tip_ado"]=="V")?"selected":""; ?>
+									<option <?php echo $seleccionado; ?> value="V">Venezolano</option>
+									<?php $seleccionado=($empleado["tip_ado"]=="E")?"selected":""; ?>
+									<option <?php echo $seleccionado; ?> value="E">Extranjero</option>
 								</select>
 							</div>
 						</div>
@@ -127,8 +133,10 @@
 							<div class="form-group">
 								<label for="est_ado" class="text-white text-left h5">Activo/Inactivo:</label>
 								<select name="est_ado" id="est_ado" class="<?php echo $obj_ado->input_normal; ?>">
-									<option value="A">Activo</option>
-									<option value="I">Inactivo</option>
+									<?php $seleccionado=($empleado["tip_ado"]=="A")?"selected":""; ?>
+									<option <?php echo $seleccionado; ?> value="A">Activo</option>
+									<?php $seleccionado=($empleado["tip_ado"]=="I")?"selected":""; ?>
+									<option <?php echo $seleccionado; ?> value="I">Inactivo</option>
 								</select>
 							</div>
 						</div>

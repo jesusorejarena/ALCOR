@@ -1,5 +1,7 @@
-<?php 
+<?php	
 
+	//session
+	
 	require("tema.php");
 	require("../../backend/clase/empleado.class.php");
 
@@ -14,7 +16,7 @@
 	<div class="<?php echo $obj_ado->container; ?>">
 		<div class="row pb-3 mb-3 bg-white">
 			<div class="col-12 text-left">
-				<button class="<?php echo $obj_ado->btn_atras; ?>" onClick="window.location.href='ado_.php'">Atras</button>
+				<button class="<?php echo $obj_ado->btn_atras; ?>" onClick="window.location.href='ado_menu.php'">Atras</button>
 			</div>
 		</div>
 		<div class="<?php echo $obj_ado->card; ?>">

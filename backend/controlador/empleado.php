@@ -23,5 +23,5 @@
 		case 'eliminar':			$obj_ado->eliminar();
 		break;
 	}
-	
+
 ?>

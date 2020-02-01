@@ -14,6 +14,12 @@
 		case 'modificar_normal':	$obj_car->modificar_normal();
 		break;
 
+		case 'modificar_restaurar':	$obj_car->modificar_restaurar();
+		break;
+
+		case 'modificar_eliminar':	$obj_car->modificar_eliminar();
+		break;
+
 		case 'eliminar':			$obj_car->eliminar();
 		break;
 	}

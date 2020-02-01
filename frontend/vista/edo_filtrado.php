@@ -1,5 +1,7 @@
-<?php 
+<?php	
 
+	//session
+	
 	require("tema.php");
 	require("../../backend/clase/proveedor.class.php");
 

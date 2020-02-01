@@ -1,5 +1,7 @@
-<?php 
+<?php	
 
+	//session
+	
 	require("tema.php");
 	require("../../backend/clase/cargo.class.php");
 
@@ -13,7 +15,7 @@
 	<div class="<?php echo $obj_car->container; ?>">
 		<div class="row pb-3 mb-3 bg-white">
 			<div class="col-12 text-left">
-				<button class="<?php echo $obj_car->btn_atras; ?>" onClick="window.location.href=''">Atras</button>
+				<button class="<?php echo $obj_car->btn_atras; ?>" onClick="window.location.href='car_menu.php'">Atras</button>
 			</div>
 		</div>
 		<div class="<?php echo $obj_car->card; ?>" style="width: 40rem">
@@ -25,7 +27,7 @@
 						<div class="col-12">
 							<div class="form-group">
 								<label for="nom_car" class="text-white text-left h5">Cargo:</label>
-								<input type="text" name="nom_car" id="nom_car" placeholder="C minlength="3" maxlength="50" require="" class="<?php echo $obj_car->input_normal; ?>">
+								<input type="text" name="nom_car" id="nom_car" placeholder="Nombre" minlength="3" maxlength="50" require="" class="<?php echo $obj_car->input_normal; ?>">
 							</div>
 						</div>
 					</div>

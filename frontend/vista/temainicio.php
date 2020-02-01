@@ -1,18 +1,9 @@
 <?php 
 
+
 	function encabezado($titulo)
 	{
-		session_start();
-
-		if($_SESSION['activo']==true)
-		{
-			
-		}
-		else
-		{
-			header('Location: inicio.php');
-		}
-
+		
 		echo "
 		<!DOCTYPE html>
 		<html lang='es'>
@@ -41,7 +32,7 @@
 							<nav class='navbar navbar-expand-md bg-success navbar-dark form-control-static fixed-top'>
 
 								<!--Nombre de la app-->
-								<a href='menu_principal.php' class='navbar-brand animated bounceInLeft px-5'><img src='../img/logo2.png' width='200'></a>
+								<a href='inicio.php' class='navbar-brand animated bounceInLeft px-5'><img src='../img/logo2.png' width='200'></a>
 
 								<!--Menu de hamburguesa-->
 								<button class='navbar-toggler' type='button' data-toggle='collapse' data-target='#collapsibleNavbar'>
@@ -52,28 +43,13 @@
 								<div class='collapse navbar-collapse justify-content-end' id='collapsibleNavbar'>
 									<ul class='navbar-nav'>
 										<li class='nav-item'>
-											<a href='menu_principal.php' class='nav-link'>Empresa</a>
+											<a href='inicio.php' class='nav-link'>Inicio</a>
 										</li>
 										<li class='nav-item'>
-											<a href='emp_menu.php' class='nav-link'>Empresa</a>
+											<a href='acercade.php' class='nav-link'>Acerca de</a>
 										</li>
 										<li class='nav-item'>
-											<a href='car_menu.php' class='nav-link'>Cargos</a>
-										</li>
-										<li class='nav-item'>
-											<a href='ado_menu.php' class='nav-link'>Empleados</a>
-										</li>
-										<li class='nav-item'>
-											<a href='edo_menu.php' class='nav-link'>Proveedores</a>
-										</li>
-										<li class='nav-item'>
-											<a href='pro_menu.php' class='nav-link'>Productos</a>
-										</li>
-										<li class='nav-item'>
-											<a href='for_menu.php' class='nav-link'>Formularios</a>
-										</li>
-										<li class='nav-item'>
-											<a href='cerrar_session.php' class='nav-link'>Cerrar Sessión</a>
+											<a href='usu_session.php' class='nav-link'>Iniciar Sesión</a>
 										</li>
 									</ul>
 								</div>

@@ -1,5 +1,7 @@
-<?php 
+<?php	
 
+	//session
+	
 	require("tema.php");
 	require("../../backend/clase/cargo.class.php");
 
@@ -13,16 +15,26 @@
 	<div class="<?php echo $obj_car->container; ?>">
 		<div class="row pb-3 mb-3 bg-white">
 			<div class="col-12 text-left">
-				<button class="<?php echo $obj_car->btn_atras; ?>" onClick="window.location.href='car_.php'">Atras</button>
+				<button class="<?php echo $obj_car->btn_atras; ?>" onClick="window.location.href='car_menu.php'">Atras</button>
 			</div>
 		</div>
 		<div class="<?php echo $obj_car->card; ?>" style="width: 60rem">
 			<h2 class="<?php echo $obj_car->titulocard; ?>">Filtrar cargo</h2>
 			<hr>
 			<div class="card-body">
-				<form action="../../backend/controlador/cargo.php" method="POST">
+				<form action="car_filtrado.php" method="POST">
 					<div class="row p-3">
-						<div class="col-6">
+						<div class="col-3">
+							<div class="form-group">
+								<label for="bas_ado" class="text-white text-left h5">Activo/Papelera:</label>
+								<select name="bas_ado" id="bas_ado" class="<?php echo $obj_car->input_normal; ?>">
+									<option value="">General</option>
+									<option value="A">Activo</option>
+									<option value="B">En papelera</option>
+								</select>
+							</div>
+						</div>
+						<div class="col-3">
 							<div class="form-group">
 								<label for="cod_car" class="text-white text-left h5">Código:</label>
 								<input type="text" name="cod_car" id="cod_car" placeholder="Código:" minlength="1" maxlength="11" require="" class="<?php echo $obj_car->input_normal; ?>">
@@ -43,7 +55,7 @@
 						</div>
 						<div class="col-6">
 							<div class="form-group">
-								<button type="submit" name="ejecutar" id="ejecutar" value="filtrar" class="<?php echo $obj_car->btn_atras; ?> btn-lg">Filtrar</button>
+								<button type="submit" name="ejecutar" id="ejecutar" value="filtrar" class="<?php echo $obj_car->btn_enviar; ?>">Filtrar</button>
 							</div>
 						</div>
 					</div>

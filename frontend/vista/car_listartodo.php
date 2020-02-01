@@ -1,5 +1,7 @@
-<?php 
+<?php	
 
+	//session
+	
 	require("tema.php");
 	require("../../backend/clase/cargo.class.php");
 
@@ -14,7 +16,7 @@
 	<div class="<?php echo $obj_car->container; ?>">
 		<div class="row pb-3 mb-3 bg-white">
 			<div class="col-12 text-left">
-				<button class="<?php echo $obj_car->btn_atras; ?>" onClick="window.location.href=''">Atras</button>
+				<button class="<?php echo $obj_car->btn_atras; ?>" onClick="window.location.href='car_menu.php'">Atras</button>
 			</div>
 		</div>
 		<div class="<?php echo $obj_car->card; ?>">
@@ -28,6 +30,8 @@
 								<tr>
 									<th>Código</th>
 									<th>Nombre</th>
+									<th>Fecha de Creación</th>
+									<th>Ultima Modificación</th>
 									<th>Editar</th>
 									<th>Eliminar</th>
 								</tr>
@@ -41,8 +45,10 @@
 													<input type='hidden' name='cod_car' value='$cargo[cod_car]'>
 													<td>$cargo[cod_car]</td>
 													<td>$cargo[nom_car]</td>
+													<td>$cargo[cre_car]</td>
+													<td>$cargo[act_car]</td>
 													<td><a class='$obj_car->btn_editar' href='car_modificar.php?cod_car=$cargo[cod_car]'>Editar</a></td>
-													<td><button type='submit' class='$obj_car->btn_eliminar' name='ejecutar' value='eliminar'>Eliminar</button></td>
+													<td><button type='submit' class='$obj_car->btn_eliminar' name='ejecutar' value='modificar_eliminar'>Eliminar</button></td>
 												</tr>
 											</form>
 										";

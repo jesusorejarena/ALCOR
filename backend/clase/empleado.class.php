@@ -161,6 +161,21 @@
 
 		}// fin de listar eliminar
 
+		function listar_session($ced_ado, $cla_ado)
+		{
+			$this->que_bda = "select ced_ado, cla_ado, est_ado, bas_ado 
+									from 
+										empleado 
+									where 
+										ced_ado='$ced_ado' and 
+										cla_ado='$cla_ado' and 
+										est_ado='A' and 
+										bas_ado='A';";
+
+			return $this->ejecutar();
+
+		}// fin de listar session
+
 		function eliminar()
 		{
 

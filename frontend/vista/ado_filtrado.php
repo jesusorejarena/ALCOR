@@ -1,5 +1,7 @@
-<?php 
+<?php	
 
+	//session
+	
 	require("tema.php");
 	require("../../backend/clase/empleado.class.php");
 
@@ -7,7 +9,7 @@
 	$obj_ado->asignar_valor();
 	$obj_ado->estandar();
 	$obj_ado->puntero=$obj_ado->filtrar();
-
+	
 	encabezado("Empleados filtrados - ALCOR C.A.");
 
 ?>

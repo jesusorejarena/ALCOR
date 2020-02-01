@@ -1,5 +1,7 @@
-<?php 
+<?php	
 
+	//session
+	
 	require("tema.php");
 	require("../../backend/clase/producto.class.php");
 	require("../../backend/clase/proveedor.class.php");
@@ -23,7 +25,7 @@
 	<div class="<?php echo $obj_edo->container; ?>">
 		<div class="row pb-3 mb-3 bg-white">
 			<div class="col-12 text-left">
-				<button class="<?php echo $obj_edo->btn_atras; ?>" onClick="window.location.href=''">Atras</button>
+				<button class="<?php echo $obj_edo->btn_atras; ?>" onClick="window.location.href='pro_menu.php'">Atras</button>
 			</div>
 		</div>
 		<div class="<?php echo $obj_edo->card; ?>" style="width: 40rem">
@@ -70,7 +72,7 @@
 						</div>
 					</div>
 					<div class="row p-3">
-						<div class="col-6">
+						<div class="col-12">
 							<div class="form-group">
 								<label for="fky_proveedor" class="text-white text-left h5">Proveedor:</label>
 								<select name="fky_proveedor" id="fky_proveedor" class="form-control bg-dark border border-top-0 border-left-0 border-right-0 border-success text-white">
@@ -80,16 +82,6 @@
 											echo "<option value='$proveedor[cod_edo]'>$proveedor[nom_edo]</option>";
 										}
 									?>
-								</select>
-							</div>
-						</div>
-						<div class="col-6">
-							<div class="form-group">
-								<label for="bas_ado" class="text-white text-left h5">Activo/Papelera:</label>
-								<select name="bas_ado" id="bas_ado" require="" value="<?php echo $producto['cod_pro'] ?>" class="<?php echo $obj_edo->input_normal; ?>">
-									<option value="">General</option>
-									<option value="A">Activo</option>
-									<option value="B">En papelera</option>
 								</select>
 							</div>
 						</div>

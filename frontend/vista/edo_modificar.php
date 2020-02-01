@@ -1,5 +1,7 @@
-<?php 
+<?php	
 
+	//session
+	
 	require("tema.php");
 	require("../../backend/clase/proveedor.class.php");
 
@@ -19,7 +21,7 @@
 	<div class="<?php echo $obj_edo->container; ?>">
 		<div class="row pb-3 mb-3 bg-white">
 			<div class="col-12 text-left">
-				<button class="<?php echo $obj_edo->btn_atras; ?>" onClick="window.location.href=''">Atras</button>
+				<button class="<?php echo $obj_edo->btn_atras; ?>" onClick="window.location.href='edo_menu.php'">Atras</button>
 			</div>
 		</div>
 		<div class="<?php echo $obj_edo->card; ?>" style="width: 60rem">
@@ -76,9 +78,12 @@
 							<div class="form-group">
 								<label for="tip_edo" class="text-white text-left h5">Tipo:</label>
 								<select name="tip_edo" id="tip_edo" require="" class="<?php echo $obj_edo->input_normal; ?>">
-									<option value="V">Venezolano</option>
-									<option value="P">Personal</option>
-									<option value="J">Juridico</option>
+									<?php $seleccionado=($empleado["tip_edo"]=="V")?"selected":""; ?>
+									<option <?php echo $seleccionado; ?> value="V">Venezolano</option>
+									<?php $seleccionado=($empleado["tip_edo"]=="E")?"selected":""; ?>
+									<option <?php echo $seleccionado; ?> value="E">Extranjero</option>
+									<?php $seleccionado=($empleado["tip_edo"]=="J")?"selected":""; ?>
+									<option <?php echo $seleccionado; ?> value="J">Juridico</option>
 								</select>
 							</div>
 						</div>
