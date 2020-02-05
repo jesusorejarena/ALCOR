@@ -73,7 +73,7 @@
 											<a href='for_menu.php' class='nav-link'>Formularios</a>
 										</li>
 										<li class='nav-item btn btn-sm btn-dark'>
-											<a href='cerrar_session.php' class='nav-link'>Cerrar Sesión</a>
+											<a href='cerrar_sesion.php' class='nav-link'>Cerrar Sesión</a>
 										</li>
 									</ul>
 								</div>

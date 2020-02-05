@@ -7,7 +7,7 @@
 	$correo=$_POST['cor_ado'];
 	$clave=$_POST['cla_ado'];
 
-	$obj_ado->puntero=$obj_ado->listar_session($correo, $clave);
+	$obj_ado->puntero=$obj_ado->listar_sesion($correo, $clave);
 
 
 	switch ($_REQUEST["ejecutar"])
@@ -24,7 +24,7 @@
 							}
 							else
 							{
-								header('Location: ../../frontend/vista/usu_session.php');
+								header('Location: ../../frontend/vista/usu_sesion.php');
 							}						
 		break;
 	}

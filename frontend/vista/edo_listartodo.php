@@ -28,7 +28,6 @@
 						<table class="<?php echo $obj_edo->tabla; ?>">
 							<thead>
 								<tr>
-									<th>Código</th>
 									<th>Nombre</th>
 									<th>Descripción</th>
 									<th>Dirección</th>
@@ -52,7 +51,6 @@
 										echo "<form action='../../backend/controlador/proveedor.php' method='POST'>
 												<tr>
 													<input type='hidden' name='cod_edo' value='$proveedor[cod_edo]'>
-													<td>$proveedor[cod_edo]</td>
 													<td>$proveedor[nom_edo]</td>
 													<td>$proveedor[des_edo]</td>
 													<td>$proveedor[dir_edo]</td>

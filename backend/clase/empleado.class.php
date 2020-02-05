@@ -143,7 +143,7 @@
 
 		function listar_normal()
 		{
-			$this->que_bda = "select * from empleado where bas_ado='A';";
+			$this->que_bda = "select * from empleado where bas_ado='A'";
 
 			return $this->ejecutar();
 
@@ -151,7 +151,7 @@
 
 		function listar_modificar()
 		{
-			$this->que_bda = "select * from empleado where cod_ado='$this->cod_ado';";
+			$this->que_bda = "select * from empleado where cod_ado='$this->cod_ado'";
 
 			return $this->ejecutar();
 
@@ -159,7 +159,7 @@
 
 		function listar_eliminar()
 		{
-			$this->que_bda = "select * from empleado where bas_ado='B';";
+			$this->que_bda = "select * from empleado where bas_ado='B'";
 
 			return $this->ejecutar();
 

@@ -126,7 +126,7 @@
 
 		function listar_modificar()
 		{
-			$this->que_bda = "select * from proveedor where bas_edo='A' and cod_edo='$this->cod_edo'";
+			$this->que_bda = "select * from proveedor where cod_edo='$this->cod_edo'";
 
 			return $this->ejecutar();
 

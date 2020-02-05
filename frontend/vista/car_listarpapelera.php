@@ -30,10 +30,11 @@
 								<tr>
 									<th>Código</th>
 									<th>Nombre</th>
-									<th>Fecha de Creación</th>
-									<th>Ultima Modificación</th>
-									<th>Fecha de Eliminación</th>
-									<th>Editar</th>
+									<th>Fecha de creación</th>
+									<th>Ultima modificación</th>
+									<th>Fecha de eliminado</th>
+									<th>Fecha de restauración</th>
+									<th>Restaurar</th>
 									<th>Eliminar</th>
 								</tr>
 							</thead>
@@ -49,6 +50,7 @@
 													<td>$cargo[cre_car]</td>
 													<td>$cargo[act_car]</td>
 													<td>$cargo[eli_car]</td>
+													<td>$cargo[res_car]</td>
 													<td><button type='submit' class='$obj_car->btn_restaurar' name='ejecutar' value='modificar_restaurar'>Restaurar</button></td>
 													<td><button type='submit' class='$obj_car->btn_eliminar' name='ejecutar' value='eliminar'>Eliminar</button></td>
 												</tr>

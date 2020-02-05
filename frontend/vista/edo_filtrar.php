@@ -72,7 +72,7 @@
 							<div class="form-group">
 								<label for="tip_edo" class="<?php echo $obj_edo->for; ?>">Tipo:</label>
 								<select name="tip_edo" id="tip_edo" class="<?php echo $obj_edo->input_normal; ?>">
-									<option value="">Seleccione...</option>
+									<option value="">General</option>
 									<option value="V">Venezolano</option>
 									<option value="P">Personal</option>
 									<option value="J">Juridico</option>

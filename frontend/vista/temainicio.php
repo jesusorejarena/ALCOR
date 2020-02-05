@@ -49,7 +49,7 @@
 											<a href='acercade.php' class='nav-link'>Acerca de</a>
 										</li>
 										<li class='nav-item'>
-											<a href='usu_session.php' class='nav-link'>Iniciar Sesión</a>
+											<a href='usu_sesion.php' class='nav-link'>Iniciar Sesión</a>
 										</li>
 									</ul>
 								</div>

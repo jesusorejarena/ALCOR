@@ -28,7 +28,6 @@
 						<table class="<?php echo $obj_ado->tabla; ?>">
 							<thead>
 								<tr>
-									<th>Código</th>
 									<th>Nombre</th>
 									<th>Apellido</th>
 									<th>Genero</th>
@@ -55,7 +54,6 @@
 										echo "<form action='../../backend/controlador/empleado.php' method='POST'>
 												<tr>
 													<input type='hidden' name='cod_ado' value='$empleado[cod_ado]'>
-													<td>$empleado[cod_ado]</td>
 													<td>$empleado[nom_ado]</td>
 													<td>$empleado[ape_ado]</td>
 													<td>$empleado[gen_ado]</td>

@@ -49,7 +49,7 @@
 							<div class="form-group">
 								<label for="gen_ado" class="<?php echo $obj_car->for; ?>">Genero:</label>
 								<select name="gen_ado" id="gen_ado" class="<?php echo $obj_car->input_normal; ?>">
-									<option value="">Seleccione...</option>
+									<option value="">General</option>
 									<option value="H">Hombre</option>
 									<option value="M">Mujer</option>
 								</select>
@@ -67,7 +67,7 @@
 							<div class="form-group">
 								<label for="tip_ado" class="<?php echo $obj_car->for; ?>">Tipo:</label>
 								<select name="tip_ado" id="tip_ado" class="<?php echo $obj_car->input_normal; ?>">
-									<option value="">Seleccione...</option>
+									<option value="">General</option>
 									<option value="V">Venezolano</option>
 									<option value="E">Extranjero</option>
 								</select>
@@ -97,7 +97,7 @@
 							<div class="form-group">
 								<label for="car_ado" class="<?php echo $obj_car->for; ?>">Cargo:</label>
 								<select name="car_ado" id="car_ado" class="<?php echo $obj_car->input_normal; ?>">
-									<option value="">Seleccione...</option>
+									<option value="">General</option>
 									<?php while (($cargo=$obj_car->extraer_dato())>0)
 										{
 											echo "<option value='$cargo[cod_car]'>$cargo[nom_car]</option>";

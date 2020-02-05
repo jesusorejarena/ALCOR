@@ -96,8 +96,8 @@
 			// Inicio Inputs Generales
 			$this->for 				="text-white text-left h5";
 			$this->small 			="form-text text-muted";
-			$this->input_normal		="text-white form-control bg-dark border border-top-0 border-left-0 border-right-0 border-success";
-			$this->input_text		="text-white form-control bg-dark border border-top-0 border-left-0 border-right-0 border-success";
+			$this->input_normal		="text-white form-control bg-transparent border border-top-0 border-left-0 border-right-0 border-success";
+			$this->input_text		="text-white form-control bg-transparent border border-top-0 border-left-0 border-right-0 border-success";
 			// Fin Inputs Generales
 
 			// Inicio Botones Normales Generales

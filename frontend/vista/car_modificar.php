@@ -14,7 +14,7 @@
 	$obj_car->puntero=$obj_car->listar_modificar();
 	$cargo=$obj_car->extraer_dato();
 
-	encabezado("Registrar cargo - ALCOR C.A.");
+	encabezado("Modificar cargo - ALCOR C.A.");
 
 ?>
 
@@ -25,20 +25,20 @@
 			</div>
 		</div>
 		<div class="<?php echo $obj_car->card; ?>" style="width: 60rem">
-			<h2 class="<?php echo $obj_car->titulocard; ?>">Filtrar cargo</h2>
+			<h2 class="<?php echo $obj_car->titulocard; ?>">Modificar cargo</h2>
 			<hr>
 			<div class="card-body">
-				<form action="car_filtrado.php" method="POST">
+				<form action="../../backend/controlador/cargo.php" method="POST">
 					<div class="row p-3">
 						<div class="col-6">
 							<div class="form-group">
-								<label for="cod_car" class="text-white text-left h5">Código:</label>
-								<input type="text" name="cod_car" id="cod_car" placeholder="Código:" minlength="1" maxlength="11" require="" value="<?php echo $cargo['cod_car']; ?>" class="<?php echo $obj_car->input_normal; ?>">
+								<label for="cod_car" class="<?php echo $obj_car->for; ?>">Código:</label>
+								<input type="text" name="cod_car" id="cod_car" placeholder="Código:" minlength="1" maxlength="100" require="" value="<?php echo $cargo['cod_car']; ?>" class="<?php echo $obj_car->input_normal; ?>">
 							</div>
 						</div>
 						<div class="col-6">
 							<div class="form-group">
-								<label for="nom_car" class="text-white text-left h5">Nombre:</label>
+								<label for="nom_car" class="<?php echo $obj_car->for; ?>">Nombre:</label>
 								<input type="text" name="nom_car" id="nom_car" placeholder="Nombre:" minlength="3" maxlength="50" require="" value="<?php echo $cargo['nom_car']; ?>" class="<?php echo $obj_car->input_normal; ?>">
 							</div>
 						</div>
@@ -51,7 +51,7 @@
 						</div>
 						<div class="col-6">
 							<div class="form-group">
-								<button type="submit" name="ejecutar" id="ejecutar" value="modificar_normal" class="<?php echo $obj_car->btn_atras; ?> btn-lg">Modificar</button>
+								<button type="submit" name="ejecutar" id="ejecutar" value="modificar_normal" class="<?php echo $obj_car->btn_enviar; ?>">Modificar</button>
 							</div>
 						</div>
 					</div>

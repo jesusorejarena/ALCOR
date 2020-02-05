@@ -56,7 +56,7 @@
 													<td>$cargo[eli_car]</td>
 													<td>$cargo[res_car]</td>
 													<td>$cargo[bas_car]</td>
-													<td><a class='$obj_car->btn_eliminar' href=''>PDF</a></td>
+													<td><a class='$obj_ado->btn_eliminar' href=''>PDF</a></td>
 													<td><a class='$obj_car->btn_editar' href='car_modificar.php?cod_car=$cargo[cod_car]'>Editar</a></td>
 													<td><button type='submit' class='$obj_car->btn_restaurar' name='ejecutar' value='modificar_restaurar'>Restaurar</button></td>
 													<td><button type='submit' class='$obj_car->btn_eliminar' name='ejecutar' value='modificar_eliminar'>Eliminar</button></td>

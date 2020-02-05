@@ -36,7 +36,8 @@
 		{
 
 			$this->que_bda = "insert into empresa
-								(nom_emp,
+								(cod_emp,
+								nom_emp,
 								tel_emp, 
 								dir_emp, 
 								cor_emp,
@@ -44,7 +45,8 @@
 								hou_emp, 
 								hod_emp)
 							values
-								('$this->nom_emp', 
+								('1',
+								'$this->nom_emp', 
 								'$this->tel_emp', 
 								'$this->dir_emp', 
 								'$this->cor_emp',
