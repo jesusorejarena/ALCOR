@@ -79,6 +79,7 @@
 
 			// Inicio Clases Generales
 			$this->container		="container-fluid p-5 mt-5 bg-white";
+			$this->titulos			="h1 text-dark text-center p-4 text-center";
 			// Fin Clases Generales
 
 			// Inicio Cards Generales

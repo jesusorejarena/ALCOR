@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 04-02-2020 a las 01:32:50
+-- Tiempo de generación: 05-02-2020 a las 07:03:57
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.1
 
@@ -35,8 +35,16 @@ CREATE TABLE `cargo` (
   `act_car` datetime DEFAULT NULL,
   `eli_car` datetime DEFAULT NULL,
   `res_car` datetime DEFAULT NULL,
-  `bas_car` varchar(1) NOT NULL
+  `bas_car` set('A','B') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `cargo`
+--
+
+INSERT INTO `cargo` (`cod_car`, `nom_car`, `cre_car`, `act_car`, `eli_car`, `res_car`, `bas_car`) VALUES
+(1, 'Administradores', '2020-02-04 17:39:33', '2020-02-04 06:27:56', '2020-02-04 06:51:40', '2020-02-04 06:51:47', 'A'),
+(2, 'Vendedor', '2020-02-04 06:26:19', NULL, NULL, NULL, 'A');
 
 -- --------------------------------------------------------
 
@@ -48,11 +56,11 @@ CREATE TABLE `empleado` (
   `cod_ado` int(11) NOT NULL,
   `nom_ado` varchar(50) NOT NULL,
   `ape_ado` varchar(50) NOT NULL,
-  `gen_ado` varchar(1) NOT NULL,
+  `gen_ado` set('H','M') NOT NULL,
   `nac_ado` date NOT NULL DEFAULT current_timestamp(),
   `tip_ado` varchar(1) NOT NULL,
   `ced_ado` int(8) NOT NULL,
-  `tel_ado` int(11) NOT NULL,
+  `tel_ado` varchar(11) NOT NULL,
   `cor_ado` varchar(100) NOT NULL,
   `cla_ado` varchar(40) DEFAULT NULL,
   `dir_ado` varchar(100) NOT NULL,
@@ -61,9 +69,17 @@ CREATE TABLE `empleado` (
   `act_ado` datetime DEFAULT NULL,
   `eli_ado` datetime DEFAULT NULL,
   `res_ado` datetime DEFAULT NULL,
-  `est_ado` varchar(1) NOT NULL,
-  `bas_ado` varchar(1) NOT NULL
+  `est_ado` set('A','I') NOT NULL,
+  `bas_ado` set('A','B') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `empleado`
+--
+
+INSERT INTO `empleado` (`cod_ado`, `nom_ado`, `ape_ado`, `gen_ado`, `nac_ado`, `tip_ado`, `ced_ado`, `tel_ado`, `cor_ado`, `cla_ado`, `dir_ado`, `car_ado`, `cre_ado`, `act_ado`, `eli_ado`, `res_ado`, `est_ado`, `bas_ado`) VALUES
+(1, 'Jesus', 'Orejarena', 'H', '2000-09-17', 'V', 29545545, '04147528826', 'felix@gmail.com', 'felix123', 'La concordia', 1, '2020-02-04 06:55:16', NULL, '2020-02-04 07:13:56', '2020-02-04 07:40:16', 'A', 'A'),
+(4, 'Alonzo', 'Orejarena', 'H', '2000-09-17', 'V', 12321312, '12312312312', 'jesusorejarenaps4@gmail.com', '', 'salladlas', 2, '2020-02-04 11:06:25', NULL, NULL, NULL, 'A', 'A');
 
 -- --------------------------------------------------------
 
@@ -72,7 +88,7 @@ CREATE TABLE `empleado` (
 --
 
 CREATE TABLE `empresa` (
-  `cod_emp` int(11) NOT NULL,
+  `cod_emp` int(1) NOT NULL,
   `nom_emp` varchar(50) NOT NULL,
   `tel_emp` varchar(13) NOT NULL,
   `dir_emp` varchar(100) NOT NULL,
@@ -87,7 +103,7 @@ CREATE TABLE `empresa` (
 --
 
 INSERT INTO `empresa` (`cod_emp`, `nom_emp`, `tel_emp`, `dir_emp`, `cor_emp`, `rif_emp`, `hou_emp`, `hod_emp`) VALUES
-(1, 'SADASD', '213123', 'ASDASDAD', 'ASDFSA@ADASD.COMD', '321', '213123', '42132');
+(1, 'ALCOR', '+584147528826', 'La Concordia', 'alcor@alcor.com', 'J-30161557-3', '08:00 AM - 11:00 AM', '');
 
 -- --------------------------------------------------------
 
@@ -104,6 +120,45 @@ CREATE TABLE `formulario` (
   `asu_for` varchar(100) NOT NULL,
   `cre_for` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `modulo`
+--
+
+CREATE TABLE `modulo` (
+  `cod_mod` int(11) NOT NULL,
+  `fky_cargo` int(11) NOT NULL,
+  `fky_opcion` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `modulo`
+--
+
+INSERT INTO `modulo` (`cod_mod`, `fky_cargo`, `fky_opcion`) VALUES
+(2, 2, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `opcion`
+--
+
+CREATE TABLE `opcion` (
+  `cod_opc` int(11) NOT NULL,
+  `nom_opc` varchar(20) NOT NULL,
+  `des_opc` varchar(50) NOT NULL,
+  `url_opc` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `opcion`
+--
+
+INSERT INTO `opcion` (`cod_opc`, `nom_opc`, `des_opc`, `url_opc`) VALUES
+(1, 'Empresa', 'Modificar datos de la empresa', 'emp_modificar.php');
 
 -- --------------------------------------------------------
 
@@ -125,6 +180,14 @@ CREATE TABLE `producto` (
   `bas_pro` varchar(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Volcado de datos para la tabla `producto`
+--
+
+INSERT INTO `producto` (`cod_pro`, `nom_pro`, `ser_pro`, `des_pro`, `pre_pro`, `can_pro`, `cre_pro`, `act_pro`, `eli_pro`, `res_pro`, `bas_pro`) VALUES
+(1, 'ASDIJASUD9', 'IAWDQ23123', 'SADDASDAS', 123.00, 123.00, '2020-02-04 07:53:21', NULL, NULL, NULL, 'A'),
+(2, 'SADSD', '321321123A', 'DASD', 423.00, 12312.00, '2020-02-04 07:53:39', NULL, '2020-02-04 07:54:58', '2020-02-04 07:55:06', 'A');
+
 -- --------------------------------------------------------
 
 --
@@ -136,7 +199,7 @@ CREATE TABLE `proveedor` (
   `nom_edo` varchar(50) NOT NULL,
   `des_edo` varchar(100) DEFAULT NULL,
   `dir_edo` varchar(100) NOT NULL,
-  `tel_edo` int(11) NOT NULL,
+  `tel_edo` varchar(11) NOT NULL,
   `cor_edo` varchar(100) NOT NULL,
   `tip_edo` varchar(1) NOT NULL,
   `rif_edo` varchar(9) NOT NULL,
@@ -144,7 +207,7 @@ CREATE TABLE `proveedor` (
   `act_edo` datetime DEFAULT NULL,
   `eli_edo` datetime DEFAULT NULL,
   `res_edo` datetime DEFAULT NULL,
-  `bas_edo` varchar(1) NOT NULL
+  `bas_edo` set('A','B') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -191,6 +254,22 @@ ALTER TABLE `formulario`
   ADD PRIMARY KEY (`cod_for`);
 
 --
+-- Indices de la tabla `modulo`
+--
+ALTER TABLE `modulo`
+  ADD PRIMARY KEY (`cod_mod`),
+  ADD KEY `fky_cargo` (`fky_opcion`),
+  ADD KEY `fky_cargo_2` (`fky_cargo`),
+  ADD KEY `fky_cargo_3` (`fky_cargo`);
+
+--
+-- Indices de la tabla `opcion`
+--
+ALTER TABLE `opcion`
+  ADD PRIMARY KEY (`cod_opc`),
+  ADD UNIQUE KEY `url_opc` (`url_opc`);
+
+--
 -- Indices de la tabla `producto`
 --
 ALTER TABLE `producto`
@@ -222,37 +301,49 @@ ALTER TABLE `prov_prod`
 -- AUTO_INCREMENT de la tabla `cargo`
 --
 ALTER TABLE `cargo`
-  MODIFY `cod_car` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `cod_car` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `empleado`
 --
 ALTER TABLE `empleado`
-  MODIFY `cod_ado` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `cod_ado` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `empresa`
 --
 ALTER TABLE `empresa`
-  MODIFY `cod_emp` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `cod_emp` int(1) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `formulario`
 --
 ALTER TABLE `formulario`
-  MODIFY `cod_for` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `cod_for` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT de la tabla `modulo`
+--
+ALTER TABLE `modulo`
+  MODIFY `cod_mod` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT de la tabla `opcion`
+--
+ALTER TABLE `opcion`
+  MODIFY `cod_opc` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `producto`
 --
 ALTER TABLE `producto`
-  MODIFY `cod_pro` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `cod_pro` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `proveedor`
 --
 ALTER TABLE `proveedor`
-  MODIFY `cod_edo` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `cod_edo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `prov_prod`
@@ -268,7 +359,14 @@ ALTER TABLE `prov_prod`
 -- Filtros para la tabla `empleado`
 --
 ALTER TABLE `empleado`
-  ADD CONSTRAINT `empleado_ibfk_1` FOREIGN KEY (`car_ado`) REFERENCES `cargo` (`cod_car`) ON DELETE CASCADE;
+  ADD CONSTRAINT `empleado_ibfk_1` FOREIGN KEY (`car_ado`) REFERENCES `cargo` (`cod_car`) ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `modulo`
+--
+ALTER TABLE `modulo`
+  ADD CONSTRAINT `modulo_ibfk_1` FOREIGN KEY (`fky_cargo`) REFERENCES `cargo` (`cod_car`) ON DELETE CASCADE,
+  ADD CONSTRAINT `modulo_ibfk_2` FOREIGN KEY (`fky_opcion`) REFERENCES `opcion` (`cod_opc`) ON DELETE CASCADE;
 
 --
 -- Filtros para la tabla `prov_prod`

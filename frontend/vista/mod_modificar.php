@@ -1,0 +1,92 @@
+<?php	
+
+	//session
+	
+	require("tema.php");
+	require("../../backend/clase/modulo.class.php");
+	require("../../backend/clase/cargo.class.php");
+	require("../../backend/clase/opcion.class.php");
+
+	$obj_mod = new modulo;
+	$obj_mod->estandar();
+
+	$cod_mod=$_REQUEST['cod_mod'];
+
+	$obj_mod->asignar_valor();
+	$obj_mod->puntero=$obj_mod->listar_modificar();
+	$modulo=$obj_mod->extraer_dato();
+
+	$obj_car = new cargo;
+	$obj_car->puntero=$obj_car->listar_normal();
+
+	$obj_opc = new opcion;
+	$obj_opc->puntero=$obj_opc->listar_normal();
+
+	encabezado("Modificar modulo - ALCOR C.A.");
+
+?>
+
+	<div class="<?php echo $obj_mod->container; ?>">
+		<div class="row pb-3 mb-3 bg-white">
+			<div class="col-12 text-left">
+				<button class="<?php echo $obj_mod->btn_atras; ?>" onClick="window.location.href='rol_menu.php'">Atras</button>
+			</div>
+		</div>
+		<div class="<?php echo $obj_mod->card; ?>" style="width: 40rem">
+			<h2 class="<?php echo $obj_mod->titulocard; ?>">Modificar modulo</h2>
+			<hr>
+			<div class="card-body">
+				<form action="../../backend/controlador/modulo.php" method="POST">
+					<div class="row p-3">
+						<div class="col-6">
+							<div class="form-group">
+								<input type="hidden" name="cod_mod" id="cod_mod" value="<?php echo $modulo['cod_mod']; ?>">
+								<label for="fky_cargo" class="<?php echo $obj_mod->for; ?>">Cargo:</label>
+								<select name="fky_cargo" id="fky_cargo" class="<?php echo $obj_mod->input_normal; ?>">
+									<option value="">Seleccione...</option>
+									<?php while (($cargo=$obj_car->extraer_dato())>0)
+										{
+											$select=($cargo['cod_car']==$modulo['fky_cargo']) ? "selected" : "" ;
+											echo "<option $select value='$cargo[cod_car]'>$cargo[nom_car]</option>";
+										}
+									?>
+								</select>
+							</div>
+						</div>
+						<div class="col-6">
+							<div class="form-group">
+								<label for="fky_opcion" class="<?php echo $obj_mod->for; ?>">Cargo:</label>
+								<select name="fky_opcion" id="fky_opcion" class="<?php echo $obj_mod->input_normal; ?>">
+									<option value="">Seleccione...</option>
+									<?php while (($opcion=$obj_opc->extraer_dato())>0)
+										{
+											$select=($opcion['cod_opc']==$modulo['fky_opcion']) ? "selected" : "" ;
+											echo "<option $select value='$opcion[cod_opc]'>$opcion[nom_opc]</option>";
+										}
+									?>
+								</select>
+							</div>
+						</div>
+					</div>
+					<div class="row p-3 text-center">
+						<div class="col-6">
+							<div class="form-group">
+								<button type="reset" name="ejecutar" id="ejecutar" value="limpiar" class="<?php echo $obj_mod->btn_limpiar; ?>">Limpiar</button>
+							</div>
+						</div>
+						<div class="col-6">
+							<div class="form-group">
+								<button type="submit" name="ejecutar" id="ejecutar" value="modificar_normal" class="<?php echo $obj_mod->btn_enviar; ?>">Modificar</button>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+<?php 
+	
+	pie();
+
+?>
