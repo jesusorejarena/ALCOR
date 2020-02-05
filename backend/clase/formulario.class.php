@@ -7,10 +7,10 @@
 		cod_for		INT(11)			NO		A_I		PK		->	Codigo del Formulario
 		nom_for		VARCHAR(50)		SI						->	Nombre del Formulario
 		ape_for		VARCHAR(50)		SI						->	Apellido del Formulario
-		tel_for		VARCHAR(12)		SI						->	Telefono del Formulario
+		tel_for		VARCHAR(12)		SI						->	Teléfono del Formulario
 		cor_for		VARCHAR(100)	NO						->	Correo del Formulario
 		asu_for		VARCHAR(100) 	NO						->	Asunto del Formulario
-		cre_for		DATETIME		NO						->	Creación del Formulario
+		cre_for		DATETIME		NO						->	Fecha de Creación del Formulario
 
 	*/
 

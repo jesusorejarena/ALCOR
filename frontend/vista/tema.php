@@ -51,29 +51,29 @@
 								<!--Botones de las secciones-->
 								<div class='collapse navbar-collapse justify-content-end' id='collapsibleNavbar'>
 									<ul class='navbar-nav'>
-										<li class='nav-item'>
-											<a href='menu_principal.php' class='nav-link'>Empresa</a>
+										<li class='nav-item btn btn-sm'>
+											<a href='menu_principal.php' class='nav-link'>Inicio</a>
 										</li>
-										<li class='nav-item'>
+										<li class='nav-item btn btn-sm'>
 											<a href='emp_menu.php' class='nav-link'>Empresa</a>
 										</li>
-										<li class='nav-item'>
+										<li class='nav-item btn btn-sm'>
 											<a href='car_menu.php' class='nav-link'>Cargos</a>
 										</li>
-										<li class='nav-item'>
+										<li class='nav-item btn btn-sm'>
 											<a href='ado_menu.php' class='nav-link'>Empleados</a>
 										</li>
-										<li class='nav-item'>
+										<li class='nav-item btn btn-sm'>
 											<a href='edo_menu.php' class='nav-link'>Proveedores</a>
 										</li>
-										<li class='nav-item'>
+										<li class='nav-item btn btn-sm'>
 											<a href='pro_menu.php' class='nav-link'>Productos</a>
 										</li>
-										<li class='nav-item'>
+										<li class='nav-item btn btn-sm'>
 											<a href='for_menu.php' class='nav-link'>Formularios</a>
 										</li>
-										<li class='nav-item'>
-											<a href='cerrar_session.php' class='nav-link'>Cerrar Sessión</a>
+										<li class='nav-item btn btn-sm btn-dark'>
+											<a href='cerrar_session.php' class='nav-link'>Cerrar Sesión</a>
 										</li>
 									</ul>
 								</div>

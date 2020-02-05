@@ -22,46 +22,40 @@
 			<h2 class="<?php echo $obj_for->titulocard; ?>">Filtrar formularios</h2>
 			<hr>
 			<div class="card-body">
-				<form action="ado_filtrado.php" method="POST">
+				<form action="for_filtrado.php" method="POST">
 					<div class="row p-3">
-						<div class="col-6">
+						<div class="col-12">
 							<div class="form-group">
-								<label for="cod_ado" class="text-white text-left h5">Código:</label>
-								<input type="text" name="cod_ado" id="cod_ado" placeholder="Código:" minlength="1" maxlength="11" class="<?php echo $obj_for->input_normal; ?>">
-							</div>
-						</div>
-						<div class="col-6">
-							<div class="form-group">
-								<label for="cre_ado" class="text-white text-left h5">Fecha de creado:</label>
-								<input type="date" name="cre_ado" id="cre_ado" placeholder="Fecha de nacimiento:" class="<?php echo $obj_for->input_normal; ?>">
+								<label for="cod_ado" class="<?php echo $obj_for->for; ?>">Código:</label>
+								<input type="text" name="cod_ado" id="cod_ado" placeholder="Código:" class="<?php echo $obj_for->input_normal; ?>">
 							</div>
 						</div>
 					</div>
 					<div class="row p-3">
 						<div class="col-6">
 							<div class="form-group">
-								<label for="nom_ado" class="text-white text-left h5">Nombre:</label>
-								<input type="text" name="nom_ado" id="nom_ado" placeholder="Nombre:" minlength="3" maxlength="50" class="<?php echo $obj_for->input_normal; ?>">
+								<label for="nom_ado" class="<?php echo $obj_for->for; ?>">Nombre:</label>
+								<input type="text" name="nom_ado" id="nom_ado" placeholder="Nombre:" class="<?php echo $obj_for->input_normal; ?>">
 							</div>
 						</div>
 						<div class="col-6">
 							<div class="form-group">
-								<label for="ape_ado" class="text-white text-left h5">Apellido:</label>
-								<input type="text" name="ape_ado" id="ape_ado" placeholder="Apellido:" minlength="3" maxlength="50" class="<?php echo $obj_for->input_normal; ?>">
+								<label for="ape_ado" class="<?php echo $obj_for->for; ?>">Apellido:</label>
+								<input type="text" name="ape_ado" id="ape_ado" placeholder="Apellido:" class="<?php echo $obj_for->input_normal; ?>">
 							</div>
 						</div>
 					</div>
 					<div class="row p-3">
 						<div class="col-6">
 							<div class="form-group">
-								<label for="tel_ado" class="text-white text-left h5">Telefono:</label>
-								<input type="text" name="tel_ado" id="tel_ado" placeholder="Telefono:" minlength="11" maxlength="11" class="<?php echo $obj_for->input_normal; ?>">
+								<label for="tel_ado" class="<?php echo $obj_for->for; ?>">Teléfono:</label>
+								<input type="text" name="tel_ado" id="tel_ado" placeholder="Teléfono:" class="<?php echo $obj_for->input_normal; ?>">
 							</div>
 						</div>
 						<div class="col-6">
 							<div class="form-group">
-								<label for="cor_ado" class="text-white text-left h5">Correo:</label>
-								<input type="email" name="cor_ado" id="cor_ado" placeholder="Correo:" minlength="1" maxlength="100" class="<?php echo $obj_for->input_normal; ?>">
+								<label for="cor_ado" class="<?php echo $obj_for->for; ?>">Correo:</label>
+								<input type="email" name="cor_ado" id="cor_ado" placeholder="Correo:"  class="<?php echo $obj_for->input_normal; ?>">
 							</div>
 						</div>
 					</div>

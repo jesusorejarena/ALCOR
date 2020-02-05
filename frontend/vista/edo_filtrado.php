@@ -33,14 +33,16 @@
 									<th>Nombre</th>
 									<th>Descripción</th>
 									<th>Dirección</th>
-									<th>Telefono</th>
+									<th>Teléfono</th>
 									<th>Correo</th>
 									<th>Tipo</th>
 									<th>RIF</th>
-									<th>Registro</th>
-									<th>Ultima Modificación</th>
-									<th>Fecha de Eliminación</th>
+									<th>Fecha de registro</th>
+									<th>Ultima modificación</th>
+									<th>Fecha de eliminación</th>
+									<th>Fecha de restauración</th>
 									<th>Estado</th>
+									<th>Reporte PDF</th>
 									<th>Editar</th>
 									<th>Restaurar</th>
 									<th>Eliminar</th>
@@ -64,7 +66,9 @@
 													<td>$proveedor[cre_edo]</td>
 													<td>$proveedor[act_edo]</td>
 													<td>$proveedor[eli_edo]</td>
+													<td>$proveedor[res_edo]</td>
 													<td>$proveedor[bas_edo]</td>
+													<td><a class='$obj_edo->btn_eliminar' href=''>PDF</a></td>
 													<td><a class='$obj_edo->btn_editar' href='edo_modificar.php?cod_edo=$proveedor[cod_edo]'>Editar</a></td>
 													<td><button type='submit' class='$obj_edo->btn_restaurar' name='ejecutar' value='modificar_restaurar'>Restaurar</button></td>
 													<td><button type='submit' class='$obj_edo->btn_eliminar' name='ejecutar' value='modificar_eliminar'>Eliminar</button></td>

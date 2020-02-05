@@ -26,52 +26,56 @@
 					<div class="row p-3">
 						<div class="col-12">
 							<div class="form-group">
-								<label for="nom_ado" class="text-white text-left h5">Nombre:</label>
-								<input type="text" name="nom_ado" id="nom_ado" placeholder="Nombre:" minlength="3" maxlength="50" require="" class="<?php echo $obj_emp->input_normal; ?>">
+								<label for="nom_emp" class="<?php echo $obj_emp->for; ?>">Nombre:</label>
+								<input type="text" name="nom_emp" id="nom_emp" placeholder="Nombre:" minlength="3" maxlength="50" required="" class="<?php echo $obj_emp->input_normal; ?>">
 							</div>
 						</div>
 					</div>
 					<div class="row p-3">
 						<div class="col-6">
 							<div class="form-group">
-								<label for="gen_ado" class="text-white text-left h5">Telefono:</label>
-								<input type="text" name="nom_ado" id="nom_ado" placeholder="Telefono:" minlength="3" maxlength="50" require="" class="<?php echo $obj_emp->input_normal; ?>">
+								<label for="tel_emp" class="<?php echo $obj_emp->for; ?>">Teléfono:</label>
+								<input type="text" name="tel_emp" id="tel_emp" placeholder="Teléfono:" minlength="11" maxlength="13" required="" class="<?php echo $obj_emp->input_normal; ?>">
+								<small id="hou_emp" class="<?php echo $obj_emp->small; ?>">Ejemplo: +584147528826</small>
 							</div>
 						</div>
 						<div class="col-6">
 							<div class="form-group">
-								<label for="tel_ado" class="text-white text-left h5">RIF:</label>
-								<input type="text" name="nom_ado" id="nom_ado" placeholder="RIF:" minlength="3" maxlength="50" require="" class="<?php echo $obj_emp->input_normal; ?>">
-							</div>
-						</div>
-					</div>
-					<div class="row p-3">
-						<div class="col-12">
-							<div class="form-group">
-								<label for="nac_ado" class="text-white text-left h5">Dirección:</label>
-								<input type="text" name="nom_ado" id="nom_ado" placeholder="Dirección:" minlength="3" maxlength="50" require="" class="<?php echo $obj_emp->input_normal; ?>">
+								<label for="rif_emp" class="<?php echo $obj_emp->for; ?>">RIF:</label>
+								<input type="text" name="rif_emp" id="rif_emp" placeholder="RIF:" minlength="12" maxlength="12" required="" class="<?php echo $obj_emp->input_normal; ?>">
+								<small id="rif_emp" class="<?php echo $obj_emp->small; ?>">Ejemplo: J-30161557-3</small>
 							</div>
 						</div>
 					</div>
 					<div class="row p-3">
 						<div class="col-12">
 							<div class="form-group">
-								<label for="tip_ado" class="text-white text-left h5">Correo:</label>
-								<input type="text" name="nom_ado" id="nom_ado" placeholder="Correo:" minlength="3" maxlength="50" require="" class="<?php echo $obj_emp->input_normal; ?>">
+								<label for="dir_emp" class="<?php echo $obj_emp->for; ?>">Dirección:</label>
+								<input type="text" name="dir_emp" id="dir_emp" placeholder="Dirección:" minlength="3" maxlength="100" required="" class="<?php echo $obj_emp->input_normal; ?>">
+							</div>
+						</div>
+					</div>
+					<div class="row p-3">
+						<div class="col-12">
+							<div class="form-group">
+								<label for="cor_emp" class="<?php echo $obj_emp->for; ?>">Correo:</label>
+								<input type="email" name="cor_emp" id="cor_emp" placeholder="Correo:" minlength="3" maxlength="100" required="" class="<?php echo $obj_emp->input_normal; ?>">
 							</div>
 						</div>
 					</div>
 					<div class="row p-3">
 						<div class="col-6">
 							<div class="form-group">
-								<label for="cor_ado" class="text-white text-left h5">Horario Uno:</label>
-								<input type="text" name="nom_ado" id="nom_ado" placeholder="Horario Uno:" minlength="3" maxlength="50" require="" class="<?php echo $obj_emp->input_normal; ?>">
+								<label for="hou_emp" class="<?php echo $obj_emp->for; ?>">Horario Uno:</label>
+								<input type="text" name="hou_emp" id="hou_emp" placeholder="Horario Uno:" minlength="3" maxlength="19" required="" class="<?php echo $obj_emp->input_normal; ?>">
+								<small id="hou_emp" class="<?php echo $obj_emp->small; ?>">Ejemplo: 08:00 AM - 12:00 PM</small>
 							</div>
 						</div>
 						<div class="col-6">
 							<div class="form-group">
-								<label for="car_ado" class="text-white text-left h5">Horario Dos:</label>
-								<input type="text" name="nom_ado" id="nom_ado" placeholder="Horario Dos:" minlength="3" maxlength="50" require="" class="<?php echo $obj_emp->input_normal; ?>">
+								<label for="hod_emp" class="<?php echo $obj_emp->for; ?>">Horario Dos:</label>
+								<input type="text" name="hod_emp" id="hod_emp" placeholder="Horario Dos:" minlength="3" maxlength="19" class="<?php echo $obj_emp->input_normal; ?>">
+								<small id="hod_emp" class="<?php echo $obj_emp->small; ?>">Ejemplo: 02:00 PM - 06:00 PM</small>
 							</div>
 						</div>
 					</div>

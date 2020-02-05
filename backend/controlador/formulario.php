@@ -11,9 +11,6 @@
 		case 'insertar':			$obj_for->insertar();
 		break;
 
-		case 'modificar_eliminar':	$obj_for->modificar_eliminar();
-		break;
-
 		case 'eliminar':			$obj_for->eliminar();
 		break;
 	}

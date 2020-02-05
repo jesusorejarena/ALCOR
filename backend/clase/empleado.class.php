@@ -10,15 +10,16 @@
 		gen_ado		VARCHAR(1)		NO						->	Genero del Empleado
 		nac_ado		DATE 			NO						->	Fecha de Nacimiento del Empleado
 		tip_ado		VARCHAR(1)		NO						->	Tipo de Cedula del Empleado
-		ced_ado		VARCHAR(8)		NO						->	Cedula del Empleado
-		tel_ado		VARCHAR(12)		NO						->	Telefono del Empleado
-		cor_ado		VARCHAR(100)	NO						->	Correo del Empleado
+		ced_ado		INT(8)			NO		UNIQUE			->	Cedula del Empleado
+		tel_ado		INT(11)			NO						->	Teléfono del Empleado
+		cor_ado		VARCHAR(100)	NO		UNIQUE			->	Correo del Empleado
 		car_ado		INT(11) 		NO						->	Cargo del Empleado
-		cla_ado		VARCHAR(20)		SI						->	Clave del Empleado Solo Vendedor
+		cla_ado		VARCHAR(40)		SI						->	Clave del Empleado Solo Vendedor
 		dir_ado		VARCHAR(100)	NO						->	Direccion del Empleado
-		cre_ado		DATETIME		NO						->	Contrato del Empleado
-		act_ado		DATETIME  		SI						->	Actulizacion del Empleado
-		eli_ado		DATETIME  		SI						->	Eliminado del Empleado
+		cre_ado		DATETIME		NO						->	Fecha de Contrato del Empleado
+		act_ado		DATETIME  		SI						->	Fecha de Actulizacion del Empleado
+		eli_ado		DATETIME  		SI						->	Fecha de Eliminado del Empleado
+		res_ado		DATETIME		SI						->	Fecha de Restauración del Empleado
 		est_ado		VARCHAR(1) 		NO						->	Estatus del Empleado
 		bas_ado		VARCHAR(1) 		NO						->	Basura del Empleado
 
@@ -112,8 +113,11 @@
 
 		function modificar_restaurar()
 		{
+			$res_ado = date("y-m-d h:i:s");
+
 			$this->que_bda = "update empleado
 								set
+									res_ado='$res_ado',
 									bas_ado='A'
 								where
 									cod_ado='$this->cod_ado';";
@@ -139,7 +143,7 @@
 
 		function listar_normal()
 		{
-			$this->que_bda = "select * from empleado where bas_ado='A'";
+			$this->que_bda = "select * from empleado where bas_ado='A';";
 
 			return $this->ejecutar();
 
@@ -147,7 +151,7 @@
 
 		function listar_modificar()
 		{
-			$this->que_bda = "select * from empleado where bas_ado='A' and cod_ado='$this->cod_ado'";
+			$this->que_bda = "select * from empleado where cod_ado='$this->cod_ado';";
 
 			return $this->ejecutar();
 
@@ -155,26 +159,26 @@
 
 		function listar_eliminar()
 		{
-			$this->que_bda = "select * from empleado where bas_ado='B'";
+			$this->que_bda = "select * from empleado where bas_ado='B';";
 
 			return $this->ejecutar();
 
 		}// fin de listar eliminar
 
-		function listar_session($ced_ado, $cla_ado)
+		function listar_sesion($cor_ado, $cla_ado)
 		{
-			$this->que_bda = "select ced_ado, cla_ado, est_ado, bas_ado 
+			$this->que_bda = "select cor_ado, cla_ado, est_ado, bas_ado 
 									from 
 										empleado 
 									where 
-										ced_ado='$ced_ado' and 
+										cor_ado='$cor_ado' and 
 										cla_ado='$cla_ado' and 
 										est_ado='A' and 
 										bas_ado='A';";
 
 			return $this->ejecutar();
 
-		}// fin de listar session
+		}// fin de listar sesion
 
 		function eliminar()
 		{

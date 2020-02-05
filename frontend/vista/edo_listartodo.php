@@ -28,15 +28,19 @@
 						<table class="<?php echo $obj_edo->tabla; ?>">
 							<thead>
 								<tr>
+									<th>Código</th>
 									<th>Nombre</th>
 									<th>Descripción</th>
 									<th>Dirección</th>
-									<th>Telefono</th>
+									<th>Teléfono</th>
 									<th>Correo</th>
 									<th>Tipo</th>
 									<th>RIF</th>
-									<th>Registro</th>
-									<th>Ultima Modificación</th>
+									<th>Fecha de registro</th>
+									<th>Ultima modificación</th>
+									<th>Fecha de eliminación</th>
+									<th>Fecha de restauración</th>
+									<th>Reporte PDF</th>
 									<th>Editar</th>
 									<th>Eliminar</th>
 								</tr>
@@ -48,6 +52,7 @@
 										echo "<form action='../../backend/controlador/proveedor.php' method='POST'>
 												<tr>
 													<input type='hidden' name='cod_edo' value='$proveedor[cod_edo]'>
+													<td>$proveedor[cod_edo]</td>
 													<td>$proveedor[nom_edo]</td>
 													<td>$proveedor[des_edo]</td>
 													<td>$proveedor[dir_edo]</td>
@@ -57,6 +62,9 @@
 													<td>$proveedor[rif_edo]</td>
 													<td>$proveedor[cre_edo]</td>
 													<td>$proveedor[act_edo]</td>
+													<td>$proveedor[eli_edo]</td>
+													<td>$proveedor[res_edo]</td>
+													<td><a class='$obj_edo->btn_eliminar' href=''>PDF</a></td>
 													<td><a class='$obj_edo->btn_editar' href='edo_modificar.php?cod_edo=$proveedor[cod_edo]'>Editar</a></td>
 													<td><button type='submit' class='$obj_edo->btn_eliminar' name='ejecutar' value='modificar_eliminar'>Eliminar</button></td>
 												</tr>

@@ -29,21 +29,24 @@
 						<table class="<?php echo $obj_ado->tabla; ?>">
 							<thead>
 								<tr>
+									<th>Código</th>
 									<th>Nombre</th>
 									<th>Apellido</th>
 									<th>Genero</th>
 									<th>Fecha de Nacimiento</th>
 									<th>Tipo</th>
 									<th>Cédula</th>
-									<th>Telefono</th>
+									<th>Teléfono</th>
 									<th>Correo</th>
 									<th>Cargo</th>
 									<th>Dirección</th>
-									<th>Fecha de Contrato</th>
-									<th>Ultima Modificación</th>
-									<th>Fecha de Eliminación</th>
+									<th>Fecha de contrato</th>
+									<th>Ultima modificación</th>
+									<th>Fecha de eliminación</th>
+									<th>Fecha de restauración</th>
 									<th>Estatus</th>
 									<th>Estado</th>
+									<th>Reporte PDF</th>
 									<th>Editar</th>
 									<th>Restaurar</th>
 									<th>Eliminar</th>
@@ -56,6 +59,7 @@
 										echo "<form action='../../backend/controlador/empleado.php' method='POST'>
 												<tr>
 													<input type='hidden' name='cod_ado' value='$empleado[cod_ado]'>
+													<td>$empleado[cod_ado]</td>
 													<td>$empleado[nom_ado]</td>
 													<td>$empleado[ape_ado]</td>
 													<td>$empleado[gen_ado]</td>
@@ -69,8 +73,10 @@
 													<td>$empleado[cre_ado]</td>
 													<td>$empleado[act_ado]</td>
 													<td>$empleado[eli_ado]</td>
+													<td>$empleado[res_ado]</td>
 													<td>$empleado[est_ado]</td>
 													<td>$empleado[bas_ado]</td>
+													<td><a class='$obj_ado->btn_eliminar' href='ado_reportepdf.php?cod_ado=$empleado[cod_ado]'>PDF</a></td>
 													<td><a class='$obj_ado->btn_editar' href='ado_modificar.php?cod_ado=$empleado[cod_ado]'>Editar</a></td>
 													<td><button type='submit' class='$obj_ado->btn_restaurar' name='ejecutar' value='modificar_restaurar'>Restaurar</button></td>
 													<td><button type='submit' class='$obj_ado->btn_eliminar' name='ejecutar' value='modificar_eliminar'>Eliminar</button></td>

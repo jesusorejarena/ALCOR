@@ -13,9 +13,6 @@
 
 		case 'modificar_normal':	$obj_emp->modificar_normal();
 		break;
-
-		case 'eliminar':			$obj_emp->eliminar();
-		break;
 	}
 	
 ?>

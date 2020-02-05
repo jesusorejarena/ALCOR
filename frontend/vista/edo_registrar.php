@@ -26,15 +26,15 @@
 					<div class="row p-3">
 						<div class="col-12">
 							<div class="form-group">
-								<label for="nom_edo" class="text-white text-left h5">Nombre:</label>
-								<input type="text" name="nom_edo" id="nom_edo" placeholder="Nombre:" minlength="2" maxlength="50" require="" class="<?php echo $obj_edo->input_normal; ?>">
+								<label for="nom_edo" class="<?php echo $obj_edo->for; ?>">Nombre:</label>
+								<input type="text" name="nom_edo" id="nom_edo" placeholder="Nombre:" minlength="2" maxlength="50" required="" class="<?php echo $obj_edo->input_normal; ?>">
 							</div>
 						</div>
 					</div>
 					<div class="row p-3">
 						<div class="col-12">
 							<div class="form-group">
-								<label for="des_edo" class="text-white text-left h5">Descripción:</label>
+								<label for="des_edo" class="<?php echo $obj_edo->for; ?>">Descripción:</label>
 								<textarea name="des_edo" id="des_edo" placeholder="Descripción:" minlength="3" maxlength="100" class="<?php echo $obj_edo->input_text; ?>"></textarea>
 							</div>
 						</div>
@@ -42,7 +42,7 @@
 					<div class="row p-3">
 						<div class="col-12">
 							<div class="form-group">
-								<label for="dir_edo" class="text-white text-left h5">Dirección:</label>
+								<label for="dir_edo" class="<?php echo $obj_edo->for; ?>">Dirección:</label>
 								<textarea name="dir_edo" id="dir_edo" placeholder="Dirección:" minlength="3" maxlength="100" required="" class="<?php echo $obj_edo->input_text; ?>"></textarea>
 							</div>
 						</div>
@@ -50,21 +50,21 @@
 					<div class="row p-3">
 						<div class="col-6">
 							<div class="form-group">
-								<label for="tel_edo" class="text-white text-left h5">Telefono:</label>
-								<input type="text" name="tel_edo" id="tel_edo" placeholder="Telefono:" minlength="11" maxlength="11" require="" class="<?php echo $obj_edo->input_normal; ?>">
+								<label for="tel_edo" class="<?php echo $obj_edo->for; ?>">Teléfono:</label>
+								<input type="text" name="tel_edo" id="tel_edo" placeholder="Teléfono:" minlength="11" maxlength="11" required="" class="<?php echo $obj_edo->input_normal; ?>">
 							</div>
 						</div>
 						<div class="col-6">
 							<div class="form-group">
-								<label for="cor_edo" class="text-white text-left h5">Correo:</label>
-								<input type="email" name="cor_edo" id="cor_edo" placeholder="Correo:" minlength="1" maxlength="100" require="" class="<?php echo $obj_edo->input_normal; ?>">
+								<label for="cor_edo" class="<?php echo $obj_edo->for; ?>">Correo:</label>
+								<input type="email" name="cor_edo" id="cor_edo" placeholder="Correo:" minlength="1" maxlength="100" required="" class="<?php echo $obj_edo->input_normal; ?>">
 							</div>
 						</div>
 					</div>
 					<div class="row p-3">
 						<div class="col-6">
 							<div class="form-group">
-								<label for="tip_edo" class="text-white text-left h5">Tipo:</label>
+								<label for="tip_edo" class="<?php echo $obj_edo->for; ?>">Tipo:</label>
 								<select name="tip_edo" id="tip_edo" class="<?php echo $obj_edo->input_normal; ?>">
 									<option value="">Seleccione...</option>
 									<option value="V">Venezolano</option>
@@ -75,8 +75,8 @@
 						</div>
 						<div class="col-6">
 							<div class="form-group">
-								<label for="rif_edo" class="text-white text-left h5">RIF:</label>
-								<input type="text" name="rif_edo" id="rif_edo" placeholder="RIF:" minlength="9" maxlength="9" require="" class="<?php echo $obj_edo->input_normal; ?>">
+								<label for="rif_edo" class="<?php echo $obj_edo->for; ?>">RIF:</label>
+								<input type="text" name="rif_edo" id="rif_edo" placeholder="RIF:" minlength="9" maxlength="9" required="" class="<?php echo $obj_edo->input_normal; ?>">
 							</div>
 						</div>
 					</div>

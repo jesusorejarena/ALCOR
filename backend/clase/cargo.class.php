@@ -4,12 +4,13 @@
 
 		cod_car, nom_car
 
-		cod_car			INT(11)			NO		A_I		PK		->	Codigo del Cargo
-		nom_car			VARCHAR(30)		NO						->	Nombre del Cargo
-		cre_car			DATETIME		NO						->	Fecha de Creado del Cargo
-		act_car			DATETIME		SI						->	Fecha de Modificado del Cargo
-		eli_car			DATETIME		SI						->	Fecha de Eliminado del Cargo
-		bas_car			VARCHAR(1)		NO						->	Basura del Cargo
+		cod_car			INT(11)			NO		A_I		PK			->	Codigo del Cargo
+		nom_car			VARCHAR(30)		NO		Unique				->	Nombre del Cargo
+		cre_car			DATETIME		NO							->	Fecha de Creado del Cargo
+		act_car			DATETIME		SI							->	Fecha de Modificado del Cargo
+		eli_car			DATETIME		SI							->	Fecha de Eliminado del Cargo
+		res_car			DATETIME		SI							->	Fecha de Restauración del Cargo
+		bas_car			VARCHAR(1)		NO							->	Basura del Cargo
 		
 	*/
 
@@ -38,7 +39,7 @@
 
 			return $this->ejecutar();
 
-		}
+		}// fin de insertar
 
 		function modificar_normal()
 		{
@@ -53,12 +54,15 @@
 
 			return $this->ejecutar();
 
-		}// hasta aqui el modificar normal
+		}// fin de modificar normal
 
 		function modificar_restaurar()
 		{
+			$res_car = date("y-m-d h:i:s");
+
 			$this->que_bda = "update cargo
 								set
+									res_car='$res_car',
 									bas_car='A'
 								where
 									cod_car='$this->cod_car';";
@@ -90,14 +94,6 @@
 
 		}// fin de listar normal
 
-		function listar_eliminar()
-		{
-			$this->que_bda = "select * from cargo where bas_car='B';";
-
-			return $this->ejecutar();
-
-		}// fin de listar normal
-
 		function listar_modificar()
 		{
 			$this->que_bda = "select * from cargo where cod_car='$this->cod_car';";
@@ -105,6 +101,14 @@
 			return $this->ejecutar();
 
 		}// fin de listar modificar
+
+		function listar_eliminar()
+		{
+			$this->que_bda = "select * from cargo where bas_car='B';";
+
+			return $this->ejecutar();
+
+		}// fin de listar eliminar
 
 		function eliminar()
 		{
@@ -114,7 +118,7 @@
 
 			return $this->ejecutar();
 
-		}
+		}// fin de eliminar
 
 		function filtrar()
 		{
@@ -127,7 +131,7 @@
 
 			return $this->ejecutar();
 
-		}
+		}// fin de filtrar
 
 	}
 

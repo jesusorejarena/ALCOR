@@ -4,21 +4,21 @@
 
 	$obj_ado = new empleado;
 
-	$cedula=$_POST['ced_ado'];
+	$correo=$_POST['cor_ado'];
 	$clave=$_POST['cla_ado'];
 
-	$obj_ado->puntero=$obj_ado->listar_session($cedula, $clave);
+	$obj_ado->puntero=$obj_ado->listar_session($correo, $clave);
 
 
 	switch ($_REQUEST["ejecutar"])
 	{
 		case 'session':		$usuarios=$obj_ado->extraer_dato();
 
-							if($usuarios['ced_ado']==$cedula && $usuarios['cla_ado']==$clave && $usuarios['est_ado']=='A' && $usuarios['bas_ado']=='A')
+							if($usuarios['cor_ado']==$correo && $usuarios['cla_ado']==$clave && $usuarios['est_ado']=='A' && $usuarios['bas_ado']=='A')
 							{
 								session_start();
 								$_SESSION['activo'] = true;
-								$_SESSION['cedula'] = $cedula;
+								$_SESSION['correo'] = $correo;
 
 								header('Location: ../../frontend/vista/menu_principal.php');
 							}

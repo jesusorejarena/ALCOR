@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 27-01-2020 a las 23:09:57
+-- Tiempo de generación: 04-02-2020 a las 01:32:50
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.1
 
@@ -30,7 +30,12 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `cargo` (
   `cod_car` int(11) NOT NULL,
-  `nom_car` varchar(30) NOT NULL
+  `nom_car` varchar(30) NOT NULL,
+  `cre_car` datetime NOT NULL DEFAULT current_timestamp(),
+  `act_car` datetime DEFAULT NULL,
+  `eli_car` datetime DEFAULT NULL,
+  `res_car` datetime DEFAULT NULL,
+  `bas_car` varchar(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -46,15 +51,16 @@ CREATE TABLE `empleado` (
   `gen_ado` varchar(1) NOT NULL,
   `nac_ado` date NOT NULL DEFAULT current_timestamp(),
   `tip_ado` varchar(1) NOT NULL,
-  `ced_ado` varchar(8) NOT NULL,
-  `tel_ado` varchar(11) NOT NULL,
+  `ced_ado` int(8) NOT NULL,
+  `tel_ado` int(11) NOT NULL,
   `cor_ado` varchar(100) NOT NULL,
-  `cla_ado` varchar(20) DEFAULT NULL,
+  `cla_ado` varchar(40) DEFAULT NULL,
   `dir_ado` varchar(100) NOT NULL,
   `car_ado` int(11) NOT NULL,
   `cre_ado` datetime NOT NULL DEFAULT current_timestamp(),
   `act_ado` datetime DEFAULT NULL,
   `eli_ado` datetime DEFAULT NULL,
+  `res_ado` datetime DEFAULT NULL,
   `est_ado` varchar(1) NOT NULL,
   `bas_ado` varchar(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -68,13 +74,20 @@ CREATE TABLE `empleado` (
 CREATE TABLE `empresa` (
   `cod_emp` int(11) NOT NULL,
   `nom_emp` varchar(50) NOT NULL,
-  `tel_emp` varchar(12) NOT NULL,
+  `tel_emp` varchar(13) NOT NULL,
   `dir_emp` varchar(100) NOT NULL,
   `cor_emp` varchar(100) NOT NULL,
   `rif_emp` varchar(12) NOT NULL,
   `hou_emp` varchar(19) NOT NULL,
   `hod_emp` varchar(19) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `empresa`
+--
+
+INSERT INTO `empresa` (`cod_emp`, `nom_emp`, `tel_emp`, `dir_emp`, `cor_emp`, `rif_emp`, `hou_emp`, `hod_emp`) VALUES
+(1, 'SADASD', '213123', 'ASDASDAD', 'ASDFSA@ADASD.COMD', '321', '213123', '42132');
 
 -- --------------------------------------------------------
 
@@ -101,13 +114,14 @@ CREATE TABLE `formulario` (
 CREATE TABLE `producto` (
   `cod_pro` int(11) NOT NULL,
   `nom_pro` varchar(50) NOT NULL,
-  `ser_pro` int(10) NOT NULL,
+  `ser_pro` varchar(10) NOT NULL,
   `des_pro` varchar(100) DEFAULT NULL,
   `pre_pro` float(11,2) NOT NULL,
-  `can_pro` int(11) NOT NULL,
+  `can_pro` float(11,2) NOT NULL,
   `cre_pro` datetime NOT NULL DEFAULT current_timestamp(),
   `act_pro` datetime DEFAULT NULL,
   `eli_pro` datetime DEFAULT NULL,
+  `res_pro` datetime DEFAULT NULL,
   `bas_pro` varchar(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -122,13 +136,14 @@ CREATE TABLE `proveedor` (
   `nom_edo` varchar(50) NOT NULL,
   `des_edo` varchar(100) DEFAULT NULL,
   `dir_edo` varchar(100) NOT NULL,
-  `tel_edo` varchar(11) NOT NULL,
+  `tel_edo` int(11) NOT NULL,
   `cor_edo` varchar(100) NOT NULL,
   `tip_edo` varchar(1) NOT NULL,
   `rif_edo` varchar(9) NOT NULL,
   `cre_edo` datetime NOT NULL DEFAULT current_timestamp(),
   `act_edo` datetime DEFAULT NULL,
   `eli_edo` datetime DEFAULT NULL,
+  `res_edo` datetime DEFAULT NULL,
   `bas_edo` varchar(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -152,7 +167,8 @@ CREATE TABLE `prov_prod` (
 -- Indices de la tabla `cargo`
 --
 ALTER TABLE `cargo`
-  ADD PRIMARY KEY (`cod_car`);
+  ADD PRIMARY KEY (`cod_car`),
+  ADD UNIQUE KEY `nom_car` (`nom_car`);
 
 --
 -- Indices de la tabla `empleado`
@@ -160,7 +176,6 @@ ALTER TABLE `cargo`
 ALTER TABLE `empleado`
   ADD PRIMARY KEY (`cod_ado`),
   ADD UNIQUE KEY `ced_ado` (`ced_ado`,`cor_ado`),
-  ADD KEY `est_emp` (`est_ado`),
   ADD KEY `car_ado` (`car_ado`);
 
 --
@@ -180,15 +195,16 @@ ALTER TABLE `formulario`
 --
 ALTER TABLE `producto`
   ADD PRIMARY KEY (`cod_pro`),
-  ADD UNIQUE KEY `ser_pro` (`ser_pro`),
-  ADD KEY `nom_pro` (`nom_pro`);
+  ADD UNIQUE KEY `nom_pro` (`nom_pro`),
+  ADD UNIQUE KEY `ser_pro` (`ser_pro`);
 
 --
 -- Indices de la tabla `proveedor`
 --
 ALTER TABLE `proveedor`
   ADD PRIMARY KEY (`cod_edo`),
-  ADD UNIQUE KEY `cor_edo` (`cor_edo`,`rif_edo`);
+  ADD UNIQUE KEY `cor_edo` (`cor_edo`,`rif_edo`),
+  ADD UNIQUE KEY `nom_edo` (`nom_edo`);
 
 --
 -- Indices de la tabla `prov_prod`
@@ -212,13 +228,13 @@ ALTER TABLE `cargo`
 -- AUTO_INCREMENT de la tabla `empleado`
 --
 ALTER TABLE `empleado`
-  MODIFY `cod_ado` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `cod_ado` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `empresa`
 --
 ALTER TABLE `empresa`
-  MODIFY `cod_emp` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `cod_emp` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `formulario`

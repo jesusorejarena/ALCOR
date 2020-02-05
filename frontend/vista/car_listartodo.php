@@ -30,8 +30,10 @@
 								<tr>
 									<th>Código</th>
 									<th>Nombre</th>
-									<th>Fecha de Creación</th>
-									<th>Ultima Modificación</th>
+									<th>Fecha de creación</th>
+									<th>Ultima modificación</th>
+									<th>Fecha de eliminado</th>
+									<th>Fecha de restauración</th>
 									<th>Editar</th>
 									<th>Eliminar</th>
 								</tr>
@@ -47,6 +49,8 @@
 													<td>$cargo[nom_car]</td>
 													<td>$cargo[cre_car]</td>
 													<td>$cargo[act_car]</td>
+													<td>$cargo[eli_car]</td>
+													<td>$cargo[res_car]</td>
 													<td><a class='$obj_car->btn_editar' href='car_modificar.php?cod_car=$cargo[cod_car]'>Editar</a></td>
 													<td><button type='submit' class='$obj_car->btn_eliminar' name='ejecutar' value='modificar_eliminar'>Eliminar</button></td>
 												</tr>

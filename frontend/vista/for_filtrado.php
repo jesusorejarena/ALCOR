@@ -32,7 +32,7 @@
 									<th>Código</th>
 									<th>Nombre</th>
 									<th>Apellido</th>
-									<th>Telefono</th>
+									<th>Teléfono</th>
 									<th>Correo</th>
 									<th>Asunto</th>
 									<th>Fecha de Registro</th>
