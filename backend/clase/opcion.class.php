@@ -2,11 +2,11 @@
 
 	/*
 
-		cod_opc, nom_opc, des_opc, url_opc
+		cod_opc, nom_opc, acc_opc, url_opc
 
 		cod_opc			INT(11)			NO		A_I		PK			->	Codigo del Opcion
 		nom_opc			VARCHAR(20)		NO							->	Nombre del Opcion
-		des_opc			VARCHAR(50)		Si							->	Descripcion del Opcion
+		acc_opc			VARCHAR(20)		Si							->	Acción de la Opcion
 		url_opc			VARCHAR(100)	NO							->	URL del Opcion
 		
 	*/
@@ -18,7 +18,7 @@
 
 		public $cod_opc;
 		public $nom_opc;
-		public $des_opc;
+		public $acc_opc;
 		public $url_opc;
 
 		
@@ -27,11 +27,11 @@
 
 			$this->que_bda = "insert into opcion
 								(nom_opc,
-								des_opc,
+								acc_opc,
 								url_opc)
 							values
 								('$this->nom_opc',
-								'$this->des_opc',
+								'$this->acc_opc',
 								'$this->url_opc');";
 
 			return $this->ejecutar();
@@ -44,7 +44,7 @@
 			$this->que_bda = "update opcion
 							set 
 								nom_opc='$this->nom_opc',
-								des_opc='$this->des_opc',
+								acc_opc='$this->acc_opc',
 								url_opc='$this->url_opc'
 							where
 								cod_opc='$this->cod_opc';";
@@ -84,7 +84,7 @@
 
 			$filtro1=($this->cod_opc!="")?"and cod_opc='$this->cod_opc'":"";
 			$filtro2=($this->nom_opc!="")?"and nom_opc like '%$this->nom_opc%'":"";
-			$filtro3=($this->des_opc!="")?"and des_opc like '%$this->des_opc%'":"";
+			$filtro3=($this->acc_opc!="")?"and acc_opc like '%$this->acc_opc%'":"";
 			
 			$this->que_bda = "select * from opcion where	1=1 $filtro1 $filtro2 $filtro3;";
 

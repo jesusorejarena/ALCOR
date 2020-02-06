@@ -39,8 +39,8 @@
 						</div>
 						<div class="col-6">
 							<div class="form-group">
-								<label for="des_opc" class="<?php echo $obj_opc->for; ?>">Descripción:</label>
-								<input type="text" name="des_opc" id="des_opc" placeholder="Descripción:" minlength="3" maxlength="50" required="" value="<?php echo $opcion['des_opc']; ?>" class="<?php echo $obj_opc->input_normal; ?>">
+								<label for="acc_opc" class="<?php echo $obj_opc->for; ?>">Descripción:</label>
+								<input type="text" name="acc_opc" id="acc_opc" placeholder="Descripción:" minlength="3" maxlength="50" required="" value="<?php echo $opcion['acc_opc']; ?>" class="<?php echo $obj_opc->input_normal; ?>">
 							</div>
 						</div>
 					</div>

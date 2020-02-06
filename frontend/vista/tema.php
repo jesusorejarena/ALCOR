@@ -55,13 +55,10 @@
 											<a href='menu_principal.php' class='nav-link'>Inicio</a>
 										</li>
 										<li class='nav-item btn btn-sm'>
-											<a href='rol_menu.php' class='nav-link'>Roles</a>
-										</li>
-										<li class='nav-item btn btn-sm'>
 											<a href='emp_menu.php' class='nav-link'>Empresa</a>
 										</li>
 										<li class='nav-item btn btn-sm'>
-											<a href='car_menu.php' class='nav-link'>Cargos</a>
+											<a href='rol_menu.php' class='nav-link'>Roles</a>
 										</li>
 										<li class='nav-item btn btn-sm'>
 											<a href='ado_menu.php' class='nav-link'>Empleados</a>

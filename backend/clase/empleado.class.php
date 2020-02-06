@@ -2,7 +2,7 @@
 	
 	/*
 
-		cod_ado, nom_ado, ape_ado, ced_ado, tel_ado, cor_ado, dir_ado, car_ado, cre_ado, act_ado, eli_ado ,est_ado, bas_ado
+		cod_ado, nom_ado, ape_ado, ced_ado, tel_ado, cor_ado, dir_ado, cod_car, cre_ado, act_ado, eli_ado ,est_ado, bas_ado
 
 		cod_ado		INT(11)			NO		A_I		PK		->	Codigo del Empleado
 		nom_ado		VARCHAR(50)		NO						->	Nombre del Empleado
@@ -13,7 +13,7 @@
 		ced_ado		INT(8)			NO		UNIQUE			->	Cedula del Empleado
 		tel_ado		INT(11)			NO						->	Teléfono del Empleado
 		cor_ado		VARCHAR(100)	NO		UNIQUE			->	Correo del Empleado
-		car_ado		INT(11) 		NO						->	Cargo del Empleado
+		cod_car		INT(11) 		NO						->	Cargo del Empleado
 		cla_ado		VARCHAR(40)		SI						->	Clave del Empleado Solo Vendedor
 		dir_ado		VARCHAR(100)	NO						->	Direccion del Empleado
 		cre_ado		DATETIME		NO						->	Fecha de Contrato del Empleado
@@ -41,7 +41,7 @@
 		public $cor_ado;
 		public $cla_ado;
 		public $dir_ado;
-		public $car_ado;
+		public $cod_car;
 		public $est_ado;
 		public $bas_ado;
 		
@@ -61,7 +61,7 @@
 								cor_ado, 
 								cla_ado, 
 								dir_ado, 
-								car_ado, 
+								cod_car, 
 								cre_ado,
 								est_ado,
 								bas_ado)
@@ -76,7 +76,7 @@
 								'$this->cor_ado',  
 								'$this->cla_ado', 
 								'$this->dir_ado', 
-								'$this->car_ado', 
+								'$this->cod_car', 
 								'$cre_ado',
 								'A',
 								'A');";
@@ -101,7 +101,7 @@
 									cor_ado='$this->cor_ado',
 									cla_ado='$this->cla_ado',
 									dir_ado='$this->dir_ado',
-									car_ado='$this->car_ado',
+									cod_car='$this->cod_car',
 									act_ado='$act_ado',
 									est_ado='$this->est_ado'
 								where
@@ -204,7 +204,7 @@
 			$filtro7=($this->tel_ado!="")?"and tel_ado like '%$this->tel_ado%'":"";
 			$filtro8=($this->cor_ado!="")?"and cor_ado like '%$this->cor_ado%'":"";
 			$filtro9=($this->dir_ado!="")?"and dir_ado like '%$this->dir_ado%'":"";
-			$filtro10=($this->car_ado!="")?"and car_ado='$this->car_ado'":"";
+			$filtro10=($this->cod_car!="")?"and cod_car='$this->cod_car'":"";
 			$filtro11=($this->est_ado!="")?"and est_ado='$this->est_ado'":"";
 			$filtro12=($this->bas_ado!="")?"and bas_ado='$this->bas_ado'":"";
 

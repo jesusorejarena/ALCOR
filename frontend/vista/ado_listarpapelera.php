@@ -61,7 +61,7 @@
 													<td>$empleado[ced_ado]</td>
 													<td>$empleado[tel_ado]</td>
 													<td>$empleado[cor_ado]</td>
-													<td>$empleado[car_ado]</td>
+													<td>$empleado[cod_car]</td>
 													<td>$empleado[dir_ado]</td>
 													<td>$empleado[cre_ado]</td>
 													<td>$empleado[act_ado]</td>
@@ -146,8 +146,8 @@
 						</div>
 						<div class="col-6">
 							<div class="form-group">
-								<label for="car_ado" class="<?php echo $obj_emp->for; ?>">Cargo:</label>
-								<select name="car_ado" id="car_ado" class="<?php echo $obj_ado->input_normal; ?>">
+								<label for="cod_car" class="<?php echo $obj_emp->for; ?>">Cargo:</label>
+								<select name="cod_car" id="cod_car" class="<?php echo $obj_ado->input_normal; ?>">
 									<option value="">Seleccione...</option>
 									<?php/* while (($cargo=$obj_car->extraer_dato())>0)
 										{

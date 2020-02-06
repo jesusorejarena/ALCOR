@@ -30,7 +30,7 @@
 								<tr>
 									<th>Código</th>
 									<th>Nombre</th>
-									<th>Descripción</th>
+									<th>Acción</th>
 									<th>URL</th>
 									<th>Editar</th>
 									<th>Eliminar</th>
@@ -45,7 +45,7 @@
 													<input type='hidden' name='cod_opc' value='$opcion[cod_opc]'>
 													<td>$opcion[cod_opc]</td>
 													<td>$opcion[nom_opc]</td>
-													<td>$opcion[des_opc]</td>
+													<td>$opcion[acc_opc]</td>
 													<td>$opcion[url_opc]</td>
 													<td><a class='$obj_opc->btn_editar' href='opc_modificar.php?cod_opc=$opcion[cod_opc]'>Editar</a></td>
 													<td><button type='submit' class='$obj_opc->btn_eliminar' name='ejecutar' value='modificar_eliminar'>Eliminar</button></td>

@@ -95,8 +95,8 @@
 						</div>
 						<div class="col-6">
 							<div class="form-group">
-								<label for="car_ado" class="<?php echo $obj_car->for; ?>">Cargo:</label>
-								<select name="car_ado" id="car_ado" class="<?php echo $obj_car->input_normal; ?>">
+								<label for="cod_car" class="<?php echo $obj_car->for; ?>">Cargo:</label>
+								<select name="cod_car" id="cod_car" class="<?php echo $obj_car->input_normal; ?>">
 									<option value="">General</option>
 									<?php while (($cargo=$obj_car->extraer_dato())>0)
 										{

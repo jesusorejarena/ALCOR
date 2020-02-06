@@ -5,8 +5,8 @@
 		cod_pro, nom_pro, des_pro, pre_pro, can_pro, cre_pro, act_pro, eli_pro, bas_pro, fky_proveedor
 
 		cod_pro				INT(11)			NO		A_I		PK		->	Codigo del Producto
-		nom_pro				VARCHAR(50)		NO		UNIQUE			->	Nombre del Producto
 		ser_pro				INR(10)			NO		UNIQUE			->	Numero de Serie del Producto
+		nom_pro				VARCHAR(50)		NO						->	Nombre del Producto
 		des_pro				VARCHAR(100)	SI						->	Descripcion del Producto
 		pre_pro				FLOAT(11,2)		NO						->	Precio del Producto
 		can_pro				FLOAR(11,2)		NO						->	Cantidad del Producto
@@ -24,8 +24,8 @@
 	{
 
 		public $cod_pro;
-		public $nom_pro;
 		public $ser_pro;
+		public $nom_pro;
 		public $des_pro;
 		public $pre_pro;
 		public $can_pro;
@@ -37,16 +37,16 @@
 			$cre_pro = date("y-m-d h:i:s");
 
 			$this->que_bda = "insert into producto
-								(nom_pro,
-								ser_pro, 
+								(ser_pro,
+								nom_pro,
 								des_pro, 
 								pre_pro, 
 								can_pro,
 								cre_pro,
 								bas_pro)
 							values
-								('$this->nom_pro', 
-								'$this->ser_pro', 
+								('$this->ser_pro', 
+								'$this->nom_pro', 
 								'$this->des_pro', 
 								'$this->pre_pro', 
 								'$this->can_pro',
@@ -63,8 +63,8 @@
 			
 			$this->que_bda = "update producto
 								set
-									nom_pro='$this->nom_pro',
 									ser_pro='$this->ser_pro',
+									nom_pro='$this->nom_pro',
 									des_pro='$this->des_pro',
 									pre_pro='$this->pre_pro',
 									can_pro='$this->can_pro',
@@ -142,9 +142,9 @@
 		}// fin de eliminar
 
 		public function filtrar()
-		{
-			$filtro1=($this->nom_pro!="")?"and nom_pro like '%$this->nom_pro%'":"";
-			$filtro2=($this->ser_pro!="")?"and ser_pro like '%$this->ser_pro%'":"";
+		{			
+			$filtro1=($this->ser_pro!="")?"and ser_pro like '%$this->ser_pro%'":"";
+			$filtro2=($this->nom_pro!="")?"and nom_pro like '%$this->nom_pro%'":"";
 			$filtro3=($this->des_pro!="")?"and des_pro like '%$this->des_pro%'":"";
 			$filtro4=($this->pre_pro!="")?"and pre_pro like '%$this->pre_pro%'":"";
 			$filtro5=($this->can_pro!="")?"and can_pro like '%$this->can_pro%'":"";

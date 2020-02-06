@@ -9,7 +9,7 @@
 
 	$obj_mod = new modulo;
 	$obj_mod->estandar();
-	$obj_mod->puntero=$obj_mod->listar_normal();
+	$obj_mod->puntero=$obj_mod->filtrar();
 
 	$obj_car = new cargo;
 	$obj_car->puntero=$obj_car->listar_normal();
@@ -17,7 +17,7 @@
 	$obj_opc = new opcion;
 	$obj_opc->puntero=$obj_opc->listar_normal();
 
-	encabezado("Registrar modulo - ALCOR C.A.");
+	encabezado("Filtrar modulo - ALCOR C.A.");
 
 ?>
 
@@ -28,16 +28,23 @@
 			</div>
 		</div>
 		<div class="<?php echo $obj_mod->card; ?>" style="width: 40rem">
-			<h2 class="<?php echo $obj_mod->titulocard; ?>">Registrar modulo</h2>
+			<h2 class="<?php echo $obj_mod->titulocard; ?>">Filtrar modulo</h2>
 			<hr>
 			<div class="card-body">
-				<form action="../../backend/controlador/modulo.php" method="POST">
+				<form action="mod_filtrado.php" method="POST">
+					<div class="row p-3">
+						<div class="col-12">
+							<div class="form-group">
+								<label for="cod_mod" class="<?php echo $obj_mod->for; ?>">Cargo:</label>
+								<input type="text" name="cod_mod" id="cod_mod" placeholder="Código:" class="<?php echo $obj_mod->input_normal; ?>">
+							</div>
+						</div>
+					</div>
 					<div class="row p-3">
 						<div class="col-6">
 							<div class="form-group">
-								<input type="hidden" name="cod_mod" id="cod_mod" value="<?php echo $modulo['cod_mod']; ?>">
 								<label for="cod_car" class="<?php echo $obj_mod->for; ?>">Cargo:</label>
-								<select name="cod_car" id="cod_car" required="" class="<?php echo $obj_mod->input_normal; ?>">
+								<select name="cod_car" id="cod_car" class="<?php echo $obj_mod->input_normal; ?>">
 									<option value="">Seleccione...</option>
 									<?php while (($cargo=$obj_car->extraer_dato())>0)
 										{
@@ -49,8 +56,8 @@
 						</div>
 						<div class="col-6">
 							<div class="form-group">
-								<label for="cod_opc" class="<?php echo $obj_mod->for; ?>">Opción:</label>
-								<select name="cod_opc" id="cod_opc" required="" class="<?php echo $obj_mod->input_normal; ?>">
+								<label for="cod_opc" class="<?php echo $obj_mod->for; ?>">Opcion:</label>
+								<select name="cod_opc" id="cod_opc" class="<?php echo $obj_mod->input_normal; ?>">
 									<option value="">Seleccione...</option>
 									<?php while (($opcion=$obj_opc->extraer_dato())>0)
 										{
@@ -69,7 +76,7 @@
 						</div>
 						<div class="col-6">
 							<div class="form-group">
-								<button type="submit" name="ejecutar" id="ejecutar" value="insertar" class="<?php echo $obj_mod->btn_enviar; ?>">Registrar</button>
+								<button type="submit" name="ejecutar" id="ejecutar" value="filtrar" class="<?php echo $obj_mod->btn_enviar; ?>">Filtrar</button>
 							</div>
 						</div>
 					</div>

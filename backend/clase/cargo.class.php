@@ -122,17 +122,15 @@
 
 		function filtrar()
 		{
-
 			$filtro1=($this->cod_car!="")?"and cod_car='$this->cod_car'":"";
 			$filtro2=($this->nom_car!="")?"and nom_car like '%$this->nom_car%'":"";
-			$filtro3=($this->bas_car!="")?"and bas_car like '%$this->bas_car%'":"";
+			$filtro3=($this->bas_car!="")?"and bas_car='$this->bas_car'":"";
 			
 			$this->que_bda = "select * from cargo where	1=1 $filtro1 $filtro2 $filtro3;";
 
 			return $this->ejecutar();
 
 		}// fin de filtrar
-
 	}
 
  ?>

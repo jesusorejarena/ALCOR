@@ -41,12 +41,12 @@
 						<div class="col-6">
 							<div class="form-group">
 								<input type="hidden" name="cod_mod" id="cod_mod" value="<?php echo $modulo['cod_mod']; ?>">
-								<label for="fky_cargo" class="<?php echo $obj_mod->for; ?>">Cargo:</label>
-								<select name="fky_cargo" id="fky_cargo" class="<?php echo $obj_mod->input_normal; ?>">
+								<label for="cod_car" class="<?php echo $obj_mod->for; ?>">Cargo:</label>
+								<select name="cod_car" id="cod_car" required="" class="<?php echo $obj_mod->input_normal; ?>">
 									<option value="">Seleccione...</option>
 									<?php while (($cargo=$obj_car->extraer_dato())>0)
 										{
-											$select=($cargo['cod_car']==$modulo['fky_cargo']) ? "selected" : "" ;
+											$select=($cargo['cod_car']==$modulo['cod_car']) ? "selected" : "" ;
 											echo "<option $select value='$cargo[cod_car]'>$cargo[nom_car]</option>";
 										}
 									?>
@@ -55,12 +55,12 @@
 						</div>
 						<div class="col-6">
 							<div class="form-group">
-								<label for="fky_opcion" class="<?php echo $obj_mod->for; ?>">Cargo:</label>
-								<select name="fky_opcion" id="fky_opcion" class="<?php echo $obj_mod->input_normal; ?>">
+								<label for="cod_opc" class="<?php echo $obj_mod->for; ?>">Opción:</label>
+								<select name="cod_opc" id="cod_opc" required="" class="<?php echo $obj_mod->input_normal; ?>">
 									<option value="">Seleccione...</option>
 									<?php while (($opcion=$obj_opc->extraer_dato())>0)
 										{
-											$select=($opcion['cod_opc']==$modulo['fky_opcion']) ? "selected" : "" ;
+											$select=($opcion['cod_opc']==$modulo['cod_opc']) ? "selected" : "" ;
 											echo "<option $select value='$opcion[cod_opc]'>$opcion[nom_opc]</option>";
 										}
 									?>

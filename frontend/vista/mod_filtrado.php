@@ -8,14 +8,15 @@
 	require("../../backend/clase/cargo.class.php");
 
 	$obj_mod = new modulo;
-	$obj_mod->estandar();
-	$obj_mod->puntero=$obj_mod->listar_normal();
+	$obj_mod->estandar();	
+	$obj_mod->asignar_valor();
+	$obj_mod->puntero=$obj_mod->filtrar();
 
 	$obj_opc = new opcion;
 
-	$obj_car = new cargo;	
-
-	encabezado("Lista de modulos - ALCOR C.A.");
+	$obj_car = new cargo;
+	
+	encabezado("Modulos filtrados - ALCOR C.A.");
 
 ?>
 
@@ -26,7 +27,7 @@
 			</div>
 		</div>
 		<div class="<?php echo $obj_mod->card; ?>">
-			<h2 class="<?php echo $obj_mod->titulocard; ?>">Lista de modulos</h2>
+			<h2 class="<?php echo $obj_mod->titulocard; ?>">Modulos filtrados</h2>
 			<hr>
 			<div class="row p-3 m-3">
 				<div class="col-12">
@@ -46,6 +47,7 @@
 								<?php 
 									while(($modulo=$obj_mod->extraer_dato())>0)
 									{
+										echo $modulo['cod_mod'];
 
 										$obj_opc->cod_opc=$modulo['cod_opc'];
 										$obj_opc->puntero=$obj_opc->filtrar();

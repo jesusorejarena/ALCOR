@@ -15,7 +15,7 @@
 	<div class="<?php echo $obj_car->container; ?>">
 		<div class="row pb-3 mb-3 bg-white">
 			<div class="col-12 text-left">
-				<button class="<?php echo $obj_car->btn_atras; ?>" onClick="window.location.href='car_menu.php'">Atras</button>
+				<button class="<?php echo $obj_car->btn_atras; ?>" onClick="window.location.href='rol_menu.php'">Atras</button>
 			</div>
 		</div>
 		<div class="<?php echo $obj_car->card; ?>" style="width: 40rem">

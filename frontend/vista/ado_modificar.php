@@ -102,11 +102,11 @@
 						</div>
 						<div class="col-6">
 							<div class="form-group">
-								<label for="car_ado" class="<?php echo $obj_ado->for; ?>">Cargo:</label>
-								<select name="car_ado" id="car_ado" required="" class="<?php echo $obj_ado->input_normal; ?>">
+								<label for="cod_car" class="<?php echo $obj_ado->for; ?>">Cargo:</label>
+								<select name="cod_car" id="cod_car" required="" class="<?php echo $obj_ado->input_normal; ?>">
 									<?php while (($cargo=$obj_car->extraer_dato())>0)
 										{
-											$select=($empleado['car_ado']==$cargo['cod_car']) ? "selected" : "" ;
+											$select=($empleado['cod_car']==$cargo['cod_car']) ? "selected" : "" ;
 											echo "<option $select value='$cargo[cod_car]'>$cargo[nom_car]</option>";
 										}										
 									?>

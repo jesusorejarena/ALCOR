@@ -62,7 +62,7 @@
 													<td>$empleado[ced_ado]</td>
 													<td>$empleado[tel_ado]</td>
 													<td>$empleado[cor_ado]</td>
-													<td>$empleado[car_ado]</td>
+													<td>$empleado[cod_car]</td>
 													<td>$empleado[dir_ado]</td>
 													<td>$empleado[cre_ado]</td>
 													<td>$empleado[act_ado]</td>
