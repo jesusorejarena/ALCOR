@@ -20,6 +20,9 @@
 		case 'modificar_eliminar':	$obj_pro->modificar_eliminar();
 		break;
 
+		case 'compra':				$obj_pro->compra();
+		break;
+
 		case 'eliminar':			$obj_pro->eliminar();
 		break;
 	}

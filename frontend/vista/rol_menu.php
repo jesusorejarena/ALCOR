@@ -17,25 +17,6 @@
 		<div class="row">
 			<div class="col-4">
 				<div class="<?php echo $obj_car->card; ?>">
-					<h2 class="<?php echo $obj_car->titulocard; ?>">Menú de opciones</h2>
-					<hr>
-					<div class="card-body">
-						<div class="row p-1 m-1">
-							<div class="col-12 p-1 m-1">
-								<button class="<?php echo $obj_car->btn_enviarg; ?>" onClick="window.location.href='opc_registrar.php'">Registrar</button>
-							</div>
-							<div class="col-12 p-1 m-1">
-								<button class="<?php echo $obj_car->btn_enviarg; ?>" onClick="window.location.href='opc_listartodo.php'">Lista</button>
-							</div>
-							<div class="col-12 p-1 m-1">
-								<button class="<?php echo $obj_car->btn_enviarg; ?>" onClick="window.location.href='opc_filtrar.php'">Filtrar</button>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-4">
-				<div class="<?php echo $obj_car->card; ?>">
 					<h2 class="<?php echo $obj_car->titulocard; ?>">Menú de cargos</h2>
 					<hr>
 					<div class="card-body">
@@ -58,6 +39,25 @@
 			</div>
 			<div class="col-4">
 				<div class="<?php echo $obj_car->card; ?>">
+					<h2 class="<?php echo $obj_car->titulocard; ?>">Menú de opciones</h2>
+					<hr>
+					<div class="card-body">
+						<div class="row p-1 m-1">
+							<div class="col-12 p-1 m-1">
+								<button class="<?php echo $obj_car->btn_enviarg; ?>" onClick="window.location.href='opc_registrar.php'">Registrar</button>
+							</div>
+							<div class="col-12 p-1 m-1">
+								<button class="<?php echo $obj_car->btn_enviarg; ?>" onClick="window.location.href='opc_listartodo.php'">Lista</button>
+							</div>
+							<div class="col-12 p-1 m-1">
+								<button class="<?php echo $obj_car->btn_enviarg; ?>" onClick="window.location.href='opc_filtrar.php'">Filtrar</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-4">
+				<div class="<?php echo $obj_car->card; ?>">
 					<h2 class="<?php echo $obj_car->titulocard; ?>">Menú de modulos</h2>
 					<hr>
 					<div class="card-body">
@@ -70,6 +70,9 @@
 							</div>
 							<div class="col-12 p-1 m-1">
 								<button class="<?php echo $obj_car->btn_enviarg; ?>" onClick="window.location.href='mod_filtrar.php'">Filtrar</button>
+							</div>
+							<div class="col-12 p-1 m-1">
+								<button class="<?php echo $obj_car->btn_enviarg; ?>" onClick="window.location.href='mod_listarpapelera.php'">Papelera</button>
 							</div>
 						</div>
 					</div>

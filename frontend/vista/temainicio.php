@@ -14,7 +14,7 @@
 				<meta name='viewport' content='width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0'>
 				<link rel='icon' src='../img/icon.png'>
 				<link rel='stylesheet' href='../css/estilos.css'>
-				<link rel='stylesheet' href='../css/bootstrap-4.4.1/css/bootstrap.min.css'>
+				<link rel='stylesheet' href='../css/bootstrap-4.4.1/css/bootstrap.css'>
 				<link rel='stylesheet' href='../css/ionicons/css/ionicons.min.css'>
 				<link rel='stylesheet' href='../css/animate/animate.min.css'>
 				<link rel='stylesheet' href='../css/wow/animate.css'>
@@ -22,43 +22,50 @@
 				
 			</head>
 			
-			<body class='m-0 p-0 bg-dark'>
+			<body class='m-0 p-0 bg-danger'>
 
-				<!--Comienzo del nav-->
-				
-				<div class='row'>
-					<div class='col-12 m-0 p-0'>
-						<header class='header'>
-							<nav class='navbar navbar-expand-md bg-success navbar-dark form-control-static fixed-top'>
+				<div class='container-fluid'>
+					<div class='row'>
+						<div class='col-12 m-0 p-0'>
+							<header class='header'>
+								<nav class='navbar navbar-expand-md bg-primary navbar-dark form-control-static fixed-top'>
 
-								<!--Nombre de la app-->
-								<a href='inicio.php' class='navbar-brand animated bounceInLeft px-5'><img src='../img/logo2.png' width='200'></a>
+									<!--Nombre de la app-->
+									<a href='inicio.php' class='navbar-brand animated bounceInLeft px-5'><img src='../img/logo2.png' width='200'></a>
 
-								<!--Menu de hamburguesa-->
-								<button class='navbar-toggler' type='button' data-toggle='collapse' data-target='#collapsibleNavbar'>
-										<span class='navbar-toggler-icon'></span>
-								</button>
+									<!--Menu de hamburguesa-->
+									<button class='navbar-toggler' type='button' data-toggle='collapse' data-target='#collapsibleNavbar'>
+											<span class='navbar-toggler-icon'></span>
+									</button>
 
-								<!--Botones de las secciones-->
-								<div class='collapse navbar-collapse justify-content-end' id='collapsibleNavbar'>
-									<ul class='navbar-nav'>
-										<li class='nav-item'>
-											<a href='inicio.php' class='nav-link'>Inicio</a>
-										</li>
-										<li class='nav-item'>
-											<a href='acercade.php' class='nav-link'>Acerca de</a>
-										</li>
-										<li class='nav-item'>
-											<a href='usu_sesion.php' class='nav-link'>Iniciar Sesión</a>
-										</li>
-									</ul>
-								</div>
-							</nav>
-						</header>
+									<!--Botones de las secciones-->
+									<div class='collapse navbar-collapse justify-content-end' id='collapsibleNavbar'>
+										<ul class='navbar-nav'>
+											<li class='nav-item'>
+												<a href='inicio.php' class='nav-link'>Inicio</a>
+											</li>
+											<li class='nav-item'>
+												<a href='inicio_empresa.php' class='nav-link'>Empresa</a>
+											</li>
+											<li class='nav-item'>
+												<a href='inicio_servicio.php' class='nav-link'>Servicio</a>
+											</li>
+											<li class='nav-item'>
+												<a href='inicio_producto.php' class='nav-link'>Productos</a>
+											</li>
+											<li class='nav-item'>
+												<a href='inicio_contacto.php' class='nav-link'>Contacto</a>
+											</li>
+											<li class='nav-item'>
+												<a href='usu_sesion.php' class='nav-link btn btn-md btn-primary'>Iniciar Sesión</a>
+											</li>
+										</ul>
+									</div>
+								</nav>
+							</header>
+						</div>
 					</div>
 				</div>
-				
-				<!--Termina el nav-->
 
 		";
 
@@ -67,25 +74,33 @@
 	function pie()
 	{
 
+		require("../../backend/clase/empresa.class.php");
+
+		$obj_emp = new empresa;
+		$obj_emp->puntero=$obj_emp->listar_modificar();
+		$empresa=$obj_emp->extraer_dato();
+
 		echo "
-				<footer class='bg-dark'>
-					<div class='container pt-5 bg-dark text-white justify-content-around'>
+				<footer class=''>
+					<div class='container-fluid pt-5 bg-danger text-white'>
 						<div class='row'>
-							<div class='col-6'><img src='../img/logo2.png' width='300' class=''></div>
-							<div class='col-6 text-right'>
-								<p>Dirección: Barrio El Carmen, casa Nº 9-170 La Concordia, <br>
-									San Cristóbal, Estado Táchira. Venezuela. <br>
-									e-mail: comalcorca@gmail.com <br>
-									Teléfonos: +58(424)-7128313 / +58(424)-7467809</p>
+							<div class='col-4'><img src='../img/logo2.png' width='100%' class='animated bounceInLeft'></div>
+							<div class='col-4'></div>
+							<div class='col-4 text-right'>
+								<p><b>Dirección:</b> <br>$empresa[dir_emp]</p>
+								<p><b>E-mail</b> <br>$empresa[cor_emp]</p>
+								<p><b>Teléfonos:</b> <br>$empresa[tel_emp]</p>
 							</div>
 						</div>
 						<div class='row'>
-							<div class='col-4'></div>
-							<div class='col-4 text-center'>
-								<p>Comercializadora Alcor, C.A. Rif J-40929480-3. <br>
-									Diseñado y desarrollado por Jesus Orejarena y David Lozada</p>
-								</div>
-							<div class='col-4 text-right'>Iconos de redes sociales</div>
+							<div class='col-12 text-center'>
+								<p>
+									$empresa[nom_emp]<br>
+									$empresa[rif_emp] <br>
+									<a href='https://www.instagram.com/comalcorca/' target='_blank' class='btn btn-danger'><i class='icon ion-logo-instagram' style='font-size: 32px;'></i></a> 
+									<a href='https://twitter.com/comalcorca' target='_blank' class='btn btn-danger'><i class='icon ion-logo-twitter' style='font-size: 32px;'></i></a>
+								</p>
+							</div>
 						</div>
 					</div>
 				</footer>
@@ -104,4 +119,3 @@
 	}
 
 ?>
-

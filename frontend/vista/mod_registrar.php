@@ -35,7 +35,6 @@
 					<div class="row p-3">
 						<div class="col-6">
 							<div class="form-group">
-								<input type="hidden" name="cod_mod" id="cod_mod" value="<?php echo $modulo['cod_mod']; ?>">
 								<label for="cod_car" class="<?php echo $obj_mod->for; ?>">Cargo:</label>
 								<select name="cod_car" id="cod_car" required="" class="<?php echo $obj_mod->input_normal; ?>">
 									<option value="">Seleccione...</option>
@@ -54,7 +53,7 @@
 									<option value="">Seleccione...</option>
 									<?php while (($opcion=$obj_opc->extraer_dato())>0)
 										{
-											echo "<option value='$opcion[cod_opc]'>$opcion[nom_opc]</option>";
+											echo "<option value='$opcion[cod_opc]'>$opcion[nom_opc] - $opcion[acc_opc]</option>";
 										}
 									?>
 								</select>

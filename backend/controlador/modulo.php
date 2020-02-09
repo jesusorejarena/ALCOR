@@ -14,6 +14,12 @@
 		case 'modificar_normal':	$obj_mod->modificar_normal();
 		break;
 
+		case 'modificar_restaurar':	$obj_mod->modificar_restaurar();
+		break;
+
+		case 'modificar_eliminar':	$obj_mod->modificar_eliminar();
+		break;
+
 		case 'eliminar':			$obj_mod->eliminar();
 		break;
 	}

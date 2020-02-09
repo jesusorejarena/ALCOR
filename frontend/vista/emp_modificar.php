@@ -79,7 +79,7 @@
 						<div class="col-6">
 							<div class="form-group">
 								<label for="hod_emp" class="<?php echo $obj_emp->for; ?>">Horario Dos:</label>
-								<input type="text" name="hod_emp" id="hod_emp" placeholder="Horario Dos:" minlength="19" maxlength="19" required="" value="<?php echo $empresa['hod_emp']; ?>" class="<?php echo $obj_emp->input_normal; ?>">
+								<input type="text" name="hod_emp" id="hod_emp" placeholder="Horario Dos:" minlength="19" maxlength="19" value="<?php echo $empresa['hod_emp']; ?>" class="<?php echo $obj_emp->input_normal; ?>">
 								<small id="hod_emp" class="<?php echo $obj_emp->small; ?>">Ejemplo: 02:00 PM - 06:00 PM</small>
 							</div>
 						</div>

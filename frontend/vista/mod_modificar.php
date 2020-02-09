@@ -61,9 +61,23 @@
 									<?php while (($opcion=$obj_opc->extraer_dato())>0)
 										{
 											$select=($opcion['cod_opc']==$modulo['cod_opc']) ? "selected" : "" ;
-											echo "<option $select value='$opcion[cod_opc]'>$opcion[nom_opc]</option>";
+											echo "<option $select value='$opcion[cod_opc]'>$opcion[nom_opc] - $opcion[acc_opc]</option>";
 										}
 									?>
+								</select>
+							</div>
+						</div>
+					</div>
+					<div class="row p-3">
+						<div class="col-12">
+							<div class="form-group">
+							<label for="est_mod" class="<?php echo $obj_mod->for; ?>">Estatus:</label>
+								<select name="est_mod" id="est_mod" required="" class="<?php echo $obj_mod->input_normal; ?>">
+									<option value="">Seleccione...</option>
+									<?php $seleccionado=($modulo["est_mod"]=="A")?"selected":""; ?>
+									<option <?php echo $seleccionado; ?> value="A">Activo</option>
+									<?php $seleccionado=($modulo["est_mod"]=="I")?"selected":""; ?>
+									<option <?php echo $seleccionado; ?> value="I">Inactivo</option>
 								</select>
 							</div>
 						</div>

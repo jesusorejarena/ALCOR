@@ -38,21 +38,35 @@
 									<th>Eliminar</th>
 								</tr>
 							</thead>
-							<tbody>
-								<?php 
+							<?php 
 									while(($cargo=$obj_car->extraer_dato())>0)
 									{
 										echo "<form action='../../backend/controlador/cargo.php' method='POST'>
 												<tr>
 													<input type='hidden' name='cod_car' value='$cargo[cod_car]'>
 													<td>$cargo[cod_car]</td>
-													<td>$cargo[nom_car]</td>
-													<td>$cargo[cre_car]</td>
-													<td>$cargo[act_car]</td>
-													<td>$cargo[eli_car]</td>
-													<td>$cargo[res_car]</td>
-													<td><a class='$obj_car->btn_editar' href='car_modificar.php?cod_car=$cargo[cod_car]'>Editar</a></td>
-													<td><button type='submit' class='$obj_car->btn_eliminar' name='ejecutar' value='modificar_eliminar'>Eliminar</button></td>
+													<td>$cargo[nom_car]</td>";
+													
+													if ($cargo['cod_car']==1 || $cargo['nom_car']=='Administrador') {
+														echo "
+																<td></td>
+																<td></td>
+																<td></td>
+																<td></td>
+																<td></td>
+																<td></td>
+														";
+													} else {
+														echo "
+																<td>$cargo[cre_car]</td>
+																<td>$cargo[act_car]</td>
+																<td>$cargo[eli_car]</td>
+																<td>$cargo[res_car]</td>
+																<td><a class='$obj_car->btn_editar' href='car_modificar.php?cod_car=$cargo[cod_car]'>Editar</a></td>
+																<td><button type='submit' class='$obj_car->btn_eliminar' name='ejecutar' value='modificar_eliminar'>Eliminar</button></td>
+														";
+													}													
+										echo "		
 												</tr>
 											</form>
 										";

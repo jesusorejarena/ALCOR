@@ -133,9 +133,9 @@
 							<div class="form-group">
 								<label for="est_ado" required="" class="<?php echo $obj_ado->for; ?>">Activo/Inactivo:</label>
 								<select name="est_ado" id="est_ado" class="<?php echo $obj_ado->input_normal; ?>">
-									<?php $seleccionado=($empleado["tip_ado"]=="A")?"selected":""; ?>
+									<?php $seleccionado=($empleado["est_ado"]=="A")?"selected":""; ?>
 									<option <?php echo $seleccionado; ?> value="A">Activo</option>
-									<?php $seleccionado=($empleado["tip_ado"]=="I")?"selected":""; ?>
+									<?php $seleccionado=($empleado["est_ado"]=="I")?"selected":""; ?>
 									<option <?php echo $seleccionado; ?> value="I">Inactivo</option>
 								</select>
 							</div>

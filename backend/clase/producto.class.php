@@ -106,6 +106,18 @@
 
 		}// fin de modificar eliminar
 
+		function venta()
+		{
+			$this->que_bda = "update producto
+								set
+									can_pro='$this->can_pro'
+								where
+									cod_pro='$this->cod_pro';";
+
+			return $this->ejecutar();
+
+		}// fin de venta
+
 		function listar_normal()
 		{
 			$this->que_bda = "select * from producto where bas_pro='A'";
@@ -132,7 +144,6 @@
 
 		function eliminar()
 		{
-			
 			$this->que_bda = "delete from producto
 								where
 									cod_pro='$this->cod_pro';";

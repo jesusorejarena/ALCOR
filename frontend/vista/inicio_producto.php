@@ -18,7 +18,6 @@
 							<li data-target="#id-principal" data-slide-to="0"></li>
 							<li data-target="#id-principal" data-slide-to="1"></li>
 							<li data-target="#id-principal" data-slide-to="2"></li>
-							<li data-target="#id-principal" data-slide-to="3"></li>
 						</ol>
 
 						<div class="carousel-inner">
@@ -26,13 +25,10 @@
 								<img src="../img/banner1.jpeg" alt="" class="img-fluid" width="100%">
 							</div>
 							<div class="carousel-item">
-								<img src="../img/banner2.jpg" alt="" class="img-fluid" width="100%">
+								<img src="../img/banner1.jpeg" alt="" class="img-fluid" width="100%">
 							</div>
 							<div class="carousel-item">
-								<img src="../img/banner3.jpg" alt="" class="img-fluid" width="100%">
-							</div>
-							<div class="carousel-item">
-								<img src="../img/banner4.jpg" alt="" class="img-fluid" width="100%">
+								<img src="../img/banner1.jpeg" alt="" class="img-fluid" width="100%">
 							</div>
 						</div>
 

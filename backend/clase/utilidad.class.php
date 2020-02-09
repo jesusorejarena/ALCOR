@@ -16,7 +16,7 @@
 			$this->nom_ser = "localhost";
 			$this->usu_ser = "root";
 			$this->cla_ser = "";
-			$this->nom_bda = "ALCOR";
+			$this->nom_bda = "alcor_relacionada_copia";
 			$this->conectar();
 			ini_set("date.timezone", "America/Caracas");
 		}
@@ -28,7 +28,7 @@
 		
 		public function ejecutar()
 		{
-			echo $this->que_bda;
+			//echo $this->que_bda;
 			return $this->con_bda->query($this->que_bda);
 		}
 
@@ -79,26 +79,27 @@
 
 			// Inicio Clases Generales
 			$this->container		="container-fluid p-5 mt-5 bg-white";
+			$this->container2		="container-fluid pt-5 mt-4 bg-light";
 			$this->titulos			="h1 text-dark text-center p-4 text-center";
 			// Fin Clases Generales
 
 			// Inicio Cards Generales
-			$this->card				="card mx-auto bg-dark border border-success shadow-lg animated pulse";
-			$this->titulocard		="card-title text-white text-center pt-3";
+			$this->card				="card mx-auto bg-light border border-primary shadow-lg animated pulse p-4 m-4";
+			$this->titulocard		="card-title text-dark text-center pt-3";
 			$this->subtitulocard	="card-subtitle text-muted px-5 text-right";
 			$this->footercard		="card-footer text-right";
 			// Fin Cards Generales
 
 
 			// Inicio Tabla Generales
-			$this->tabla			="table table-hover table-dark table-bordered text-center";
+			$this->tabla			="table table-hover table-bordered text-center";
 			// Fin Tabla Generales
 
 			// Inicio Inputs Generales
-			$this->for 				="text-white text-left h5";
+			$this->for 				="text-dark text-left h5";
 			$this->small 			="form-text text-muted";
-			$this->input_normal		="text-white form-control bg-transparent border border-top-0 border-left-0 border-right-0 border-success";
-			$this->input_text		="text-white form-control bg-transparent border border-top-0 border-left-0 border-right-0 border-success";
+			$this->input_normal		="text-dark form-control bg-transparent border border-top-0 border-left-0 border-right-0 border-primary";
+			$this->input_text		="text-dark form-control bg-transparent border border-top-0 border-primary";
 			// Fin Inputs Generales
 
 			// Inicio Botones Normales Generales
@@ -113,7 +114,7 @@
 
 			// Inicio Botones Block Generales
 			$this->btn_limpiarg		="btn btn-outline-info btn-lg btn-block";
-			$this->btn_enviarg		="btn btn-success btn-lg btn-block";
+			$this->btn_enviarg		="btn btn-primary btn-lg btn-block";
 			$this->btn_editarg		="btn btn-warning btn-lg btn-block";
 			$this->btn_restaurarg	="btn btn-success btn-lg btn-block";
 			$this->btn_eliminarg	="btn btn-danger btn-lg btn-block";

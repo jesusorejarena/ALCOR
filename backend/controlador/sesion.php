@@ -19,6 +19,7 @@
 								session_start();
 								$_SESSION['activo'] = true;
 								$_SESSION['correo'] = $correo;
+								$_SESSION['cargo'] = $usuarios['cod_car'];
 
 								header('Location: ../../frontend/vista/menu_principal.php');
 							}

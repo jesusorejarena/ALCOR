@@ -39,7 +39,15 @@
 									<th>Nombre del cargo</th>
 									<th>Nombre de la opción</th>
 									<th>Acción de la opción</th>
+									<th>URL de la opción</th>
+									<th>Fecha de creación</th>
+									<th>Ultima modificación</th>
+									<th>Fecha de eliminación</th>
+									<th>Fecha de restauración</th>
+									<th>Estatus</th>
+									<th>Estado</th>
 									<th>Editar</th>
+									<th>Restaurar</th>
 									<th>Eliminar</th>
 								</tr>
 							</thead>
@@ -64,7 +72,15 @@
 													<td>$cargo[nom_car]</td>
 													<td>$opcion[nom_opc]</td>
 													<td>$opcion[acc_opc]</td>
+													<td>$opcion[url_opc]</td>
+													<td>$modulo[cre_mod]</td>
+													<td>$modulo[act_mod]</td>
+													<td>$modulo[eli_mod]</td>
+													<td>$modulo[res_mod]</td>													
+													<td>$modulo[est_mod]</td>
+													<td>$modulo[bas_mod]</td>
 													<td><a class='$obj_mod->btn_editar' href='mod_modificar.php?cod_mod=$modulo[cod_mod]'>Editar</a></td>
+													<td><button type='submit' class='$obj_mod->btn_restaurar' name='ejecutar' value='modificar_restaurar'>Restaurar</button></td>
 													<td><button type='submit' class='$obj_mod->btn_eliminar' name='ejecutar' value='modificar_eliminar'>Eliminar</button></td>
 												</tr>
 											</form>

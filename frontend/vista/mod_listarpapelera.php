@@ -9,13 +9,13 @@
 
 	$obj_mod = new modulo;
 	$obj_mod->estandar();
-	$obj_mod->puntero=$obj_mod->listar_normal();
+	$obj_mod->puntero=$obj_mod->listar_eliminar();
 
 	$obj_opc = new opcion;
 
 	$obj_car = new cargo;	
 
-	encabezado("Lista de modulos - ALCOR C.A.");
+	encabezado("Modulos eliminados - ALCOR C.A.");
 
 ?>
 
@@ -26,7 +26,7 @@
 			</div>
 		</div>
 		<div class="<?php echo $obj_mod->card; ?>">
-			<h2 class="<?php echo $obj_mod->titulocard; ?>">Lista de modulos</h2>
+			<h2 class="<?php echo $obj_mod->titulocard; ?>">Modulos eliminados</h2>
 			<hr>
 			<div class="row p-3 m-3">
 				<div class="col-12">
@@ -44,7 +44,7 @@
 									<th>Fecha de eliminación</th>
 									<th>Fecha de restauración</th>
 									<th>Estatus</th>
-									<th>Editar</th>
+									<th>Restaurar</th>
 									<th>Eliminar</th>
 								</tr>
 							</thead>
@@ -74,8 +74,8 @@
 													<td>$modulo[eli_mod]</td>
 													<td>$modulo[res_mod]</td>
 													<td>$modulo[est_mod]</td>
-													<td><a class='$obj_mod->btn_editar' href='mod_modificar.php?cod_mod=$modulo[cod_mod]'>Editar</a></td>
-													<td><button type='submit' class='$obj_mod->btn_eliminar' name='ejecutar' value='modificar_eliminar'>Eliminar</button></td>
+													<td><button type='submit' class='$obj_mod->btn_restaurar' name='ejecutar' value='modificar_restaurar'>Restaurar</button></td>
+													<td><button type='submit' class='$obj_mod->btn_eliminar' name='ejecutar' value='eliminar'>Eliminar</button></td>
 												</tr>
 											</form>
 										";

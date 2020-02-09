@@ -67,7 +67,7 @@
 						<div class="col-6">
 							<div class="form-group">
 								<label for="fky_proveedor" class="<?php echo $obj_edo->for; ?>">Proveedor:</label>
-								<select name="fky_proveedor" id="fky_proveedor" class="form-control bg-dark border border-top-0 border-left-0 border-right-0 border-success text-white">
+								<select name="fky_proveedor" id="fky_proveedor" class="<?php echo $obj_edo->input_normal; ?>">
 									<option value="">General</option>
 									<?php while (($proveedor=$obj_edo->extraer_dato())>0)
 										{

@@ -167,7 +167,7 @@
 
 		function listar_sesion($cor_ado, $cla_ado)
 		{
-			$this->que_bda = "select cor_ado, cla_ado, est_ado, bas_ado 
+			$this->que_bda = "select cor_ado, cla_ado, cod_car, est_ado, bas_ado 
 									from 
 										empleado 
 									where 
