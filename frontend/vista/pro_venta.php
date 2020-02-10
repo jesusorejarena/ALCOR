@@ -2,8 +2,8 @@
 
 	//session
 	
-	require("tema.php");
-	require("../../backend/clase/producto.class.php");
+	require_once("tema.php");
+	require_once("../../backend/clase/producto.class.php");
 
 	$obj_pro = new producto;
 	$obj_pro->estandar();

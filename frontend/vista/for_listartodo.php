@@ -2,8 +2,8 @@
 
 	//session
 	
-	require("tema.php");
-	require("../../backend/clase/formulario.class.php");
+	require_once("tema.php");
+	require_once("../../backend/clase/formulario.class.php");
 
 	$obj_for = new formulario;
 	$obj_for->estandar();

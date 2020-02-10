@@ -1,6 +1,6 @@
 <?php
 	
-	require("../clase/modulo.class.php");
+	require_once("../clase/modulo.class.php");
 
 	$obj_mod = new modulo;
 

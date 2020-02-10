@@ -2,8 +2,8 @@
 
 	//session
 	
-	require("tema.php");
-	require("../../backend/clase/opcion.class.php");
+	require_once("tema.php");
+	require_once("../../backend/clase/opcion.class.php");
 
 	$obj_opc = new opcion;
 	$obj_opc->estandar();

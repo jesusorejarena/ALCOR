@@ -1,6 +1,6 @@
 <?php
 	
-	require("../clase/cargo.class.php");
+	require_once("../clase/cargo.class.php");
 
 	$obj_car = new cargo;
 

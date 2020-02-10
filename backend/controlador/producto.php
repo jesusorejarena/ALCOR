@@ -1,6 +1,6 @@
 <?php
 	
-	require("../clase/producto.class.php");
+	require_once("../clase/producto.class.php");
 
 	$obj_pro = new producto;
 

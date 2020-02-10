@@ -7,13 +7,13 @@
 		if($_SESSION['activo']==true)
 		{
 			
-			/*require("../../backend/clase/modulo.class.php");
-			require("../../backend/clase/opcion.class.php");
-			require("../../backend/clase/cargo.class.php");
+			require_once("../../backend/clase/modulo.class.php");
+			require_once("../../backend/clase/opcion.class.php");
+			require_once("../../backend/clase/cargo.class.php");
 
 			$obj_mod = new modulo;
 			$obj_opc = new opcion;
-			$obj_car = new cargo;*/
+			$obj_car = new cargo;
 		}
 		else
 		{
@@ -58,7 +58,7 @@
 									<div class='collapse navbar-collapse justify-content-end' id='collapsibleNavbar'>
 										<ul class='navbar-nav'>";
 
-											/*$obj_car->cod_car=$_SESSION['cargo'];
+											$obj_car->cod_car=$_SESSION['cargo'];
 											$obj_car->puntero=$obj_car->listar_modificar();
 
 											while ($cargo=$obj_car->extraer_dato())
@@ -83,7 +83,7 @@
 														";
 													}
 												}
-											}*/
+											}
 									
 											echo "
 											<li class='nav-item'>
@@ -128,7 +128,7 @@
 	function pie()
 	{
 
-		require("../../backend/clase/empresa.class.php");
+		require_once("../../backend/clase/empresa.class.php");
 
 		$obj_emp = new empresa;
 		$obj_emp->puntero=$obj_emp->listar_modificar();

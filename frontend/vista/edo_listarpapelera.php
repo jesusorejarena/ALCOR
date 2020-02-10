@@ -2,8 +2,8 @@
 
 	//session
 	
-	require("tema.php");
-	require("../../backend/clase/proveedor.class.php");
+	require_once("tema.php");
+	require_once("../../backend/clase/proveedor.class.php");
 
 	$obj_edo = new proveedor;	
 	$obj_edo->estandar();

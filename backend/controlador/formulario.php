@@ -1,6 +1,6 @@
 <?php
 	
-	require("../clase/formulario.class.php");
+	require_once("../clase/formulario.class.php");
 
 	$obj_for = new formulario;
 

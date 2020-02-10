@@ -1,7 +1,7 @@
 <?php	
 
-	require("temainicio.php");
-	require("../../backend/clase/empleado.class.php");
+	require_once("temainicio.php");
+	require_once("../../backend/clase/empleado.class.php");
 
 	$obj_ado = new empleado;
 	$obj_ado->estandar();

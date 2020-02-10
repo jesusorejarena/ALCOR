@@ -2,8 +2,8 @@
 
 	//session
 	
-	require("tema.php");
-	require("../../backend/clase/cargo.class.php");
+	require_once("tema.php");
+	require_once("../../backend/clase/cargo.class.php");
 
 	$obj_car = new cargo;
 	$obj_car->estandar();

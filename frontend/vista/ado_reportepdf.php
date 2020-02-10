@@ -1,7 +1,7 @@
 <?php
 
-	require("../../librerias/fpdf/fpdf.php");
-	require("../../backend/clase/empleado.class.php");
+	require_once("../../librerias/fpdf/fpdf.php");
+	require_once("../../backend/clase/empleado.class.php");
 
 	$pdf = new FPDF();
 	$pdf->AddPage();

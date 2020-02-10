@@ -1,6 +1,6 @@
 <?php
 	
-	require("../clase/empleado.class.php");
+	require_once("../clase/empleado.class.php");
 
 	$obj_ado = new empleado;
 

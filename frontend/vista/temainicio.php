@@ -74,7 +74,7 @@
 	function pie()
 	{
 
-		require("../../backend/clase/empresa.class.php");
+		require_once("../../backend/clase/empresa.class.php");
 
 		$obj_emp = new empresa;
 		$obj_emp->puntero=$obj_emp->listar_modificar();

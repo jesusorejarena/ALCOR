@@ -2,10 +2,10 @@
 
 	//session
 	
-	require("tema.php");
-	require("../../backend/clase/modulo.class.php");
-	require("../../backend/clase/opcion.class.php");
-	require("../../backend/clase/cargo.class.php");
+	require_once("tema.php");
+	require_once("../../backend/clase/modulo.class.php");
+	require_once("../../backend/clase/opcion.class.php");
+	require_once("../../backend/clase/cargo.class.php");
 
 	$obj_mod = new modulo;
 	$obj_mod->estandar();	

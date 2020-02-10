@@ -1,6 +1,6 @@
 <?php
 	
-	require("../clase/proveedor.class.php");
+	require_once("../clase/proveedor.class.php");
 
 	$obj_edo = new proveedor;
 

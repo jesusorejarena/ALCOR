@@ -1,7 +1,7 @@
 <?php
 
-	require("temainicio.php");
-	require("../../backend/clase/cargo.class.php");
+	require_once("temainicio.php");
+	require_once("../../backend/clase/cargo.class.php");
 
 	$obj_car = new cargo;
 	$obj_car->estandar();

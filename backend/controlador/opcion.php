@@ -1,6 +1,6 @@
 <?php
 	
-	require("../clase/opcion.class.php");
+	require_once("../clase/opcion.class.php");
 
 	$obj_opc = new opcion;
 

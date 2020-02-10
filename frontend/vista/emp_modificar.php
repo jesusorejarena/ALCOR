@@ -2,8 +2,8 @@
 
 	//session
 	
-	require("tema.php");
-	require("../../backend/clase/empresa.class.php");
+	require_once("tema.php");
+	require_once("../../backend/clase/empresa.class.php");
 
 	$obj_emp = new empresa;
 	$obj_emp->estandar();
