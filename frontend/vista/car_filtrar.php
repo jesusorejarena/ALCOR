@@ -8,7 +8,7 @@
 	$obj_car = new cargo;
 	$obj_car->estandar();
 
-	encabezado("Filtrar cargo - ALCOR C.A.");
+	encabezado("Filtrar Cargo - ALCOR C.A.");
 
 ?>
 
@@ -19,7 +19,7 @@
 			</div>
 		</div>
 		<div class="<?php echo $obj_car->card; ?>" style="width: 60rem">
-			<h2 class="<?php echo $obj_car->titulocard; ?>">Filtrar cargo</h2>
+			<h2 class="<?php echo $obj_car->titulocard; ?>">Filtrar Cargo</h2>
 			<hr>
 			<div class="card-body">
 				<form action="car_filtrado.php" method="POST">

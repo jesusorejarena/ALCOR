@@ -10,7 +10,7 @@
 	$obj_pro->asignar_valor();
 	$obj_pro->puntero=$obj_pro->filtrar();
 
-	encabezado("Productos filtrados - ALCOR C.A.");
+	encabezado("Productos Filtrados - ALCOR C.A.");
 
 ?>
 
@@ -21,7 +21,7 @@
 			</div>
 		</div>
 		<div class="<?php echo $obj_pro->card; ?>">
-			<h2 class="<?php echo $obj_pro->titulocard; ?>">Productos filtrados</h2>
+			<h2 class="<?php echo $obj_pro->titulocard; ?>">Productos Filtrados</h2>
 			<hr>
 			<div class="row p-3 m-3">
 				<div class="col-12">

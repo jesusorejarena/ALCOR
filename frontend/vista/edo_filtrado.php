@@ -10,7 +10,7 @@
 	$obj_edo->asignar_valor();	
 	$obj_edo->puntero=$obj_edo->filtrar();
 
-	encabezado("Proveedores filtrados - ALCOR C.A.");
+	encabezado("Proveedores Filtrados - ALCOR C.A.");
 
 ?>
 
@@ -21,7 +21,7 @@
 			</div>
 		</div>
 		<div class="<?php echo $obj_edo->card; ?>">
-			<h2 class="<?php echo $obj_edo->titulocard; ?>">Proveedores filtrados</h2>
+			<h2 class="<?php echo $obj_edo->titulocard; ?>">Proveedores Filtrados</h2>
 			<hr>
 			<div class="row p-3 m-3">
 				<div class="col-12">

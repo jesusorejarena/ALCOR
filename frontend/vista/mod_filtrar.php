@@ -4,20 +4,11 @@
 	
 	require_once("tema.php");
 	require_once("../../backend/clase/modulo.class.php");
-	require_once("../../backend/clase/cargo.class.php");
-	require_once("../../backend/clase/opcion.class.php");
 
 	$obj_mod = new modulo;
 	$obj_mod->estandar();
-	$obj_mod->puntero=$obj_mod->filtrar();
 
-	$obj_car = new cargo;
-	$obj_car->puntero=$obj_car->listar_normal();
-
-	$obj_opc = new opcion;
-	$obj_opc->puntero=$obj_opc->listar_normal();
-
-	encabezado("Filtrar modulo - ALCOR C.A.");
+	encabezado("Registrar Módulo - ALCOR C.A.");
 
 ?>
 
@@ -28,43 +19,29 @@
 			</div>
 		</div>
 		<div class="<?php echo $obj_mod->card; ?>" style="width: 40rem">
-			<h2 class="<?php echo $obj_mod->titulocard; ?>">Filtrar modulo</h2>
+			<h2 class="<?php echo $obj_mod->titulocard; ?>">Registrar Módulo</h2>
 			<hr>
 			<div class="card-body">
 				<form action="mod_filtrado.php" method="POST">
 					<div class="row p-3">
-						<div class="col-12">
+						<div class="col-6">
 							<div class="form-group">
-								<label for="cod_mod" class="<?php echo $obj_mod->for; ?>">Cargo:</label>
+								<label for="cod_mod" class="<?php echo $obj_mod->for; ?>">Código:</label>
 								<input type="text" name="cod_mod" id="cod_mod" placeholder="Código:" class="<?php echo $obj_mod->input_normal; ?>">
+							</div>
+						</div>
+						<div class="col-6">
+							<div class="form-group">
+								<label for="nom_mod" class="<?php echo $obj_mod->for; ?>">Nombre:</label>
+								<input type="text" name="nom_mod" id="nom_mod" placeholder="Nombre:" class="<?php echo $obj_mod->input_normal; ?>">
 							</div>
 						</div>
 					</div>
 					<div class="row p-3">
-						<div class="col-6">
+						<div class="col-12">
 							<div class="form-group">
-								<label for="cod_car" class="<?php echo $obj_mod->for; ?>">Cargo:</label>
-								<select name="cod_car" id="cod_car" class="<?php echo $obj_mod->input_normal; ?>">
-									<option value="">Seleccione...</option>
-									<?php while (($cargo=$obj_car->extraer_dato())>0)
-										{
-											echo "<option value='$cargo[cod_car]'>$cargo[nom_car]</option>";
-										}
-									?>
-								</select>
-							</div>
-						</div>
-						<div class="col-6">
-							<div class="form-group">
-								<label for="cod_opc" class="<?php echo $obj_mod->for; ?>">Opcion:</label>
-								<select name="cod_opc" id="cod_opc" class="<?php echo $obj_mod->input_normal; ?>">
-									<option value="">Seleccione...</option>
-									<?php while (($opcion=$obj_opc->extraer_dato())>0)
-										{
-											echo "<option value='$opcion[cod_opc]'>$opcion[nom_opc]</option>";
-										}
-									?>
-								</select>
+								<label for="url_mod" class="<?php echo $obj_mod->for; ?>">URL:</label>
+								<input type="text" name="url_mod" id="url_mod" placeholder="URL:" class="<?php echo $obj_mod->input_normal; ?>">
 							</div>
 						</div>
 					</div>

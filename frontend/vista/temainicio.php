@@ -3,7 +3,16 @@
 
 	function encabezado($titulo)
 	{
-		
+		require_once("../../backend/clase/instalacion.class.php");
+
+		$obj_ins = new instalacion;
+		$obj_ins->contador=$obj_ins->comprobar();
+
+		if(($obj_ins->contando())==0)
+		{
+			header("Location: ins_ado_registrar.php");
+		}
+
 		echo "
 		<!DOCTYPE html>
 		<html lang='es'>
@@ -57,7 +66,7 @@
 												<a href='inicio_contacto.php' class='nav-link'>Contacto</a>
 											</li>
 											<li class='nav-item'>
-												<a href='usu_sesion.php' class='nav-link btn btn-md btn-primary'>Iniciar Sesión</a>
+												<a href='usu_sesion.php' class='nav-link text-light btn btn-md btn-rojo'>Iniciar Sesión</a>
 											</li>
 										</ul>
 									</div>
@@ -84,7 +93,7 @@
 				<footer class=''>
 					<div class='container-fluid pt-5 bg-danger text-white'>
 						<div class='row'>
-							<div class='col-4'><img src='../img/logo2.png' width='100%' class='animated bounceInLeft'></div>
+							<div class='col-4'></div>
 							<div class='col-4'></div>
 							<div class='col-4 text-right'>
 								<p><b>Dirección:</b> <br>$empresa[dir_emp]</p>

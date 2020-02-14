@@ -26,36 +26,36 @@
 					<div class="row p-3">
 						<div class="col-12">
 							<div class="form-group">
-								<label for="cod_ado" class="<?php echo $obj_for->for; ?>">Código:</label>
-								<input type="text" name="cod_ado" id="cod_ado" placeholder="Código:" class="<?php echo $obj_for->input_normal; ?>">
+								<label for="cod_for" class="<?php echo $obj_for->for; ?>">Código:</label>
+								<input type="text" name="cod_for" id="cod_for" placeholder="Código:" class="<?php echo $obj_for->input_normal; ?>">
 							</div>
 						</div>
 					</div>
 					<div class="row p-3">
 						<div class="col-6">
 							<div class="form-group">
-								<label for="nom_ado" class="<?php echo $obj_for->for; ?>">Nombre:</label>
-								<input type="text" name="nom_ado" id="nom_ado" placeholder="Nombre:" class="<?php echo $obj_for->input_normal; ?>">
+								<label for="nom_for" class="<?php echo $obj_for->for; ?>">Nombre:</label>
+								<input type="text" name="nom_for" id="nom_for" placeholder="Nombre:" class="<?php echo $obj_for->input_normal; ?>">
 							</div>
 						</div>
 						<div class="col-6">
 							<div class="form-group">
-								<label for="ape_ado" class="<?php echo $obj_for->for; ?>">Apellido:</label>
-								<input type="text" name="ape_ado" id="ape_ado" placeholder="Apellido:" class="<?php echo $obj_for->input_normal; ?>">
+								<label for="ape_for" class="<?php echo $obj_for->for; ?>">Apellido:</label>
+								<input type="text" name="ape_for" id="ape_for" placeholder="Apellido:" class="<?php echo $obj_for->input_normal; ?>">
 							</div>
 						</div>
 					</div>
 					<div class="row p-3">
 						<div class="col-6">
 							<div class="form-group">
-								<label for="tel_ado" class="<?php echo $obj_for->for; ?>">Teléfono:</label>
-								<input type="text" name="tel_ado" id="tel_ado" placeholder="Teléfono:" class="<?php echo $obj_for->input_normal; ?>">
+								<label for="tel_for" class="<?php echo $obj_for->for; ?>">Teléfono:</label>
+								<input type="text" name="tel_for" id="tel_for" placeholder="Teléfono:" class="<?php echo $obj_for->input_normal; ?>">
 							</div>
 						</div>
 						<div class="col-6">
 							<div class="form-group">
-								<label for="cor_ado" class="<?php echo $obj_for->for; ?>">Correo:</label>
-								<input type="email" name="cor_ado" id="cor_ado" placeholder="Correo:"  class="<?php echo $obj_for->input_normal; ?>">
+								<label for="cor_for" class="<?php echo $obj_for->for; ?>">Correo:</label>
+								<input type="text" name="cor_for" id="cor_for" placeholder="Correo:"  class="<?php echo $obj_for->input_normal; ?>">
 							</div>
 						</div>
 					</div>

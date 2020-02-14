@@ -4,16 +4,10 @@
 	
 	require_once("tema.php");
 	require_once("../../backend/clase/modulo.class.php");
-	require_once("../../backend/clase/opcion.class.php");
-	require_once("../../backend/clase/cargo.class.php");
 
 	$obj_mod = new modulo;
 	$obj_mod->estandar();
 	$obj_mod->puntero=$obj_mod->listar_eliminar();
-
-	$obj_opc = new opcion;
-
-	$obj_car = new cargo;	
 
 	encabezado("Modulos eliminados - ALCOR C.A.");
 
@@ -35,10 +29,8 @@
 							<thead>
 								<tr>
 									<th>Código</th>
-									<th>Nombre del cargo</th>
-									<th>Nombre de la opción</th>
-									<th>Acción de la opción</th>
-									<th>URL de la opción</th>
+									<th>Nombre</th>
+									<th>URL</th>
 									<th>Fecha de creación</th>
 									<th>Ultima modificación</th>
 									<th>Fecha de eliminación</th>
@@ -52,23 +44,12 @@
 								<?php 
 									while(($modulo=$obj_mod->extraer_dato())>0)
 									{
-
-										$obj_opc->cod_opc=$modulo['cod_opc'];
-										$obj_opc->puntero=$obj_opc->filtrar();
-										$opcion=$obj_opc->extraer_dato();
-
-										$obj_car->cod_car=$modulo['cod_car'];
-										$obj_car->puntero=$obj_car->filtrar();
-										$cargo=$obj_car->extraer_dato();
-
 										echo "<form action='../../backend/controlador/modulo.php' method='POST'>
 												<tr>
 													<input type='hidden' name='cod_mod' value='$modulo[cod_mod]'>
 													<td>$modulo[cod_mod]</td>
-													<td>$cargo[nom_car]</td>
-													<td>$opcion[nom_opc]</td>
-													<td>$opcion[acc_opc]</td>
-													<td>$opcion[url_opc]</td>
+													<td>$modulo[nom_mod]</td>
+													<td>$modulo[url_mod]</td>
 													<td>$modulo[cre_mod]</td>
 													<td>$modulo[act_mod]</td>
 													<td>$modulo[eli_mod]</td>

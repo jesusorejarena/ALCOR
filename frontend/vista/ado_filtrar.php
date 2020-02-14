@@ -9,7 +9,7 @@
 	$obj_car->estandar();
 	$obj_car->puntero=$obj_car->listar_normal();
 
-	encabezado("Filtrar empleados - ALCOR C.A.");
+	encabezado("Filtrar empleadoE - ALCOR C.A.");
 
 ?>
 
@@ -20,7 +20,7 @@
 			</div>
 		</div>
 		<div class="<?php echo $obj_car->card; ?>" style="width: 60rem">
-			<h2 class="<?php echo $obj_car->titulocard; ?>">Filtrar empleados</h2>
+			<h2 class="<?php echo $obj_car->titulocard; ?>">Filtrar Empleados</h2>
 			<hr>
 			<div class="card-body">
 				<form action="ado_filtrado.php" method="POST">

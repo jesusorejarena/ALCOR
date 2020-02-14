@@ -9,7 +9,7 @@
 	$obj_edo->estandar();
 	$obj_edo->puntero=$obj_edo->listar_normal();
 
-	encabezado("Lista de proveedores - ALCOR C.A.");
+	encabezado("Lista de Proveedores - ALCOR C.A.");
 
 ?>
 
@@ -20,7 +20,7 @@
 			</div>
 		</div>
 		<div class="<?php echo $obj_edo->card; ?>">
-			<h2 class="<?php echo $obj_edo->titulocard; ?>">Lista de proveedores</h2>
+			<h2 class="<?php echo $obj_edo->titulocard; ?>">Lista de Proveedores</h2>
 			<hr>
 			<div class="row p-3 m-3">
 				<div class="col-12">
@@ -28,6 +28,7 @@
 						<table class="<?php echo $obj_edo->tabla; ?>">
 							<thead>
 								<tr>
+									<th>Código</th>
 									<th>Nombre</th>
 									<th>Descripción</th>
 									<th>Dirección</th>
@@ -51,6 +52,7 @@
 										echo "<form action='../../backend/controlador/proveedor.php' method='POST'>
 												<tr>
 													<input type='hidden' name='cod_edo' value='$proveedor[cod_edo]'>
+													<td>$proveedor[cod_edo]</td>
 													<td>$proveedor[nom_edo]</td>
 													<td>$proveedor[des_edo]</td>
 													<td>$proveedor[dir_edo]</td>

@@ -9,7 +9,7 @@
 	$obj_car->estandar();
 	$obj_car->puntero=$obj_car->listar_eliminar();
 
-	encabezado("Cargos eliminados - ALCOR C.A.");
+	encabezado("Cargos Eliminados - ALCOR C.A.");
 
 ?>
 
@@ -20,7 +20,7 @@
 			</div>
 		</div>
 		<div class="<?php echo $obj_car->card; ?>">
-			<h2 class="<?php echo $obj_car->titulocard; ?>">Cargos eliminados</h2>
+			<h2 class="<?php echo $obj_car->titulocard; ?>">Cargos Eliminados</h2>
 			<hr>
 			<div class="row p-3 m-3">
 				<div class="col-12">

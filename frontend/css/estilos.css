@@ -1,0 +1,39 @@
+.bg-blanco {
+  background-color: #EFEFEF !important;
+}
+
+.text-rojo{
+	color: #ffffff !important;
+}
+
+.text-rojo:hover{
+	color: #ff0000 !important;
+}
+
+.btn-cerrar:hover{
+	background-color: #0055ff !important;
+}
+
+.btn-rojo{
+	color: #ffffff !important;
+	background-color: #ff0000 !important;
+}
+
+.btn-rojo:hover{
+	color: #ffffff !important;
+	background-color: #860117 !important;
+}
+
+.btn-rojito:hover{
+	background-color: #ff0000 !important;
+	border-color:  #ff0000 !important;
+}
+
+.btn{
+	transition: 0.8s !important;
+}
+
+.btn:hover{
+	transition: 0.8s !important;
+	border-radius: 50px !important;
+}

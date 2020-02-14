@@ -9,7 +9,7 @@
 	$obj_ado->estandar();
 	$obj_ado->puntero=$obj_ado->listar_eliminar();
 
-	encabezado("Empleados eliminados- ALCOR C.A.");
+	encabezado("Empleados Eliminados- ALCOR C.A.");
 
 ?>
 
@@ -20,7 +20,7 @@
 			</div>
 		</div>
 		<div class="<?php echo $obj_ado->card; ?>">
-			<h2 class="<?php echo $obj_ado->titulocard; ?>">Empleados eliminados</h2>
+			<h2 class="<?php echo $obj_ado->titulocard; ?>">Empleados Eliminados</h2>
 			<hr>
 			<div class="row p-3 m-3">
 				<div class="col-12">
@@ -28,6 +28,7 @@
 						<table class="<?php echo $obj_ado->tabla; ?>">
 							<thead>
 								<tr>
+									<th>Código</th>
 									<th>Nombre</th>
 									<th>Apellido</th>
 									<th>Genero</th>
@@ -53,6 +54,7 @@
 										echo "<form action='../../backend/controlador/empleado.php' method='POST'>
 												<tr>
 													<input type='hidden' name='cod_ado' value='$empleado[cod_ado]'>
+													<td>$empleado[cod_ado]</td>
 													<td>$empleado[nom_ado]</td>
 													<td>$empleado[ape_ado]</td>
 													<td>$empleado[gen_ado]</td>

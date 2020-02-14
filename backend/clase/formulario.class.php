@@ -78,7 +78,7 @@
 			$filtro5=($this->cor_for!="")?"and cor_for like '%$this->cor_for%'":"";
 			$filtro6=($this->asu_for!="")?"and asu_for like '%$this->asu_for%'":"";
 
-            $this->que_bda = "select * from formulario where 1=1 $filtro1 $filtro2 $filtro3 $filtro4 $filtro4 $filtro5;";
+            $this->que_bda = "select * from formulario where 1=1 $filtro1 $filtro2 $filtro3 $filtro4 $filtro4 $filtro5 $filtro6;";
 
             return $this->ejecutar();
 

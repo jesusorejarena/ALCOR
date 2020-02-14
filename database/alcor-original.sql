@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 07-02-2020 a las 04:44:23
+-- Tiempo de generación: 12-02-2020 a las 00:53:32
 -- Versión del servidor: 10.1.13-MariaDB
 -- Versión de PHP: 5.6.23
 
@@ -105,20 +105,14 @@ CREATE TABLE `formulario` (
 CREATE TABLE `modulo` (
   `cod_mod` int(11) NOT NULL,
   `cod_car` int(11) NOT NULL,
-  `cod_opc` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `opcion`
---
-
-CREATE TABLE `opcion` (
-  `cod_opc` int(11) NOT NULL,
-  `nom_opc` varchar(20) NOT NULL,
-  `acc_opc` varchar(20) NOT NULL,
-  `url_opc` varchar(100) NOT NULL
+  `nom_mod` varchar(20) NOT NULL,
+  `url_mod` varchar(20) NOT NULL,
+  `cre_mod` datetime NOT NULL,
+  `act_mod` datetime NOT NULL,
+  `eli_mod` datetime NOT NULL,
+  `res_mod` datetime NOT NULL,
+  `est_mod` set('A','I') NOT NULL,
+  `bas_mod` set('A','B') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -211,15 +205,9 @@ ALTER TABLE `formulario`
 --
 ALTER TABLE `modulo`
   ADD PRIMARY KEY (`cod_mod`),
-  ADD KEY `cod_car` (`cod_car`,`cod_opc`),
-  ADD KEY `cod_opc` (`cod_opc`);
-
---
--- Indices de la tabla `opcion`
---
-ALTER TABLE `opcion`
-  ADD PRIMARY KEY (`cod_opc`),
-  ADD UNIQUE KEY `url_opc` (`url_opc`);
+  ADD UNIQUE KEY `nom_mod` (`nom_mod`),
+  ADD UNIQUE KEY `url_mod` (`url_mod`),
+  ADD KEY `cod_car` (`cod_car`);
 
 --
 -- Indices de la tabla `producto`
@@ -275,11 +263,6 @@ ALTER TABLE `formulario`
 ALTER TABLE `modulo`
   MODIFY `cod_mod` int(11) NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT de la tabla `opcion`
---
-ALTER TABLE `opcion`
-  MODIFY `cod_opc` int(11) NOT NULL AUTO_INCREMENT;
---
 -- AUTO_INCREMENT de la tabla `producto`
 --
 ALTER TABLE `producto`
@@ -308,7 +291,6 @@ ALTER TABLE `empleado`
 -- Filtros para la tabla `modulo`
 --
 ALTER TABLE `modulo`
-  ADD CONSTRAINT `modulo_ibfk_1` FOREIGN KEY (`cod_opc`) REFERENCES `opcion` (`cod_opc`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `modulo_ibfk_2` FOREIGN KEY (`cod_car`) REFERENCES `cargo` (`cod_car`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --

@@ -14,7 +14,7 @@
 	$obj_car->puntero=$obj_car->listar_modificar();
 	$cargo=$obj_car->extraer_dato();
 
-	encabezado("Modificar cargo - ALCOR C.A.");
+	encabezado("Modificar Cargo - ALCOR C.A.");
 
 ?>
 
@@ -25,7 +25,7 @@
 			</div>
 		</div>
 		<div class="<?php echo $obj_car->card; ?>" style="width: 60rem">
-			<h2 class="<?php echo $obj_car->titulocard; ?>">Modificar cargo</h2>
+			<h2 class="<?php echo $obj_car->titulocard; ?>">Modificar Cargo</h2>
 			<hr>
 			<div class="card-body">
 				<form action="../../backend/controlador/cargo.php" method="POST">

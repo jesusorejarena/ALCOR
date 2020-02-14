@@ -10,7 +10,7 @@
 	$obj_for->asignar_valor();
 	$obj_for->puntero=$obj_for->filtrar();
 
-	encabezado("Formularios filtrados - ALCOR C.A.");
+	encabezado("Formularios Filtrados - ALCOR C.A.");
 
 ?>
 
@@ -21,7 +21,7 @@
 			</div>
 		</div>
 		<div class="<?php echo $obj_for->card; ?>">
-			<h2 class="<?php echo $obj_for->titulocard; ?>">Formularios filtrados</h2>
+			<h2 class="<?php echo $obj_for->titulocard; ?>">Formularios Filtrados</h2>
 			<hr>
 			<div class="row p-3 m-3">
 				<div class="col-12">

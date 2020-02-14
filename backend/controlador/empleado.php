@@ -9,18 +9,23 @@
 	switch ($_REQUEST["ejecutar"])
 	{
 		case 'insertar':			$obj_ado->insertar();
+									header("Location: ../../frontend/vista/ado_registrar.php");
 		break;
 
 		case 'modificar_normal':	$obj_ado->modificar_normal();
+									header("Location: ../../frontend/vista/ado_menu.php");
 		break;
 
 		case 'modificar_restaurar':	$obj_ado->modificar_restaurar();
+									header("Location: ../../frontend/vista/ado_listarpapelera.php");
 		break;
 
 		case 'modificar_eliminar':	$obj_ado->modificar_eliminar();
+									header("Location: ../../frontend/vista/ado_listartodo.php");
 		break;
 
 		case 'eliminar':			$obj_ado->eliminar();
+									header("Location: ../../frontend/vista/ado_listarpapelera.php");
 		break;
 	}
 

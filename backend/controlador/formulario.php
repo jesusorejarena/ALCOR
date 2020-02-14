@@ -9,9 +9,11 @@
 	switch ($_REQUEST["ejecutar"])
 	{
 		case 'insertar':			$obj_for->insertar();
+									header("Location: ../../frontend/vista/inicio.php");
 		break;
 
 		case 'eliminar':			$obj_for->eliminar();
+									header("Location: ../../frontend/vista/for_listartodo.php");
 		break;
 	}
 	

@@ -8,7 +8,7 @@
 	$obj_edo = new proveedor;	
 	$obj_edo->estandar();
 	
-	encabezado("Registrar proveedor - ALCOR C.A.");
+	encabezado("Registrar Proveedor - ALCOR C.A.");
 
 ?>
 
@@ -19,7 +19,7 @@
 			</div>
 		</div>
 		<div class="<?php echo $obj_edo->card; ?>" style="width: 40rem">
-			<h2 class="<?php echo $obj_edo->titulocard; ?>">Registrar proveedor</h2>
+			<h2 class="<?php echo $obj_edo->titulocard; ?>">Registrar Proveedor</h2>
 			<hr>
 			<div class="card-body">
 				<form action="../../backend/controlador/proveedor.php" method="POST">
@@ -27,7 +27,7 @@
 						<div class="col-12">
 							<div class="form-group">
 								<label for="nom_edo" class="<?php echo $obj_edo->for; ?>">Nombre:</label>
-								<input type="text" name="nom_edo" id="nom_edo" placeholder="Nombre:" minlength="2" maxlength="50" required="" class="<?php echo $obj_edo->input_normal; ?>">
+								<input type="text" name="nom_edo" id="nom_edo" placeholder="Ejemplo: ALCOR C.A" minlength="2" maxlength="50" required="" class="<?php echo $obj_edo->input_normal; ?>">
 							</div>
 						</div>
 					</div>
@@ -35,7 +35,7 @@
 						<div class="col-12">
 							<div class="form-group">
 								<label for="des_edo" class="<?php echo $obj_edo->for; ?>">Descripción:</label>
-								<textarea name="des_edo" id="des_edo" placeholder="Descripción:" minlength="3" maxlength="100" class="<?php echo $obj_edo->input_text; ?>"></textarea>
+								<textarea name="des_edo" id="des_edo" placeholder="Ejemplo: Distribuidor de genericos" minlength="3" maxlength="100" class="<?php echo $obj_edo->input_text; ?>"></textarea>
 							</div>
 						</div>
 					</div>
@@ -43,7 +43,7 @@
 						<div class="col-12">
 							<div class="form-group">
 								<label for="dir_edo" class="<?php echo $obj_edo->for; ?>">Dirección:</label>
-								<textarea name="dir_edo" id="dir_edo" placeholder="Dirección:" minlength="3" maxlength="100" required="" class="<?php echo $obj_edo->input_text; ?>"></textarea>
+								<textarea name="dir_edo" id="dir_edo" placeholder="Ejemplo: La Concordia, Barrio el Carmen" minlength="3" maxlength="100" required="" class="<?php echo $obj_edo->input_text; ?>"></textarea>
 							</div>
 						</div>
 					</div>
@@ -51,13 +51,13 @@
 						<div class="col-6">
 							<div class="form-group">
 								<label for="tel_edo" class="<?php echo $obj_edo->for; ?>">Teléfono:</label>
-								<input type="text" name="tel_edo" id="tel_edo" placeholder="Teléfono:" minlength="11" maxlength="11" required="" class="<?php echo $obj_edo->input_normal; ?>">
+								<input type="text" name="tel_edo" id="tel_edo" placeholder="Ejemplo: 04241234567" minlength="11" maxlength="11" required="" class="<?php echo $obj_edo->input_normal; ?>">
 							</div>
 						</div>
 						<div class="col-6">
 							<div class="form-group">
 								<label for="cor_edo" class="<?php echo $obj_edo->for; ?>">Correo:</label>
-								<input type="email" name="cor_edo" id="cor_edo" placeholder="Correo:" minlength="1" maxlength="100" required="" class="<?php echo $obj_edo->input_normal; ?>">
+								<input type="email" name="cor_edo" id="cor_edo" placeholder="Ejemplo: alcor@gmail.com" minlength="1" maxlength="100" required="" class="<?php echo $obj_edo->input_normal; ?>">
 							</div>
 						</div>
 					</div>
@@ -76,7 +76,7 @@
 						<div class="col-6">
 							<div class="form-group">
 								<label for="rif_edo" class="<?php echo $obj_edo->for; ?>">RIF:</label>
-								<input type="text" name="rif_edo" id="rif_edo" placeholder="RIF:" minlength="9" maxlength="9" required="" class="<?php echo $obj_edo->input_normal; ?>">
+								<input type="text" name="rif_edo" id="rif_edo" placeholder="J-35161987-3" minlength="9" maxlength="9" required="" class="<?php echo $obj_edo->input_normal; ?>">
 							</div>
 						</div>
 					</div>

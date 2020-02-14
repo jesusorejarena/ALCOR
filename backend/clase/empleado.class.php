@@ -84,7 +84,7 @@
 			return $this->ejecutar();
 
 		}// fin de insertar
-
+		
 		function modificar_normal()
 		{
 			$act_ado = date("y-m-d h:i:s");

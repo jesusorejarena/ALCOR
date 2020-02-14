@@ -9,7 +9,7 @@
 	$obj_car->estandar();
 	$obj_car->puntero=$obj_car->listar_normal();
 
-	encabezado("Registrar empleado - ALCOR C.A.");
+	encabezado("Registrar Empleado - ALCOR C.A.");
 
 ?>
 
@@ -20,7 +20,7 @@
 			</div>
 		</div>
 		<div class="<?php echo $obj_car->card; ?>" style="width: 40rem">
-			<h2 class="<?php echo $obj_car->titulocard; ?>">Registrar empleado</h2>
+			<h2 class="<?php echo $obj_car->titulocard; ?>">Registrar Empleado</h2>
 			<hr>
 			<div class="card-body">
 				<form action="../../backend/controlador/empleado.php" method="POST">

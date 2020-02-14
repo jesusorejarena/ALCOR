@@ -1,17 +1,21 @@
-<?php 
+<?php
 
 	/*
 
-		cod_mod, nom_mod, des_mod, cod_car, cod_opc
+		cod_mod, url_mod, cre_mod, act_mod, eli_mod, est_mod, bas_mod
 
-		cod_mod			INT(11)			NO		A_I		PK			->	Codigo del modulo
-		nom_mod			VARCHAR(20)		NO							->	Nombre del modulo
-		des_mod			VARCHAR(50)		Si							->	Descripcion del modulo
-		cod_car		VARCHAR(100)	NO							->	FKY del Cargo
-		cod_opc		VARCHAR(100)	NO							->	FKY de la Opcion
-		
+		cod_mod				INT(11)			NO		A_I		PK		->	Codigo del modulo
+		nom_mod				INR(10)			NO		UNIQUE			->	Numero de Serie del modulo
+		url_mod				VARCHAR(50)		NO						->	URL del modulo
+		cre_mod				DATETIME		NO						->	Fecha de Creación del modulo
+		act_mod				DATETIME  		SI						->	Fecha de Actulizacion del modulo
+		eli_mod				DATETIME  		SI						->	Fecha de Eliminado del modulo
+		res_mod				DATETIME  		SI						->	Fecha de Restaurar del modulo
+		est_mod				VARCHAR(1)		NO						->	Estatus del modulo
+		bas_mod				VARCHAR(1) 		NO						->	Basura del modulo
+
 	*/
-
+	
 	require_once("utilidad.class.php");
 
 	class modulo extends utilidad
@@ -19,24 +23,27 @@
 
 		public $cod_mod;
 		public $cod_car;
-		public $cod_opc;
+		public $nom_mod;
+		public $url_mod;
 		public $est_mod;
 		public $bas_mod;
 
-		
+
 		function insertar()
 		{
 			$cre_mod = date("y-m-d h:i:s");
 
 			$this->que_bda = "insert into modulo
-								(cod_car,
-								cod_opc,
+								(nom_mod,
+								cod_car,
+								url_mod,
 								cre_mod,
 								est_mod,
 								bas_mod)
 							values
-								('$this->cod_car',
-								'$this->cod_opc',
+								('$this->nom_mod', 
+								'$this->cod_car',
+								'$this->url_mod',
 								'$cre_mod',
 								'A',
 								'A');";
@@ -48,16 +55,16 @@
 		function modificar_normal()
 		{
 			$act_mod = date("y-m-d h:i:s");
-
+			
 			$this->que_bda = "update modulo
-							set 
-								cod_car='$this->cod_car',
-								cod_opc='$this->cod_opc',
-								act_mod='act_mod',
-								est_mod='$this->est_mod',
-								bas_mod='$this->bas_mod'
-							where
-								cod_mod='$this->cod_mod';";
+								set
+									nom_mod='$this->nom_mod',
+									url_mod='$this->cod_car',
+									url_mod='$this->url_mod',
+									est_mod='$this->est_mod',
+									act_mod='$act_mod'
+								where
+									cod_mod='$this->cod_mod';";
 
 			return $this->ejecutar();
 
@@ -66,7 +73,7 @@
 		function modificar_restaurar()
 		{
 			$res_mod = date("y-m-d h:i:s");
-
+			
 			$this->que_bda = "update modulo
 								set
 									res_mod='$res_mod',
@@ -81,7 +88,7 @@
 		function modificar_eliminar()
 		{
 			$eli_mod = date("y-m-d h:i:s");
-
+			
 			$this->que_bda = "update modulo
 								set
 									eli_mod='$eli_mod',
@@ -93,9 +100,29 @@
 
 		}// fin de modificar eliminar
 
+		function venta()
+		{
+			$this->que_bda = "update modulo
+								set
+									est_mod='$this->est_mod'
+								where
+									cod_mod='$this->cod_mod';";
+
+			return $this->ejecutar();
+
+		}// fin de venta
+
 		function listar_normal()
 		{
-			$this->que_bda = "select * from modulo where bas_mod='A';";
+			$this->que_bda = "select * from modulo where bas_mod='A'";
+
+			return $this->ejecutar();
+
+		}// fin de listar normal
+
+		function listar_modificar()
+		{
+			$this->que_bda = "select * from modulo where cod_mod='$this->cod_mod'";
 
 			return $this->ejecutar();
 
@@ -107,19 +134,11 @@
 
 			return $this->ejecutar();
 
-		}// fin de listar modificar
-
-		function listar_modificar()
-		{
-			$this->que_bda = "select * from modulo where cod_mod='$this->cod_mod';";
-
-			return $this->ejecutar();
-
-		}// fin de listar modificar
+		}// fin de listar menu
 
 		function listar_eliminar()
 		{
-			$this->que_bda = "select * from modulo where bas_mod='B';";
+			$this->que_bda = "select * from modulo where bas_mod='B'";
 
 			return $this->ejecutar();
 
@@ -135,20 +154,21 @@
 
 		}// fin de eliminar
 
-		function filtrar()
-		{
+		public function filtrar()
+		{			
 			$filtro1=($this->cod_mod!="")?"and cod_mod='$this->cod_mod'":"";
-			$filtro2=($this->cod_car!="")?"and cod_car='$this->cod_car'":"";
-			$filtro3=($this->cod_opc!="")?"and cod_opc='$this->cod_opc'":"";
-			$filtro4=($this->est_mod!="")?"and est_mod='$this->est_mod'":"";
-			$filtro5=($this->bas_mod!="")?"and bas_mod='$this->bas_mod'":"";
-			
-			$this->que_bda = "select * from modulo where 1=1 $filtro1 $filtro2 $filtro3 $filtro4 $filtro5;";
+			$filtro2=($this->cod_mod!="")?"and cod_mod='$this->cod_mod'":"";
+			$filtro3=($this->nom_mod!="")?"and nom_mod like '%$this->nom_mod%'":"";
+			$filtro4=($this->url_mod!="")?"and url_mod like '%$this->url_mod%'":"";
+			$filtro5=($this->est_mod!="")?"and est_mod='$this->est_mod'":"";
+			$filtro6=($this->bas_mod!="")?"and bas_mod='$this->bas_mod'":"";
+
+			$this->que_bda = "select * from modulo where 1=1 $filtro1 $filtro2 $filtro3 $filtro4 $filtro5 $filtro6;";
 
 			return $this->ejecutar();
 
 		}// fin de filtrar
 
 	}
-
- ?>
+	
+?>

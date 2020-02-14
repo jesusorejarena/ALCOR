@@ -8,7 +8,7 @@
 	$obj_car = new cargo;
 	$obj_car->estandar();
 
-	encabezado("Registrar cargo - ALCOR C.A.");
+	encabezado("Registrar Cargo - ALCOR C.A.");
 
 ?>
 
@@ -19,7 +19,7 @@
 			</div>
 		</div>
 		<div class="<?php echo $obj_car->card; ?>" style="width: 40rem">
-			<h2 class="<?php echo $obj_car->titulocard; ?>">Registrar cargo</h2>
+			<h2 class="<?php echo $obj_car->titulocard; ?>">Registrar Cargo</h2>
 			<hr>
 			<div class="card-body">
 				<form action="../../backend/controlador/cargo.php" method="POST">
@@ -27,7 +27,7 @@
 						<div class="col-12">
 							<div class="form-group">
 								<label for="nom_car" class="<?php echo $obj_car->for; ?>">Nombre:</label>
-								<input type="text" name="nom_car" id="nom_car" placeholder="Nombre: " minlength="3" maxlength="50" required="" class="<?php echo $obj_car->input_normal; ?>">
+								<input type="text" name="nom_car" id="nom_car" placeholder="Nombre: " minlength="3" maxlength="50" class="<?php echo $obj_car->input_normal; ?>">
 							</div>
 						</div>
 					</div>

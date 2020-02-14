@@ -8,14 +8,14 @@
 	$obj_pro = new producto;
 	$obj_pro->estandar();
 
-	encabezado("Menu de producto - ALCOR C.A.");
+	encabezado("Menu de Productos - ALCOR C.A.");
 
 ?>
 
 	<div class="<?php echo $obj_pro->container; ?>">
+		<div class="row py-5"><div class="col-12"></div></div>
+		<h2 class="<?php echo $obj_pro->titulos; ?>">Menú de Productos</h2>
 		<div class="<?php echo $obj_pro->card; ?>" style="width: 30rem">
-			<h2 class="<?php echo $obj_pro->titulocard; ?>">Menú de producto</h2>
-			<hr>
 			<div class="card-body">
 				<div class="row p-1 m-1">
 					<div class="col-6 text-center">
@@ -35,6 +35,7 @@
 				</div>
 			</div>
 		</div>
+		<div class="row py-5"><div class="col-12"></div></div>
 	</div>
 
 

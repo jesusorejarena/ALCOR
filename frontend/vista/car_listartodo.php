@@ -9,7 +9,7 @@
 	$obj_car->estandar();
 	$obj_car->puntero=$obj_car->listar_normal();
 
-	encabezado("Lista de cargos - ALCOR C.A.");
+	encabezado("Lista de Cargos - ALCOR C.A.");
 
 ?>
 
@@ -20,7 +20,7 @@
 			</div>
 		</div>
 		<div class="<?php echo $obj_car->card; ?>">
-			<h2 class="<?php echo $obj_car->titulocard; ?>">Lista de cargos</h2>
+			<h2 class="<?php echo $obj_car->titulocard; ?>">Lista de Cargos</h2>
 			<hr>
 			<div class="row p-3 m-3">
 				<div class="col-12">

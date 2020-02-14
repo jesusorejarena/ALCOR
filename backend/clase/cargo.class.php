@@ -131,6 +131,15 @@
 			return $this->ejecutar();
 
 		}// fin de filtrar
+
+		function comprobar()
+		{
+			$this->que_bda = "select * from cargo;";
+
+			return $this->ejecutar();
+
+		}// fin de comprobar
+
 	}
 
  ?>

@@ -9,19 +9,14 @@
 	$obj_pro->estandar();
 	$obj_pro->puntero=$obj_pro->listar_normal();
 
-	encabezado("Registrar venta - ALCOR C.A.");
+	encabezado("Registrar Ventas - ALCOR C.A.");
 
 ?>
 
 	<div class="<?php echo $obj_pro->container; ?>">
-		<div class="row pb-3 mb-3 bg-white">
-			<div class="col-12 text-left">
-				<button class="<?php echo $obj_pro->btn_atras; ?>" onClick="window.location.href='rol_menu.php'">Atras</button>
-			</div>
-		</div>
+		<div class="row py-5"><div class="col-12"></div></div>
+		<h2 class="<?php echo $obj_pro->titulos; ?>">Registrar Venta</h2>
 		<div class="<?php echo $obj_pro->card; ?>" style="width: 40rem">
-			<h2 class="<?php echo $obj_pro->titulocard; ?>">Registrar venta</h2>
-			<hr>
 			<div class="card-body">
 				<form action="../../backend/controlador/producto.php" method="POST">
 					<div class="row p-3">
@@ -61,6 +56,7 @@
 				</form>
 			</div>
 		</div>
+		<div class="row py-5"><div class="col-12"></div></div>
 	</div>
 
 <?php 

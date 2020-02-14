@@ -14,7 +14,7 @@
 	$obj_edo->puntero=$obj_edo->listar_modificar();
 	$proveedor=$obj_edo->extraer_dato();
 	
-	encabezado("Filtrar proveedores - ALCOR C.A.");
+	encabezado("Filtrar Proveedores - ALCOR C.A.");
 
 ?>
 
@@ -25,7 +25,7 @@
 			</div>
 		</div>
 		<div class="<?php echo $obj_edo->card; ?>" style="width: 60rem">
-			<h2 class="<?php echo $obj_edo->titulocard; ?>">Filtrar proveedores</h2>
+			<h2 class="<?php echo $obj_edo->titulocard; ?>">Filtrar Proveedores</h2>
 			<hr>
 			<div class="card-body">
 				<form action="../../backend/controlador/proveedor.php" method="POST">

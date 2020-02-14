@@ -8,14 +8,14 @@
 	$obj_ado = new empleado;
 	$obj_ado->estandar();
 
-	encabezado("Menu de empleados - ALCOR C.A.");
+	encabezado("Menu de Empleados - ALCOR C.A.");
 
 ?>
 
 	<div class="<?php echo $obj_ado->container; ?>">
+		<div class="row py-5"><div class="col-12"></div></div>
+		<h2 class="<?php echo $obj_ado->titulos; ?>">Menú de Empleados</h2>
 		<div class="<?php echo $obj_ado->card; ?>" style="width: 30rem">
-			<h2 class="<?php echo $obj_ado->titulocard; ?>">Menú de empleados</h2>
-			<hr>
 			<div class="card-body">
 				<div class="row p-1 m-1">
 					<div class="col-6 text-center">
@@ -35,6 +35,7 @@
 				</div>
 			</div>
 		</div>
+		<div class="row py-5"><div class="col-12"></div></div>
 	</div>
 
 

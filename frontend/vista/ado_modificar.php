@@ -19,7 +19,7 @@
 	$obj_car = new cargo;
 	$obj_car->puntero=$obj_car->listar_normal();
 
-	encabezado("Modificar empleado - ALCOR C.A.");
+	encabezado("Modificar Empleado - ALCOR C.A.");
 
 ?>
 
@@ -30,7 +30,7 @@
 			</div>
 		</div>
 		<div class="<?php echo $obj_ado->card; ?>" style="width: 40rem">
-			<h2 class="<?php echo $obj_ado->titulocard; ?>">Modificar empleado</h2>
+			<h2 class="<?php echo $obj_ado->titulocard; ?>">Modificar Empleado</h2>
 			<hr>
 			<div class="card-body">
 				<form action="../../backend/controlador/empleado.php" method="POST">

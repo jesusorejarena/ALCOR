@@ -8,14 +8,14 @@
 	$obj_edo = new proveedor;
 	$obj_edo->estandar();
 
-	encabezado("Menu de proveedor - ALCOR C.A.");
+	encabezado("Menú de Proveedores - ALCOR C.A.");
 
 ?>
 
 	<div class="<?php echo $obj_edo->container; ?>">
+		<div class="row py-5"><div class="col-12"></div></div>
+		<h2 class="<?php echo $obj_edo->titulos; ?>">Menú de Proveedores</h2>
 		<div class="<?php echo $obj_edo->card; ?>" style="width: 30rem">
-			<h2 class="<?php echo $obj_edo->titulocard; ?>">Menú de proveedor</h2>
-			<hr>
 			<div class="card-body">
 				<div class="row p-1 m-1">
 					<div class="col-6 text-center">
@@ -35,6 +35,7 @@
 				</div>
 			</div>
 		</div>
+		<div class="row py-5"><div class="col-12"></div></div>
 	</div>
 
 

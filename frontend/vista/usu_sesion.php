@@ -11,6 +11,7 @@
 ?>
 
 	<div class="<?php echo $obj_ado->container; ?>">
+		<div class="row py-4"><div class="col-12"></div></div>
 		<div class="<?php echo $obj_ado->card; ?>" style="width: 40rem">
 			<h2 class="<?php echo $obj_ado->titulocard; ?>">Iniciar Sesión</h2>
 			<hr>
@@ -44,6 +45,7 @@
 			</div>
 			<div class="<?php echo $obj_ado->footercard; ?>"><a href="">Olvidaste tu contraseña?</a></div>
 		</div>
+		<div class="row py-4"><div class="col-12"></div></div>
 	</div>
 
 <?php 

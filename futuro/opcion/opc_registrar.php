@@ -4,9 +4,13 @@
 	
 	require_once("tema.php");
 	require_once("../../backend/clase/opcion.class.php");
+	require_once("../../backend/clase/modulo.class.php");
 
 	$obj_opc = new opcion;
 	$obj_opc->estandar();
+
+	$obj_mod = new modulo;
+	$obj_mod->puntero=$obj_mod->listar_normal();
 
 	encabezado("Registrar opcion - ALCOR C.A.");
 
@@ -26,14 +30,28 @@
 					<div class="row p-3">
 						<div class="col-6">
 							<div class="form-group">
-								<label for="nom_opc" class="<?php echo $obj_opc->for; ?>">Nombre:</label>
-								<input type="text" name="nom_opc" id="nom_opc" placeholder="Nombre:" minlength="3" maxlength="20" required="" class="<?php echo $obj_opc->input_normal; ?>">
+								<label for="cod_mod" class="<?php echo $obj_per->for; ?>">Modulo:</label>
+								<select name="cod_mod" id="cod_mod" required="" class="<?php echo $obj_opc->input_normal; ?>">
+									<option value="">Seleccione...</option>
+									<?php while (($modulo=$obj_mod->extraer_dato())>0)
+										{
+											echo "<option value='$modulo[cod_mod]'>$modulo[nom_mod]</option>";
+										}
+									?>
+								</select>
 							</div>
 						</div>
 						<div class="col-6">
 							<div class="form-group">
 								<label for="acc_opc" class="<?php echo $obj_opc->for; ?>">Acción:</label>
-								<input type="text" name="acc_opc" id="acc_opc" placeholder="Acción:" minlength="3" maxlength="20" required="" class="<?php echo $obj_opc->input_normal; ?>">
+								<select name="acc_opc" id="acc_opc" required="" class="<?php echo $obj_opc->input_normal; ?>">
+									<option value="">Seleccione...</option>
+									<option value="Registrar">Registrar</option>
+									<option value="Modificar">Modificar</option>
+									<option value="Listar">Listar</option>
+									<option value="Filtrar">Filtrar</option>
+									<option value="Papelera">Papelera</option>
+								</select>
 							</div>
 						</div>
 					</div>
