@@ -8,9 +8,30 @@
 
 									$obj_ins->asignar_valor();
 									$obj_ins->empleado_admin();
-									header("Location: ../../frontend/vista/usu_sesion.php");
+									header("Location: ../../frontend/vista/emp_registrar.php");
 		break;
 		
 	}
+
+?>
+
+<?php
+
+	/*require_once("../clase/instalacion.class.php");
+
+	$obj_ins = new instalacion;
+	$obj_ins->asignar_valor();
+	$obj_ins->cargo_admin();
+
+	switch ($_REQUEST["ejecutar"])
+	{
+		case 'instalacion':		
+
+									
+								$obj_ins->empleado_admin();
+								header("Location: ../../frontend/vista/emp_registrar.php");
+		break;
+		
+	}*/
 
 ?>

@@ -9,7 +9,7 @@
 	$obj_mod->estandar();
 	$obj_mod->puntero=$obj_mod->listar_eliminar();
 
-	encabezado("Modulos eliminados - ALCOR C.A.");
+	encabezado("Modulos Eliminados - ALCOR C.A.");
 
 ?>
 
@@ -20,7 +20,7 @@
 			</div>
 		</div>
 		<div class="<?php echo $obj_mod->card; ?>">
-			<h2 class="<?php echo $obj_mod->titulocard; ?>">Modulos eliminados</h2>
+			<h2 class="<?php echo $obj_mod->titulocard; ?>">Modulos Eliminados</h2>
 			<hr>
 			<div class="row p-3 m-3">
 				<div class="col-12">
@@ -31,10 +31,10 @@
 									<th>Código</th>
 									<th>Nombre</th>
 									<th>URL</th>
-									<th>Fecha de creación</th>
-									<th>Ultima modificación</th>
-									<th>Fecha de eliminación</th>
-									<th>Fecha de restauración</th>
+									<th>Fecha de Creación</th>
+									<th>Ultima Modificación</th>
+									<th>Fecha de Eliminación</th>
+									<th>Fecha de Restauración</th>
 									<th>Estatus</th>
 									<th>Restaurar</th>
 									<th>Eliminar</th>

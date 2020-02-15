@@ -16,7 +16,7 @@
 		<div class="row py-4"><div class="col-12"></div></div>
 		<h2 class="<?php echo $obj_car->titulos; ?>">Menú de Roles</h2>
 		<div class="row">
-			<div class="col-4">
+			<div class="col-12 col-md-4">
 				<div class="<?php echo $obj_car->card; ?>" width='30%'>
 					<h2 class="<?php echo $obj_car->titulocard; ?>">Menú de Cargos</h2>
 					<hr>
@@ -38,7 +38,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-4">
+			<div class="col-12 col-md-4">
 				<div class="<?php echo $obj_car->card; ?>" width='30%'>
 					<h2 class="<?php echo $obj_car->titulocard; ?>">Menú de Módulos</h2>
 					<hr>
@@ -60,7 +60,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-4">
+			<div class="col-12 col-md-4">
 				<div class="<?php echo $obj_car->card; ?>" width='30%'>
 					<h2 class="<?php echo $obj_car->titulocard; ?>">Menú de Permisos</h2>
 					<hr>

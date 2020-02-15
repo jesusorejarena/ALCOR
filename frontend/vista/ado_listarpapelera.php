@@ -39,10 +39,10 @@
 									<th>Correo</th>
 									<th>Cargo</th>
 									<th>Dirección</th>
-									<th>Fecha de contrato</th>
-									<th>Ultima modificación</th>
-									<th>Fecha de eliminación</th>
-									<th>Fecha de restauración</th>
+									<th>Fecha de Contrato</th>
+									<th>Ultima Modificación</th>
+									<th>Fecha de Eliminación</th>
+									<th>Fecha de Restauración</th>
 									<th>Restaurar</th>
 									<th>Eliminar</th>
 								</tr>

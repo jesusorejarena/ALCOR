@@ -36,6 +36,7 @@
 									<th>Correo</th>
 									<th>Asunto</th>
 									<th>Fecha de Registro</th>
+									<th>PDF</th>
 									<th>Eliminar</th>
 								</tr>
 							</thead>
@@ -53,6 +54,7 @@
 													<td>$formulario[cor_for]</td>
 													<td>$formulario[asu_for]</td>
 													<td>$formulario[cre_for]</td>
+													<td><a class='$obj_for->btn_eliminar' href='for_reportepdf.php?cod_for=$formulario[cod_for]'>PDF</a></td>
 													<td><button type='submit' class='$obj_for->btn_eliminar' name='ejecutar' value='eliminar'>Eliminar</button></td>
 												</tr>
 											</form>

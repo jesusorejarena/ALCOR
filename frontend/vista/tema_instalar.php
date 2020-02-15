@@ -23,6 +23,8 @@
 			
 			<body class=''>
 
+
+		<h1 class='h1 text-dark text-center p-4 text-center big-text'</h1>
 		";
 
 	}

@@ -49,7 +49,7 @@
 
 		}// fin de agregar cargo admin
 
-		function insertar_instalacion()
+		function empleado_admin()
 		{
 			$cre_ado = date("y-m-d h:i:s");
 

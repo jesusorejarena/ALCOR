@@ -15,7 +15,7 @@
 
 	$obj_mod = new modulo;
 
-	encabezado("Lista de permisos - ALCOR C.A.");
+	encabezado("Lista de Permisos - ALCOR C.A.");
 
 ?>
 
@@ -26,7 +26,7 @@
 			</div>
 		</div>
 		<div class="<?php echo $obj_per->card; ?>">
-			<h2 class="<?php echo $obj_per->titulocard; ?>">Lista de permisos</h2>
+			<h2 class="<?php echo $obj_per->titulocard; ?>">Lista de Permisos</h2>
 			<hr>
 			<div class="row p-3 m-3">
 				<div class="col-12">
@@ -42,6 +42,7 @@
 									<th>Fecha de Eliminación</th>
 									<th>Fecha de Restauración</th>
 									<th>Estatus</th>
+									<th>PDF</th>
 									<th>Editar</th>
 									<th>Eliminar</th>
 								</tr>
@@ -70,6 +71,7 @@
 													<td>$permiso[eli_per]</td>
 													<td>$permiso[res_per]</td>
 													<td>$permiso[est_per]</td>
+													<td><a class='$obj_per->btn_eliminar' href='per_reportepdf.php?cod_per=$permiso[cod_per]'>PDF</a></td>
 													<td><a class='$obj_per->btn_editar' href='per_modificar.php?cod_per=$permiso[cod_per]'>Editar</a></td>
 													<td><button type='submit' class='$obj_per->btn_eliminar' name='ejecutar' value='modificar_eliminar'>Eliminar</button></td>
 												</tr>

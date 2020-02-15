@@ -44,6 +44,7 @@
 									<th>Fecha de Restauración</th>
 									<th>Estatus</th>
 									<th>Estado</th>
+									<th>PDF</th>
 									<th>Editar</th>
 									<th>Restaurar</th>
 									<th>Eliminar</th>
@@ -64,16 +65,17 @@
 
 										echo "<form action='../../backend/controlador/permiso.php' method='POST'>
 												<tr>
-													<input type='hidden' name='cod_mod' value='$permiso[cod_mod]'>
-													<td>$permiso[cod_mod]</td>
+													<input type='hidden' name='cod_mod' value='$permiso[cod_per]'>
+													<td>$permiso[cod_per]</td>
 													<td>$cargo[nom_car]</td>
 													<td>$modulo[nom_mod]</td>
-													<td>$permiso[cre_mod]</td>
-													<td>$permiso[act_mod]</td>
-													<td>$permiso[eli_mod]</td>
-													<td>$permiso[res_mod]</td>													
-													<td>$permiso[est_mod]</td>
-													<td>$permiso[bas_mod]</td>
+													<td>$permiso[cre_per]</td>
+													<td>$permiso[act_per]</td>
+													<td>$permiso[eli_per]</td>
+													<td>$permiso[res_per]</td>													
+													<td>$permiso[est_per]</td>
+													<td>$permiso[bas_per]</td>
+													<td><a class='$obj_per->btn_eliminar' href='per_reportepdf.php?cod_per=$modulo[cod_per]'>PDF</a></td>
 													<td><a class='$obj_per->btn_editar' href='mod_modificar.php?cod_mod=$permiso[cod_mod]'>Editar</a></td>
 													<td><button type='submit' class='$obj_per->btn_restaurar' name='ejecutar' value='modificar_restaurar'>Restaurar</button></td>
 													<td><button type='submit' class='$obj_per->btn_eliminar' name='ejecutar' value='modificar_eliminar'>Eliminar</button></td>

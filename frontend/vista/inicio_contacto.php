@@ -10,7 +10,7 @@
 
 ?>
 	<div class="<?php echo $obj_car->container; ?>">
-		<div class="<?php echo $obj_car->card; ?>" style="width: 40rem">
+		<div class="<?php echo $obj_car->card; ?>">
 			<h2 class="<?php echo $obj_car->titulocard; ?>">Quieres comentarnos algo?</h2>
 			<hr>
 			<p class="<?php echo $obj_car->subtitulocard; ?>">Campos opcionales con *</p>

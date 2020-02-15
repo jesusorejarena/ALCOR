@@ -35,12 +35,12 @@
 									<th>Descripción</th>
 									<th>Precio</th>
 									<th>Cantidad</th>
-									<th>Fecha de ingreso</th>
-									<th>Ultima modificación</th>
-									<th>Fecha de eliminación</th>
-									<th>Fecha de restauración</th>
+									<th>Fecha de Ingreso</th>
+									<th>Ultima Modificación</th>
+									<th>Fecha de Eliminación</th>
+									<th>Fecha de Restauración</th>
 									<th>Estado</th>
-									<th>Reporte PDF</th>
+									<th>PDF</th>
 									<th>Editar</th>
 									<th>Restaurar</th>
 									<th>Eliminar</th>
@@ -64,7 +64,7 @@
 													<td>$producto[eli_pro]</td>
 													<td>$producto[res_pro]</td>
 													<td>$producto[bas_pro]</td>
-													<td><a class='$obj_pro->btn_eliminar' href=''>PDF</a></td>
+													<td><a class='$obj_pro->btn_eliminar' href='pro_reportepdf.php?cod_pro=$producto[cod_pro]'>PDF</a></td>
 													<td><a class='$obj_pro->btn_editar' href='pro_modificar.php?cod_pro=$producto[cod_pro]'>Editar</a></td>
 													<td><button type='submit' class='$obj_pro->btn_restaurar' name='ejecutar' value='modificar_restaurar'>Restaurar</button></td>
 													<td><button type='submit' class='$obj_pro->btn_eliminar' name='ejecutar' value='modificar_eliminar'>Eliminar</button></td>

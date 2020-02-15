@@ -40,13 +40,13 @@
 									<th>Correo</th>
 									<th>Cargo</th>
 									<th>Dirección</th>
-									<th>Fecha de contrato</th>
-									<th>Ultima modificación</th>
-									<th>Fecha de eliminación</th>
-									<th>Fecha de restauración</th>
+									<th>Fecha de Contrato</th>
+									<th>Ultima Modificación</th>
+									<th>Fecha de Eliminación</th>
+									<th>Fecha de Restauración</th>
 									<th>Estatus</th>
 									<th>Estado</th>
-									<th>Reporte PDF</th>
+									<th>PDF</th>
 									<th>Editar</th>
 									<th>Restaurar</th>
 									<th>Eliminar</th>
@@ -68,18 +68,40 @@
 													<td>$empleado[ced_ado]</td>
 													<td>$empleado[tel_ado]</td>
 													<td>$empleado[cor_ado]</td>
-													<td>$empleado[cod_car]</td>
-													<td>$empleado[dir_ado]</td>
-													<td>$empleado[cre_ado]</td>
-													<td>$empleado[act_ado]</td>
-													<td>$empleado[eli_ado]</td>
-													<td>$empleado[res_ado]</td>
-													<td>$empleado[est_ado]</td>
-													<td>$empleado[bas_ado]</td>
-													<td><a class='$obj_ado->btn_eliminar' href='ado_reportepdf.php?cod_ado=$empleado[cod_ado]'>PDF</a></td>
-													<td><a class='$obj_ado->btn_editar' href='ado_modificar.php?cod_ado=$empleado[cod_ado]'>Editar</a></td>
-													<td><button type='submit' class='$obj_ado->btn_restaurar' name='ejecutar' value='modificar_restaurar'>Restaurar</button></td>
-													<td><button type='submit' class='$obj_ado->btn_eliminar' name='ejecutar' value='modificar_eliminar'>Eliminar</button></td>
+													<td>$empleado[cod_car]</td>";
+
+													if ($empleado['cod_ado']==1 || $empleado['cod_car']==1) {
+														echo "
+																<td></td>
+																<td></td>
+																<td></td>
+																<td></td>
+																<td></td>
+																<td></td>
+																<td></td>
+																<td></td>
+																<td></td>
+																<td></td>
+																<td></td>
+														";
+													}
+													else
+													{
+														echo "
+																<td>$empleado[dir_ado]</td>
+																<td>$empleado[cre_ado]</td>
+																<td>$empleado[act_ado]</td>
+																<td>$empleado[eli_ado]</td>
+																<td>$empleado[res_ado]</td>
+																<td>$empleado[est_ado]</td>
+																<td>$empleado[bas_ado]</td>
+																<td><a class='$obj_ado->btn_eliminar' href='ado_reportepdf.php?cod_ado=$empleado[cod_ado]'>PDF</a></td>
+																<td><a class='$obj_ado->btn_editar' href='ado_modificar.php?cod_ado=$empleado[cod_ado]'>Editar</a></td>
+																<td><button type='submit' class='$obj_ado->btn_restaurar' name='ejecutar' value='modificar_restaurar'>Restaurar</button></td>
+																<td><button type='submit' class='$obj_ado->btn_eliminar' name='ejecutar' value='modificar_eliminar'>Eliminar</button></td>
+														";
+													}
+										echo "
 												</tr>
 											</form>
 										";

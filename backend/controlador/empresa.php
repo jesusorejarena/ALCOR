@@ -9,7 +9,7 @@
 	switch ($_REQUEST["ejecutar"])
 	{
 		case 'insertar':			$obj_emp->insertar();
-									header("Location: ../../frontend/vista/inicio.php");
+									header("Location: ../../frontend/vista/usu_sesion.php");
 		break;
 
 		case 'modificar_normal':	$obj_emp->modificar_normal();

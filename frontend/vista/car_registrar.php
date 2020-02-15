@@ -18,33 +18,39 @@
 				<button class="<?php echo $obj_car->btn_atras; ?>" onClick="window.location.href='rol_menu.php'">Atras</button>
 			</div>
 		</div>
-		<div class="<?php echo $obj_car->card; ?>" style="width: 40rem">
-			<h2 class="<?php echo $obj_car->titulocard; ?>">Registrar Cargo</h2>
-			<hr>
-			<div class="card-body">
-				<form action="../../backend/controlador/cargo.php" method="POST">
-					<div class="row p-3">
-						<div class="col-12">
-							<div class="form-group">
-								<label for="nom_car" class="<?php echo $obj_car->for; ?>">Nombre:</label>
-								<input type="text" name="nom_car" id="nom_car" placeholder="Nombre: " minlength="3" maxlength="50" class="<?php echo $obj_car->input_normal; ?>">
+		<div class="row">
+			<div class="col-md-2"></div>
+			<div class="col-12 col-md-8">
+				<div class="<?php echo $obj_car->card; ?>">
+					<h2 class="<?php echo $obj_car->titulocard; ?>">Registrar Cargo</h2>
+					<hr>
+					<div class="card-body">
+						<form action="../../backend/controlador/cargo.php" method="POST">
+							<div class="row p-3">
+								<div class="col-12">
+									<div class="form-group">
+										<label for="nom_car" class="<?php echo $obj_car->for; ?>">Nombre:</label>
+										<input type="text" name="nom_car" id="nom_car" placeholder="Nombre: " minlength="3" maxlength="50" class="<?php echo $obj_car->input_normal; ?>">
+									</div>
+								</div>
 							</div>
-						</div>
+							<div class="row p-3 text-center">
+								<div class="col-6">
+									<div class="form-group">
+										<button type="reset" name="ejecutar" id="ejecutar" value="limpiar" class="<?php echo $obj_car->btn_limpiar; ?>">Limpiar</button>
+									</div>
+								</div>
+								<div class="col-6">
+									<div class="form-group">
+										<button type="submit" name="ejecutar" id="ejecutar" value="insertar" class="<?php echo $obj_car->btn_enviar; ?>">Registrar</button>
+									</div>
+								</div>
+							</div>
+						</form>
 					</div>
-					<div class="row p-3 text-center">
-						<div class="col-6">
-							<div class="form-group">
-								<button type="reset" name="ejecutar" id="ejecutar" value="limpiar" class="<?php echo $obj_car->btn_limpiar; ?>">Limpiar</button>
-							</div>
-						</div>
-						<div class="col-6">
-							<div class="form-group">
-								<button type="submit" name="ejecutar" id="ejecutar" value="insertar" class="<?php echo $obj_car->btn_enviar; ?>">Registrar</button>
-							</div>
-						</div>
-					</div>
-				</form>
+				</div>
 			</div>
+			<div class="col-md-2"></div>
 		</div>
 	</div>
 

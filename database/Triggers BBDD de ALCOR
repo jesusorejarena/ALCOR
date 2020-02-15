@@ -13,7 +13,7 @@ CREATE TRIGGER `empleado_AI` AFTER INSERT ON `empleado`
 Empresa
 
 CREATE TRIGGER `empresa_AI` AFTER INSERT ON `empresa`
- FOR EACH ROW INSERT INTO empresa_resp(nom_emp,tel_emp,dir_emp,cor_emp,rif_emp,hou_emp,hod_emp) VALUES(NEW.nom_emp,NEW.tel_emp,NEW.dir_emp,NEW.cor_emp,NEW.rif_emp,NEW.hou_emp,NEW.hod_emp)
+ FOR EACH ROW INSERT INTO empresa_resp(nom_emp,tel_emp,dir_emp,cor_emp,rif_emp,hou_emp,hod_emp) VALUES(NEW.nom_emp,NEW.tel_emp,NEW.dir_emp,NEW.cor_emp,NEW.rif_emp,NEW.hou_emp,NEW.hod_emp,NOW())
 
 
 Formulario
@@ -25,7 +25,7 @@ CREATE TRIGGER `formulario_AI` AFTER INSERT ON `formulario`
 Módulo
 
 CREATE TRIGGER `modulo_AI` AFTER INSERT ON `modulo`
- FOR EACH ROW INSERT INTO modulo_resp(cod_car,nom_mod,url_mod,cre_mod,est_mod,bas_mod) VALUES(NEW.cod_car,NEW.nom_mod,NEW.url_mod,NOW(),NEW.est_mod,NEW.bas_mod)
+ FOR EACH ROW INSERT INTO modulo_resp(nom_mod,url_mod,cre_mod,est_mod,bas_mod) VALUES(NEW.nom_mod,NEW.url_mod,NOW(),NEW.est_mod,NEW.bas_mod)
 
 
 Permiso
@@ -37,17 +37,10 @@ CREATE TRIGGER `permiso_AI` AFTER INSERT ON `permiso`
 Producto
 
 CREATE TRIGGER `producto_AI` AFTER INSERT ON `producto`
- FOR EACH ROW INSERT INTO producto_resp(ser_pro,nom_pro,des_pro,pre_pro,can_pro,cre_pro,bas_pro,est_pro) 
-VALUES(NEW.ser_pro,NEW.nom_pro,NEW.des_pro,NEW.pre_pro,NEW.can_pro,NOW(),NEW.bas_pro,NEW.est_pro)
+ FOR EACH ROW INSERT INTO producto_resp(nom_pro,des_pro,pre_pro,can_pro,cod_edo,cre_pro,bas_pro,est_pro) VALUES(NEW.nom_pro,NEW.des_pro,NEW.pre_pro,NEW.can_pro,NEW.cod_edo,NOW(),NEW.bas_pro,NEW.est_pro)
 
 
 Proveedor
 
 CREATE TRIGGER `proveedor_AI` BEFORE INSERT ON `proveedor`
  FOR EACH ROW INSERT INTO proveedor_resp(nom_edo,des_edo,dir_edo,tel_edo,cor_edo,tip_edo,rif_edo,cre_edo,bas_edo) VALUES(NEW.nom_edo,NEW.des_edo,NEW.dir_edo,NEW.tel_edo,NEW.cor_edo,NEW.tip_edo,NEW.rif_edo,NOW(),NEW.bas_edo)
-
-
-prov_pro
-
-CREATE TRIGGER `provpro_AI` AFTER INSERT ON `prov_pro`
- FOR EACH ROW INSERT INTO prov_pro_resp(cod_edo,cod_pro) VALUES(NEW.cod_edo,NEW.cod_pro)

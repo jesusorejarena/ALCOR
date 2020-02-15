@@ -31,12 +31,13 @@
 								<tr>
 									<th>Código</th>
 									<th>Nombre</th>
-									<th>Fecha de creación</th>
-									<th>Ultima modificación</th>
-									<th>Fecha de eliminado</th>
-									<th>Fecha de restauración</th>
+									<th>Fecha de Creación</th>
+									<th>Ultima Modificación</th>
+									<th>Fecha de Eliminado</th>
+									<th>Fecha de Restauración</th>
+									<th>Estatus</th>
 									<th>Estado</th>
-									<th>Reporte PDF</th>
+									<th>PDF</th>
 									<th>Editar</th>
 									<th>Restaurar</th>
 									<th>Eliminar</th>
@@ -62,6 +63,7 @@
 																<td></td>
 																<td></td>
 																<td></td>
+																<td></td>
 														";
 													} else {
 														echo "
@@ -69,6 +71,8 @@
 																<td>$cargo[act_car]</td>
 																<td>$cargo[eli_car]</td>
 																<td>$cargo[res_car]</td>
+																<td>$cargo[est_car]</td>
+																<td>$cargo[est_car]</td>
 																<td>$cargo[bas_car]</td>
 																<td><a class='$obj_car->btn_eliminar' href='ado_reportepdf.php?cod_car=$cargo[cod_car]'>PDF</a></td>
 																<td><a class='$obj_car->btn_editar' href='car_modificar.php?cod_car=$cargo[cod_car]'>Editar</a></td>

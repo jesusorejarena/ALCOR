@@ -36,10 +36,10 @@
 									<th>Correo</th>
 									<th>Tipo</th>
 									<th>RIF</th>
-									<th>Fecha de registro</th>
-									<th>Ultima modificación</th>
-									<th>Fecha de eliminación</th>
-									<th>Fecha de restauración</th>
+									<th>Fecha de Registro</th>
+									<th>Ultima Modificación</th>
+									<th>Fecha de Eliminación</th>
+									<th>Fecha de Restauración</th>
 									<th>Restaurar</th>
 									<th>Eliminar</th>
 								</tr>

@@ -13,7 +13,7 @@
 ?>
 
 	<div class="<?php echo $obj_ado->container3; ?>">
-		<div class="<?php echo $obj_ado->card; ?>" style="width: 40rem">
+		<div class="<?php echo $obj_ado->card; ?>">
 			<h2 class="<?php echo $obj_ado->titulocard; ?>">Registrar Empleado Administrador</h2>
 			<hr>
 			<div class="card-body">

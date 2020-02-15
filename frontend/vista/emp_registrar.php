@@ -2,24 +2,19 @@
 
 	//session
 	
-	require_once("tema.php");
+	require_once("tema_instalar.php");
 	require_once("../../backend/clase/empresa.class.php");
 
 	$obj_emp = new empresa;
 	$obj_emp->estandar();
 
-	encabezado("Registrar datos de la empresa - ALCOR C.A.");
+	encabezado("Registrar Datos de la Empresa");
 
 ?>
 
-	<div class="<?php echo $obj_emp->container; ?>">
-		<div class="row pb-3 mb-3 bg-white">
-			<div class="col-12 text-left">
-				<button class="<?php echo $obj_emp->btn_atras; ?>" onClick="window.location.href='emp_menu.php'">Atras</button>
-			</div>
-		</div>
-		<div class="<?php echo $obj_emp->card; ?>" style="width: 40rem">
-			<h2 class="<?php echo $obj_emp->titulocard; ?>">Registrar datos de la empresa</h2>
+	<div class="<?php echo $obj_emp->container3; ?>">
+		<div class="<?php echo $obj_emp->card; ?>">
+			<h2 class="<?php echo $obj_emp->titulocard; ?>">Registrar Datos de la Empresa</h2>
 			<hr>
 			<div class="card-body">
 				<form action="../../backend/controlador/empresa.php" method="POST">

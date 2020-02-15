@@ -40,7 +40,7 @@
 								<nav class='navbar navbar-expand-md bg-primary navbar-dark form-control-static fixed-top'>
 
 									<!--Nombre de la app-->
-									<a href='inicio.php' class='navbar-brand animated bounceInLeft px-5'><img src='../img/logo2.png' width='200'></a>
+									<a href='inicio.php' class='navbar-brand animated bounceInLeft px-5'><img src='../img/logo2.png' width='150'></a>
 
 									<!--Menu de hamburguesa-->
 									<button class='navbar-toggler' type='button' data-toggle='collapse' data-target='#collapsibleNavbar'>
@@ -93,21 +93,24 @@
 				<footer class=''>
 					<div class='container-fluid pt-5 bg-danger text-white'>
 						<div class='row'>
-							<div class='col-4'></div>
-							<div class='col-4'></div>
-							<div class='col-4 text-right'>
-								<p><b>Dirección:</b> <br>$empresa[dir_emp]</p>
-								<p><b>E-mail</b> <br>$empresa[cor_emp]</p>
-								<p><b>Teléfonos:</b> <br>$empresa[tel_emp]</p>
+							<div class='col-4 text-left'>
+								<p><b>Dirección: </b>$empresa[dir_emp] <br>
+								<b>E-mail: </b>$empresa[cor_emp] <br>
+								<b>Teléfonos: </b>$empresa[tel_emp]</p>
 							</div>
-						</div>
-						<div class='row'>
-							<div class='col-12 text-center'>
+							<div class='col-4 text-center'>
 								<p>
 									$empresa[nom_emp]<br>
 									$empresa[rif_emp] <br>
 									<a href='https://www.instagram.com/comalcorca/' target='_blank' class='btn btn-danger'><i class='icon ion-logo-instagram' style='font-size: 32px;'></i></a> 
 									<a href='https://twitter.com/comalcorca' target='_blank' class='btn btn-danger'><i class='icon ion-logo-twitter' style='font-size: 32px;'></i></a>
+								</p>
+							</div>
+							<div class='col-4 text-right'>
+								<p>
+									<b>Horario:</b><br>
+									$empresa[hou_emp]<br>
+									$empresa[hod_emp]<br>
 								</p>
 							</div>
 						</div>

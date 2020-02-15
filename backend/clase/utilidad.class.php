@@ -56,14 +56,14 @@
 			// Clases para el Bootstrap 4
 
 			// Inicio Clases Generales
-			$this->container		="container-fluid p-5 mt-5 bg-white";
+			$this->container		="container-fluid py-5 mt-5 bg-white";
 			$this->container2		="container-fluid pt-5 mt-4 bg-light";
 			$this->container3		="container-fluid p-1 m-1 bg-light";
 			$this->titulos			="h1 text-dark text-center p-4 text-center big-text";
 			// Fin Clases Generales
 
 			// Inicio Cards Generales
-			$this->card				="card mx-auto bg-light border border-danger shadow-lg animated pulse m-4";
+			$this->card				="card bg-light border border-primary shadow-lg animated pulse m-4";
 			$this->titulocard		="card-title text-dark text-center pt-3";
 			$this->subtitulocard	="card-subtitle text-muted px-5 text-right";
 			$this->footercard		="card-footer text-right";
@@ -78,7 +78,7 @@
 			$this->for 				="text-dark text-left h5";
 			$this->small 			="form-text text-muted";
 			$this->input_normal		="text-dark form-control bg-transparent border border-top-0 border-left-0 border-right-0 border-danger";
-			$this->input_text		="text-dark form-control bg-transparent border border-top-0 border-primary";
+			$this->input_text		="text-dark form-control bg-transparent border border-top-0 border-danger";
 			// Fin Inputs Generales
 
 			// Inicio Botones Normales Generales

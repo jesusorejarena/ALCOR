@@ -9,7 +9,7 @@
 	$obj_for->estandar();
 	$obj_for->puntero=$obj_for->listar_normal();
 
-	encabezado("Lista de formularios - ALCOR C.A.");
+	encabezado("Lista de Formularios - ALCOR C.A.");
 
 ?>
 
@@ -20,7 +20,7 @@
 			</div>
 		</div>
 		<div class="<?php echo $obj_for->card; ?>">
-			<h2 class="<?php echo $obj_for->titulocard; ?>">Lista de formularios</h2>
+			<h2 class="<?php echo $obj_for->titulocard; ?>">Lista de Formularios</h2>
 			<hr>
 			<div class="row p-3 m-3">
 				<div class="col-12">
@@ -34,6 +34,7 @@
 									<th>Correo</th>
 									<th>Asunto</th>
 									<th>Fecha de Registro</th>
+									<th>PDF</th>
 									<th>Eliminar</th>
 								</tr>
 							</thead>
@@ -50,6 +51,7 @@
 													<td>$formulario[cor_for]</td>
 													<td>$formulario[asu_for]</td>
 													<td>$formulario[cre_for]</td>
+													<td><a class='$obj_for->btn_eliminar' href='for_reportepdf.php?cod_for=$formulario[cod_for]'>PDF</a></td>
 													<td><button type='submit' class='$obj_for->btn_eliminar' name='ejecutar' value='eliminar'>Eliminar</button></td>
 												</tr>
 											</form>

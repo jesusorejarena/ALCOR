@@ -60,6 +60,7 @@
 
 		function modificar_normal()
 		{
+			$act_emp = date("y-m-d h:i:s");
 
 			$this->que_bda = "update empresa
 								set
@@ -69,7 +70,8 @@
 									cor_emp='$this->cor_emp',
 									rif_emp='$this->rif_emp',
 									hou_emp='$this->hou_emp',
-									hod_emp='$this->hod_emp'
+									hod_emp='$this->hod_emp',
+									act_emp='$act_emp'
 								where
 									cod_emp='1';";
 

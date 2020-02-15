@@ -34,11 +34,11 @@
 									<th>Descripción</th>
 									<th>Precio</th>
 									<th>Cantidad</th>
-									<th>Fecha de ingreso</th>
-									<th>Ultima modificación</th>
-									<th>Fecha de eliminación</th>
-									<th>Fecha de restauración</th>
-									<th>Reporte PDF</th>
+									<th>Fecha de Ingreso</th>
+									<th>Ultima Modificación</th>
+									<th>Fecha de Eliminación</th>
+									<th>Fecha de Restauración</th>
+									<th>PDF</th>
 									<th>Editar</th>
 									<th>Restaurar</th>
 									<th>Eliminar</th>

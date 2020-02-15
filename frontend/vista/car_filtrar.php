@@ -18,49 +18,65 @@
 				<button class="<?php echo $obj_car->btn_atras; ?>" onClick="window.location.href='rol_menu.php'">Atras</button>
 			</div>
 		</div>
-		<div class="<?php echo $obj_car->card; ?>" style="width: 60rem">
-			<h2 class="<?php echo $obj_car->titulocard; ?>">Filtrar Cargo</h2>
-			<hr>
-			<div class="card-body">
-				<form action="car_filtrado.php" method="POST">
-					<div class="row p-3">
-						<div class="col-3">
-							<div class="form-group">
-								<label for="bas_car" class="<?php echo $obj_car->for; ?>">Activo/Papelera:</label>
-								<select name="bas_car" id="bas_car" class="<?php echo $obj_car->input_normal; ?>">
-									<option value="">General</option>
-									<option value="A">Activo</option>
-									<option value="B">En papelera</option>
-								</select>
+		<div class="row">
+			<div class="col-md-2"></div>
+			<div class="col-12 col-md-8">
+				<div class="<?php echo $obj_car->card; ?>">
+					<h2 class="<?php echo $obj_car->titulocard; ?>">Filtrar Cargo</h2>
+					<hr>
+					<div class="card-body">
+						<form action="car_filtrado.php" method="POST">
+							<div class="row p-3">
+								<div class="col-12 col-md-6">
+									<div class="form-group">
+										<label for="cod_car" class="<?php echo $obj_car->for; ?>">Código:</label>
+										<input type="text" name="cod_car" id="cod_car" placeholder="Código:" class="<?php echo $obj_car->input_normal; ?>">
+									</div>
+								</div>
+								<div class="col-12 col-md-6">
+									<div class="form-group">
+										<label for="nom_car" class="<?php echo $obj_car->for; ?>">Nombre:</label>
+										<input type="text" name="nom_car" id="nom_car" placeholder="Nombre:" class="<?php echo $obj_car->input_normal; ?>">
+									</div>
+								</div>
+								<div class="col-12 col-md-6">
+									<div class="form-group">
+										<label for="est_car" class="<?php echo $obj_car->for; ?>">Activo/Inactivo:</label>
+										<select name="est_car" id="est_car" class="<?php echo $obj_car->input_normal; ?>">
+											<option value="">General</option>
+											<option value="A">Activo</option>
+											<option value="I">Inactivo</option>
+										</select>
+									</div>
+								</div>
+								<div class="col-12 col-md-6">
+									<div class="form-group">
+										<label for="bas_car" class="<?php echo $obj_car->for; ?>">Activo/Papelera:</label>
+										<select name="bas_car" id="bas_car" class="<?php echo $obj_car->input_normal; ?>">
+											<option value="">General</option>
+											<option value="A">Activo</option>
+											<option value="B">En papelera</option>
+										</select>
+									</div>
+								</div>
 							</div>
-						</div>
-						<div class="col-3">
-							<div class="form-group">
-								<label for="cod_car" class="<?php echo $obj_car->for; ?>">Código:</label>
-								<input type="text" name="cod_car" id="cod_car" placeholder="Código:" class="<?php echo $obj_car->input_normal; ?>">
+							<div class="row p-3 text-center">
+								<div class="col-6">
+									<div class="form-group">
+										<button type="reset" name="ejecutar" id="ejecutar" value="limpiar" class="<?php echo $obj_car->btn_limpiar; ?>">Limpiar</button>
+									</div>
+								</div>
+								<div class="col-6">
+									<div class="form-group">
+										<button type="submit" name="ejecutar" id="ejecutar" value="filtrar" class="<?php echo $obj_car->btn_enviar; ?>">Filtrar</button>
+									</div>
+								</div>
 							</div>
-						</div>
-						<div class="col-6">
-							<div class="form-group">
-								<label for="nom_car" class="<?php echo $obj_car->for; ?>">Nombre:</label>
-								<input type="text" name="nom_car" id="nom_car" placeholder="Nombre:" class="<?php echo $obj_car->input_normal; ?>">
-							</div>
-						</div>
+						</form>
 					</div>
-					<div class="row p-3 text-center">
-						<div class="col-6">
-							<div class="form-group">
-								<button type="reset" name="ejecutar" id="ejecutar" value="limpiar" class="<?php echo $obj_car->btn_limpiar; ?>">Limpiar</button>
-							</div>
-						</div>
-						<div class="col-6">
-							<div class="form-group">
-								<button type="submit" name="ejecutar" id="ejecutar" value="filtrar" class="<?php echo $obj_car->btn_enviar; ?>">Filtrar</button>
-							</div>
-						</div>
-					</div>
-				</form>
+				</div>
 			</div>
+			<div class="col-md-2"></div>
 		</div>
 	</div>
 

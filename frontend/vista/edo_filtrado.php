@@ -42,7 +42,7 @@
 									<th>Fecha de eliminación</th>
 									<th>Fecha de restauración</th>
 									<th>Estado</th>
-									<th>Reporte PDF</th>
+									<th>PDF</th>
 									<th>Editar</th>
 									<th>Restaurar</th>
 									<th>Eliminar</th>

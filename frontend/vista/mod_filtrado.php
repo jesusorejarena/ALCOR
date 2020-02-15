@@ -9,7 +9,7 @@
 	$obj_mod->estandar();
 	$obj_mod->puntero=$obj_mod->filtrar();
 
-	encabezado("Lista de Módulos - ALCOR C.A.");
+	encabezado("Módulos Filtrados - ALCOR C.A.");
 
 ?>
 
@@ -20,7 +20,7 @@
 			</div>
 		</div>
 		<div class="<?php echo $obj_mod->card; ?>">
-			<h2 class="<?php echo $obj_mod->titulocard; ?>">Lista de Módulos</h2>
+			<h2 class="<?php echo $obj_mod->titulocard; ?>">Módulos Filtrados</h2>
 			<hr>
 			<div class="row p-3 m-3">
 				<div class="col-12">
@@ -31,12 +31,15 @@
 									<th>Código</th>
 									<th>Nombre</th>
 									<th>URL</th>
-									<th>Fecha de creación</th>
-									<th>Ultima modificación</th>
-									<th>Fecha de eliminación</th>
-									<th>Fecha de restauración</th>
+									<th>Fecha de Creación</th>
+									<th>Ultima Modificación</th>
+									<th>Fecha de Eliminación</th>
+									<th>Fecha de Restauración</th>
 									<th>Estatus</th>
+									<th>Estado</th>
+									<th>PDF</th>
 									<th>Restaurar</th>
+									<th>Editar</th>
 									<th>Eliminar</th>
 								</tr>
 							</thead>
@@ -55,7 +58,10 @@
 													<td>$modulo[eli_mod]</td>
 													<td>$modulo[res_mod]</td>
 													<td>$modulo[est_mod]</td>
-													<td><a class='$obj_mod->btn_editar' href='mod_modificar.php?cod_mod=$modulo[cod_mod]'>Editar</a></td>
+													<td>$modulo[bas_mod]</td>
+													<td><a class='$obj_mod->btn_eliminar' href='mod_reportepdf.php?cod_mod=$modulo[cod_mod]'>PDF</a></td>
+													<td><a class='$obj_mod->btn_editar' href='mod_modificar.php?cod_per=$permiso[cod_mod]'>Editar</a></td>
+													<td><button type='submit' class='$obj_mod->btn_restaurar' name='ejecutar' value='modificar_restaurar'>Restaurar</button></td>
 													<td><button type='submit' class='$obj_mod->btn_eliminar' name='ejecutar' value='modificar_eliminar'>Eliminar</button></td>
 												</tr>
 											</form>
