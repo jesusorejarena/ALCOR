@@ -10,6 +10,8 @@
 
 	encabezado("Menu de Empleados - ALCOR C.A.");
 
+	comprobar("Empleados");
+
 ?>
 
 	<div class="<?php echo $obj_ado->container; ?>">

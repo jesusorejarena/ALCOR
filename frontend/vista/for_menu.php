@@ -10,6 +10,8 @@
 
 	encabezado("Menú de Formularios - ALCOR C.A.");
 
+	comprobar("Formularios");
+
 ?>
 
 	<div class="<?php echo $obj_edo->container; ?>">

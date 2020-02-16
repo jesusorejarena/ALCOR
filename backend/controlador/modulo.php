@@ -27,11 +27,11 @@
 									}
 
 									$obj_mod->insertar();
-									//header("Location: ../../frontend/vista/mod_registrar.php");
+									header("Location: ../../frontend/vista/mod_registrar.php");
 		break;
 
 		case 'modificar_normal':	$obj_mod->modificar_normal();
-									//header("Location: ../../frontend/vista/rol_menu.php");
+									header("Location: ../../frontend/vista/rol_menu.php");
 		break;
 
 		case 'modificar_restaurar':	$obj_mod->modificar_restaurar();

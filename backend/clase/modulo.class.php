@@ -109,7 +109,7 @@
 
 		function listar_normal()
 		{
-			$this->que_bda = "select * from modulo where bas_mod='A'";
+			$this->que_bda = "select * from modulo where bas_mod='A';";
 
 			return $this->ejecutar();
 
@@ -125,15 +125,23 @@
 
 		function listar_modificar()
 		{
-			$this->que_bda = "select * from modulo where cod_mod='$this->cod_mod'";
+			$this->que_bda = "select * from modulo where cod_mod='$this->cod_mod';";
 
 			return $this->ejecutar();
 
 		}// fin de listar modificar
 
+		function listar_comprobar()
+		{
+			$this->que_bda = "select * from modulo where nom_mod='$this->nom_mod';";
+
+			return $this->ejecutar();
+
+		}// fin de listar comprobar
+
 		function listar_menu()
 		{
-			$this->que_bda = "select * from modulo where cod_car='$this->cod_car' and est_mod='A' and bas_mod='A';";
+			$this->que_bda = "select * from modulo where cod_mod='$this->cod_mod' and est_mod='A' and bas_mod='A';";
 
 			return $this->ejecutar();
 
@@ -141,7 +149,7 @@
 
 		function listar_eliminar()
 		{
-			$this->que_bda = "select * from modulo where bas_mod='B'";
+			$this->que_bda = "select * from modulo where bas_mod='B';";
 
 			return $this->ejecutar();
 

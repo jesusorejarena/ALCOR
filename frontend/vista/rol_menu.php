@@ -8,7 +8,9 @@
 	$obj_car = new cargo;
 	$obj_car->estandar();
 
-	encabezado("Menú de Roles - ALCOR C.A.");
+	encabezado("Menú de Roles - ALCOR C.A.");	
+
+	comprobar("Roles");
 
 ?>
 
@@ -17,7 +19,7 @@
 		<h2 class="<?php echo $obj_car->titulos; ?>">Menú de Roles</h2>
 		<div class="row">
 			<div class="col-12 col-md-4">
-				<div class="<?php echo $obj_car->card; ?>" width='30%'>
+				<div class="<?php echo $obj_car->card; ?>">
 					<h2 class="<?php echo $obj_car->titulocard; ?>">Menú de Cargos</h2>
 					<hr>
 					<div class="card-body">
@@ -39,7 +41,7 @@
 				</div>
 			</div>
 			<div class="col-12 col-md-4">
-				<div class="<?php echo $obj_car->card; ?>" width='30%'>
+				<div class="<?php echo $obj_car->card; ?>">
 					<h2 class="<?php echo $obj_car->titulocard; ?>">Menú de Módulos</h2>
 					<hr>
 					<div class="card-body">
@@ -61,7 +63,7 @@
 				</div>
 			</div>
 			<div class="col-12 col-md-4">
-				<div class="<?php echo $obj_car->card; ?>" width='30%'>
+				<div class="<?php echo $obj_car->card; ?>">
 					<h2 class="<?php echo $obj_car->titulocard; ?>">Menú de Permisos</h2>
 					<hr>
 					<div class="card-body">

@@ -13,7 +13,7 @@
 		break;
 
 		case 'modificar_normal':	$obj_car->modificar_normal();
-									//header("Location: ../../frontend/vista/rol_menu.php");
+									header("Location: ../../frontend/vista/rol_menu.php");
 		break;
 
 		case 'modificar_restaurar':	$obj_car->modificar_restaurar();

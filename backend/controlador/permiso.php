@@ -17,11 +17,11 @@
 		break;
 
 		case 'modificar_restaurar':	$obj_per->modificar_restaurar();
-									//header("Location: ../../frontend/vista/per_listarpapelera.php");
+									header("Location: ../../frontend/vista/per_listarpapelera.php");
 		break;
 
 		case 'modificar_eliminar':	$obj_per->modificar_eliminar();
-									//header("Location: ../../frontend/vista/per_listartodo.php");
+									header("Location: ../../frontend/vista/per_listartodo.php");
 		break;
 
 		case 'eliminar':			$obj_per->eliminar();

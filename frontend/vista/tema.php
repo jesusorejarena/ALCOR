@@ -1,17 +1,54 @@
 <?php 
 
+	function comprobar($menu)
+	{
+		require_once("../../backend/clase/modulo.class.php");
+		require_once("../../backend/clase/permiso.class.php");
+
+		$obj_mod = new modulo;
+		$obj_per = new permiso;
+
+		if ($_SESSION['cargo']>=2)
+		{
+			$obj_per->cod_car=$_SESSION['cargo'];
+			$obj_per->puntero=$obj_per->listar_menu();
+			
+
+			while(($permisos=$obj_per->extraer_dato())>0)
+			{
+				
+				$obj_mod->nom_mod=$menu;
+				$obj_mod->contador=$obj_mod->listar_comprobar();
+				
+				;
+				
+					if ($modulos=$obj_mod->contando()>0) {
+						
+					}
+					else
+					{
+						header("Location: menu_principal.php");
+					}
+				
+			}
+		}
+	}
+
 	function encabezado($titulo)
 	{
 		session_start();
 
-		if($_SESSION['activo']==true)
+		if($_SESSION['activo']==true )
 		{
 			
 			require_once("../../backend/clase/cargo.class.php");
 			require_once("../../backend/clase/modulo.class.php");
+			require_once("../../backend/clase/permiso.class.php");
 
 			$obj_car = new cargo;
 			$obj_mod = new modulo;
+			$obj_per = new permiso;
+
 		}
 		else
 		{
@@ -85,11 +122,15 @@
 											{	
 												if ($_SESSION['cargo']>=2)
 												{
-													$obj_mod->cod_car=$_SESSION['cargo'];
-													$obj_mod->puntero=$obj_mod->listar_menu();
+													$obj_per->cod_car=$_SESSION['cargo'];
+													$obj_per->puntero=$obj_per->listar_menu();
 
-													while (($modulo=$obj_mod->extraer_dato())>0)
+													while (($permiso=$obj_per->extraer_dato())>0)
 													{
+														$obj_mod->cod_mod=$permiso['cod_mod'];
+														$obj_mod->puntero=$obj_mod->listar_menu();
+														$modulo=$obj_mod->extraer_dato();
+
 														echo "
 															
 															<li class='nav-item'>

@@ -35,12 +35,6 @@
 										$obj_pro->venta();
 										header("Location: ../../frontend/vista/ven_menu.php");
 									}
-									else
-									{
-										echo "<script>alert('Hola');</script>";	
-									}
-									header("Location: ../../frontend/vista/ven_smenu.php");
-									
 		break;
 
 		case 'eliminar':			$obj_pro->eliminar();
