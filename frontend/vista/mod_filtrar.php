@@ -39,12 +39,6 @@
 										<input type="text" name="nom_mod" id="nom_mod" placeholder="Nombre:" class="<?php echo $obj_mod->input_normal; ?>">
 									</div>
 								</div>
-								<div class="col-12">
-									<div class="form-group">
-										<label for="url_mod" class="<?php echo $obj_mod->for; ?>">URL:</label>
-										<input type="text" name="url_mod" id="url_mod" placeholder="URL:" class="<?php echo $obj_mod->input_normal; ?>">
-									</div>
-								</div>
 								<div class="col-12 col-md-6">
 									<div class="form-group">
 										<label for="est_mod" class="<?php echo $obj_mod->for; ?>">Activo/Inactivo:</label>

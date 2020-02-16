@@ -30,7 +30,6 @@
 								<tr>
 									<th>Código</th>
 									<th>Nombre</th>
-									<th>Código del producto</th>
 									<th>Descripción</th>
 									<th>Precio</th>
 									<th>Cantidad</th>
@@ -38,6 +37,7 @@
 									<th>Ultima Modificación</th>
 									<th>Fecha de Eliminación</th>
 									<th>Fecha de Restauración</th>
+									<th>Estatus</th>
 									<th>PDF</th>
 									<th>Editar</th>
 									<th>Restaurar</th>
@@ -53,7 +53,6 @@
 													<input type='hidden' name='cod_pro' value='$producto[cod_pro]'>
 													<td>$producto[cod_pro]</td>
 													<td>$producto[nom_pro]</td>
-													<td>$producto[ser_pro]</td>
 													<td>$producto[des_pro]</td>
 													<td>$producto[pre_pro]</td>
 													<td>$producto[can_pro]</td>
@@ -61,6 +60,7 @@
 													<td>$producto[act_pro]</td>
 													<td>$producto[eli_pro]</td>
 													<td>$producto[res_pro]</td>
+													<td>$producto[est_pro]</td>
 													<td><a class='$obj_pro->btn_eliminar' href=''>PDF</a></td>
 													<td><a class='$obj_pro->btn_editar' href='pro_modificar.php?cod_pro=$producto[cod_pro]'>Editar</a></td>
 													<td><button type='submit' class='$obj_pro->btn_restaurar' name='ejecutar' value='modificar_restaurar'>Restaurar</button></td>

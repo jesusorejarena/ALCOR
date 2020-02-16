@@ -41,6 +41,7 @@
 							<div class="row p-3">
 								<div class="col-12 col-md-6">
 									<div class="form-group">
+										<input type="hidden" name="cod_mod" id="cod_mod" value="<?php echo $modulo['cod_mod']; ?>">
 										<label for="url_mod" class="<?php echo $obj_mod->for; ?>">URL:</label>
 										<select name="url_mod" id="url_mod" disabled="" required="" class="<?php echo $obj_mod->input_normal; ?>">
 											<?php echo "<option value='$modulo[url_mod]'>Menú de $modulo[nom_mod]</option>"; ?>

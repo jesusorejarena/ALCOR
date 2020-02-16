@@ -17,10 +17,10 @@
 	$permiso=$obj_per->extraer_dato();
 
 	$obj_car = new cargo;
-	$obj_car->puntero=$obj_car->listar_normal();
+	$obj_car->puntero=$obj_car->listar_lista();
 
 	$obj_mod = new modulo;
-	$obj_mod->puntero=$obj_mod->listar_normal();
+	$obj_mod->puntero=$obj_mod->listar_lista();
 
 	encabezado("Modificar Permiso - ALCOR C.A.");
 
@@ -43,14 +43,21 @@
 							<div class="row p-3">
 								<div class="col-12 col-md-6">
 									<div class="form-group">
-										<input type="hidden" name="cod_mod" id="cod_mod" value="<?php echo $permiso['cod_mod']; ?>">
+										<input type="hidden" name="cod_per" id="cod_per" value="<?php echo $permiso['cod_per']; ?>">
 										<label for="cod_car" class="<?php echo $obj_per->for; ?>">Cargo:</label>
 										<select name="cod_car" id="cod_car" required="" class="<?php echo $obj_per->input_normal; ?>">
 											<option value="">Seleccione...</option>
 											<?php while (($cargo=$obj_car->extraer_dato())>0)
 												{
-													$select=($cargo['cod_car']==$permiso['cod_car']) ? "selected" : "" ;
-													echo "<option $select value='$cargo[cod_car]'>$cargo[nom_car]</option>";
+													if ($cargo['cod_car']==1 || $cargo['nom_car']=='Administrador')
+													{
+														
+													}
+													else
+													{
+														$select=($cargo['cod_car']==$permiso['cod_car']) ? "selected" : "" ;
+														echo "<option $select value='$cargo[cod_car]'>$cargo[nom_car]</option>";
+													}
 												}
 											?>
 										</select>

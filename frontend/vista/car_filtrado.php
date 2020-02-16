@@ -72,7 +72,6 @@
 																<td>$cargo[eli_car]</td>
 																<td>$cargo[res_car]</td>
 																<td>$cargo[est_car]</td>
-																<td>$cargo[est_car]</td>
 																<td>$cargo[bas_car]</td>
 																<td><a class='$obj_car->btn_eliminar' href='ado_reportepdf.php?cod_car=$cargo[cod_car]'>PDF</a></td>
 																<td><a class='$obj_car->btn_editar' href='car_modificar.php?cod_car=$cargo[cod_car]'>Editar</a></td>

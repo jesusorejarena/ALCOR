@@ -33,6 +33,7 @@
 		public $cor_edo;
 		public $tip_edo;
 		public $rif_edo;
+		public $est_edo;
 		public $bas_edo;
 
 
@@ -49,6 +50,7 @@
 								tip_edo, 
 								rif_edo,
 								cre_edo,
+								est_edo,
 								bas_edo)
 							values
 								('$this->nom_edo', 
@@ -59,6 +61,7 @@
 								'$this->tip_edo', 
 								'$this->rif_edo',
 								'$cre_edo',
+								'A',
 								'A');";
 
 			return $this->ejecutar();
@@ -78,7 +81,8 @@
 									cor_edo='$this->cor_edo',
 									rif_edo='$this->tip_edo',
 									rif_edo='$this->rif_edo',
-									act_edo='$act_edo'
+									act_edo='$act_edo',
+									est_edo='$this->est_edo',
 								where
 									cod_edo='$this->cod_edo';";
 
@@ -124,6 +128,14 @@
 
 		}// fin de listar normal
 
+		function listar_lista()
+		{
+			$this->que_bda = "select * from proveedor where est_edo='A' and bas_edo='A';";
+
+			return $this->ejecutar();
+
+		}// fin de listar lista
+
 		function listar_modificar()
 		{
 			$this->que_bda = "select * from proveedor where cod_edo='$this->cod_edo'";
@@ -160,9 +172,10 @@
 			$filtro6=($this->cor_edo!="")?"and cor_edo like '%$this->cor_edo%'":"";
 			$filtro7=($this->tip_edo!="")?"and tip_edo='$this->tip_edo'":"";
 			$filtro8=($this->rif_edo!="")?"and rif_edo like '%$this->rif_edo%'":"";
-			$filtro9=($this->bas_edo!="")?"and bas_edo='$this->bas_edo'":"";
+			$filtro9=($this->est_edo!="")?"and est_edo='$this->est_edo'":"";
+			$filtro10=($this->bas_edo!="")?"and bas_edo='$this->bas_edo'":"";
 
-			$this->que_bda = "select * from proveedor where 1=1 $filtro1 $filtro2 $filtro3 $filtro4 $filtro5 $filtro6 $filtro7 $filtro8 $filtro9;";
+			$this->que_bda = "select * from proveedor where 1=1 $filtro1 $filtro2 $filtro3 $filtro4 $filtro5 $filtro6 $filtro7 $filtro8 $filtro9 $filtro10;";
 
 			return $this->ejecutar();
 

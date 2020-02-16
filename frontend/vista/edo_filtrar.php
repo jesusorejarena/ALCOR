@@ -60,10 +60,10 @@
 								<div class="col-12 col-md-6">
 									<div class="form-group">
 										<label for="cor_edo" class="<?php echo $obj_edo->for; ?>">Correo:</label>
-										<input type="email" name="cor_edo" id="cor_edo" placeholder="Correo:" class="<?php echo $obj_edo->input_normal; ?>">
+										<input type="text" name="cor_edo" id="cor_edo" placeholder="Correo:" class="<?php echo $obj_edo->input_normal; ?>">
 									</div>
 								</div>
-								<div class="col-12 col-md-4">
+								<div class="col-12 col-md-6">
 									<div class="form-group">
 										<label for="tip_edo" class="<?php echo $obj_edo->for; ?>">Tipo:</label>
 										<select name="tip_edo" id="tip_edo" class="<?php echo $obj_edo->input_normal; ?>">
@@ -74,16 +74,26 @@
 										</select>
 									</div>
 								</div>
-								<div class="col-12 col-md-4">
+								<div class="col-12 col-md-6">
 									<div class="form-group">
 										<label for="rif_edo" class="<?php echo $obj_edo->for; ?>">RIF:</label>
 										<input type="text" name="rif_edo" id="rif_edo" placeholder="RIF:" class="<?php echo $obj_edo->input_normal; ?>">
 									</div>
 								</div>
-								<div class="col-12 col-md-4">
+								<div class="col-12 col-md-6">
 									<div class="form-group">
-										<label for="bas_ado" class="<?php echo $obj_edo->for; ?>">Activo/Papelera:</label>
-										<select name="bas_ado" id="bas_ado" class="<?php echo $obj_edo->input_normal; ?>">
+										<label for="est_edo" class="<?php echo $obj_edo->for; ?>">Activo/Inactivo:</label>
+										<select name="est_edo" id="est_edo" class="<?php echo $obj_edo->input_normal; ?>">
+											<option value="">General</option>
+											<option value="A">Activo</option>
+											<option value="I">Inactivo</option>
+										</select>
+									</div>
+								</div>
+								<div class="col-12 col-md-6">
+									<div class="form-group">
+										<label for="bas_edo" class="<?php echo $obj_edo->for; ?>">Activo/Papelera:</label>
+										<select name="bas_edo" id="bas_edo" class="<?php echo $obj_edo->input_normal; ?>">
 											<option value="">General</option>
 											<option value="A">Activo</option>
 											<option value="B">En papelera</option>

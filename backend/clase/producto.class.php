@@ -29,6 +29,7 @@
 		public $des_pro;
 		public $pre_pro;
 		public $can_pro;
+		public $est_pro;
 		public $bas_pro;
 
 
@@ -37,20 +38,22 @@
 			$cre_pro = date("y-m-d h:i:s");
 
 			$this->que_bda = "insert into producto
-								(ser_pro,
-								nom_pro,
+								(nom_pro,
 								des_pro, 
 								pre_pro, 
-								can_pro,
+								can_pro, 
+								cod_edo,
 								cre_pro,
+								est_pro, 
 								bas_pro)
 							values
-								('$this->ser_pro', 
-								'$this->nom_pro', 
+								('$this->nom_pro', 
 								'$this->des_pro', 
 								'$this->pre_pro', 
-								'$this->can_pro',
+								'$this->can_pro', 
+								'$this->cod_edo',
 								'$cre_pro',
+								'A',
 								'A');";
 
 			return $this->ejecutar();
@@ -63,12 +66,13 @@
 			
 			$this->que_bda = "update producto
 								set
-									ser_pro='$this->ser_pro',
 									nom_pro='$this->nom_pro',
 									des_pro='$this->des_pro',
 									pre_pro='$this->pre_pro',
 									can_pro='$this->can_pro',
-									act_pro='$act_pro'
+									cod_edo='$this->cod_edo',
+									act_pro='$act_pro',
+									est_pro='$this->est_pro'
 								where
 									cod_pro='$this->cod_pro';";
 
@@ -126,6 +130,14 @@
 
 		}// fin de listar normal
 
+		function listar_lista()
+		{
+			$this->que_bda = "select * from producto where est_pro='A' and bas_pro='A';";
+
+			return $this->ejecutar();
+
+		}// fin de listar lista
+
 		function listar_modificar()
 		{
 			$this->que_bda = "select * from producto where cod_pro='$this->cod_pro'";
@@ -153,15 +165,17 @@
 		}// fin de eliminar
 
 		public function filtrar()
-		{			
-			$filtro1=($this->ser_pro!="")?"and ser_pro like '%$this->ser_pro%'":"";
+		{		
+			$filtro1=($this->cod_pro!="")?"and cod_pro='$this->cod_pro'":"";	
 			$filtro2=($this->nom_pro!="")?"and nom_pro like '%$this->nom_pro%'":"";
 			$filtro3=($this->des_pro!="")?"and des_pro like '%$this->des_pro%'":"";
 			$filtro4=($this->pre_pro!="")?"and pre_pro like '%$this->pre_pro%'":"";
 			$filtro5=($this->can_pro!="")?"and can_pro like '%$this->can_pro%'":"";
-			$filtro6=($this->bas_pro!="")?"and bas_pro='$this->bas_pro'":"";
+			$filtro6=($this->cod_edo!="")?"and cod_edo='$this->cod_edo'":"";
+			$filtro7=($this->est_pro!="")?"and est_pro='$this->est_pro'":"";
+			$filtro8=($this->bas_pro!="")?"and bas_pro='$this->bas_pro'":"";
 
-			$this->que_bda = "select * from producto where 1=1 $filtro1 $filtro2 $filtro3 $filtro4 $filtro5 $filtro6";
+			$this->que_bda = "select * from producto where 1=1 $filtro1 $filtro2 $filtro3 $filtro4 $filtro5 $filtro6 $filtro7 $filtro8";
 
 			return $this->ejecutar();
 

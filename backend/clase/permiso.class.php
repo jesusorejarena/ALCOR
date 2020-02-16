@@ -53,9 +53,8 @@
 							set 
 								cod_car='$this->cod_car',
 								cod_mod='$this->cod_mod',
-								act_per='act_per',
-								est_per='$this->est_per',
-								bas_per='$this->bas_per'
+								act_per='$act_per',
+								est_per='$this->est_per'
 							where
 								cod_per='$this->cod_per';";
 

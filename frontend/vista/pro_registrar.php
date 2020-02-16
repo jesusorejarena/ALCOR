@@ -8,7 +8,7 @@
 	$obj_edo = new proveedor;
 	$obj_edo->estandar();
 	$obj_edo->asignar_valor();
-	$obj_edo->puntero=$obj_edo->listar_normal();
+	$obj_edo->puntero=$obj_edo->listar_lista();
 
 	encabezado("Registrar Producto - ALCOR C.A.");
 
@@ -76,7 +76,7 @@
 							</div>
 							<div class="col-6">
 								<div class="form-group">
-									<button type="submit" name="ejecutar" id="ejecutar" value="insertar" class="<?php echo $obj_edo->btn_enviar; ?>">egistrar</button>
+									<button type="submit" name="ejecutar" id="ejecutar" value="insertar" class="<?php echo $obj_edo->btn_enviar; ?>">Registrar</button>
 									</div>
 								</div>
 							</div>

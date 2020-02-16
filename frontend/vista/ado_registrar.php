@@ -7,7 +7,7 @@
 
 	$obj_car = new cargo;
 	$obj_car->estandar();
-	$obj_car->puntero=$obj_car->listar_normal();
+	$obj_car->puntero=$obj_car->listar_lista();
 
 	encabezado("Registrar Empleado - ALCOR C.A.");
 

@@ -71,7 +71,7 @@
 								<div class="col-12 col-md-6">
 									<div class="form-group">
 										<label for="rif_edo" class="<?php echo $obj_edo->for; ?>">RIF:</label>
-										<input type="text" name="rif_edo" id="rif_edo" placeholder="J-35161987-3" minlength="9" maxlength="9" required="" class="<?php echo $obj_edo->input_normal; ?>">
+										<input type="text" name="rif_edo" id="rif_edo" placeholder="35161987-3" minlength="10" maxlength="10" required="" class="<?php echo $obj_edo->input_normal; ?>">
 									</div>
 								</div>
 							</div>

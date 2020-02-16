@@ -58,11 +58,11 @@
 								</div>
 								<div class="col-12 col-md-6">
 									<div class="form-group">
-										<label for="nac_ado" class="<?php echo $obj_car->for; ?>">Fecha de nacimiento:</label>
-										<input type="date" name="nac_ado" id="nac_ado" placeholder="Fecha de nacimiento:" class="<?php echo $obj_car->input_normal; ?>">
+										<label for="tel_ado" class="<?php echo $obj_car->for; ?>">Teléfono:</label>
+										<input type="text" name="tel_ado" id="tel_ado" placeholder="Teléfono:"  class="<?php echo $obj_car->input_normal; ?>">
 									</div>
 								</div>
-								<div class="col-12 col-md-4">
+								<div class="col-12 col-md-6">
 									<div class="form-group">
 										<label for="tip_ado" class="<?php echo $obj_car->for; ?>">Tipo:</label>
 										<select name="tip_ado" id="tip_ado" class="<?php echo $obj_car->input_normal; ?>">
@@ -72,22 +72,16 @@
 										</select>
 									</div>
 								</div>
-								<div class="col-12 col-md-4">
+								<div class="col-12 col-md-6">
 									<div class="form-group">
 										<label for="ced_ado" class="<?php echo $obj_car->for; ?>">Cédula:</label>
 										<input type="text" name="ced_ado" id="ced_ado" placeholder="Cédula:" class="<?php echo $obj_car->input_normal; ?>">
 									</div>
 								</div>
-								<div class="col-12 col-md-4">
-									<div class="form-group">
-										<label for="tel_ado" class="<?php echo $obj_car->for; ?>">Teléfono:</label>
-										<input type="text" name="tel_ado" id="tel_ado" placeholder="Teléfono:"  class="<?php echo $obj_car->input_normal; ?>">
-									</div>
-								</div>
 								<div class="col-12 col-md-6">
 									<div class="form-group">
 										<label for="cor_ado" class="<?php echo $obj_car->for; ?>">Correo:</label>
-										<input type="email" name="cor_ado" id="cor_ado" placeholder="Correo:" class="<?php echo $obj_car->input_normal; ?>">
+										<input type="text" name="cor_ado" id="cor_ado" placeholder="Correo:" class="<?php echo $obj_car->input_normal; ?>">
 									</div>
 								</div>
 								<div class="col-12 col-md-6">
@@ -109,13 +103,7 @@
 										<input type="text" name="dir_ado" id="dir_ado" placeholder="Dirección:" class="<?php echo $obj_car->input_normal; ?>">
 									</div>
 								</div>
-								<div class="col-12 col-md-4">
-									<div class="form-group">
-										<label for="cre_ado" class="<?php echo $obj_car->for; ?>">Fecha de Contrato:</label>
-										<input type="date" name="cre_ado" id="cre_ado" placeholder="Fecha de nacimiento:" class="<?php echo $obj_car->input_normal; ?>">
-									</div>
-								</div>
-								<div class="col-12 col-md-4">
+								<div class="col-12 col-md-6">
 									<div class="form-group">
 										<label for="est_ado" class="<?php echo $obj_car->for; ?>">Activo/Inactivo:</label>
 										<select name="est_ado" id="est_ado" class="<?php echo $obj_car->input_normal; ?>">
@@ -125,7 +113,7 @@
 										</select>
 									</div>
 								</div>
-								<div class="col-12 col-md-4">
+								<div class="col-12 col-md-6">
 									<div class="form-group">
 										<label for="bas_ado" class="<?php echo $obj_car->for; ?>">Activo/Papelera:</label>
 										<select name="bas_ado" id="bas_ado" class="<?php echo $obj_car->input_normal; ?>">

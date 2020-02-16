@@ -29,7 +29,7 @@
 		
 		public function ejecutar()
 		{
-			//echo $this->que_bda;
+			echo $this->que_bda;
 			return $this->con_bda->query($this->que_bda);
 		}
 
@@ -57,7 +57,7 @@
 
 			// Inicio Clases Generales
 			$this->container		="container-fluid py-5 mt-5 bg-white";
-			$this->container2		="container-fluid pt-5 mt-4 bg-light";
+			$this->container2		="container-fluid pt-4 mt-4 bg-light";
 			$this->container3		="container-fluid p-1 m-1 bg-light";
 			$this->titulos			="h1 text-dark text-center p-4 text-center big-text";
 			// Fin Clases Generales
@@ -77,8 +77,8 @@
 			// Inicio Inputs Generales
 			$this->for 				="text-dark text-left h5";
 			$this->small 			="form-text text-muted";
-			$this->input_normal		="text-dark form-control bg-transparent border border-top-0 border-left-0 border-right-0 border-danger";
-			$this->input_text		="text-dark form-control bg-transparent border border-top-0 border-danger";
+			$this->input_normal		="text-dark form-control bg-transparent border border-top-0 border-left-0 border-right-0 border-primary";
+			$this->input_text		="text-dark form-control bg-transparent border border-top-0 border-primary";
 			// Fin Inputs Generales
 
 			// Inicio Botones Normales Generales

@@ -30,7 +30,6 @@
 								<tr>
 									<th>Código</th>
 									<th>Nombre</th>
-									<th>URL</th>
 									<th>Fecha de Creación</th>
 									<th>Ultima Modificación</th>
 									<th>Fecha de Eliminación</th>
@@ -49,15 +48,14 @@
 												<tr>
 													<input type='hidden' name='cod_mod' value='$modulo[cod_mod]'>
 													<td>$modulo[cod_mod]</td>
-													<td>$modulo[nom_mod]</td>
-													<td>$modulo[url_mod]</td>
+													<td>Menú de $modulo[nom_mod]</td>
 													<td>$modulo[cre_mod]</td>
 													<td>$modulo[act_mod]</td>
 													<td>$modulo[eli_mod]</td>
 													<td>$modulo[res_mod]</td>
 													<td>$modulo[est_mod]</td>
 													<td><a class='$obj_mod->btn_eliminar' href='mod_reportepdf.php?cod_mod=$modulo[cod_mod]'>PDF</a></td>
-													<td><a class='$obj_mod->btn_editar' href='mod_modificar.php?cod_per=$permiso[cod_mod]'>Editar</a></td>
+													<td><a class='$obj_mod->btn_editar' href='mod_modificar.php?cod_mod=$modulo[cod_mod]'>Editar</a></td>
 													<td><button type='submit' class='$obj_mod->btn_eliminar' name='ejecutar' value='modificar_eliminar'>Eliminar</button></td>
 												</tr>
 											</form>

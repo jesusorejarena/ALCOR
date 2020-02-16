@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 13-02-2020 a las 22:06:21
+-- Tiempo de generación: 16-02-2020 a las 01:46:42
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.1
 
@@ -148,7 +148,7 @@ CREATE TABLE `empresa` (
 -- Disparadores `empresa`
 --
 DELIMITER $$
-CREATE TRIGGER `empresa_AI` AFTER INSERT ON `empresa` FOR EACH ROW INSERT INTO empresa_resp(nom_emp,tel_emp,dir_emp,cor_emp,rif_emp,hou_emp,hod_emp) VALUES(NEW.nom_emp,NEW.tel_emp,NEW.dir_emp,NEW.cor_emp,NEW.rif_emp,NEW.hou_emp,NEW.hod_emp,NOW())
+CREATE TRIGGER `empresa_AI` AFTER INSERT ON `empresa` FOR EACH ROW INSERT INTO empresa_resp(nom_emp,tel_emp,dir_emp,cor_emp,rif_emp,hou_emp,hod_emp) VALUES(NEW.nom_emp,NEW.tel_emp,NEW.dir_emp,NEW.cor_emp,NEW.rif_emp,NEW.hou_emp,NEW.hod_emp)
 $$
 DELIMITER ;
 
@@ -218,13 +218,12 @@ CREATE TABLE `formulario_resp` (
 
 CREATE TABLE `modulo` (
   `cod_mod` int(11) NOT NULL,
-  `cod_car` int(11) NOT NULL,
   `nom_mod` varchar(20) NOT NULL,
   `url_mod` varchar(20) NOT NULL,
   `cre_mod` datetime NOT NULL,
-  `act_mod` datetime NOT NULL,
-  `eli_mod` datetime NOT NULL,
-  `res_mod` datetime NOT NULL,
+  `act_mod` datetime DEFAULT NULL,
+  `eli_mod` datetime DEFAULT NULL,
+  `res_mod` datetime DEFAULT NULL,
   `est_mod` enum('A','I') NOT NULL,
   `bas_mod` enum('A','B') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -233,7 +232,7 @@ CREATE TABLE `modulo` (
 -- Disparadores `modulo`
 --
 DELIMITER $$
-CREATE TRIGGER `modulo_AI` AFTER INSERT ON `modulo` FOR EACH ROW INSERT INTO modulo_resp(cod_car,nom_mod,url_mod,cre_mod,est_mod,bas_mod) VALUES(NEW.cod_car,NEW.nom_mod,NEW.url_mod,NOW(),NEW.est_mod,NEW.bas_mod)
+CREATE TRIGGER `modulo_AI` AFTER INSERT ON `modulo` FOR EACH ROW INSERT INTO modulo_resp(nom_mod,url_mod,cre_mod,est_mod,bas_mod) VALUES(NEW.nom_mod,NEW.url_mod,NOW(),NEW.est_mod,NEW.bas_mod)
 $$
 DELIMITER ;
 
@@ -245,13 +244,12 @@ DELIMITER ;
 
 CREATE TABLE `modulo_resp` (
   `cod_mod` int(11) NOT NULL,
-  `cod_car` int(11) NOT NULL,
   `nom_mod` varchar(20) NOT NULL,
   `url_mod` varchar(20) NOT NULL,
   `cre_mod` datetime NOT NULL,
-  `act_mod` datetime NOT NULL,
-  `eli_mod` datetime NOT NULL,
-  `res_mod` datetime NOT NULL,
+  `act_mod` datetime DEFAULT NULL,
+  `eli_mod` datetime DEFAULT NULL,
+  `res_mod` datetime DEFAULT NULL,
   `est_mod` enum('A','I') NOT NULL,
   `bas_mod` enum('A','B') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -278,7 +276,7 @@ CREATE TABLE `permiso` (
 -- Disparadores `permiso`
 --
 DELIMITER $$
-CREATE TRIGGER `permiso_AI` AFTER INSERT ON `permiso` FOR EACH ROW INSERT INTO permiso_resp(cod_car,cod_mod,cre_mod,est_per,bas_per) VALUES(NEW.cod_car,NEW.cod_mod,NOW(),NEW.est_per,NEW.bas_per)
+CREATE TRIGGER `permiso_AI` AFTER INSERT ON `permiso` FOR EACH ROW INSERT INTO permiso_resp(cod_car,cod_mod,cre_per,est_per,bas_per) VALUES(NEW.cod_car,NEW.cod_mod,NOW(),NEW.est_per,NEW.bas_per)
 $$
 DELIMITER ;
 
@@ -308,11 +306,11 @@ CREATE TABLE `permiso_resp` (
 
 CREATE TABLE `producto` (
   `cod_pro` int(11) NOT NULL,
-  `ser_pro` varchar(10) NOT NULL,
   `nom_pro` varchar(50) NOT NULL,
   `des_pro` varchar(100) NOT NULL,
   `pre_pro` float(11,2) NOT NULL,
-  `can_pro` float(11,2) NOT NULL,
+  `can_pro` float(11,1) NOT NULL,
+  `cod_edo` int(11) NOT NULL,
   `cre_pro` datetime NOT NULL,
   `act_pro` datetime DEFAULT NULL,
   `eli_pro` datetime DEFAULT NULL,
@@ -325,8 +323,7 @@ CREATE TABLE `producto` (
 -- Disparadores `producto`
 --
 DELIMITER $$
-CREATE TRIGGER `producto_AI` AFTER INSERT ON `producto` FOR EACH ROW INSERT INTO producto_resp(ser_pro,nom_pro,des_pro,pre_pro,can_pro,cre_pro,bas_pro,est_pro) 
-VALUES(NEW.ser_pro,NEW.nom_pro,NEW.des_pro,NEW.pre_pro,NEW.can_pro,NOW(),NEW.bas_pro,NEW.est_pro)
+CREATE TRIGGER `producto_AI` AFTER INSERT ON `producto` FOR EACH ROW INSERT INTO producto_resp(nom_pro,des_pro,pre_pro,can_pro,cod_edo,cre_pro,bas_pro,est_pro) VALUES(NEW.nom_pro,NEW.des_pro,NEW.pre_pro,NEW.can_pro,NEW.cod_edo,NOW(),NEW.bas_pro,NEW.est_pro)
 $$
 DELIMITER ;
 
@@ -338,11 +335,11 @@ DELIMITER ;
 
 CREATE TABLE `producto_resp` (
   `cod_pro` int(11) NOT NULL,
-  `ser_pro` varchar(10) NOT NULL,
   `nom_pro` varchar(50) NOT NULL,
   `des_pro` varchar(100) NOT NULL,
   `pre_pro` float(11,2) NOT NULL,
-  `can_pro` float(11,2) NOT NULL,
+  `can_pro` float(11,1) NOT NULL,
+  `cod_edo` int(11) NOT NULL,
   `cre_pro` datetime NOT NULL,
   `act_pro` datetime DEFAULT NULL,
   `eli_pro` datetime DEFAULT NULL,
@@ -365,11 +362,12 @@ CREATE TABLE `proveedor` (
   `tel_edo` varchar(11) NOT NULL,
   `cor_edo` varchar(100) NOT NULL,
   `tip_edo` varchar(1) NOT NULL,
-  `rif_edo` varchar(9) NOT NULL,
+  `rif_edo` varchar(10) NOT NULL,
   `cre_edo` datetime NOT NULL,
   `act_edo` datetime DEFAULT NULL,
   `eli_edo` datetime DEFAULT NULL,
   `res_edo` datetime DEFAULT NULL,
+  `est_edo` enum('A','I') NOT NULL,
   `bas_edo` enum('A','B') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -377,7 +375,7 @@ CREATE TABLE `proveedor` (
 -- Disparadores `proveedor`
 --
 DELIMITER $$
-CREATE TRIGGER `proveedor_AI` BEFORE INSERT ON `proveedor` FOR EACH ROW INSERT INTO proveedor_resp(nom_edo,des_edo,dir_edo,tel_edo,cor_edo,tip_edo,rif_edo,cre_edo,bas_edo) VALUES(NEW.nom_edo,NEW.des_edo,NEW.dir_edo,NEW.tel_edo,NEW.cor_edo,NEW.tip_edo,NEW.rif_edo,NOW(),NEW.bas_edo)
+CREATE TRIGGER `proveedor_AI` AFTER INSERT ON `proveedor` FOR EACH ROW INSERT INTO proveedor_resp(nom_edo,des_edo,dir_edo,tel_edo,cor_edo,tip_edo,rif_edo,cre_edo,est_edo,bas_edo) VALUES(NEW.nom_edo,NEW.des_edo,NEW.dir_edo,NEW.tel_edo,NEW.cor_edo,NEW.tip_edo,NEW.rif_edo,NOW(),NEW.est_edo,NEW.bas_edo)
 $$
 DELIMITER ;
 
@@ -400,39 +398,8 @@ CREATE TABLE `proveedor_resp` (
   `act_edo` datetime DEFAULT NULL,
   `eli_edo` datetime DEFAULT NULL,
   `res_edo` datetime DEFAULT NULL,
+  `est_edo` enum('A','I') NOT NULL,
   `bas_edo` enum('A','B') NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `prov_pro`
---
-
-CREATE TABLE `prov_pro` (
-  `cod_ppr` int(11) NOT NULL,
-  `cod_edo` int(11) NOT NULL,
-  `cod_pro` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Disparadores `prov_pro`
---
-DELIMITER $$
-CREATE TRIGGER `provpro_AI` AFTER INSERT ON `prov_pro` FOR EACH ROW INSERT INTO prov_pro_resp(cod_edo,cod_pro) VALUES(NEW.cod_edo,NEW.cod_pro)
-$$
-DELIMITER ;
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `prov_pro_resp`
---
-
-CREATE TABLE `prov_pro_resp` (
-  `cod_ppr` int(11) NOT NULL,
-  `cod_edo` int(11) NOT NULL,
-  `cod_pro` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -501,8 +468,7 @@ ALTER TABLE `formulario_resp`
 ALTER TABLE `modulo`
   ADD PRIMARY KEY (`cod_mod`),
   ADD UNIQUE KEY `nom_mod` (`nom_mod`),
-  ADD UNIQUE KEY `url_mod` (`url_mod`),
-  ADD KEY `cod_car` (`cod_car`);
+  ADD UNIQUE KEY `url_mod` (`url_mod`);
 
 --
 -- Indices de la tabla `modulo_resp`
@@ -510,22 +476,34 @@ ALTER TABLE `modulo`
 ALTER TABLE `modulo_resp`
   ADD PRIMARY KEY (`cod_mod`),
   ADD UNIQUE KEY `nom_mod` (`nom_mod`),
-  ADD UNIQUE KEY `url_mod` (`url_mod`),
-  ADD KEY `cod_car` (`cod_car`);
+  ADD UNIQUE KEY `url_mod` (`url_mod`);
+
+--
+-- Indices de la tabla `permiso`
+--
+ALTER TABLE `permiso`
+  ADD PRIMARY KEY (`cod_per`),
+  ADD KEY `cod_car` (`cod_car`,`cod_mod`),
+  ADD KEY `cod_mod` (`cod_mod`);
+
+--
+-- Indices de la tabla `permiso_resp`
+--
+ALTER TABLE `permiso_resp`
+  ADD PRIMARY KEY (`cod_per`);
 
 --
 -- Indices de la tabla `producto`
 --
 ALTER TABLE `producto`
   ADD PRIMARY KEY (`cod_pro`),
-  ADD UNIQUE KEY `ser_pro` (`ser_pro`);
+  ADD KEY `cod_edo` (`cod_edo`);
 
 --
 -- Indices de la tabla `producto_resp`
 --
 ALTER TABLE `producto_resp`
-  ADD PRIMARY KEY (`cod_pro`),
-  ADD UNIQUE KEY `ser_pro` (`ser_pro`);
+  ADD PRIMARY KEY (`cod_pro`);
 
 --
 -- Indices de la tabla `proveedor`
@@ -544,22 +522,6 @@ ALTER TABLE `proveedor_resp`
   ADD UNIQUE KEY `nom_edo` (`nom_edo`),
   ADD UNIQUE KEY `cor_edo` (`cor_edo`),
   ADD UNIQUE KEY `rif_edo` (`rif_edo`);
-
---
--- Indices de la tabla `prov_pro`
---
-ALTER TABLE `prov_pro`
-  ADD PRIMARY KEY (`cod_ppr`),
-  ADD KEY `cod_edo` (`cod_edo`),
-  ADD KEY `cod_pro` (`cod_pro`);
-
---
--- Indices de la tabla `prov_pro_resp`
---
-ALTER TABLE `prov_pro_resp`
-  ADD PRIMARY KEY (`cod_ppr`),
-  ADD KEY `cod_edo` (`cod_edo`),
-  ADD KEY `cod_pro` (`cod_pro`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
@@ -626,6 +588,18 @@ ALTER TABLE `modulo_resp`
   MODIFY `cod_mod` int(11) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT de la tabla `permiso`
+--
+ALTER TABLE `permiso`
+  MODIFY `cod_per` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `permiso_resp`
+--
+ALTER TABLE `permiso_resp`
+  MODIFY `cod_per` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT de la tabla `producto`
 --
 ALTER TABLE `producto`
@@ -650,18 +624,6 @@ ALTER TABLE `proveedor_resp`
   MODIFY `cod_edo` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT de la tabla `prov_pro`
---
-ALTER TABLE `prov_pro`
-  MODIFY `cod_ppr` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de la tabla `prov_pro_resp`
---
-ALTER TABLE `prov_pro_resp`
-  MODIFY `cod_ppr` int(11) NOT NULL AUTO_INCREMENT;
-
---
 -- Restricciones para tablas volcadas
 --
 
@@ -672,17 +634,17 @@ ALTER TABLE `empleado`
   ADD CONSTRAINT `empleado_ibfk_1` FOREIGN KEY (`cod_car`) REFERENCES `cargo` (`cod_car`) ON UPDATE CASCADE;
 
 --
--- Filtros para la tabla `modulo`
+-- Filtros para la tabla `permiso`
 --
-ALTER TABLE `modulo`
-  ADD CONSTRAINT `modulo_ibfk_2` FOREIGN KEY (`cod_car`) REFERENCES `cargo` (`cod_car`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `permiso`
+  ADD CONSTRAINT `permiso_ibfk_1` FOREIGN KEY (`cod_car`) REFERENCES `cargo` (`cod_car`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `permiso_ibfk_2` FOREIGN KEY (`cod_mod`) REFERENCES `modulo` (`cod_mod`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Filtros para la tabla `prov_pro`
+-- Filtros para la tabla `producto`
 --
-ALTER TABLE `prov_pro`
-  ADD CONSTRAINT `prov_pro_ibfk_1` FOREIGN KEY (`cod_pro`) REFERENCES `producto` (`cod_pro`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `prov_pro_ibfk_2` FOREIGN KEY (`cod_edo`) REFERENCES `proveedor` (`cod_edo`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `producto`
+  ADD CONSTRAINT `producto_ibfk_1` FOREIGN KEY (`cod_edo`) REFERENCES `proveedor` (`cod_edo`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

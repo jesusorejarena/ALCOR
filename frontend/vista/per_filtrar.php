@@ -12,10 +12,10 @@
 	$obj_per->puntero=$obj_per->filtrar();
 
 	$obj_car = new cargo;
-	$obj_car->puntero=$obj_car->listar_normal();
+	$obj_car->puntero=$obj_car->listar_lista();
 
 	$obj_mod = new modulo;
-	$obj_mod->puntero=$obj_mod->listar_normal();
+	$obj_mod->puntero=$obj_mod->listar_lista();
 
 	encabezado("Filtrar Permiso - ALCOR C.A.");
 
@@ -38,8 +38,8 @@
 							<div class="row p-3">
 								<div class="col-12">
 									<div class="form-group">
-										<label for="cod_ṕer" class="<?php echo $obj_per->for; ?>">Código:</label>
-										<input type="text" name="cod_ṕer" id="cod_ṕer" placeholder="Código:" class="<?php echo $obj_per->input_normal; ?>">
+										<label for="cod_per" class="<?php echo $obj_per->for; ?>">Código:</label>
+										<input type="text" name="cod_per" id="cod_per" placeholder="Código:" class="<?php echo $obj_per->input_normal; ?>">
 									</div>
 								</div>
 								<div class="col-12 col-md-6">
@@ -49,7 +49,14 @@
 											<option value="">Seleccione...</option>
 											<?php while (($cargo=$obj_car->extraer_dato())>0)
 												{
-													echo "<option value='$cargo[cod_car]'>$cargo[nom_car]</option>";
+													if ($cargo['cod_car']==1 || $cargo['nom_car']=='Administrador')
+													{
+														
+													}
+													else
+													{
+														echo "<option value='$cargo[cod_car]'>$cargo[nom_car]</option>";
+													}
 												}
 											?>
 										</select>

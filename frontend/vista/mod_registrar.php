@@ -51,8 +51,6 @@
 										<label for="url_mod" class="<?php echo $obj_mod->for; ?>">URL:</label>
 										<select name="url_mod" id="url_mod" required="" class="<?php echo $obj_mod->input_normal; ?>">
 											<option value="">Seleccione...</option>
-											<option value="emp_menu.php">Menú de Empresa</option>
-											<option value="rol_menu.php">Menú de Roles</option>
 											<option value="ado_menu.php">Menú de Empleados</option>
 											<option value="edo_menu.php">Menú de Proveedores</option>
 											<option value="pro_menu.php">Menú de Productos</option>

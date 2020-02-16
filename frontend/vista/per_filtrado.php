@@ -65,7 +65,7 @@
 
 										echo "<form action='../../backend/controlador/permiso.php' method='POST'>
 												<tr>
-													<input type='hidden' name='cod_mod' value='$permiso[cod_per]'>
+													<input type='hidden' name='cod_per' value='$permiso[cod_per]'>
 													<td>$permiso[cod_per]</td>
 													<td>$cargo[nom_car]</td>
 													<td>$modulo[nom_mod]</td>
@@ -75,8 +75,8 @@
 													<td>$permiso[res_per]</td>													
 													<td>$permiso[est_per]</td>
 													<td>$permiso[bas_per]</td>
-													<td><a class='$obj_per->btn_eliminar' href='per_reportepdf.php?cod_per=$modulo[cod_per]'>PDF</a></td>
-													<td><a class='$obj_per->btn_editar' href='mod_modificar.php?cod_mod=$permiso[cod_mod]'>Editar</a></td>
+													<td><a class='$obj_per->btn_eliminar' href='per_reportepdf.php?cod_per=$permiso[cod_per]'>PDF</a></td>
+													<td><a class='$obj_per->btn_editar' href='per_modificar.php?cod_per=$permiso[cod_per]'>Editar</a></td>
 													<td><button type='submit' class='$obj_per->btn_restaurar' name='ejecutar' value='modificar_restaurar'>Restaurar</button></td>
 													<td><button type='submit' class='$obj_per->btn_eliminar' name='ejecutar' value='modificar_eliminar'>Eliminar</button></td>
 												</tr>

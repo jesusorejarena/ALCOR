@@ -35,14 +35,12 @@
 
 			$this->que_bda = "insert into modulo
 								(nom_mod,
-								cod_car,
 								url_mod,
 								cre_mod,
 								est_mod,
 								bas_mod)
 							values
-								('$this->nom_mod', 
-								'$this->cod_car',
+								('$this->nom_mod',
 								'$this->url_mod',
 								'$cre_mod',
 								'A',
@@ -58,11 +56,8 @@
 			
 			$this->que_bda = "update modulo
 								set
-									nom_mod='$this->nom_mod',
-									url_mod='$this->cod_car',
-									url_mod='$this->url_mod',
-									est_mod='$this->est_mod',
-									act_mod='$act_mod'
+									act_mod='$act_mod',
+									est_mod='$this->est_mod'
 								where
 									cod_mod='$this->cod_mod';";
 
@@ -120,6 +115,14 @@
 
 		}// fin de listar normal
 
+		function listar_lista()
+		{
+			$this->que_bda = "select * from modulo where est_mod='A' and bas_mod='A';";
+
+			return $this->ejecutar();
+
+		}// fin de listar lista
+
 		function listar_modificar()
 		{
 			$this->que_bda = "select * from modulo where cod_mod='$this->cod_mod'";
@@ -157,13 +160,11 @@
 		public function filtrar()
 		{			
 			$filtro1=($this->cod_mod!="")?"and cod_mod='$this->cod_mod'":"";
-			$filtro2=($this->cod_mod!="")?"and cod_mod='$this->cod_mod'":"";
-			$filtro3=($this->nom_mod!="")?"and nom_mod like '%$this->nom_mod%'":"";
-			$filtro4=($this->url_mod!="")?"and url_mod like '%$this->url_mod%'":"";
-			$filtro5=($this->est_mod!="")?"and est_mod='$this->est_mod'":"";
-			$filtro6=($this->bas_mod!="")?"and bas_mod='$this->bas_mod'":"";
+			$filtro2=($this->nom_mod!="")?"and nom_mod like '%$this->nom_mod%'":"";
+			$filtro3=($this->est_mod!="")?"and est_mod='$this->est_mod'":"";
+			$filtro4=($this->bas_mod!="")?"and bas_mod='$this->bas_mod'":"";
 
-			$this->que_bda = "select * from modulo where 1=1 $filtro1 $filtro2 $filtro3 $filtro4 $filtro5 $filtro6;";
+			$this->que_bda = "select * from modulo where 1=1 $filtro1 $filtro2 $filtro3 $filtro4;";
 
 			return $this->ejecutar();
 

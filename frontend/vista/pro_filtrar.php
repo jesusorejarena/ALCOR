@@ -21,8 +21,8 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-2"></div>
-			<div class="col-12 col-8">
+			<div class="col-md-2"></div>
+			<div class="col-12 col-md-8">
 				<div class="<?php echo $obj_edo->card; ?>">
 					<h2 class="<?php echo $obj_edo->titulocard; ?>">Filtrar producto</h2>
 					<hr>
@@ -59,10 +59,10 @@
 										<input type="text" name="can_pro" id="can_pro" placeholder="Cantidad:" class="<?php echo $obj_edo->input_normal; ?>">
 									</div>
 								</div>
-								<div class="col-12 col-md-6">
+								<div class="col-12">
 									<div class="form-group">
-										<label for="fky_proveedor" class="<?php echo $obj_edo->for; ?>">Proveedor:</label>
-										<select name="fky_proveedor" id="fky_proveedor" class="<?php echo $obj_edo->input_normal; ?>">
+										<label for="cod_edo" class="<?php echo $obj_edo->for; ?>">Proveedor:</label>
+										<select name="cod_edo" id="cod_edo" class="<?php echo $obj_edo->input_normal; ?>">
 											<option value="">General</option>
 											<?php while (($proveedor=$obj_edo->extraer_dato())>0)
 												{
@@ -74,8 +74,18 @@
 								</div>
 								<div class="col-12 col-md-6">
 									<div class="form-group">
-										<label for="bas_ado" class="<?php echo $obj_edo->for; ?>">Activo/Papelera:</label>
-										<select name="bas_ado" id="bas_ado" class="<?php echo $obj_edo->input_normal; ?>">
+										<label for="est_pro" class="<?php echo $obj_edo->for; ?>">Activo/Inactivo:</label>
+										<select name="est_pro" id="est_pro" class="<?php echo $obj_edo->input_normal; ?>">
+											<option value="">General</option>
+											<option value="A">Activo</option>
+											<option value="I">Inactivo</option>
+										</select>
+									</div>
+								</div>
+								<div class="col-12 col-md-6">
+									<div class="form-group">
+										<label for="bas_pro" class="<?php echo $obj_edo->for; ?>">Activo/Papelera:</label>
+										<select name="bas_pro" id="bas_pro" class="<?php echo $obj_edo->input_normal; ?>">
 											<option value="">General</option>
 											<option value="A">Activo</option>
 											<option value="B">En papelera</option>
@@ -99,7 +109,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-2"></div>
+			<div class="col-md-2"></div>
 		</div>
 	</div>
 

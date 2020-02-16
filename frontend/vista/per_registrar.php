@@ -9,13 +9,12 @@
 
 	$obj_per = new permiso;
 	$obj_per->estandar();
-	$obj_per->puntero=$obj_per->listar_normal();
 
 	$obj_car = new cargo;
-	$obj_car->puntero=$obj_car->listar_normal();
+	$obj_car->puntero=$obj_car->listar_lista();
 
 	$obj_mod = new modulo;
-	$obj_mod->puntero=$obj_mod->listar_normal();
+	$obj_mod->puntero=$obj_mod->listar_lista();
 
 	encabezado("Registrar Permiso - ALCOR C.A.");
 
@@ -63,7 +62,7 @@
 											<option value="">Seleccione...</option>
 											<?php while (($modulo=$obj_mod->extraer_dato())>0)
 												{
-													echo "<option value='$modulo[cod_mod]'>$modulo[nom_mod]</option>";
+													echo "<option value='$modulo[cod_mod]'>Menú de $modulo[nom_mod]</option>";
 												}
 											?>
 										</select>

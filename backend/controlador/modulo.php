@@ -8,12 +8,30 @@
 
 	switch ($_REQUEST["ejecutar"])
 	{
-		case 'insertar':			$obj_mod->insertar();
-									header("Location: ../../frontend/vista/mod_registrar.php");
+		case 'insertar':			switch ($obj_mod->url_mod)
+									{
+										case 'ado_menu.php': $obj_mod->nom_mod="Empleado";
+										break;
+
+										case 'edo_menu.php': $obj_mod->nom_mod="Proveedores";
+										break;
+
+										case 'pro_menu.php': $obj_mod->nom_mod="Productos";
+										break;
+
+										case 'ven_menu.php': $obj_mod->nom_mod="Ventas";
+										break;
+
+										case 'for_menu.php': $obj_mod->nom_mod="Formularios";
+										break;
+									}
+
+									$obj_mod->insertar();
+									//header("Location: ../../frontend/vista/mod_registrar.php");
 		break;
 
 		case 'modificar_normal':	$obj_mod->modificar_normal();
-									header("Location: ../../frontend/vista/mod_menu.php");
+									//header("Location: ../../frontend/vista/rol_menu.php");
 		break;
 
 		case 'modificar_restaurar':	$obj_mod->modificar_restaurar();
