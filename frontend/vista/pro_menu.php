@@ -10,6 +10,9 @@
 
 	encabezado("Menu de Productos - ALCOR C.A.");
 
+	comprobar("Productos");
+
+
 ?>
 
 	<div class="<?php echo $obj_pro->container; ?>">

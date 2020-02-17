@@ -16,12 +16,14 @@
 	
 	encabezado("Modificar Proveedor - ALCOR C.A.");
 
+	comprobar("Proveedores");
+
 ?>
 
 	<div class="<?php echo $obj_edo->container; ?>">
 		<div class="row pb-3 mb-3 bg-white">
 			<div class="col-12 text-left">
-				<button class="<?php echo $obj_edo->btn_atras; ?>" onClick="window.location.href='edo_menu.php'">Atras</button>
+				<button class="<?php echo $obj_edo->btn_atras; ?>" onClick="window.location.href='edo_menu.php'"><i class="icon ion-md-arrow-round-back"></i></button>
 			</div>
 		</div>
 		<div class="row">

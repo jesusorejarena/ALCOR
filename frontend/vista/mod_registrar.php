@@ -14,12 +14,14 @@
 
 	encabezado("Registrar Módulo - ALCOR C.A.");
 
+	comprobar("Roles");
+
 ?>
 
 	<div class="<?php echo $obj_mod->container; ?>">
 		<div class="row pb-3 mb-3 bg-white">
 			<div class="col-12 text-left">
-				<button class="<?php echo $obj_mod->btn_atras; ?>" onClick="window.location.href='rol_menu.php'">Atras</button>
+				<button class="<?php echo $obj_mod->btn_atras; ?>" onClick="window.location.href='rol_menu.php'"><i class="icon ion-md-arrow-round-back"></i></button>
 			</div>
 		</div>
 		<div class="row">

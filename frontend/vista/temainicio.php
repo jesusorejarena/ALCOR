@@ -51,22 +51,22 @@
 									<div class='collapse navbar-collapse justify-content-end' id='collapsibleNavbar'>
 										<ul class='navbar-nav'>
 											<li class='nav-item'>
-												<a href='inicio.php' class='nav-link'>Inicio</a>
+												<a href='inicio.php' class='nav-link text-rojo text-center'>Inicio</a>
 											</li>
 											<li class='nav-item'>
-												<a href='inicio_empresa.php' class='nav-link'>Empresa</a>
+												<a href='inicio_empresa.php' class='nav-link text-rojo text-center'>Empresa</a>
 											</li>
 											<li class='nav-item'>
-												<a href='inicio_servicio.php' class='nav-link'>Servicio</a>
+												<a href='inicio_servicio.php' class='nav-link text-rojo text-center'>Servicio</a>
 											</li>
 											<li class='nav-item'>
-												<a href='inicio_producto.php' class='nav-link'>Productos</a>
+												<a href='inicio_producto.php' class='nav-link text-rojo text-center'>Productos</a>
 											</li>
 											<li class='nav-item'>
-												<a href='inicio_contacto.php' class='nav-link'>Contacto</a>
+												<a href='inicio_contacto.php' class='nav-link text-rojo text-center'>Contacto</a>
 											</li>
 											<li class='nav-item'>
-												<a href='usu_sesion.php' class='nav-link text-light btn btn-md btn-rojo'>Iniciar Sesión</a>
+												<a href='usu_sesion.php' class='nav-link text-rojo text-center text-light btn btn-md btn-rojo'>Iniciar Sesión</a>
 											</li>
 										</ul>
 									</div>
@@ -91,7 +91,7 @@
 
 		echo "
 				<footer class=''>
-					<div class='container-fluid pt-5 bg-danger text-white'>
+					<div class='container-fluid pt-3 bg-danger text-white'>
 						<div class='row'>
 							<div class='col-4 text-left'>
 								<p><b>Dirección: </b>$empresa[dir_emp] <br>

@@ -87,6 +87,7 @@
 			$this->btn_editar		="btn btn-warning";
 			$this->btn_restaurar	="btn btn-success";
 			$this->btn_eliminar		="btn btn-rojo";
+			$this->btn_pdf			="btn btn-pdf";
 			$this->btn_atras		="btn btn-danger btn-lg";
 			// Fin Botones Normales Generales
 

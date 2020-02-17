@@ -12,12 +12,14 @@
 
 	encabezado("Proveedores Filtrados - ALCOR C.A.");
 
+	comprobar("Proveedores");
+
 ?>
 
 	<div class="<?php echo $obj_edo->container; ?>">
 		<div class="row pb-3 mb-3 bg-white">
 			<div class="col-12 text-left">
-				<button class="<?php echo $obj_edo->btn_atras; ?>" onClick="window.location.href='edo_filtrar.php'">Atras</button>
+				<button class="<?php echo $obj_edo->btn_atras; ?>" onClick="window.location.href='edo_filtrar.php'"><i class="icon ion-md-arrow-round-back"></i></button>
 			</div>
 		</div>
 		<div class="<?php echo $obj_edo->card; ?>">
@@ -68,10 +70,10 @@
 													<td>$proveedor[eli_edo]</td>
 													<td>$proveedor[res_edo]</td>
 													<td>$proveedor[bas_edo]</td>
-													<td><a class='$obj_edo->btn_eliminar' href=''>PDF</a></td>
-													<td><a class='$obj_edo->btn_editar' href='edo_modificar.php?cod_edo=$proveedor[cod_edo]'>Editar</a></td>
-													<td><button type='submit' class='$obj_edo->btn_restaurar' name='ejecutar' value='modificar_restaurar'>Restaurar</button></td>
-													<td><button type='submit' class='$obj_edo->btn_eliminar' name='ejecutar' value='modificar_eliminar'>Eliminar</button></td>
+													<td><a class='$obj_edo->btn_pdf' href='edo_reportepdf.php?cod_edo=$proveedor[cod_edo]'><i class='icon ion-md-document'></i></a></td>
+													<td><a class='$obj_edo->btn_editar' href='edo_modificar.php?cod_edo=$proveedor[cod_edo]'><i class='icon ion-md-create'></i></a></td>
+													<td><button type='submit' class='$obj_edo->btn_restaurar' name='ejecutar' value='modificar_restaurar'><i class='icon ion-md-refresh'></i></button></td>
+													<td><button type='submit' class='$obj_edo->btn_eliminar' name='ejecutar' value='modificar_eliminar'><i class='icon ion-md-trash'></i></button></td>
 												</tr>
 											</form>
 										";

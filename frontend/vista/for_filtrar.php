@@ -10,12 +10,14 @@
 
 	encabezado("Filtrar Formulario - ALCOR C.A.");
 
+	comprobar("Formularios");
+
 ?>
 
 	<div class="<?php echo $obj_for->container; ?>">
 		<div class="row pb-3 mb-3 bg-white">
 			<div class="col-12 text-left">
-				<button class="<?php echo $obj_for->btn_atras; ?>" onClick="window.location.href='for_menu.php'">Atras</button>
+				<button class="<?php echo $obj_for->btn_atras; ?>" onClick="window.location.href='for_menu.php'"><i class="icon ion-md-arrow-round-back"></i></button>
 			</div>
 		</div>
 		<div class="row">

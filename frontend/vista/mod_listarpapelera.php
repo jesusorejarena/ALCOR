@@ -11,12 +11,14 @@
 
 	encabezado("Modulos Eliminados - ALCOR C.A.");
 
+	comprobar("Roles");
+
 ?>
 
 	<div class="<?php echo $obj_mod->container; ?>">
 		<div class="row pb-3 mb-3 bg-white">
 			<div class="col-12 text-left">
-				<button class="<?php echo $obj_mod->btn_atras; ?>" onClick="window.location.href='rol_menu.php'">Atras</button>
+				<button class="<?php echo $obj_mod->btn_atras; ?>" onClick="window.location.href='rol_menu.php'"><i class="icon ion-md-arrow-round-back"></i></button>
 			</div>
 		</div>
 		<div class="<?php echo $obj_mod->card; ?>">
@@ -53,8 +55,8 @@
 													<td>$modulo[eli_mod]</td>
 													<td>$modulo[res_mod]</td>
 													<td>$modulo[est_mod]</td>
-													<td><button type='submit' class='$obj_mod->btn_restaurar' name='ejecutar' value='modificar_restaurar'>Restaurar</button></td>
-													<td><button type='submit' class='$obj_mod->btn_eliminar' name='ejecutar' value='eliminar'>Eliminar</button></td>
+													<td><button type='submit' class='$obj_mod->btn_restaurar' name='ejecutar' value='modificar_restaurar'><i class='icon ion-md-refresh'></i></button></td>
+													<td><button type='submit' class='$obj_mod->btn_eliminar' name='ejecutar' value='eliminar'><i class='icon ion-md-trash'></i></button></td>
 												</tr>
 											</form>
 										";

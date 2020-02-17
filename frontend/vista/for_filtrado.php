@@ -12,12 +12,14 @@
 
 	encabezado("Formularios Filtrados - ALCOR C.A.");
 
+	comprobar("Formularios");
+
 ?>
 
 	<div class="<?php echo $obj_for->container; ?>">
 		<div class="row pb-3 mb-3 bg-white">
 			<div class="col-12 text-left">
-				<button class="<?php echo $obj_for->btn_atras; ?>" onClick="window.location.href='for_filtrar.php'">Atras</button>
+				<button class="<?php echo $obj_for->btn_atras; ?>" onClick="window.location.href='for_filtrar.php'"><i class="icon ion-md-arrow-round-back"></i></button>
 			</div>
 		</div>
 		<div class="<?php echo $obj_for->card; ?>">
@@ -54,8 +56,8 @@
 													<td>$formulario[cor_for]</td>
 													<td>$formulario[asu_for]</td>
 													<td>$formulario[cre_for]</td>
-													<td><a class='$obj_for->btn_eliminar' href='for_reportepdf.php?cod_for=$formulario[cod_for]'>PDF</a></td>
-													<td><button type='submit' class='$obj_for->btn_eliminar' name='ejecutar' value='eliminar'>Eliminar</button></td>
+													<td><a class='$obj_for->btn_pdf' href='for_reportepdf.php?cod_for=$formulario[cod_for]'><i class='icon ion-md-document'></i></a></td>
+													<td><button type='submit' class='$obj_for->btn_eliminar' name='ejecutar' value='eliminar'><i class='icon ion-md-trash'></i></button></td>
 												</tr>
 											</form>
 										";

@@ -10,6 +10,8 @@
 
 	encabezado("Menu de la empresa - ALCOR C.A.");
 
+	comprobaradmin();
+
 ?>
 
 	<div class="<?php echo $obj_emp->container; ?>">

@@ -11,12 +11,14 @@
 
 	encabezado("Lista de Empleados - ALCOR C.A.");
 
+	comprobar("Empleados");
+
 ?>
 
 	<div class="<?php echo $obj_ado->container; ?>">
 		<div class="row pb-3 mb-3 bg-white">
 			<div class="col-12 text-left">
-				<button class="<?php echo $obj_ado->btn_atras; ?>" onClick="window.location.href='ado_menu.php'">Atras</button>
+				<button class="<?php echo $obj_ado->btn_atras; ?>" onClick="window.location.href='ado_menu.php'"><i class="icon ion-md-arrow-round-back"></i></button>
 			</div>
 		</div>
 		<div class="<?php echo $obj_ado->card; ?>">
@@ -89,9 +91,9 @@
 																<td>$empleado[eli_ado]</td>
 																<td>$empleado[res_ado]</td>
 																<td>$empleado[est_ado]</td>
-																<td><a class='$obj_ado->btn_eliminar' href='ado_reportepdf.php?cod_ado=$empleado[cod_ado]'>PDF</a></td>
-																<td><a class='$obj_ado->btn_editar' href='ado_modificar.php?cod_ado=$empleado[cod_ado]'>Editar</a></td>
-																<td><button type='submit' class='$obj_ado->btn_eliminar' name='ejecutar' value='modificar_eliminar'>Eliminar</button></td>
+																<td><a class='$obj_ado->btn_pdf' href='ado_reportepdf.php?cod_ado=$empleado[cod_ado]'><i class='icon ion-md-document'></i></a></td>
+																<td><a class='$obj_ado->btn_editar' href='ado_modificar.php?cod_ado=$empleado[cod_ado]'><i class='icon ion-md-create'></i></a></td>
+																<td><button type='submit' class='$obj_ado->btn_eliminar' name='ejecutar' value='modificar_eliminar'><i class='icon ion-md-trash'></i></button></td>
 														";
 													}
 										echo "

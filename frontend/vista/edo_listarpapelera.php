@@ -11,12 +11,14 @@
 
 	encabezado("Proveedores eliminados - ALCOR C.A.");
 
+	comprobar("Proveedores");
+
 ?>
 
 	<div class="<?php echo $obj_edo->container; ?>">
 		<div class="row pb-3 mb-3 bg-white">
 			<div class="col-12 text-left">
-				<button class="<?php echo $obj_edo->btn_atras; ?>" onClick="window.location.href='edo_menu.php'">Atras</button>
+				<button class="<?php echo $obj_edo->btn_atras; ?>" onClick="window.location.href='edo_menu.php'"><i class="icon ion-md-arrow-round-back"></i></button>
 			</div>
 		</div>
 		<div class="<?php echo $obj_edo->card; ?>">
@@ -63,8 +65,8 @@
 													<td>$proveedor[act_edo]</td>
 													<td>$proveedor[eli_edo]</td>
 													<td>$proveedor[res_edo]</td>
-													<td><button type='submit' class='$obj_edo->btn_restaurar' name='ejecutar' value='modificar_restaurar'>Restaurar</button></td>
-													<td><button type='submit' class='$obj_edo->btn_eliminar' name='ejecutar' value='eliminar'>Eliminar</button></td>
+													<td><button type='submit' class='$obj_edo->btn_restaurar' name='ejecutar' value='modificar_restaurar'><i class='icon ion-md-refresh'></i></button></td>
+													<td><button type='submit' class='$obj_edo->btn_eliminar' name='ejecutar' value='eliminar'><i class='icon ion-md-trash'></i></button></td>
 												</tr>
 											</form>
 										";

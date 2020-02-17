@@ -10,7 +10,7 @@
 	{
 		case 'insertar':			switch ($obj_mod->url_mod)
 									{
-										case 'ado_menu.php': $obj_mod->nom_mod="Empleado";
+										case 'ado_menu.php': $obj_mod->nom_mod="Empleados";
 										break;
 
 										case 'edo_menu.php': $obj_mod->nom_mod="Proveedores";

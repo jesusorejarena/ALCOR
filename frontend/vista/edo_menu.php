@@ -10,6 +10,8 @@
 
 	encabezado("Menú de Proveedores - ALCOR C.A.");
 
+	comprobar("Proveedores");
+
 ?>
 
 	<div class="<?php echo $obj_edo->container; ?>">

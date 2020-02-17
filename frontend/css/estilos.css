@@ -17,7 +17,17 @@
 
 .btn-rojo:hover{
 	color: #ffffff !important;
-	background-color: #860117 !important;
+	background-color: #E30004 !important;
+}
+
+.btn-pdf{
+	color: #ffffff !important;
+	background-color: #B90000 !important;
+}
+
+.btn-pdf:hover{
+	color: #ffffff !important;
+	background-color: #9A0007 !important;
 }
 
 .btn-rojito:hover{
@@ -32,4 +42,9 @@
 .btn:hover{
 	transition: 0.8s !important;
 	border-radius: 50px !important;
+}
+
+.icon {
+	padding: 5px;
+	font-size: 20px;
 }

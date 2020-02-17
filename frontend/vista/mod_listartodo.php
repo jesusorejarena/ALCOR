@@ -11,12 +11,14 @@
 
 	encabezado("Lista de Módulos - ALCOR C.A.");
 
+	comprobar("Roles");
+
 ?>
 
 	<div class="<?php echo $obj_mod->container; ?>">
 		<div class="row pb-3 mb-3 bg-white">
 			<div class="col-12 text-left">
-				<button class="<?php echo $obj_mod->btn_atras; ?>" onClick="window.location.href='rol_menu.php'">Atras</button>
+				<button class="<?php echo $obj_mod->btn_atras; ?>" onClick="window.location.href='rol_menu.php'"><i class="icon ion-md-arrow-round-back"></i></button>
 			</div>
 		</div>
 		<div class="<?php echo $obj_mod->card; ?>">
@@ -54,9 +56,9 @@
 													<td>$modulo[eli_mod]</td>
 													<td>$modulo[res_mod]</td>
 													<td>$modulo[est_mod]</td>
-													<td><a class='$obj_mod->btn_eliminar' href='mod_reportepdf.php?cod_mod=$modulo[cod_mod]'>PDF</a></td>
-													<td><a class='$obj_mod->btn_editar' href='mod_modificar.php?cod_mod=$modulo[cod_mod]'>Editar</a></td>
-													<td><button type='submit' class='$obj_mod->btn_eliminar' name='ejecutar' value='modificar_eliminar'>Eliminar</button></td>
+													<td><a class='$obj_mod->btn_pdf' href='mod_reportepdf.php?cod_mod=$modulo[cod_mod]'><i class='icon ion-md-document'></i></a></td>
+													<td><a class='$obj_mod->btn_editar' href='mod_modificar.php?cod_mod=$modulo[cod_mod]'><i class='icon ion-md-create'></i></a></td>
+													<td><button type='submit' class='$obj_mod->btn_eliminar' name='ejecutar' value='modificar_eliminar'><i class='icon ion-md-trash'></i></button></td>
 												</tr>
 											</form>
 										";

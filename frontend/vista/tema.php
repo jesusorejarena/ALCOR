@@ -20,18 +20,30 @@
 				$obj_mod->nom_mod=$menu;
 				$obj_mod->contador=$obj_mod->listar_comprobar();
 				
-				;
-				
-					if ($modulos=$obj_mod->contando()>0) {
-						
-					}
-					else
-					{
-						header("Location: menu_principal.php");
-					}
+							
+				if ($modulos=$obj_mod->contando()>0) {
+					
+				}
+				else
+				{
+					header("Location: menu_principal.php");
+				}
 				
 			}
 		}
+	}
+
+	function comprobaradmin()
+	{
+		if ($_SESSION['cargo']==1)
+		{
+		
+		}
+		else
+		{
+			header("Location: menu_principal.php");
+		}
+
 	}
 
 	function encabezado($titulo)
@@ -44,10 +56,12 @@
 			require_once("../../backend/clase/cargo.class.php");
 			require_once("../../backend/clase/modulo.class.php");
 			require_once("../../backend/clase/permiso.class.php");
+			require_once("../../backend/clase/respaldo.class.php");
 
 			$obj_car = new cargo;
 			$obj_mod = new modulo;
 			$obj_per = new permiso;
+			$obj_res = new respaldo;
 
 		}
 		else
@@ -88,7 +102,7 @@
 									<div class='collapse navbar-collapse justify-content-end' id='collapsibleNavbar'>
 										<ul class='navbar-nav'>
 											<li class='nav-item'>
-												<a href='menu_principal.php' class='nav-link text-rojo'>Inicio</a>
+												<a href='menu_principal.php' class='nav-link text-center text-rojo'>Inicio</a>
 											</li>
 										";
 
@@ -96,25 +110,28 @@
 											{
 												echo "
 													<li class='nav-item'>
-														<a href='emp_menu.php' class='nav-link text-rojo'>Empresa</a>
+														<a href='emp_menu.php' class='nav-link text-center text-rojo'>Empresa</a>
 													</li>
 													<li class='nav-item'>
-														<a href='rol_menu.php' class='nav-link text-rojo'>Roles</a>
+														<a href='rol_menu.php' class='nav-link text-center text-rojo'>Roles</a>
 													</li>
 													<li class='nav-item'>
-														<a href='ado_menu.php' class='nav-link text-rojo'>Empleados</a>
+														<a href='ado_menu.php' class='nav-link text-center text-rojo'>Empleados</a>
 													</li>
 													<li class='nav-item'>
-														<a href='edo_menu.php' class='nav-link text-rojo'>Proveedores</a>
+														<a href='edo_menu.php' class='nav-link text-center text-rojo'>Proveedores</a>
 													</li>
 													<li class='nav-item'>
-														<a href='pro_menu.php' class='nav-link text-rojo'>Productos</a>
+														<a href='pro_menu.php' class='nav-link text-center text-rojo'>Productos</a>
 													</li>
 													<li class='nav-item'>
-														<a href='ven_menu.php' class='nav-link text-rojo'>Ventas</a>
+														<a href='ven_menu.php' class='nav-link text-center text-rojo'>Ventas</a>
 													</li>
 													<li class='nav-item'>
-														<a href='for_menu.php' class='nav-link text-rojo'>Formularios</a>
+														<a href='for_menu.php' class='nav-link text-center text-rojo'>Formularios</a>
+													</li>
+													<li class='nav-item'>
+														<a href='../../database/respaldo/respaldo_db.php' class='nav-link text-center text-rojo'>Respaldo</a>
 													</li>
 												";
 											}
@@ -142,7 +159,7 @@
 											}
 											
 											echo "<li class='nav-item'>
-												<a href='cerrar_sesion.php' class='nav-link text-light btn btn-md btn-rojo'>Cerrar Sesión</a>
+												<a href='cerrar_sesion.php' class='nav-link text-light btn btn-md btn-rojo'><i class='icon ion-md-power'></i></a>
 											</li>
 										</ul>
 									</div>
@@ -166,7 +183,7 @@
 
 		echo "
 				<footer class=''>
-					<div class='container-fluid pt-5 bg-danger text-white'>
+					<div class='container-fluid pt-3 bg-danger text-white'>
 						<div class='row'>
 							<div class='col-4 text-left'>
 								<p><b>Dirección: </b>$empresa[dir_emp] <br>

@@ -11,12 +11,14 @@
 
 	encabezado("Lista de Cargos - ALCOR C.A.");
 
+	comprobar("Roles");
+
 ?>
 
 	<div class="<?php echo $obj_car->container; ?>">
 		<div class="row pb-3 mb-3 bg-white">
 			<div class="col-12 text-left">
-				<button class="<?php echo $obj_car->btn_atras; ?>" onClick="window.location.href='rol_menu.php'">Atras</button>
+				<button class="<?php echo $obj_car->btn_atras; ?>" onClick="window.location.href='rol_menu.php'"><i class="icon ion-md-arrow-round-back"></i></button>
 			</div>
 		</div>
 		<div class="<?php echo $obj_car->card; ?>">
@@ -67,9 +69,9 @@
 																<td>$cargo[eli_car]</td>
 																<td>$cargo[res_car]</td>
 																<td>$cargo[est_car]</td>
-																<td><a class='$obj_car->btn_eliminar' href='car_reportepdf.php?cod_car=$cargo[cod_car]'>PDF</a></td>
-																<td><a class='$obj_car->btn_editar' href='car_modificar.php?cod_car=$cargo[cod_car]'>Editar</a></td>
-																<td><button type='submit' class='$obj_car->btn_eliminar' name='ejecutar' value='modificar_eliminar'>Eliminar</button></td>
+																<td><a class='$obj_car->btn_pdf' href='car_reportepdf.php?cod_car=$cargo[cod_car]'><i class='icon ion-md-document'></i></a></td>
+																<td><a class='$obj_car->btn_editar' href='car_modificar.php?cod_car=$cargo[cod_car]'><i class='icon ion-md-create'></i></a></td>
+																<td><button type='submit' class='$obj_car->btn_eliminar' name='ejecutar' value='modificar_eliminar'><i class='icon ion-md-trash'></i></button></td>
 														";
 													}													
 										echo "		
