@@ -10,7 +10,7 @@
 	$obj_mod->asignar_valor();
 	$obj_mod->puntero=$obj_mod->filtrar();
 
-	encabezado("Módulos Filtrados - ALCOR C.A.");
+	encabezado("Módulos Filtrados");
 
 	comprobar("Roles");
 

@@ -9,7 +9,7 @@
 	$obj_mod->estandar();
 	$obj_mod->puntero=$obj_mod->listar_eliminar();
 
-	encabezado("Modulos Eliminados - ALCOR C.A.");
+	encabezado("Modulos Eliminados");
 
 	comprobar("Roles");
 

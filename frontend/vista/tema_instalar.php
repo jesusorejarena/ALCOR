@@ -23,8 +23,9 @@
 			
 			<body class='bg-light'>
 
+				<span class='screenup' id='screenup'><i class='icon ion-md-arrow-dropup-circle'></i></span>
 
-		<h1 class='h1 text-dark text-center p-4 text-center big-text'>Proceso de Instalación</h1>
+				<h1 class='h1 text-dark text-center p-4 text-center big-text'>Proceso de Instalación</h1>
 		";
 
 	}
@@ -42,6 +43,7 @@
 				<script src='../css/bootstrap-4.4.1/js/jquery-3.4.1.min.js'></script>
 				<script src='../css/bootstrap-4.4.1/js/popper.min.js'></script>
 				<script src='../css/bootstrap-4.4.1/js/bootstrap.min.js'></script>
+				<script src='../js/screenup.js'></script>
 				<script src='../css/wow/wow.min.js'></script>
 				<script>new WOW().init();</script>
 

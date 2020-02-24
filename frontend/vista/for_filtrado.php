@@ -10,7 +10,7 @@
 	$obj_for->asignar_valor();
 	$obj_for->puntero=$obj_for->filtrar();
 
-	encabezado("Formularios Filtrados - ALCOR C.A.");
+	encabezado("Formularios Filtrados");
 
 	comprobar("Formularios");
 

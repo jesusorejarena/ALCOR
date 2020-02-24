@@ -8,14 +8,13 @@
 	$obj_emp = new empresa;
 	$obj_emp->estandar();
 
-	encabezado("Menu de la empresa - ALCOR C.A.");
+	encabezado("Menu de la empresa");
 
 	comprobaradmin();
 
 ?>
 
 	<div class="<?php echo $obj_emp->container; ?>">
-		<div class="row py-5"><div class="col-12"></div></div>
 		<h2 class="<?php echo $obj_emp->titulos; ?>">Datos de la Empresa</h2>
 		<div class="row">
 			<div class="col-md-4"></div>

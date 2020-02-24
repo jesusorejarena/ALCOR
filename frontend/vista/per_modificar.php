@@ -22,7 +22,7 @@
 	$obj_mod = new modulo;
 	$obj_mod->puntero=$obj_mod->listar_lista();
 
-	encabezado("Modificar Permiso - ALCOR C.A.");
+	encabezado("Modificar Permiso");
 
 	comprobar("Roles");
 

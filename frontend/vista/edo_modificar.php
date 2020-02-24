@@ -14,7 +14,7 @@
 	$obj_edo->puntero=$obj_edo->listar_modificar();
 	$proveedor=$obj_edo->extraer_dato();
 	
-	encabezado("Modificar Proveedor - ALCOR C.A.");
+	encabezado("Modificar Proveedor");
 
 	comprobar("Proveedores");
 

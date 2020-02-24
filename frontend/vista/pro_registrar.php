@@ -10,7 +10,7 @@
 	$obj_edo->asignar_valor();
 	$obj_edo->puntero=$obj_edo->listar_lista();
 
-	encabezado("Registrar Producto - ALCOR C.A.");
+	encabezado("Registrar Producto");
 
 	comprobar("Productos");
 

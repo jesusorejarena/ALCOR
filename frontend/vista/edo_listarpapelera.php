@@ -9,7 +9,7 @@
 	$obj_edo->estandar();
 	$obj_edo->puntero=$obj_edo->listar_eliminar();
 
-	encabezado("Proveedores eliminados - ALCOR C.A.");
+	encabezado("Proveedores eliminados");
 
 	comprobar("Proveedores");
 

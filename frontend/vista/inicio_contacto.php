@@ -6,7 +6,7 @@
 	$obj_car = new cargo;
 	$obj_car->estandar();
 
-	encabezado("ALCOR C.A.");
+	encabezado("Contacto");
 
 ?>
 	<div class="<?php echo $obj_car->container; ?>">

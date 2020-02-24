@@ -9,12 +9,11 @@
 	$obj_pro->estandar();
 	$obj_pro->puntero=$obj_pro->listar_normal();
 
-	encabezado("Registrar Ventas - ALCOR C.A.");
+	encabezado("Registrar Ventas");
 
 ?>
 
 	<div class="<?php echo $obj_pro->container; ?>">
-		<div class="row py-5"><div class="col-12"></div></div>
 		<h2 class="<?php echo $obj_pro->titulos; ?>">Registrar Venta</h2>
 		<div class="row">
 			<div class="col-md-2"></div>

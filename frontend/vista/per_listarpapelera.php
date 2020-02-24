@@ -15,7 +15,7 @@
 
 	$obj_mod = new modulo;
 
-	encabezado("Permisos Eliminados - ALCOR C.A.");
+	encabezado("Permisos Eliminados");
 
 	comprobar("Roles");
 

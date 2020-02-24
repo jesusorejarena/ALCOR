@@ -8,7 +8,7 @@
 	$obj_car = new cargo;
 	$obj_car->estandar();
 
-	encabezado("Registrar Cargo - ALCOR C.A.");
+	encabezado("Registrar Cargo");
 
 	comprobar("Roles");
 

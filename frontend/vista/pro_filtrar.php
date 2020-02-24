@@ -10,7 +10,7 @@
 	$obj_edo->asignar_valor();
 	$obj_edo->puntero=$obj_edo->listar_normal();
 
-	encabezado("Filtrar producto - ALCOR C.A.");
+	encabezado("Filtrar producto");
 
 	comprobar("Productos");
 

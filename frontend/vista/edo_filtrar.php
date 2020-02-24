@@ -8,7 +8,7 @@
 	$obj_edo = new proveedor;
 	$obj_edo->estandar();
 	
-	encabezado("Filtrar Proveedores - ALCOR C.A.");
+	encabezado("Filtrar Proveedores");
 
 	comprobar("Proveedores");
 

@@ -6,7 +6,7 @@
 	$obj_ado = new empleado;
 	$obj_ado->estandar();
 
-	encabezado("Iniciar Sesión - ALCOR C.A.");
+	encabezado("Iniciar Sesión");
 
 ?>
 

@@ -69,20 +69,44 @@
 		}// fin de eliminar
 
 		public function filtrar()
-        {
+		{
 
-            $filtro1=($this->cod_for!="")?"and cod_for='$this->cod_for'":"";
-            $filtro2=($this->nom_for!="")?"and nom_for like '%$this->nom_for%'":"";
-            $filtro3=($this->ape_for!="")?"and ape_for like '%$this->ape_for%'":"";
+			$filtro1=($this->cod_for!="")?"and cod_for='$this->cod_for'":"";
+			$filtro2=($this->nom_for!="")?"and nom_for like '%$this->nom_for%'":"";
+			$filtro3=($this->ape_for!="")?"and ape_for like '%$this->ape_for%'":"";
 			$filtro4=($this->tel_for!="")?"and tel_for like '%$this->tel_for%'":"";
 			$filtro5=($this->cor_for!="")?"and cor_for like '%$this->cor_for%'":"";
 			$filtro6=($this->asu_for!="")?"and asu_for like '%$this->asu_for%'":"";
 
-            $this->que_bda = "select * from formulario where 1=1 $filtro1 $filtro2 $filtro3 $filtro4 $filtro4 $filtro5 $filtro6;";
+			$this->que_bda = "select * from formulario where 1=1 $filtro1 $filtro2 $filtro3 $filtro4 $filtro4 $filtro5 $filtro6;";
 
-            return $this->ejecutar();
+			return $this->ejecutar();
 
-        }// fin de filtrar
+		}// fin de filtrar
+
+		function listar_resp()
+		{
+			$this->que_bda = "select * from formulario_resp;";
+
+			return $this->ejecutar();
+
+		}// fin de listar respaldo
+
+		function filtrar_resp()
+		{
+			
+			$filtro1=($this->cod_for!="")?"and cod_for='$this->cod_for'":"";
+			$filtro2=($this->nom_for!="")?"and nom_for like '%$this->nom_for%'":"";
+			$filtro3=($this->ape_for!="")?"and ape_for like '%$this->ape_for%'":"";
+			$filtro4=($this->tel_for!="")?"and tel_for like '%$this->tel_for%'":"";
+			$filtro5=($this->cor_for!="")?"and cor_for like '%$this->cor_for%'":"";
+			$filtro6=($this->asu_for!="")?"and asu_for like '%$this->asu_for%'":"";
+
+			$this->que_bda = "select * from formulario_resp where 1=1 $filtro1 $filtro2 $filtro3 $filtro4 $filtro4 $filtro5 $filtro6;";
+
+			return $this->ejecutar();
+
+		}// fin de filtrar respaldo
 
 	}
 

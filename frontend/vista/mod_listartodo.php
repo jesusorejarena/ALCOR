@@ -9,7 +9,7 @@
 	$obj_mod->estandar();
 	$obj_mod->puntero=$obj_mod->listar_normal();
 
-	encabezado("Lista de Módulos - ALCOR C.A.");
+	encabezado("Lista de Módulos");
 
 	comprobar("Roles");
 

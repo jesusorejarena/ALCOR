@@ -9,7 +9,7 @@
 	$obj_car->estandar();
 	$obj_car->puntero=$obj_car->listar_normal();
 
-	encabezado("Lista de Cargos - ALCOR C.A.");
+	encabezado("Lista de Cargos");
 
 	comprobar("Roles");
 

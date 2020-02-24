@@ -16,7 +16,7 @@
 	$obj_mod = new modulo;
 	$obj_mod->puntero=$obj_mod->listar_lista();
 
-	encabezado("Registrar Permiso - ALCOR C.A.");
+	encabezado("Registrar Permiso");
 
 	comprobar("Roles");
 

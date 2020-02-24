@@ -86,14 +86,17 @@
 				
 			</head>
 			
-			<body class='m-0 p-0 bg-danger'>
+			<body class='m-0 p-0 bg-info'>
+
+				<span class='screenup' id='screenup'><i class='icon ion-md-arrow-dropup-circle'></i></span>
+
 				<div class='container-fluid'>
 					<div class='row'>
 						<div class='col-12 m-0 p-0'>
 							<header class='header'>
 								<nav class='navbar navbar-expand-md bg-primary navbar-dark form-control-static fixed-top'>
 									<!--Nombre de la app-->
-									<a href='inicio.php' class='navbar-brand animated bounceInLeft'><img src='../img/logo2.png' width='150'></a>
+									<a href='menu_principal.php' class='navbar-brand animated bounceInLeft'><img src='../img/logo2.png' width='150'></a>
 									<!--Menu de hamburguesa-->
 									<button class='navbar-toggler' type='button' data-toggle='collapse' data-target='#collapsibleNavbar'>
 											<span class='navbar-toggler-icon'></span>
@@ -102,7 +105,7 @@
 									<div class='collapse navbar-collapse justify-content-end' id='collapsibleNavbar'>
 										<ul class='navbar-nav'>
 											<li class='nav-item'>
-												<a href='menu_principal.php' class='nav-link text-center text-rojo'>Inicio</a>
+												<a href='menu_principal.php' class='nav-link text-center texto-nav'>Inicio</a>
 											</li>
 										";
 
@@ -110,28 +113,28 @@
 											{
 												echo "
 													<li class='nav-item'>
-														<a href='emp_menu.php' class='nav-link text-center text-rojo'>Empresa</a>
+														<a href='emp_menu.php' class='nav-link text-center texto-nav'>Empresa</a>
 													</li>
 													<li class='nav-item'>
-														<a href='rol_menu.php' class='nav-link text-center text-rojo'>Roles</a>
+														<a href='rol_menu.php' class='nav-link text-center texto-nav'>Roles</a>
 													</li>
 													<li class='nav-item'>
-														<a href='ado_menu.php' class='nav-link text-center text-rojo'>Empleados</a>
+														<a href='ado_menu.php' class='nav-link text-center texto-nav'>Empleados</a>
 													</li>
 													<li class='nav-item'>
-														<a href='edo_menu.php' class='nav-link text-center text-rojo'>Proveedores</a>
+														<a href='edo_menu.php' class='nav-link text-center texto-nav'>Proveedores</a>
 													</li>
 													<li class='nav-item'>
-														<a href='pro_menu.php' class='nav-link text-center text-rojo'>Productos</a>
+														<a href='pro_menu.php' class='nav-link text-center texto-nav'>Productos</a>
 													</li>
 													<li class='nav-item'>
-														<a href='ven_menu.php' class='nav-link text-center text-rojo'>Ventas</a>
+														<a href='ven_menu.php' class='nav-link text-center texto-nav'>Ventas</a>
 													</li>
 													<li class='nav-item'>
-														<a href='for_menu.php' class='nav-link text-center text-rojo'>Formularios</a>
+														<a href='for_menu.php' class='nav-link text-center texto-nav'>Formularios</a>
 													</li>
 													<li class='nav-item'>
-														<a href='../../database/respaldo/respaldo_db.php' class='nav-link text-center text-rojo'>Respaldo</a>
+														<a href='menu_config.php' class='nav-link text-center texto-nav'>Configuración</a>
 													</li>
 												";
 											}
@@ -151,7 +154,7 @@
 														echo "
 															
 															<li class='nav-item'>
-																<a href='$modulo[url_mod]' class='nav-link text-rojo'>$modulo[nom_mod]</a>
+																<a href='$modulo[url_mod]' class='nav-link texto-nav'>$modulo[nom_mod]</a>
 															</li>
 														";
 													}
@@ -159,7 +162,7 @@
 											}
 											
 											echo "<li class='nav-item'>
-												<a href='cerrar_sesion.php' class='nav-link text-light btn btn-md btn-rojo'><i class='icon ion-md-power'></i></a>
+												<a href='cerrar_sesion.php' class='nav-link text-light btn btn-sesion'><i class='icon ion-md-power'></i></a>
 											</li>
 										</ul>
 									</div>
@@ -183,7 +186,7 @@
 
 		echo "
 				<footer class=''>
-					<div class='container-fluid pt-3 bg-danger text-white'>
+					<div class='container-fluid pt-3 pb-1 bg-info text-white'>
 						<div class='row'>
 							<div class='col-4 text-left'>
 								<p><b>Dirección: </b>$empresa[dir_emp] <br>
@@ -194,8 +197,8 @@
 								<p>
 									$empresa[nom_emp]<br>
 									$empresa[rif_emp] <br>
-									<a href='https://www.instagram.com/comalcorca/' target='_blank' class='btn btn-danger'><i class='icon ion-logo-instagram' style='font-size: 32px;'></i></a> 
-									<a href='https://twitter.com/comalcorca' target='_blank' class='btn btn-danger'><i class='icon ion-logo-twitter' style='font-size: 32px;'></i></a>
+									<a href='https://www.instagram.com/comalcorca/' target='_blank' class='btn btn-info'><i class='icon ion-logo-instagram' style='font-size: 32px;'></i></a> 
+									<a href='https://twitter.com/comalcorca' target='_blank' class='btn btn-info'><i class='icon ion-logo-twitter' style='font-size: 32px;'></i></a>
 								</p>
 							</div>
 							<div class='col-4 text-right'>
@@ -212,6 +215,7 @@
 				<script src='../css/bootstrap-4.4.1/js/jquery-3.4.1.min.js'></script>
 				<script src='../css/bootstrap-4.4.1/js/popper.min.js'></script>
 				<script src='../css/bootstrap-4.4.1/js/bootstrap.min.js'></script>
+				<script src='../js/screenup.js'></script>
 				<script src='../css/wow/wow.min.js'></script>
 				<script>new WOW().init();</script>
 

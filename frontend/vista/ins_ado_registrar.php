@@ -8,7 +8,7 @@
 	$obj_ado = new empleado;
 	$obj_ado->estandar();
 
-	encabezado("Instalación - ALCOR C.A.");
+	encabezado("Instalación");
 
 ?>
 

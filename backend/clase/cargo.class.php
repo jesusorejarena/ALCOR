@@ -151,6 +151,27 @@
 
 		}// fin de comprobar
 
+		function listar_resp()
+		{
+			$this->que_bda = "select * from cargo_resp;";
+
+			return $this->ejecutar();
+
+		}// fin de listar respaldo
+
+		function filtrar_resp()
+		{
+			$filtro1=($this->cod_car!="")?"and cod_car='$this->cod_car'":"";
+			$filtro2=($this->nom_car!="")?"and nom_car like '%$this->nom_car%'":"";
+			$filtro3=($this->est_car!="")?"and est_car='$this->est_car'":"";
+			$filtro4=($this->bas_car!="")?"and bas_car='$this->bas_car'":"";
+			
+			$this->que_bda = "select * from cargo_resp where	1=1 $filtro1 $filtro2 $filtro3 $filtro4;";
+
+			return $this->ejecutar();
+
+		}// fin de filtrar respaldo
+
 	}
 
  ?>

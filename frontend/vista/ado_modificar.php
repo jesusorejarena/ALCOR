@@ -19,7 +19,7 @@
 	$obj_car = new cargo;
 	$obj_car->puntero=$obj_car->listar_normal();
 
-	encabezado("Modificar Empleado - ALCOR C.A.");
+	encabezado("Modificar Empleado");
 
 	comprobar("Empleados");
 
@@ -117,12 +117,6 @@
 												}										
 											?>
 										</select>
-									</div>
-								</div>
-								<div class="col-12 col-md-12">
-									<div class="form-group">
-										<label for="dir_ado" class="<?php echo $obj_ado->for; ?>">Dirección:</label>
-										<input type="text" name="dir_ado" id="dir_ado" placeholder="Dirección:" minlength="3" maxlength="100" required="" value="<?php echo $empleado['dir_ado']; ?>"  class="<?php echo $obj_ado->input_normal; ?>">
 									</div>
 								</div>
 								<div class="col-12 col-md-8">

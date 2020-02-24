@@ -10,7 +10,7 @@
 	$obj_ado->estandar();
 	$obj_ado->puntero=$obj_ado->filtrar();
 	
-	encabezado("Empleados Filtrados - ALCOR C.A.");
+	encabezado("Empleados Filtrados");
 
 	comprobar("Empleados");
 

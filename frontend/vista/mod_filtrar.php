@@ -8,7 +8,7 @@
 	$obj_mod = new modulo;
 	$obj_mod->estandar();
 
-	encabezado("Filtrar Módulo - ALCOR C.A.");
+	encabezado("Filtrar Módulo");
 
 	comprobar("Roles");
 

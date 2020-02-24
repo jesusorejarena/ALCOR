@@ -18,7 +18,7 @@
 	$obj_edo->estandar();
 	$obj_edo->puntero=$obj_edo->listar_lista();
 
-	encabezado("Modificar Producto - ALCOR C.A.");
+	encabezado("Modificar Producto");
 
 	comprobar("Productos");
 

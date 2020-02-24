@@ -9,7 +9,7 @@
 	$obj_car->estandar();
 	$obj_car->puntero=$obj_car->listar_eliminar();
 
-	encabezado("Cargos Eliminados - ALCOR C.A.");
+	encabezado("Cargos Eliminados");
 
 	comprobar("Roles");
 

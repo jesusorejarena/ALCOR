@@ -9,7 +9,7 @@
 	$obj_ado->estandar();
 	$obj_ado->puntero=$obj_ado->listar_normal();
 
-	encabezado("Lista de Empleados - ALCOR C.A.");
+	encabezado("Lista de Empleados");
 
 	comprobar("Empleados");
 

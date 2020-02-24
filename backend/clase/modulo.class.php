@@ -178,6 +178,28 @@
 
 		}// fin de filtrar
 
+		function listar_resp()
+		{
+			$this->que_bda = "select * from modulo_resp;";
+
+			return $this->ejecutar();
+
+		}// fin de listar respaldo
+
+		function filtrar_resp()
+		{
+			
+			$filtro1=($this->cod_mod!="")?"and cod_mod='$this->cod_mod'":"";
+			$filtro2=($this->nom_mod!="")?"and nom_mod like '%$this->nom_mod%'":"";
+			$filtro3=($this->est_mod!="")?"and est_mod='$this->est_mod'":"";
+			$filtro4=($this->bas_mod!="")?"and bas_mod='$this->bas_mod'":"";
+
+			$this->que_bda = "select * from modulo_resp where 1=1 $filtro1 $filtro2 $filtro3 $filtro4;";
+
+			return $this->ejecutar();
+
+		}// fin de filtrar respaldo
+
 	}
 	
 ?>

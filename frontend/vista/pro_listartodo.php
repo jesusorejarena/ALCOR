@@ -12,7 +12,7 @@
 
 	$obj_edo = new proveedor;
 
-	encabezado("Lista de productos - ALCOR C.A.");
+	encabezado("Lista de productos");
 
 	comprobar("Productos");
 

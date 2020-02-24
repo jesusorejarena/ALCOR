@@ -9,7 +9,7 @@
 	$obj_pro->estandar();
 	$obj_pro->puntero=$obj_pro->listar_eliminar();
 
-	encabezado("Productos eliminados - ALCOR C.A.");
+	encabezado("Productos eliminados");
 
 	comprobar("Productos");
 

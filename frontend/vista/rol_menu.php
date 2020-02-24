@@ -8,14 +8,13 @@
 	$obj_car = new cargo;
 	$obj_car->estandar();
 
-	encabezado("Menú de Roles - ALCOR C.A.");
+	encabezado("Menú de Roles");
 
 	comprobar("Roles");
 
 ?>
 
 	<div class="<?php echo $obj_car->container; ?>">
-		<div class="row py-4"><div class="col-12"></div></div>
 		<h2 class="<?php echo $obj_car->titulos; ?>">Menú de Roles</h2>
 		<div class="row">
 			<div class="col-12 col-md-4">

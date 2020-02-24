@@ -8,14 +8,13 @@
 	$obj_edo = new formulario;
 	$obj_edo->estandar();
 
-	encabezado("Menú de Formularios - ALCOR C.A.");
+	encabezado("Menú de Formularios");
 
 	comprobar("Formularios");
 
 ?>
 
 	<div class="<?php echo $obj_edo->container; ?>">
-		<div class="row py-5"><div class="col-12"></div></div>
 		<h2 class="<?php echo $obj_edo->titulos; ?>">Menú de Formularios</h2>
 		<div class="row">
 			<div class="col-md-4"></div>

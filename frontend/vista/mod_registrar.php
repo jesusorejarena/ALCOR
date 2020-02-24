@@ -12,7 +12,7 @@
 	$obj_car = new cargo;
 	$obj_car->puntero=$obj_car->listar_normal();
 
-	encabezado("Registrar Módulo - ALCOR C.A.");
+	encabezado("Registrar Módulo");
 
 	comprobar("Roles");
 

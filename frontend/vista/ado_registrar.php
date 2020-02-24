@@ -9,7 +9,7 @@
 	$obj_car->estandar();
 	$obj_car->puntero=$obj_car->listar_lista();
 
-	encabezado("Registrar Empleado - ALCOR C.A.");
+	encabezado("Registrar Empleado");
 
 	comprobar("Empleados");
 

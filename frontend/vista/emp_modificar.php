@@ -12,7 +12,7 @@
 	$obj_emp->puntero=$obj_emp->listar_modificar();
 	$empresa=$obj_emp->extraer_dato();
 	
-	encabezado("Modificar Datos de la Empresa - ALCOR C.A.");
+	encabezado("Modificar Datos de la Empresa");
 
 	comprobaradmin();
 

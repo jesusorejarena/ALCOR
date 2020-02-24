@@ -9,7 +9,7 @@
 	$obj_for->estandar();
 	$obj_for->puntero=$obj_for->listar_normal();
 
-	encabezado("Lista de Formularios - ALCOR C.A.");
+	encabezado("Lista de Formularios");
 
 	comprobar("Formularios");
 

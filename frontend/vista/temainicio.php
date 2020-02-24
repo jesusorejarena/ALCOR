@@ -31,7 +31,9 @@
 				
 			</head>
 			
-			<body class='m-0 p-0 bg-danger'>
+			<body class='m-0 p-0 bg-info'>
+
+				<span class='screenup' id='screenup'><i class='icon ion-md-arrow-dropup-circle'></i></span>
 
 				<div class='container-fluid'>
 					<div class='row'>
@@ -51,22 +53,22 @@
 									<div class='collapse navbar-collapse justify-content-end' id='collapsibleNavbar'>
 										<ul class='navbar-nav'>
 											<li class='nav-item'>
-												<a href='inicio.php' class='nav-link text-rojo text-center'>Inicio</a>
+												<a href='inicio.php' class='nav-link texto-nav text-center'>Inicio</a>
 											</li>
 											<li class='nav-item'>
-												<a href='inicio_empresa.php' class='nav-link text-rojo text-center'>Empresa</a>
+												<a href='inicio_empresa.php' class='nav-link texto-nav text-center'>Empresa</a>
 											</li>
 											<li class='nav-item'>
-												<a href='inicio_servicio.php' class='nav-link text-rojo text-center'>Servicio</a>
+												<a href='inicio_servicio.php' class='nav-link texto-nav text-center'>Servicio</a>
 											</li>
 											<li class='nav-item'>
-												<a href='inicio_producto.php' class='nav-link text-rojo text-center'>Productos</a>
+												<a href='inicio_producto.php' class='nav-link texto-nav text-center'>Productos</a>
 											</li>
 											<li class='nav-item'>
-												<a href='inicio_contacto.php' class='nav-link text-rojo text-center'>Contacto</a>
+												<a href='inicio_contacto.php' class='nav-link texto-nav text-center'>Contacto</a>
 											</li>
 											<li class='nav-item'>
-												<a href='usu_sesion.php' class='nav-link text-rojo text-center text-light btn btn-md btn-rojo'>Iniciar Sesión</a>
+												<a href='usu_sesion.php' class='nav-link texto-nav text-center text-light btn btn-md btn-sesion'>Iniciar Sesión</a>
 											</li>
 										</ul>
 									</div>
@@ -91,7 +93,7 @@
 
 		echo "
 				<footer class=''>
-					<div class='container-fluid pt-3 bg-danger text-white'>
+					<div class='container-fluid pt-3 pb-1 bg-info text-white'>
 						<div class='row'>
 							<div class='col-4 text-left'>
 								<p><b>Dirección: </b>$empresa[dir_emp] <br>
@@ -102,8 +104,8 @@
 								<p>
 									$empresa[nom_emp]<br>
 									$empresa[rif_emp] <br>
-									<a href='https://www.instagram.com/comalcorca/' target='_blank' class='btn btn-danger'><i class='icon ion-logo-instagram' style='font-size: 32px;'></i></a> 
-									<a href='https://twitter.com/comalcorca' target='_blank' class='btn btn-danger'><i class='icon ion-logo-twitter' style='font-size: 32px;'></i></a>
+									<a href='https://www.instagram.com/comalcorca/' target='_blank' class='btn btn-info'><i class='icon ion-logo-instagram' style='font-size: 32px;'></i></a> 
+									<a href='https://twitter.com/comalcorca' target='_blank' class='btn btn-info'><i class='icon ion-logo-twitter' style='font-size: 32px;'></i></a>
 								</p>
 							</div>
 							<div class='col-4 text-right'>
@@ -120,6 +122,7 @@
 				<script src='../css/bootstrap-4.4.1/js/jquery-3.4.1.min.js'></script>
 				<script src='../css/bootstrap-4.4.1/js/popper.min.js'></script>
 				<script src='../css/bootstrap-4.4.1/js/bootstrap.min.js'></script>
+				<script src='../js/screenup.js'></script>
 				<script src='../css/wow/wow.min.js'></script>
 				<script>new WOW().init();</script>
 

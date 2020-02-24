@@ -9,7 +9,7 @@
 	$obj_edo->estandar();
 	$obj_edo->puntero=$obj_edo->listar_normal();
 
-	encabezado("Lista de Proveedores - ALCOR C.A.");
+	encabezado("Lista de Proveedores");
 
 	comprobar("Proveedores");
 

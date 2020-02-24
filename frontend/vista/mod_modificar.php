@@ -20,7 +20,7 @@
 	$obj_car->puntero=$obj_car->listar_normal();
 	$cargo=$obj_car->extraer_dato();
 
-	encabezado("Modificar Módulo - ALCOR C.A.");
+	encabezado("Modificar Módulo");
 
 	comprobar("Roles");
 

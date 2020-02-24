@@ -24,6 +24,14 @@
 									header("Location: ../../frontend/vista/ado_listartodo.php");
 		break;
 
+		case 'modificar_datos':		$obj_ado->modificar_datos();
+									header("Location: ../../frontend/vista/menu_principal.php");
+		break;
+
+		case 'modificar_contrasena':$obj_ado->modificar_contrasena();
+									header("Location: ../../frontend/vista/menu_principal.php");
+		break;
+
 		case 'eliminar':			$obj_ado->eliminar();
 									header("Location: ../../frontend/vista/ado_listarpapelera.php");
 		break;

@@ -181,6 +181,32 @@
 
 		}// fin de filtrar
 
+		function listar_resp()
+		{
+			$this->que_bda = "select * from producto_resp;";
+
+			return $this->ejecutar();
+
+		}// fin de listar respaldo
+
+		function filtrar_resp()
+		{
+			
+			$filtro1=($this->cod_pro!="")?"and cod_pro='$this->cod_pro'":"";	
+			$filtro2=($this->nom_pro!="")?"and nom_pro like '%$this->nom_pro%'":"";
+			$filtro3=($this->des_pro!="")?"and des_pro like '%$this->des_pro%'":"";
+			$filtro4=($this->pre_pro!="")?"and pre_pro like '%$this->pre_pro%'":"";
+			$filtro5=($this->can_pro!="")?"and can_pro like '%$this->can_pro%'":"";
+			$filtro6=($this->cod_edo!="")?"and cod_edo='$this->cod_edo'":"";
+			$filtro7=($this->est_pro!="")?"and est_pro='$this->est_pro'":"";
+			$filtro8=($this->bas_pro!="")?"and bas_pro='$this->bas_pro'":"";
+
+			$this->que_bda = "select * from producto_resp where 1=1 $filtro1 $filtro2 $filtro3 $filtro4 $filtro5 $filtro6 $filtro7 $filtro8";
+
+			return $this->ejecutar();
+
+		}// fin de filtrar respaldo
+
 	}
 	
 ?>

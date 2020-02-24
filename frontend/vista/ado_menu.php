@@ -8,14 +8,13 @@
 	$obj_ado = new empleado;
 	$obj_ado->estandar();
 
-	encabezado("Menu de Empleados - ALCOR C.A.");
+	encabezado("Menu de Empleados");
 
 	comprobar("Empleados");
 
 ?>
 
 	<div class="<?php echo $obj_ado->container; ?>">
-		<div class="row py-5"><div class="col-12"></div></div>
 		<h2 class="<?php echo $obj_ado->titulos; ?>">Menú de Empleados</h2>
 		<div class="row">
 			<div class="col-md-4"></div>

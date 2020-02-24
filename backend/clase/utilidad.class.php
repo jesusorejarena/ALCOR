@@ -58,12 +58,12 @@
 			// Inicio Clases Generales
 			$this->container		="container-fluid py-5 mt-5 bg-white";
 			$this->container2		="container-fluid pt-4 mt-4 bg-light";
-			$this->container3		="container-fluid p-1 m-1 bg-light";
+			$this->container3		="container-fluid pt-1 mt-1 bg-light";
 			$this->titulos			="h1 text-dark text-center p-4 text-center big-text";
 			// Fin Clases Generales
 
 			// Inicio Cards Generales
-			$this->card				="card bg-light border border-primary shadow-lg animated pulse m-4";
+			$this->card				="card bg-light border border-info shadow-lg animated pulse m-2";
 			$this->titulocard		="card-title text-dark text-center pt-3";
 			$this->subtitulocard	="card-subtitle text-muted px-5 text-right";
 			$this->footercard		="card-footer text-right";
@@ -77,24 +77,24 @@
 			// Inicio Inputs Generales
 			$this->for 				="text-dark text-left h5";
 			$this->small 			="form-text text-muted";
-			$this->input_normal		="text-dark form-control bg-transparent border border-top-0 border-left-0 border-right-0 border-primary";
-			$this->input_text		="text-dark form-control bg-transparent border border-top-0 border-primary";
+			$this->input_normal		="text-dark form-control bg-transparent border border-top-0 border-left-0 border-right-0 border-info";
+			$this->input_text		="text-dark form-control bg-transparent border border-top-0 border-info";
 			// Fin Inputs Generales
 
 			// Inicio Botones Normales Generales
-			$this->btn_limpiar		="btn btn-outline-primary btn-lg";
-			$this->btn_enviar		="btn btn-rojo btn-lg";
+			$this->btn_limpiar		="btn btn-outline-info btn-lg";
+			$this->btn_enviar		="btn btn-sesion btn-lg";
 			$this->btn_editar		="btn btn-warning";
 			$this->btn_restaurar	="btn btn-success";
-			$this->btn_eliminar		="btn btn-rojo";
+			$this->btn_eliminar		="btn btn-danger";
 			$this->btn_pdf			="btn btn-pdf";
-			$this->btn_atras		="btn btn-danger btn-lg";
+			$this->btn_atras		="btn btn-atras btn-lg";
 			// Fin Botones Normales Generales
 
 
 			// Inicio Botones Block Generales
 			$this->btn_limpiarg		="btn btn-outline-info btn-lg btn-block";
-			$this->btn_enviarg		="btn btn-primary btn-rojito btn-lg btn-block";
+			$this->btn_enviarg		="btn btn-primary btn-menu btn-lg btn-block";
 			$this->btn_editarg		="btn btn-warning btn-lg btn-block";
 			$this->btn_restaurarg	="btn btn-success btn-lg btn-block";
 			$this->btn_eliminarg	="btn btn-danger btn-lg btn-block";

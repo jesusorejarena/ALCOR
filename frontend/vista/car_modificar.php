@@ -14,7 +14,7 @@
 	$obj_car->puntero=$obj_car->listar_modificar();
 	$cargo=$obj_car->extraer_dato();
 
-	encabezado("Modificar Cargo - ALCOR C.A.");
+	encabezado("Modificar Cargo");
 
 	comprobar("Roles");
 

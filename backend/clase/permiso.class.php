@@ -148,6 +148,29 @@
 
 		}// fin de filtrar
 
+		function listar_resp()
+		{
+			$this->que_bda = "select * from permiso_resp;";
+
+			return $this->ejecutar();
+
+		}// fin de listar respaldo
+
+		function filtrar_resp()
+		{
+			
+			$filtro1=($this->cod_per!="")?"and cod_per='$this->cod_per'":"";
+			$filtro2=($this->cod_car!="")?"and cod_car='$this->cod_car'":"";
+			$filtro3=($this->cod_mod!="")?"and cod_mod='$this->cod_mod'":"";
+			$filtro4=($this->est_per!="")?"and est_per='$this->est_per'":"";
+			$filtro5=($this->bas_per!="")?"and bas_per='$this->bas_per'":"";
+			
+			$this->que_bda = "select * from permiso_resp where 1=1 $filtro1 $filtro2 $filtro3 $filtro4 $filtro5;";
+
+			return $this->ejecutar();
+
+		}// fin de filtrar respaldo
+
 	}
 
  ?>

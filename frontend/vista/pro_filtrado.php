@@ -10,7 +10,7 @@
 	$obj_pro->asignar_valor();
 	$obj_pro->puntero=$obj_pro->filtrar();
 
-	encabezado("Productos Filtrados - ALCOR C.A.");
+	encabezado("Productos Filtrados");
 
 	comprobar("Productos");
 

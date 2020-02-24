@@ -9,7 +9,7 @@
 	$obj_car->estandar();
 	$obj_car->puntero=$obj_car->listar_normal();
 
-	encabezado("Filtrar Empleado - ALCOR C.A.");
+	encabezado("Filtrar Empleado");
 
 	comprobar("Empleados");
 

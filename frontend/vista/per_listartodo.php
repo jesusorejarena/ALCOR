@@ -15,7 +15,7 @@
 
 	$obj_mod = new modulo;
 
-	encabezado("Lista de Permisos - ALCOR C.A.");
+	encabezado("Lista de Permisos");
 
 	comprobar("Roles");
 

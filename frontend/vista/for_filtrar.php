@@ -8,7 +8,7 @@
 	$obj_for = new formulario;
 	$obj_for->estandar();
 
-	encabezado("Filtrar Formulario - ALCOR C.A.");
+	encabezado("Filtrar Formulario");
 
 	comprobar("Formularios");
 

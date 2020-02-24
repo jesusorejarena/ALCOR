@@ -181,6 +181,34 @@
 
 		}// fin de filtrar
 
+		function listar_resp()
+		{
+			$this->que_bda = "select * from proveedor_resp;";
+
+			return $this->ejecutar();
+
+		}// fin de listar respaldo
+
+		function filtrar_resp()
+		{
+			
+			$filtro1=($this->cod_edo!="")?"and cod_edo='$this->cod_edo'":"";
+			$filtro2=($this->nom_edo!="")?"and nom_edo like '%$this->nom_edo%'":"";
+			$filtro3=($this->des_edo!="")?"and des_edo like '%$this->des_edo%'":"";
+			$filtro4=($this->dir_edo!="")?"and dir_edo like '%$this->dir_edo%'":"";
+			$filtro5=($this->tel_edo!="")?"and tel_edo like '%$this->tel_edo%'":"";
+			$filtro6=($this->cor_edo!="")?"and cor_edo like '%$this->cor_edo%'":"";
+			$filtro7=($this->tip_edo!="")?"and tip_edo='$this->tip_edo'":"";
+			$filtro8=($this->rif_edo!="")?"and rif_edo like '%$this->rif_edo%'":"";
+			$filtro9=($this->est_edo!="")?"and est_edo='$this->est_edo'":"";
+			$filtro10=($this->bas_edo!="")?"and bas_edo='$this->bas_edo'":"";
+
+			$this->que_bda = "select * from proveedor_resp where 1=1 $filtro1 $filtro2 $filtro3 $filtro4 $filtro5 $filtro6 $filtro7 $filtro8 $filtro9 $filtro10;";
+
+			return $this->ejecutar();
+
+		}// fin de filtrar respaldo
+
 	}
 	
 ?>

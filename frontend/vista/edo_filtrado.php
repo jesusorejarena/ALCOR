@@ -10,7 +10,7 @@
 	$obj_edo->asignar_valor();	
 	$obj_edo->puntero=$obj_edo->filtrar();
 
-	encabezado("Proveedores Filtrados - ALCOR C.A.");
+	encabezado("Proveedores Filtrados");
 
 	comprobar("Proveedores");
 

@@ -10,7 +10,7 @@
 	$obj_car->asignar_valor();
 	$obj_car->puntero=$obj_car->filtrar();
 
-	encabezado("Cargos Filtrados - ALCOR C.A.");
+	encabezado("Cargos Filtrados");
 
 	comprobar("Roles");
 
