@@ -16,7 +16,7 @@
 	$obj_mod = new modulo;
 	$obj_mod->puntero=$obj_mod->listar_resp();
 
-	encabezado("Filtrar Permiso 'Respaldo'");
+	encabezado("Filtrar Permiso 'Historial'");
 
 	comprobar("Historial");
 
@@ -32,7 +32,7 @@
 			<div class="col-md-2"></div>
 			<div class="col-12 col-md-8">
 				<div class="<?php echo $obj_per->card; ?>">
-					<h2 class="<?php echo $obj_per->titulocard; ?>">Filtrar Permiso 'Respaldo'</h2>
+					<h2 class="<?php echo $obj_per->titulocard; ?>">Filtrar Permiso 'Historial'</h2>
 					<hr>
 					<div class="card-body">
 						<form action="per_filtrado_resp.php" method="POST">

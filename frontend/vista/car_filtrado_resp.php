@@ -10,7 +10,7 @@
 	$obj_car->asignar_valor();
 	$obj_car->puntero=$obj_car->filtrar_resp();
 
-	encabezado("Cargos Filtrados 'Respaldo'");
+	encabezado("Cargos Filtrados 'Historial'");
 
 	comprobar("Historial");
 
@@ -23,7 +23,7 @@
 			</div>
 		</div>
 		<div class="<?php echo $obj_car->card; ?>">
-			<h2 class="<?php echo $obj_car->titulocard; ?>">Cargos Filtrados 'Respaldo'</h2>
+			<h2 class="<?php echo $obj_car->titulocard; ?>">Cargos Filtrados 'Historial'</h2>
 			<hr>
 			<div class="row p-3 m-3">
 				<div class="col-12">

@@ -100,7 +100,7 @@
 						<div class="col-6 p-5">
 							<div class="text-dark animated wow slideInRight fast">
 								<h3 class="h3 text-center">Línea de atención al cliente</h3>
-								<p class="text-justify p-3 m-3">Nuestra organización pone a disposición el servicio “Phone Help”, un equipo humano dedicado exclusivamente al asesoramiento técnico, despeje de dudas o urgencias de rápida resolución a través de las líneas telefónicas:<br>
+								<p class="text-justify p-3 m-3">Nuestra organización pone a disposición el servicio “Phone Help”, un equipo humano dedicado exclusivamente al asesoramiento técnico, despeje de dudas o urgencias de rápida resolución a través de la línea telefónica:<br>
 									<?php 
 										echo " 
 											$empresa[tel_emp]<br>

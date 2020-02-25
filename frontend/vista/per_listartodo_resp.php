@@ -15,7 +15,7 @@
 
 	$obj_mod = new modulo;
 
-	encabezado("Lista de Permisos 'Respaldo'");
+	encabezado("Lista de Permisos 'Historial'");
 
 	comprobar("Historial");
 
@@ -28,7 +28,7 @@
 			</div>
 		</div>
 		<div class="<?php echo $obj_per->card; ?>">
-			<h2 class="<?php echo $obj_per->titulocard; ?>">Lista de Permisos 'Respaldo'</h2>
+			<h2 class="<?php echo $obj_per->titulocard; ?>">Lista de Permisos 'Historial'</h2>
 			<hr>
 			<div class="row p-3 m-3">
 				<div class="col-12">

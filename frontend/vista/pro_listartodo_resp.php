@@ -12,7 +12,7 @@
 
 	$obj_edo = new proveedor;
 
-	encabezado("Lista de Productos 'Respaldo'");
+	encabezado("Lista de Productos 'Historial'");
 
 	comprobar("Historial");
 
@@ -26,7 +26,7 @@
 			</div>
 		</div>
 		<div class="<?php echo $obj_pro->card; ?>">
-			<h2 class="<?php echo $obj_pro->titulocard; ?>">Lista de Productos 'Respaldo'</h2>
+			<h2 class="<?php echo $obj_pro->titulocard; ?>">Lista de Productos 'Historial'</h2>
 			<hr>
 			<div class="row p-3 m-3">
 				<div class="col-12">

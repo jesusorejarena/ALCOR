@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 16-02-2020 a las 01:46:42
+-- Tiempo de generación: 24-02-2020 a las 22:46:47
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.1
 
@@ -637,14 +637,14 @@ ALTER TABLE `empleado`
 -- Filtros para la tabla `permiso`
 --
 ALTER TABLE `permiso`
-  ADD CONSTRAINT `permiso_ibfk_1` FOREIGN KEY (`cod_car`) REFERENCES `cargo` (`cod_car`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `permiso_ibfk_2` FOREIGN KEY (`cod_mod`) REFERENCES `modulo` (`cod_mod`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `permiso_ibfk_1` FOREIGN KEY (`cod_car`) REFERENCES `cargo` (`cod_car`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `permiso_ibfk_2` FOREIGN KEY (`cod_mod`) REFERENCES `modulo` (`cod_mod`) ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `producto`
 --
 ALTER TABLE `producto`
-  ADD CONSTRAINT `producto_ibfk_1` FOREIGN KEY (`cod_edo`) REFERENCES `proveedor` (`cod_edo`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `producto_ibfk_1` FOREIGN KEY (`cod_edo`) REFERENCES `proveedor` (`cod_edo`) ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -10,7 +10,7 @@
 	$obj_for->asignar_valor();
 	$obj_for->puntero=$obj_for->filtrar_resp();
 
-	encabezado("Formularios Filtrados 'Respaldo'");
+	encabezado("Formularios Filtrados 'Historial'");
 
 	comprobar("Historial");
 
@@ -23,7 +23,7 @@
 			</div>
 		</div>
 		<div class="<?php echo $obj_for->card; ?>">
-			<h2 class="<?php echo $obj_for->titulocard; ?>">Formularios Filtrados 'Respaldo'</h2>
+			<h2 class="<?php echo $obj_for->titulocard; ?>">Formularios Filtrados 'Historial'</h2>
 			<hr>
 			<div class="row p-3 m-3">
 				<div class="col-12">

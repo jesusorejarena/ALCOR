@@ -35,6 +35,24 @@
 		case 'eliminar':			$obj_ado->eliminar();
 									header("Location: ../../frontend/vista/ado_listarpapelera.php");
 		break;
+
+		case 'comprobar_datos':		$obj_ado->puntero=$obj_ado->comprobar_datos();
+									$empleado=$obj_ado->extraer_dato();
+
+									if($empleado['cor_ado']==$obj_ado->cor_ado && $empleado['ced_ado']==$obj_ado->ced_ado && $empleado['tel_ado']==$obj_ado->tel_ado && $empleado['nac_ado']==$obj_ado->nac_ado && $empleado['est_ado']=="A" && $empleado['bas_ado']=="A")
+									{
+										$obj_ado->cod_ado=$empleado['cod_ado'];
+										$obj_ado->modificar_contrasena();
+
+										header("Location: ../../frontend/vista/usu_sesion.php");
+									}
+									else
+									{
+										header("Location: ../../frontend/vista/ado_olvidocontrasena.php");
+									}
+									
+
+		break;
 	}
 
 ?>

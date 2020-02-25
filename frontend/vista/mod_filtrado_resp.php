@@ -10,7 +10,7 @@
 	$obj_mod->asignar_valor();
 	$obj_mod->puntero=$obj_mod->filtrar_resp();
 
-	encabezado("Módulos Filtrados 'Respaldo'");
+	encabezado("Módulos Filtrados 'Historial'");
 
 	comprobar("Historial");
 
@@ -23,7 +23,7 @@
 			</div>
 		</div>
 		<div class="<?php echo $obj_mod->card; ?>">
-			<h2 class="<?php echo $obj_mod->titulocard; ?>">Módulos Filtrados 'Respaldo'</h2>
+			<h2 class="<?php echo $obj_mod->titulocard; ?>">Módulos Filtrados 'Historial'</h2>
 			<hr>
 			<div class="row p-3 m-3">
 				<div class="col-12">

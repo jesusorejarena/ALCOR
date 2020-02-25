@@ -46,7 +46,7 @@
 					<div class="row m-3 p-3">
 						<div class="col-12">
 							<div class="text-dark text-center animated wow zoomIn fast">
-								<h3 class="h3">Comercializadora Alcor, c.a. nace y se constituye en el año 2017, con el firme propósito de comercializar a nivel nacional productos de limpieza biodegradables, compitiendo con los mercados modernos en calidad y variedad, para así cumplir con las exigencias actuales en los diferentes sectores del comercio, la industria e instituciones.</h3>
+								<h3 class="h3">Comercializadora Alcor C.A. nace y se constituye en el año 2017, con el firme propósito de comercializar a nivel nacional productos de limpieza biodegradables, compitiendo con los mercados modernos en calidad y variedad, para así cumplir con las exigencias actuales en los diferentes sectores del comercio, la industria e instituciones.</h3>
 							</div>
 						</div>
 					</div>
@@ -61,7 +61,7 @@
 						<div class="col-6 px-5">
 							<div class="text-dark text-center animated wow slideInRight fast">
 								<h3 class="h3 p-3 m-3">Visión</h3>
-								<p class="text-justify">En Comercializadora Alcor, c.a. nos proyectamos en ser la red de distribución y comercialización de productos de limpieza biodegradables líder en el mercado venezolano, con amplia participación y cobertura nacional e internacional, conocidos por nuestra habilidad para apropiar, posicionar y comercializar productos y servicios de primera calidad que generen bienestar.</p>
+								<p class="text-justify">En Comercializadora Alcor C.A. nos proyectamos en ser la red de distribución y comercialización de productos de limpieza biodegradables líder en el mercado venezolano, con amplia participación y cobertura nacional e internacional, conocidos por nuestra habilidad para apropiar, posicionar y comercializar productos y servicios de primera calidad que generen bienestar.</p>
 							</div>
 						</div>
 					</div>
@@ -112,7 +112,7 @@
 						<div class="col-6 p-5">
 							<div class="text-dark animated wow slideInLeft fast">
 								<h3 class="h3 text-center p-3 m-3">Normas técnicas</h3>
-								<p class="text-justify">Comercializadora Alcor, c.a. garantiza que los productos comercializados, por nuestra red de distribución estén diseñados y fabricados con los más altos estándares de calidad para asegurar el menor impacto al medio ambiente, ya que poseen menores cargas de sustancias de interés ambiental en las aguas residuales, los cuales cumplen con las normas ambientales de la República Bolivariana de Venezuela, en cuanto a carga de SAAM y BIODEGRADABILIDAD basados en estándares internacionales (ASTMD 2887). Registrados en el M.P.P.S bajo el Nº PD-05183 con fecha 11/09/2012, Nº PD-05217-06 del 06/11/2011 y Nº PD-05850, con indicadores en forma gráfica por intermedio de sus etiquetas, cada producto viene indicando sus precauciones de manipulación, la composición química, qué hacer en caso de ingestión accidental, ingredientes inertes y activos, advertencias y las respectivas instrucciones de uso.</p>
+								<p class="text-justify">Comercializadora Alcor C.A. garantiza que los productos comercializados, por nuestra red de distribución estén diseñados y fabricados con los más altos estándares de calidad para asegurar el menor impacto al medio ambiente, ya que poseen menores cargas de sustancias de interés ambiental en las aguas residuales, los cuales cumplen con las normas ambientales de la República Bolivariana de Venezuela, en cuanto a carga de SAAM y BIODEGRADABILIDAD basados en estándares internacionales (ASTMD 2887). Registrados en el M.P.P.S bajo el Nº PD-05183 con fecha 11/09/2012, Nº PD-05217-06 del 06/11/2011 y Nº PD-05850, con indicadores en forma gráfica por intermedio de sus etiquetas, cada producto viene indicando sus precauciones de manipulación, la composición química, qué hacer en caso de ingestión accidental, ingredientes inertes y activos, advertencias y las respectivas instrucciones de uso.</p>
 							</div>
 						</div>
 						<div class="col-6 p-5">

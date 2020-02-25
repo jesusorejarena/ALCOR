@@ -46,7 +46,7 @@
 							</div>					
 						</form>
 					</div>
-					<div class="<?php echo $obj_ado->footercard; ?>"><a href="">Olvidaste tu contraseña?</a></div>
+					<div class="<?php echo $obj_ado->footercard; ?>"><a href="ado_olvidocontrasena.php">¿Olvidaste tu contraseña?</a></div>
 				</div>
 			</div>
 			<div class="col-md-3"></div>

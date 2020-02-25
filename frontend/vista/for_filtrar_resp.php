@@ -8,7 +8,7 @@
 	$obj_for = new formulario;
 	$obj_for->estandar();
 
-	encabezado("Filtrar Formulario 'Respaldo'");
+	encabezado("Filtrar Formulario 'Historial'");
 
 	comprobar("Historial");
 
@@ -24,7 +24,7 @@
 			<div class="col-md-2"></div>
 			<div class="col-12 col-md-8">
 				<div class="<?php echo $obj_for->card; ?>">
-					<h2 class="<?php echo $obj_for->titulocard; ?>">Filtrar Formulario 'Respaldo'</h2>
+					<h2 class="<?php echo $obj_for->titulocard; ?>">Filtrar Formulario 'Historial'</h2>
 					<hr>
 					<div class="card-body">
 						<form action="for_filtrado_resp.php" method="POST">

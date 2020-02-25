@@ -9,7 +9,7 @@
 	$obj_for->estandar();
 	$obj_for->puntero=$obj_for->listar_resp();
 
-	encabezado("Lista de Formularios 'Respaldo'");
+	encabezado("Lista de Formularios 'Historial'");
 
 	comprobar("Historial");
 
@@ -22,7 +22,7 @@
 			</div>
 		</div>
 		<div class="<?php echo $obj_for->card; ?>">
-			<h2 class="<?php echo $obj_for->titulocard; ?>">Lista de Formularios 'Respaldo'</h2>
+			<h2 class="<?php echo $obj_for->titulocard; ?>">Lista de Formularios 'Historial'</h2>
 			<hr>
 			<div class="row p-3 m-3">
 				<div class="col-12">

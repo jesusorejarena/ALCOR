@@ -8,7 +8,7 @@
 	$obj_mod = new modulo;
 	$obj_mod->estandar();
 
-	encabezado("Filtrar Módulo 'Respaldo'");
+	encabezado("Filtrar Módulo 'Historial'");
 
 	comprobar("Historial");
 
@@ -24,7 +24,7 @@
 			<div class="col-md-2"></div>
 			<div class="col-12 col-md-8">
 				<div class="<?php echo $obj_mod->card; ?>">
-					<h2 class="<?php echo $obj_mod->titulocard; ?>">Filtrar Módulo 'Respaldo'</h2>
+					<h2 class="<?php echo $obj_mod->titulocard; ?>">Filtrar Módulo 'Historial'</h2>
 					<hr>
 					<div class="card-body">
 						<form action="mod_filtrado_resp.php" method="POST">

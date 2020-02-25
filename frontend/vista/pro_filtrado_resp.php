@@ -10,7 +10,7 @@
 	$obj_pro->asignar_valor();
 	$obj_pro->puntero=$obj_pro->filtrar_resp();
 
-	encabezado("Productos Filtrados 'Respaldo'");
+	encabezado("Productos Filtrados 'Historial'");
 
 	comprobar("Historial");
 
@@ -24,7 +24,7 @@
 			</div>
 		</div>
 		<div class="<?php echo $obj_pro->card; ?>">
-			<h2 class="<?php echo $obj_pro->titulocard; ?>">Productos Filtrados 'Respaldo'</h2>
+			<h2 class="<?php echo $obj_pro->titulocard; ?>">Productos Filtrados 'Historial'</h2>
 			<hr>
 			<div class="row p-3 m-3">
 				<div class="col-12">

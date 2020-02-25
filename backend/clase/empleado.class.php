@@ -245,6 +245,21 @@
 
         }// fin de filtrar
 
+        function comprobar_datos()
+		{
+			$this->que_bda = "select * from empleado 
+											where 
+												cor_ado='$this->cor_ado' and 
+												ced_ado='$this->ced_ado' and 
+												tel_ado='$this->tel_ado' and 
+												nac_ado='$this->nac_ado' and 
+												est_ado='A' and 
+												bas_ado='A';";
+
+			return $this->ejecutar();
+
+		}// fin de Comprobar Datos
+
         function listar_resp()
 		{
 			$this->que_bda = "select * from empleado_resp;";

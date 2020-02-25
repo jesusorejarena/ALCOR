@@ -9,7 +9,7 @@
 	$obj_ado->estandar();
 	$obj_ado->puntero=$obj_ado->listar_resp();
 
-	encabezado("Lista de Empleados 'Respaldo'");
+	encabezado("Lista de Empleados 'Historial'");
 
 	comprobar("Historial");
 
@@ -22,7 +22,7 @@
 			</div>
 		</div>
 		<div class="<?php echo $obj_ado->card; ?>">
-			<h2 class="<?php echo $obj_ado->titulocard; ?>">Lista de Empleados 'Respaldo'</h2>
+			<h2 class="<?php echo $obj_ado->titulocard; ?>">Lista de Empleados 'Historial'</h2>
 			<hr>
 			<div class="row p-3 m-3">
 				<div class="col-12">

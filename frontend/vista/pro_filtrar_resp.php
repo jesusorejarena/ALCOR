@@ -10,7 +10,7 @@
 	$obj_edo->asignar_valor();
 	$obj_edo->puntero=$obj_edo->listar_resp();
 
-	encabezado("Filtrar Producto 'Respaldo'");
+	encabezado("Filtrar Producto 'Historial'");
 
 	comprobar("Historial");
 
@@ -27,7 +27,7 @@
 			<div class="col-md-2"></div>
 			<div class="col-12 col-md-8">
 				<div class="<?php echo $obj_edo->card; ?>">
-					<h2 class="<?php echo $obj_edo->titulocard; ?>">Filtrar Producto 'Respaldo'</h2>
+					<h2 class="<?php echo $obj_edo->titulocard; ?>">Filtrar Producto 'Historial'</h2>
 					<hr>
 					<div class="card-body">
 						<form action="pro_filtrado_resp.php" method="POST">

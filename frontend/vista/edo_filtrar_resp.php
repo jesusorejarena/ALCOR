@@ -8,7 +8,7 @@
 	$obj_edo = new proveedor;
 	$obj_edo->estandar();
 	
-	encabezado("Filtrar Proveedores 'Respaldo'");
+	encabezado("Filtrar Proveedores 'Historial'");
 
 	comprobar("Historial");
 
@@ -24,7 +24,7 @@
 			<div class="col-md-2"></div>
 			<div class="col-12 col-md-8">
 				<div class="<?php echo $obj_edo->card; ?>">
-					<h2 class="<?php echo $obj_edo->titulocard; ?>">Filtrar Proveedores 'Respaldo'</h2>
+					<h2 class="<?php echo $obj_edo->titulocard; ?>">Filtrar Proveedores 'Historial'</h2>
 					<hr>
 					<div class="card-body">
 						<form action="edo_filtrado_resp.php" method="POST">

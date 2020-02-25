@@ -16,7 +16,7 @@
 
 	$obj_mod = new modulo;
 	
-	encabezado("Permisos Filtrados 'Respaldo'");
+	encabezado("Permisos Filtrados 'Historial'");
 
 	comprobar("Historial");
 
@@ -29,7 +29,7 @@
 			</div>
 		</div>
 		<div class="<?php echo $obj_per->card; ?>">
-			<h2 class="<?php echo $obj_per->titulocard; ?>">Permisos Filtrados 'Respaldo'</h2>
+			<h2 class="<?php echo $obj_per->titulocard; ?>">Permisos Filtrados 'Historial'</h2>
 			<hr>
 			<div class="row p-3 m-3">
 				<div class="col-12">

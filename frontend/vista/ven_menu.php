@@ -11,6 +11,8 @@
 
 	encabezado("Registrar Ventas");
 
+	comprobar("Ventas");
+
 ?>
 
 	<div class="<?php echo $obj_pro->container; ?>">

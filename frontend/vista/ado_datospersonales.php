@@ -3,11 +3,9 @@
 	//session
 	
 	require_once("tema.php");
-	require_once("../../backend/clase/cargo.class.php");
 	require_once("../../backend/clase/empleado.class.php");
 
 	$obj_ado = new empleado;
-	$obj_car = new cargo;
 	$obj_ado->estandar();	
 
 	encabezado("Modificar Empleado");
@@ -16,8 +14,6 @@
 	$obj_ado->cod_ado=$_SESSION['codigo'];
 	$obj_ado->puntero=$obj_ado->listar_modificar();
 	$empleado=$obj_ado->extraer_dato();
-
-	$obj_car->puntero=$obj_car->listar_normal();
 
 ?>
 

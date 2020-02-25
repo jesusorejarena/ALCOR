@@ -10,7 +10,7 @@
 
 	encabezado("Menú de Configuración");
 
-	comprobar("Roles");
+	comprobar("Configuración");
 
 ?>
 
@@ -27,7 +27,7 @@
 							<div class="card-body">
 								<div class="row p-1 m-1">
 									<div class="col-6">
-										<h2>Cargos:</h2>
+										<h3>Cargos:</h3>
 									</div>
 									<div class="col-3">
 										<button class="<?php echo $obj_car->btn_enviarg; ?>" onClick="window.location.href='car_listartodo_resp.php'">Lista</button>
@@ -38,7 +38,7 @@
 								</div>
 								<div class="row p-1 m-1">
 									<div class="col-6">
-										<h2>Módulos:</h2>
+										<h3>Módulos:</h3>
 									</div>
 									<div class="col-3">
 										<button class="<?php echo $obj_car->btn_enviarg; ?>" onClick="window.location.href='mod_listartodo_resp.php'">Lista</button>
@@ -49,7 +49,7 @@
 								</div>
 								<div class="row p-1 m-1">
 									<div class="col-6">
-										<h2>Permisos:</h2>
+										<h3>Permisos:</h3>
 									</div>
 									<div class="col-3">
 										<button class="<?php echo $obj_car->btn_enviarg; ?>" onClick="window.location.href='per_listartodo_resp.php'">Lista</button>
@@ -60,7 +60,7 @@
 								</div>
 								<div class="row p-1 m-1">
 									<div class="col-6">
-										<h2>Empleados:</h2>
+										<h3>Empleados:</h3>
 									</div>
 									<div class="col-3">
 										<button class="<?php echo $obj_car->btn_enviarg; ?>" onClick="window.location.href='ado_listartodo_resp.php'">Lista</button>
@@ -71,7 +71,7 @@
 								</div>
 								<div class="row p-1 m-1">
 									<div class="col-6">
-										<h2>Proveedores:</h2>
+										<h3>Proveedores:</h3>
 									</div>
 									<div class="col-3">
 										<button class="<?php echo $obj_car->btn_enviarg; ?>" onClick="window.location.href='edo_listartodo_resp.php'">Lista</button>
@@ -82,7 +82,7 @@
 								</div>
 								<div class="row p-1 m-1">
 									<div class="col-6">
-										<h2>Productos:</h2>
+										<h3>Productos:</h3>
 									</div>
 									<div class="col-3">
 										<button class="<?php echo $obj_car->btn_enviarg; ?>" onClick="window.location.href='pro_listartodo_resp.php'">Lista</button>
@@ -93,7 +93,7 @@
 								</div>
 								<div class="row p-1 m-1">
 									<div class="col-6">
-										<h2>Formularios:</h2>
+										<h3>Formularios:</h3>
 									</div>
 									<div class="col-3">
 										<button class="<?php echo $obj_car->btn_enviarg; ?>" onClick="window.location.href='for_listartodo_resp.php'">Lista</button>

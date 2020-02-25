@@ -9,7 +9,7 @@
 	$obj_car->estandar();
 	$obj_car->puntero=$obj_car->listar_resp();
 
-	encabezado("Filtrar Empleado 'Respaldo'");
+	encabezado("Filtrar Empleado 'Historial'");
 
 	comprobar("Historial");
 
@@ -25,7 +25,7 @@
 			<div class="col-md-2"></div>
 			<div class="col-12 col-md-8">
 				<div class="<?php echo $obj_car->card; ?>">
-					<h2 class="<?php echo $obj_car->titulocard; ?>">Filtrar Empleado 'Respaldo'</h2>
+					<h2 class="<?php echo $obj_car->titulocard; ?>">Filtrar Empleado 'Historial'</h2>
 					<hr>
 					<div class="card-body">
 						<form action="ado_filtrado_resp.php" method="POST">

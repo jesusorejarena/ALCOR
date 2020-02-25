@@ -76,7 +76,7 @@
 			
 				<meta charset='UTF-8'>
 				<meta name='viewport' content='width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0'>
-				<link rel='icon' src='../img/icon.png'>
+				<link rel='icon' href='../img/icon.png'>
 				<link rel='stylesheet' href='../css/estilos.css'>
 				<link rel='stylesheet' href='../css/bootstrap-4.4.1/css/bootstrap.css'>
 				<link rel='stylesheet' href='../css/ionicons/css/ionicons.min.css'>
@@ -96,7 +96,7 @@
 							<header class='header'>
 								<nav class='navbar navbar-expand-md bg-primary navbar-dark form-control-static fixed-top'>
 									<!--Nombre de la app-->
-									<a href='menu_principal.php' class='navbar-brand animated bounceInLeft'><img src='../img/logo2.png' width='150'></a>
+									<a href='menu_principal.php' class='navbar-brand animated bounceInLeft px-5'><img src='../img/logo2.png' width='150'></a>
 									<!--Menu de hamburguesa-->
 									<button class='navbar-toggler' type='button' data-toggle='collapse' data-target='#collapsibleNavbar'>
 											<span class='navbar-toggler-icon'></span>
@@ -154,7 +154,7 @@
 														echo "
 															
 															<li class='nav-item'>
-																<a href='$modulo[url_mod]' class='nav-link texto-nav'>$modulo[nom_mod]</a>
+																<a href='$modulo[url_mod]' class='nav-link text-center texto-nav'>$modulo[nom_mod]</a>
 															</li>
 														";
 													}
@@ -191,7 +191,7 @@
 							<div class='col-4 text-left'>
 								<p><b>Dirección: </b>$empresa[dir_emp] <br>
 								<b>E-mail: </b>$empresa[cor_emp] <br>
-								<b>Teléfonos: </b>$empresa[tel_emp]</p>
+								<b>Teléfono: </b>$empresa[tel_emp]</p>
 							</div>
 							<div class='col-4 text-center'>
 								<p>

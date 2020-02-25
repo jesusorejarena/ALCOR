@@ -8,7 +8,7 @@
 	$obj_car = new cargo;
 	$obj_car->estandar();
 
-	encabezado("Filtrar Cargo 'Respaldo'");
+	encabezado("Filtrar Cargo 'Historial'");
 
 	comprobar("Historial");
 
@@ -24,7 +24,7 @@
 			<div class="col-md-2"></div>
 			<div class="col-12 col-md-8">
 				<div class="<?php echo $obj_car->card; ?>">
-					<h2 class="<?php echo $obj_car->titulocard; ?>">Filtrar Cargo 'Respaldo'</h2>
+					<h2 class="<?php echo $obj_car->titulocard; ?>">Filtrar Cargo 'Historial'</h2>
 					<hr>
 					<div class="card-body">
 						<form action="car_filtrado_resp.php" method="POST">

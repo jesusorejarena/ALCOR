@@ -9,7 +9,7 @@
 	$obj_mod->estandar();
 	$obj_mod->puntero=$obj_mod->listar_resp();
 
-	encabezado("Lista de Módulos 'Respaldo'");
+	encabezado("Lista de Módulos 'Historial'");
 
 	comprobar("Historial");
 
@@ -22,7 +22,7 @@
 			</div>
 		</div>
 		<div class="<?php echo $obj_mod->card; ?>">
-			<h2 class="<?php echo $obj_mod->titulocard; ?>">Lista de Módulos 'Respaldo'</h2>
+			<h2 class="<?php echo $obj_mod->titulocard; ?>">Lista de Módulos 'Historial'</h2>
 			<hr>
 			<div class="row p-3 m-3">
 				<div class="col-12">

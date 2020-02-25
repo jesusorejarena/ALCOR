@@ -19,6 +19,7 @@
 				<div class="<?php echo $obj_emp->card; ?>">
 					<h2 class="<?php echo $obj_emp->titulocard; ?>">Registrar Datos de la Empresa</h2>
 					<hr>
+					<p class="<?php echo $obj_emp->subtitulocard; ?>">Campos opcionales con *</p>
 					<div class="card-body">
 						<form action="../../backend/controlador/empresa.php" method="POST">
 							<div class="row p-3">
@@ -71,7 +72,7 @@
 								</div>
 								<div class="col-6">
 									<div class="form-group">
-										<label for="hod_emp" class="<?php echo $obj_emp->for; ?>">Horario Dos:</label>
+										<label for="hod_emp" class="<?php echo $obj_emp->for; ?>">Horario Dos: *</label>
 										<input type="text" name="hod_emp" id="hod_emp" placeholder="Horario Dos:" minlength="3" maxlength="19" class="<?php echo $obj_emp->input_normal; ?>">
 										<small id="hod_emp" class="<?php echo $obj_emp->small; ?>">Ejemplo: 02:00 PM - 06:00 PM</small>
 									</div>
