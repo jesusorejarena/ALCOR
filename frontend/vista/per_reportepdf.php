@@ -1,17 +1,14 @@
 <?php
 
-	require_once("../../librerias/fpdf/fpdf.php");
+	// Cargamos la librería dompdf que hemos instalado en la carpeta dompdf
+	require_once '../../librerias/dompdf/autoload.inc.php';
+
 	require_once("../../backend/clase/permiso.class.php");
 	require_once("../../backend/clase/modulo.class.php");
 	require_once("../../backend/clase/cargo.class.php");
 	require_once("../../backend/clase/empresa.class.php");
 
 	$cod_per=$_REQUEST['cod_per'];
-
-	$pdf = new FPDF();
-	$pdf->AddPage();
-	$pdf->ALiasNbPages();
-	$pdf->SetFont('Arial','B',16);	
 
 	$obj_per = new permiso;
 	$obj_per->cod_per=$cod_per;
@@ -32,40 +29,107 @@
 	$obj_emp->puntero=$obj_emp->listar_modificar();
 	$empresa=$obj_emp->extraer_dato();
 
+	use Dompdf\Dompdf;
 
-	$pdf->Cell(190,1,utf8_decode("$empresa[nom_emp]"),0,1,'L',0);
-	$pdf->Cell(190,10,"",0,1,'C',0);
+	// instantiate and use the dompdf class
+	$dompdf = new Dompdf();
+	$dompdf->loadHtml("
 
-	$pdf->Cell(190,15,utf8_decode("Módulo N° $cod_per"),0,1,'C',0);
-	$pdf->Cell(190,5,"",0,1,'C',0);
+		<html>
 
-	$pdf->Cell(95,10,utf8_decode("Cargo"),1,0,'C',0);
-	$pdf->Cell(95,10,utf8_decode("Modulo"),1,1,'C',0);
+			<head>
 
-	$pdf->Cell(95,10,utf8_decode("$cargo[nom_car]"),1,0,'C',0);
-	$pdf->Cell(95,10,utf8_decode("$modulo[nom_mod]"),1,1,'C',0);
-	$pdf->Cell(190,10,"",0,1,'C',0);
+				<meta charset='UTF-8'>
+				<title>Reporte del Permiso N° $cod_per</title>
+				<link rel='stylesheet' href='../css/estilospdf.css'>
 
-	$pdf->Cell(95,10,utf8_decode("Creado"),1,0,'C',0);
-	$pdf->Cell(95,10,utf8_decode("Modificado"),1,1,'C',0);
+			</head>
 
-	$pdf->Cell(95,10,utf8_decode("$permiso[cre_per]"),1,0,'C',0);
-	$pdf->Cell(95,10,utf8_decode("$permiso[act_per]"),1,1,'C',0);
+			<body>
+				<table>
+					<tr class='head'>
+						<th class='head' colspan='1' style='text-align: center;'><img src='../img/logo2.png' width='150px'></th>
+						<th class='head' colspan='3' style='text-align: center;'><h3>Reporte del Permiso <br> N° $cod_per</h3></th>
+						<th class='head' colspan='2'></th>
+					</tr>
+					<tr class='nada'>
+						<th class='nada' colspan='6'></th>
+					</tr>
+					<tr class='tr'>
+						<th class='th' colspan='2'>Código</th>
+						<th class='th' colspan='2'>Nombre del Cargo</th>
+						<th class='th' colspan='2'>Nombre del Módulo</th>
+					</tr>
+					<tr class='tr'>
+						<td class='td' colspan='2'>$permiso[cod_per]</td>
+						<td class='td' colspan='2'>$cargo[nom_car]</td>
+						<td class='td' colspan='2'>$modulo[nom_mod]</td>
+					</tr>
+					<tr class='espacio'>
+						<th class='espacio' colspan='6'></th>
+					</tr>
+					<tr class='tr'>
+						<th class='th' colspan='2'>Estatus</th>
+						<th class='th' colspan='2'>Fecha de Creación</th>
+						<th class='th' colspan='2'>Ultima Modificación</th>
+					</tr>
+					<tr class='tr'>
+						<td class='td' colspan='2'>$permiso[est_per]</td>
+						<td class='td' colspan='2'>$permiso[cre_per]</td>
+						<td class='td' colspan='2'>$permiso[act_per]</td>
+					</tr>
+					<tr class='espacio'>
+						<th class='espacio' colspan='6'></th>
+					</tr>
+					<tr class='tr'>
+						<th class='th' colspan='2'>Estado</th>
+						<th class='th' colspan='2'>Fecha de Eliminación</th>
+						<th class='th' colspan='2'>Fecha de Restauración</th>
+					</tr>
+					<tr class='tr'>
+						<td class='td' colspan='2'>$permiso[bas_per]</td>
+						<td class='td' colspan='2'>$permiso[eli_per]</td>
+						<td class='td' colspan='2'>$permiso[res_per]</td>
+					</tr>
+					<tr class='nada'>
+						<th class='nada' colspan='6'></th>
+					</tr>
+					<tr class='footer'>
+							<td class='footer' colspan='1' style='text-align: left;'>
+								<p><b>Dirección: </b>$empresa[dir_emp]<br>
+								<b>E-mail: </b>$empresa[cor_emp]<br>
+								<b>Teléfono: </b>$empresa[tel_emp]</p>
+							</td>
+							<td class='footer' colspan='3' style='text-align: center;'>
+								<p>
+									$empresa[nom_emp]<br>
+									$empresa[rif_emp]<br>
+								</p>
+							</td>
+							<td class='footer' colspan='2' style='text-align: right;'>
+								<p>
+									<b>Horario:</b><br>
+									$empresa[hou_emp]<br>
+									$empresa[hod_emp]<br>
+								</p>
+							</td>
+						</tr>
+				</table>
+			</body>
 
-	$pdf->Cell(95,10,utf8_decode("Eliminado"),1,0,'C',0);
-	$pdf->Cell(95,10,utf8_decode("Restaurado"),1,1,'C',0);
+		</html>
 
-	$pdf->Cell(95,10,utf8_decode("$permiso[eli_per]"),1,0,'C',0);
-	$pdf->Cell(95,10,utf8_decode("$permiso[res_per]"),1,1,'C',0);
-	$pdf->Cell(190,140,"",0,1,'C',0);
+	");
 
+	// (Optional) Setup the paper size and orientation
+	$dompdf->setPaper('A4', 'landscape');
 
-	$pdf->Cell(95,1,utf8_decode("Teléfono: $empresa[tel_emp]"),0,0,'L',0);
-	$pdf->Cell(95,1,utf8_decode("RIF: $empresa[rif_emp]"),0,0,'R',0);
-	$pdf->Cell(190,15,"",0,1,'C',0);
+	// Render the HTML as PDF
+	$dompdf->render();
 
-	$pdf->Cell(190,1,utf8_decode("Dirección: $empresa[dir_emp]"),0,0,'C',0);
-	
-	$pdf->Output();
+	$nombre="Reporte_Permiso_$cod_per.pdf";
+
+	// Output the generated PDF to Browser
+	$dompdf->stream($nombre);
 
 ?>

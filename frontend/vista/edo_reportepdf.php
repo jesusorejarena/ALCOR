@@ -1,15 +1,12 @@
 <?php
 
-	require_once("../../librerias/fpdf/fpdf.php");
+	// Cargamos la librería dompdf que hemos instalado en la carpeta dompdf
+	require_once '../../librerias/dompdf/autoload.inc.php';
+
 	require_once("../../backend/clase/proveedor.class.php");
 	require_once("../../backend/clase/empresa.class.php");
 
 	$cod_edo=$_REQUEST['cod_edo'];
-
-	$pdf = new FPDF();
-	$pdf->AddPage();
-	$pdf->ALiasNbPages();
-	$pdf->SetFont('Arial','B',16);	
 
 	$obj_edo = new proveedor;
 	$obj_edo->cod_edo=$cod_edo;
@@ -20,60 +17,131 @@
 	$obj_emp->puntero=$obj_emp->listar_modificar();
 	$empresa=$obj_emp->extraer_dato();
 
+	use Dompdf\Dompdf;
 
-	$pdf->Cell(190,1,utf8_decode("$empresa[nom_emp]"),0,1,'L',0);
-	$pdf->Cell(190,10,"",0,1,'C',0);
+	// instantiate and use the dompdf class
+	$dompdf = new Dompdf();
+	$dompdf->loadHtml("
 
-	$pdf->Cell(190,15,utf8_decode("Proveedor N° $cod_edo"),0,1,'C',0);
-	$pdf->Cell(190,5,"",0,1,'C',0);
+		<html>
 
-	$pdf->Cell(95,10,utf8_decode("Nombre"),1,0,'C',0);
-	$pdf->Cell(95,10,utf8_decode("Descripción"),1,1,'C',0);
+			<head>
 
-	$pdf->Cell(95,15,utf8_decode("$proveedor[nom_edo]"),1,0,'C',0);
-	$pdf->Cell(95,15,utf8_decode("$proveedor[des_edo]"),1,1,'C',0);	
-	$pdf->Cell(190,5,"",0,1,'C',0);
+				<meta charset='UTF-8'>
+				<title>Reporte del Proveedor N° $cod_edo</title>
+				<link rel='stylesheet' href='../css/estilospdf.css'>
 
-	$pdf->Cell(95,10,utf8_decode("Dirección"),1,0,'C',0);
-	$pdf->Cell(95,10,utf8_decode("Teléfono"),1,1,'C',0);
+			</head>
 
-	$pdf->Cell(95,15,utf8_decode("$proveedor[dir_edo]"),1,0,'C',0);
-	$pdf->Cell(95,15,utf8_decode("$proveedor[tel_edo]"),1,1,'C',0);
-	$pdf->Cell(95,5,"",0,1,'C',0);
+			<body>
+				<table>
+					<tr class='head'>
+						<th class='head' colspan='1' style='text-align: center;'><img src='../img/logo2.png' width='150px'></th>
+						<th class='head' colspan='3' style='text-align: center;'><h3>Reporte del Proveedor <br> N° $cod_edo</h3></th>
+						<th class='head' colspan='2'></th>
+					</tr>
+					<tr class='nada'>
+						<th class='nada' colspan='6'></th>
+					</tr>
+					<tr class='tr'>
+						<th class='th' colspan='3'>Código</th>
+						<th class='th' colspan='3'>Nombre</th>
+					</tr>
+					<tr class='tr'>
+						<td class='td' colspan='3'>$proveedor[cod_edo]</td>
+						<td class='td' colspan='3'>$proveedor[nom_edo]</td>
+					</tr>
+					<tr class='espacio'>
+						<th class='espacio' colspan='6'></th>
+					</tr>
+					<tr class='tr'>
+						<th class='th' colspan='3'>Descripción</th>
+						<th class='th' colspan='3'>Dirección</th>
+					</tr>
+					<tr class='tr'>
+						<td class='td' colspan='3'>$proveedor[dir_edo]</td>
+						<td class='td' colspan='3'>$proveedor[des_edo]</td>
+					</tr>
+					<tr class='espacio'>
+						<th class='espacio' colspan='6'></th>
+					</tr>
+					<tr class='tr'>
+						<th class='th' colspan='2'>Teléfono</th>
+						<th class='th' colspan='1'>Tipo</th>
+						<th class='th' colspan='1'>RIF</th>
+						<th class='th' colspan='2'>Correo</th>
+					</tr>
+					<tr class='tr'>
+						<td class='td' colspan='2'>$proveedor[tel_edo]</td>
+						<td class='td' colspan='1'>$proveedor[tip_edo]</td>
+						<td class='td' colspan='1'>$proveedor[rif_edo]</td>
+						<td class='td' colspan='2'>$proveedor[cor_edo]</td>
+					</tr>
+					<tr class='espacio'>
+						<th class='espacio' colspan='6'></th>
+					</tr>
+					<tr class='tr'>
+						<th class='th' colspan='2'>Estatus</th>
+						<th class='th' colspan='2'>Fecha de Registro</th>
+						<th class='th' colspan='2'>Ultima Modificación</th>
+					</tr>
+					<tr class='tr'>
+						<td class='td' colspan='2'>$proveedor[est_edo]</td>
+						<td class='td' colspan='2'>$proveedor[cre_edo]</td>
+						<td class='td' colspan='2'>$proveedor[act_edo]</td>
+					</tr>
+					<tr class='espacio'>
+						<th class='espacio' colspan='6'></th>
+					</tr>
+					<tr class='tr'>
+						<th class='th' colspan='2'>Estado</th>
+						<th class='th' colspan='2'>Fecha de Eliminación</th>
+						<th class='th' colspan='2'>Fecha de Restauración</th>
+					</tr>
+					<tr class='tr'>
+						<td class='td' colspan='2'>$proveedor[bas_edo]</td>
+						<td class='td' colspan='2'>$proveedor[eli_edo]</td>
+						<td class='td' colspan='2'>$proveedor[res_edo]</td>
+					</tr>
+					<tr class='nada'>
+						<th class='nada' colspan='6'></th>
+					</tr>
+					<tr class='footer'>
+							<td class='footer' colspan='1' style='text-align: left;'>
+								<p><b>Dirección: </b>$empresa[dir_emp]<br>
+								<b>E-mail: </b>$empresa[cor_emp]<br>
+								<b>Teléfono: </b>$empresa[tel_emp]</p>
+							</td>
+							<td class='footer' colspan='3' style='text-align: center;'>
+								<p>
+									$empresa[nom_emp]<br>
+									$empresa[rif_emp]<br>
+								</p>
+							</td>
+							<td class='footer' colspan='2' style='text-align: right;'>
+								<p>
+									<b>Horario:</b><br>
+									$empresa[hou_emp]<br>
+									$empresa[hod_emp]<br>
+								</p>
+							</td>
+						</tr>
+				</table>
+			</body>
 
-	$pdf->Cell(190,10,utf8_decode("Correo"),1,1,'C',0);
+		</html>
 
-	$pdf->Cell(190,15,utf8_decode("$proveedor[cor_edo]"),1,1,'C',0);
-	$pdf->Cell(190,5,"",0,1,'C',0);
+	");
 
-	$pdf->Cell(20,10,utf8_decode("Tipo"),1,0,'C',0);
-	$pdf->Cell(85,10,utf8_decode("RIF"),1,0,'C',0);
-	$pdf->Cell(85,10,utf8_decode("Fecha de Incorporación"),1,1,'C',0);	
+	// (Optional) Setup the paper size and orientation
+	$dompdf->setPaper('A4', 'landscape');
 
-	$pdf->Cell(20,15,utf8_decode("$proveedor[tip_edo]"),1,0,'C',0);
-	$pdf->Cell(85,15,utf8_decode("$proveedor[rif_edo]"),1,0,'C',0);
-	$pdf->Cell(85,15,utf8_decode("$proveedor[cre_edo]"),1,1,'C',0);
-	$pdf->Cell(190,5,"",0,1,'C',0);
+	// Render the HTML as PDF
+	$dompdf->render();
 
-	$pdf->Cell(95,10,utf8_decode("Creado"),1,0,'C',0);
-	$pdf->Cell(95,10,utf8_decode("Modificado"),1,1,'C',0);
+	$nombre="Reporte_Proveedor_$cod_edo.pdf";
 
-	$pdf->Cell(95,10,utf8_decode("$proveedor[cre_edo]"),1,0,'C',0);
-	$pdf->Cell(95,10,utf8_decode("$proveedor[act_edo]"),1,1,'C',0);
-
-	$pdf->Cell(95,10,utf8_decode("Eliminado"),1,0,'C',0);
-	$pdf->Cell(95,10,utf8_decode("Restaurado"),1,1,'C',0);
-
-	$pdf->Cell(95,10,utf8_decode("$proveedor[eli_edo]"),1,0,'C',0);
-	$pdf->Cell(95,10,utf8_decode("$proveedor[res_edo]"),1,1,'C',0);
-	$pdf->Cell(190,15,"",0,1,'C',0);
-
-	$pdf->Cell(95,1,utf8_decode("Teléfono: $empresa[tel_emp]"),0,0,'L',0);
-	$pdf->Cell(95,1,utf8_decode("RIF: $empresa[rif_emp]"),0,0,'R',0);
-	$pdf->Cell(190,15,"",0,1,'C',0);
-
-	$pdf->Cell(190,1,utf8_decode("Dirección: $empresa[dir_emp]"),0,0,'C',0);
-	
-	$pdf->Output();
+	// Output the generated PDF to Browser
+	$dompdf->stream($nombre);
 
 ?>

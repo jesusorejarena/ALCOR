@@ -59,7 +59,7 @@
 			$this->container		="container-fluid py-5 mt-5 bg-white";
 			$this->container2		="container-fluid pt-4 mt-4 bg-light";
 			$this->container3		="container-fluid pt-1 mt-1 bg-light";
-			$this->titulos			="h1 text-dark text-center p-4 text-center big-text";
+			$this->titulos			="h1 text-dark p-4 text-center big-text";
 			// Fin Clases Generales
 
 			// Inicio Cards Generales

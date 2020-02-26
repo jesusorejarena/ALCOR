@@ -1,15 +1,14 @@
+
 <?php
 
-	require_once("../../librerias/fpdf/fpdf.php");
+	// Cargamos la librería dompdf que hemos instalado en la carpeta dompdf
+	require_once '../../librerias/dompdf/autoload.inc.php';
+
 	require_once("../../backend/clase/empleado.class.php");
+	require_once("../../backend/clase/cargo.class.php");
 	require_once("../../backend/clase/empresa.class.php");
 
 	$cod_ado=$_REQUEST['cod_ado'];
-
-	$pdf = new FPDF();
-	$pdf->AddPage();
-	$pdf->ALiasNbPages();
-	$pdf->SetFont('Arial','B',16);	
 
 	$obj_ado = new empleado;
 	$obj_ado->cod_ado=$cod_ado;
@@ -20,66 +19,136 @@
 	$obj_emp->puntero=$obj_emp->listar_modificar();
 	$empresa=$obj_emp->extraer_dato();
 
+	$obj_car = new cargo;
+	$obj_car->cod_car=$empleado["cod_car"];
+	$obj_car->puntero=$obj_car->filtrar();
+	$cargo=$obj_car->extraer_dato();
 
-	$pdf->Cell(190,1,utf8_decode("$empresa[nom_emp]"),0,1,'L',0);
-	$pdf->Cell(190,10,"",0,1,'C',0);
+	use Dompdf\Dompdf;
 
-	$pdf->Cell(190,15,utf8_decode("Empleado N° $cod_ado"),0,1,'C',0);
-	$pdf->Cell(190,5,"",0,1,'C',0);
+	// instantiate and use the dompdf class
+	$dompdf = new Dompdf();
+	$dompdf->loadHtml("
 
-	$pdf->Cell(95,10,utf8_decode("Nombre"),1,0,'C',0);
-	$pdf->Cell(95,10,utf8_decode("Apellido"),1,1,'C',0);
+		<html>
 
-	$pdf->Cell(95,15,utf8_decode("$empleado[nom_ado]"),1,0,'C',0);
-	$pdf->Cell(95,15,utf8_decode("$empleado[ape_ado]"),1,1,'C',0);
-	$pdf->Cell(190,5,"",0,1,'C',0);
+			<head>
 
-	$pdf->Cell(95,10,utf8_decode("Genero"),1,0,'C',0);
-	$pdf->Cell(95,10,utf8_decode("Fecha de Nacimiento"),1,1,'C',0);
+				<meta charset='UTF-8'>
+				<title>Reporte del Empleado N° $cod_ado</title>
+				<link rel='stylesheet' href='../css/estilospdf.css'>
 
-	$pdf->Cell(95,15,utf8_decode("$empleado[gen_ado]"),1,0,'C',0);
-	$pdf->Cell(95,15,utf8_decode("$empleado[nac_ado]"),1,1,'C',0);
-	$pdf->Cell(190,5,"",0,1,'C',0);
+			</head>
 
-	$pdf->Cell(40,10,utf8_decode("Nacionalidad"),1,0,'C',0);
-	$pdf->Cell(75,10,utf8_decode("Cédula"),1,0,'C',0);
-	$pdf->Cell(75,10,utf8_decode("Teléfono"),1,1,'C',0);
+			<body>
+				<table>
+					<tr class='head'>
+						<th class='head' colspan='1' style='text-align: center;'><img src='../img/logo2.png' width='150px'></th>
+						<th class='head' colspan='3' style='text-align: center;'><h3>Reporte del Empleado <br> N° $cod_ado</h3></th>
+						<th class='head' colspan='2'></th>
+					</tr>
+					<tr class='nada'>
+						<th class='nada' colspan='6'></th>
+					</tr>
+					</tr>
+					<tr class='tr'>
+						<th class='th'>Código</th>
+						<th class='th'>Nombre</th>
+						<th class='th'>Apellido</th>
+						<th class='th'>Genero</th>
+						<th class='th'>Fecha de Nacimiento</th>
+						<th class='th'>Teléfono</th>
+					</tr>
+					<tr class='tr'>
+						<td class='td'>$empleado[cod_ado]</td>
+						<td class='td'>$empleado[nom_ado]</td>
+						<td class='td'>$empleado[ape_ado]</td>
+						<td class='td'>$empleado[gen_ado]</td>
+						<td class='td'>$empleado[nac_ado]</td>
+						<td class='td'>$empleado[tel_ado]</td>
+					</tr>
+					<tr class='espacio'>
+						<th class='espacio' colspan='6'></th>
+					</tr>
+					<tr class='tr'>
+						<th class='th'>Tipo</th>
+						<th class='th'>Cédula</th>
+						<th class='th'>Correo</th>
+						<th class='th'>Cargo</th>
+						<th class='th' colspan='2'>Dirección</th>
+					</tr>
+					<tr class='tr'>
+						<td class='td'>$empleado[tip_ado]</td>
+						<td class='td'>$empleado[ced_ado]</td>
+						<td class='td'>$empleado[cor_ado]</td>
+						<td class='td'>$cargo[nom_car]</td>
+						<td class='td' colspan='2'>$empleado[dir_ado]</td>
+					</tr>
+					<tr class='espacio'>
+						<th class='espacio' colspan='6'></th>
+					</tr>
+					<tr class='tr'>
+						<th class='th' colspan='2'>Estatus</th>
+						<th class='th' colspan='2'>Fecha de Contrato</th>
+						<th class='th' colspan='2'>Ultima Modificación</th>
+					</tr>
+					<tr class='tr'>
+						<td class='td' colspan='2'>$empleado[est_ado]</td>
+						<td class='td' colspan='2'>$empleado[cre_ado]</td>
+						<td class='td' colspan='2'>$empleado[act_ado]</td>
+					</tr>
+					<tr class='espacio'>
+						<th class='espacio' colspan='6'></th>
+					</tr>
+					<tr class='tr'>
+						<th class='th' colspan='2'>Estado</th>
+						<th class='th' colspan='2'>Fecha de Eliminación</th>
+						<th class='th' colspan='2'>Fecha de Restauración</th>
+					</tr>
+					<tr class='tr'>
+						<td class='td' colspan='2'>$empleado[bas_ado]</td>
+						<td class='td' colspan='2'>$empleado[eli_ado]</td>
+						<td class='td' colspan='2'>$empleado[res_ado]</td>
+					</tr>
+					<tr class='nada'>
+						<th class='nada' colspan='6'></th>
+					</tr>
+					<tr class='footer'>
+							<td class='footer' colspan='1' style='text-align: left;'>
+								<p><b>Dirección: </b>$empresa[dir_emp]<br>
+								<b>E-mail: </b>$empresa[cor_emp]<br>
+								<b>Teléfono: </b>$empresa[tel_emp]</p>
+							</td>
+							<td class='footer' colspan='3' style='text-align: center;'>
+								<p>
+									$empresa[nom_emp]<br>
+									$empresa[rif_emp]<br>
+								</p>
+							</td>
+							<td class='footer' colspan='2' style='text-align: right;'>
+								<p>
+									<b>Horario:</b><br>
+									$empresa[hou_emp]<br>
+									$empresa[hod_emp]<br>
+								</p>
+							</td>
+						</tr>
+				</table>
+			</body>
 
-	$pdf->Cell(40,15,utf8_decode("$empleado[tip_ado]"),1,0,'C',0);
-	$pdf->Cell(75,15,utf8_decode("$empleado[ced_ado]"),1,0,'C',0);
-	$pdf->Cell(75,15,utf8_decode("$empleado[tel_ado]"),1,1,'C',0);
-	$pdf->Cell(190,5,"",0,1,'C',0);
+		</html>
 
-	$pdf->Cell(190,10,utf8_decode("Correo"),1,1,'C',0);
+	");
 
-	$pdf->Cell(190,15,utf8_decode("$empleado[cor_ado]"),1,1,'C',0);
-	$pdf->Cell(190,5,"",0,1,'C',0);
+	// (Optional) Setup the paper size and orientation
+	$dompdf->setPaper('A4', 'landscape');
 
-	$pdf->Cell(190,10,utf8_decode("Dirección"),1,1,'C',0);
+	// Render the HTML as PDF
+	$dompdf->render();
 
-	$pdf->Cell(190,15,utf8_decode("$empleado[dir_ado]"),1,1,'C',0);
-	$pdf->Cell(190,5,"",0,1,'C',0);
+	$nombre="Reporte_Empleado_$cod_ado.pdf";
 
-	$pdf->Cell(95,10,utf8_decode("Creado"),1,0,'C',0);
-	$pdf->Cell(95,10,utf8_decode("Modificado"),1,1,'C',0);
-
-	$pdf->Cell(95,10,utf8_decode("$empleado[cre_ado]"),1,0,'C',0);
-	$pdf->Cell(95,10,utf8_decode("$empleado[act_ado]"),1,1,'C',0);
-
-	$pdf->Cell(95,10,utf8_decode("Eliminado"),1,0,'C',0);
-	$pdf->Cell(95,10,utf8_decode("Restaurado"),1,1,'C',0);
-
-	$pdf->Cell(95,10,utf8_decode("$empleado[eli_ado]"),1,0,'C',0);
-	$pdf->Cell(95,10,utf8_decode("$empleado[res_ado]"),1,1,'C',0);
-	$pdf->Cell(190,15,"",0,1,'C',0);
-
-
-	$pdf->Cell(95,1,utf8_decode("Teléfono: $empresa[tel_emp]"),0,0,'L',0);
-	$pdf->Cell(95,1,utf8_decode("RIF: $empresa[rif_emp]"),0,0,'R',0);
-	$pdf->Cell(190,15,"",0,1,'C',0);
-
-	$pdf->Cell(190,1,utf8_decode("Dirección: $empresa[dir_emp]"),0,0,'C',0);
-	
-	$pdf->Output();
+	// Output the generated PDF to Browser
+	$dompdf->stream($nombre);
 
 ?>

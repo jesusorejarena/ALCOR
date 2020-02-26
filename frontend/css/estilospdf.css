@@ -1,0 +1,45 @@
+/* Tablas de los PDF */
+
+.head {
+	background-color: #012E57;
+	color: #ffffff;
+	border: none;
+}
+
+.footer {
+	font-size: 15px;
+	background-color: #003C6B;
+	color: #ffffff;
+	border: none;
+}
+
+table {
+	width:100%;
+	text-align: center;
+	border-collapse: collapse;
+}
+
+th {
+	font-size: 20px;
+}
+
+td {
+	font-size: 15px;
+}
+
+th, td {
+	border: 1px solid black;
+	padding: 7px;
+}
+
+.nada {
+	border: none;
+	padding: 15px;
+}
+
+.espacio {
+	border: none;
+	padding: 7px;
+}
+
+/* ----------------- */

@@ -1,15 +1,12 @@
 <?php
 
-	require_once("../../librerias/fpdf/fpdf.php");
+	// Cargamos la librería dompdf que hemos instalado en la carpeta dompdf
+	require_once '../../librerias/dompdf/autoload.inc.php';
+
 	require_once("../../backend/clase/formulario.class.php");
 	require_once("../../backend/clase/empresa.class.php");
 
 	$cod_for=$_REQUEST['cod_for'];
-
-	$pdf = new FPDF();
-	$pdf->AddPage();
-	$pdf->ALiasNbPages();
-	$pdf->SetFont('Arial','B',16);	
 
 	$obj_for = new formulario;
 	$obj_for->cod_for=$cod_for;
@@ -20,43 +17,110 @@
 	$obj_emp->puntero=$obj_emp->listar_modificar();
 	$empresa=$obj_emp->extraer_dato();
 
+	use Dompdf\Dompdf;
 
-	$pdf->Cell(190,1,utf8_decode("$empresa[nom_emp]"),0,1,'L',0);
-	$pdf->Cell(190,10,"",0,1,'C',0);
+	// instantiate and use the dompdf class
+	$dompdf = new Dompdf();
+	$dompdf->loadHtml("
 
-	$pdf->Cell(190,15,utf8_decode("Formulario N° $cod_for"),0,1,'C',0);
-	$pdf->Cell(190,5,"",0,1,'C',0);
+		<html>
 
-	$pdf->Cell(95,10,utf8_decode("Nombre"),1,0,'C',0);
-	$pdf->Cell(95,10,utf8_decode("Apellido"),1,1,'C',0);
+			<head>
 
-	$pdf->Cell(95,15,utf8_decode("$formulario[nom_for]"),1,0,'C',0);
-	$pdf->Cell(95,15,utf8_decode("$formulario[ape_for]"),1,1,'C',0);	
-	$pdf->Cell(190,5,"",0,1,'C',0);
+				<meta charset='UTF-8'>
+				<title>Reporte del Formulario N° $cod_for</title>
+				<link rel='stylesheet' href='../css/estilospdf.css'>
 
-	$pdf->Cell(95,10,utf8_decode("Teléfono"),1,0,'C',0);
-	$pdf->Cell(95,10,utf8_decode("Correo"),1,1,'C',0);
+			</head>
 
-	$pdf->Cell(95,15,utf8_decode("$formulario[tel_for]"),1,0,'C',0);
-	$pdf->Cell(95,15,utf8_decode("$formulario[cor_for]"),1,1,'C',0);
-	$pdf->Cell(95,5,"",0,1,'C',0);
+			<body>
+				<table>
+					<tr class='head'>
+						<th class='head' colspan='1' style='text-align: center;'><img src='../img/logo2.png' width='150px'></th>
+						<th class='head' colspan='3' style='text-align: center;'><h3>Reporte del Formulario <br> N° $cod_for</h3></th>
+						<th class='head' colspan='2'></th>
+					</tr>
+					<tr class='nada'>
+						<th class='nada' colspan='6'></th>
+					</tr>
+					<tr class='tr'>
+						<th class='th' colspan='2'>Código</th>
+						<th class='th' colspan='2'>Nombre</th>
+						<th class='th' colspan='2'>Apellido</th>
+					</tr>
+					<tr class='tr'>
+						<td class='td' colspan='2'>$formulario[cod_for]</td>
+						<td class='td' colspan='2'>$formulario[nom_for]</td>
+						<td class='td' colspan='2'>$formulario[ape_for]</td>
+					</tr>
+					<tr class='espacio'>
+						<th class='espacio' colspan='6'></th>
+					</tr>
+					<tr class='tr'>
+						<th class='th' colspan='3'>Teléfono</th>
+						<th class='th' colspan='3'>Correo</th>
+					</tr>
+					<tr class='tr'>
+						<td class='td' colspan='3'>$formulario[tel_for]</td>
+						<td class='td' colspan='3'>$formulario[cor_for]</td>
+					</tr>
+					<tr class='espacio'>
+						<th class='espacio' colspan='6'></th>
+					</tr>
+					<tr class='tr'>
+						<th class='th' colspan='6'>Asunto</th>
+					</tr>
+					<tr class='tr'>
+						<td class='td' colspan='6'>$formulario[asu_for]</td>
+					</tr>
+					<tr class='espacio'>
+						<th class='espacio' colspan='6'></th>
+					</tr>
+					<tr class='tr'>
+						<th class='th' colspan='6'>Fecha de Registro</th>
+					</tr>
+					<tr class='tr'>
+						<td class='td' colspan='6'>$formulario[cre_for]</td>
+					</tr>
+					<tr class='nada'>
+						<th class='nada' colspan='6'></th>
+					</tr>
+					<tr class='footer'>
+							<td class='footer' colspan='1' style='text-align: left;'>
+								<p><b>Dirección: </b>$empresa[dir_emp]<br>
+								<b>E-mail: </b>$empresa[cor_emp]<br>
+								<b>Teléfono: </b>$empresa[tel_emp]</p>
+							</td>
+							<td class='footer' colspan='3' style='text-align: center;'>
+								<p>
+									$empresa[nom_emp]<br>
+									$empresa[rif_emp]<br>
+								</p>
+							</td>
+							<td class='footer' colspan='2' style='text-align: right;'>
+								<p>
+									<b>Horario:</b><br>
+									$empresa[hou_emp]<br>
+									$empresa[hod_emp]<br>
+								</p>
+							</td>
+						</tr>
+				</table>
+			</body>
 
-	$pdf->Cell(190,10,utf8_decode("Asunto"),1,1,'C',0);
+		</html>
 
-	$pdf->Cell(190,50,utf8_decode("$formulario[asu_for]"),1,1,'C',0);
-	$pdf->Cell(190,5,"",0,1,'C',0);
+	");
 
-	$pdf->Cell(190,10,utf8_decode("Creado"),1,1,'C',0);
+	// (Optional) Setup the paper size and orientation
+	$dompdf->setPaper('A4', 'landscape');
 
-	$pdf->Cell(190,10,utf8_decode("$formulario[cre_for]"),1,1,'C',0);
-	$pdf->Cell(190,70,"",0,1,'C',0);
+	// Render the HTML as PDF
+	$dompdf->render();
 
-	$pdf->Cell(95,1,utf8_decode("Teléfono: $empresa[tel_emp]"),0,0,'L',0);
-	$pdf->Cell(95,1,utf8_decode("RIF: $empresa[rif_emp]"),0,0,'R',0);
-	$pdf->Cell(190,15,"",0,1,'C',0);
+	$nombre="Reporte_Formulario_$cod_for.pdf";
 
-	$pdf->Cell(190,1,utf8_decode("Dirección: $empresa[dir_emp]"),0,0,'C',0);
-	
-	$pdf->Output();
+	// Output the generated PDF to Browser
+	$dompdf->stream($nombre);
 
 ?>
