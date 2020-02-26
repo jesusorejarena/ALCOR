@@ -8,20 +8,24 @@
 
 	switch ($_REQUEST["ejecutar"])
 	{
-		case 'insertar':			$obj_pro->insertar();
-									header("Location: ../../frontend/vista/pro_registrar.php");
+		case 'insertar':			$obj_pro->resultado=$obj_pro->insertar();
+									$obj_pro->mensaje();
+									header("refresh:1; url=../../frontend/vista/pro_registrar.php");
 		break;
 
-		case 'modificar_normal':	$obj_pro->modificar_normal();
-									header("Location: ../../frontend/vista/pro_menu.php");
+		case 'modificar_normal':	$obj_pro->resultado=$obj_pro->modificar_normal();
+									$obj_pro->mensaje();
+									header("refresh:1; url=../../frontend/vista/pro_menu.php");
 		break;
 
-		case 'modificar_restaurar':	$obj_pro->modificar_restaurar();
-									header("Location: ../../frontend/vista/pro_listarpapelera.php");
+		case 'modificar_restaurar':	$obj_pro->resultado=$obj_pro->modificar_restaurar();
+									$obj_pro->mensaje();
+									header("refresh:1; url=../../frontend/vista/pro_listarpapelera.php");
 		break;
 
-		case 'modificar_eliminar':	$obj_pro->modificar_eliminar();
-									header("Location: ../../frontend/vista/pro_listartodo.php");
+		case 'modificar_eliminar':	$obj_pro->resultado=$obj_pro->modificar_eliminar();
+									$obj_pro->mensaje();
+									header("refresh:1; url=../../frontend/vista/pro_listartodo.php");
 		break;
 
 		case 'venta':				
@@ -32,13 +36,15 @@
 									{
 										$can_pro=($producto['can_pro'])-($obj_pro->com_pro);
 										$obj_pro->can_pro=$can_pro;
-										$obj_pro->venta();
-										header("Location: ../../frontend/vista/ven_menu.php");
+										$obj_pro->resultado=$obj_pro->venta();
+										$obj_pro->mensaje();
+										header("refresh:1; url=../../frontend/vista/ven_menu.php");
 									}
 		break;
 
-		case 'eliminar':			$obj_pro->eliminar();
-									header("Location: ../../frontend/vista/pro_listarpapelera.php");
+		case 'eliminar':			$obj_pro->resultado=$obj_pro->eliminar();
+									$obj_pro->mensaje();
+									header("refresh:1; url=../../frontend/vista/pro_listarpapelera.php");
 		break;
 	}
 	

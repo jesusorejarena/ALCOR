@@ -11,6 +11,7 @@
 		public  $que_bda;
 		public  $puntero;
 		public  $contador;
+		public  $resultado;
 
 		public function __construct()
 		{
@@ -49,6 +50,32 @@
 		public function contando()
 		{
 			return $this->contador->num_rows;
+		}
+
+		public function mensaje()
+		{
+			require_once("../../frontend/vista/tema_controladores.php");
+
+			encabezado("Comprobando...");
+
+			if ($this->resultado==true)
+			{
+				echo "
+					<div class='alert alert-success py-5 my-5'>
+						<strong>¡Enhorabuena!</strong> Procesado exitosamente.
+					</div>
+				";
+			}
+			else
+			{
+				echo "
+					<div class='alert alert-danger py-5 my-5'>
+						<strong>¡Fallo!</strong> Hubo un error inesperado, verifique los campos y vuelve a intentar.
+					</div>
+				";
+			}
+
+			pie();
 		}
 
 		public function estandar()

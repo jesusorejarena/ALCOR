@@ -1,6 +1,5 @@
 <?php 
 
-
 	function encabezado($titulo)
 	{
 		echo "
@@ -32,12 +31,6 @@
 
 	function pie()
 	{
-
-		require_once("../../backend/clase/empresa.class.php");
-
-		$obj_emp = new empresa;
-		$obj_emp->puntero=$obj_emp->listar_modificar();
-		$empresa=$obj_emp->extraer_dato();
 
 		echo "							
 				<script src='../css/bootstrap-4.4.1/js/jquery-3.4.1.min.js'></script>

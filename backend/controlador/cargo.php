@@ -8,24 +8,29 @@
 
 	switch ($_REQUEST["ejecutar"])
 	{
-		case 'insertar':			$obj_car->insertar();
-									header("Location: ../../frontend/vista/car_registrar.php");
+		case 'insertar':			$obj_car->resultado=$obj_car->insertar();
+									$obj_car->mensaje();
+									header("refresh:1; url=../../frontend/vista/car_registrar.php");
 		break;
 
-		case 'modificar_normal':	$obj_car->modificar_normal();
-									header("Location: ../../frontend/vista/rol_menu.php");
+		case 'modificar_normal':	$obj_car->resultado=$obj_car->modificar_normal();
+									$obj_car->mensaje();
+									header("refresh:1; url=../../frontend/vista/rol_menu.php");
 		break;
 
-		case 'modificar_restaurar':	$obj_car->modificar_restaurar();
-									header("Location: ../../frontend/vista/car_listarpapelera.php");
+		case 'modificar_restaurar':	$obj_car->resultado=$obj_car->modificar_restaurar();
+									$obj_car->mensaje();
+									header("refresh:1; url=../../frontend/vista/car_listarpapelera.php");
 		break;
 
-		case 'modificar_eliminar':	$obj_car->modificar_eliminar();
-									header("Location: ../../frontend/vista/car_listartodo.php");
+		case 'modificar_eliminar':	$obj_car->resultado=$obj_car->modificar_eliminar();
+									$obj_car->mensaje();
+									header("refresh:1; url=../../frontend/vista/car_listartodo.php");
 		break;
 
-		case 'eliminar':			$obj_car->eliminar();
-									header("Location: ../../frontend/vista/car_listarpapelera.php");
+		case 'eliminar':			$obj_car->resultado=$obj_car->eliminar();
+									$obj_car->mensaje();
+									header("refresh:1; url=../../frontend/vista/car_listarpapelera.php");
 		break;
 	}
 	

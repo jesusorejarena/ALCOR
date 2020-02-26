@@ -37,7 +37,7 @@
 	{
 		if ($_SESSION['cargo']==1)
 		{
-		
+			
 		}
 		else
 		{
@@ -48,11 +48,21 @@
 
 	function encabezado($titulo)
 	{
+		ini_set("session.cookie_lifetime","36000");
+
 		session_start();
 
 		if($_SESSION['activo']==true )
 		{
-			
+			if (time() - $_SESSION["time"] < 1200)
+			{
+				
+			}
+			else
+			{
+				session_destroy();
+			}
+
 			require_once("../../backend/clase/cargo.class.php");
 			require_once("../../backend/clase/modulo.class.php");
 			require_once("../../backend/clase/permiso.class.php");

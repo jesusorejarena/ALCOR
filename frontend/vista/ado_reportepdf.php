@@ -43,7 +43,7 @@
 			<body>
 				<table>
 					<tr class='head'>
-						<th class='head' colspan='1' style='text-align: center;'><img src='../img/logo2.png' width='150px'></th>
+						<th class='head' colspan='1' style='text-align: center;'><img src='../img/logo3.png' width='250px'></th>
 						<th class='head' colspan='3' style='text-align: center;'><h3>Reporte del Empleado <br> N° $cod_ado</h3></th>
 						<th class='head' colspan='2'></th>
 					</tr>

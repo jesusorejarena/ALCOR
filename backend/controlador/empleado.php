@@ -8,32 +8,39 @@
 
 	switch ($_REQUEST["ejecutar"])
 	{
-		case 'insertar':			$obj_ado->insertar();
-									header("Location: ../../frontend/vista/ado_registrar.php");
+		case 'insertar':			$obj_ado->resultado=$obj_ado->insertar();
+									$obj_ado->mensaje();
+									header("refresh:1; url=../../frontend/vista/ado_registrar.php");
 		break;
 
-		case 'modificar_normal':	$obj_ado->modificar_normal();
-									header("Location: ../../frontend/vista/ado_menu.php");
+		case 'modificar_normal':	$obj_ado->resultado=$obj_ado->modificar_normal();
+									$obj_ado->mensaje();
+									header("refresh:1; url=../../frontend/vista/ado_menu.php");
 		break;
 
-		case 'modificar_restaurar':	$obj_ado->modificar_restaurar();
-									header("Location: ../../frontend/vista/ado_listarpapelera.php");
+		case 'modificar_restaurar':	$obj_ado->resultado=$obj_ado->modificar_restaurar();
+									$obj_ado->mensaje();
+									header("refresh:1; url=../../frontend/vista/ado_listarpapelera.php");
 		break;
 
-		case 'modificar_eliminar':	$obj_ado->modificar_eliminar();
-									header("Location: ../../frontend/vista/ado_listartodo.php");
+		case 'modificar_eliminar':	$obj_ado->resultado=$obj_ado->modificar_eliminar();
+									$obj_ado->mensaje();
+									header("refresh:1; url=../../frontend/vista/ado_listartodo.php");
 		break;
 
-		case 'modificar_datos':		$obj_ado->modificar_datos();
-									header("Location: ../../frontend/vista/menu_principal.php");
+		case 'modificar_datos':		$obj_ado->resultado=$obj_ado->modificar_datos();
+									$obj_ado->mensaje();
+									header("refresh:1; url=../../frontend/vista/menu_principal.php");
 		break;
 
-		case 'modificar_contrasena':$obj_ado->modificar_contrasena();
-									header("Location: ../../frontend/vista/menu_principal.php");
+		case 'modificar_contrasena':$obj_ado->resultado=$obj_ado->modificar_contrasena();
+									$obj_ado->mensaje();
+									header("refresh:1; url=../../frontend/vista/menu_principal.php");
 		break;
 
-		case 'eliminar':			$obj_ado->eliminar();
-									header("Location: ../../frontend/vista/ado_listarpapelera.php");
+		case 'eliminar':			$obj_ado->resultado=$obj_ado->eliminar();
+									$obj_ado->mensaje();
+									header("refresh:1; url=../../frontend/vista/ado_listarpapelera.php");
 		break;
 
 		case 'comprobar_datos':		$obj_ado->puntero=$obj_ado->comprobar_datos();
@@ -48,6 +55,7 @@
 									}
 									else
 									{
+										$obj_ado->mensaje();
 										header("Location: ../../frontend/vista/ado_olvidocontrasena.php");
 									}
 									

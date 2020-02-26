@@ -8,12 +8,14 @@
 
 	switch ($_REQUEST["ejecutar"])
 	{
-		case 'insertar':			$obj_emp->insertar();
-									header("Location: ../../frontend/vista/usu_sesion.php");
+		case 'insertar':			$obj_emp->resultado=$obj_emp->insertar();
+									$obj_emp->mensaje();
+									header("refresh:1; url=../../frontend/vista/usu_sesion.php");
 		break;
 
-		case 'modificar_normal':	$obj_emp->modificar_normal();
-									header("Location: ../../frontend/vista/emp_menu.php");
+		case 'modificar_normal':	$obj_emp->resultado=$obj_emp->modificar_normal();
+									$obj_emp->mensaje();
+									header("refresh:1; url=../../frontend/vista/emp_menu.php");
 		break;
 	}
 	

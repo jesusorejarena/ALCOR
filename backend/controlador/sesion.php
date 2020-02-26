@@ -20,6 +20,7 @@
 								$_SESSION['activo'] = true;
 								$_SESSION['codigo'] = $usuarios['cod_ado'];
 								$_SESSION['cargo'] = $usuarios['cod_car'];
+								$_SESSION["time"] = time();
 
 								header('Location: ../../frontend/vista/menu_principal.php');
 							}

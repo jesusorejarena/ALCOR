@@ -8,24 +8,29 @@
 
 	switch ($_REQUEST["ejecutar"])
 	{
-		case 'insertar':			$obj_per->insertar();
-									header("Location: ../../frontend/vista/per_registrar.php");
+		case 'insertar':			$obj_per->resultado=$obj_per->insertar();
+									$obj_per->mensaje();
+									header("refresh:1; url=../../frontend/vista/per_registrar.php");
 		break;
 
-		case 'modificar_normal':	$obj_per->modificar_normal();
-									header("Location: ../../frontend/vista/rol_menu.php");
+		case 'modificar_normal':	$obj_per->resultado=$obj_per->modificar_normal();
+									$obj_per->mensaje();
+									header("refresh:1; url=../../frontend/vista/rol_menu.php");
 		break;
 
-		case 'modificar_restaurar':	$obj_per->modificar_restaurar();
-									header("Location: ../../frontend/vista/per_listarpapelera.php");
+		case 'modificar_restaurar':	$obj_per->resultado=$obj_per->modificar_restaurar();
+									$obj_per->mensaje();
+									header("refresh:1; url=../../frontend/vista/per_listarpapelera.php");
 		break;
 
-		case 'modificar_eliminar':	$obj_per->modificar_eliminar();
-									header("Location: ../../frontend/vista/per_listartodo.php");
+		case 'modificar_eliminar':	$obj_per->resultado=$obj_per->modificar_eliminar();
+									$obj_per->mensaje();
+									header("refresh:1; url=../../frontend/vista/per_listartodo.php");
 		break;
 
-		case 'eliminar':			$obj_per->eliminar();
-									header("Location: ../../frontend/vista/per_listarpapelera.php");
+		case 'eliminar':			$obj_per->resultado=$obj_per->eliminar();
+									$obj_per->mensaje();
+									header("refresh:1; url=../../frontend/vista/per_listarpapelera.php");
 		break;
 	}
 	

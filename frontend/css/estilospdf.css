@@ -1,15 +1,15 @@
 /* Tablas de los PDF */
 
 .head {
-	background-color: #012E57;
-	color: #ffffff;
+	background-color: #ffffff;
+	color: #000000;
 	border: none;
 }
 
 .footer {
 	font-size: 15px;
-	background-color: #003C6B;
-	color: #ffffff;
+	background-color: #ffffff;
+	color: #000000;
 	border: none;
 }
 
