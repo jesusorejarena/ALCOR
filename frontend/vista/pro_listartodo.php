@@ -47,7 +47,6 @@
 									<th>Estatus</th>
 									<th>PDF</th>
 									<th>Editar</th>
-									<th>Restaurar</th>
 									<th>Eliminar</th>
 								</tr>
 							</thead>
@@ -75,7 +74,6 @@
 													<td>$producto[est_pro]</td>
 													<td><a class='$obj_pro->btn_pdf' href='pro_reportepdf.php?cod_pro=$producto[cod_pro]'><i class='icon ion-md-document'></i></a></td>
 													<td><a class='$obj_pro->btn_editar' href='pro_modificar.php?cod_pro=$producto[cod_pro]'><i class='icon ion-md-create'></i></a></td>
-													<td><button type='submit' class='$obj_pro->btn_restaurar' name='ejecutar' value='modificar_restaurar'><i class='icon ion-md-refresh'></i></button></td>
 													<td><button type='submit' class='$obj_pro->btn_eliminar' name='ejecutar' value='modificar_eliminar'><i class='icon ion-md-trash'></i></button></td>
 												</tr>
 											</form>

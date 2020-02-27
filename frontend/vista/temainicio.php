@@ -105,7 +105,8 @@
 									$empresa[nom_emp]<br>
 									$empresa[rif_emp] <br>
 									<a href='https://www.instagram.com/comalcorca/' target='_blank' class='btn btn-info'><i class='icon ion-logo-instagram' style='font-size: 32px;'></i></a> 
-									<a href='https://twitter.com/comalcorca' target='_blank' class='btn btn-info'><i class='icon ion-logo-twitter' style='font-size: 32px;'></i></a>
+									<a href='https://twitter.com/comalcorca' target='_blank' class='btn btn-info'><i class='icon ion-logo-twitter' style='font-size: 32px;'></i></a><br>
+									<a href='creadores.php' class='btn btn-info'>Creadores del Software AutoSIV</a>
 								</p>
 							</div>
 							<div class='col-4 text-right'>

@@ -59,10 +59,10 @@
 									dir_edo='$this->dir_edo',
 									tel_edo='$this->tel_edo',
 									cor_edo='$this->cor_edo',
-									rif_edo='$this->tip_edo',
+									tip_edo='$this->tip_edo',
 									rif_edo='$this->rif_edo',
 									act_edo='$act_edo',
-									est_edo='$this->est_edo',
+									est_edo='$this->est_edo'
 								where
 									cod_edo='$this->cod_edo';";
 

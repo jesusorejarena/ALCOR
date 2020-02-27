@@ -40,6 +40,11 @@
 										$obj_pro->mensaje();
 										header("refresh:1; url=../../frontend/vista/ven_menu.php");
 									}
+									else
+									{
+										$obj_pro->mensaje();
+										header("refresh:1; url=../../frontend/vista/ven_menu.php");
+									}
 		break;
 
 		case 'eliminar':			$obj_pro->resultado=$obj_pro->eliminar();

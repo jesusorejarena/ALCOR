@@ -32,31 +32,31 @@
 								<div class="col-12">
 									<div class="form-group">
 										<label for="nom_edo" class="<?php echo $obj_edo->for; ?>">Nombre:</label>
-										<input type="text" name="nom_edo" id="nom_edo" placeholder="Ejemplo: ALCOR C.A" pattern="[A-Za-z]" minlength="2" maxlength="50" required="" class="<?php echo $obj_edo->input_normal; ?>">
+										<input type="text" name="nom_edo" id="nom_edo" placeholder="Ejemplo: ALCOR C.A" minlength="2" maxlength="50" required="" class="<?php echo $obj_edo->input_normal; ?>">
 									</div>
 								</div>
 								<div class="col-12">
 									<div class="form-group">
 										<label for="des_edo" class="<?php echo $obj_edo->for; ?>">Descripción:</label>
-										<textarea name="des_edo" id="des_edo" placeholder="Ejemplo: Distribuidor de genericos" pattern="[A-Za-z]" minlength="3" maxlength="100" class="<?php echo $obj_edo->input_text; ?>"></textarea>
+										<textarea name="des_edo" id="des_edo" placeholder="Ejemplo: Distribuidor de genericos" minlength="3" maxlength="100" class="<?php echo $obj_edo->input_text; ?>"></textarea>
 									</div>
 								</div>
 								<div class="col-12">
 									<div class="form-group">
 										<label for="dir_edo" class="<?php echo $obj_edo->for; ?>">Dirección:</label>
-										<textarea name="dir_edo" id="dir_edo" placeholder="Ejemplo: La Concordia, Barrio el Carmen" pattern="[A-Za-z0-9]" minlength="3" maxlength="100" required="" class="<?php echo $obj_edo->input_text; ?>"></textarea>
+										<textarea name="dir_edo" id="dir_edo" placeholder="Ejemplo: La Concordia, Barrio el Carmen" minlength="3" maxlength="100" required="" class="<?php echo $obj_edo->input_text; ?>"></textarea>
 									</div>
 								</div>
 								<div class="col-12 col-md-6">
 									<div class="form-group">
 										<label for="tel_edo" class="<?php echo $obj_edo->for; ?>">Teléfono:</label>
-										<input type="text" name="tel_edo" id="tel_edo" placeholder="Ejemplo: 04241234567" pattern="[0-9]" minlength="11" maxlength="11" required="" class="<?php echo $obj_edo->input_normal; ?>">
+										<input type="text" name="tel_edo" id="tel_edo" placeholder="Ejemplo: 04241234567" pattern="[0-9]+" minlength="11" maxlength="11" required="" class="<?php echo $obj_edo->input_normal; ?>">
 									</div>
 								</div>
 								<div class="col-12 col-md-6">
 									<div class="form-group">
 										<label for="cor_edo" class="<?php echo $obj_edo->for; ?>">Correo:</label>
-										<input type="email" name="cor_edo" id="cor_edo" placeholder="Ejemplo: alcor@gmail.com" pattern="[A-Za-z0-9]" minlength="1" maxlength="100" required="" class="<?php echo $obj_edo->input_normal; ?>">
+										<input type="email" name="cor_edo" id="cor_edo" placeholder="Ejemplo: alcor@gmail.com" minlength="1" maxlength="100" required="" class="<?php echo $obj_edo->input_normal; ?>">
 									</div>
 								</div>
 								<div class="col-12 col-md-6">
@@ -73,7 +73,7 @@
 								<div class="col-12 col-md-6">
 									<div class="form-group">
 										<label for="rif_edo" class="<?php echo $obj_edo->for; ?>">RIF:</label>
-										<input type="text" name="rif_edo" id="rif_edo" placeholder="35161987-3" pattern="[A-Za-z0-9]" minlength="10" maxlength="10" required="" class="<?php echo $obj_edo->input_normal; ?>">
+										<input type="text" name="rif_edo" id="rif_edo" placeholder="35161987-3" minlength="10" maxlength="10" required="" class="<?php echo $obj_edo->input_normal; ?>">
 									</div>
 								</div>
 							</div>

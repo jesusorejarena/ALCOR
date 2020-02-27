@@ -36,7 +36,7 @@
 									<div class="form-group">
 										<input type="hidden" name="cod_ado" id="cod_ado" value="<?php echo $empleado['cod_ado']; ?>">
 										<label for="tel_ado" class="<?php echo $obj_ado->for; ?>">Teléfono:</label>
-										<input type="text" name="tel_ado" id="tel_ado" placeholder="Teléfono:" minlength="11" maxlength="11" required="" pattern="[A-Za-z0-9]" value="<?php echo $empleado['tel_ado']; ?>"  class="<?php echo $obj_ado->input_normal; ?>">
+										<input type="text" name="tel_ado" id="tel_ado" placeholder="Teléfono:" minlength="11" maxlength="11" required="" pattern="[0-9]+" value="<?php echo $empleado['tel_ado']; ?>"  class="<?php echo $obj_ado->input_normal; ?>">
 									</div>
 								</div>
 								<div class="col-12 col-md-8">
@@ -48,7 +48,7 @@
 								<div class="col-12 col-md-12">
 									<div class="form-group">
 										<label for="dir_ado" class="<?php echo $obj_ado->for; ?>">Dirección:</label>
-										<input type="text" name="dir_ado" id="dir_ado" placeholder="Dirección:" minlength="3" maxlength="100" required="" pattern="[A-Za-z0-9]" value="<?php echo $empleado['dir_ado']; ?>"  class="<?php echo $obj_ado->input_normal; ?>">
+										<input type="text" name="dir_ado" id="dir_ado" placeholder="Dirección:" minlength="3" maxlength="100" required="" value="<?php echo $empleado['dir_ado']; ?>"  class="<?php echo $obj_ado->input_normal; ?>">
 									</div>
 								</div>
 							</div>

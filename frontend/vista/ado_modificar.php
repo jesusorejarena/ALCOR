@@ -44,13 +44,13 @@
 									<div class="form-group">
 										<input type="hidden" name="cod_ado" id="cod_ado" value="<?php echo $empleado['cod_ado']; ?>">
 										<label for="nom_ado" class="<?php echo $obj_ado->for; ?>">Nombre:</label>
-										<input type="text" name="nom_ado" id="nom_ado" placeholder="Nombre:" minlength="3" maxlength="50" required="" pattern="[A-Za-z]" value="<?php echo $empleado['nom_ado']; ?>" class="<?php echo $obj_ado->input_normal; ?>">
+										<input type="text" name="nom_ado" id="nom_ado" placeholder="Nombre:" minlength="3" maxlength="50" required="" value="<?php echo $empleado['nom_ado']; ?>" class="<?php echo $obj_ado->input_normal; ?>">
 									</div>
 								</div>
 								<div class="col-12 col-md-6">
 									<div class="form-group">
 										<label for="ape_ado" class="<?php echo $obj_ado->for; ?>">Apellido:</label>
-										<input type="text" name="ape_ado" id="ape_ado" placeholder="Apellido:" minlength="3" maxlength="50" required="" pattern="[A-Za-z]" value="<?php echo $empleado['ape_ado']; ?>"  class="<?php echo $obj_ado->input_normal; ?>">
+										<input type="text" name="ape_ado" id="ape_ado" placeholder="Apellido:" minlength="3" maxlength="50" required="" value="<?php echo $empleado['ape_ado']; ?>"  class="<?php echo $obj_ado->input_normal; ?>">
 									</div>
 								</div>
 								<div class="col-12 col-md-6">
@@ -84,19 +84,19 @@
 								<div class="col-12 col-md-4">
 									<div class="form-group">
 										<label for="ced_ado" class="<?php echo $obj_ado->for; ?>">Cédula:</label>
-										<input type="text" name="ced_ado" id="ced_ado" placeholder="Cédula:" minlength="1" maxlength="8" required="" pattern="[0-9]" value="<?php echo $empleado['ced_ado']; ?>"  class="<?php echo $obj_ado->input_normal; ?>">
+										<input type="text" name="ced_ado" id="ced_ado" placeholder="Cédula:" minlength="1" maxlength="8" required="" pattern="[0-9]+" value="<?php echo $empleado['ced_ado']; ?>"  class="<?php echo $obj_ado->input_normal; ?>">
 									</div>
 								</div>
 								<div class="col-12 col-md-4">
 									<div class="form-group">
 										<label for="tel_ado" class="<?php echo $obj_ado->for; ?>">Teléfono:</label>
-										<input type="text" name="tel_ado" id="tel_ado" placeholder="Teléfono:" minlength="11" maxlength="11" required="" pattern="[0-9]" value="<?php echo $empleado['tel_ado']; ?>"  class="<?php echo $obj_ado->input_normal; ?>">
+										<input type="text" name="tel_ado" id="tel_ado" placeholder="Teléfono:" minlength="11" maxlength="11" required="" pattern="[0-9]+" value="<?php echo $empleado['tel_ado']; ?>"  class="<?php echo $obj_ado->input_normal; ?>">
 									</div>
 								</div>
 								<div class="col-12 col-md-6">
 									<div class="form-group">
 										<label for="cor_ado" class="<?php echo $obj_ado->for; ?>">Correo:</label>
-										<input type="email" name="cor_ado" id="cor_ado" placeholder="Correo:" minlength="1" maxlength="100" required="" pattern="[A-Za-z0-9]" value="<?php echo $empleado['cor_ado']; ?>"  class="<?php echo $obj_ado->input_normal; ?>">
+										<input type="email" name="cor_ado" id="cor_ado" placeholder="Correo:" minlength="1" maxlength="100" required="" value="<?php echo $empleado['cor_ado']; ?>"  class="<?php echo $obj_ado->input_normal; ?>">
 									</div>
 								</div>
 								<div class="col-12 col-md-6">
@@ -122,7 +122,7 @@
 								<div class="col-12 col-md-8">
 									<div class="form-group">
 										<label for="dir_ado" class="<?php echo $obj_ado->for; ?>">Dirección:</label>
-										<input type="text" name="dir_ado" id="dir_ado" placeholder="Dirección:" minlength="3" maxlength="100" required="" pattern="[A-Za-z0-9]" value="<?php echo $empleado['dir_ado']; ?>"  class="<?php echo $obj_ado->input_normal; ?>">
+										<input type="text" name="dir_ado" id="dir_ado" placeholder="Dirección:" minlength="3" maxlength="100" required="" value="<?php echo $empleado['dir_ado']; ?>"  class="<?php echo $obj_ado->input_normal; ?>">
 									</div>
 								</div>
 								<div class="col-12 col-md-4">

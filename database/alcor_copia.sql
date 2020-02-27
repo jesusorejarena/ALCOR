@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 27-02-2020 a las 09:21:55
+-- Tiempo de generación: 27-02-2020 a las 09:21:17
 -- Versión del servidor: 10.4.11-MariaDB
 -- Versión de PHP: 7.4.1
 
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `alcor_original`
+-- Base de datos: `alcor_copia`
 --
 
 -- --------------------------------------------------------
@@ -38,6 +38,16 @@ CREATE TABLE `cargo` (
   `est_car` enum('A','I') NOT NULL,
   `bas_car` enum('A','B') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `cargo`
+--
+
+INSERT INTO `cargo` (`cod_car`, `nom_car`, `cre_car`, `act_car`, `eli_car`, `res_car`, `est_car`, `bas_car`) VALUES
+(1, 'Administrador', '2020-02-27 03:34:30', NULL, NULL, NULL, 'A', 'A'),
+(2, 'Contadora', '2020-02-27 03:48:54', NULL, NULL, NULL, 'A', 'A'),
+(3, 'Vendedor', '2020-02-27 03:49:06', '2020-02-27 03:51:54', NULL, NULL, 'A', 'A'),
+(4, 'Recursos Humanos', '2020-02-27 03:51:37', NULL, '2020-02-27 03:52:12', '2020-02-27 03:52:34', 'A', 'A');
 
 --
 -- Disparadores `cargo`
@@ -63,6 +73,16 @@ CREATE TABLE `cargo_resp` (
   `est_car` enum('A','I') NOT NULL,
   `bas_car` enum('A','B') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `cargo_resp`
+--
+
+INSERT INTO `cargo_resp` (`cod_car`, `nom_car`, `cre_car`, `act_car`, `eli_car`, `res_car`, `est_car`, `bas_car`) VALUES
+(1, 'Administrador', '2020-02-27 03:34:30', NULL, NULL, NULL, 'A', 'A'),
+(2, 'Contadora', '2020-02-27 03:48:54', NULL, NULL, NULL, 'A', 'A'),
+(3, 'Vendedora', '2020-02-27 03:49:06', NULL, NULL, NULL, 'A', 'A'),
+(4, 'Recursos Humanos', '2020-02-27 03:51:37', NULL, NULL, NULL, 'A', 'A');
 
 -- --------------------------------------------------------
 
@@ -90,6 +110,14 @@ CREATE TABLE `empleado` (
   `est_ado` enum('A','I') NOT NULL,
   `bas_ado` enum('A','B') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `empleado`
+--
+
+INSERT INTO `empleado` (`cod_ado`, `nom_ado`, `ape_ado`, `gen_ado`, `nac_ado`, `tip_ado`, `ced_ado`, `tel_ado`, `cor_ado`, `cla_ado`, `dir_ado`, `cod_car`, `cre_ado`, `act_ado`, `eli_ado`, `res_ado`, `est_ado`, `bas_ado`) VALUES
+(1, 'Jesus', 'Orejarena', 'H', '2000-09-17', 'V', 29545545, '04147528826', 'jesusorejarena@gmail.com', '12345678', 'La Concordia', 1, '2020-02-27 03:34:30', '2020-02-27 03:48:03', NULL, NULL, 'A', 'A'),
+(2, 'David', 'Lozada', 'H', '1999-01-19', 'V', 27422823, '04141235673', 'thedavlozada@gmail.com', 'davisito', 'Barrio Obrero', 4, '2020-02-27 03:59:25', NULL, NULL, NULL, 'A', 'A');
 
 --
 -- Disparadores `empleado`
@@ -126,6 +154,14 @@ CREATE TABLE `empleado_resp` (
   `bas_ado` enum('A','B') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Volcado de datos para la tabla `empleado_resp`
+--
+
+INSERT INTO `empleado_resp` (`cod_ado`, `nom_ado`, `ape_ado`, `gen_ado`, `nac_ado`, `tip_ado`, `ced_ado`, `tel_ado`, `cor_ado`, `cla_ado`, `dir_ado`, `cod_car`, `cre_ado`, `act_ado`, `eli_ado`, `res_ado`, `est_ado`, `bas_ado`) VALUES
+(1, 'Jesus', 'Orejarena', 'H', '2000-09-17', 'V', 29545545, '04147528826', 'jesusorejarena@gmail.com', 'jesus1712', 'La Concordia', 1, '2020-02-27 03:34:30', NULL, NULL, NULL, 'A', 'A'),
+(2, 'David', 'Lozada', 'H', '1999-01-19', 'V', 27422823, '04141235673', 'thedavlozada@gmail.com', 'davisito', 'Barrio Obrero', 4, '2020-02-27 03:59:25', NULL, NULL, NULL, 'A', 'A');
+
 -- --------------------------------------------------------
 
 --
@@ -143,6 +179,13 @@ CREATE TABLE `empresa` (
   `hod_emp` varchar(19) DEFAULT NULL,
   `act_emp` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `empresa`
+--
+
+INSERT INTO `empresa` (`cod_emp`, `nom_emp`, `tel_emp`, `dir_emp`, `cor_emp`, `rif_emp`, `hou_emp`, `hod_emp`, `act_emp`) VALUES
+(1, 'Comercializadora ALCOR C.A', '+584147528826', 'Barrio El Carmen', 'alcor@gmail.com', 'J-30161557-3', ' 08:00 AM - 12:00 P', '02:00 PM - 06:00 PM', '2020-02-27 03:48:43');
 
 --
 -- Disparadores `empresa`
@@ -169,6 +212,13 @@ CREATE TABLE `empresa_resp` (
   `hod_emp` varchar(19) DEFAULT NULL,
   `act_emp` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `empresa_resp`
+--
+
+INSERT INTO `empresa_resp` (`cod_emp`, `nom_emp`, `tel_emp`, `dir_emp`, `cor_emp`, `rif_emp`, `hou_emp`, `hod_emp`, `act_emp`) VALUES
+(1, 'Comercializadora ALCOR C.A', '+584147528826', 'Barrio El Carmen', 'alcor@gmail.com', 'J-30161557-3', ' 08:00 AM - 12:00 P', '02:00 PM - 06:00 PM', NULL);
 
 -- --------------------------------------------------------
 
@@ -229,6 +279,17 @@ CREATE TABLE `modulo` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
+-- Volcado de datos para la tabla `modulo`
+--
+
+INSERT INTO `modulo` (`cod_mod`, `nom_mod`, `url_mod`, `cre_mod`, `act_mod`, `eli_mod`, `res_mod`, `est_mod`, `bas_mod`) VALUES
+(1, 'Empleados', 'ado_menu.php', '2020-02-27 03:52:59', '2020-02-27 03:53:38', NULL, NULL, 'I', 'A'),
+(2, 'Proveedores', 'edo_menu.php', '2020-02-27 03:53:03', NULL, NULL, NULL, 'A', 'A'),
+(3, 'Productos', 'pro_menu.php', '2020-02-27 03:53:09', NULL, NULL, NULL, 'A', 'A'),
+(4, 'Ventas', 'ven_menu.php', '2020-02-27 03:53:14', NULL, NULL, NULL, 'A', 'A'),
+(8, 'Formularios', 'for_menu.php', '2020-02-27 03:55:13', NULL, NULL, NULL, 'A', 'A');
+
+--
 -- Disparadores `modulo`
 --
 DELIMITER $$
@@ -254,6 +315,17 @@ CREATE TABLE `modulo_resp` (
   `bas_mod` enum('A','B') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Volcado de datos para la tabla `modulo_resp`
+--
+
+INSERT INTO `modulo_resp` (`cod_mod`, `nom_mod`, `url_mod`, `cre_mod`, `act_mod`, `eli_mod`, `res_mod`, `est_mod`, `bas_mod`) VALUES
+(1, 'Empleados', 'ado_menu.php', '2020-02-27 03:52:59', NULL, NULL, NULL, 'A', 'A'),
+(2, 'Proveedores', 'edo_menu.php', '2020-02-27 03:53:03', NULL, NULL, NULL, 'A', 'A'),
+(3, 'Productos', 'pro_menu.php', '2020-02-27 03:53:09', NULL, NULL, NULL, 'A', 'A'),
+(4, 'Ventas', 'ven_menu.php', '2020-02-27 03:53:14', NULL, NULL, NULL, 'A', 'A'),
+(5, 'Formularios', 'for_menu.php', '2020-02-27 03:55:13', NULL, NULL, NULL, 'A', 'A');
+
 -- --------------------------------------------------------
 
 --
@@ -271,6 +343,16 @@ CREATE TABLE `permiso` (
   `est_per` enum('A','I') NOT NULL,
   `bas_per` enum('A','B') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `permiso`
+--
+
+INSERT INTO `permiso` (`cod_per`, `cod_car`, `cod_mod`, `cre_per`, `act_per`, `eli_per`, `res_per`, `est_per`, `bas_per`) VALUES
+(1, 2, 4, '2020-02-27 03:54:11', NULL, NULL, NULL, 'A', 'A'),
+(2, 2, 3, '2020-02-27 03:54:21', NULL, NULL, NULL, 'A', 'A'),
+(3, 3, 3, '2020-02-27 03:54:27', NULL, NULL, NULL, 'A', 'A'),
+(4, 4, 8, '2020-02-27 03:56:54', NULL, NULL, NULL, 'A', 'A');
 
 --
 -- Disparadores `permiso`
@@ -298,6 +380,18 @@ CREATE TABLE `permiso_resp` (
   `bas_per` enum('A','B') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Volcado de datos para la tabla `permiso_resp`
+--
+
+INSERT INTO `permiso_resp` (`cod_per`, `cod_car`, `cod_mod`, `cre_per`, `act_per`, `eli_per`, `res_per`, `est_per`, `bas_per`) VALUES
+(1, 2, 4, '2020-02-27 03:54:11', NULL, NULL, NULL, 'A', 'A'),
+(2, 2, 3, '2020-02-27 03:54:21', NULL, NULL, NULL, 'A', 'A'),
+(3, 3, 3, '2020-02-27 03:54:27', NULL, NULL, NULL, 'A', 'A'),
+(4, 4, 8, '2020-02-27 03:56:54', NULL, NULL, NULL, 'A', 'A'),
+(5, 4, 8, '2020-02-27 03:56:59', NULL, NULL, NULL, 'A', 'A'),
+(6, 4, 8, '2020-02-27 03:57:04', NULL, NULL, NULL, 'A', 'A');
+
 -- --------------------------------------------------------
 
 --
@@ -318,6 +412,14 @@ CREATE TABLE `producto` (
   `est_pro` enum('A','I') NOT NULL,
   `bas_pro` enum('A','B') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `producto`
+--
+
+INSERT INTO `producto` (`cod_pro`, `nom_pro`, `des_pro`, `pre_pro`, `can_pro`, `cod_edo`, `cre_pro`, `act_pro`, `eli_pro`, `res_pro`, `est_pro`, `bas_pro`) VALUES
+(1, 'Clorooo', 'jabonoso', 180.00, 10.0, 2, '2020-02-27 04:14:36', NULL, NULL, NULL, 'A', 'A'),
+(2, 'Jabon liquido', 'jabon>', 123.00, 0.0, 1, '2020-02-27 04:15:03', '2020-02-27 04:16:18', NULL, NULL, 'A', 'A');
 
 --
 -- Disparadores `producto`
@@ -348,6 +450,14 @@ CREATE TABLE `producto_resp` (
   `bas_pro` enum('A','B') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Volcado de datos para la tabla `producto_resp`
+--
+
+INSERT INTO `producto_resp` (`cod_pro`, `nom_pro`, `des_pro`, `pre_pro`, `can_pro`, `cod_edo`, `cre_pro`, `act_pro`, `eli_pro`, `res_pro`, `est_pro`, `bas_pro`) VALUES
+(1, 'Clorooo', 'jabonoso', 180.00, 12.0, 2, '2020-02-27 04:14:36', NULL, NULL, NULL, 'A', 'A'),
+(2, 'Jabon liquido', 'jabon', 123.00, 42.0, 2, '2020-02-27 04:15:03', NULL, NULL, NULL, 'A', 'A');
+
 -- --------------------------------------------------------
 
 --
@@ -370,6 +480,14 @@ CREATE TABLE `proveedor` (
   `est_edo` enum('A','I') NOT NULL,
   `bas_edo` enum('A','B') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `proveedor`
+--
+
+INSERT INTO `proveedor` (`cod_edo`, `nom_edo`, `des_edo`, `dir_edo`, `tel_edo`, `cor_edo`, `tip_edo`, `rif_edo`, `cre_edo`, `act_edo`, `eli_edo`, `res_edo`, `est_edo`, `bas_edo`) VALUES
+(1, 'GeneMundos', 'genericooos', 'caracas', '04141243256', 'genemundo@gmail.com', 'V', '12312321-5', '2020-02-27 04:01:30', '2020-02-27 04:11:12', '2020-02-27 04:11:37', '2020-02-27 04:11:43', 'A', 'A'),
+(2, 'Los Andes', 'Gnericos', 'caracas', '01235921244', 'proc@gmail.com', 'V', '1231232131', '2020-02-27 04:14:04', NULL, NULL, NULL, 'A', 'A');
 
 --
 -- Disparadores `proveedor`
@@ -401,6 +519,14 @@ CREATE TABLE `proveedor_resp` (
   `est_edo` enum('A','I') NOT NULL,
   `bas_edo` enum('A','B') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Volcado de datos para la tabla `proveedor_resp`
+--
+
+INSERT INTO `proveedor_resp` (`cod_edo`, `nom_edo`, `des_edo`, `dir_edo`, `tel_edo`, `cor_edo`, `tip_edo`, `rif_edo`, `cre_edo`, `act_edo`, `eli_edo`, `res_edo`, `est_edo`, `bas_edo`) VALUES
+(1, 'GeneMundo', 'genericooos', 'caracas', '04141243256', 'genemundo@gmail.com', 'V', '12312321-', '2020-02-27 04:01:30', NULL, NULL, NULL, 'A', 'A'),
+(2, 'Los Andes', 'Gnericos', 'caracas', '01235921244', 'proc@gmail.com', 'V', '123123213', '2020-02-27 04:14:04', NULL, NULL, NULL, 'A', 'A');
 
 --
 -- Índices para tablas volcadas
@@ -531,37 +657,37 @@ ALTER TABLE `proveedor_resp`
 -- AUTO_INCREMENT de la tabla `cargo`
 --
 ALTER TABLE `cargo`
-  MODIFY `cod_car` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `cod_car` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `cargo_resp`
 --
 ALTER TABLE `cargo_resp`
-  MODIFY `cod_car` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `cod_car` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `empleado`
 --
 ALTER TABLE `empleado`
-  MODIFY `cod_ado` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `cod_ado` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `empleado_resp`
 --
 ALTER TABLE `empleado_resp`
-  MODIFY `cod_ado` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `cod_ado` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `empresa`
 --
 ALTER TABLE `empresa`
-  MODIFY `cod_emp` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `cod_emp` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `empresa_resp`
 --
 ALTER TABLE `empresa_resp`
-  MODIFY `cod_emp` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `cod_emp` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `formulario`
@@ -579,49 +705,49 @@ ALTER TABLE `formulario_resp`
 -- AUTO_INCREMENT de la tabla `modulo`
 --
 ALTER TABLE `modulo`
-  MODIFY `cod_mod` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `cod_mod` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de la tabla `modulo_resp`
 --
 ALTER TABLE `modulo_resp`
-  MODIFY `cod_mod` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `cod_mod` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `permiso`
 --
 ALTER TABLE `permiso`
-  MODIFY `cod_per` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `cod_per` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `permiso_resp`
 --
 ALTER TABLE `permiso_resp`
-  MODIFY `cod_per` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `cod_per` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `producto`
 --
 ALTER TABLE `producto`
-  MODIFY `cod_pro` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `cod_pro` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `producto_resp`
 --
 ALTER TABLE `producto_resp`
-  MODIFY `cod_pro` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `cod_pro` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `proveedor`
 --
 ALTER TABLE `proveedor`
-  MODIFY `cod_edo` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `cod_edo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `proveedor_resp`
 --
 ALTER TABLE `proveedor_resp`
-  MODIFY `cod_edo` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `cod_edo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Restricciones para tablas volcadas

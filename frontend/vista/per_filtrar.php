@@ -41,7 +41,7 @@
 								<div class="col-12">
 									<div class="form-group">
 										<label for="cod_per" class="<?php echo $obj_per->for; ?>">Código:</label>
-										<input type="text" name="cod_per" id="cod_per" placeholder="Código:" pattern="[0-9]"> class="<?php echo $obj_per->input_normal; ?>">
+										<input type="text" name="cod_per" id="cod_per" placeholder="Código:" pattern="[0-9]+"> class="<?php echo $obj_per->input_normal; ?>">
 									</div>
 								</div>
 								<div class="col-12 col-md-6">

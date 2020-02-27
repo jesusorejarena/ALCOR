@@ -31,19 +31,19 @@
 								<div class="col-12">
 									<div class="form-group">
 										<label for="cor_ado" class="<?php echo $obj_ado->for; ?>">Correo:</label>
-										<input type="email" name="cor_ado" id="cor_ado" placeholder="Correo:" minlength="1" maxlength="100" required="" pattern="[A-Za-z0-9]" class="<?php echo $obj_ado->input_normal; ?>">
+										<input type="email" name="cor_ado" id="cor_ado" placeholder="Correo:" minlength="1" maxlength="100" required="" class="<?php echo $obj_ado->input_normal; ?>">
 									</div>
 								</div>
 								<div class="col-12">
 									<div class="form-group">
 										<label for="ced_ado" class="<?php echo $obj_ado->for; ?>">Cédula:</label>
-										<input type="text" name="ced_ado" id="ced_ado" placeholder="Cédula:" minlength="8" maxlength="8" required="" pattern="[0-9]" class="<?php echo $obj_ado->input_normal; ?>">
+										<input type="text" name="ced_ado" id="ced_ado" placeholder="Cédula:" minlength="8" maxlength="8" required="" pattern="[0-9]+" class="<?php echo $obj_ado->input_normal; ?>">
 									</div>
 								</div>
 								<div class="col-12">
 									<div class="form-group">
 										<label for="tel_ado" class="<?php echo $obj_ado->for; ?>">Teléfono:</label>
-										<input type="text" name="tel_ado" id="tel_ado" placeholder="Teléfono:" minlength="11" maxlength="11" required="" pattern="[0-9]" class="<?php echo $obj_ado->input_normal; ?>">
+										<input type="text" name="tel_ado" id="tel_ado" placeholder="Teléfono:" minlength="11" maxlength="11" required="" pattern="[0-9]+" class="<?php echo $obj_ado->input_normal; ?>">
 									</div>
 								</div>
 								<div class="col-12">
@@ -55,7 +55,7 @@
 								<div class="col-12">
 									<div class="form-group">
 										<label for="cla_ado" class="<?php echo $obj_ado->for; ?>">Ingrese la Nueva Contraseña:</label>
-										<input type="password" name="cla_ado" id="cla_ado" placeholder="Ingrese la Nueva Contraseña:" minlength="8" maxlength="20" required="" pattern="[A-Za-z0-9]" class="<?php echo $obj_ado->input_normal; ?>">
+										<input type="password" name="cla_ado" id="cla_ado" placeholder="Ingrese la Nueva Contraseña:" minlength="8" maxlength="20" required="" class="<?php echo $obj_ado->input_normal; ?>">
 									</div>
 								</div>
 							</div>
