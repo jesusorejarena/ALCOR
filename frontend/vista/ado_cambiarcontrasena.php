@@ -35,14 +35,8 @@
 								<div class="col-12">
 									<div class="form-group">
 										<input type="hidden" name="cod_ado" id="cod_ado" value="<?php echo $empleado['cod_ado']; ?>">
-										<label for="cla_ado" class="<?php echo $obj_ado->for; ?>">Contraseña:</label>
-										<input type="password" name="cla_ado" id="cla_ado" placeholder="Contraseña:" minlength="8" maxlength="20" required="" class="<?php echo $obj_ado->input_normal; ?>">
-									</div>
-								</div>
-								<div class="col-12">
-									<div class="form-group">
-										<label for="cla_ado" class="<?php echo $obj_ado->for; ?>">Repita la Contraseña:</label>
-										<input type="password" name="cla_ado" id="cla_ado" placeholder="Repita la Contraseña:" minlength="8" maxlength="20" required="" class="<?php echo $obj_ado->input_normal; ?>">
+										<label for="cla_ado" class="<?php echo $obj_ado->for; ?>">Ingrese la Nueva Contraseña:</label>
+										<input type="password" name="cla_ado" id="cla_ado" placeholder="Ingrese la Nueva Contraseña:" minlength="8" maxlength="20" required="" class="<?php echo $obj_ado->input_normal; ?>">
 									</div>
 								</div>
 							</div>

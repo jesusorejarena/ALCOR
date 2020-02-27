@@ -32,13 +32,13 @@
 								<div class="col-12 col-md-6">
 									<div class="form-group">
 										<label for="cod_mod" class="<?php echo $obj_mod->for; ?>">Código:</label>
-										<input type="text" name="cod_mod" id="cod_mod" placeholder="Código:" class="<?php echo $obj_mod->input_normal; ?>">
+										<input type="text" name="cod_mod" id="cod_mod" placeholder="Código:" pattern="[0-9]" class="<?php echo $obj_mod->input_normal; ?>">
 									</div>
 								</div>
 								<div class="col-12 col-md-6">
 									<div class="form-group">
 										<label for="nom_mod" class="<?php echo $obj_mod->for; ?>">Nombre:</label>
-										<input type="text" name="nom_mod" id="nom_mod" placeholder="Nombre:" class="<?php echo $obj_mod->input_normal; ?>">
+										<input type="text" name="nom_mod" id="nom_mod" placeholder="Nombre:" pattern="[A-Za-z0-9]" class="<?php echo $obj_mod->input_normal; ?>">
 									</div>
 								</div>
 								<div class="col-12 col-md-6">

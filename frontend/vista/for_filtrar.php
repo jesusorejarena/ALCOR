@@ -32,31 +32,31 @@
 								<div class="col-12">
 									<div class="form-group">
 										<label for="cod_for" class="<?php echo $obj_for->for; ?>">Código:</label>
-										<input type="text" name="cod_for" id="cod_for" placeholder="Código:" class="<?php echo $obj_for->input_normal; ?>">
+										<input type="text" name="cod_for" id="cod_for" placeholder="Código:" pattern="[0-9]" class="<?php echo $obj_for->input_normal; ?>">
 									</div>
 								</div>
 								<div class="col-12 col-md-6">
 									<div class="form-group">
 										<label for="nom_for" class="<?php echo $obj_for->for; ?>">Nombre:</label>
-										<input type="text" name="nom_for" id="nom_for" placeholder="Nombre:" class="<?php echo $obj_for->input_normal; ?>">
+										<input type="text" name="nom_for" id="nom_for" placeholder="Nombre:" pattern="[A-Za-z0-9]" class="<?php echo $obj_for->input_normal; ?>">
 									</div>
 								</div>
 								<div class="col-12 col-md-6">
 									<div class="form-group">
 										<label for="ape_for" class="<?php echo $obj_for->for; ?>">Apellido:</label>
-										<input type="text" name="ape_for" id="ape_for" placeholder="Apellido:" class="<?php echo $obj_for->input_normal; ?>">
+										<input type="text" name="ape_for" id="ape_for" placeholder="Apellido:" pattern="[A-Za-z0-9]" class="<?php echo $obj_for->input_normal; ?>">
 									</div>
 								</div>
 								<div class="col-12 col-md-6">
 									<div class="form-group">
 										<label for="tel_for" class="<?php echo $obj_for->for; ?>">Teléfono:</label>
-										<input type="text" name="tel_for" id="tel_for" placeholder="Teléfono:" class="<?php echo $obj_for->input_normal; ?>">
+										<input type="text" name="tel_for" id="tel_for" placeholder="Teléfono:" pattern="[0-9]" class="<?php echo $obj_for->input_normal; ?>">
 									</div>
 								</div>
 								<div class="col-12 col-md-6">
 									<div class="form-group">
 										<label for="cor_for" class="<?php echo $obj_for->for; ?>">Correo:</label>
-										<input type="text" name="cor_for" id="cor_for" placeholder="Correo:"  class="<?php echo $obj_for->input_normal; ?>">
+										<input type="text" name="cor_for" id="cor_for" placeholder="Correo:" pattern="[A-Za-z0-9]"  class="<?php echo $obj_for->input_normal; ?>">
 									</div>
 								</div>
 							</div>

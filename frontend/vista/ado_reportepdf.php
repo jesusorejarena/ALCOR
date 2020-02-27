@@ -1,4 +1,3 @@
-
 <?php
 
 	// Cargamos la librería dompdf que hemos instalado en la carpeta dompdf

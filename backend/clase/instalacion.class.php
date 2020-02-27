@@ -1,19 +1,5 @@
 <?php 
 
-	/*
-
-		cod_car, nom_car
-
-		cod_car			INT(11)			NO		A_I		PK			->	Codigo del Cargo
-		nom_car			VARCHAR(30)		NO		Unique				->	Nombre del Cargo
-		cre_car			DATETIME		NO							->	Fecha de Creado del Cargo
-		act_car			DATETIME		SI							->	Fecha de Modificado del Cargo
-		eli_car			DATETIME		SI							->	Fecha de Eliminado del Cargo
-		res_car			DATETIME		SI							->	Fecha de Restauración del Cargo
-		bas_car			VARCHAR(1)		NO							->	Basura del Cargo
-		
-	*/
-
 	require_once("utilidad.class.php");
 
 	class instalacion extends utilidad

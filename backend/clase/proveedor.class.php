@@ -1,24 +1,4 @@
 <?php
-
-	/*
-
-		cod_edo, nom_edo, des_edo, dir_edo, tel_edo, cor_edo,tip_edo, rif_edo, cre_edo, act_edo, eli_edo, bas_edo
-
-		cod_edo				INT(11)			NO		A_I		PK		->	Codigo del Proveedor
-		nom_edo				VARCHAR(50)		NO		UNIQUE			->	Nombre del Proveedor
-		des_edo				VARCHAR(100)	SI						->	Descripcion del Proveedor
-		dir_edo				VARCHAR(100)	NO						->	Direccion del Proveedor
-		tel_edo				VARCHAR(12)		NO						->	Teléfono del Proveedor
-		cor_edo				VARCHAR(100)	NO		UNIQUE			->	Correo del Proveedor
-		tip_edo				VARCHAR(1)		NO						->	Tipo de Rif del Proveedor
-		rif_edo				VARCHAR(9)		NO		UNIQUE			->	RIF del Proveedor
-		cre_edo				DATETIME		NO						->	Fecha de Creación del Proveedor
-		act_edo				DATETIME  		SI						->	Fecha de Actulizacion del Proveedor
-		eli_edo				DATETIME  		SI						->	Fecha de Eliminado del Proveedor
-		est_edo				DATETIME  		SI						->	Fecha de Restaurar del Proveedor
-		bas_edo				VARCHAR(1) 		NO						->	Basura del Proveedor
-
-	*/
 	
 	require_once("utilidad.class.php");
 

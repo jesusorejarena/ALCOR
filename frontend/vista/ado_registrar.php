@@ -15,6 +15,8 @@
 
 ?>
 
+	<script src="../js/ado.validacion.js"></script>
+
 	<div class="<?php echo $obj_car->container; ?>">
 		<div class="row pb-3 mb-3 bg-white">
 			<div class="col-12 text-left">
@@ -33,13 +35,13 @@
 								<div class="col-12 col-md-6">
 									<div class="form-group">
 										<label for="nom_ado" class="<?php echo $obj_car->for; ?>">Nombre:</label>
-										<input type="text" name="nom_ado" id="nom_ado" placeholder="Nombre:" minlength="3" maxlength="50" required="" class="<?php echo $obj_car->input_normal; ?>">
+										<input type="text" name="nom_ado" id="nom_ado" placeholder="Nombre:" minlength="3" maxlength="50" required="" pattern="[A-Za-z0-9]" class="<?php echo $obj_car->input_normal; ?>">
 									</div>
 								</div>
 								<div class="col-12 col-md-6">
 									<div class="form-group">
 										<label for="ape_ado" class="<?php echo $obj_car->for; ?>">Apellido:</label>
-										<input type="text" name="ape_ado" id="ape_ado" placeholder="Apellido:" minlength="3" maxlength="50" required="" class="<?php echo $obj_car->input_normal; ?>">
+										<input type="text" name="ape_ado" id="ape_ado" placeholder="Apellido:" minlength="3" maxlength="50" required="" pattern="[A-Za-z0-9]" class="<?php echo $obj_car->input_normal; ?>">
 									</div>
 								</div>
 								<div class="col-12 col-md-6">
@@ -71,19 +73,19 @@
 								<div class="col-12 col-md-4">
 									<div class="form-group">
 										<label for="ced_ado" class="<?php echo $obj_car->for; ?>">Cédula:</label>
-										<input type="text" name="ced_ado" id="ced_ado" placeholder="Cédula:" minlength="1" maxlength="8" required="" class="<?php echo $obj_car->input_normal; ?>">
+										<input type="text" name="ced_ado" id="ced_ado" placeholder="Cédula:" minlength="1" maxlength="8" required="" pattern="[0-9]" class="<?php echo $obj_car->input_normal; ?>">
 									</div>
 								</div>
 								<div class="col-12 col-md-4">
 									<div class="form-group">
 										<label for="tel_ado" class="<?php echo $obj_car->for; ?>">Teléfono:</label>
-										<input type="text" name="tel_ado" id="tel_ado" placeholder="Teléfono:" minlength="11" maxlength="11" required="" class="<?php echo $obj_car->input_normal; ?>">
+										<input type="text" name="tel_ado" id="tel_ado" placeholder="Teléfono:" minlength="11" maxlength="11" required="" pattern="[0-9]" class="<?php echo $obj_car->input_normal; ?>">
 									</div>
 								</div>
 								<div class="col-12 col-md-6">
 									<div class="form-group">
 										<label for="cor_ado" class="<?php echo $obj_car->for; ?>">Correo:</label>
-										<input type="email" name="cor_ado" id="cor_ado" placeholder="Correo:" minlength="1" maxlength="100" required="" class="<?php echo $obj_car->input_normal; ?>">
+										<input type="email" name="cor_ado" id="cor_ado" placeholder="Correo:" minlength="1" maxlength="100" required="" pattern="[A-Za-z0-9]" class="<?php echo $obj_car->input_normal; ?>">
 									</div>
 								</div>
 								<div class="col-12 col-md-6">
@@ -115,7 +117,7 @@
 								<div class="col-12">
 									<div class="form-group">
 										<label for="dir_ado" class="<?php echo $obj_car->for; ?>">Dirección:</label>
-										<input type="text" name="dir_ado" id="dir_ado" placeholder="Dirección:" minlength="3" maxlength="100" required="" class="<?php echo $obj_car->input_normal; ?>">
+										<input type="text" name="dir_ado" id="dir_ado" placeholder="Dirección:" minlength="3" maxlength="100" required="" pattern="[A-Za-z0-9]" class="<?php echo $obj_car->input_normal; ?>">
 									</div>
 								</div>
 							</div>

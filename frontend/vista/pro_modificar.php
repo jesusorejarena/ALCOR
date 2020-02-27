@@ -44,25 +44,25 @@
 									<div class="form-group">
 										<input type="hidden" name="cod_pro" id="cod_pro" value="<?php echo $producto['cod_pro']; ?>">
 										<label for="nom_pro" class="<?php echo $obj_edo->for; ?>">Nombre:</label>
-										<input type="text" name="nom_pro" id="nom_pro" placeholder="Nombre:" minlength="2" maxlength="50" require="" value="<?php echo $producto['nom_pro'] ?>" class="<?php echo $obj_edo->input_normal; ?>">
+										<input type="text" name="nom_pro" id="nom_pro" placeholder="Nombre:" pattern="[A-Za-z]" minlength="2" maxlength="50" require="" value="<?php echo $producto['nom_pro'] ?>" class="<?php echo $obj_edo->input_normal; ?>">
 									</div>
 								</div>
 								<div class="col-12">
 									<div class="form-group">
 										<label for="des_pro" class="<?php echo $obj_edo->for; ?>">Descripción:</label>
-										<input type="" name="des_pro" id="des_pro" placeholder="Descripción:" minlength="3" maxlength="100" require="" value="<?php echo $producto['des_pro'] ?>>" class="<?php echo $obj_edo->input_text; ?>">
+										<input type="" name="des_pro" id="des_pro" placeholder="Descripción:" pattern="[A-Za-z]" minlength="3" maxlength="100" require="" value="<?php echo $producto['des_pro'] ?>>" class="<?php echo $obj_edo->input_text; ?>">
 									</div>
 								</div>
 								<div class="col-12 col-md-4">
 									<div class="form-group">
 										<label for="pre_pro" class="<?php echo $obj_edo->for; ?>">Precio:</label>
-										<input type="text" name="pre_pro" id="pre_pro" placeholder="Precio:" require="" value="<?php echo $producto['pre_pro'] ?>" class="<?php echo $obj_edo->input_normal; ?>">
+										<input type="text" name="pre_pro" id="pre_pro" placeholder="Precio:" pattern="[0-9]" require="" value="<?php echo $producto['pre_pro'] ?>" class="<?php echo $obj_edo->input_normal; ?>">
 									</div>
 								</div>
 								<div class="col-12 col-md-4">
 									<div class="form-group">
 										<label for="can_pro" class="<?php echo $obj_edo->for; ?>">Cantidad:</label>
-										<input type="text" name="can_pro" id="can_pro" placeholder="Cantidad:" require="" value="<?php echo $producto['cod_pro'] ?>" class="<?php echo $obj_edo->input_normal; ?>">
+										<input type="text" name="can_pro" id="can_pro" placeholder="Cantidad:" pattern="[0-9]" require="" value="<?php echo $producto['cod_pro'] ?>" class="<?php echo $obj_edo->input_normal; ?>">
 									</div>
 								</div>
 								<div class="col-12 col-md-4">

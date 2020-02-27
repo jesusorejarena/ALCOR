@@ -1,16 +1,4 @@
-<?php 
-
-	/*
-
-		cod_per, cod_mod, des_per, cod_mod, cod_opc
-
-		cod_per			INT(11)			NO		A_I		PK			->	Codigo del permiso
-		cod_mod			VARCHAR(20)		NO							->	Nombre del permiso
-		des_per			VARCHAR(50)		Si							->	Descripcion del permiso
-		cod_mod		VARCHAR(100)	NO							->	FKY del Cargo
-		cod_opc		VARCHAR(100)	NO							->	FKY de la Opcion
-		
-	*/
+<?php
 
 	require_once("utilidad.class.php");
 

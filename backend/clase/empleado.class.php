@@ -1,30 +1,5 @@
 <?php
 	
-	/*
-
-		cod_ado, nom_ado, ape_ado, ced_ado, tel_ado, cor_ado, dir_ado, cod_car, cre_ado, act_ado, eli_ado ,est_ado, bas_ado
-
-		cod_ado		INT(11)			NO		A_I		PK		->	Codigo del Empleado
-		nom_ado		VARCHAR(50)		NO						->	Nombre del Empleado
-		ape_ado		VARCHAR(50)		NO						->	Apellido del Empleado
-		gen_ado		VARCHAR(1)		NO						->	Genero del Empleado
-		nac_ado		DATE 			NO						->	Fecha de Nacimiento del Empleado
-		tip_ado		VARCHAR(1)		NO						->	Tipo de Cedula del Empleado
-		ced_ado		INT(8)			NO		UNIQUE			->	Cedula del Empleado
-		tel_ado		INT(11)			NO						->	Teléfono del Empleado
-		cor_ado		VARCHAR(100)	NO		UNIQUE			->	Correo del Empleado
-		cod_car		INT(11) 		NO						->	Cargo del Empleado
-		cla_ado		VARCHAR(40)		SI						->	Clave del Empleado Solo Vendedor
-		dir_ado		VARCHAR(100)	NO						->	Direccion del Empleado
-		cre_ado		DATETIME		NO						->	Fecha de Contrato del Empleado
-		act_ado		DATETIME  		SI						->	Fecha de Actulizacion del Empleado
-		eli_ado		DATETIME  		SI						->	Fecha de Eliminado del Empleado
-		res_ado		DATETIME		SI						->	Fecha de Restauración del Empleado
-		est_ado		VARCHAR(1) 		NO						->	Estatus del Empleado
-		bas_ado		VARCHAR(1) 		NO						->	Basura del Empleado
-
-	*/
-
 	require_once("utilidad.class.php");
 
 	class empleado extends utilidad

@@ -34,25 +34,25 @@
 								<div class="col-12">
 									<div class="form-group">
 										<label fo="nom_pro" class="<?php echo $obj_edo->for; ?>">Nombre:</label>
-										<input tye="text" name="nom_pro" id="nom_pro" placeholder="Nombre:" minlength="2" maxlength="50" required="" class="<?php echo $obj_edo->input_normal; ?>">
+										<input tye="text" name="nom_pro" id="nom_pro" placeholder="Nombre:" pattern="[A-Za-z]" minlength="2" maxlength="50" required="" class="<?php echo $obj_edo->input_normal; ?>">
 									</div>
 								</div>
 								<div class="col-12">
 									<div class="form-group">
 										<label for="des_pro" class="<?php echo $obj_edo->for; ?>">Descripción:</label>
-										<textarea name="des_pro" id="des_pro" placeholder="Descripción:" minlength="3" maxlength="100" class="<?php echo $obj_edo->input_text; ?>"></textarea>
+										<textarea name="des_pro" id="des_pro" placeholder="Descripción:" pattern="[A-Za-z]" minlength="3" maxlength="100" class="<?php echo $obj_edo->input_text; ?>"></textarea>
 									</div>
 								</div>
 								<div class="col-12 col-md-6">
 									<div class="form-group">
 										<label for="pre_pro" class="<?php echo $obj_edo->for; ?>">Precio:</label>
-										<input type="text" name="pre_pro" id="pre_pro" placeholder="Precio:" required="" class="<?php echo $obj_edo->input_normal; ?>">
+										<input type="text" name="pre_pro" id="pre_pro" placeholder="Precio:" pattern="[0-9]" required="" class="<?php echo $obj_edo->input_normal; ?>">
 									</div>
 								</div>
 								<div class="col-12 col-md-6">
 									<div class="form-group">
 										<label for="can_pro" class="<?php echo $obj_edo->for; ?>">Cantidad:</label>
-										<input type="text" name="can_pro" id="can_pro" placeholder="Cantidad:" required="" class="<?php echo $obj_edo->input_normal; ?>">
+										<input type="text" name="can_pro" id="can_pro" placeholder="Cantidad:" pattern="[0-9]" required="" class="<?php echo $obj_edo->input_normal; ?>">
 									</div>
 								</div>
 								<div class="col-12">

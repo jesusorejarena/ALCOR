@@ -33,21 +33,6 @@
 					<div class="card-body">
 						<form action="../../backend/controlador/modulo.php" method="POST">
 							<div class="row p-3">
-								<!--<div class="col-12 col-md-6">
-									<div class="form-group">
-										<label for="nom_mod" class="<?php //echo $obj_mod->for; ?>">Nombre:</label>
-										<select name="nom_mod" id="nom_mod" required="" class="<?php //echo $obj_mod->input_normal; ?>">
-											<option value="">Seleccione...</option>
-											<option value="Empresa">Empresa</option>
-											<option value="Roles">Roles</option>
-											<option value="Empleados">Empleados</option>
-											<option value="Proveedores">Proveedores</option>
-											<option value="Productos">Productos</option>
-											<option value="Venta">Venta</option>
-											<option value="Formularios">Formularios</option>
-										</select>
-									</div>
-								</div>-->
 								<div class="col-12">
 									<div class="form-group">
 										<label for="url_mod" class="<?php echo $obj_mod->for; ?>">URL:</label>

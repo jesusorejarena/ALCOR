@@ -32,37 +32,37 @@
 								<div class="col-12 col-md-2">
 									<div class="form-group">
 										<label for="cod_edo" class="<?php echo $obj_edo->for; ?>">Código:</label>
-										<input type="text" name="cod_edo" id="cod_edo" placeholder="Código:" class="<?php echo $obj_edo->input_normal; ?>">
+										<input type="text" name="cod_edo" id="cod_edo" placeholder="Código:" pattern="[0-9]" class="<?php echo $obj_edo->input_normal; ?>">
 									</div>
 								</div>
 								<div class="col-12 col-md-10">
 									<div class="form-group">
 										<label for="nom_edo" class="<?php echo $obj_edo->for; ?>">Nombre:</label>
-										<input type="text" name="nom_edo" id="nom_edo" placeholder="Nombre:" class="<?php echo $obj_edo->input_normal; ?>">
+										<input type="text" name="nom_edo" id="nom_edo" placeholder="Nombre:" pattern="[A-Za-z]" class="<?php echo $obj_edo->input_normal; ?>">
 									</div>
 								</div>
 								<div class="col-12">
 									<div class="form-group">
 										<label for="des_edo" class="<?php echo $obj_edo->for; ?>">Descripción:</label>
-										<textarea name="des_edo" id="des_edo" placeholder="Descripción:" class="<?php echo $obj_edo->input_text; ?>"></textarea>
+										<textarea name="des_edo" id="des_edo" placeholder="Descripción:" pattern="[A-Za-z]" class="<?php echo $obj_edo->input_text; ?>"></textarea>
 									</div>
 								</div>
 								<div class="col-12">
 									<div class="form-group">
 										<label for="dir_edo" class="<?php echo $obj_edo->for; ?>">Dirección:</label>
-										<input type="text" name="dir_edo" id="dir_edo" placeholder="Dirección:" class="<?php echo $obj_edo->input_normal; ?>">
+										<input type="text" name="dir_edo" id="dir_edo" placeholder="Dirección:" pattern="[A-Za-z0-9]" class="<?php echo $obj_edo->input_normal; ?>">
 									</div>
 								</div>
 								<div class="col-12 col-md-6">
 									<div class="form-group">
 										<label for="tel_edo" class="<?php echo $obj_edo->for; ?>">Teléfono:</label>
-										<input type="text" name="tel_edo" id="tel_edo" placeholder="Teléfono:" class="<?php echo $obj_edo->input_normal; ?>">
+										<input type="text" name="tel_edo" id="tel_edo" placeholder="Teléfono:" pattern="[0-9]" class="<?php echo $obj_edo->input_normal; ?>">
 									</div>
 								</div>
 								<div class="col-12 col-md-6">
 									<div class="form-group">
 										<label for="cor_edo" class="<?php echo $obj_edo->for; ?>">Correo:</label>
-										<input type="text" name="cor_edo" id="cor_edo" placeholder="Correo:" class="<?php echo $obj_edo->input_normal; ?>">
+										<input type="text" name="cor_edo" id="cor_edo" placeholder="Correo:" pattern="[A-Za-z0-9]" class="<?php echo $obj_edo->input_normal; ?>">
 									</div>
 								</div>
 								<div class="col-12 col-md-6">
@@ -79,7 +79,7 @@
 								<div class="col-12 col-md-6">
 									<div class="form-group">
 										<label for="rif_edo" class="<?php echo $obj_edo->for; ?>">RIF:</label>
-										<input type="text" name="rif_edo" id="rif_edo" placeholder="RIF:" class="<?php echo $obj_edo->input_normal; ?>">
+										<input type="text" name="rif_edo" id="rif_edo" placeholder="RIF:" pattern="[A-Za-z0-9]" class="<?php echo $obj_edo->input_normal; ?>">
 									</div>
 								</div>
 								<div class="col-12 col-md-6">

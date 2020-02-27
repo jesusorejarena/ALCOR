@@ -27,39 +27,39 @@
 			<div class="col-md-2"></div>
 			<div class="col-12 col-md-8">
 				<div class="<?php echo $obj_edo->card; ?>">
-					<h2 class="<?php echo $obj_edo->titulocard; ?>">Filtrar Producto 'Historial'</h2>
+					<h2 class="<?php echo $obj_edo->titulocard; ?>">Filtrar producto</h2>
 					<hr>
 					<div class="card-body">
-						<form action="pro_filtrado_resp.php" method="POST">
+						<form action="pro_filtrado.php" method="POST">
 							<div class="row p-3">
 								<div class="col-12">
 									<div class="form-group">
-										<label for="nom_pro" class="<?php echo $obj_edo->for; ?>">Nombre:</label>
-										<input type="text" name="nom_pro" id="nom_pro" placeholder="Nombre:" class="<?php echo $obj_edo->input_normal; ?>">
+										<label for="cod_pro" class="<?php echo $obj_edo->for; ?>">Código:</label>
+										<input type="text" name="cod_pro" id="cod_pro" pattern="[0-9]" placeholder="Código del producto:" class="<?php echo $obj_edo->input_normal; ?>">
 									</div>
 								</div>
 								<div class="col-12">
 									<div class="form-group">
-										<label for="ser_pro" class="<?php echo $obj_edo->for; ?>">Código del producto:</label>
-										<input type="text" name="ser_pro" id="ser_pro" placeholder="Número de código del producto:" class="<?php echo $obj_edo->input_normal; ?>">
+										<label for="nom_pro" class="<?php echo $obj_edo->for; ?>">Nombre:</label>
+										<input type="text" name="nom_pro" id="nom_pro" pattern="[A-Za-z]" placeholder="Nombre:" class="<?php echo $obj_edo->input_normal; ?>">
 									</div>
-								</div>
+								</div>								
 								<div class="col-12">
 									<div class="form-group">
 										<label for="des_pro" class="<?php echo $obj_edo->for; ?>">Descripción:</label>
-										<textarea name="des_pro" id="des_pro" placeholder="Descripción:" class="<?php echo $obj_edo->input_text; ?>"></textarea>
+										<textarea name="des_pro" id="des_pro" pattern="[A-Za-z0-9]" placeholder="Descripción:" class="<?php echo $obj_edo->input_text; ?>"></textarea>
 									</div>
 								</div>
 								<div class="col-12 col-md-6">
 									<div class="form-group">
 										<label for="pre_pro" class="<?php echo $obj_edo->for; ?>">Precio:</label>
-										<input type="text" name="pre_pro" id="pre_pro" placeholder="Precio:" class="<?php echo $obj_edo->input_normal; ?>">
+										<input type="text" name="pre_pro" id="pre_pro" pattern="[A-Za-z0-9]" placeholder="Precio:" class="<?php echo $obj_edo->input_normal; ?>">
 									</div>
 								</div>
 								<div class="col-12 col-md-6">
 									<div class="form-group">
 										<label for="can_pro" class="<?php echo $obj_edo->for; ?>">Cantidad:</label>
-										<input type="text" name="can_pro" id="can_pro" placeholder="Cantidad:" class="<?php echo $obj_edo->input_normal; ?>">
+										<input type="text" name="can_pro" id="can_pro" pattern="[0-9]" placeholder="Cantidad:" class="<?php echo $obj_edo->input_normal; ?>">
 									</div>
 								</div>
 								<div class="col-12">

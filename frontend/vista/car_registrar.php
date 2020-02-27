@@ -32,7 +32,7 @@
 								<div class="col-12">
 									<div class="form-group">
 										<label for="nom_car" class="<?php echo $obj_car->for; ?>">Nombre:</label>
-										<input type="text" name="nom_car" id="nom_car" placeholder="Nombre: " minlength="3" maxlength="50" class="<?php echo $obj_car->input_normal; ?>">
+										<input type="text" name="nom_car" id="nom_car" placeholder="Nombre: " pattern="[A-Za-z]" minlength="3" maxlength="50" class="<?php echo $obj_car->input_normal; ?>">
 									</div>
 								</div>
 							</div>

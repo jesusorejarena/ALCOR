@@ -1,22 +1,4 @@
 <?php
-
-	/*
-
-		cod_pro, nom_pro, des_pro, pre_pro, can_pro, cre_pro, act_pro, eli_pro, bas_pro, fky_proveedor
-
-		cod_pro				INT(11)			NO		A_I		PK		->	Codigo del Producto
-		ser_pro				INR(10)			NO		UNIQUE			->	Numero de Serie del Producto
-		nom_pro				VARCHAR(50)		NO						->	Nombre del Producto
-		des_pro				VARCHAR(100)	SI						->	Descripcion del Producto
-		pre_pro				FLOAT(11,2)		NO						->	Precio del Producto
-		can_pro				FLOAR(11,2)		NO						->	Cantidad del Producto
-		cre_pro				DATETIME		NO						->	Fecha de Creación del Producto
-		act_pro				DATETIME  		SI						->	Fecha de Actulizacion del Producto
-		eli_pro				DATETIME  		SI						->	Fecha de Eliminado del Producto
-		res_pro				DATETIME  		SI						->	Fecha de Restaurar del Producto
-		bas_pro				VARCHAR(1) 		NO						->	Basura del Producto
-
-	*/
 	
 	require_once("utilidad.class.php");
 

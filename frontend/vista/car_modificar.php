@@ -39,7 +39,7 @@
 									<div class="form-group">
 										<input type="hidden" name="cod_car" id="cod_car" value="<?php echo $cargo['cod_car']; ?>">
 										<label for="nom_car" class="<?php echo $obj_car->for; ?>">Nombre:</label>
-										<input type="text" name="nom_car" id="nom_car" placeholder="Nombre:" minlength="3" maxlength="50" require="" value="<?php echo $cargo['nom_car']; ?>" class="<?php echo $obj_car->input_normal; ?>">
+										<input type="text" name="nom_car" id="nom_car" placeholder="Nombre:" pattern="[A-Za-z]" minlength="3" maxlength="50" require="" value="<?php echo $cargo['nom_car']; ?>" class="<?php echo $obj_car->input_normal; ?>">
 									</div>
 								</div>
 								<div class="col-12 col-md-6">

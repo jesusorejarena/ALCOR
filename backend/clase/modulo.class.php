@@ -1,20 +1,4 @@
 <?php
-
-	/*
-
-		cod_mod, url_mod, cre_mod, act_mod, eli_mod, est_mod, bas_mod
-
-		cod_mod				INT(11)			NO		A_I		PK		->	Codigo del modulo
-		nom_mod				INR(10)			NO		UNIQUE			->	Numero de Serie del modulo
-		url_mod				VARCHAR(50)		NO						->	URL del modulo
-		cre_mod				DATETIME		NO						->	Fecha de Creación del modulo
-		act_mod				DATETIME  		SI						->	Fecha de Actulizacion del modulo
-		eli_mod				DATETIME  		SI						->	Fecha de Eliminado del modulo
-		res_mod				DATETIME  		SI						->	Fecha de Restaurar del modulo
-		est_mod				VARCHAR(1)		NO						->	Estatus del modulo
-		bas_mod				VARCHAR(1) 		NO						->	Basura del modulo
-
-	*/
 	
 	require_once("utilidad.class.php");
 

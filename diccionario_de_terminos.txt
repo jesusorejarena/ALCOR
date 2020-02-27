@@ -1,0 +1,213 @@
+---------------------------------------------------------------------------------------------------------------------------------------
+
+CARGO
+
+cod_car, nom_car, cre_car, act_car, eli_car, res_car, est_car, bas_car
+
+cod_car		INT(11)			NO		A_I		PK		->	Código del Cargo
+nom_car		VARCHAR(30)		NO		Unique			->	Nombre del Cargo
+cre_car		DATETIME		NO						->	Fecha de Creación del Cargo
+act_car		DATETIME		SI						->	Fecha de Modificación del Cargo
+eli_car		DATETIME		SI						->	Fecha de Eliminación del Cargo
+res_car		DATETIME		SI						->	Fecha de Restauración del Cargo
+est_car		ENUM('A','I')	NO						->	Estatus del Cargo
+bas_car		ENUM('A','B')	NO						->	Basura del Cargo
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+EMPLEADO
+
+cod_ado, nom_ado, ape_ado, gen_ado, nac_ado, tip_ado, ced_ado, tel_ado, cor_ado, cla_ado, dir_ado, cod_car, cre_ado, act_ado, eli_ado, res_ado, est_ado, bas_ado
+
+cod_ado		INT(11)			NO		A_I		PK		->	Código del Empleado
+nom_ado		VARCHAR(50)		NO						->	Nombre del Empleado
+ape_ado		VARCHAR(50)		NO						->	Apellido del Empleado
+gen_ado		ENUM('H','M')	NO						->	Genero del Empleado
+nac_ado		DATE 			NO						->	Fecha de Nacimiento del Empleado
+tip_ado		VARCHAR(1)		NO						->	Tipo de Cédula del Empleado
+ced_ado		INT(8)			NO		UNIQUE			->	Cédula del Empleado
+tel_ado		VARCHAR(11)		NO						->	Teléfono del Empleado
+cor_ado		VARCHAR(100)	NO		UNIQUE			->	Correo del Empleado
+cla_ado		VARCHAR(40)		SI						->	Clave del Empleado Solo Vendedor
+dir_ado		VARCHAR(100)	NO						->	Dirección del Empleado
+cod_car		INT(11) 		NO		INDEX			->	Cargo del Empleado
+cre_ado		DATETIME		NO						->	Fecha de Contrato del Empleado
+act_ado		DATETIME  		SI						->	Fecha de Actulización del Empleado
+eli_ado		DATETIME  		SI						->	Fecha de Eliminación del Empleado
+res_ado		DATETIME		SI						->	Fecha de Restauración del Empleado
+est_ado		ENUM('A','I')	NO						->	Estatus del Empleado
+bas_ado		ENUM('A','B')	NO						->	Basura del Empleado
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+EMPRESA
+
+cod_emp, nom_emp, tel_emp, dir_emp, cor_emp, rif_emp, hou_emp, hod_emp, act_emp
+
+cod_emp		INT(11)			NO		A_I		PK		->	Código de la Empresa
+nom_emp		VARCHAR(50)		NO						->	Nombre de la Empresa
+tel_emp		VARCHAR(13)		NO						->	Teléfono de la Empresa
+dir_emp		VARCHAR(100)	NO						->	Dirección de la Empresa
+cor_emp		VARCHAR(100)	NO						->	Correo de la Empresa
+rif_emp		VARCHAR(12)	 	NO						->	RIF de la Empresa
+hou_emp		VARCHAR(19) 	NO						->	Horario 1 de la Empresa
+hod_emp		VARCHAR(19) 	SI						->	Horario 2 de la Empresa
+act_emp		DATETIME	 	SI						->	Fecha de Actulización de la Empresa
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+FORMULARIO
+
+cod_for, nom_for, ape_for, tel_for, cor_for, asu_for, cre_for
+
+cod_for		INT(11)			NO		A_I		PK		->	Código del Formulario
+nom_for		VARCHAR(50)		SI						->	Nombre del Formulario
+ape_for		VARCHAR(50)		SI						->	Apellido del Formulario
+tel_for		VARCHAR(11)		SI						->	Teléfono del Formulario
+cor_for		VARCHAR(100)	NO						->	Correo del Formulario
+asu_for		VARCHAR(100) 	NO						->	Asunto del Formulario
+cre_for		DATETIME		NO						->	Fecha de Creación del Formulario
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+MODULO
+
+cod_mod, nom_mod, url_mod, cre_mod, act_mod, eli_mod, est_mod, bas_mod
+
+cod_mod		INT(11)			NO		A_I		PK		->	Código del Módulo
+nom_mod		INR(10)			NO		UNIQUE			->	Numero del Módulo
+url_mod		VARCHAR(50)		NO						->	URL del Módulo
+cre_mod		DATETIME		NO						->	Fecha de Creación del Módulo
+act_mod		DATETIME  		SI						->	Fecha de Actulización del Módulo
+eli_mod		DATETIME  		SI						->	Fecha de Eliminación del Módulo
+res_mod		DATETIME  		SI						->	Fecha de Restaurar del Módulo
+est_mod		ENUM('A','I')	NO						->	Estatus del Módulo
+bas_mod		ENUM('A','B')	NO						->	Basura del Módulo
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+PERMISO
+
+cod_per, cod_car, cod_mod, cod_opc, cre_per, act_per, eli_per, est_per, bas_per
+
+cod_per		INT(11)			NO		A_I		PK		->	Código del Permiso
+cod_car		INT(11)			NO		UNIQUE			->	Código del Cargo
+cod_mod		INT(11)			NO		UNIQUE			->	Código del Módulo
+cre_per		DATETIME		NO						->	Fecha de Creación del Permiso
+act_per		DATETIME  		SI						->	Fecha de Actulización del Permiso
+eli_per		DATETIME  		SI						->	Fecha de Eliminación del Permiso
+res_per		DATETIME  		SI						->	Fecha de Restaurar del Permiso
+est_per		ENUM('A','I')	NO						->	Estatus del Permiso
+bas_per		ENUM('A','B')	NO						->	Basura del Permiso
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+PRODUCTO
+
+cod_pro, nom_pro, des_pro, pre_pro, can_pro, cod_edo, cre_pro, act_pro, eli_pro, est_pro, bas_pro
+
+cod_pro		INT(11)			NO		A_I		PK		->	Código del Producto
+nom_pro		VARCHAR(50)		NO						->	Nombre del Producto
+des_pro		VARCHAR(100)	SI						->	Descripción del Producto
+pre_pro		FLOAT(11,2)		NO						->	Precio del Producto
+can_pro		FLOAR(11,1)		NO						->	Cantidad del Producto
+cod_edo		INT(11)			NO						->	Codigo del Proveedor
+cre_pro		DATETIME		NO						->	Fecha de Creación del Producto
+act_pro		DATETIME  		SI						->	Fecha de Actulización del Producto
+eli_pro		DATETIME  		SI						->	Fecha de Eliminación del Producto
+res_pro		DATETIME  		SI						->	Fecha de Restaurar del Producto
+est_pro		ENUM('A','I')	NO						->	Estatus del Producto
+bas_pro		ENUM('A','B')	NO						->	Basura del Producto
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+PROVEEDOR
+
+cod_edo, nom_edo, des_edo, dir_edo, tel_edo, cor_edo, tip_edo, rif_edo, cre_edo, act_edo, eli_edo, est_edo, bas_edo
+
+cod_edo		INT(11)			NO		A_I		PK		->	Código del Proveedor
+nom_edo		VARCHAR(50)		NO		UNIQUE			->	Nombre del Proveedor
+des_edo		VARCHAR(100)	SI						->	Descripción del Proveedor
+dir_edo		VARCHAR(100)	NO						->	Dirección del Proveedor
+tel_edo		VARCHAR(11)		NO						->	Teléfono del Proveedor
+cor_edo		VARCHAR(100)	NO		UNIQUE			->	Correo del Proveedor
+tip_edo		VARCHAR(1)		NO						->	Tipo de Rif del Proveedor
+rif_edo		VARCHAR(10)		NO		UNIQUE			->	RIF del Proveedor
+cre_edo		DATETIME		NO						->	Fecha de Creación del Proveedor
+act_edo		DATETIME  		SI						->	Fecha de Actulización del Proveedor
+eli_edo		DATETIME  		SI						->	Fecha de Eliminación del Proveedor
+est_edo		DATETIME  		SI						->	Fecha de Restaurar del Proveedor
+est_edo		ENUM('A','I')	NO						->	Estatus del Proveedor
+bas_edo		ENUM('A','B')	NO						->	Basura del Proveedor
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+Nombres de las Tablas
+
+car		-> Cargo
+ado		-> Cargo
+emo		-> Empleado
+for		-> Formulario
+mod		-> Módulo
+per		-> Permiso
+pro		-> Producto
+edo		-> Venta
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+Nombres de las variables de los campos
+
+cod		-> Código
+nom		-> Nombre
+ape		-> Apellido
+gen		-> Genero
+nac		-> Fecha de Nacimiento
+ced		-> Cédula
+tel		-> Teléfono
+cla		-> Clave
+hou		-> Horario 1
+hod		-> Horario 2
+asu		-> Asunto
+url		-> URL
+pre		-> Precio
+can		-> Cantidad
+des		-> Descripción
+dir		-> Dirección
+cor		-> Correa
+tip		-> Tipo/Nacionalidad
+rif		-> RIF
+cre		-> Fecha de Creación
+act		-> Fecha de Actulización
+eli		-> Fecha de Eliminación
+res		-> Fecha de Restaurar
+est		-> Estatus
+bas		-> Basura
+
+---------------------------------------------------------------------------------------------------------------------------------------
