@@ -8,29 +8,26 @@
 		$obj_mod = new modulo;
 		$obj_per = new permiso;
 
-		if ($_SESSION['cargo']>=2)
-		{
-			$obj_per->cod_car=$_SESSION['cargo'];
-			$obj_per->puntero=$obj_per->listar_menu();
-			
+		if ($_SESSION['cargo'] >= 2) {
 
-			while(($permisos=$obj_per->extraer_dato())>0)
-			{
-				
-				$obj_mod->nom_mod=$menu;
-				$obj_mod->contador=$obj_mod->listar_comprobar();
-				
-							
-				if ($modulos=$obj_mod->contando()>0) {
-					
-				}
-				else
-				{
-					header("Location: menu_principal.php");
-				}
-				
+			// busca los codigos del cargo en permisos
+			$obj_per->cod_car = $_SESSION['cargo'];
+			$obj_per->puntero = $obj_per->listar_menu();
+			$permiso = $obj_per->extraer_dato();
+
+			// el codigo del modulo del permiso se lo asigna al query en el modulo
+			$obj_mod->cod_mod = $permiso['cod_mod'];
+			$obj_mod->puntero = $obj_mod->listar_menu();
+			$modulo = $obj_mod->extraer_dato();
+
+			//compara el nombre del modulo con el nombre del modulo por parametro
+			if($modulo['nom_mod'] == $menu ){
+
+			}else{
+				header("Location: menu_principal.php");
 			}
 		}
+
 	}
 
 	function comprobaradmin()
@@ -150,16 +147,22 @@
 											}
 											else
 											{	
+												// verifica el cargo
 												if ($_SESSION['cargo']>=2)
 												{
+													// asigna el cargo sesion al codigo de permiso
 													$obj_per->cod_car=$_SESSION['cargo'];
 													$obj_per->puntero=$obj_per->listar_menu();
 
+													//hace el ciclo
 													while (($permiso=$obj_per->extraer_dato())>0)
 													{
+														// asigna el codigo del modulo de permiso
 														$obj_mod->cod_mod=$permiso['cod_mod'];
 														$obj_mod->puntero=$obj_mod->listar_menu();
 														$modulo=$obj_mod->extraer_dato();
+
+														// extrae los nombres y url de la tabla modulo con el codigo del modulo de permiso
 
 														echo "
 															
@@ -167,6 +170,8 @@
 																<a href='$modulo[url_mod]' class='nav-link text-center texto-nav'>$modulo[nom_mod]</a>
 															</li>
 														";
+
+														// termina el ciclo
 													}
 												}
 											}
