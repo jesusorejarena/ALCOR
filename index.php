@@ -1,6 +1,4 @@
 <?php 
 
-	header("Location: frontend/vista/inicio.php");
+	header("Location: frontend/view/inicio.php");
 	exit;
-
-?>
