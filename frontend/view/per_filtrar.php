@@ -1,55 +1,45 @@
 <?php
 
-//session
-
-require_once("tema.php");
+require_once("tema_session.php");
 require_once("../../backend/class/permiso.class.php");
 require_once("../../backend/class/cargo.class.php");
 require_once("../../backend/class/modulo.class.php");
 
 $obj_per = new permiso;
-$obj_per->classBootstrap();
 $obj_per->puntero = $obj_per->filter();
 
 $obj_car = new cargo;
-$obj_car->puntero = $obj_car->getAllActive();
+$obj_car->puntero = $obj_car->getAll();
 
 $obj_mod = new modulo;
-$obj_mod->puntero = $obj_mod->getAllActive();
+$obj_mod->puntero = $obj_mod->getAll();
 
-encabezado("Filtrar Permiso");
+headerr("Filtrar Permisos");
 
-check("Roles");
+/* check("Roles"); */
 
 ?>
 
-<div class="<?php echo $obj_per->container; ?>">
-	<div class="row pb-3 mb-3 bg-white">
-		<div class="col-12 text-left">
-			<button class="<?php echo $obj_per->btn_atras; ?>" onClick="window.location.href='rol_menu.php'"><i
-					class="icon ion-md-arrow-round-back"></i></button>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-md-2"></div>
-		<div class="col-12 col-md-8">
-			<div class="<?php echo $obj_per->card; ?>">
-				<h2 class="<?php echo $obj_per->titulocard; ?>">Filtrar Permiso</h2>
-				<hr>
-				<div class="card-body">
-					<form action="per_filtrado.php" method="POST">
-						<div class="row p-3">
+<!-- Formulario -->
+<div class="container p-3 p-md-2">
+	<a class="btn btn-success btn-lg" href="rol_menu.php"><i class="fas fa-arrow-circle-left"></i></a>
+	<div class="row justify-content-center">
+		<div class="col-12 col-md-6 p-2">
+			<div class="card rounded">
+				<h4 class="card-title text-center pt-4">Filtrar Permisos</h4>
+				<form action="per_filtrado.php" method="POST">
+					<div class="card-body">
+						<div class="row">
 							<div class="col-12">
 								<div class="form-group">
-									<label for="cod_per" class="<?php echo $obj_per->for; ?>">Código:</label>
-									<input type="text" name="cod_per" id="cod_per" placeholder="Código:" pattern="[0-9]+">
-									class="<?php echo $obj_per->input_normal; ?>">
+									<label for="cod_per">Código:</label>
+									<input type="text" name="cod_per" id="cod_per" class="form-control" placeholder="Código" />
 								</div>
 							</div>
 							<div class="col-12 col-md-6">
 								<div class="form-group">
-									<label for="cod_car" class="<?php echo $obj_per->for; ?>">Cargo:</label>
-									<select name="cod_car" id="cod_car" class="<?php echo $obj_per->input_normal; ?>">
+									<label for="fky_cargo">Cargo:</label>
+									<select name="fky_cargo" id="fky_cargo" class="form-control">
 										<option value="">Seleccione...</option>
 										<?php while (($cargo = $obj_car->extractData()) > 0) {
 											if ($cargo['cod_car'] == 1 || $cargo['nom_car'] == 'Administrador') {
@@ -63,8 +53,8 @@ check("Roles");
 							</div>
 							<div class="col-12 col-md-6">
 								<div class="form-group">
-									<label for="cod_mod" class="<?php echo $obj_per->for; ?>">Módulo:</label>
-									<select name="cod_mod" id="cod_mod" class="<?php echo $obj_per->input_normal; ?>">
+									<label for="fky_modulo">Módulo:</label>
+									<select name="fky_modulo" id="fky_modulo" class="form-control">
 										<option value="">Seleccione...</option>
 										<?php while (($modulo = $obj_mod->extractData()) > 0) {
 											echo "<option value='$modulo[cod_mod]'>Menú de $modulo[nom_mod]</option>";
@@ -75,9 +65,9 @@ check("Roles");
 							</div>
 							<div class="col-12 col-md-6">
 								<div class="form-group">
-									<label for="est_per" class="<?php echo $obj_per->for; ?>">Activo/Inactivo:</label>
-									<select name="est_per" id="est_per" class="<?php echo $obj_per->input_normal; ?>">
-										<option value="">General</option>
+									<label for="est_per">Estatus:</label>
+									<select name="est_per" id="est_per" class="form-control">
+										<option value="">Todos</option>
 										<option value="A">Activo</option>
 										<option value="I">Inactivo</option>
 									</select>
@@ -85,39 +75,28 @@ check("Roles");
 							</div>
 							<div class="col-12 col-md-6">
 								<div class="form-group">
-									<label for="bas_per" class="<?php echo $obj_per->for; ?>">Activo/Papelera:</label>
-									<select name="bas_per" id="bas_per" class="<?php echo $obj_per->input_normal; ?>">
-										<option value="">General</option>
+									<label for="bas_per">Estado:</label>
+									<select name="bas_per" id="bas_per" class="form-control">
+										<option value="">Todos</option>
 										<option value="A">Activo</option>
-										<option value="B">En papelera</option>
+										<option value="B">Eliminado</option>
 									</select>
 								</div>
 							</div>
 						</div>
-						<div class="row p-3 text-center">
-							<div class="col-6">
-								<div class="form-group">
-									<button type="reset" name="run" id="run" value="limpiar"
-										class="<?php echo $obj_per->btn_limpiar; ?>">Limpiar</button>
-								</div>
-							</div>
-							<div class="col-6">
-								<div class="form-group">
-									<button type="submit" name="run" id="run" value="filter"
-										class="<?php echo $obj_per->btn_enviar; ?>">Filtrar</button>
-								</div>
-							</div>
-						</div>
-					</form>
-				</div>
+					</div>
+					<div class="card-footer d-flex justify-content-between">
+						<button type="reset" class="btn btn-success">Limpiar</button>
+						<button class="btn btn-primary">Filtrar</button>
+					</div>
+				</form>
 			</div>
 		</div>
-		<div class="col-md-2"></div>
 	</div>
 </div>
 
 <?php
 
-pie();
+footer();
 
 ?>

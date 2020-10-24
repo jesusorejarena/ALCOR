@@ -1,86 +1,65 @@
 <?php
 
-//session
-
-require_once("tema.php");
+require_once("tema_session.php");
 require_once("../../backend/class/cargo.class.php");
 
 $obj_car = new cargo;
-$obj_car->classBootstrap();
-
 $cod_car = $_REQUEST['cod_car'];
 
 $obj_car->assignValue();
 $obj_car->puntero = $obj_car->getByCode();
 $cargo = $obj_car->extractData();
 
-encabezado("Modificar Cargo");
+headerr("Modificar Cargo");
 
-check("Roles");
+/* check("Roles"); */
 
 ?>
 
-<div class="<?php echo $obj_car->container; ?>">
-	<div class="row pb-3 mb-3 bg-white">
-		<div class="col-12 text-left">
-			<button class="<?php echo $obj_car->btn_atras; ?>" onClick="window.location.href='rol_menu.php'"><i
-					class="icon ion-md-arrow-round-back"></i></button>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-md-2"></div>
-		<div class="col 12 col-md-8">
-			<div class="<?php echo $obj_car->card; ?>">
-				<h2 class="<?php echo $obj_car->titulocard; ?>">Modificar Cargo</h2>
-				<hr>
-				<div class="card-body">
-					<form action="../../backend/controller/cargo.php" method="POST">
-						<div class="row p-3">
+<!-- Formulario -->
+<div class="container p-3 p-md-2">
+	<a class="btn btn-success btn-lg" href="rol_menu.php"><i class="fas fa-arrow-circle-left"></i></a>
+	<div class="row justify-content-center">
+		<div class="col-12 col-md-6 p-2">
+			<div class="card rounded">
+				<h2 class="card-title text-center pt-4">Modificar Cargo</h2>
+				<form action="../../backend/controller/cargo.php" method="POST" class="was-validation" novalidate>
+					<div class="card-body">
+						<div class="row">
 							<div class="col-12 col-md-6">
 								<div class="form-group">
 									<input type="hidden" name="cod_car" id="cod_car" value="<?php echo $cargo['cod_car']; ?>">
-									<label for="nom_car" class="<?php echo $obj_car->for; ?>">Nombre:</label>
-									<input type="text" name="nom_car" id="nom_car" placeholder="Nombre:" minlength="3" maxlength="50"
-										require="" value="<?php echo $cargo['nom_car']; ?>" class="<?php echo $obj_car->input_normal; ?>">
+									<label for="alfanumerico">Nombre:</label>
+									<input type="text" name="nom_car" id="alfanumerico" class="form-control" placeholder="Nombre" value="<?php echo $cargo['nom_car']; ?>" />
+									<small id="alfanumericoDiv" class="invalid-feedback"></small>
 								</div>
 							</div>
 							<div class="col-12 col-md-6">
 								<div class="form-group">
-									<label for="est_car" class="<?php echo $obj_car->for; ?>">Estatus:</label>
-									<select name="est_car" id="est_car" required="" class="<?php echo $obj_car->input_normal; ?>">
-										<option value="">Seleccione...</option>
+									<label for="estatus">Estatus:</label>
+									<select name="est_car" id="estatus" required="" class="form-control">
 										<?php $seleccionado = ($cargo["est_car"] == "A") ? "selected" : ""; ?>
 										<option <?php echo $seleccionado; ?> value="A">Activo</option>
 										<?php $seleccionado = ($cargo["est_car"] == "I") ? "selected" : ""; ?>
 										<option <?php echo $seleccionado; ?> value="I">Inactivo</option>
 									</select>
+									<small id="estatusDiv" class="invalid-feedback"></small>
 								</div>
 							</div>
 						</div>
-						<div class="row p-3 text-center">
-							<div class="col-6">
-								<div class="form-group">
-									<button type="reset" name="run" id="run" value="limpiar"
-										class="<?php echo $obj_car->btn_limpiar; ?>">Limpiar</button>
-								</div>
-							</div>
-							<div class="col-6">
-								<div class="form-group">
-									<button type="submit" name="run" id="run" value="update"
-										class="<?php echo $obj_car->btn_enviar; ?>">Modificar</button>
-								</div>
-							</div>
-						</div>
-					</form>
-				</div>
+					</div>
+					<div class="card-footer d-flex justify-content-between">
+						<button type="reset" class="btn btn-success">Limpiar</button>
+						<button type="submit" class="btn btn-primary" name="run" value="update">Guardar</button>
+					</div>
+				</form>
 			</div>
 		</div>
-		<div class="col-md-2"></div>
 	</div>
 </div>
 
 <?php
 
-pie();
+footer();
 
 ?>

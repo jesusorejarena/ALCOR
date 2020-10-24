@@ -1,125 +1,94 @@
 <?php
 
-//session
-
-require_once("tema.php");
+require_once("tema_session.php");
 require_once("../../backend/class/empresa.class.php");
 
 $obj_emp = new empresa;
-$obj_emp->classBootstrap();
 
 $obj_emp->assignValue();
 $obj_emp->puntero = $obj_emp->getByCode();
 $empresa = $obj_emp->extractData();
 
-encabezado("Modificar Datos de la Empresa");
+headerr("Modificar - Empresa");
 
-checkadmin();
+/* checkAdmin(); */
 
 ?>
 
-<div class="<?php echo $obj_emp->container; ?>">
-	<div class="row pb-3 mb-3 bg-white">
-		<div class="col-12 text-left">
-			<button class="<?php echo $obj_emp->btn_atras; ?>" onClick="window.location.href='emp_menu.php'"><i
-					class="icon ion-md-arrow-round-back"></i></button>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-md-2"></div>
-		<div class="col-12 col-md-8">
-			<div class="<?php echo $obj_emp->card; ?>">
-				<h2 class="<?php echo $obj_emp->titulocard; ?>">Modificar Datos de la Empresa</h2>
-				<hr>
-				<div class="card-body">
-					<form action="../../backend/controller/empresa.php" method="POST">
-						<div class="row p-3">
+<!-- Formulario -->
+<div class="container p-3 p-md-2">
+	<a class="btn btn-success btn-lg" href="inicio.php"><i class="fas fa-arrow-circle-left"></i></a>
+	<div class="row justify-content-center">
+		<div class="col-12 col-md-6 p-2">
+			<div class="card rounded">
+				<h2 class="card-title text-center pt-4">Datos de la empresa</h2>
+				<form action="../../backend/controller/empresa.php" method="POST">
+					<input type="hidden" name="cod_emp" id="cod_emp" value="<?php echo $empresa['cod_emp']; ?>">
+					<div class="card-body">
+						<div class="row">
 							<div class="col-12">
 								<div class="form-group">
-									<input type="hidden" name="cod_emp" id="cod_emp" value="<?php echo $empresa['cod_emp']; ?>">
-									<label for="nom_emp" class="<?php echo $obj_emp->for; ?>">Nombre:</label>
-									<input type="text" name="nom_emp" id="nom_emp" placeholder="Nombre:" minlength="3" maxlength="50"
-										required="" value="<?php echo $empresa['nom_emp']; ?>"
-										class="<?php echo $obj_emp->input_normal; ?>">
+									<label for="nombre">Nombre:</label>
+									<input type="text" name="nom_emp" id="nombre" class="form-control" value=" <?php echo $empresa['nom_emp']; ?>" placeholder="Nombre" />
+									<small id="nombreDiv" class="invalid-feedback"></small>
 								</div>
 							</div>
 							<div class="col-12 col-md-6">
 								<div class="form-group">
-									<label for="tel_emp" class="<?php echo $obj_emp->for; ?>">Teléfono:</label>
-									<input type="text" name="tel_emp" id="tel_emp" placeholder="Teléfono:" minlength="11" maxlength="13"
-										required="" value="<?php echo $empresa['tel_emp']; ?>"
-										class="<?php echo $obj_emp->input_normal; ?>">
-									<small id="hou_emp" class="<?php echo $obj_emp->small; ?>">Ejemplo: +584147528826</small>
+									<label for="telefono">Teléfono:</label>
+									<input type="text" name="tel_emp" id="telefono" class="form-control" value=" <?php echo $empresa['tel_emp']; ?>" placeholder="Teléfono" />
+									<small id="telefonoDiv" class="invalid-feedback"></small>
 								</div>
 							</div>
 							<div class="col-12 col-md-6">
 								<div class="form-group">
-									<label for="rif_emp" class="<?php echo $obj_emp->for; ?>">RIF:</label>
-									<input type="text" name="rif_emp" id="rif_emp" placeholder="RIF:" minlength="12" maxlength="12"
-										required="" value="<?php echo $empresa['rif_emp']; ?>"
-										class="<?php echo $obj_emp->input_normal; ?>">
-									<small id="rif_emp" class="<?php echo $obj_emp->small; ?>">Ejemplo: J-30161557-3</small>
+									<label for="rif">RIF:</label>
+									<input type="text" name="rif_emp" id="rif" class="form-control" value=" <?php echo $empresa['rif_emp']; ?>" placeholder="Teléfono" />
+									<small id="rifDiv" class="invalid-feedback"></small>
 								</div>
 							</div>
 							<div class="col-12">
 								<div class="form-group">
-									<label for="dir_emp" class="<?php echo $obj_emp->for; ?>">Dirección:</label>
-									<input type="text" name="dir_emp" id="dir_emp" placeholder="Dirección:" minlength="3" maxlength="100"
-										required="" value="<?php echo $empresa['dir_emp']; ?>"
-										class="<?php echo $obj_emp->input_normal; ?>">
+									<label for="direccion">Dirección:</label>
+									<input type="text" name="dir_emp" id="direccion" class="form-control" value=" <?php echo $empresa['dir_emp']; ?>" placeholder="Dirección" />
+									<small id="direccionDiv" class="invalid-feedback"></small>
 								</div>
 							</div>
 							<div class="col-12">
 								<div class="form-group">
-									<label for="cor_emp" class="<?php echo $obj_emp->for; ?>">Correo:</label>
-									<input type="text" name="cor_emp" id="cor_emp" placeholder="Correo:" minlength="3" maxlength="100"
-										required="" value="<?php echo $empresa['cor_emp']; ?>"
-										class="<?php echo $obj_emp->input_normal; ?>">
+									<label for="correo">Correo:</label>
+									<input type="email" name="cor_emp" id="correo" class="form-control" value=" <?php echo $empresa['cor_emp']; ?>" placeholder="Correo" />
+									<small id="correoDiv" class="invalid-feedback"></small>
 								</div>
 							</div>
 							<div class="col-12 col-md-6">
 								<div class="form-group">
-									<label for="hou_emp" class="<?php echo $obj_emp->for; ?>">Horario Uno:</label>
-									<input type="text" name="hou_emp" id="hou_emp" placeholder="Horario Uno:" minlength="19"
-										maxlength="19" required="" value="<?php echo $empresa['hou_emp']; ?>"
-										class="<?php echo $obj_emp->input_normal; ?>">
-									<small id="hou_emp" class="<?php echo $obj_emp->small; ?>">Ejemplo: 08:00 AM - 12:00 PM</small>
+									<label for="horario1">Horario Uno:</label>
+									<input type="text" name="hou_emp" id="horario1" class="form-control" value=" <?php echo $empresa['hou_emp']; ?>" placeholder="Horario Uno" />
+									<small id="horario1Div" class="invalid-feedback"></small>
 								</div>
 							</div>
 							<div class="col-12 col-md-6">
 								<div class="form-group">
-									<label for="hod_emp" class="<?php echo $obj_emp->for; ?>">Horario Dos:</label>
-									<input type="text" name="hod_emp" id="hod_emp" placeholder="Horario Dos:" minlength="19"
-										maxlength="19" value="<?php echo $empresa['hod_emp']; ?>"
-										class="<?php echo $obj_emp->input_normal; ?>">
-									<small id="hod_emp" class="<?php echo $obj_emp->small; ?>">Ejemplo: 02:00 PM - 06:00 PM</small>
+									<label for="horario2">Horario Dos:</label>
+									<input type="text" name="hod_emp" id="horario2" class="form-control" value=" <?php echo $empresa['hod_emp']; ?>" placeholder="Horario Dos" />
+									<small id="horario2Div" class="invalid-feedback"></small>
 								</div>
 							</div>
 						</div>
-						<div class="row p-3 text-center">
-							<div class="col-6">
-								<div class="form-group">
-									<button type="reset" name="run" id="run" value="limpiar"
-										class="<?php echo $obj_emp->btn_limpiar; ?>">Limpiar</button>
-								</div>
-							</div>
-							<div class="col-6">
-								<div class="form-group">
-									<button type="submit" name="run" id="run" value="update"
-										class="<?php echo $obj_emp->btn_enviar; ?>">Modificar</button>
-								</div>
-							</div>
-						</div>
-					</form>
-				</div>
+					</div>
+					<div class="card-footer d-flex justify-content-between">
+						<button type="reset" class="btn btn-success">Limpiar</button>
+						<button type="submit" class="btn btn-primary" name="run" value="update">Guardar</button>
+					</div>
+				</form>
 			</div>
 		</div>
-		<div class="col-md-2"></div>
 	</div>
 </div>
 
 <?php
 
-pie();
+footer();
 
 ?>

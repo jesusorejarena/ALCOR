@@ -1,146 +1,66 @@
 <?php
 
-//session
+require_once("tema_session.php");
 
-require_once("tema.php");
-require_once("../../backend/class/cargo.class.php");
+headerr("Menú de Configuración");
 
-$obj_car = new cargo;
-$obj_car->classBootstrap();
-
-encabezado("Menú de Configuración");
-
-check("Configuración");
+/* check("Configuración"); */
 
 ?>
 
-<div class="<?php echo $obj_car->container; ?>">
-	<h1 class="<?php echo $obj_car->titulos; ?>">Menú de Configuración</h1>
-	<div class="row">
-		<div class="col-md-1"></div>
-		<div class="col-12 col-md-10">
-			<div class="row">
-				<div class="col-12 col-md-8">
-					<div class="<?php echo $obj_car->card; ?>">
-						<h1 class="<?php echo $obj_car->titulocard; ?>">Historial</h1>
-						<hr>
-						<div class="card-body">
-							<div class="row p-1 m-1">
-								<div class="col-6">
-									<h3>Cargos:</h3>
-								</div>
-								<div class="col-3">
-									<button class="<?php echo $obj_car->btn_enviarg; ?>"
-										onClick="window.location.href='car_listartodo_resp.php'">Lista</button>
-								</div>
-								<div class="col-3">
-									<button class="<?php echo $obj_car->btn_enviarg; ?>"
-										onClick="window.location.href='car_filterBackup.php'">Filtrar</button>
-								</div>
-							</div>
-							<div class="row p-1 m-1">
-								<div class="col-6">
-									<h3>Módulos:</h3>
-								</div>
-								<div class="col-3">
-									<button class="<?php echo $obj_car->btn_enviarg; ?>"
-										onClick="window.location.href='mod_listartodo_resp.php'">Lista</button>
-								</div>
-								<div class="col-3">
-									<button class="<?php echo $obj_car->btn_enviarg; ?>"
-										onClick="window.location.href='mod_filterBackup.php'">Filtrar</button>
-								</div>
-							</div>
-							<div class="row p-1 m-1">
-								<div class="col-6">
-									<h3>Permisos:</h3>
-								</div>
-								<div class="col-3">
-									<button class="<?php echo $obj_car->btn_enviarg; ?>"
-										onClick="window.location.href='per_listartodo_resp.php'">Lista</button>
-								</div>
-								<div class="col-3">
-									<button class="<?php echo $obj_car->btn_enviarg; ?>"
-										onClick="window.location.href='per_filterBackup.php'">Filtrar</button>
-								</div>
-							</div>
-							<div class="row p-1 m-1">
-								<div class="col-6">
-									<h3>Empleados:</h3>
-								</div>
-								<div class="col-3">
-									<button class="<?php echo $obj_car->btn_enviarg; ?>"
-										onClick="window.location.href='ado_listartodo_resp.php'">Lista</button>
-								</div>
-								<div class="col-3">
-									<button class="<?php echo $obj_car->btn_enviarg; ?>"
-										onClick="window.location.href='ado_filterBackup.php'">Filtrar</button>
-								</div>
-							</div>
-							<div class="row p-1 m-1">
-								<div class="col-6">
-									<h3>Proveedores:</h3>
-								</div>
-								<div class="col-3">
-									<button class="<?php echo $obj_car->btn_enviarg; ?>"
-										onClick="window.location.href='edo_listartodo_resp.php'">Lista</button>
-								</div>
-								<div class="col-3">
-									<button class="<?php echo $obj_car->btn_enviarg; ?>"
-										onClick="window.location.href='edo_filterBackup.php'">Filtrar</button>
-								</div>
-							</div>
-							<div class="row p-1 m-1">
-								<div class="col-6">
-									<h3>Productos:</h3>
-								</div>
-								<div class="col-3">
-									<button class="<?php echo $obj_car->btn_enviarg; ?>"
-										onClick="window.location.href='pro_listartodo_resp.php'">Lista</button>
-								</div>
-								<div class="col-3">
-									<button class="<?php echo $obj_car->btn_enviarg; ?>"
-										onClick="window.location.href='pro_filterBackup.php'">Filtrar</button>
-								</div>
-							</div>
-							<div class="row p-1 m-1">
-								<div class="col-6">
-									<h3>Formularios:</h3>
-								</div>
-								<div class="col-3">
-									<button class="<?php echo $obj_car->btn_enviarg; ?>"
-										onClick="window.location.href='for_listartodo_resp.php'">Lista</button>
-								</div>
-								<div class="col-3">
-									<button class="<?php echo $obj_car->btn_enviarg; ?>"
-										onClick="window.location.href='for_filterBackup.php'">Filtrar</button>
-								</div>
-							</div>
-						</div>
+<div class="container-fluid p-3">
+	<h2 class="text-center p-3">Cuenta</h2>
+	<div class="row justify-content-center">
+		<div class="col-12 col-md-4">
+			<div class="card rounded px-3 py-4">
+				<h3 class="card-title text-center">Configuración del Sistema</h3>
+				<div class="card-body">
+					<h5 class="pt-2">Cargos:</h5>
+					<div class="row">
+						<div class="col-6"><a class="btn btn-success btn-block" href="car_listartodo_resp.php">Lista</a></div>
+						<div class="col-6"><a class="btn btn-success btn-block" href="car_filtrar_resp.php">Filtrar</a></div>
+					</div>
+					<h5 class="pt-2">Permisos:</h5>
+					<div class="row">
+						<div class="col-6"><a class="btn btn-success btn-block" href="per_listartodo_resp.php">Lista</a></div>
+						<div class="col-6"><a class="btn btn-success btn-block" href="per_filtrar_resp.php">Filtrar</a></div>
+					</div>
+					<h5 class="pt-2">Empleados:</h5>
+					<div class="row">
+						<div class="col-6"><a class="btn btn-success btn-block" href="ado_listartodo_resp.php">Lista</a></div>
+						<div class="col-6"><a class="btn btn-success btn-block" href="ado_filtrar_resp.php">Filtrar</a></div>
+					</div>
+					<h5 class="pt-2">Proveedores:</h5>
+					<div class="row">
+						<div class="col-6"><a class="btn btn-success btn-block" href="edo_listartodo_resp.php">Lista</a></div>
+						<div class="col-6"><a class="btn btn-success btn-block" href="edo_filtrar_resp.php">Filtrar</a></div>
+					</div>
+					<h5 class="pt-2">Productos:</h5>
+					<div class="row">
+						<div class="col-6"><a class="btn btn-success btn-block" href="pro_listartodo_resp.php">Lista</a></div>
+						<div class="col-6"><a class="btn btn-success btn-block" href="pro_filtrar_resp.php">Filtrar</a></div>
+					</div>
+					<h5 class="pt-2">Formularios:</h5>
+					<div class="row">
+						<div class="col-6"><a class="btn btn-success btn-block" href="for_listartodo_resp.php">Lista</a></div>
+						<div class="col-6"><a class="btn btn-success btn-block" href="for_filtrar_resp.php">Filtrar</a></div>
 					</div>
 				</div>
-				<div class="col-12 col-md-4">
-					<div class="<?php echo $obj_car->card; ?>">
-						<h1 class="<?php echo $obj_car->titulocard; ?>">Ajustes</h1>
-						<hr>
-						<div class="card-body">
-							<div class="row p-1 m-1">
-								<div class="col-12 p-1 m-1 text-center">
-									<a href="../../database/respaldo/respaldo_db.php"
-										class="<?php echo $obj_car->btn_enviarg; ?>">Respaldar BBDD</a>
-								</div>
-							</div>
-						</div>
-					</div>
+			</div>
+		</div>
+		<div class="col-12 col-md-4">
+			<div class="card rounded px-3 py-4">
+				<h3 class="card-title text-center">Base de Datos</h3>
+				<div class="card-body">
+					<a class="btn btn-outline-danger btn-block" href="../../database/respaldo/respaldo_db.php">Respaldar</a>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
 
-
 <?php
 
-pie();
+footer();
 
 ?>

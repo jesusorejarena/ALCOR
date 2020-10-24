@@ -21,19 +21,16 @@ switch ($_REQUEST["run"]) {
 
 	case 'restore':
 		$obj_edo->resultado = $obj_edo->restore();
-		$obj_edo->message();
-		header("refresh:1; url=../../frontend/view/edo_listarpapelera.php");
+		header("Location: ../../frontend/view/edo_listarpapelera.php");
 		break;
 
 	case 'firstDelete':
 		$obj_edo->resultado = $obj_edo->firstDelete();
-		$obj_edo->message();
-		header("refresh:1; url=../../frontend/view/edo_listartodo.php");
+		header("Location: ../../frontend/view/edo_listartodo.php");
 		break;
 
 	case 'delete':
 		$obj_edo->resultado = $obj_edo->delete();
-		$obj_edo->message();
-		header("refresh:1; url=../../frontend/view/edo_listarpapelera.php");
+		header("Location: ../../frontend/view/edo_listarpapelera.php");
 		break;
 }

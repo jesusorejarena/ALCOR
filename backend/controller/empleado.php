@@ -21,14 +21,12 @@ switch ($_REQUEST["run"]) {
 
 	case 'restore':
 		$obj_ado->resultado = $obj_ado->restore();
-		$obj_ado->message();
-		header("refresh:1; url=../../frontend/view/ado_listarpapelera.php");
+		header("Location : ../../frontend/view/ado_listarpapelera.php");
 		break;
 
 	case 'firstDelete':
 		$obj_ado->resultado = $obj_ado->firstDelete();
-		$obj_ado->message();
-		header("refresh:1; url=../../frontend/view/ado_listartodo.php");
+		header("Location : ../../frontend/view/ado_listartodo.php");
 		break;
 
 	case 'updateData':
@@ -45,8 +43,7 @@ switch ($_REQUEST["run"]) {
 
 	case 'delete':
 		$obj_ado->resultado = $obj_ado->delete();
-		$obj_ado->message();
-		header("refresh:1; url=../../frontend/view/ado_listarpapelera.php");
+		header("Location : ../../frontend/view/ado_listarpapelera.php");
 		break;
 
 	case 'checkData':
@@ -57,7 +54,7 @@ switch ($_REQUEST["run"]) {
 			$obj_ado->cod_ado = $empleado['cod_ado'];
 			$obj_ado->updatePassword();
 
-			header("Location: ../../frontend/view/usu_sesion.php");
+			header("Location: ../../frontend/view/usu_login.php");
 		} else {
 			$obj_ado->message();
 			header("Location: ../../frontend/view/ado_olvidocontrasena.php");

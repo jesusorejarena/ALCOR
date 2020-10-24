@@ -16,7 +16,7 @@ class empleado extends utilidad
 	public $cor_ado;
 	public $cla_ado;
 	public $dir_ado;
-	public $cod_car;
+	public $fky_cargo;
 	public $est_ado;
 	public $bas_ado;
 
@@ -36,7 +36,7 @@ class empleado extends utilidad
 								cor_ado, 
 								cla_ado, 
 								dir_ado, 
-								cod_car, 
+								fky_cargo, 
 								cre_ado,
 								est_ado,
 								bas_ado)
@@ -51,7 +51,7 @@ class empleado extends utilidad
 								'$this->cor_ado',  
 								'$this->cla_ado', 
 								'$this->dir_ado', 
-								'$this->cod_car', 
+								'$this->fky_cargo', 
 								'$cre_ado',
 								'A',
 								'A');";
@@ -75,7 +75,7 @@ class empleado extends utilidad
 									cor_ado='$this->cor_ado',
 									cla_ado='$this->cla_ado',
 									dir_ado='$this->dir_ado',
-									cod_car='$this->cod_car',
+									fky_cargo='$this->fky_cargo',
 									act_ado='$act_ado',
 									est_ado='$this->est_ado'
 								WHERE
@@ -165,7 +165,7 @@ class empleado extends utilidad
 
 	function getSession($cor_ado, $cla_ado)
 	{
-		$this->que_bda = "SELECT cod_ado, cor_ado, cla_ado, cod_car, est_ado, bas_ado 
+		$this->que_bda = "SELECT cod_ado, cor_ado, cla_ado, fky_cargo, est_ado, bas_ado 
 									FROM 
 										empleado 
 									WHERE 
@@ -199,7 +199,7 @@ class empleado extends utilidad
 		$filter7 = ($this->tel_ado != "") ? "AND tel_ado LIKE '%$this->tel_ado%'" : "";
 		$filter8 = ($this->cor_ado != "") ? "AND cor_ado LIKE '%$this->cor_ado%'" : "";
 		$filter9 = ($this->dir_ado != "") ? "AND dir_ado LIKE '%$this->dir_ado%'" : "";
-		$filter10 = ($this->cod_car != "") ? "AND cod_car='$this->cod_car'" : "";
+		$filter10 = ($this->fky_cargo != "") ? "AND fky_cargo='$this->fky_cargo'" : "";
 		$filter11 = ($this->est_ado != "") ? "AND est_ado='$this->est_ado'" : "";
 		$filter12 = ($this->bas_ado != "") ? "AND bas_ado='$this->bas_ado'" : "";
 
@@ -241,7 +241,7 @@ class empleado extends utilidad
 		$filter7 = ($this->tel_ado != "") ? "AND tel_ado LIKE '%$this->tel_ado%'" : "";
 		$filter8 = ($this->cor_ado != "") ? "AND cor_ado LIKE '%$this->cor_ado%'" : "";
 		$filter9 = ($this->dir_ado != "") ? "AND dir_ado LIKE '%$this->dir_ado%'" : "";
-		$filter10 = ($this->cod_car != "") ? "AND cod_car='$this->cod_car'" : "";
+		$filter10 = ($this->fky_cargo != "") ? "AND fky_cargo='$this->fky_cargo'" : "";
 		$filter11 = ($this->est_ado != "") ? "AND est_ado='$this->est_ado'" : "";
 		$filter12 = ($this->bas_ado != "") ? "AND bas_ado='$this->bas_ado'" : "";
 

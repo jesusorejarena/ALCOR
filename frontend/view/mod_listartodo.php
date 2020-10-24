@@ -1,72 +1,60 @@
 <?php
 
-//session
-
-require_once("tema.php");
+require_once("tema_session.php");
 require_once("../../backend/class/modulo.class.php");
 
 $obj_mod = new modulo;
-$obj_mod->classBootstrap();
 $obj_mod->puntero = $obj_mod->getAll();
 
-encabezado("Lista de Módulos");
+headerr("Lista de Módulos");
 
-check("Roles");
+/* check("Roles"); */
 
 ?>
 
-<div class="<?php echo $obj_mod->container; ?>">
-	<div class="row pb-3 mb-3 bg-white">
-		<div class="col-12 text-left">
-			<button class="<?php echo $obj_mod->btn_atras; ?>" onClick="window.location.href='rol_menu.php'"><i
-					class="icon ion-md-arrow-round-back"></i></button>
-		</div>
-	</div>
-	<div class="<?php echo $obj_mod->card; ?>">
-		<h2 class="<?php echo $obj_mod->titulocard; ?>">Lista de Módulos</h2>
-		<hr>
-		<div class="row p-3 m-3">
-			<div class="col-12">
-				<div class="table-responsive">
-					<table class="<?php echo $obj_mod->tabla; ?>">
-						<thead>
-							<tr>
-								<th>Código</th>
-								<th>Nombre</th>
-								<th>Fecha de Creación</th>
-								<th>Ultima Modificación</th>
-								<th>Fecha de Eliminación</th>
-								<th>Fecha de Restauración</th>
-								<th>Estatus</th>
-								<th>PDF</th>
-								<th>Editar</th>
-								<th>Eliminar</th>
-							</tr>
-						</thead>
-						<tbody>
-							<?php
-							while (($modulo = $obj_mod->extractData()) > 0) {
-								echo "<form action='../../backend/controller/modulo.php' method='POST'>
-												<tr>
-													<input type='hidden' name='cod_mod' value='$modulo[cod_mod]'>
-													<td>$modulo[cod_mod]</td>
-													<td>Menú de $modulo[nom_mod]</td>
-													<td>$modulo[cre_mod]</td>
-													<td>$modulo[act_mod]</td>
-													<td>$modulo[eli_mod]</td>
-													<td>$modulo[res_mod]</td>
-													<td>$modulo[est_mod]</td>
-													<td><a class='$obj_mod->btn_pdf' href='mod_reportepdf.php?cod_mod=$modulo[cod_mod]'><i class='icon ion-md-document'></i></a></td>
-													<td><a class='$obj_mod->btn_editar' href='mod_modificar.php?cod_mod=$modulo[cod_mod]'><i class='icon ion-md-create'></i></a></td>
-													<td><button type='submit' class='$obj_mod->btn_eliminar' name='run' value='firstDelete'><i class='icon ion-md-trash'></i></button></td>
-												</tr>
-											</form>
-										";
+<!-- Lista -->
+<div class="container-fluid p-3">
+	<a class="btn btn-success btn-lg" href="rol_menu.php"><i class="fas fa-arrow-circle-left"></i></a>
+	<h2 class="text-center p-3">Lista de Módulos</h2>
+	<div class="row justify-content-center">
+		<div class="col-12 py-2">
+			<div class="table-responsive">
+				<table class="table table-bordered table-hover text-center">
+					<thead>
+						<tr>
+							<th>Código</th>
+							<th>Nombre</th>
+							<th>Modificado</th>
+							<th>Estatus</th>
+						</tr>
+					</thead>
+					<tbody>
+						<?php
+						while (($modulo = $obj_mod->extractData()) > 0) {
+							echo "<form action='../../backend/controller/modulo.php' method='POST'>
+											<tr>
+												<input type='hidden' name='cod_mod' value='$modulo[cod_mod]'>
+												<td>$modulo[cod_mod]</td>
+												<td>$modulo[nom_mod]</td>
+												<td>$modulo[act_mod]</td>
+									";
+
+							if ($modulo['est_mod'] == "A") {
+								echo "
+													<td><button class='btn btn-success' type='submit' name='run' value='updateStatusI'><i class='fas fa-check'></button></td>
+								";
+							} else {
+								echo "
+													<td><button class='btn btn-danger' type='submit' name='run' value='updateStatusA'><i class='fas fa-times-circle'></button></td>";
 							}
-							?>
-						</tbody>
-					</table>
-				</div>
+							echo "
+											</tr>
+										</form>
+									";
+						}
+						?>
+					</tbody>
+				</table>
 			</div>
 		</div>
 	</div>
@@ -74,6 +62,6 @@ check("Roles");
 
 <?php
 
-pie();
+footer();
 
 ?>

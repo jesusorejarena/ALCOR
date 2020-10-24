@@ -10,7 +10,7 @@ switch ($_REQUEST["run"]) {
 	case 'create':
 		$obj_emp->resultado = $obj_emp->create();
 		$obj_emp->message();
-		header("refresh:1; url=../../frontend/view/usu_sesion.php");
+		header("refresh:1; url=../../frontend/view/usu_login.php");
 		break;
 
 	case 'update':

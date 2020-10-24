@@ -21,19 +21,16 @@ switch ($_REQUEST["run"]) {
 
 	case 'restore':
 		$obj_car->resultado = $obj_car->restore();
-		$obj_car->message();
-		header("refresh:1; url=../../frontend/view/car_listarpapelera.php");
+		header("Location: ../../frontend/view/car_listarpapelera.php");
 		break;
 
 	case 'firstDelete':
 		$obj_car->resultado = $obj_car->firstDelete();
-		$obj_car->message();
-		header("refresh:1; url=../../frontend/view/car_listartodo.php");
+		header("Location: ../../frontend/view/car_listartodo.php");
 		break;
 
 	case 'delete':
 		$obj_car->resultado = $obj_car->delete();
-		$obj_car->message();
-		header("refresh:1; url=../../frontend/view/car_listarpapelera.php");
+		header("Location: ../../frontend/view/car_listartodo.php");
 		break;
 }

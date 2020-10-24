@@ -1,109 +1,55 @@
 <?php
 
-//session
+require_once("tema_session.php");
 
-require_once("tema.php");
-require_once("../../backend/class/cargo.class.php");
+headerr("Menú de Roles");
 
-$obj_car = new cargo;
-$obj_car->classBootstrap();
-
-encabezado("Menú de Roles");
-
-check("Roles");
+/* check("Roles"); */
 
 ?>
 
-<div class="<?php echo $obj_car->container; ?>">
-	<h2 class="<?php echo $obj_car->titulos; ?>">Menú de Roles</h2>
-	<div class="row">
-		<div class="col-12 col-md-4">
-			<div class="<?php echo $obj_car->card; ?>">
-				<h2 class="<?php echo $obj_car->titulocard; ?>">Menú de Cargos</h2>
-				<hr>
+<!-- Menu -->
+<div class="container p-3">
+	<h2 class="text-center p-3">Menú de roles</h2>
+	<div class="row justify-content-center">
+		<!-- Cargos -->
+		<div class="col-12 col-md-4 p-1">
+			<div class="card rounded px-3 py-4">
+				<h3 class="card-title text-center">Cargos</h3>
 				<div class="card-body">
-					<div class="row p-1 m-1">
-						<div class="col-12 p-1 m-1">
-							<button class="<?php echo $obj_car->btn_enviarg; ?>"
-								onClick="window.location.href='car_registrar.php'">Registrar</button>
-						</div>
-						<div class="col-12 p-1 m-1">
-							<button class="<?php echo $obj_car->btn_enviarg; ?>"
-								onClick="window.location.href='car_listartodo.php'">Lista</button>
-						</div>
-						<div class="col-12 p-1 m-1">
-							<button class="<?php echo $obj_car->btn_enviarg; ?>"
-								onClick="window.location.href='car_filtrar.php'">Filtrar</button>
-						</div>
-						<div class="col-12 p-1 m-1">
-							<button class="<?php echo $obj_car->btn_enviarg; ?>"
-								onClick="window.location.href='car_listarpapelera.php'">Papelera</button>
-						</div>
-					</div>
+					<a class="btn btn-outline-primary btn-block" href="car_registrar.php">Registrar</a>
+					<a class="btn btn-outline-primary btn-block" href="car_listartodo.php">Listar</a>
+					<a class="btn btn-outline-primary btn-block" href="car_filtrar.php">Filtrar</a>
+					<a class="btn btn-outline-primary btn-block" href="car_listarpapelera.php">Papelera</a>
 				</div>
 			</div>
 		</div>
-		<div class="col-12 col-md-4">
-			<div class="<?php echo $obj_car->card; ?>">
-				<h2 class="<?php echo $obj_car->titulocard; ?>">Menú de Módulos</h2>
-				<hr>
+		<!-- Modulos -->
+		<div class="col-12 col-md-4 p-1">
+			<div class="card rounded px-3 py-4">
+				<h3 class="card-title text-center">Módulos</h3>
 				<div class="card-body">
-					<div class="row p-1 m-1">
-						<div class="col-12 p-1 m-1">
-							<button class="<?php echo $obj_car->btn_enviarg; ?>"
-								onClick="window.location.href='mod_registrar.php'">Registrar</button>
-						</div>
-						<div class="col-12 p-1 m-1">
-							<button class="<?php echo $obj_car->btn_enviarg; ?>"
-								onClick="window.location.href='mod_listartodo.php'">Lista</button>
-						</div>
-						<div class="col-12 p-1 m-1">
-							<button class="<?php echo $obj_car->btn_enviarg; ?>"
-								onClick="window.location.href='mod_filtrar.php'">Filtrar</button>
-						</div>
-						<div class="col-12 p-1 m-1">
-							<button class="<?php echo $obj_car->btn_enviarg; ?>"
-								onClick="window.location.href='mod_listarpapelera.php'">Papelera</button>
-						</div>
-					</div>
+					<a class="btn btn-outline-primary btn-block" href="mod_listartodo.php">Listar</a>
 				</div>
 			</div>
 		</div>
-		<div class="col-12 col-md-4">
-			<div class="<?php echo $obj_car->card; ?>">
-				<h2 class="<?php echo $obj_car->titulocard; ?>">Menú de Permisos</h2>
-				<hr>
+		<!-- Permisos -->
+		<div class="col-12 col-md-4 p-1">
+			<div class="card rounded px-3 py-4">
+				<h3 class="card-title text-center">Permisos</h3>
 				<div class="card-body">
-					<div class="row p-1 m-1">
-						<div class="col-12 p-1 m-1">
-							<button class="<?php echo $obj_car->btn_enviarg; ?>"
-								onClick="window.location.href='per_registrar.php'">Registrar</button>
-						</div>
-						<div class="col-12 p-1 m-1">
-							<button class="<?php echo $obj_car->btn_enviarg; ?>"
-								onClick="window.location.href='per_listartodo.php'">Lista</button>
-						</div>
-						<div class="col-12 p-1 m-1">
-							<button class="<?php echo $obj_car->btn_enviarg; ?>"
-								onClick="window.location.href='per_filtrar.php'">Filtrar</button>
-						</div>
-						<div class="col-12 p-1 m-1">
-							<button class="<?php echo $obj_car->btn_enviarg; ?>"
-								onClick="window.location.href='per_listarpapelera.php'">Papelera</button>
-						</div>
-					</div>
+					<a class="btn btn-outline-primary btn-block" href="per_registrar.php">Registrar</a>
+					<a class="btn btn-outline-primary btn-block" href="per_listartodo.php">Listar</a>
+					<a class="btn btn-outline-primary btn-block" href="per_filtrar.php">Filtrar</a>
+					<a class="btn btn-outline-primary btn-block" href="per_listarpapelera.php">Papelera</a>
 				</div>
 			</div>
 		</div>
-	</div>
-	<div class="row py-4">
-		<div class="col-12"></div>
 	</div>
 </div>
 
-
 <?php
 
-pie();
+footer();
 
 ?>

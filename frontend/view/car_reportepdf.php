@@ -56,8 +56,8 @@ $dompdf->loadHtml("
 					</tr>
 					<tr class='tr'>
 						<th class='th' colspan='2'>Estatus</th>
-						<th class='th' colspan='2'>Fecha de Creación</th>
-						<th class='th' colspan='2'>Ultima Modificación</th>
+						<th class='th' colspan='2'>Creado</th>
+						<th class='th' colspan='2'>Modificado</th>
 					</tr>
 					<tr class='tr'>
 						<td class='td' colspan='2'>$cargo[est_car]</td>
@@ -69,8 +69,8 @@ $dompdf->loadHtml("
 					</tr>
 					<tr class='tr'>
 						<th class='th' colspan='2'>Estado</th>
-						<th class='th' colspan='2'>Fecha de Eliminación</th>
-						<th class='th' colspan='2'>Fecha de Restauración</th>
+						<th class='th' colspan='2'>Eliminado</th>
+						<th class='th' colspan='2'>Restaurado</th>
 					</tr>
 					<tr class='tr'>
 						<td class='td' colspan='2'>$cargo[bas_car]</td>

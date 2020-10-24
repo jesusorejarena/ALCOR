@@ -21,14 +21,12 @@ switch ($_REQUEST["run"]) {
 
 	case 'restore':
 		$obj_pro->resultado = $obj_pro->restore();
-		$obj_pro->message();
-		header("refresh:1; url=../../frontend/view/pro_listarpapelera.php");
+		header("Location: ../../frontend/view/pro_listarpapelera.php");
 		break;
 
 	case 'firstDelete':
 		$obj_pro->resultado = $obj_pro->firstDelete();
-		$obj_pro->message();
-		header("refresh:1; url=../../frontend/view/pro_listartodo.php");
+		header("Location: ../../frontend/view/pro_listartodo.php");
 		break;
 
 	case 'sale':
@@ -49,7 +47,6 @@ switch ($_REQUEST["run"]) {
 
 	case 'delete':
 		$obj_pro->resultado = $obj_pro->delete();
-		$obj_pro->message();
-		header("refresh:1; url=../../frontend/view/pro_listarpapelera.php");
+		header("Location: ../../frontend/view/pro_listarpapelera.php");
 		break;
 }

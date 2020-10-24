@@ -22,18 +22,18 @@ switch ($_REQUEST["run"]) {
 	case 'restore':
 		$obj_per->resultado = $obj_per->restore();
 		$obj_per->message();
-		header("refresh:1; url=../../frontend/view/per_listarpapelera.php");
+		header("Location: ../../frontend/view/per_listarpapelera.php");
 		break;
 
 	case 'firstDelete':
 		$obj_per->resultado = $obj_per->firstDelete();
 		$obj_per->message();
-		header("refresh:1; url=../../frontend/view/per_listartodo.php");
+		header("Location: ../../frontend/view/per_listartodo.php");
 		break;
 
 	case 'delete':
 		$obj_per->resultado = $obj_per->delete();
 		$obj_per->message();
-		header("refresh:1; url=../../frontend/view/per_listarpapelera.php");
+		header("Location: ../../frontend/view/per_listarpapelera.php");
 		break;
 }

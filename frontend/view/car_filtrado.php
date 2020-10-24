@@ -1,95 +1,92 @@
 <?php
 
-//session
-
-require_once("tema.php");
+require_once("tema_session.php");
 require_once("../../backend/class/cargo.class.php");
 
 $obj_car = new cargo;
-$obj_car->classBootstrap();
 $obj_car->assignValue();
 $obj_car->puntero = $obj_car->filter();
 
-encabezado("Cargos Filtrados");
+headerr("Cargos Filtrados");
 
-check("Roles");
+/* check("Roles"); */
 
 ?>
 
-<div class="<?php echo $obj_car->container; ?>">
-	<div class="row pb-3 mb-3 bg-white">
-		<div class="col-12 text-left">
-			<button class="<?php echo $obj_car->btn_atras; ?>" onClick="window.location.href='car_filtrar.php'"><i
-					class="icon ion-md-arrow-round-back"></i></button>
-		</div>
-	</div>
-	<div class="<?php echo $obj_car->card; ?>">
-		<h2 class="<?php echo $obj_car->titulocard; ?>">Cargos Filtrados</h2>
-		<hr>
-		<div class="row p-3 m-3">
-			<div class="col-12">
-				<div class="table-responsive">
-					<table class="<?php echo $obj_car->tabla; ?>">
-						<thead>
-							<tr>
-								<th>Código</th>
-								<th>Nombre</th>
-								<th>Fecha de Creación</th>
-								<th>Ultima Modificación</th>
-								<th>Fecha de Eliminado</th>
-								<th>Fecha de Restauración</th>
-								<th>Estatus</th>
-								<th>Estado</th>
-								<th>PDF</th>
-								<th>Editar</th>
-								<th>Restaurar</th>
-								<th>Eliminar</th>
-							</tr>
-						</thead>
+<!-- Lista -->
+<div class="container-fluid p-3">
+	<a class="btn btn-success btn-lg" href="rol_menu.php"><i class="fas fa-arrow-circle-left"></i></a>
+	<h2 class="text-center p-3">Cargos Filtrados</h2>
+	<div class="row justify-content-center">
+		<div class="col-12 py-2">
+			<div class="table-responsive">
+				<table class="table table-bordered table-hover text-center">
+					<thead>
+						<tr>
+							<th>Código</th>
+							<th>Nombre</th>
+							<th>Creado</th>
+							<th>Modificado</th>
+							<th>Restaurado</th>
+							<th>Eliminado</th>
+							<th>Estatus</th>
+							<th>Restaurar</th>
+							<th>Editar</th>
+							<th>Eliminar</th>
+						</tr>
+					</thead>
+					<tbody>
 						<?php
 						while (($cargo = $obj_car->extractData()) > 0) {
 							echo "<form action='../../backend/controller/cargo.php' method='POST'>
-												<tr>
-													<input type='hidden' name='cod_car' value='$cargo[cod_car]'>
-													<td>$cargo[cod_car]</td>
-													<td>$cargo[nom_car]</td>";
+											<tr>
+												<input type='hidden' name='cod_car' value='$cargo[cod_car]'>
+												<td>$cargo[cod_car]</td>
+												<td>$cargo[nom_car]</td>
+									";
 
 							if ($cargo['cod_car'] == 1 || $cargo['nom_car'] == 'Administrador') {
 								echo "
-																<td></td>
-																<td></td>
-																<td></td>
-																<td></td>
-																<td></td>
-																<td></td>
-																<td></td>
-																<td></td>
-																<td></td>
-																<td></td>
-														";
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+										";
 							} else {
 								echo "
-																<td>$cargo[cre_car]</td>
-																<td>$cargo[act_car]</td>
-																<td>$cargo[eli_car]</td>
-																<td>$cargo[res_car]</td>
-																<td>$cargo[est_car]</td>
-																<td>$cargo[bas_car]</td>
-																<td><a class='$obj_car->btn_pdf' href='ado_reportepdf.php?cod_car=$cargo[cod_car]'><i class='icon ion-md-document'></i></a></td>
-																<td><a class='$obj_car->btn_editar' href='car_modificar.php?cod_car=$cargo[cod_car]'><i class='icon ion-md-create'></i></a></td>
-																<td><button type='submit' class='$obj_car->btn_restaurar' name='run' value='restore'><i class='icon ion-md-refresh'></i></button></td>
-																<td><button type='submit' class='$obj_car->btn_eliminar' name='run' value='firstDelete'><i class='icon ion-md-trash'></i></button></td>
-														";
-							}
-							echo "		
-												</tr>
-											</form>
+											<td>$cargo[cre_car]</td>
+											<td>$cargo[act_car]</td>
+											<td>$cargo[res_car]</td>
+											<td>$cargo[eli_car]</td>
+									";
+
+								if ($cargo['est_car'] == "A") {
+									echo "
+													<td><button class='btn btn-success' type='submit' name='run' value='updateStatusI'><i class='fas fa-check'></button></td>
+								";
+								} else {
+									echo "
+													<td><button class='btn btn-danger' type='submit' name='run' value='updateStatusA'><i class='fas fa-times-circle'></button></td>";
+								}
+
+								echo "
+											<td><button type='submit' class='btn btn-success' name='run' value='restore'><i class='fas fa-redo-alt'></i></button></td>
+											<td><a class='btn btn-warning' href='car_modificar.php?cod_car=$cargo[cod_car]'><i class='fas fa-edit'></i></a></td>
+											<td><button type='submit' class='btn btn-danger' name='run' value='firstDelete'><i class='fas fa-trash'></i></button></td>
 										";
+							}
+							echo "
+											</tr>
+										</form>
+									";
 						}
 						?>
-						</tbody>
-					</table>
-				</div>
+					</tbody>
+				</table>
 			</div>
 		</div>
 	</div>
@@ -97,6 +94,6 @@ check("Roles");
 
 <?php
 
-pie();
+footer();
 
 ?>
