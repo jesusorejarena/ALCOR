@@ -13,7 +13,7 @@ headerr("Lista de Módulos");
 ?>
 
 <!-- Lista -->
-<div class="container-fluid p-3">
+<div class="container-fluid px-3 pt-3 pb-5 mb-5">
 	<a class="btn btn-success btn-lg" href="rol_menu.php"><i class="fas fa-arrow-circle-left"></i></a>
 	<h2 class="text-center p-3">Lista de Módulos</h2>
 	<div class="row justify-content-center">
@@ -24,8 +24,6 @@ headerr("Lista de Módulos");
 						<tr>
 							<th>Código</th>
 							<th>Nombre</th>
-							<th>Modificado</th>
-							<th>Estatus</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -36,18 +34,6 @@ headerr("Lista de Módulos");
 												<input type='hidden' name='cod_mod' value='$modulo[cod_mod]'>
 												<td>$modulo[cod_mod]</td>
 												<td>$modulo[nom_mod]</td>
-												<td>$modulo[act_mod]</td>
-									";
-
-							if ($modulo['est_mod'] == "A") {
-								echo "
-													<td><button class='btn btn-success' type='submit' name='run' value='updateStatusI'><i class='fas fa-check'></button></td>
-								";
-							} else {
-								echo "
-													<td><button class='btn btn-danger' type='submit' name='run' value='updateStatusA'><i class='fas fa-times-circle'></button></td>";
-							}
-							echo "
 											</tr>
 										</form>
 									";

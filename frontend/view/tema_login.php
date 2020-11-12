@@ -18,7 +18,7 @@ function headerr($titulo)
 			<head>
 				<meta charset='UTF-8' />
 				<meta name='viewport' content='width=device-width, initial-scale=1.0' />
-				<title>$titulo - Ideas TIP</title>
+				<title>$titulo - ALCOR C.A.</title>
 				<link rel='shortcut icon' href='' type='image/x-icon' />
 				<link rel='stylesheet' href='../css/bootstrap-4.5.2/css/bootstrap.min.css' />
 				<link rel='stylesheet' href='../css/fontawesome-free-5.15.0/css/all.min.css' />
@@ -34,8 +34,8 @@ function headerr($titulo)
 				<header>
 					<nav class='navbar navbar-expand-lg navbar-dark bg-primary'>
 						<!-- Nombre de la App -->
-						<a class='navbar-brand' href='inicio.html'>
-							<img src='../img/' alt='Ideas TIP' width='150px' />
+						<a href='usu_inicio.php' class='navbar-brand px-5'>
+							<img src='../img/logo2.png' width='150'>
 						</a>
 
 						<!-- Menu de hamburguesa -->

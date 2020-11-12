@@ -6,7 +6,7 @@ class permiso extends utilidad
 {
 
 	public $cod_per;
-	public $fky_cargo;
+	public $cod_car;
 	public $cod_mod;
 	public $est_per;
 	public $bas_per;
@@ -17,13 +17,13 @@ class permiso extends utilidad
 		$cre_per = date("y-m-d h:i:s");
 
 		$this->que_bda = "INSERT INTO permiso
-								(fky_cargo,
+								(cod_car,
 								cod_mod,
 								cre_per,
 								est_per,
 								bas_per)
 							VALUES
-								('$this->fky_cargo',
+								('$this->cod_car',
 								'$this->cod_mod',
 								'$cre_per',
 								'A',
@@ -38,7 +38,7 @@ class permiso extends utilidad
 
 		$this->que_bda = "UPDATE permiso
 							SET 
-								fky_cargo='$this->fky_cargo',
+								cod_car='$this->cod_car',
 								cod_mod='$this->cod_mod',
 								act_per='$act_per',
 								est_per='$this->est_per'
@@ -85,7 +85,7 @@ class permiso extends utilidad
 
 	function getMenu()
 	{
-		$this->que_bda = "SELECT * FROM permiso WHERE fky_cargo='$this->fky_cargo' AND est_per='A' AND bas_per='A';";
+		$this->que_bda = "SELECT * FROM permiso WHERE cod_car='$this->cod_car' AND est_per='A' AND bas_per='A';";
 
 		return $this->run();
 	} // fin de getMenu
@@ -116,7 +116,7 @@ class permiso extends utilidad
 	function filter()
 	{
 		$filter1 = ($this->cod_per != "") ? "AND cod_per='$this->cod_per'" : "";
-		$filter2 = ($this->fky_cargo != "") ? "AND fky_cargo='$this->fky_cargo'" : "";
+		$filter2 = ($this->cod_car != "") ? "AND cod_car='$this->cod_car'" : "";
 		$filter3 = ($this->cod_mod != "") ? "AND cod_mod='$this->cod_mod'" : "";
 		$filter4 = ($this->est_per != "") ? "AND est_per='$this->est_per'" : "";
 		$filter5 = ($this->bas_per != "") ? "AND bas_per='$this->bas_per'" : "";
@@ -137,7 +137,7 @@ class permiso extends utilidad
 	{
 
 		$filter1 = ($this->cod_per != "") ? "AND cod_per='$this->cod_per'" : "";
-		$filter2 = ($this->fky_cargo != "") ? "AND fky_cargo='$this->fky_cargo'" : "";
+		$filter2 = ($this->cod_car != "") ? "AND cod_car='$this->cod_car'" : "";
 		$filter3 = ($this->cod_mod != "") ? "AND cod_mod='$this->cod_mod'" : "";
 		$filter4 = ($this->est_per != "") ? "AND est_per='$this->est_per'" : "";
 		$filter5 = ($this->bas_per != "") ? "AND bas_per='$this->bas_per'" : "";

@@ -1,6 +1,6 @@
 <?php
 
-function check($menu)
+/* function check($menu)
 {
 	require_once("../../backend/class/modulo.class.php");
 	require_once("../../backend/class/permiso.class.php");
@@ -26,7 +26,7 @@ function check($menu)
 			header("Location: usu_inicio.php");
 		}
 	}
-}
+} */
 
 /* function checkadmin()
 {
@@ -38,15 +38,15 @@ function check($menu)
 
 function headerr($titulo)
 {
-	ini_set("session.cookie_lifetime", "36000");
+	/* ini_set("session.cookie_lifetime", "36000"); */
 
 	session_start();
 
 	if ($_SESSION['activo'] == true) {
-		if (time() - $_SESSION["time"] < 1200) {
-		} else {
+		/* if (time() - $_SESSION["time"] < 1200) {
+		} else {#
 			session_destroy();
-		}
+		} */
 
 		require_once("../../backend/class/cargo.class.php");
 		require_once("../../backend/class/modulo.class.php");
@@ -58,7 +58,7 @@ function headerr($titulo)
 		$obj_per = new permiso;
 		$obj_res = new respaldo;
 	} else {
-		header('Location: ado_inicio.php');
+		/* header('Location: ado_inicio.php'); */
 	}
 
 	echo "
@@ -67,7 +67,7 @@ function headerr($titulo)
 			<head>
 				<meta charset='UTF-8' />
 				<meta name='viewport' content='width=device-width, initial-scale=1.0' />
-				<title>$titulo - Ideas TIP</title>
+				<title>$titulo - ALCOR C.A.</title>
 				<link rel='shortcut icon' href='' type='image/x-icon' />
 				<link rel='stylesheet' href='../css/bootstrap-4.5.2/css/bootstrap.min.css' />
 				<link rel='stylesheet' href='../css/fontawesome-free-5.15.0/css/all.min.css' />
@@ -83,8 +83,8 @@ function headerr($titulo)
 				<header>
 					<nav class='navbar navbar-expand-lg navbar-dark bg-primary'>
 						<!-- Nombre de la App -->
-						<a class='navbar-brand' href='inicio.html'>
-							<img src='../img/' alt='Ideas TIP' width='150px' />
+						<a href='usu_inicio.php' class='navbar-brand px-5'>
+							<img src='../img/logo2.png' width='150'>
 						</a>
 
 						<!-- Menu de hamburguesa -->
@@ -119,7 +119,7 @@ function headerr($titulo)
 												";
 	} else {
 		// verifica el cargo
-		if ($_SESSION['cargo'] >= 2) {
+	/* 	if ($_SESSION['cargo'] >= 2) {
 			// asigna el cargo sesion al codigo de permiso
 			$obj_per->cod_car = $_SESSION['cargo'];
 			$obj_per->puntero = $obj_per->getMenu();
@@ -135,7 +135,7 @@ function headerr($titulo)
 				echo "	<a href='$modulo[url_mod]' class='nav-link active'>$modulo[nom_mod]</a>";
 				// termina el ciclo
 			}
-		}
+		} */
 	}
 	echo "
 								<a href='cerrar_sesion.php' class='nav-link text-light btn btn-sesion'><i class='fas fa-power-off'></i></a>
@@ -147,44 +147,7 @@ function headerr($titulo)
 
 function footer()
 {
-
-	require_once("../../backend/class/empresa.class.php");
-
-	$obj_emp = new empresa;
-	$obj_emp->puntero = $obj_emp->getByCode();
-	$empresa = $obj_emp->extractData();
-
 	echo "
-				<footer>
-					<div class='container-fluid pt-3 pb-1 bg-info text-white'>
-						<div class='row'>
-							<div class='col-4 text-left'>
-								<p><b>Dirección: </b>$empresa[dir_emp] <br>
-								<b>E-mail: </b>$empresa[cor_emp] <br>
-								<b>Teléfono: </b>$empresa[tel_emp]</p>
-							</div>
-							<div class='col-4 text-center'>
-								<p>
-									$empresa[nom_emp]<br>
-									$empresa[rif_emp] <br>
-									<a href='https://www.instagram.com/comalcorca/' target='_blank' class='btn btn-info'><i class='icon ion-logo-instagram' style='font-size: 32px;'></i></a> 
-									<a href='https://twitter.com/comalcorca' target='_blank' class='btn btn-info'><i class='icon ion-logo-twitter' style='font-size: 32px;'></i></a><br>
-									<a href='creadores.php' class='btn btn-info'>Creadores del Software AutoSIV</a>
-								</p>
-							</div>
-							<div class='col-4 text-right'>
-								<p>
-									<b>Horario:</b><br>
-									$empresa[hou_emp]<br>
-									$empresa[hod_emp]<br>
-								</p>
-							</div>
-						</div>
-					</div>
-				</footer>";
-
-	echo "
-							
 				<script src='../js/jquery-3.5.1.min.js'></script>
 				<script src='../css/bootstrap-4.5.2/js/bootstrap.bundle.min.js'></script>
 				<script src='../js/screenUp.js'></script>

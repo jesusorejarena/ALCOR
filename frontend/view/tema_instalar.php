@@ -8,7 +8,7 @@ function headerr($titulo)
 			<head>
 				<meta charset='UTF-8' />
 				<meta name='viewport' content='width=device-width, initial-scale=1.0' />
-				<title>$titulo - Ideas TIP</title>
+				<title>$titulo - ALCOR C.A.</title>
 				<link rel='shortcut icon' href='' type='image/x-icon' />
 				<link rel='stylesheet' href='../css/bootstrap-4.5.2/css/bootstrap.min.css' />
 				<link rel='stylesheet' href='../css/fontawesome-free-5.15.0/css/all.min.css' />

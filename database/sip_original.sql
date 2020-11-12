@@ -44,6 +44,16 @@ CREATE TABLE IF NOT EXISTS cargo_resp (
 
 /* -------------------------------------------------- */
 
+DROP TABLE IF EXISTS preguntas_seguridad;
+CREATE TABLE IF NOT EXISTS preguntas_seguridad (
+	cod_pse INT(11) NOT NULL AUTO_INCREMENT,
+	nom_pse VARCHAR(50) NOT NULL,
+	par_pse INT(11) NOT NULL, /*para controlar cuales preguntas se listaran en cada select*/
+	PRIMARY KEY (cod_pse)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+/* -------------------------------------------------- */
+
 DROP TABLE IF EXISTS empleado;
 CREATE TABLE IF NOT EXISTS empleado (
 	`cod_ado` int(11) NOT NULL AUTO_INCREMENT,
@@ -57,7 +67,11 @@ CREATE TABLE IF NOT EXISTS empleado (
 	`cor_ado` varchar(100) NOT NULL,
 	`cla_ado` varchar(40) DEFAULT NULL,
 	`dir_ado` varchar(100) NOT NULL,
-	`fky_cargo` int(11) NOT NULL,
+	`cod_car` int(11) NOT NULL,
+	`fky_preseg1` INT(11) DEFAULT NULL,
+	`re1_ado` VARCHAR(40) DEFAULT NULL,
+	`fky_preseg2` INT(11) DEFAULT NULL,
+	`re2_ado` VARCHAR(40) DEFAULT NULL,
 	`cre_ado` datetime NOT NULL,
 	`act_ado` datetime DEFAULT NULL,
 	`eli_ado` datetime DEFAULT NULL,
@@ -67,16 +81,18 @@ CREATE TABLE IF NOT EXISTS empleado (
 	PRIMARY KEY (`cod_ado`),
 	UNIQUE KEY `ced_ado` (`ced_ado`),
 	UNIQUE KEY `cor_ado` (`cor_ado`),
-	INDEX `fky_cargo` (`fky_cargo`),
-	FOREIGN KEY (`fky_cargo`) REFERENCES `cargo` (`cod_car`) ON UPDATE CASCADE
+	INDEX `cod_car` (`cod_car`),
+	FOREIGN KEY (`cod_car`) REFERENCES `cargo` (`cod_car`) ON UPDATE CASCADE,
+	FOREIGN KEY (fky_preseg1) REFERENCES preguntas_seguridad(cod_pse) ON DELETE RESTRICT ON UPDATE CASCADE,
+	FOREIGN KEY (fky_preseg2) REFERENCES preguntas_seguridad(cod_pse) ON DELETE RESTRICT ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-INSERT INTO `empleado` (`cod_ado`, `nom_ado`, `ape_ado`, `gen_ado`, `nac_ado`, `tip_ado`, `ced_ado`, `tel_ado`, `cor_ado`, `cla_ado`, `dir_ado`, `fky_cargo`, `cre_ado`, `act_ado`, `eli_ado`, `res_ado`, `est_ado`, `bas_ado`) VALUES
+INSERT INTO `empleado` (`cod_ado`, `nom_ado`, `ape_ado`, `gen_ado`, `nac_ado`, `tip_ado`, `ced_ado`, `tel_ado`, `cor_ado`, `cla_ado`, `dir_ado`, `cod_car`, `cre_ado`, `act_ado`, `eli_ado`, `res_ado`, `est_ado`, `bas_ado`) VALUES
 (1, 'Jesus', 'Orejarena', 'H', '2000-09-17', 'V', 29545545, '04147528826', 'jesusorejarena@gmail.com', '12345678', 'La Concordia', 1, '2020-02-27 03:34:30', '2020-02-27 03:48:03', NULL, NULL, 'A', 'A'),
 (2, 'David', 'Lozada', 'H', '1999-01-19', 'V', 27422823, '04141235673', 'thedavlozada@gmail.com', 'davisito', 'Barrio Obrero', 4, '2020-02-27 03:59:25', NULL, NULL, NULL, 'A', 'A');
 
 DELIMITER $$
-CREATE TRIGGER `empleado_AI` AFTER INSERT ON `empleado` FOR EACH ROW INSERT INTO empleado_resp(nom_ado,ape_ado,gen_ado,nac_ado,tip_ado,ced_ado,tel_ado,cor_ado,cla_ado,dir_ado,fky_cargo,cre_ado,est_ado,bas_ado) VALUES (NEW.nom_ado,NEW.ape_ado,NEW.gen_ado,NEW.nac_ado,NEW.tip_ado,NEW.ced_ado,NEW.tel_ado,NEW.cor_ado,NEW.cla_ado,NEW.dir_ado,NEW.fky_cargo,NOW(),NEW.est_ado,NEW.bas_ado)
+CREATE TRIGGER `empleado_AI` AFTER INSERT ON `empleado` FOR EACH ROW INSERT INTO empleado_resp(nom_ado,ape_ado,gen_ado,nac_ado,tip_ado,ced_ado,tel_ado,cor_ado,cla_ado,dir_ado,cod_car,cre_ado,est_ado,bas_ado) VALUES (NEW.nom_ado,NEW.ape_ado,NEW.gen_ado,NEW.nac_ado,NEW.tip_ado,NEW.ced_ado,NEW.tel_ado,NEW.cor_ado,NEW.cla_ado,NEW.dir_ado,NEW.cod_car,NOW(),NEW.est_ado,NEW.bas_ado)
 $$
 DELIMITER ;
 
@@ -93,7 +109,11 @@ CREATE TABLE IF NOT EXISTS empleado_resp (
 	`cor_ado` varchar(100) NOT NULL,
 	`cla_ado` varchar(40) DEFAULT NULL,
 	`dir_ado` varchar(100) NOT NULL,
-	`fky_cargo` int(11) NOT NULL,
+	`cod_car` int(11) NOT NULL,
+	`fky_preseg1` INT(11) DEFAULT NULL,
+	`re1_ado` VARCHAR(40) DEFAULT NULL,
+	`fky_preseg2` INT(11) DEFAULT NULL,
+	`re2_ado` VARCHAR(40) DEFAULT NULL,
 	`cre_ado` datetime NOT NULL,
 	`act_ado` datetime DEFAULT NULL,
 	`eli_ado` datetime DEFAULT NULL,
@@ -103,7 +123,7 @@ CREATE TABLE IF NOT EXISTS empleado_resp (
 	PRIMARY KEY (`cod_ado`),
 	UNIQUE KEY `ced_ado` (`ced_ado`),
 	UNIQUE KEY `cor_ado` (`cor_ado`),
-	INDEX `fky_cargo` (`fky_cargo`)
+	INDEX `cod_car` (`cod_car`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 /* -------------------------------------------------- */
@@ -226,8 +246,8 @@ CREATE TABLE IF NOT EXISTS modulo_resp(
 DROP TABLE IF EXISTS permiso;
 CREATE TABLE IF NOT EXISTS permiso (
 	`cod_per` int(11) NOT NULL AUTO_INCREMENT,
-	`fky_cargo` int(11) NOT NULL,
-	`fky_modulo` int(11) NOT NULL,
+	`cod_car` int(11) NOT NULL,
+	`cod_mod` int(11) NOT NULL,
 	`cre_per` datetime NOT NULL,
 	`act_per` datetime DEFAULT NULL,
 	`eli_per` datetime DEFAULT NULL,
@@ -235,28 +255,28 @@ CREATE TABLE IF NOT EXISTS permiso (
 	`est_per` enum('A','I') NOT NULL,
 	`bas_per` enum('A','B') NOT NULL,
 	PRIMARY KEY (`cod_per`),
-	INDEX `fky_cargo` (`fky_cargo`),
-	INDEX `fky_modulo` (`fky_modulo`),
-	FOREIGN KEY (`fky_cargo`) REFERENCES `cargo` (`cod_car`) ON UPDATE CASCADE,
-	FOREIGN KEY (`fky_modulo`) REFERENCES `modulo` (`cod_mod`) ON UPDATE CASCADE
+	INDEX `cod_car` (`cod_car`),
+	INDEX `cod_mod` (`cod_mod`),
+	FOREIGN KEY (`cod_car`) REFERENCES `cargo` (`cod_car`) ON UPDATE CASCADE,
+	FOREIGN KEY (`cod_mod`) REFERENCES `modulo` (`cod_mod`) ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-INSERT INTO `permiso` (`cod_per`, `fky_cargo`, `fky_modulo`, `cre_per`, `act_per`, `eli_per`, `res_per`, `est_per`, `bas_per`) VALUES
+INSERT INTO `permiso` (`cod_per`, `cod_car`, `cod_mod`, `cre_per`, `act_per`, `eli_per`, `res_per`, `est_per`, `bas_per`) VALUES
 (1, 2, 4, '2020-02-27 03:54:11', NULL, NULL, NULL, 'A', 'A'),
 (2, 2, 3, '2020-02-27 03:54:21', NULL, NULL, NULL, 'A', 'A'),
 (3, 3, 3, '2020-02-27 03:54:27', NULL, NULL, NULL, 'A', 'A'),
 (4, 4, 8, '2020-02-27 03:56:54', NULL, NULL, NULL, 'A', 'A');
 
 DELIMITER $$
-CREATE TRIGGER `permiso_AI` AFTER INSERT ON `permiso` FOR EACH ROW INSERT INTO permiso_resp(fky_cargo,fky_modulo,cre_per,est_per,bas_per) VALUES(NEW.fky_cargo,NEW.fky_modulo,NOW(),NEW.est_per,NEW.bas_per)
+CREATE TRIGGER `permiso_AI` AFTER INSERT ON `permiso` FOR EACH ROW INSERT INTO permiso_resp(cod_car,cod_mod,cre_per,est_per,bas_per) VALUES(NEW.cod_car,NEW.cod_mod,NOW(),NEW.est_per,NEW.bas_per)
 $$
 DELIMITER ;
 
 DROP TABLE IF EXISTS permiso_resp;
 CREATE TABLE IF NOT EXISTS permiso_resp (
 	`cod_per` int(11) NOT NULL AUTO_INCREMENT,
-	`fky_cargo` int(11) NOT NULL,
-	`fky_modulo` int(11) NOT NULL,
+	`cod_car` int(11) NOT NULL,
+	`cod_mod` int(11) NOT NULL,
 	`cre_per` datetime NOT NULL,
 	`act_per` datetime DEFAULT NULL,
 	`eli_per` datetime DEFAULT NULL,
@@ -330,7 +350,7 @@ CREATE TABLE IF NOT EXISTS producto (
 	`des_pro` varchar(100) NOT NULL,
 	`pre_pro` float(11,2) NOT NULL,
 	`can_pro` float(11,1) NOT NULL,
-	`fky_proveedor` int(11) NOT NULL,
+	`cod_edo` int(11) NOT NULL,
 	`cre_pro` datetime NOT NULL,
 	`act_pro` datetime DEFAULT NULL,
 	`eli_pro` datetime DEFAULT NULL,
@@ -338,16 +358,16 @@ CREATE TABLE IF NOT EXISTS producto (
 	`est_pro` enum('A','I') NOT NULL,
 	`bas_pro` enum('A','B') NOT NULL,
 	PRIMARY KEY (`cod_pro`),
-	INDEX `fky_proveedor` (`fky_proveedor`),
-	FOREIGN KEY (`fky_proveedor`) REFERENCES `proveedor` (`cod_edo`) ON UPDATE CASCADE
+	INDEX `cod_edo` (`cod_edo`),
+	FOREIGN KEY (`cod_edo`) REFERENCES `proveedor` (`cod_edo`) ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-INSERT INTO `producto` (`cod_pro`, `nom_pro`, `des_pro`, `pre_pro`, `can_pro`, `fky_proveedor`, `cre_pro`, `act_pro`, `eli_pro`, `res_pro`, `est_pro`, `bas_pro`) VALUES
+INSERT INTO `producto` (`cod_pro`, `nom_pro`, `des_pro`, `pre_pro`, `can_pro`, `cod_edo`, `cre_pro`, `act_pro`, `eli_pro`, `res_pro`, `est_pro`, `bas_pro`) VALUES
 (1, 'Clorooo', 'jabonoso', 180.00, 10.0, 2, '2020-02-27 04:14:36', NULL, NULL, NULL, 'A', 'A'),
 (2, 'Jabon liquido', 'jabon>', 123.00, 0.0, 1, '2020-02-27 04:15:03', '2020-02-27 04:16:18', NULL, NULL, 'A', 'A');
 
 DELIMITER $$
-CREATE TRIGGER `producto_AI` AFTER INSERT ON `producto` FOR EACH ROW INSERT INTO producto_resp(nom_pro,des_pro,pre_pro,can_pro,fky_proveedor,cre_pro,bas_pro,est_pro) VALUES(NEW.nom_pro,NEW.des_pro,NEW.pre_pro,NEW.can_pro,NEW.fky_proveedor,NOW(),NEW.bas_pro,NEW.est_pro)
+CREATE TRIGGER `producto_AI` AFTER INSERT ON `producto` FOR EACH ROW INSERT INTO producto_resp(nom_pro,des_pro,pre_pro,can_pro,cod_edo,cre_pro,bas_pro,est_pro) VALUES(NEW.nom_pro,NEW.des_pro,NEW.pre_pro,NEW.can_pro,NEW.cod_edo,NOW(),NEW.bas_pro,NEW.est_pro)
 $$
 DELIMITER ;
 
@@ -358,7 +378,7 @@ CREATE TABLE IF NOT EXISTS producto_resp (
 	`des_pro` varchar(100) NOT NULL,
 	`pre_pro` float(11,2) NOT NULL,
 	`can_pro` float(11,1) NOT NULL,
-	`fky_proveedor` int(11) NOT NULL,
+	`cod_edo` int(11) NOT NULL,
 	`cre_pro` datetime NOT NULL,
 	`act_pro` datetime DEFAULT NULL,
 	`eli_pro` datetime DEFAULT NULL,

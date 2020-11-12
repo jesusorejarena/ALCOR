@@ -19,7 +19,7 @@ headerr("Lista - Permisos");
 ?>
 
 <!-- Lista -->
-<div class="container-fluid p-3">
+<div class="container-fluid px-3 pt-3 pb-5 mb-5">
 	<a class="btn btn-success btn-lg" href="rol_menu.php"><i class="fas fa-arrow-circle-left"></i></a>
 	<h2 class="text-center p-3">Lista de Permisos</h2>
 	<div class="row justify-content-center">
@@ -46,7 +46,7 @@ headerr("Lista - Permisos");
 							$obj_car->puntero = $obj_car->filter();
 							$cargo = $obj_car->extractData();
 
-							$obj_mod->cod_mod = $permiso['fky_modulo'];
+							$obj_mod->cod_mod = $permiso['cod_mod'];
 							$obj_mod->puntero = $obj_mod->filter();
 							$modulo = $obj_mod->extractData();
 

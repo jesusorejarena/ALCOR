@@ -37,22 +37,19 @@ check("Ventas");
 							<div class="col-12 col-md-6">
 								<div class="form-group">
 									<label for="com_pro" class="<?php echo $obj_pro->for; ?>">Cantidades:</label>
-									<input type="text" name="com_pro" id="com_pro" placeholder="" required=""
-										class="<?php echo $obj_pro->input_normal; ?>">
+									<input type="text" name="com_pro" id="com_pro" placeholder="" required="" class="<?php echo $obj_pro->input_normal; ?>">
 								</div>
 							</div>
 						</div>
 						<div class="row p-3 text-center">
 							<div class="col-6">
 								<div class="form-group">
-									<button type="reset" name="run" id="run" value="limpiar"
-										class="<?php echo $obj_pro->btn_limpiar; ?>">Limpiar</button>
+									<button type="reset" name="run" id="run" value="limpiar" class="<?php echo $obj_pro->btn_limpiar; ?>">Limpiar</button>
 								</div>
 							</div>
 							<div class="col-6">
 								<div class="form-group">
-									<button type="submit" name="run" id="run" value="venta"
-										class="<?php echo $obj_pro->btn_enviar; ?>">Registrar</button>
+									<button type="submit" name="run" id="run" value="venta" class="<?php echo $obj_pro->btn_enviar; ?>">Registrar</button>
 								</div>
 							</div>
 						</div>
@@ -64,6 +61,40 @@ check("Ventas");
 	</div>
 	<div class="row py-5">
 		<div class="col-12"></div>
+	</div>
+</div>
+
+<?php
+
+footer();
+
+?>
+
+<?php
+
+require_once("tema_session.php");
+
+headerr("Menú de Formularios");
+
+/* check("Formularios"); */
+
+?>
+
+<!-- Menu -->
+<div class="container px-3 pt-3 pb-5 mb-5">
+	<div class="row justify-content-center p-3">
+		<!-- Cargos -->
+		<div class="col-12 col-md-4 p-1">
+			<div class="card rounded px-3 py-4">
+				<h3 class="card-title text-center">Formularios</h3>
+				<div class="card-body">
+					<a class="btn btn-outline-primary btn-block" href="for_registrar.php">Registrar</a>
+					<a class="btn btn-outline-primary btn-block" href="for_listartodo.php">Listar</a>
+					<a class="btn btn-outline-primary btn-block" href="for_filtrar.php">Filtrar</a>
+					<a class="btn btn-outline-primary btn-block" href="for_listarpapelera.php">Papelera</a>
+				</div>
+			</div>
+		</div>
 	</div>
 </div>
 

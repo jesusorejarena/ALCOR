@@ -17,7 +17,7 @@ headerr("Registrar - Permisos");
 ?>
 
 <!-- Formulario -->
-<div class="container p-3 p-md-2">
+<div class="container px-3 pt-3 pb-5 mb-5">
 	<a class="btn btn-success btn-lg" href="rol_menu.php"><i class="fas fa-arrow-circle-left"></i></a>
 	<div class="row justify-content-center">
 		<div class="col-12 col-md-6 p-2">
@@ -29,7 +29,7 @@ headerr("Registrar - Permisos");
 							<div class="col-12 col-md-6">
 								<div class="form-group">
 									<label for="cargo">Cargo:</label>
-									<select name="fky_cargo" id="cargo" class="form-control">
+									<select name="cod_car" id="cargo" class="form-control">
 										<option value="">Seleccione...</option>
 										<?php while (($cargo = $obj_car->extractData()) > 0) {
 											if ($cargo['cod_car'] == 1 || $cargo['nom_car'] == 'Administrador') {
@@ -45,7 +45,7 @@ headerr("Registrar - Permisos");
 							<div class="col-12 col-md-6">
 								<div class="form-group">
 									<label for="modulo">Módulo:</label>
-									<select name="fky_modulo" id="modulo" class="form-control">
+									<select name="cod_mod" id="modulo" class="form-control">
 										<option value="">Seleccione...</option>
 										<?php while (($modulo = $obj_mod->extractData()) > 0) {
 											echo "<option value='$modulo[cod_mod]'>Menú de $modulo[nom_mod]</option>";

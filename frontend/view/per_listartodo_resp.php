@@ -19,7 +19,7 @@ headerr("Lista de Permisos - Historial");
 ?>
 
 <!-- Lista -->
-<div class="container-fluid p-3">
+<div class="container-fluid px-3 pt-3 pb-5 mb-5">
 	<a class="btn btn-success btn-lg" href="menu_config.php"><i class="fas fa-arrow-circle-left"></i></a>
 	<h2 class="text-center p-3">Lista de Permisos - Historial</h2>
 	<div class="row justify-content-center">

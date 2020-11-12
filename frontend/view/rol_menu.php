@@ -9,9 +9,9 @@ headerr("Menú de Roles");
 ?>
 
 <!-- Menu -->
-<div class="container p-3">
+<div class="container px-3 pt-3 pb-5 mb-5">
 	<h2 class="text-center p-3">Menú de roles</h2>
-	<div class="row justify-content-center">
+	<div class="row justify-content-center p-3">
 		<!-- Cargos -->
 		<div class="col-12 col-md-4 p-1">
 			<div class="card rounded px-3 py-4">

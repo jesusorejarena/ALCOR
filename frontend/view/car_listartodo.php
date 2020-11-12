@@ -13,7 +13,7 @@ headerr("Lista de Cargos");
 ?>
 
 <!-- Lista -->
-<div class="container-fluid p-3">
+<div class="container-fluid px-3 pt-3 pb-5 mb-5">
 	<a class="btn btn-success btn-lg" href="rol_menu.php"><i class="fas fa-arrow-circle-left"></i></a>
 	<h2 class="text-center p-3">Lista de Cargos</h2>
 	<div class="row justify-content-center">
@@ -27,6 +27,7 @@ headerr("Lista de Cargos");
 							<th>Creado</th>
 							<th>Modificado</th>
 							<th>Estatus</th>
+							<th>PDF</th>
 							<th>Editar</th>
 							<th>Eliminar</th>
 						</tr>
@@ -65,6 +66,7 @@ headerr("Lista de Cargos");
 								}
 
 								echo "
+											<td><a class='btn btn-danger' href='car_reportepdf.php?cod_car=$cargo[cod_car]'><i class='fas fa-file-pdf'></i></a></td>
 											<td><a class='btn btn-warning' href='car_modificar.php?cod_car=$cargo[cod_car]'><i class='fas fa-edit'></i></a></td>
 											<td><button type='submit' class='btn btn-danger' name='run' value='firstDelete'><i class='fas fa-trash'></i></button></td>
 										";

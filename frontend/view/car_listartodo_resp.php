@@ -14,7 +14,7 @@ headerr("Lista de Cargos - Historial");
 ?>
 
 <!-- Lista -->
-<div class="container-fluid p-3">
+<div class="container-fluid px-3 pt-3 pb-5 mb-5">
 	<a class="btn btn-success btn-lg" href="menu_config.php"><i class="fas fa-arrow-circle-left"></i></a>
 	<h2 class="text-center p-3">Lista de Cargos - Historial</h2>
 	<div class="row justify-content-center">
@@ -29,7 +29,6 @@ headerr("Lista de Cargos - Historial");
 							<th>Modificado</th>
 							<th>Restaurado</th>
 							<th>Eliminado</th>
-							<th>PDF</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -44,7 +43,6 @@ headerr("Lista de Cargos - Historial");
 												<td>$cargo[act_car]</td>
 												<td>$cargo[res_car]</td>
 												<td>$cargo[eli_car]</td>
-												<td><a class='btn btn-danger' href='car_reportepdf.php?cod_car=$cargo[cod_car]'><i class='fas fa-file-pdf'></i></a></td>
 											</tr>
 										</form>
 									";

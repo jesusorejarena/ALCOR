@@ -13,7 +13,7 @@ $obj_ado->cod_ado = $_SESSION['codigo'];
 $obj_ado->puntero = $obj_ado->getByCode();
 $empleado = $obj_ado->extractData();
 
-$obj_car->cod_car = $empleado['fky_cargo'];
+$obj_car->cod_car = $empleado['cod_car'];
 $obj_car->puntero = $obj_car->getByCode();
 $cargo = $obj_car->extractData();
 
@@ -41,8 +41,8 @@ $cargo = $obj_car->extractData();
 			<div class="card rounded px-3 py-4">
 				<h3 class="card-title text-center">Configuración</h3>
 				<div class="card-body">
-					<a class="btn btn-outline-primary btn-block" href="usu_cambiar_datos">Cambiar datos</a>
-					<a class="btn btn-outline-primary btn-block" href="usu_cambiar_contrasena">Cambiar contraseña</a>
+					<a class="btn btn-outline-primary btn-block" href="ado_cambiar_datos">Cambiar datos</a>
+					<a class="btn btn-outline-primary btn-block" href="ado_cambiar_contrasena.php">Cambiar contraseña</a>
 				</div>
 			</div>
 		</div>
