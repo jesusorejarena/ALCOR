@@ -9,7 +9,6 @@ $clave = $_POST['cla_ado'];
 
 $obj_ado->puntero = $obj_ado->getSession($correo, $clave);
 
-
 switch ($_REQUEST["run"]) {
 	case 'session':
 		$usuarios = $obj_ado->extractData();
@@ -18,7 +17,7 @@ switch ($_REQUEST["run"]) {
 			session_start();
 			$_SESSION['activo'] = true;
 			$_SESSION['codigo'] = $usuarios['cod_ado'];
-			$_SESSION['cargo'] = $usuarios['fky_cargo'];
+			$_SESSION['cargo'] = $usuarios['cod_car'];
 			$_SESSION["time"] = time();
 
 			header('Location: ../../frontend/view/ado_inicio.php');

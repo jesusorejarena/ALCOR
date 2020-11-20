@@ -48,6 +48,34 @@ class permiso extends utilidad
 		return $this->run();
 	} // fin de update
 
+	function updateStatusA()
+	{
+		$act_per = date("y-m-d h:i:s");
+
+		$this->que_bda = "UPDATE permiso
+							SET 
+								act_per='$act_per',
+								est_per='A'
+							WHERE
+								cod_per='$this->cod_per';";
+
+		return $this->run();
+	} // fin de updateStatusA
+
+	function updateStatusI()
+	{
+		$act_per = date("y-m-d h:i:s");
+
+		$this->que_bda = "UPDATE permiso
+							SET 
+								act_per='$act_per',
+								est_per='I'
+							WHERE
+								cod_per='$this->cod_per';";
+
+		return $this->run();
+	} // fin de updateStatusI
+
 	function restore()
 	{
 		$res_per = date("y-m-d h:i:s");
@@ -89,6 +117,13 @@ class permiso extends utilidad
 
 		return $this->run();
 	} // fin de getMenu
+
+	function getMenuVerify()
+	{
+		$this->que_bda = "SELECT cod_mod from permiso WHERE cod_car='$this->cod_car' AND cod_mod='$this->cod_mod' AND est_per='A' AND bas_per='A';";
+
+		return $this->run();
+	} // fin de getMenuVerify
 
 	function getByCode()
 	{

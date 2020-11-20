@@ -9,28 +9,61 @@ $obj_car->assignValue();
 switch ($_REQUEST["run"]) {
 	case 'create':
 		$obj_car->resultado = $obj_car->create();
-		$obj_car->message();
+
+		if ($obj_car->resultado == false) {
+			$message = "Este nombre de cargo ya existe, por favor ingrese otro";
+			$obj_car->message($message) == false;
+		} else {
+			$message = "Cargo registrado exitosamente";
+			$obj_car->message($message) == true;
+		}
 		header("refresh:1; url=../../frontend/view/car_registrar.php");
 		break;
 
 	case 'update':
 		$obj_car->resultado = $obj_car->update();
-		$obj_car->message();
-		header("refresh:1; url=../../frontend/view/rol_menu.php");
+
+		if ($obj_car->resultado == false) {
+			$message = "Este nombre de cargo ya existe, por favor ingrese otro";
+			$obj_car->message($message) == false;
+		} else {
+			$message = "Cargo actualizado exitosamente";
+			$obj_car->message($message) == true;
+		}
+		header("refresh:1; url=../../frontend/view/car_listartodo.php");
 		break;
 
-	case 'restore':
-		$obj_car->resultado = $obj_car->restore();
-		header("Location: ../../frontend/view/car_listarpapelera.php");
+	case 'updateStatusI':
+		$obj_car->updateStatusI();
+		header("Location: ../../frontend/view/car_listartodo.php");
 		break;
 
-	case 'firstDelete':
-		$obj_car->resultado = $obj_car->firstDelete();
+	case 'updateStatusA':
+		$obj_car->updateStatusA();
 		header("Location: ../../frontend/view/car_listartodo.php");
 		break;
 
 	case 'delete':
 		$obj_car->resultado = $obj_car->delete();
+
+		if ($obj_car->resultado == false) {
+			$message = "Problemas para eliminar el cargo, puede que este cargo este asignado a algun usuario";
+			$obj_car->message($message) == false;
+			header("refresh:3; url=../../frontend/view/car_listartodo.php");
+		} else {
+			$message = "Cargo eliminado exitosamente";
+			$obj_car->message($message) == true;
+			header("refresh:1; url=../../frontend/view/car_listartodo.php");
+		}
+		break;
+
+	case 'restore':
+		$obj_car->restore();
+		header("Location: ../../frontend/view/car_listarpapelera.php");
+		break;
+
+	case 'firstDelete':
+		$obj_car->firstDelete();
 		header("Location: ../../frontend/view/car_listartodo.php");
 		break;
 }

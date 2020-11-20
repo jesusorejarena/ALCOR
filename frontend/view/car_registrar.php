@@ -15,7 +15,7 @@ headerr("Registrar Cargo");
 		<div class="col-12 col-md-6 p-2">
 			<div class="card rounded">
 				<h2 class="card-title text-center pt-4">Registrar Cargo</h2>
-				<form action="../../backend/controller/cargo.php" method="POST" class="was-validation" novalidate>
+				<form action="../../backend/controller/cargo.php" method="POST" class="was-validation" id="formulario" novalidate>
 					<div class="card-body">
 						<div class="row">
 							<div class="col-12">
@@ -36,6 +36,8 @@ headerr("Registrar Cargo");
 		</div>
 	</div>
 </div>
+
+<script src="../js/validaciones.js"></script>
 
 <?php
 

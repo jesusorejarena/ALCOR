@@ -27,7 +27,7 @@ headerr("Modificar - Permisos");
 
 <!-- Formulario -->
 <div class="container px-3 pt-3 pb-5 mb-5">
-	<a class="btn btn-success btn-lg" href="per_listar.php"><i class="fas fa-arrow-circle-left"></i></a>
+	<a class="btn btn-success btn-lg" href="per_listartodo.php"><i class="fas fa-arrow-circle-left"></i></a>
 	<div class="row justify-content-center">
 		<div class="col-12 col-md-6 p-2">
 			<div class="card rounded">
@@ -88,6 +88,8 @@ headerr("Modificar - Permisos");
 		</div>
 	</div>
 </div>
+
+<script src="../js/validaciones.js"></script>
 
 <?php
 

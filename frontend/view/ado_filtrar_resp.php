@@ -4,9 +4,9 @@ require_once("tema_session.php");
 require_once("../../backend/class/cargo.class.php");
 
 $obj_car = new cargo;
-$obj_car->puntero = $obj_car->getBackup();
+$obj_car->puntero = $obj_car->getAll();
 
-headerr("Filtrar Empleado 'Historial'");
+headerr("Filtrar Empleado - Historial");
 
 /* check("Historial"); */
 
@@ -19,7 +19,7 @@ headerr("Filtrar Empleado 'Historial'");
 		<div class="col-12 col-md-6 p-2">
 			<div class="card rounded">
 				<h2 class="card-title text-center pt-4">Filtrar Empleado</h2>
-				<form action="ado_filtrado.php" method="POST" class="was-validation" novalidate>
+				<form action="ado_filtrado_resp.php" method="POST" class="was-validation" novalidate>
 					<div class="card-body">
 						<div class="row">
 							<div class="col-12 col-md-6">
@@ -100,26 +100,6 @@ headerr("Filtrar Empleado 'Historial'");
 									<label for="direccion">Dirección:</label>
 									<input type="text" name="dir_ado" id="direccion" class="form-control" placeholder="Dirección" />
 									<small id="correoDiv" class="invalid-feedback"></small>
-								</div>
-							</div>
-							<div class="col-12 col-md-6">
-								<div class="form-group">
-									<label for="estatus">Activo/Inactivo:</label>
-									<select name="est_ado" id="estatus" class="form-control">
-										<option value="">General</option>
-										<option value="A">Activo</option>
-										<option value="I">Inactivo</option>
-									</select>
-								</div>
-							</div>
-							<div class="col-12 col-md-6">
-								<div class="form-group">
-									<label for="basura">Activo/Papelera:</label>
-									<select name="bas_ado" id="basura" class="form-control">
-										<option value="">General</option>
-										<option value="A">Activo</option>
-										<option value="B">En papelera</option>
-									</select>
 								</div>
 							</div>
 						</div>

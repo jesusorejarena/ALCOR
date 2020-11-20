@@ -67,6 +67,8 @@ headerr("Registrar - Permisos");
 	</div>
 </div>
 
+<script src="../js/validaciones.js"></script>
+
 <?php
 
 footer();

@@ -16,10 +16,8 @@ headerr("Menú de Formularios");
 			<div class="card rounded px-3 py-4">
 				<h3 class="card-title text-center">Formularios</h3>
 				<div class="card-body">
-					<a class="btn btn-outline-primary btn-block" href="for_registrar.php">Registrar</a>
 					<a class="btn btn-outline-primary btn-block" href="for_listartodo.php">Listar</a>
 					<a class="btn btn-outline-primary btn-block" href="for_filtrar.php">Filtrar</a>
-					<a class="btn btn-outline-primary btn-block" href="for_listarpapelera.php">Papelera</a>
 				</div>
 			</div>
 		</div>

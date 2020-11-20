@@ -21,7 +21,7 @@ headerr("Lista - Permisos");
 <!-- Lista -->
 <div class="container-fluid px-3 pt-3 pb-5 mb-5">
 	<a class="btn btn-success btn-lg" href="rol_menu.php"><i class="fas fa-arrow-circle-left"></i></a>
-	<h2 class="text-center p-3">Lista de Permisos</h2>
+	<h2 class="text-center p-3">Permisos eliminados</h2>
 	<div class="row justify-content-center">
 		<div class="col-12 py-2">
 			<div class="table-responsive">
@@ -33,8 +33,10 @@ headerr("Lista - Permisos");
 							<th>Módulo</th>
 							<th>Creado</th>
 							<th>Modificado</th>
+							<th>Restaurado</th>
 							<th>Eliminado</th>
 							<th>Estatus</th>
+							<th>Restaurar</th>
 							<th>Eliminar</th>
 						</tr>
 					</thead>
@@ -42,7 +44,7 @@ headerr("Lista - Permisos");
 						<?php
 						while (($permiso = $obj_per->extractData()) > 0) {
 
-							$obj_car->cod_car = $permiso['fky_cargo'];
+							$obj_car->cod_car = $permiso['cod_car'];
 							$obj_car->puntero = $obj_car->filter();
 							$cargo = $obj_car->extractData();
 
@@ -72,7 +74,7 @@ headerr("Lista - Permisos");
 							}
 
 							echo "
-													<td><button type='submit' class='btn btn-success' name='run' value='restore'><i class='fas fa-trash'></i></button></td>
+													<td><button type='submit' class='btn btn-success' name='run' value='restore'><i class='fas fa-redo-alt'></i></button></td>
 													<td><button type='submit' class='btn btn-danger' name='run' value='delete'><i class='fas fa-trash'></i></button></td>
 												</tr>
 											</form>

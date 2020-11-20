@@ -37,7 +37,7 @@ class formulario extends utilidad
 
 	function getAll()
 	{
-		$this->que_bda = "SELECT * FROM formulario";
+		$this->que_bda = "SELECT * FROM formulario;";
 
 		return $this->run();
 	} // fin de getAll

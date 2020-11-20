@@ -30,6 +30,7 @@ headerr("Cargos Filtrados");
 							<th>Restaurado</th>
 							<th>Eliminado</th>
 							<th>Estatus</th>
+							<th>Estado</th>
 							<th>PDF</th>
 							<th>Restaurar</th>
 							<th>Editar</th>
@@ -72,6 +73,12 @@ headerr("Cargos Filtrados");
 								} else {
 									echo "
 													<td><button class='btn btn-danger' type='submit' name='run' value='updateStatusA'><i class='fas fa-times-circle'></button></td>";
+								}
+
+								if ($cargo['bas_car'] == "A") {
+									echo "<td><b class='text-success'>Activo</b></td>";
+								} else {
+									echo "<td><b class='text-danger'>Papelera</b></td>";
 								}
 
 								echo "

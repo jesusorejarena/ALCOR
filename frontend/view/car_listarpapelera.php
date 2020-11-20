@@ -27,8 +27,8 @@ headerr("Cargos Eliminados");
 							<th>Creado</th>
 							<th>Modificado</th>
 							<th>Eliminado</th>
-							<th>Restaurar</th>
 							<th>PDF</th>
+							<th>Restaurar</th>
 							<th>Eliminar</th>
 						</tr>
 					</thead>

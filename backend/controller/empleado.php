@@ -9,57 +9,116 @@ $obj_ado->assignValue();
 switch ($_REQUEST["run"]) {
 	case 'create':
 		$obj_ado->resultado = $obj_ado->create();
-		$obj_ado->message();
-		header("refresh:1; url=../../frontend/view/ado_registrar.php");
+
+		if ($obj_ado->resultado == false) {
+			$message = "El empleado que intenta registrar ya existe o puede que algunos datos ya esten registrados en el sistema, por favor ingrese otro";
+			$obj_ado->message($message) == false;
+			header("refresh:3; url=../../frontend/view/usu_registrar.php");
+		} else {
+			$message = "Usuario registrado exitosamente";
+			$obj_ado->message($message) == true;
+			header("refresh:1; url=../../frontend/view/usu_registrar.php");
+		}
+		break;
+
+	case 'finishRegistration':
+		$obj_ado->contador = $obj_ado->verifyNewUser();
+		if ($obj_ado->count() == 1) {
+			$obj_ado->resultado = $obj_ado->finishRegistration();
+			$message = "Registro terminado exitosamente";
+			$obj_ado->message($message) == true;
+			header("refresh:1; url=../../frontend/view/login.php");
+		} else {
+			$message = "No se puede terminar de registrar el empleado, porque ya existe";
+			$obj_ado->message($message) == false;
+			header("refresh:2; url=../../frontend/view/login.php");
+		}
+		break;
+
+	case 'updatePassword':
+		$obj_ado->contador = $obj_ado->verifyUser();
+		if ($obj_ado->count() == 1) {
+			$obj_ado->resultado = $obj_ado->updatePassword();
+			$message = "Contraseña recuperada exitosamente";
+			$obj_ado->message($message) == true;
+			header("refresh:1; url=../../frontend/view/login.php");
+		} else {
+			$message = "Información invalida";
+			$obj_ado->message($message) == false;
+			header("refresh:1; url=../../frontend/view/login.php");
+		}
+		break;
+
+	case 'changePassword':
+		$obj_ado->resultado = $obj_ado->changePassword();
+
+		if ($obj_ado->resultado == false) {
+			$message = "Hubo un error al actualizar la contraseña";
+			$obj_ado->message($message) == false;
+		} else {
+			$message = "Contraseña actualizada exitosamente";
+			$obj_ado->message($message) == true;
+		}
+		header("refresh:1; url=../../frontend/view/inicio.php");
+		break;
+
+	case 'updateQuestions':
+		$obj_ado->resultado = $obj_ado->updateQuestions();
+
+		if ($obj_ado->resultado == false) {
+			$message = "Hubo un error al actualizar las preguntas de seguridad";
+			$obj_ado->message($message) == false;
+		} else {
+			$message = "Preguntas de seguridad actualizadas exitosamente";
+			$obj_ado->message($message) == true;
+		}
+		header("refresh:1; url=../../frontend/view/inicio.php");
 		break;
 
 	case 'update':
 		$obj_ado->resultado = $obj_ado->update();
-		$obj_ado->message();
-		header("refresh:1; url=../../frontend/view/ado_menu.php");
+
+		if ($obj_ado->resultado == false) {
+			$message = "El empleado que intenta actualizar puede que tenga información registrada en otro empleado en el sistema, por favor verifique";
+			$obj_ado->message($message) == false;
+			header("refresh:3; url=../../frontend/view/ado_listartodo.php");
+		} else {
+			$message = "Usuario actualizado exitosamente";
+			$obj_ado->message($message) == true;
+			header("refresh:1; url=../../frontend/view/ado_listartodo.php");
+		}
 		break;
 
-	case 'restore':
-		$obj_ado->resultado = $obj_ado->restore();
-		header("Location : ../../frontend/view/ado_listarpapelera.php");
+	case 'updateStatusI':
+		$obj_ado->updateStatusI();
+		header("Location: ../../frontend/view/ado_listartodo.php");
 		break;
 
-	case 'firstDelete':
-		$obj_ado->resultado = $obj_ado->firstDelete();
-		header("Location : ../../frontend/view/ado_listartodo.php");
-		break;
-
-	case 'updateData':
-		$obj_ado->resultado = $obj_ado->updateData();
-		$obj_ado->message();
-		header("refresh:1; url=../../frontend/view/menu_principal.php");
-		break;
-
-	case 'updatePassword':
-		$obj_ado->resultado = $obj_ado->updatePassword();
-		$obj_ado->message();
-		header("refresh:1; url=../../frontend/view/menu_principal.php");
+	case 'updateStatusA':
+		$obj_ado->updateStatusA();
+		header("Location: ../../frontend/view/ado_listartodo.php");
 		break;
 
 	case 'delete':
 		$obj_ado->resultado = $obj_ado->delete();
-		header("Location : ../../frontend/view/ado_listarpapelera.php");
+
+		if ($obj_ado->resultado == false) {
+			$message = "Problemas para eliminar el empleado";
+			$obj_ado->message($message) == false;
+		} else {
+			$message = "Usuario eliminado exitosamente";
+			$obj_ado->message($message) == true;
+		}
+		header("refresh:1; url=../../frontend/view/ado_listartodo.php");
 		break;
 
-	case 'checkData':
-		$obj_ado->puntero = $obj_ado->checkData();
-		$empleado = $obj_ado->extractData();
+	case 'restore':
+		$obj_ado->restore();
+		header("Location: ../../frontend/view/ado_listarpapelera.php");
+		break;
 
-		if ($empleado['cor_ado'] == $obj_ado->cor_ado && $empleado['ced_ado'] == $obj_ado->ced_ado && $empleado['tel_ado'] == $obj_ado->tel_ado && $empleado['nac_ado'] == $obj_ado->nac_ado && $empleado['est_ado'] == "A" && $empleado['bas_ado'] == "A") {
-			$obj_ado->cod_ado = $empleado['cod_ado'];
-			$obj_ado->updatePassword();
-
-			header("Location: ../../frontend/view/usu_login.php");
-		} else {
-			$obj_ado->message();
-			header("Location: ../../frontend/view/ado_olvidocontrasena.php");
-		}
-
-
+	case 'firstDelete':
+		$obj_ado->firstDelete();
+		header("Location: ../../frontend/view/ado_listartodo.php");
 		break;
 }

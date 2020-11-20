@@ -1,6 +1,6 @@
 <?php
 
-require_once("tema.php");
+require_once("tema_session.php");
 require_once("../../backend/class/preguntas.class.php");
 
 $obj_pse = new preguntas;
@@ -11,12 +11,12 @@ headerr("Cambiar preguntas de seguridad");
 
 <!-- Formulario -->
 <div class="container p-3 p-md-2">
-	<a class="btn btn-success btn-lg" href="inicio.php"><i class="fas fa-arrow-circle-left"></i></a>
+	<a class="btn btn-success btn-lg" href="ado_inicio.php"><i class="fas fa-arrow-circle-left"></i></a>
 	<div class="row justify-content-center">
 		<div class="col-12 col-md-6 p-2">
 			<div class="card rounded">
 				<h2 class="card-title text-center pt-4">Cambiar preguntas de seguridad</h2>
-				<form action="../../backend/controller/usuario.php" method="POST" class="was-validation" id="formulario" novalidate>
+				<form action="../../backend/controller/empleado.php" method="POST" class="was-validation" id="formulario" novalidate>
 					<input type="hidden" name="cod_ado" value="<?php echo $_SESSION['codigo'] ?>">
 					<div class="card-body">
 						<div class="row">
@@ -73,6 +73,8 @@ headerr("Cambiar preguntas de seguridad");
 		</div>
 	</div>
 </div>
+
+<script src="../js/validaciones.js"></script>
 
 <?php
 

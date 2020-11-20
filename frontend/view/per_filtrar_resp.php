@@ -6,7 +6,7 @@ require_once("../../backend/class/cargo.class.php");
 require_once("../../backend/class/modulo.class.php");
 
 $obj_per = new permiso;
-$obj_per->puntero = $obj_per->filter();
+$obj_per->puntero = $obj_per->filterBackup();
 
 $obj_car = new cargo;
 $obj_car->puntero = $obj_car->getAll();
@@ -14,7 +14,7 @@ $obj_car->puntero = $obj_car->getAll();
 $obj_mod = new modulo;
 $obj_mod->puntero = $obj_mod->getAll();
 
-headerr("Filtrar Permisos");
+headerr("Filtrar Permisos - Historial");
 
 /* check("Historial"); */
 
@@ -26,7 +26,7 @@ headerr("Filtrar Permisos");
 	<div class="row justify-content-center">
 		<div class="col-12 col-md-6 p-2">
 			<div class="card rounded">
-				<h4 class="card-title text-center pt-4">Filtrar Permisos</h4>
+				<h2 class="card-title text-center pt-4">Filtrar Permisos - Historial</h2>
 				<form action="per_filtrado_resp.php" method="POST">
 					<div class="card-body">
 						<div class="row">
@@ -60,26 +60,6 @@ headerr("Filtrar Permisos");
 											echo "<option value='$modulo[cod_mod]'>Menú de $modulo[nom_mod]</option>";
 										}
 										?>
-									</select>
-								</div>
-							</div>
-							<div class="col-12 col-md-6">
-								<div class="form-group">
-									<label for="est_per">Estatus:</label>
-									<select name="est_per" id="est_per" class="form-control">
-										<option value="">Todos</option>
-										<option value="A">Activo</option>
-										<option value="I">Inactivo</option>
-									</select>
-								</div>
-							</div>
-							<div class="col-12 col-md-6">
-								<div class="form-group">
-									<label for="bas_per">Estado:</label>
-									<select name="bas_per" id="bas_per" class="form-control">
-										<option value="">Todos</option>
-										<option value="A">Activo</option>
-										<option value="B">Eliminado</option>
 									</select>
 								</div>
 							</div>

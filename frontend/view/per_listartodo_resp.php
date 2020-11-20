@@ -35,7 +35,6 @@ headerr("Lista de Permisos - Historial");
 							<th>Modificado</th>
 							<th>Restaurado</th>
 							<th>Eliminado</th>
-							<th>PDF</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -60,7 +59,6 @@ headerr("Lista de Permisos - Historial");
 													<td>$permiso[act_per]</td>
 													<td>$permiso[eli_per]</td>
 													<td>$permiso[res_per]</td>
-													<td><a class='btn btn-danger' href='per_reportepdf.php?cod_per=$permiso[cod_per]'><i class='fas fa-file-pdf'></i></a></td>
 												</tr>
 											</form>
 										";

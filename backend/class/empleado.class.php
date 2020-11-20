@@ -16,7 +16,11 @@ class empleado extends utilidad
 	public $cor_ado;
 	public $cla_ado;
 	public $dir_ado;
-	public $fky_cargo;
+	public $cod_car;
+	public $fky_preseg1;
+	public $re1_ado;
+	public $fky_preseg2;
+	public $re2_ado;
 	public $est_ado;
 	public $bas_ado;
 
@@ -34,9 +38,8 @@ class empleado extends utilidad
 								ced_ado, 
 								tel_ado, 
 								cor_ado, 
-								cla_ado, 
 								dir_ado, 
-								fky_cargo, 
+								cod_car, 
 								cre_ado,
 								est_ado,
 								bas_ado)
@@ -49,15 +52,33 @@ class empleado extends utilidad
 								'$this->ced_ado', 
 								'$this->tel_ado', 
 								'$this->cor_ado',  
-								'$this->cla_ado', 
 								'$this->dir_ado', 
-								'$this->fky_cargo', 
+								'$this->cod_car', 
 								'$cre_ado',
 								'A',
 								'A');";
 
 		return $this->run();
 	} // fin de create
+
+	function finishRegistration()
+	{
+		$clave = sha1($this->cla_ado);
+		$respuesta1 = sha1(strtoupper($this->re1_ado));
+		$respuesta2 = sha1(strtoupper($this->re2_ado));
+
+		$this->que_bda = "UPDATE usuario
+								SET
+									cla_ado='$clave',
+									fky_preseg1='$this->fky_preseg1',
+									re1_ado='$respuesta1',
+									fky_preseg2='$this->fky_preseg2',
+									re2_ado='$respuesta2'
+								WHERE
+									cor_ado='$this->cor_ado';";
+
+		return $this->run();
+	} // fin de finishRegistration
 
 	function update()
 	{
@@ -75,7 +96,7 @@ class empleado extends utilidad
 									cor_ado='$this->cor_ado',
 									cla_ado='$this->cla_ado',
 									dir_ado='$this->dir_ado',
-									fky_cargo='$this->fky_cargo',
+									cod_car='$this->cod_car',
 									act_ado='$act_ado',
 									est_ado='$this->est_ado'
 								WHERE
@@ -83,6 +104,34 @@ class empleado extends utilidad
 
 		return $this->run();
 	} // fin de update
+
+	function updateStatusA()
+	{
+		$act_ado = date("y-m-d h:i:s");
+
+		$this->que_bda = "UPDATE usuario
+							SET 
+								act_ado='$act_ado',
+								est_ado='A'
+							WHERE
+								cod_ado='$this->cod_ado';";
+
+		return $this->run();
+	} // fin de updateStatusA
+
+	function updateStatusI()
+	{
+		$act_ado = date("y-m-d h:i:s");
+
+		$this->que_bda = "UPDATE usuario
+							SET 
+								act_ado='$act_ado',
+								est_ado='I'
+							WHERE
+								cod_ado='$this->cod_ado';";
+
+		return $this->run();
+	} // fin de updateStatusI
 
 	function updateData()
 	{
@@ -100,19 +149,71 @@ class empleado extends utilidad
 		return $this->run();
 	} // fin de updateData
 
-	function updatePassword()
+	function changePassword()
 	{
 		$act_ado = date("y-m-d h:i:s");
+		$clave = sha1($this->cla_ado);
 
-		$this->que_bda = "UPDATE empleado
+		$this->que_bda = "UPDATE usuario
 								SET 
-									cla_ado='$this->cla_ado',
+									cla_ado='$clave',
 									act_ado='$act_ado'
 								WHERE
 									cod_ado='$this->cod_ado';";
 
 		return $this->run();
-	} // fin de updatePassword
+	} // fin de changePassword
+
+	function updateQuestions()
+	{
+		$respuesta1 = sha1(strtoupper($this->re1_ado));
+		$respuesta2 = sha1(strtoupper($this->re2_ado));
+
+		$this->que_bda = "UPDATE usuario 
+											SET
+												fky_preseg1='$this->fky_preseg1',
+												re1_ado='$respuesta1',
+												fky_preseg2='$this->fky_preseg2',
+												re2_ado='$respuesta2'
+											WHERE
+												cod_ado='$this->cod_ado';";
+
+		return $this->run();
+	} // fin de updateQuestions
+
+	function verifyNewUser()
+	{
+		$this->que_bda = "SELECT cor_ado 
+									FROM 
+										usuario 
+									WHERE 
+										cor_ado='$this->cor_ado' AND 
+										cla_ado IS NULL AND 
+										fky_preseg1 IS NULL AND 
+										re1_ado IS NULL AND 
+										fky_preseg2 IS NULL AND 
+										re2_ado IS NULL;";
+
+		return $this->run();
+	} // fin de verifyNewUser
+
+	function verifyUser()
+	{
+		$respuesta1 = sha1(strtoupper($this->re1_ado));
+		$respuesta2 = sha1(strtoupper($this->re2_ado));
+
+		$this->que_bda = "SELECT cor_ado, fky_preseg1, re1_ado, fky_preseg2, re2_ado
+									FROM 
+										usuario 
+									WHERE 
+										cor_ado='$this->cor_ado' AND 
+										fky_preseg1='$this->fky_preseg1' AND 
+										re1_ado='$respuesta1' AND 
+										fky_preseg2='$this->fky_preseg2' AND 
+										re2_ado='$respuesta2';";
+
+		return $this->run();
+	} // fin de verifyUser
 
 	function restore()
 	{
@@ -165,7 +266,7 @@ class empleado extends utilidad
 
 	function getSession($cor_ado, $cla_ado)
 	{
-		$this->que_bda = "SELECT cod_ado, cor_ado, cla_ado, fky_cargo, est_ado, bas_ado 
+		$this->que_bda = "SELECT cod_ado, cor_ado, cla_ado, cod_car, est_ado, bas_ado 
 									FROM 
 										empleado 
 									WHERE 
@@ -199,7 +300,7 @@ class empleado extends utilidad
 		$filter7 = ($this->tel_ado != "") ? "AND tel_ado LIKE '%$this->tel_ado%'" : "";
 		$filter8 = ($this->cor_ado != "") ? "AND cor_ado LIKE '%$this->cor_ado%'" : "";
 		$filter9 = ($this->dir_ado != "") ? "AND dir_ado LIKE '%$this->dir_ado%'" : "";
-		$filter10 = ($this->fky_cargo != "") ? "AND fky_cargo='$this->fky_cargo'" : "";
+		$filter10 = ($this->cod_car != "") ? "AND cod_car='$this->cod_car'" : "";
 		$filter11 = ($this->est_ado != "") ? "AND est_ado='$this->est_ado'" : "";
 		$filter12 = ($this->bas_ado != "") ? "AND bas_ado='$this->bas_ado'" : "";
 
@@ -241,7 +342,7 @@ class empleado extends utilidad
 		$filter7 = ($this->tel_ado != "") ? "AND tel_ado LIKE '%$this->tel_ado%'" : "";
 		$filter8 = ($this->cor_ado != "") ? "AND cor_ado LIKE '%$this->cor_ado%'" : "";
 		$filter9 = ($this->dir_ado != "") ? "AND dir_ado LIKE '%$this->dir_ado%'" : "";
-		$filter10 = ($this->fky_cargo != "") ? "AND fky_cargo='$this->fky_cargo'" : "";
+		$filter10 = ($this->cod_car != "") ? "AND cod_car='$this->cod_car'" : "";
 		$filter11 = ($this->est_ado != "") ? "AND est_ado='$this->est_ado'" : "";
 		$filter12 = ($this->bas_ado != "") ? "AND bas_ado='$this->bas_ado'" : "";
 

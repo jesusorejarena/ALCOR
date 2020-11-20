@@ -73,7 +73,7 @@ headerr("Lista - Permisos");
 							echo "
 													<td><a class='btn btn-danger' href='per_reportepdf.php?cod_per=$permiso[cod_per]'><i class='fas fa-file-pdf'></i></a></td>
 													<td><a class='btn btn-warning' href='per_modificar.php?cod_per=$permiso[cod_per]'><i class='fas fa-edit'></i></a></td>
-													<td><button type='submit' class='btn btn-danger' name='run' value='delete'><i class='fas fa-trash'></i></button></td>
+													<td><button type='submit' class='btn btn-danger' name='run' value='firstDelete'><i class='fas fa-trash'></i></button></td>
 												</tr>
 											</form>
 										";

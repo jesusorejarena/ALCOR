@@ -19,9 +19,7 @@ CREATE TABLE IF NOT EXISTS cargo (
 
 INSERT INTO `cargo` (`cod_car`, `nom_car`, `cre_car`, `act_car`, `eli_car`, `res_car`, `est_car`, `bas_car`) VALUES
 (1, 'Administrador', '2020-02-27 03:34:30', NULL, NULL, NULL, 'A', 'A'),
-(2, 'Contadora', '2020-02-27 03:48:54', NULL, NULL, NULL, 'A', 'A'),
-(3, 'Vendedor', '2020-02-27 03:49:06', '2020-02-27 03:51:54', NULL, NULL, 'A', 'A'),
-(4, 'Recursos Humanos', '2020-02-27 03:51:37', NULL, '2020-02-27 03:52:12', '2020-02-27 03:52:34', 'A', 'A');
+(2, 'Contador', '2020-02-27 03:48:54', NULL, NULL, NULL, 'A', 'A');
 
 DELIMITER $$
 CREATE TRIGGER `cargo_AI` AFTER INSERT ON `cargo` FOR EACH ROW INSERT INTO cargo_resp(nom_car,cre_car,est_car,bas_car) VALUES (NEW.nom_car,NOW(),NEW.est_car,NEW.bas_car)
@@ -89,7 +87,7 @@ CREATE TABLE IF NOT EXISTS empleado (
 
 INSERT INTO `empleado` (`cod_ado`, `nom_ado`, `ape_ado`, `gen_ado`, `nac_ado`, `tip_ado`, `ced_ado`, `tel_ado`, `cor_ado`, `cla_ado`, `dir_ado`, `cod_car`, `cre_ado`, `act_ado`, `eli_ado`, `res_ado`, `est_ado`, `bas_ado`) VALUES
 (1, 'Jesus', 'Orejarena', 'H', '2000-09-17', 'V', 29545545, '04147528826', 'jesusorejarena@gmail.com', '12345678', 'La Concordia', 1, '2020-02-27 03:34:30', '2020-02-27 03:48:03', NULL, NULL, 'A', 'A'),
-(2, 'David', 'Lozada', 'H', '1999-01-19', 'V', 27422823, '04141235673', 'thedavlozada@gmail.com', 'davisito', 'Barrio Obrero', 4, '2020-02-27 03:59:25', NULL, NULL, NULL, 'A', 'A');
+(2, 'David', 'Lozada', 'H', '1999-01-19', 'V', 27422823, '04141235673', 'thedavlozada@gmail.com', 'davisito', 'Barrio Obrero', 2, '2020-02-27 03:59:25', NULL, NULL, NULL, 'A', 'A');
 
 DELIMITER $$
 CREATE TRIGGER `empleado_AI` AFTER INSERT ON `empleado` FOR EACH ROW INSERT INTO empleado_resp(nom_ado,ape_ado,gen_ado,nac_ado,tip_ado,ced_ado,tel_ado,cor_ado,cla_ado,dir_ado,cod_car,cre_ado,est_ado,bas_ado) VALUES (NEW.nom_ado,NEW.ape_ado,NEW.gen_ado,NEW.nac_ado,NEW.tip_ado,NEW.ced_ado,NEW.tel_ado,NEW.cor_ado,NEW.cla_ado,NEW.dir_ado,NEW.cod_car,NOW(),NEW.est_ado,NEW.bas_ado)
@@ -261,12 +259,6 @@ CREATE TABLE IF NOT EXISTS permiso (
 	FOREIGN KEY (`cod_mod`) REFERENCES `modulo` (`cod_mod`) ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-INSERT INTO `permiso` (`cod_per`, `cod_car`, `cod_mod`, `cre_per`, `act_per`, `eli_per`, `res_per`, `est_per`, `bas_per`) VALUES
-(1, 2, 4, '2020-02-27 03:54:11', NULL, NULL, NULL, 'A', 'A'),
-(2, 2, 3, '2020-02-27 03:54:21', NULL, NULL, NULL, 'A', 'A'),
-(3, 3, 3, '2020-02-27 03:54:27', NULL, NULL, NULL, 'A', 'A'),
-(4, 4, 8, '2020-02-27 03:56:54', NULL, NULL, NULL, 'A', 'A');
-
 DELIMITER $$
 CREATE TRIGGER `permiso_AI` AFTER INSERT ON `permiso` FOR EACH ROW INSERT INTO permiso_resp(cod_car,cod_mod,cre_per,est_per,bas_per) VALUES(NEW.cod_car,NEW.cod_mod,NOW(),NEW.est_per,NEW.bas_per)
 $$
@@ -309,10 +301,6 @@ CREATE TABLE IF NOT EXISTS proveedor (
 	UNIQUE KEY `cor_edo` (`cor_edo`),
 	UNIQUE KEY `rif_edo` (`rif_edo`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
-INSERT INTO `proveedor` (`cod_edo`, `nom_edo`, `des_edo`, `dir_edo`, `tel_edo`, `cor_edo`, `tip_edo`, `rif_edo`, `cre_edo`, `act_edo`, `eli_edo`, `res_edo`, `est_edo`, `bas_edo`) VALUES
-(1, 'GeneMundos', 'genericooos', 'caracas', '04141243256', 'genemundo@gmail.com', 'V', '12312321-5', '2020-02-27 04:01:30', '2020-02-27 04:11:12', '2020-02-27 04:11:37', '2020-02-27 04:11:43', 'A', 'A'),
-(2, 'Los Andes', 'Gnericos', 'caracas', '01235921244', 'proc@gmail.com', 'V', '1231232131', '2020-02-27 04:14:04', NULL, NULL, NULL, 'A', 'A');
 
 DELIMITER $$
 CREATE TRIGGER `proveedor_AI` AFTER INSERT ON `proveedor` FOR EACH ROW INSERT INTO proveedor_resp(nom_edo,des_edo,dir_edo,tel_edo,cor_edo,tip_edo,rif_edo,cre_edo,est_edo,bas_edo) VALUES(NEW.nom_edo,NEW.des_edo,NEW.dir_edo,NEW.tel_edo,NEW.cor_edo,NEW.tip_edo,NEW.rif_edo,NOW(),NEW.est_edo,NEW.bas_edo)
@@ -361,10 +349,6 @@ CREATE TABLE IF NOT EXISTS producto (
 	INDEX `cod_edo` (`cod_edo`),
 	FOREIGN KEY (`cod_edo`) REFERENCES `proveedor` (`cod_edo`) ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
-INSERT INTO `producto` (`cod_pro`, `nom_pro`, `des_pro`, `pre_pro`, `can_pro`, `cod_edo`, `cre_pro`, `act_pro`, `eli_pro`, `res_pro`, `est_pro`, `bas_pro`) VALUES
-(1, 'Clorooo', 'jabonoso', 180.00, 10.0, 2, '2020-02-27 04:14:36', NULL, NULL, NULL, 'A', 'A'),
-(2, 'Jabon liquido', 'jabon>', 123.00, 0.0, 1, '2020-02-27 04:15:03', '2020-02-27 04:16:18', NULL, NULL, 'A', 'A');
 
 DELIMITER $$
 CREATE TRIGGER `producto_AI` AFTER INSERT ON `producto` FOR EACH ROW INSERT INTO producto_resp(nom_pro,des_pro,pre_pro,can_pro,cod_edo,cre_pro,bas_pro,est_pro) VALUES(NEW.nom_pro,NEW.des_pro,NEW.pre_pro,NEW.can_pro,NEW.cod_edo,NOW(),NEW.bas_pro,NEW.est_pro)

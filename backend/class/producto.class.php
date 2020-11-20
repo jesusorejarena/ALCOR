@@ -60,6 +60,34 @@ class producto extends utilidad
 		return $this->run();
 	} // fin de update
 
+	function updateStatusA()
+	{
+		$act_pro = date("y-m-d h:i:s");
+
+		$this->que_bda = "UPDATE producto
+							SET 
+								act_pro='$act_pro',
+								est_pro='A'
+							WHERE
+								cod_pro='$this->cod_pro';";
+
+		return $this->run();
+	} // fin de updateStatusA
+
+	function updateStatusI()
+	{
+		$act_pro = date("y-m-d h:i:s");
+
+		$this->que_bda = "UPDATE producto
+							SET 
+								act_pro='$act_pro',
+								est_pro='I'
+							WHERE
+								cod_pro='$this->cod_pro';";
+
+		return $this->run();
+	} // fin de updateStatusI
+
 	function restore()
 	{
 		$res_pro = date("y-m-d h:i:s");

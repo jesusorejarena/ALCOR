@@ -30,7 +30,7 @@ class utilidad
 
 	public function run()
 	{
-		echo $this->que_bda;
+		// echo $this->que_bda;
 		return $this->con_bda->query($this->que_bda);
 	}
 
@@ -51,24 +51,23 @@ class utilidad
 		return $this->contador->num_rows;
 	}
 
-	public function message()
+	public function message($message)
 	{
-		require_once("../../frontend/view/tema_controladores.php");
+		require_once("../../frontend/views/tema_controladores.php");
 
 		headerr("Comprobando...");
 
 		if ($this->resultado == true) {
 			echo "
 					<div class='alert alert-success py-5 my-5'>
-						<strong>¡Enhorabuena!</strong> Procesado exitosamente.
+						<strong>$message</strong>.
 					</div>
 				";
 		} else {
 			echo "
 					<div class='alert alert-danger py-5 my-5'>
-						<strong>¡Fallo!</strong> Hubo un error inesperado, verifique los campos y vuelve a intentar.
-					</div>
-				";
+						<strong>¡Fallo!</strong> $message <br>
+					</div>";
 		}
 
 		footer();

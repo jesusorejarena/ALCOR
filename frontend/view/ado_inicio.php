@@ -41,7 +41,7 @@ $cargo = $obj_car->extractData();
 			<div class="card rounded px-3 py-4">
 				<h3 class="card-title text-center">Configuración</h3>
 				<div class="card-body">
-					<a class="btn btn-outline-primary btn-block" href="ado_cambiar_datos">Cambiar datos</a>
+					<a class="btn btn-outline-primary btn-block" href="ado_cambiar_preguntas.php">Cambiar datos</a>
 					<a class="btn btn-outline-primary btn-block" href="ado_cambiar_contrasena.php">Cambiar contraseña</a>
 				</div>
 			</div>

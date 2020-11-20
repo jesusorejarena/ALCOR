@@ -9,24 +9,50 @@ $obj_pro->assignValue();
 switch ($_REQUEST["run"]) {
 	case 'create':
 		$obj_pro->resultado = $obj_pro->create();
-		$obj_pro->message();
-		header("refresh:1; url=../../frontend/view/pro_registrar.php");
+
+		if ($obj_pro->resultado == false) {
+			$message = "Este producto ya existe, por favor ingrese otro";
+			$obj_pro->message($message) == false;
+			header("refresh:2; url=../../frontend/view/pro_registrar.php");
+		} else {
+			$message = "Producto registrado exitosamente";
+			$obj_pro->message($message) == true;
+			header("refresh:1; url=../../frontend/view/pro_registrar.php");
+		}
 		break;
 
 	case 'update':
 		$obj_pro->resultado = $obj_pro->update();
-		$obj_pro->message();
-		header("refresh:1; url=../../frontend/view/pro_menu.php");
+
+		if ($obj_pro->resultado == false) {
+			$message = "Este producto ya existe, por favor ingrese otro";
+			$obj_pro->message($message) == false;
+			header("refresh:2; url=../../frontend/view/pro_listar.php");
+		} else {
+			$message = "Producto actualizado exitosamente";
+			$obj_pro->message($message) == true;
+			header("refresh:1; url=../../frontend/view/pro_listar.php");
+		}
 		break;
 
 	case 'restore':
-		$obj_pro->resultado = $obj_pro->restore();
+		$obj_pro->restore();
 		header("Location: ../../frontend/view/pro_listarpapelera.php");
 		break;
 
 	case 'firstDelete':
-		$obj_pro->resultado = $obj_pro->firstDelete();
+		$obj_pro->firstDelete();
 		header("Location: ../../frontend/view/pro_listartodo.php");
+		break;
+
+	case 'updateStatusI':
+		$obj_per->resultado = $obj_per->updateStatusI();
+		header("Location: ../../frontend/view/per_listar.php");
+		break;
+
+	case 'updateStatusA':
+		$obj_per->resultado = $obj_per->updateStatusA();
+		header("Location: ../../frontend/view/per_listar.php");
 		break;
 
 	case 'sale':
@@ -37,16 +63,18 @@ switch ($_REQUEST["run"]) {
 			$can_pro = ($producto['can_pro']) - ($obj_pro->com_pro);
 			$obj_pro->can_pro = $can_pro;
 			$obj_pro->resultado = $obj_pro->sale();
-			$obj_pro->message();
+			$message = "Venta realizada exitosamente";
+			$obj_pro->message($message) == false;
 			header("refresh:1; url=../../frontend/view/ven_menu.php");
 		} else {
-			$obj_pro->message();
+			$message = "Error al realizar la venta, revisa la cantidad";
+			$obj_pro->message($message) == false;
 			header("refresh:1; url=../../frontend/view/ven_menu.php");
 		}
 		break;
 
 	case 'delete':
-		$obj_pro->resultado = $obj_pro->delete();
+		$obj_pro->delete();
 		header("Location: ../../frontend/view/pro_listarpapelera.php");
 		break;
 }

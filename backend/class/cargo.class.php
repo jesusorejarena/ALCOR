@@ -42,6 +42,34 @@ class cargo extends utilidad
 		return $this->run();
 	} // fin de update
 
+	function updateStatusA()
+	{
+		$act_car = date("y-m-d h:i:s");
+
+		$this->que_bda = "UPDATE cargo
+							SET 
+								act_car='$act_car',
+								est_car='A'
+							WHERE
+								cod_car='$this->cod_car';";
+
+		return $this->run();
+	} // fin de updateStatusA
+
+	function updateStatusI()
+	{
+		$act_car = date("y-m-d h:i:s");
+
+		$this->que_bda = "UPDATE cargo
+							SET 
+								act_car='$act_car',
+								est_car='I'
+							WHERE
+								cod_car='$this->cod_car';";
+
+		return $this->run();
+	} // fin de updateStatusI
+
 	function restore()
 	{
 		$res_car = date("y-m-d h:i:s");

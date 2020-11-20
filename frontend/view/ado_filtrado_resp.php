@@ -46,10 +46,22 @@ headerr("Empleados Filtrados - Historial");
 													<input type='hidden' name='cod_ado' value='$empleado[cod_ado]'>
 													<td>$empleado[cod_ado]</td>
 													<td>$empleado[nom_ado]</td>
-													<td>$empleado[ape_ado]</td>
-													<td>$empleado[gen_ado]</td>
-													<td>$empleado[nac_ado]</td>
-													<td>$empleado[tip_ado]</td>
+													<td>$empleado[ape_ado]</td>";
+
+							if ($empleado['gen_ado'] == "H") {
+								echo "<td>Hombre</td>";
+							} else {
+								echo "<td>Mujer</td>";
+							}
+
+							echo "<td>$empleado[nac_ado]</td>";
+
+							if ($empleado['tip_ado'] == "V") {
+								echo "<td>Venezolano</td>";
+							} else {
+								echo "<td>Extranjero</td>";
+							}
+							echo "
 													<td>$empleado[ced_ado]</td>
 													<td>$empleado[tel_ado]</td>
 													<td>$empleado[cor_ado]</td>
@@ -59,8 +71,6 @@ headerr("Empleados Filtrados - Historial");
 													<td>$empleado[act_ado]</td>
 													<td>$empleado[eli_ado]</td>
 													<td>$empleado[res_ado]</td>
-													<td>$empleado[est_ado]</td>
-													<td>$empleado[bas_ado]</td>
 												</tr>
 											</form>
 										";

@@ -1,6 +1,6 @@
 <?php
 
-/* function check($menu)
+function check($menu, $cod_mod)
 {
 	require_once("../../backend/class/modulo.class.php");
 	require_once("../../backend/class/permiso.class.php");
@@ -12,7 +12,8 @@
 
 		// busca los codigos del cargo en permisos
 		$obj_per->cod_car = $_SESSION['cargo'];
-		$obj_per->puntero = $obj_per->getMenu();
+		$obj_per->cod_mod = $cod_mod;
+		$obj_per->puntero = $obj_per->getMenuVerify();
 		$permiso = $obj_per->extractData();
 
 		// el codigo del modulo del permiso se lo asigna al query en el modulo
@@ -23,42 +24,38 @@
 		//compara el nombre del modulo con el nombre del modulo por parametro
 		if ($modulo['nom_mod'] == $menu) {
 		} else {
-			header("Location: usu_inicio.php");
+			header("Location: inicio.php");
 		}
 	}
-} */
+}
 
-/* function checkadmin()
+function checkAdmin()
 {
 	if ($_SESSION['cargo'] == 1) {
 	} else {
-		header("Location: usu_inicio.php");
+		header("Location: inicio.php");
 	}
-} */
+}
 
 function headerr($titulo)
 {
-	/* ini_set("session.cookie_lifetime", "36000"); */
+	ini_set("session.cookie_lifetime", "36000");
 
 	session_start();
 
 	if ($_SESSION['activo'] == true) {
-		/* if (time() - $_SESSION["time"] < 1200) {
-		} else {#
+		if (time() - $_SESSION["time"] < 28800) {
+		} else {
 			session_destroy();
-		} */
+		}
 
-		require_once("../../backend/class/cargo.class.php");
 		require_once("../../backend/class/modulo.class.php");
 		require_once("../../backend/class/permiso.class.php");
-		require_once("../../backend/class/respaldo.class.php");
 
-		$obj_car = new cargo;
 		$obj_mod = new modulo;
 		$obj_per = new permiso;
-		$obj_res = new respaldo;
 	} else {
-		/* header('Location: ado_inicio.php'); */
+		header('Location: login.php');
 	}
 
 	echo "
@@ -67,7 +64,7 @@ function headerr($titulo)
 			<head>
 				<meta charset='UTF-8' />
 				<meta name='viewport' content='width=device-width, initial-scale=1.0' />
-				<title>$titulo - ALCOR C.A.</title>
+				<title>$titulo</title>
 				<link rel='shortcut icon' href='' type='image/x-icon' />
 				<link rel='stylesheet' href='../css/bootstrap-4.5.2/css/bootstrap.min.css' />
 				<link rel='stylesheet' href='../css/fontawesome-free-5.15.0/css/all.min.css' />
@@ -83,7 +80,7 @@ function headerr($titulo)
 				<header>
 					<nav class='navbar navbar-expand-lg navbar-dark bg-primary'>
 						<!-- Nombre de la App -->
-						<a href='usu_inicio.php' class='navbar-brand px-5'>
+						<a href='ado_inicio.php' class='navbar-brand px-5'>
 							<img src='../img/logo2.png' width='150'>
 						</a>
 
@@ -119,7 +116,7 @@ function headerr($titulo)
 												";
 	} else {
 		// verifica el cargo
-	/* 	if ($_SESSION['cargo'] >= 2) {
+		if ($_SESSION['cargo'] >= 2) {
 			// asigna el cargo sesion al codigo de permiso
 			$obj_per->cod_car = $_SESSION['cargo'];
 			$obj_per->puntero = $obj_per->getMenu();
@@ -130,13 +127,20 @@ function headerr($titulo)
 				$obj_mod->cod_mod = $permiso['cod_mod'];
 				$obj_mod->puntero = $obj_mod->getMenu();
 				$modulo = $obj_mod->extractData();
+
 				// extrae los nombres y url de la tabla modulo con el codigo del modulo de permiso
 
-				echo "	<a href='$modulo[url_mod]' class='nav-link active'>$modulo[nom_mod]</a>";
+				echo "
+							<li class='nav-item'>
+								<a href='$modulo[url_mod]' class='nav-link active'>$modulo[nom_mod]</a>
+							</li>
+						";
+
 				// termina el ciclo
 			}
-		} */
+		}
 	}
+
 	echo "
 								<a href='cerrar_sesion.php' class='nav-link text-light btn btn-sesion'><i class='fas fa-power-off'></i></a>
 							</div>

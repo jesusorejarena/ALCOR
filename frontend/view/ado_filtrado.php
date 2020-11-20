@@ -2,10 +2,13 @@
 
 require_once("tema_session.php");
 require_once("../../backend/class/empleado.class.php");
+require_once("../../backend/class/cargo.class.php");
 
 $obj_ado = new empleado;
 $obj_ado->assignValue();
-$obj_ado->puntero = $obj_ado->filterBackup();
+$obj_ado->puntero = $obj_ado->filter();
+
+$obj_car = new cargo;
 
 headerr("Empleados Filtrados");
 
@@ -47,30 +50,81 @@ headerr("Empleados Filtrados");
 					<tbody>
 						<?php
 						while (($empleado = $obj_ado->extractData()) > 0) {
+
+							$obj_car->cod_car = $empleado['cod_car'];
+							$obj_car->puntero = $obj_car->filter();
+							$cargo = $obj_car->extractData();
+
 							echo "<form action='../../backend/controller/empleado.php' method='POST'>
 												<tr>
 													<input type='hidden' name='cod_ado' value='$empleado[cod_ado]'>
 													<td>$empleado[cod_ado]</td>
 													<td>$empleado[nom_ado]</td>
-													<td>$empleado[ape_ado]</td>
-													<td>$empleado[gen_ado]</td>
-													<td>$empleado[nac_ado]</td>
-													<td>$empleado[tip_ado]</td>
+													<td>$empleado[ape_ado]</td>";
+
+							if ($empleado['gen_ado'] == "H") {
+								echo "<td>Hombre</td>";
+							} else {
+								echo "<td>Mujer</td>";
+							}
+
+							echo "<td>$empleado[nac_ado]</td>";
+
+							if ($empleado['nac_ado'] == "V") {
+								echo "<td>Venezolano</td>";
+							} else {
+								echo "<td>Extranjero</td>";
+							}
+							echo "
 													<td>$empleado[ced_ado]</td>
 													<td>$empleado[tel_ado]</td>
 													<td>$empleado[cor_ado]</td>
-													<td>$empleado[cod_car]</td>
-													<td>$empleado[dir_ado]</td>
-													<td>$empleado[cre_ado]</td>
-													<td>$empleado[act_ado]</td>
-													<td>$empleado[eli_ado]</td>
-													<td>$empleado[res_ado]</td>
-													<td>$empleado[est_ado]</td>
-													<td>$empleado[bas_ado]</td>
-													<td><a class='$obj_ado->btn_pdf' href='ado_reportepdf.php?cod_ado=$empleado[cod_ado]'><i class='fas fa-file-pdf'></i></a></td>
-													<td><a class='$obj_ado->btn_editar' href='ado_modificar.php?cod_ado=$empleado[cod_ado]'><i class='fas fa-edit'></i></a></td>
-													<td><button type='submit' class='$obj_ado->btn_restaurar' name='run' value='restore'><i class='fas fa-redo-alt'></i></button></td>
-													<td><button type='submit' class='$obj_ado->btn_eliminar' name='run' value='firstDelete'><i class='fas fa-trash'></i></button></td>
+													<td>$cargo[nom_car]</td>";
+
+							if ($empleado['cod_ado'] == 1 || $empleado['cod_car'] == 1) {
+								echo "
+																<td></td>
+																<td></td>
+																<td></td>
+																<td></td>
+																<td></td>
+																<td></td>
+																<td></td>
+																<td></td>
+																<td></td>
+														";
+							} else {
+								echo "
+																<td>$empleado[dir_ado]</td>
+																<td>$empleado[cre_ado]</td>
+																<td>$empleado[act_ado]</td>
+																<td>$empleado[eli_ado]</td>
+																<td>$empleado[res_ado]</td>
+									";
+
+
+								if ($empleado['est_ado'] == "A") {
+									echo "
+													<td><button class='btn btn-success' type='submit' name='run' value='updateStatusI'><i class='fas fa-check'></button></td>
+								";
+								} else {
+									echo "
+													<td><button class='btn btn-danger' type='submit' name='run' value='updateStatusA'><i class='fas fa-times-circle'></button></td>";
+								}
+
+								if ($empleado['bas_ado'] == "A") {
+									echo "<td><b class='text-success'>Activo</b></td>";
+								} else {
+									echo "<td><b class='text-danger'>Papelera</b></td>";
+								}
+
+								echo "
+													<td><a class='btn btn-danger' href='ado_reportepdf.php?cod_ado=$empleado[cod_ado]'><i class='fas fa-file-pdf'></i></a></td>
+													<td><a class='btn btn-warning' href='ado_modificar.php?cod_ado=$empleado[cod_ado]'><i class='fas fa-edit'></i></a></td>
+													<td><button type='submit' class='btn btn-success' name='run' value='restore'><i class='fas fa-redo-alt'></i></button></td>
+													<td><button type='submit' class='btn btn-danger' name='run' value='firstDelete'><i class='fas fa-trash'></i></button></td>";
+							}
+							echo "
 												</tr>
 											</form>
 										";

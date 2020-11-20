@@ -68,6 +68,34 @@ class proveedor extends utilidad
 		return $this->run();
 	} // fin de update
 
+	function updateStatusA()
+	{
+		$act_edo = date("y-m-d h:i:s");
+
+		$this->que_bda = "UPDATE proveedor
+							SET 
+								act_edo='$act_edo',
+								est_edo='A'
+							WHERE
+								cod_edo='$this->cod_edo';";
+
+		return $this->run();
+	} // fin de updateStatusA
+
+	function updateStatusI()
+	{
+		$act_edo = date("y-m-d h:i:s");
+
+		$this->que_bda = "UPDATE proveedor
+							SET 
+								act_edo='$act_edo',
+								est_edo='I'
+							WHERE
+								cod_edo='$this->cod_edo';";
+
+		return $this->run();
+	} // fin de updateStatusI
+
 	function restore()
 	{
 		$res_edo = date("y-m-d h:i:s");

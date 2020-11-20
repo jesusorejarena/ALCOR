@@ -6,7 +6,7 @@ require_once("../../backend/class/empleado.class.php");
 $obj_ado = new empleado;
 $obj_ado->puntero = $obj_ado->getFirstDelete();
 
-headerr("Empleados Eliminados- ALCOR C.A.");
+headerr("Empleados Eliminados");
 
 /* check("Empleados"); */
 
@@ -50,10 +50,22 @@ headerr("Empleados Eliminados- ALCOR C.A.");
 													<input type='hidden' name='cod_ado' value='$empleado[cod_ado]'>
 													<td>$empleado[cod_ado]</td>
 													<td>$empleado[nom_ado]</td>
-													<td>$empleado[ape_ado]</td>
-													<td>$empleado[gen_ado]</td>
-													<td>$empleado[nac_ado]</td>
-													<td>$empleado[tip_ado]</td>
+													<td>$empleado[ape_ado]</td>";
+
+							if ($empleado['gen_ado'] == "H") {
+								echo "<td>Hombre</td>";
+							} else {
+								echo "<td>Mujer</td>";
+							}
+
+							echo "<td>$empleado[nac_ado]</td>";
+
+							if ($empleado['tip_ado'] == "V") {
+								echo "<td>Venezolano</td>";
+							} else {
+								echo "<td>Extranjero</td>";
+							}
+							echo "
 													<td>$empleado[ced_ado]</td>
 													<td>$empleado[tel_ado]</td>
 													<td>$empleado[cor_ado]</td>

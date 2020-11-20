@@ -11,18 +11,18 @@ $empresa = $obj_emp->extractData();
 
 headerr("Modificar - Empresa");
 
-/* checkAdmin(); */
+checkAdmin();
 
 ?>
 
 <!-- Formulario -->
 <div class="container p-3 p-md-2">
-	<a class="btn btn-success btn-lg" href="inicio.php"><i class="fas fa-arrow-circle-left"></i></a>
+	<a class="btn btn-success btn-lg" href="ado_inicio.php"><i class="fas fa-arrow-circle-left"></i></a>
 	<div class="row justify-content-center">
 		<div class="col-12 col-md-6 p-2">
 			<div class="card rounded">
 				<h2 class="card-title text-center pt-4">Datos de la empresa</h2>
-				<form action="../../backend/controller/empresa.php" method="POST">
+				<form action="../../backend/controller/empresa.php" method="POST" class="was-validation" id="formulario" novalidate>
 					<input type="hidden" name="cod_emp" id="cod_emp" value="<?php echo $empresa['cod_emp']; ?>">
 					<div class="card-body">
 						<div class="row">
@@ -75,6 +75,9 @@ headerr("Modificar - Empresa");
 									<small id="horario2Div" class="invalid-feedback"></small>
 								</div>
 							</div>
+							<div class="col-12">
+								<small>Ultima modificación: <?php echo $empresa['act_emp']; ?></small>
+							</div>
 						</div>
 					</div>
 					<div class="card-footer d-flex justify-content-between">
@@ -86,6 +89,8 @@ headerr("Modificar - Empresa");
 		</div>
 	</div>
 </div>
+
+<script src="../js/validaciones.js"></script>
 
 <?php
 

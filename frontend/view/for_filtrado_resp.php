@@ -7,7 +7,7 @@ $obj_for = new formulario;
 $obj_for->assignValue();
 $obj_for->puntero = $obj_for->filterBackup();
 
-headerr("Formularios Filtrados 'Historial'");
+headerr("Formularios Filtrados - Historial");
 
 /* check("Historial"); */
 
@@ -16,7 +16,7 @@ headerr("Formularios Filtrados 'Historial'");
 <!-- Lista -->
 <div class="container-fluid px-3 pt-3 pb-5 mb-5">
 	<a class="btn btn-success btn-lg" href="menu_config.php"><i class="fas fa-arrow-circle-left"></i></a>
-	<h2 class="text-center p-3">Cargos Filtrados - Historial</h2>
+	<h2 class="text-center p-3">Formularios Filtrados - Historial</h2>
 	<div class="row justify-content-center">
 		<div class="col-12 py-2">
 			<div class="table-responsive">
@@ -29,7 +29,7 @@ headerr("Formularios Filtrados 'Historial'");
 							<th>Teléfono</th>
 							<th>Correo</th>
 							<th>Asunto</th>
-							<th>Fecha de Registro</th>
+							<th>Registro</th>
 						</tr>
 					</thead>
 					<tbody>

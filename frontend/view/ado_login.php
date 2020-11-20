@@ -41,7 +41,8 @@ headerr("Iniciar Sesión");
 			</div>
 			<div class="py-3 text-center">
 				<small>
-					<a href="ado_registrar.php">¿No tienes cuenta?</a>
+					<a href="ado_finalizar_registro.php">Si ya te registro un administrador y es la primera vez que vas a ingresar, termina de
+						configurar tu cuenta aqui.</a>
 				</small>
 			</div>
 		</div>

@@ -12,8 +12,6 @@ headerr("Registrar Empleado");
 
 ?>
 
-<script src="../js/ado.validacion.js"></script>
-
 <!-- Formulario -->
 <div class="container px-3 pt-3 pb-5 mb-5">
 	<a class="btn btn-success btn-lg" href="ado_menu.php"><i class="fas fa-arrow-circle-left"></i></a>
@@ -21,7 +19,7 @@ headerr("Registrar Empleado");
 		<div class="col-12 col-md-6 p-2">
 			<div class="card rounded">
 				<h2 class="card-title text-center pt-4">Registrar Empleado</h2>
-				<form action="../../backend/controller/empleado.php" method="POST" class="was-validation" novalidate>
+				<form action="../../backend/controller/empleado.php" method="POST" class="was-validation" id="formulario" novalidate>
 					<div class="card-body">
 						<div class="row">
 							<div class="col-12 col-md-6">
@@ -74,11 +72,18 @@ headerr("Registrar Empleado");
 									<small id="cedulaDiv" class="invalid-feedback"></small>
 								</div>
 							</div>
-							<div class="col-12 col-md-6">
+							<div class="col-12">
 								<div class="form-group">
 									<label for="correo">Correo:</label>
 									<input type="text" name="cor_ado" id="correo" class="form-control" placeholder="Correo" />
 									<small id="correoDiv" class="invalid-feedback"></small>
+								</div>
+							</div>
+							<div class="col-12 col-md-6">
+								<div class="form-group">
+									<label for="telefono">Teléfono:</label>
+									<input type="text" name="tel_ado" id="telefono" class="form-control" placeholder="Teléfono" />
+									<small id="telefonoDiv" class="invalid-feedback"></small>
 								</div>
 							</div>
 							<div class="col-12 col-md-6">
@@ -101,7 +106,7 @@ headerr("Registrar Empleado");
 								<div class="form-group">
 									<label for="direccion">Dirección:</label>
 									<input type="text" name="dir_ado" id="direccion" class="form-control" placeholder="Dirección" />
-									<small id="correoDiv" class="invalid-feedback"></small>
+									<small id="direccionDiv" class="invalid-feedback"></small>
 								</div>
 							</div>
 						</div>
@@ -115,6 +120,8 @@ headerr("Registrar Empleado");
 		</div>
 	</div>
 </div>
+
+<script src="../js/validaciones.js"></script>
 
 <?php
 
