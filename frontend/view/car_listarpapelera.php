@@ -8,7 +8,7 @@ $obj_car->assignValue();
 $obj_car->puntero = $obj_car->getFirstDelete();
 headerr("Cargos Eliminados");
 
-/* check("Roles"); */
+checkAdmin();
 
 ?>
 

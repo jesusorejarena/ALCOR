@@ -12,7 +12,7 @@ $obj_mod->puntero = $obj_mod->getAllActive();
 
 headerr("Registrar - Permisos");
 
-/* check("Roles"); */
+checkAdmin();
 
 ?>
 

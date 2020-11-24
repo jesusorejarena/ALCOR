@@ -17,10 +17,6 @@ CREATE TABLE IF NOT EXISTS cargo (
 	UNIQUE KEY `nom_car` (`nom_car`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-INSERT INTO `cargo` (`cod_car`, `nom_car`, `cre_car`, `act_car`, `eli_car`, `res_car`, `est_car`, `bas_car`) VALUES
-(1, 'Administrador', '2020-02-27 03:34:30', NULL, NULL, NULL, 'A', 'A'),
-(2, 'Contador', '2020-02-27 03:48:54', NULL, NULL, NULL, 'A', 'A');
-
 DELIMITER $$
 CREATE TRIGGER `cargo_AI` AFTER INSERT ON `cargo` FOR EACH ROW INSERT INTO cargo_resp(nom_car,cre_car,est_car,bas_car) VALUES (NEW.nom_car,NOW(),NEW.est_car,NEW.bas_car)
 $$
@@ -46,9 +42,11 @@ DROP TABLE IF EXISTS preguntas_seguridad;
 CREATE TABLE IF NOT EXISTS preguntas_seguridad (
 	cod_pse INT(11) NOT NULL AUTO_INCREMENT,
 	nom_pse VARCHAR(50) NOT NULL,
-	par_pse INT(11) NOT NULL, /*para controlar cuales preguntas se listaran en cada select*/
+	par_pse INT(11) NOT NULL,
 	PRIMARY KEY (cod_pse)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+INSERT INTO `preguntas_seguridad` (`cod_pse`, `nom_pse`, `par_pse`) VALUES (NULL, '¿Cómo se llamo su primera mascota?', '1'), (NULL, '¿Cuál es su materia favorita del bachillerato?', '1'), (NULL, '¿Cuál es el nombre de su abuela materna?', '2'), (NULL, '¿Cuál es su comida favorita?', '2');
 
 /* -------------------------------------------------- */
 
@@ -84,10 +82,6 @@ CREATE TABLE IF NOT EXISTS empleado (
 	FOREIGN KEY (fky_preseg1) REFERENCES preguntas_seguridad(cod_pse) ON DELETE RESTRICT ON UPDATE CASCADE,
 	FOREIGN KEY (fky_preseg2) REFERENCES preguntas_seguridad(cod_pse) ON DELETE RESTRICT ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
-INSERT INTO `empleado` (`cod_ado`, `nom_ado`, `ape_ado`, `gen_ado`, `nac_ado`, `tip_ado`, `ced_ado`, `tel_ado`, `cor_ado`, `cla_ado`, `dir_ado`, `cod_car`, `cre_ado`, `act_ado`, `eli_ado`, `res_ado`, `est_ado`, `bas_ado`) VALUES
-(1, 'Jesus', 'Orejarena', 'H', '2000-09-17', 'V', 29545545, '04147528826', 'jesusorejarena@gmail.com', '12345678', 'La Concordia', 1, '2020-02-27 03:34:30', '2020-02-27 03:48:03', NULL, NULL, 'A', 'A'),
-(2, 'David', 'Lozada', 'H', '1999-01-19', 'V', 27422823, '04141235673', 'thedavlozada@gmail.com', 'davisito', 'Barrio Obrero', 2, '2020-02-27 03:59:25', NULL, NULL, NULL, 'A', 'A');
 
 DELIMITER $$
 CREATE TRIGGER `empleado_AI` AFTER INSERT ON `empleado` FOR EACH ROW INSERT INTO empleado_resp(nom_ado,ape_ado,gen_ado,nac_ado,tip_ado,ced_ado,tel_ado,cor_ado,cla_ado,dir_ado,cod_car,cre_ado,est_ado,bas_ado) VALUES (NEW.nom_ado,NEW.ape_ado,NEW.gen_ado,NEW.nac_ado,NEW.tip_ado,NEW.ced_ado,NEW.tel_ado,NEW.cor_ado,NEW.cla_ado,NEW.dir_ado,NEW.cod_car,NOW(),NEW.est_ado,NEW.bas_ado)
@@ -139,9 +133,6 @@ CREATE TABLE IF NOT EXISTS empresa (
 	`act_emp` datetime DEFAULT NULL,
 	PRIMARY KEY (`cod_emp`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
-INSERT INTO `empresa` (`cod_emp`, `nom_emp`, `tel_emp`, `dir_emp`, `cor_emp`, `rif_emp`, `hou_emp`, `hod_emp`, `act_emp`) VALUES
-(1, 'Comercializadora ALCOR C.A', '+584147528826', 'Barrio El Carmen', 'alcor@gmail.com', 'J-30161557-3', ' 08:00 AM - 12:00 P', '02:00 PM - 06:00 PM', '2020-02-27 03:48:43');
 
 DELIMITER $$
 CREATE TRIGGER `empresa_AI` AFTER INSERT ON `empresa` FOR EACH ROW INSERT INTO empresa_resp(nom_emp,tel_emp,dir_emp,cor_emp,rif_emp,hou_emp,hod_emp) VALUES(NEW.nom_emp,NEW.tel_emp,NEW.dir_emp,NEW.cor_emp,NEW.rif_emp,NEW.hou_emp,NEW.hod_emp)
@@ -210,13 +201,6 @@ CREATE TABLE IF NOT EXISTS modulo(
 	UNIQUE KEY `nom_mod` (`nom_mod`),
 	UNIQUE KEY `url_mod` (`url_mod`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
-INSERT INTO `modulo` (`cod_mod`, `nom_mod`, `url_mod`, `cre_mod`, `act_mod`, `eli_mod`, `res_mod`, `est_mod`, `bas_mod`) VALUES
-(1, 'Empleados', 'ado_menu.php', '2020-02-27 03:52:59', '2020-02-27 03:53:38', NULL, NULL, 'I', 'A'),
-(2, 'Proveedores', 'edo_menu.php', '2020-02-27 03:53:03', NULL, NULL, NULL, 'A', 'A'),
-(3, 'Productos', 'pro_menu.php', '2020-02-27 03:53:09', NULL, NULL, NULL, 'A', 'A'),
-(4, 'Ventas', 'ven_menu.php', '2020-02-27 03:53:14', NULL, NULL, NULL, 'A', 'A'),
-(8, 'Formularios', 'for_menu.php', '2020-02-27 03:55:13', NULL, NULL, NULL, 'A', 'A');
 
 DELIMITER $$
 CREATE TRIGGER `modulo_AI` AFTER INSERT ON `modulo` FOR EACH ROW INSERT INTO modulo_resp(nom_mod,url_mod,cre_mod,est_mod,bas_mod) VALUES(NEW.nom_mod,NEW.url_mod,NOW(),NEW.est_mod,NEW.bas_mod)

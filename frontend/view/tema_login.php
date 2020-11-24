@@ -3,14 +3,14 @@
 
 function headerr($titulo)
 {
-	/* require_once("../../backend/class/instalacion.class.php");
+	require_once("../../backend/class/instalacion.class.php");
 
 	$obj_ins = new instalacion;
 	$obj_ins->contador = $obj_ins->check();
 
 	if (($obj_ins->count()) == 0) {
 		header("Location: ins_ado_registrar.php");
-	} */
+	}
 
 	echo "
 		<!DOCTYPE html>
@@ -59,8 +59,7 @@ function headerr($titulo)
 								<a class='nav-link active' href='inicio_servicio.php'> Servicio</a>
 								<a class='nav-link active' href='inicio_producto.php'> Productos</a>
 								<a class='nav-link active' href='inicio_contacto.php'> Contacto</a>
-								<a class='nav-link active' href='usu_registrarse.php'>Registrarse</a>
-								<a class='nav-link active' href='usu_login.php'>Iniciar Sesión</a>
+								<a class='nav-link active' href='ado_login.php'>Iniciar Sesión</a>
 							</div>
 						</div>
 					</nav>

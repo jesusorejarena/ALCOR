@@ -8,7 +8,7 @@ $obj_mod->puntero = $obj_mod->getAll();
 
 headerr("Lista de Módulos");
 
-/* check("Roles"); */
+checkAdmin();
 
 ?>
 

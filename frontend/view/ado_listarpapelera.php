@@ -8,7 +8,7 @@ $obj_ado->puntero = $obj_ado->getFirstDelete();
 
 headerr("Empleados Eliminados");
 
-/* check("Empleados"); */
+check("Empleados");
 
 ?>
 

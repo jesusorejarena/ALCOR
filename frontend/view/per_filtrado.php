@@ -15,7 +15,7 @@ $obj_mod = new modulo;
 
 headerr("Permisos Filtrados");
 
-/* check("Roles"); */
+checkAdmin();
 
 ?>
 

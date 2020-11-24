@@ -17,7 +17,7 @@ $obj_car->puntero = $obj_car->getAll();
 
 headerr("Modificar Empleado");
 
-/* check("Empleados"); */
+check("Empleados");
 
 ?>
 

@@ -8,7 +8,7 @@ $obj_ado->puntero = $obj_ado->getAll();
 
 headerr("Lista de Empleados");
 
-/* check("Empleados"); */
+check("Empleados");
 
 ?>
 

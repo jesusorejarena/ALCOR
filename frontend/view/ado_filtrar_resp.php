@@ -8,7 +8,7 @@ $obj_car->puntero = $obj_car->getAll();
 
 headerr("Filtrar Empleado - Historial");
 
-/* check("Historial"); */
+checkAdmin();
 
 ?>
 

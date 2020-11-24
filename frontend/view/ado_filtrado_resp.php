@@ -9,7 +9,7 @@ $obj_ado->puntero = $obj_ado->filterBackup();
 
 headerr("Empleados Filtrados - Historial");
 
-/* check("Historial"); */
+checkAdmin();
 
 ?>
 

@@ -7,7 +7,7 @@ $obj_edo = new proveedor;
 
 headerr("Filtrar Proveedores - Historial");
 
-/* check("Proveedores"); */
+checkAdmin();
 
 ?>
 

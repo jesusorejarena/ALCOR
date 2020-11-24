@@ -28,7 +28,7 @@ function headerr($titulo)
 			<body class='m-0 p-0'>
 				<!-- Nav -->
 				<header>
-					<nav class='navbar navbar-expand-lg navbar-dark bg-danger'>
+					<nav class='navbar navbar-expand-lg navbar-dark bg-primary'>
 						<!-- Nombre de la App -->
 						<a href='inicio.php' class='navbar-brand px-5'>
 							<img src='../img/logo2.png' width='150'>
@@ -55,8 +55,7 @@ function headerr($titulo)
 								<a class='nav-link active' href='inicio_servicio.php'> Servicio</a>
 								<a class='nav-link active' href='inicio_producto.php'> Productos</a>
 								<a class='nav-link active' href='inicio_contacto.php'> Contacto</a>
-								<a class='nav-link active' href='usu_registrarse.php'>Registrarse</a>
-								<a class='nav-link active' href='usu_login.php'>Iniciar Sesión</a>
+								<a class='nav-link active' href='ado_login.php'>Iniciar Sesión</a>
 							</div>
 						</div>
 					</nav>

@@ -9,7 +9,7 @@ $obj_pro->puntero = $obj_pro->filterBackup();
 
 headerr("Productos Filtrados - Historial");
 
-/* check("Historial"); */
+checkAdmin();
 
 
 ?>

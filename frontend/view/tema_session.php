@@ -24,7 +24,7 @@ function check($menu, $cod_mod)
 		//compara el nombre del modulo con el nombre del modulo por parametro
 		if ($modulo['nom_mod'] == $menu) {
 		} else {
-			header("Location: inicio.php");
+			header("Location: ado_inicio.php");
 		}
 	}
 }
@@ -33,7 +33,7 @@ function checkAdmin()
 {
 	if ($_SESSION['cargo'] == 1) {
 	} else {
-		header("Location: inicio.php");
+		header("Location: ado_inicio.php");
 	}
 }
 
@@ -55,7 +55,7 @@ function headerr($titulo)
 		$obj_mod = new modulo;
 		$obj_per = new permiso;
 	} else {
-		header('Location: login.php');
+		header('Location: ado_login.php');
 	}
 
 	echo "

@@ -8,7 +8,7 @@ $obj_for->puntero = $obj_for->getBackup();
 
 headerr("Lista de Formularios - Historial");
 
-/* check("Historial"); */
+checkAdmin();
 
 ?>
 

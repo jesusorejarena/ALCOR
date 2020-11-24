@@ -14,7 +14,7 @@ $obj_mod = new modulo;
 
 headerr("Lista - Permisos");
 
-/* check("Roles"); */
+checkAdmin();
 
 ?>
 

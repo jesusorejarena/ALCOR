@@ -9,7 +9,7 @@ $obj_for->puntero = $obj_for->filterBackup();
 
 headerr("Formularios Filtrados - Historial");
 
-/* check("Historial"); */
+checkAdmin();
 
 ?>
 

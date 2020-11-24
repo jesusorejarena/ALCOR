@@ -12,7 +12,7 @@ $cargo = $obj_car->extractData();
 
 headerr("Modificar Cargo");
 
-/* check("Roles"); */
+checkAdmin();
 
 ?>
 

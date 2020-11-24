@@ -4,7 +4,7 @@ require_once("tema_session.php");
 
 headerr("Registrar Cargo");
 
-/* check("Roles"); */
+checkAdmin();
 
 ?>
 

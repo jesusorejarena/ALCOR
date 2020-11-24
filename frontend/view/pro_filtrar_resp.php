@@ -9,7 +9,7 @@ $obj_edo->puntero = $obj_edo->getBackup();
 
 headerr("Filtrar producto - Historial");
 
-/* check("Historial"); */
+checkAdmin();
 
 ?>
 

@@ -9,7 +9,7 @@ $obj_for->puntero = $obj_for->filter();
 
 headerr("Formularios Filtrados");
 
-/* check("Formularios"); */
+check("Formularios");
 
 ?>
 

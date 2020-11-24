@@ -17,7 +17,6 @@ class empresa extends utilidad
 
 	function create()
 	{
-
 		$this->que_bda = "INSERT INTO empresa
 								(cod_emp,
 								nom_emp,

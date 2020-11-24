@@ -9,7 +9,7 @@ $obj_edo->puntero = $obj_edo->filterBackup();
 
 headerr("Proveedores Filtrados - Historial");
 
-/* check("Historial"); */
+checkAdmin();
 
 ?>
 <!-- Lista -->

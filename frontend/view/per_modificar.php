@@ -21,7 +21,7 @@ $obj_mod->puntero = $obj_mod->getAllActive();
 
 headerr("Modificar - Permisos");
 
-/* check("Roles"); */
+checkAdmin();
 
 ?>
 

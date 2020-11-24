@@ -9,7 +9,7 @@ $obj_car->puntero = $obj_car->filterBackup();
 
 headerr("Cargos Filtrados - Historial");
 
-/* check("Historial"); */
+checkAdmin();
 
 ?>
 

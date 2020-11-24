@@ -11,7 +11,7 @@ $obj_edo = new proveedor;
 
 headerr("Lista de Productos - Historial");
 
-/* check("Historial"); */
+checkAdmin();
 
 ?>
 

@@ -16,7 +16,7 @@ $obj_mod->puntero = $obj_mod->getAll();
 
 headerr("Filtrar Permisos - Historial");
 
-/* check("Historial"); */
+checkAdmin();
 
 ?>
 

@@ -105,6 +105,21 @@ class empleado extends utilidad
 		return $this->run();
 	} // fin de update
 
+	function updatePassword()
+	{
+		$act_ado = date("y-m-d h:i:s");
+		$clave = sha1($this->cla_ado);
+
+		$this->que_bda = "UPDATE usuario
+								SET 
+									cla_ado='$clave',
+									act_ado='$act_ado'
+								WHERE
+									cor_ado='$this->cor_ado';";
+
+		return $this->run();
+	} // fin de updatePassword
+
 	function updateStatusA()
 	{
 		$act_ado = date("y-m-d h:i:s");
@@ -266,12 +281,14 @@ class empleado extends utilidad
 
 	function getSession($cor_ado, $cla_ado)
 	{
+		$clave = sha1($cla_ado);
+
 		$this->que_bda = "SELECT cod_ado, cor_ado, cla_ado, cod_car, est_ado, bas_ado 
 									FROM 
 										empleado 
 									WHERE 
 										cor_ado='$cor_ado' AND 
-										cla_ado='$cla_ado' AND 
+										cla_ado='$clave' AND 
 										est_ado='A' AND 
 										bas_ado='A';";
 

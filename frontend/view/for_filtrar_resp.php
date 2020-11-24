@@ -4,7 +4,7 @@ require_once("tema_session.php");
 
 headerr("Formularios Filtrados - Historial");
 
-/* check("Historial"); */
+checkAdmin();
 
 ?>
 

@@ -11,13 +11,13 @@ $obj_ado->puntero = $obj_ado->getSession($correo, $clave);
 
 switch ($_REQUEST["run"]) {
 	case 'session':
-		$usuarios = $obj_ado->extractData();
+		$empleado = $obj_ado->extractData();
 
-		if ($usuarios['cor_ado'] == $correo && $usuarios['cla_ado'] == $clave && $usuarios['est_ado'] == 'A' && $usuarios['bas_ado'] == 'A') {
+		if ($empleado['cor_ado'] == $correo && $empleado['cla_ado'] == sha1($clave) && $empleado['est_ado'] == 'A' && $empleado['bas_ado'] == 'A') {
 			session_start();
 			$_SESSION['activo'] = true;
-			$_SESSION['codigo'] = $usuarios['cod_ado'];
-			$_SESSION['cargo'] = $usuarios['cod_car'];
+			$_SESSION['codigo'] = $empleado['cod_ado'];
+			$_SESSION['cargo'] = $empleado['cod_car'];
 			$_SESSION["time"] = time();
 
 			header('Location: ../../frontend/view/ado_inicio.php');

@@ -8,7 +8,7 @@ $obj_ado->puntero = $obj_ado->getBackup();
 
 headerr("Lista de Empleados - Historial");
 
-/* check("Historial"); */
+checkAdmin();
 
 ?>
 

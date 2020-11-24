@@ -8,7 +8,7 @@ $obj_car->puntero = $obj_car->getAll();
 
 headerr("Lista de Cargos");
 
-/* check("Roles"); */
+checkAdmin();
 
 ?>
 

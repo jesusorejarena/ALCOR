@@ -9,7 +9,7 @@ $obj_car->puntero = $obj_car->filter();
 
 headerr("Cargos Filtrados");
 
-/* check("Roles"); */
+checkAdmin();
 
 ?>
 

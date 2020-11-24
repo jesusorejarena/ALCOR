@@ -9,7 +9,7 @@ $obj_edo->puntero = $obj_edo->getAll();
 
 headerr("Filtrar producto");
 
-/* check("Productos"); */
+check("Productos");
 
 ?>
 

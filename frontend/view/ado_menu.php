@@ -5,7 +5,7 @@ require_once("tema_session.php");
 
 headerr("Menu de Empleados");
 
-/* check("Roles"); */
+checkAdmin();
 
 ?>
 

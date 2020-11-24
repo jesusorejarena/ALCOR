@@ -4,12 +4,12 @@ require_once("tema_session.php");
 
 headerr("Menú de Configuración");
 
-/* check("Configuración"); */
+checkAdmin();
 
 ?>
 
 <div class="container-fluid p-3">
-	<h2 class="text-center p-3">Cuenta</h2>
+	<h2 class="text-center p-3">Configuración</h2>
 	<div class="row justify-content-center">
 		<div class="col-12 col-md-4">
 			<div class="card rounded px-3 py-4">

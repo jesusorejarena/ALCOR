@@ -11,19 +11,14 @@ $empresa = $obj_emp->extractData();
 
 headerr("Registrar Datos de la Empresa");
 
-/* checkAdmin(); */
-
 ?>
 
 <!-- Formulario -->
 <div class="container p-3 p-md-2">
-	<a class="btn btn-success btn-lg" href="inicio.php"><i class="fas fa-arrow-circle-left"></i></a>
 	<div class="row justify-content-center">
 		<div class="col-12 col-md-6 p-2">
 			<div class="card rounded">
 				<h2 class="card-title text-center pt-4">Registrar Datos de la Empresa</h2>
-				<hr>
-				<p class="card-subtitle">Campos opcionales con *</p>
 				<form action="../../backend/controller/empresa.php" method="POST">
 					<input type="hidden" name="cod_emp" id="cod_emp">
 					<div class="card-body">
@@ -81,7 +76,7 @@ headerr("Registrar Datos de la Empresa");
 					</div>
 					<div class="card-footer d-flex justify-content-between">
 						<button type="reset" class="btn btn-success">Limpiar</button>
-						<button type="submit" class="btn btn-primary" name="run" value="update">Guardar</button>
+						<button type="submit" class="btn btn-primary" name="run" value="create">Guardar</button>
 					</div>
 				</form>
 			</div>

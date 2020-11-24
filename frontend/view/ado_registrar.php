@@ -8,7 +8,7 @@ $obj_car->puntero = $obj_car->getAllActive();
 
 headerr("Registrar Empleado");
 
-/* check("Empleados"); */
+check("Empleados");
 
 ?>
 

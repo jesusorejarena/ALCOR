@@ -1,7 +1,7 @@
 <?php
 
 // Cargamos la librería dompdf que hemos instalado en la carpeta dompdf
-require_once '../../librerias/dompdf/autoload.inc.php';
+require_once '../../library/dompdf/autoload.inc.php';
 
 require_once("../../backend/class/producto.class.php");
 require_once("../../backend/class/proveedor.class.php");

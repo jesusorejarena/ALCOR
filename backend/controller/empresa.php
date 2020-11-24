@@ -7,6 +7,11 @@ $obj_emp = new empresa();
 $obj_emp->assignValue();
 
 switch ($_REQUEST["run"]) {
+	case 'create':
+		$obj_emp->create();
+		header("Location: ../../frontend/view/ado_login.php");
+		break;
+
 	case 'update':
 		$obj_emp->resultado = $obj_emp->update();
 

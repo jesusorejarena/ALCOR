@@ -8,7 +8,7 @@ $obj_edo->puntero = $obj_edo->getBackup();
 
 headerr("Lista de Proveedores - Historial");
 
-/* check("Proveedores"); */
+checkAdmin();
 
 ?>
 

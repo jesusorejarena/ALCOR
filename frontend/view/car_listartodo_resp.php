@@ -9,7 +9,7 @@ $obj_car->puntero = $obj_car->getBackup();
 
 headerr("Lista de Cargos - Historial");
 
-/* check("Roles"); */
+checkAdmin();
 
 ?>
 
