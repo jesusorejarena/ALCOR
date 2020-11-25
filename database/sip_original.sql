@@ -18,7 +18,7 @@ CREATE TABLE IF NOT EXISTS cargo (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 DELIMITER $$
-CREATE TRIGGER `cargo_AI` AFTER INSERT ON `cargo` FOR EACH ROW INSERT INTO cargo_resp(nom_car,cre_car,est_car,bas_car) VALUES (NEW.nom_car,NOW(),NEW.est_car,NEW.bas_car)
+CREATE TRIGGER `cargo_AD` AFTER DELETE ON `cargo` FOR EACH ROW INSERT INTO cargo_resp(nom_car, cre_car, act_car, eli_car, res_car, est_car, bas_car) VALUES (OLD.nom_car, OLD.cre_car, OLD.act_car, OLD.eli_car, OLD.res_car, OLD.est_car, OLD.bas_car)
 $$
 DELIMITER ;
 
@@ -84,7 +84,7 @@ CREATE TABLE IF NOT EXISTS empleado (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 DELIMITER $$
-CREATE TRIGGER `empleado_AI` AFTER INSERT ON `empleado` FOR EACH ROW INSERT INTO empleado_resp(nom_ado,ape_ado,gen_ado,nac_ado,tip_ado,ced_ado,tel_ado,cor_ado,cla_ado,dir_ado,cod_car,cre_ado,est_ado,bas_ado) VALUES (NEW.nom_ado,NEW.ape_ado,NEW.gen_ado,NEW.nac_ado,NEW.tip_ado,NEW.ced_ado,NEW.tel_ado,NEW.cor_ado,NEW.cla_ado,NEW.dir_ado,NEW.cod_car,NOW(),NEW.est_ado,NEW.bas_ado)
+CREATE TRIGGER `empleado_AD` AFTER DELETE ON `empleado` FOR EACH ROW INSERT INTO empleado_resp(nom_ado, ape_ado, gen_ado, nac_ado, tip_ado, ced_ado, tel_ado, cor_ado, cla_ado, dir_ado, cod_car, cre_ado, act_ado, eli_ado, res_ado, est_ado, bas_ado) VALUES (OLD.nom_ado, OLD.ape_ado, OLD.gen_ado, OLD.nac_ado, OLD.tip_ado, OLD.ced_ado, OLD.tel_ado, OLD.cor_ado, OLD.cla_ado, OLD.dir_ado, OLD.cod_car, OLD.cre_ado, OLD.act_ado, OLD.eli_ado, OLD.res_ado, OLD.est_ado, OLD.bas_ado)
 $$
 DELIMITER ;
 
@@ -135,7 +135,7 @@ CREATE TABLE IF NOT EXISTS empresa (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 DELIMITER $$
-CREATE TRIGGER `empresa_AI` AFTER INSERT ON `empresa` FOR EACH ROW INSERT INTO empresa_resp(nom_emp,tel_emp,dir_emp,cor_emp,rif_emp,hou_emp,hod_emp) VALUES(NEW.nom_emp,NEW.tel_emp,NEW.dir_emp,NEW.cor_emp,NEW.rif_emp,NEW.hou_emp,NEW.hod_emp)
+CREATE TRIGGER `empresa_AU` AFTER UPDATE ON `empresa` FOR EACH ROW INSERT INTO empresa_resp(nom_emp, tel_emp, dir_emp, cor_emp, rif_emp, hou_emp, hod_emp, act_emp) VALUES(OLD.nom_emp, OLD.tel_emp, OLD.dir_emp, OLD.cor_emp, OLD.rif_emp, OLD.hou_emp, OLD.hod_emp, OLD.act_emp)
 $$
 DELIMITER ;
 
@@ -168,7 +168,7 @@ CREATE TABLE IF NOT EXISTS formulario (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 DELIMITER $$
-CREATE TRIGGER `formulario_AI` AFTER INSERT ON `formulario` FOR EACH ROW INSERT INTO formulario_resp(nom_for,ape_for,tel_for,cor_for,asu_for,cre_for) VALUES(NEW.nom_for,NEW.ape_for,NEW.tel_for,NEW.cor_for,NEW.asu_for,NOW())
+CREATE TRIGGER `formulario_AD` AFTER DELETE ON `formulario` FOR EACH ROW INSERT INTO formulario_resp(nom_for, ape_for, tel_for, cor_for, asu_for, cre_for) VALUES(OLD.nom_for, OLD.ape_for, OLD.tel_for, OLD.cor_for, OLD.asu_for, OLD.cre_for)
 $$
 DELIMITER ;
 
@@ -191,19 +191,15 @@ CREATE TABLE IF NOT EXISTS modulo(
 	`cod_mod` int(11) NOT NULL AUTO_INCREMENT,
 	`nom_mod` varchar(20) NOT NULL,
 	`url_mod` varchar(20) NOT NULL,
-	`cre_mod` datetime NOT NULL,
-	`act_mod` datetime DEFAULT NULL,
-	`eli_mod` datetime DEFAULT NULL,
-	`res_mod` datetime DEFAULT NULL,
-	`est_mod` enum('A','I') NOT NULL,
-	`bas_mod` enum('A','B') NOT NULL,
 	PRIMARY KEY (`cod_mod`),
 	UNIQUE KEY `nom_mod` (`nom_mod`),
 	UNIQUE KEY `url_mod` (`url_mod`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+INSERT INTO `modulo` (`cod_mod`, `nom_mod`, `url_mod`) VALUES (NULL, 'Empleados', 'ado_menu.php'), (NULL, 'Proveedores', 'edo_menu.php'), (NULL, 'Productos', 'pro_menu.php'), (NULL, 'Ventas', 'ven_menu.php'), (NULL, 'Formularios', 'for_menu.php');
+
 DELIMITER $$
-CREATE TRIGGER `modulo_AI` AFTER INSERT ON `modulo` FOR EACH ROW INSERT INTO modulo_resp(nom_mod,url_mod,cre_mod,est_mod,bas_mod) VALUES(NEW.nom_mod,NEW.url_mod,NOW(),NEW.est_mod,NEW.bas_mod)
+CREATE TRIGGER `modulo_AD` AFTER DELETE ON `modulo` FOR EACH ROW INSERT INTO modulo_resp(nom_mod, url_mod) VALUES(OLD.nom_mod, OLD.url_mod)
 $$
 DELIMITER ;
 
@@ -212,12 +208,6 @@ CREATE TABLE IF NOT EXISTS modulo_resp(
 	`cod_mod` int(11) NOT NULL AUTO_INCREMENT,
 	`nom_mod` varchar(20) NOT NULL,
 	`url_mod` varchar(20) NOT NULL,
-	`cre_mod` datetime NOT NULL,
-	`act_mod` datetime DEFAULT NULL,
-	`eli_mod` datetime DEFAULT NULL,
-	`res_mod` datetime DEFAULT NULL,
-	`est_mod` enum('A','I') NOT NULL,
-	`bas_mod` enum('A','B') NOT NULL,
 	PRIMARY KEY (`cod_mod`),
 	UNIQUE KEY `nom_mod` (`nom_mod`),
 	UNIQUE KEY `url_mod` (`url_mod`)
@@ -244,7 +234,7 @@ CREATE TABLE IF NOT EXISTS permiso (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 DELIMITER $$
-CREATE TRIGGER `permiso_AI` AFTER INSERT ON `permiso` FOR EACH ROW INSERT INTO permiso_resp(cod_car,cod_mod,cre_per,est_per,bas_per) VALUES(NEW.cod_car,NEW.cod_mod,NOW(),NEW.est_per,NEW.bas_per)
+CREATE TRIGGER `permiso_AD` AFTER DELETE ON `permiso` FOR EACH ROW INSERT INTO permiso_resp(cod_car, cod_mod, cre_per, act_per, eli_per, res_per, est_per, bas_per) VALUES(OLD.cod_car, OLD.cod_mod, OLD.cre_per, OLD.act_per, OLD.eli_per, OLD.res_per, OLD.est_per, OLD.bas_per)
 $$
 DELIMITER ;
 
@@ -287,7 +277,7 @@ CREATE TABLE IF NOT EXISTS proveedor (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 DELIMITER $$
-CREATE TRIGGER `proveedor_AI` AFTER INSERT ON `proveedor` FOR EACH ROW INSERT INTO proveedor_resp(nom_edo,des_edo,dir_edo,tel_edo,cor_edo,tip_edo,rif_edo,cre_edo,est_edo,bas_edo) VALUES(NEW.nom_edo,NEW.des_edo,NEW.dir_edo,NEW.tel_edo,NEW.cor_edo,NEW.tip_edo,NEW.rif_edo,NOW(),NEW.est_edo,NEW.bas_edo)
+CREATE TRIGGER `proveedor_AD` AFTER DELETE ON `proveedor` FOR EACH ROW INSERT INTO proveedor_resp(nom_edo, des_edo, dir_edo, tel_edo, cor_edo, tip_edo, rif_edo, cre_edo, act_edo, eli_edo, res_edo, est_edo, bas_edo) VALUES(OLD.nom_edo, OLD.des_edo, OLD.dir_edo, OLD.tel_edo, OLD.cor_edo, OLD.tip_edo, OLD.rif_edo, OLD.cre_edo, OLD.act_edo, OLD.eli_edo, OLD.res_edo, OLD.est_edo, OLD.bas_edo)
 $$
 DELIMITER ;
 
@@ -335,7 +325,7 @@ CREATE TABLE IF NOT EXISTS producto (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 DELIMITER $$
-CREATE TRIGGER `producto_AI` AFTER INSERT ON `producto` FOR EACH ROW INSERT INTO producto_resp(nom_pro,des_pro,pre_pro,can_pro,cod_edo,cre_pro,bas_pro,est_pro) VALUES(NEW.nom_pro,NEW.des_pro,NEW.pre_pro,NEW.can_pro,NEW.cod_edo,NOW(),NEW.bas_pro,NEW.est_pro)
+CREATE TRIGGER `producto_AD` AFTER DELETE ON `producto` FOR EACH ROW INSERT INTO producto_resp(nom_pro, des_pro, pre_pro, can_pro, cod_edo, cre_pro, act_pro, eli_pro, res_pro, est_pro, bas_pro) VALUES(OLD.nom_pro, OLD.des_pro, OLD.pre_pro, OLD.can_pro, OLD.cod_edo, OLD.cre_pro, OLD.act_pro, OLD.eli_pro, OLD.res_pro, OLD.est_pro, OLD.bas_pro)
 $$
 DELIMITER ;
 

@@ -49,11 +49,11 @@ switch ($_REQUEST["run"]) {
 		if ($obj_car->resultado == false) {
 			$message = "Problemas para eliminar el cargo, puede que este cargo este asignado a algun usuario";
 			$obj_car->message($message) == false;
-			header("refresh:3; url=../../frontend/view/car_listartodo.php");
+			header("refresh:3; url=../../frontend/view/car_listarpapelera.php");
 		} else {
 			$message = "Cargo eliminado exitosamente";
 			$obj_car->message($message) == true;
-			header("refresh:1; url=../../frontend/view/car_listartodo.php");
+			header("refresh:1; url=../../frontend/view/car_listarpapelera.php");
 		}
 		break;
 
