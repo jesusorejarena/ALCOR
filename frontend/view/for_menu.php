@@ -4,7 +4,7 @@ require_once("tema_session.php");
 
 headerr("Menú de Formularios");
 
-check("Formularios");
+check("Formularios", 5);
 
 ?>
 

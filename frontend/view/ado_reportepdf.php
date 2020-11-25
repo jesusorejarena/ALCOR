@@ -19,7 +19,7 @@ $obj_emp->puntero = $obj_emp->getByCode();
 $empresa = $obj_emp->extractData();
 
 $obj_car = new cargo;
-$obj_car->cod_car = $empleado["fky_cargo"];
+$obj_car->cod_car = $empleado["cod_car"];
 $obj_car->puntero = $obj_car->filter();
 $cargo = $obj_car->extractData();
 

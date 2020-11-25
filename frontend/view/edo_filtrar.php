@@ -7,7 +7,7 @@ $obj_edo = new proveedor;
 
 headerr("Filtrar Proveedores");
 
-check("Proveedores");
+check("Proveedores", 2);
 
 ?>
 
@@ -55,7 +55,7 @@ check("Proveedores");
 								<div class="form-group">
 									<label for="tipo">Tipo:</label>
 									<select name="tip_edo" id="tipo" class="form-control">
-										<option value="">Seleccione...</option>
+										<option value="">Todos</option>
 										<option value="V">Venezolano</option>
 										<option value="P">Personal</option>
 										<option value="J">Juridico</option>
@@ -72,7 +72,7 @@ check("Proveedores");
 								<div class="form-group">
 									<label for="estatus">Activo/Inactivo:</label>
 									<select name="est_edo" id="estatus" class="form-control">
-										<option value="">General</option>
+										<option value="">Todos</option>
 										<option value="A">Activo</option>
 										<option value="I">Inactivo</option>
 									</select>
@@ -82,7 +82,7 @@ check("Proveedores");
 								<div class="form-group">
 									<label for="basura">Activo/Papelera:</label>
 									<select name="bas_edo" id="basura" class="form-control">
-										<option value="">General</option>
+										<option value="">Todos</option>
 										<option value="A">Activo</option>
 										<option value="B">En papelera</option>
 									</select>

@@ -8,7 +8,7 @@ $obj_edo->puntero = $obj_edo->getAll();
 
 headerr("Lista de Proveedores");
 
-check("Proveedores");
+check("Proveedores", 2);
 
 ?>
 
@@ -18,6 +18,14 @@ check("Proveedores");
 	<h2 class="text-center p-3">Lista de Proveedores</h2>
 	<div class="row justify-content-center">
 		<div class="col-12 py-2">
+			<div class="card-header">
+				<div class="row">
+					<div class="col-6">
+						<a class="btn btn-danger" href="edo_reportes/edo_reportepdf_enlace.php"><i class="fas fa-file-pdf mr-1"></i> Descargar listado
+							por PDF</i></a>
+					</div>
+				</div>
+			</div>
 			<div class="table-responsive">
 				<table class="table table-bordered table-hover text-center">
 					<thead>
@@ -72,7 +80,23 @@ check("Proveedores");
 							echo "
 													<td><a class='btn btn-danger' href='edo_reportepdf.php?cod_edo=$proveedor[cod_edo]'><i class='fas fa-file-pdf'></i></a></td>
 													<td><a class='btn btn-warning' href='edo_modificar.php?cod_edo=$proveedor[cod_edo]'><i class='fas fa-edit'></i></a></td>
-													<td><button type='submit' class='btn btn-danger' name='run' value='firstDelete'><i class='fas fa-trash'></i></button></td>
+													<td><button type='button' data-toggle='modal' class='btn btn-danger' data-target='#modalDelete$proveedor[cod_edo]'><i class='fas fa-trash'></i></button></td>
+													<div class='modal fade' id='modalDelete$proveedor[cod_edo]' tabindex='-1' aria-labelledby='exampleModalLabel' aria-hidden='true'>
+														<div class='modal-dialog modal-sm'>
+															<div class='modal-content'>
+																<div class='modal-header'>
+																	<h5 class='modal-title' id='exampleModalLabel'>¿Estas seguro de enviar a la papelera?</h5>
+																	<button type='button' class='close' data-dismiss='modal' aria-label='Close'>
+																		<span aria-hidden='true'>&times;</span>
+																	</button>
+																</div>
+																<div class='modal-body d-flex justify-content-around'>
+																	<button type='submit' name='run' value='firstDelete' class='btn btn-light'>Eliminar</button>
+																	<button type='button' class='btn btn-danger' data-dismiss='modal'>Cerrar</button>
+																</div>
+															</div>
+														</div>
+													</div>
 												</tr>
 											</form>
 										";

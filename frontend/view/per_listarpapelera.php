@@ -35,7 +35,6 @@ checkAdmin();
 							<th>Modificado</th>
 							<th>Restaurado</th>
 							<th>Eliminado</th>
-							<th>Estatus</th>
 							<th>Restaurar</th>
 							<th>Eliminar</th>
 						</tr>
@@ -62,20 +61,24 @@ checkAdmin();
 													<td>$permiso[act_per]</td>
 													<td>$permiso[res_per]</td>
 													<td>$permiso[eli_per]</td>
-									";
-
-							if ($permiso['est_per'] == "A") {
-								echo "
-													<td><button class='btn btn-success' type='submit' name='run' value='updateStatusI'><i class='fas fa-check'></button></td>
-								";
-							} else {
-								echo "
-													<td><button class='btn btn-danger' type='submit' name='run' value='updateStatusA'><i class='fas fa-times-circle'></button></td>";
-							}
-
-							echo "
 													<td><button type='submit' class='btn btn-success' name='run' value='restore'><i class='fas fa-redo-alt'></i></button></td>
-													<td><button type='submit' class='btn btn-danger' name='run' value='delete'><i class='fas fa-trash'></i></button></td>
+													<td><button type='button' data-toggle='modal' class='btn btn-danger' data-target='#modalDelete$permiso[cod_per]'><i class='fas fa-trash'></i></button></td>
+													<div class='modal fade' id='modalDelete$permiso[cod_per]' tabindex='-1' aria-labelledby='exampleModalLabel' aria-hidden='true'>
+														<div class='modal-dialog modal-sm'>
+															<div class='modal-content'>
+																<div class='modal-header'>
+																	<h5 class='modal-title' id='exampleModalLabel'>¿Estas seguro de eliminar?</h5>
+																	<button type='button' class='close' data-dismiss='modal' aria-label='Close'>
+																		<span aria-hidden='true'>&times;</span>
+																	</button>
+																</div>
+																<div class='modal-body d-flex justify-content-around'>
+																	<button type='submit' name='run' value='delete' class='btn btn-light'>Eliminar</button>
+																	<button type='button' class='btn btn-danger' data-dismiss='modal'>Cerrar</button>
+																</div>
+															</div>
+														</div>
+													</div>
 												</tr>
 											</form>
 										";

@@ -55,7 +55,7 @@ checkAdmin();
 								<div class="form-group">
 									<label for="tipo">Tipo:</label>
 									<select name="tip_edo" id="tipo" class="form-control">
-										<option value="">Seleccione...</option>
+										<option value="">Todos<option>
 										<option value="V">Venezolano</option>
 										<option value="P">Personal</option>
 										<option value="J">Juridico</option>

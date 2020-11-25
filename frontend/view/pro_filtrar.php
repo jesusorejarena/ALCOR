@@ -9,7 +9,7 @@ $obj_edo->puntero = $obj_edo->getAll();
 
 headerr("Filtrar producto");
 
-check("Productos");
+check("Productos", 3);
 
 ?>
 
@@ -51,7 +51,7 @@ check("Productos");
 								<div class="form-group">
 									<label for="est_pro">Estatus:</label>
 									<select name="est_pro" id="est_pro" class="form-control">
-										<option value="">Seleccione...</option>
+										<option value="">Todos<option>
 										<option value="A">Activo</option>
 										<option value="I">Inactivo</option>
 									</select>
@@ -61,7 +61,7 @@ check("Productos");
 								<div class="form-group">
 									<label for="cod_edo">Proveedor:</label>
 									<select name="cod_edo" id="cod_edo" class="form-control">
-										<option value="">Seleccione...</option>
+										<option value="">Todos<option>
 										<?php while (($proveedor = $obj_edo->extractData()) > 0) {
 											echo "<option value='$proveedor[cod_edo]'>$proveedor[nom_edo]</option>";
 										}

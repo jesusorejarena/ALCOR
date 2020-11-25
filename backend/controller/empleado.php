@@ -13,11 +13,11 @@ switch ($_REQUEST["run"]) {
 		if ($obj_ado->resultado == false) {
 			$message = "El empleado que intenta registrar ya existe o puede que algunos datos ya esten registrados en el sistema, por favor ingrese otro";
 			$obj_ado->message($message) == false;
-			header("refresh:3; url=../../frontend/view/usu_registrar.php");
+			header("refresh:3; url=../../frontend/view/ado_registrar.php");
 		} else {
 			$message = "Usuario registrado exitosamente";
 			$obj_ado->message($message) == true;
-			header("refresh:1; url=../../frontend/view/usu_registrar.php");
+			header("refresh:1; url=../../frontend/view/ado_registrar.php");
 		}
 		break;
 
@@ -27,11 +27,11 @@ switch ($_REQUEST["run"]) {
 			$obj_ado->resultado = $obj_ado->finishRegistration();
 			$message = "Registro terminado exitosamente";
 			$obj_ado->message($message) == true;
-			header("refresh:1; url=../../frontend/view/login.php");
+			header("refresh:1; url=../../frontend/view/ado_login.php");
 		} else {
 			$message = "No se puede terminar de registrar el empleado, porque ya existe";
 			$obj_ado->message($message) == false;
-			header("refresh:2; url=../../frontend/view/login.php");
+			header("refresh:2; url=../../frontend/view/ado_login.php");
 		}
 		break;
 
@@ -41,11 +41,11 @@ switch ($_REQUEST["run"]) {
 			$obj_ado->resultado = $obj_ado->updatePassword();
 			$message = "Contraseña recuperada exitosamente";
 			$obj_ado->message($message) == true;
-			header("refresh:1; url=../../frontend/view/login.php");
+			header("refresh:1; url=../../frontend/view/ado_login.php");
 		} else {
 			$message = "Información invalida";
 			$obj_ado->message($message) == false;
-			header("refresh:1; url=../../frontend/view/login.php");
+			header("refresh:1; url=../../frontend/view/ado_login.php");
 		}
 		break;
 
@@ -59,7 +59,7 @@ switch ($_REQUEST["run"]) {
 			$message = "Contraseña actualizada exitosamente";
 			$obj_ado->message($message) == true;
 		}
-		header("refresh:1; url=../../frontend/view/inicio.php");
+		header("refresh:1; url=../../frontend/view/ado_inicio.php");
 		break;
 
 	case 'updateQuestions':
@@ -72,7 +72,7 @@ switch ($_REQUEST["run"]) {
 			$message = "Preguntas de seguridad actualizadas exitosamente";
 			$obj_ado->message($message) == true;
 		}
-		header("refresh:1; url=../../frontend/view/inicio.php");
+		header("refresh:1; url=../../frontend/view/ado_inicio.php");
 		break;
 
 	case 'update':

@@ -28,50 +28,50 @@ checkAdmin();
 						<div class="row">
 							<div class="col-12">
 								<div class="form-group">
-									<label for="nombre">Nombre:</label>
-									<input type="text" name="nom_emp" id="nombre" class="form-control" value=" <?php echo $empresa['nom_emp']; ?>" placeholder="Nombre" />
-									<small id="nombreDiv" class="invalid-feedback"></small>
+									<label for="alfanumerico">Nombre:</label>
+									<input type="text" name="nom_emp" id="alfanumerico" class="form-control" value="<?php echo $empresa['nom_emp']; ?>" placeholder="Nombre" />
+									<small id="alfanumericoDiv" class="invalid-feedback"></small>
 								</div>
 							</div>
 							<div class="col-12 col-md-6">
 								<div class="form-group">
 									<label for="telefono">Teléfono:</label>
-									<input type="text" name="tel_emp" id="telefono" class="form-control" value=" <?php echo $empresa['tel_emp']; ?>" placeholder="Teléfono" />
+									<input type="text" name="tel_emp" id="telefono" class="form-control" value="<?php echo $empresa['tel_emp']; ?>" placeholder="Teléfono" />
 									<small id="telefonoDiv" class="invalid-feedback"></small>
 								</div>
 							</div>
 							<div class="col-12 col-md-6">
 								<div class="form-group">
-									<label for="rif">RIF:</label>
-									<input type="text" name="rif_emp" id="rif" class="form-control" value=" <?php echo $empresa['rif_emp']; ?>" placeholder="Teléfono" />
-									<small id="rifDiv" class="invalid-feedback"></small>
+									<label for="rifCompleto">RIF:</label>
+									<input type="text" name="rif_emp" id="rifCompleto" class="form-control" value="<?php echo $empresa['rif_emp']; ?>" placeholder="RIF" />
+									<small id="rifCompletoDiv" class="invalid-feedback"></small>
 								</div>
 							</div>
 							<div class="col-12">
 								<div class="form-group">
 									<label for="direccion">Dirección:</label>
-									<input type="text" name="dir_emp" id="direccion" class="form-control" value=" <?php echo $empresa['dir_emp']; ?>" placeholder="Dirección" />
+									<input type="text" name="dir_emp" id="direccion" class="form-control" value="<?php echo $empresa['dir_emp']; ?>" placeholder="Dirección" />
 									<small id="direccionDiv" class="invalid-feedback"></small>
 								</div>
 							</div>
 							<div class="col-12">
 								<div class="form-group">
 									<label for="correo">Correo:</label>
-									<input type="email" name="cor_emp" id="correo" class="form-control" value=" <?php echo $empresa['cor_emp']; ?>" placeholder="Correo" />
+									<input type="email" name="cor_emp" id="correo" class="form-control" value="<?php echo $empresa['cor_emp']; ?>" placeholder="Correo" />
 									<small id="correoDiv" class="invalid-feedback"></small>
 								</div>
 							</div>
 							<div class="col-12 col-md-6">
 								<div class="form-group">
 									<label for="horario1">Horario Uno:</label>
-									<input type="text" name="hou_emp" id="horario1" class="form-control" value=" <?php echo $empresa['hou_emp']; ?>" placeholder="Horario Uno" />
+									<input type="text" name="hou_emp" id="horario1" class="form-control" value="<?php echo $empresa['hou_emp']; ?>" placeholder="Horario Uno" />
 									<small id="horario1Div" class="invalid-feedback"></small>
 								</div>
 							</div>
 							<div class="col-12 col-md-6">
 								<div class="form-group">
 									<label for="horario2">Horario Dos:</label>
-									<input type="text" name="hod_emp" id="horario2" class="form-control" value=" <?php echo $empresa['hod_emp']; ?>" placeholder="Horario Dos" />
+									<input type="text" name="hod_emp" id="horario2" class="form-control" value="<?php echo $empresa['hod_emp']; ?>" placeholder="Horario Dos" />
 									<small id="horario2Div" class="invalid-feedback"></small>
 								</div>
 							</div>

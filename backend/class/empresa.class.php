@@ -66,4 +66,27 @@ class empresa extends utilidad
 		return $this->run();
 	} // fin de getByCode
 
+	function getBackup()
+	{
+		$this->que_bda = "SELECT * FROM empresa_resp;";
+
+		return $this->run();
+	} // fin de getByCode
+
+	function filterBackup()
+	{
+		$filter1 = ($this->cod_emp != "") ? "AND cod_emp='$this->cod_emp'" : "";
+		$filter2 = ($this->nom_emp != "") ? "AND nom_emp LIKE '%$this->nom_emp%'" : "";
+		$filter3 = ($this->tel_emp != "") ? "AND tel_emp LIKE '%$this->tel_emp%'" : "";
+		$filter4 = ($this->dir_emp != "") ? "AND dir_emp LIKE '%$this->dir_emp%'" : "";
+		$filter5 = ($this->cor_emp != "") ? "AND cor_emp LIKE '%$this->cor_emp%'" : "";
+		$filter6 = ($this->rif_emp != "") ? "AND rif_emp LIKE '%$this->rif_emp%'" : "";
+		$filter7 = ($this->hou_emp != "") ? "AND hou_emp LIKE '%$this->hou_emp%'" : "";
+		$filter8 = ($this->hod_emp != "") ? "AND hod_emp LIKE '%$this->hod_emp%'" : "";
+
+		$this->que_bda = "SELECT * FROM empresa_resp WHERE	1=1 $filter1 $filter2 $filter3 $filter4 $filter5 $filter6 $filter7 $filter8;";
+
+		return $this->run();
+	} // fin de filterBackup
+
 }

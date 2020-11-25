@@ -8,7 +8,7 @@ $obj_car->puntero = $obj_car->getAll();
 
 headerr("Filtrar Empleado");
 
-check("Empleados");
+check("Empleados", 1);
 
 ?>
 

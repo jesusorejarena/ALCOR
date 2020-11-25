@@ -40,7 +40,7 @@ checkAdmin();
 								<div class="form-group">
 									<label for="fky_cargo">Cargo:</label>
 									<select name="fky_cargo" id="fky_cargo" class="form-control">
-										<option value="">Seleccione...</option>
+										<option value="">Todos</option>
 										<?php while (($cargo = $obj_car->extractData()) > 0) {
 											if ($cargo['cod_car'] == 1 || $cargo['nom_car'] == 'Administrador') {
 											} else {
@@ -55,7 +55,7 @@ checkAdmin();
 								<div class="form-group">
 									<label for="cod_mod">Módulo:</label>
 									<select name="cod_mod" id="cod_mod" class="form-control">
-										<option value="">Seleccione...</option>
+										<option value="">Todos</option>
 										<?php while (($modulo = $obj_mod->extractData()) > 0) {
 											echo "<option value='$modulo[cod_mod]'>Menú de $modulo[nom_mod]</option>";
 										}

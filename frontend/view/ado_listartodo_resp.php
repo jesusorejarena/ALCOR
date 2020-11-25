@@ -38,19 +38,16 @@ checkAdmin();
 							<th>Modificado</th>
 							<th>Eliminado</th>
 							<th>Restaurado</th>
-							<th>Restaurar</th>
-							<th>Eliminar</th>
 						</tr>
 					</thead>
 					<tbody>
 						<?php
 						while (($empleado = $obj_ado->extractData()) > 0) {
-							echo "<form action='../../backend/controller/empleado.php' method='POST'>
-												<tr>
-													<input type='hidden' name='cod_ado' value='$empleado[cod_ado]'>
-													<td>$empleado[cod_ado]</td>
-													<td>$empleado[nom_ado]</td>
-													<td>$empleado[ape_ado]</td>";
+							echo "
+										<tr>
+											<td>$empleado[cod_ado]</td>
+											<td>$empleado[nom_ado]</td>
+											<td>$empleado[ape_ado]</td>";
 
 							if ($empleado['gen_ado'] == "H") {
 								echo "<td>Hombre</td>";
@@ -66,19 +63,16 @@ checkAdmin();
 								echo "<td>Extranjero</td>";
 							}
 							echo "
-													<td>$empleado[ced_ado]</td>
-													<td>$empleado[tel_ado]</td>
-													<td>$empleado[cor_ado]</td>
-													<td>$empleado[cod_car]</td>
-													<td>$empleado[dir_ado]</td>
-													<td>$empleado[cre_ado]</td>
-													<td>$empleado[act_ado]</td>
-													<td>$empleado[eli_ado]</td>
-													<td>$empleado[res_ado]</td>
-													<td><button type='submit' class='btn btn-success' name='run' value='restore'><i class='fas fa-redo-alt'></i></button></td>
-													<td><button type='submit' class='btn btn-danger' name='run' value='delete'><i class='fas fa-trash'></i></button></td>
-												</tr>
-											</form>
+											<td>$empleado[ced_ado]</td>
+											<td>$empleado[tel_ado]</td>
+											<td>$empleado[cor_ado]</td>
+											<td>$empleado[cod_car]</td>
+											<td>$empleado[dir_ado]</td>
+											<td>$empleado[cre_ado]</td>
+											<td>$empleado[act_ado]</td>
+											<td>$empleado[eli_ado]</td>
+											<td>$empleado[res_ado]</td>
+										</tr>
 										";
 						}
 						?>

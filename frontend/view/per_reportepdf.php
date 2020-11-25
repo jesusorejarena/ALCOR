@@ -16,7 +16,7 @@ $obj_per->puntero = $obj_per->getByCode();
 $permiso = $obj_per->extractData();
 
 $obj_car = new cargo;
-$obj_car->cod_car = $permiso['fky_cargo'];
+$obj_car->cod_car = $permiso['cod_car'];
 $obj_car->puntero = $obj_car->filter();
 $cargo = $obj_car->extractData();
 

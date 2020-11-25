@@ -8,7 +8,7 @@ $obj_ado->puntero = $obj_ado->getFirstDelete();
 
 headerr("Empleados Eliminados");
 
-check("Empleados");
+check("Empleados", 1);
 
 ?>
 
@@ -76,7 +76,23 @@ check("Empleados");
 													<td>$empleado[eli_ado]</td>
 													<td>$empleado[res_ado]</td>
 													<td><button type='submit' class='btn btn-success' name='run' value='restore'><i class='fas fa-redo-alt'></i></button></td>
-													<td><button type='submit' class='btn btn-danger' name='run' value='delete'><i class='fas fa-trash'></i></button></td>
+													<td><button type='button' data-toggle='modal' class='btn btn-danger' data-target='#modalDelete$empleado[cod_ado]'><i class='fas fa-trash'></i></button></td>
+													<div class='modal fade' id='modalDelete$empleado[cod_ado]' tabindex='-1' aria-labelledby='exampleModalLabel' aria-hidden='true'>
+														<div class='modal-dialog modal-sm'>
+															<div class='modal-content'>
+																<div class='modal-header'>
+																	<h5 class='modal-title' id='exampleModalLabel'>¿Estas seguro de eliminar?</h5>
+																	<button type='button' class='close' data-dismiss='modal' aria-label='Close'>
+																		<span aria-hidden='true'>&times;</span>
+																	</button>
+																</div>
+																<div class='modal-body d-flex justify-content-around'>
+																	<button type='submit' name='run' value='delete' class='btn btn-light'>Eliminar</button>
+																	<button type='button' class='btn btn-danger' data-dismiss='modal'>Cerrar</button>
+																</div>
+															</div>
+														</div>
+													</div>
 												</tr>
 											</form>
 										";

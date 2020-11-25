@@ -5,11 +5,11 @@ require_once("../../backend/class/proveedor.class.php");
 
 $obj_edo = new proveedor;
 $obj_edo->assignValue();
-$obj_edo->puntero = $obj_edo->filterBackup();
+$obj_edo->puntero = $obj_edo->filter();
 
 headerr("Proveedores Filtrados");
 
-check("Proveedores");
+check("Proveedores", 2);
 
 ?>
 

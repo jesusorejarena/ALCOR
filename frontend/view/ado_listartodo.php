@@ -2,13 +2,16 @@
 
 require_once("tema_session.php");
 require_once("../../backend/class/empleado.class.php");
+require_once("../../backend/class/cargo.class.php");
 
 $obj_ado = new empleado;
 $obj_ado->puntero = $obj_ado->getAll();
 
+$obj_car = new cargo;
+
 headerr("Lista de Empleados");
 
-check("Empleados");
+check("Empleados", 1);
 
 ?>
 
@@ -18,6 +21,14 @@ check("Empleados");
 	<h2 class="text-center p-3">Lista de Empleados</h2>
 	<div class="row justify-content-center">
 		<div class="col-12 py-2">
+			<div class="card-header">
+				<div class="row">
+					<div class="col-6">
+						<a class="btn btn-danger" href="ado_reportes/ado_reportepdf_enlace.php"><i class="fas fa-file-pdf mr-1"></i> Descargar listado
+							por PDF</i></a>
+					</div>
+				</div>
+			</div>
 			<div class="table-responsive">
 				<table class="table table-bordered table-hover text-center">
 					<thead>
@@ -39,6 +50,7 @@ check("Empleados");
 							<th>Restaurado</th>
 							<th>Estatus</th>
 							<th>PDF</th>
+							<th>Constancia PDF</th>
 							<th>Editar</th>
 							<th>Eliminar</th>
 						</tr>
@@ -46,6 +58,11 @@ check("Empleados");
 					<tbody>
 						<?php
 						while (($empleado = $obj_ado->extractData()) > 0) {
+
+							$obj_car->cod_car = $empleado['cod_car'];
+							$obj_car->puntero = $obj_car->filter();
+							$cargo = $obj_car->extractData();
+
 							echo "<form action='../../backend/controller/empleado.php' method='POST'>
 												<tr>
 													<input type='hidden' name='cod_ado' value='$empleado[cod_ado]'>
@@ -70,7 +87,7 @@ check("Empleados");
 													<td>$empleado[ced_ado]</td>
 													<td>$empleado[tel_ado]</td>
 													<td>$empleado[cor_ado]</td>
-													<td>$empleado[cod_car]</td>";
+													<td>$cargo[nom_car]</td>";
 
 							if ($empleado['cod_ado'] == 1 || $empleado['cod_car'] == 1) {
 								echo "
@@ -103,10 +120,27 @@ check("Empleados");
 								}
 
 								echo "
-																<td><a class='btn btn-danger' href='ado_reportepdf.php?cod_ado=$empleado[cod_ado]'><i class='fas fa-file-pdf'></i></a></td>
-																<td><a class='btn btn-warning' href='ado_modificar.php?cod_ado=$empleado[cod_ado]'><i class='fas fa-edit'></i></a></td>
-																<td><button type='submit' class='btn btn-danger' name='run' value='firstDelete'><i class='fas fa-trash'></i></button></td>
-														";
+													<td><a class='btn btn-danger' href='ado_reportepdf.php?cod_ado=$empleado[cod_ado]'><i class='fas fa-file-pdf'></i></a></td>
+													<td><a class='btn btn-danger' href='ado_reportepdf_constancia.php?cod_ado=$empleado[cod_ado]'><i class='fas fa-user'></i></a></td>
+													<td><a class='btn btn-warning' href='ado_modificar.php?cod_ado=$empleado[cod_ado]'><i class='fas fa-edit'></i></a></td>
+													<td><button type='button' data-toggle='modal' class='btn btn-danger' data-target='#modalDelete$empleado[cod_ado]'><i class='fas fa-trash'></i></button></td>
+													<div class='modal fade' id='modalDelete$empleado[cod_ado]' tabindex='-1' aria-labelledby='exampleModalLabel' aria-hidden='true'>
+														<div class='modal-dialog modal-sm'>
+															<div class='modal-content'>
+																<div class='modal-header'>
+																	<h5 class='modal-title' id='exampleModalLabel'>¿Estas seguro de enviar a la papelera?</h5>
+																	<button type='button' class='close' data-dismiss='modal' aria-label='Close'>
+																		<span aria-hidden='true'>&times;</span>
+																	</button>
+																</div>
+																<div class='modal-body d-flex justify-content-around'>
+																	<button type='submit' name='run' value='firstDelete' class='btn btn-light'>Eliminar</button>
+																	<button type='button' class='btn btn-danger' data-dismiss='modal'>Cerrar</button>
+																</div>
+															</div>
+														</div>
+													</div>
+										";
 							}
 							echo "
 												</tr>

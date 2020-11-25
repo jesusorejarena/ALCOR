@@ -12,6 +12,7 @@
 					let nacimiento = document.getElementById('nacimiento')?.value;
 					let nacionalidad = document.getElementById('nacionalidad')?.value;
 					let rif = document.getElementById('rif')?.value;
+					let rifCompleto = document.getElementById('rifCompleto')?.value;
 					let cedula = document.getElementById('cedula')?.value;
 					let telefono = document.getElementById('telefono')?.value;
 					let cargo = document.getElementById('cargo')?.value;
@@ -96,6 +97,19 @@
 							mensaje(e, 'rifDiv', 'rif', 'Ingrese un RIF válido');
 						} else {
 							resetearError('rifDiv', 'rif');
+						}
+					}
+
+					// Validacion de rifCompleto
+					if (rifCompleto != undefined) {
+						if (rifCompleto.length == 0) {
+							mensaje(e, 'rifCompletoDiv', 'rifCompleto', 'Ingrese un RIF');
+						} else if (rifCompleto.length > 12) {
+							mensaje(e, 'rifCompletoDiv', 'rifCompleto', 'Ingrese un RIF válido');
+						} else if (rifCompletoValidar(rifCompleto) === false) {
+							mensaje(e, 'rifCompletoDiv', 'rifCompleto', 'Ingrese un RIF válido');
+						} else {
+							resetearError('rifCompletoDiv', 'rifCompleto');
 						}
 					}
 
@@ -357,6 +371,12 @@ function alfanumericoValidar(texto) {
 function numericoValidar(texto) {
 	const numericoExpresion = /[0-9]/;
 	return numericoExpresion.test(texto);
+}
+
+
+function rifCompletoValidar(texto) {
+	const cedulaExpresion = /^[JGVEP][-][0-9]{8}[-][0-9]{1}$/;
+	return cedulaExpresion.test(texto);
 }
 
 function rifValidar(texto) {

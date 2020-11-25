@@ -4,7 +4,7 @@ require_once("tema_session.php");
 
 headerr("Registrar Proveedor");
 
-check("Proveedores");
+check("Proveedores", 2);
 
 ?>
 

@@ -38,12 +38,12 @@ switch ($_REQUEST["run"]) {
 
 	case 'restore':
 		$obj_edo->restore();
-		header("Location: ../../frontend/view/edo_listartodopapelera.php");
+		header("Location: ../../frontend/view/edo_listarpapelera.php");
 		break;
 
 	case 'firstDelete':
 		$obj_edo->firstDelete();
-		header("Location: ../../frontend/view/edo_listartodotodo.php");
+		header("Location: ../../frontend/view/edo_listartodo.php");
 		break;
 
 	case 'updateStatusI':

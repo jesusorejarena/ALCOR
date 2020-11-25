@@ -61,11 +61,11 @@ switch ($_REQUEST["run"]) {
 
 	case 'restore':
 		$obj_per->restore();
-		header("Location: ../../frontend/view/per_listartodopapelera.php");
+		header("Location: ../../frontend/view/per_listarpapelera.php");
 		break;
 
 	case 'firstDelete':
 		$obj_per->firstDelete();
-		header("Location: ../../frontend/view/per_listartodotodo.php");
+		header("Location: ../../frontend/view/per_listartodo.php");
 		break;
 }

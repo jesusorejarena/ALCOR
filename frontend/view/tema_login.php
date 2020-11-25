@@ -34,7 +34,7 @@ function headerr($titulo)
 				<header>
 					<nav class='navbar navbar-expand-lg navbar-dark bg-primary'>
 						<!-- Nombre de la App -->
-						<a href='usu_inicio.php' class='navbar-brand px-5'>
+						<a href='ado_inicio.php' class='navbar-brand px-5'>
 							<img src='../img/logo2.png' width='150'>
 						</a>
 

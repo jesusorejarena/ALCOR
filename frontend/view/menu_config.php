@@ -15,7 +15,12 @@ checkAdmin();
 			<div class="card rounded px-3 py-4">
 				<h3 class="card-title text-center">Configuración del Sistema</h3>
 				<div class="card-body">
-					<h5 class="pt-1">Cargos:</h5>
+					<h5 class="pt-1">Empresa:</h5>
+					<div class="row">
+						<div class="col-6"><a class="btn btn-primary btn-block" href="emp_listartodo_resp.php">Lista</a></div>
+						<div class="col-6"><a class="btn btn-primary btn-block" href="emp_filtrar_resp.php">Filtrar</a></div>
+					</div>
+					<h5 class="pt-3">Cargos:</h5>
 					<div class="row">
 						<div class="col-6"><a class="btn btn-primary btn-block" href="car_listartodo_resp.php">Lista</a></div>
 						<div class="col-6"><a class="btn btn-primary btn-block" href="car_filtrar_resp.php">Filtrar</a></div>

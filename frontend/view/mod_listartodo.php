@@ -29,13 +29,11 @@ checkAdmin();
 					<tbody>
 						<?php
 						while (($modulo = $obj_mod->extractData()) > 0) {
-							echo "<form action='../../backend/controller/modulo.php' method='POST'>
-											<tr>
-												<input type='hidden' name='cod_mod' value='$modulo[cod_mod]'>
-												<td>$modulo[cod_mod]</td>
-												<td>$modulo[nom_mod]</td>
-											</tr>
-										</form>
+							echo "
+										<tr>
+											<td>$modulo[cod_mod]</td>
+											<td>$modulo[nom_mod]</td>
+										</tr>
 									";
 						}
 						?>

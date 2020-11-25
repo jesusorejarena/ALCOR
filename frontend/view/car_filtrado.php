@@ -85,7 +85,23 @@ checkAdmin();
 											<td><a class='btn btn-danger' href='car_reportepdf.php?cod_car=$cargo[cod_car]'><i class='fas fa-file-pdf'></i></a></td>
 											<td><button type='submit' class='btn btn-success' name='run' value='restore'><i class='fas fa-redo-alt'></i></button></td>
 											<td><a class='btn btn-warning' href='car_modificar.php?cod_car=$cargo[cod_car]'><i class='fas fa-edit'></i></a></td>
-											<td><button type='submit' class='btn btn-danger' name='run' value='firstDelete'><i class='fas fa-trash'></i></button></td>
+											<td><button type='button' data-toggle='modal' class='btn btn-danger' data-target='#modalDelete$cargo[cod_car]'><i class='fas fa-trash'></i></button></td>
+													<div class='modal fade' id='modalDelete$cargo[cod_car]' tabindex='-1' aria-labelledby='exampleModalLabel' aria-hidden='true'>
+														<div class='modal-dialog modal-sm'>
+															<div class='modal-content'>
+																<div class='modal-header'>
+																	<h5 class='modal-title' id='exampleModalLabel'>¿Estas seguro de enviar a la papelera?</h5>
+																	<button type='button' class='close' data-dismiss='modal' aria-label='Close'>
+																		<span aria-hidden='true'>&times;</span>
+																	</button>
+																</div>
+																<div class='modal-body d-flex justify-content-around'>
+																	<button type='submit' name='run' value='firstDelete' class='btn btn-light'>Eliminar</button>
+																	<button type='button' class='btn btn-danger' data-dismiss='modal'>Cerrar</button>
+																</div>
+															</div>
+														</div>
+													</div>
 										";
 							}
 							echo "

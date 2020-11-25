@@ -16,20 +16,20 @@ headerr("Termina de Registrarte");
 		<div class="col-12 col-md-6 p-2">
 			<div class="card rounded">
 				<h2 class="card-title text-center pt-4">Terminar Registro</h2>
-				<form action="../../backend/controller/usuario.php" method="POST" class="was-validation" id="formulario" novalidate>
+				<form action="../../backend/controller/empleado.php" method="POST" class="was-validation" id="formulario" novalidate>
 					<div class="card-body">
 						<div class="row">
 							<div class="col-12">
 								<div class="form-group">
 									<label for="correo">Correo:</label>
-									<input type="email" name="cor_usu" id="correo" class="form-control" placeholder="Correo" />
+									<input type="email" name="cor_ado" id="correo" class="form-control" placeholder="Correo" />
 									<small id="correoDiv" class="invalid-feedback"></small>
 								</div>
 							</div>
 							<div class="col-12 col-md-6">
 								<div class="form-group">
 									<label for="contrasena">Contraseña:</label>
-									<input type="password" name="cla_usu" id="contrasena" class="form-control" placeholder="Contraseña" />
+									<input type="password" name="cla_ado" id="contrasena" class="form-control" placeholder="Contraseña" />
 									<small id="contrasenaDiv" class="invalid-feedback"></small>
 								</div>
 							</div>
@@ -72,7 +72,7 @@ headerr("Termina de Registrarte");
 							<div class="col-12">
 								<div class="form-group">
 									<label for="respuesta1">Primera respuesta:</label>
-									<input type="text" name="re1_usu" id="respuesta1" class="form-control" placeholder="Primera respuesta" />
+									<input type="text" name="re1_ado" id="respuesta1" class="form-control" placeholder="Primera respuesta" />
 									<small id="respuesta1Div" class="invalid-feedback"></small>
 								</div>
 							</div>
@@ -93,7 +93,7 @@ headerr("Termina de Registrarte");
 							<div class="col-12">
 								<div class="form-group">
 									<label for="respuesta2">Segunda respuesta:</label>
-									<input type="text" name="re2_usu" id="respuesta2" class="form-control" placeholder="Segunda respuesta" />
+									<input type="text" name="re2_ado" id="respuesta2" class="form-control" placeholder="Segunda respuesta" />
 									<small id="respuesta2Div" class="invalid-feedback"></small>
 								</div>
 							</div>
@@ -116,3 +116,6 @@ headerr("Termina de Registrarte");
 footer();
 
 ?>
+
+SELECT cor_ado FROM empleado WHERE cor_ado='' AND cla_ado IS NULL AND fky_preseg1 IS NULL AND re1_ado IS NULL AND fky_preseg2 IS NULL AND re2_ado IS NULL;
+¡Fallo! No se puede terminar de registrar el empleado, porque ya existe

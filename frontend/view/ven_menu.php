@@ -8,13 +8,12 @@ $obj_pro->puntero = $obj_pro->getAll();
 
 headerr("Registrar Ventas");
 
-/* check("Ventas"); */
+check("Ventas", 4);
 
 ?>
 
 <!-- Formulario -->
 <div class="container px-3 pt-3 pb-5 mb-5">
-	<a class="btn btn-success btn-lg" href="rol_menu.php"><i class="fas fa-arrow-circle-left"></i></a>
 	<div class="row justify-content-center">
 		<div class="col-12 col-md-6 p-2">
 			<div class="card rounded">

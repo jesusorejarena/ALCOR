@@ -9,7 +9,7 @@ $obj_for->puntero = $obj_for->filter();
 
 headerr("Formularios Filtrados");
 
-check("Formularios");
+check("Formularios", 5);
 
 ?>
 
@@ -48,7 +48,23 @@ check("Formularios");
 													<td>$formulario[asu_for]</td>
 													<td>$formulario[cre_for]</td>
 													<td><a class='btn btn-danger' href='for_reportepdf.php?cod_for=$formulario[cod_for]'><i class='fas fa-file-pdf'></i></a></td>
-													<td><button type='submit' class='btn btn-danger' name='run' value='delete'><i class='fas fa-trash'></i></button></td>
+													<td><button type='button' data-toggle='modal' class='btn btn-danger' data-target='#modalDelete$formulario[cod_for]'><i class='fas fa-trash'></i></button></td>
+													<div class='modal fade' id='modalDelete$formulario[cod_for]' tabindex='-1' aria-labelledby='exampleModalLabel' aria-hidden='true'>
+														<div class='modal-dialog modal-sm'>
+															<div class='modal-content'>
+																<div class='modal-header'>
+																	<h5 class='modal-title' id='exampleModalLabel'>¿Estas seguro de eliminar?</h5>
+																	<button type='button' class='close' data-dismiss='modal' aria-label='Close'>
+																		<span aria-hidden='true'>&times;</span>
+																	</button>
+																</div>
+																<div class='modal-body d-flex justify-content-around'>
+																	<button type='submit' name='run' value='delete' class='btn btn-light'>Eliminar</button>
+																	<button type='button' class='btn btn-danger' data-dismiss='modal'>Cerrar</button>
+																</div>
+															</div>
+														</div>
+													</div>
 												</tr>
 											</form>
 										";

@@ -67,7 +67,7 @@ class empleado extends utilidad
 		$respuesta1 = sha1(strtoupper($this->re1_ado));
 		$respuesta2 = sha1(strtoupper($this->re2_ado));
 
-		$this->que_bda = "UPDATE usuario
+		$this->que_bda = "UPDATE empleado
 								SET
 									cla_ado='$clave',
 									fky_preseg1='$this->fky_preseg1',
@@ -110,7 +110,7 @@ class empleado extends utilidad
 		$act_ado = date("y-m-d h:i:s");
 		$clave = sha1($this->cla_ado);
 
-		$this->que_bda = "UPDATE usuario
+		$this->que_bda = "UPDATE empleado
 								SET 
 									cla_ado='$clave',
 									act_ado='$act_ado'
@@ -124,7 +124,7 @@ class empleado extends utilidad
 	{
 		$act_ado = date("y-m-d h:i:s");
 
-		$this->que_bda = "UPDATE usuario
+		$this->que_bda = "UPDATE empleado
 							SET 
 								act_ado='$act_ado',
 								est_ado='A'
@@ -138,7 +138,7 @@ class empleado extends utilidad
 	{
 		$act_ado = date("y-m-d h:i:s");
 
-		$this->que_bda = "UPDATE usuario
+		$this->que_bda = "UPDATE empleado
 							SET 
 								act_ado='$act_ado',
 								est_ado='I'
@@ -169,7 +169,7 @@ class empleado extends utilidad
 		$act_ado = date("y-m-d h:i:s");
 		$clave = sha1($this->cla_ado);
 
-		$this->que_bda = "UPDATE usuario
+		$this->que_bda = "UPDATE empleado
 								SET 
 									cla_ado='$clave',
 									act_ado='$act_ado'
@@ -184,7 +184,7 @@ class empleado extends utilidad
 		$respuesta1 = sha1(strtoupper($this->re1_ado));
 		$respuesta2 = sha1(strtoupper($this->re2_ado));
 
-		$this->que_bda = "UPDATE usuario 
+		$this->que_bda = "UPDATE empleado 
 											SET
 												fky_preseg1='$this->fky_preseg1',
 												re1_ado='$respuesta1',
@@ -200,7 +200,7 @@ class empleado extends utilidad
 	{
 		$this->que_bda = "SELECT cor_ado 
 									FROM 
-										usuario 
+										empleado 
 									WHERE 
 										cor_ado='$this->cor_ado' AND 
 										cla_ado IS NULL AND 
@@ -219,7 +219,7 @@ class empleado extends utilidad
 
 		$this->que_bda = "SELECT cor_ado, fky_preseg1, re1_ado, fky_preseg2, re2_ado
 									FROM 
-										usuario 
+										empleado 
 									WHERE 
 										cor_ado='$this->cor_ado' AND 
 										fky_preseg1='$this->fky_preseg1' AND 
@@ -260,21 +260,21 @@ class empleado extends utilidad
 
 	function getAll()
 	{
-		$this->que_bda = "SELECT * FROM empleado WHERE bas_ado='A'";
+		$this->que_bda = "SELECT * FROM empleado WHERE bas_ado='A';";
 
 		return $this->run();
 	} // fin de getAll
 
 	function getByCode()
 	{
-		$this->que_bda = "SELECT * FROM empleado WHERE cod_ado='$this->cod_ado'";
+		$this->que_bda = "SELECT * FROM empleado WHERE cod_ado='$this->cod_ado;'";
 
 		return $this->run();
 	} // fin de getByCode
 
 	function getFirstDelete()
 	{
-		$this->que_bda = "SELECT * FROM empleado WHERE bas_ado='B'";
+		$this->que_bda = "SELECT * FROM empleado WHERE bas_ado='B';";
 
 		return $this->run();
 	} // fin de getFirstDelete

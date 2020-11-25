@@ -21,6 +21,7 @@ class utilidad
 		$this->nom_bda = "db_sip";
 		$this->connect();
 		ini_set("date.timezone", "America/Caracas");
+		setlocale(LC_ALL, "es_ES");
 	}
 
 	public function connect()
