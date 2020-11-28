@@ -36,29 +36,18 @@ check("Productos", 3);
 									<small id="descripcionDiv" class="invalid-feedback"></small>
 								</div>
 							</div>
-							<div class="col-12 col-md-4">
+							<div class="col-12 col-md-6">
 								<div class="form-group">
 									<label for="precio">Precio:</label>
 									<input type="text" name="pre_pro" id="precio" placeholder="Precio:" class="form-control">
 									<small id="precioDiv" class="invalid-feedback"></small>
 								</div>
 							</div>
-							<div class="col-12 col-md-4">
+							<div class="col-12 col-md-6">
 								<div class="form-group">
 									<label for="cantidad">Cantidad:</label>
 									<input type="text" name="can_pro" id="cantidad" placeholder="Cantidad:" class="form-control">
 									<small id="cantidadDiv" class="invalid-feedback"></small>
-								</div>
-							</div>
-							<div class="col-12 col-md-4">
-								<div class="form-group">
-									<label for="estatus">Estatus:</label>
-									<select name="est_pro" id="estatus" class="form-control">
-										<option value="">Seleccione...</option>
-										<option value="A">Activo</option>
-										<option value="I">Inactivo</option>
-									</select>
-									<small id="estatusDiv" class="invalid-feedback"></small>
 								</div>
 							</div>
 							<div class="col-12">

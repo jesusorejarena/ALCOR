@@ -27,11 +27,11 @@ switch ($_REQUEST["run"]) {
 		if ($obj_pro->resultado == false) {
 			$message = "Este producto ya existe, por favor ingrese otro";
 			$obj_pro->message($message) == false;
-			header("refresh:2; url=../../frontend/view/pro_listar.php");
+			header("refresh:2; url=../../frontend/view/pro_listartodo.php");
 		} else {
 			$message = "Producto actualizado exitosamente";
 			$obj_pro->message($message) == true;
-			header("refresh:1; url=../../frontend/view/pro_listar.php");
+			header("refresh:1; url=../../frontend/view/pro_listartodo.php");
 		}
 		break;
 
@@ -46,13 +46,13 @@ switch ($_REQUEST["run"]) {
 		break;
 
 	case 'updateStatusI':
-		$obj_per->resultado = $obj_per->updateStatusI();
-		header("Location: ../../frontend/view/per_listar.php");
+		$obj_pro->resultado = $obj_pro->updateStatusI();
+		header("Location: ../../frontend/view/pro_listartodo.php");
 		break;
 
 	case 'updateStatusA':
-		$obj_per->resultado = $obj_per->updateStatusA();
-		header("Location: ../../frontend/view/per_listar.php");
+		$obj_pro->resultado = $obj_pro->updateStatusA();
+		header("Location: ../../frontend/view/pro_listartodo.php");
 		break;
 
 	case 'sale':

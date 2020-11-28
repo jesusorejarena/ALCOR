@@ -40,7 +40,7 @@ check("Empleados", 1);
 								<div class="form-group">
 									<label for="genero">Género:</label>
 									<select name="gen_ado" id="genero" class="form-control">
-										<option value="">Seleccione...</option>
+										<option value="">Todos</option>
 										<option value="H">Hombre</option>
 										<option value="M">Mujer</option>
 									</select>
@@ -58,7 +58,7 @@ check("Empleados", 1);
 								<div class="form-group">
 									<label for="nacionalidad">Nacionalidad:</label>
 									<select name="tip_ado" id="nacionalidad" class="form-control">
-										<option value="">Seleccione...</option>
+										<option value="">Todos</option>
 										<option value="V">Venezolano</option>
 										<option value="E">Extranjero</option>
 									</select>
@@ -83,7 +83,7 @@ check("Empleados", 1);
 								<div class="form-group">
 									<label for="cargo">Cargo:</label>
 									<select name="cod_car" id="cargo" class="form-control">
-										<option value="">Seleccione...</option>
+										<option value="">Todos</option>
 										<?php while (($cargo = $obj_car->extractData()) > 1) {
 											if ($cargo['cod_car'] == 1 || $cargo['nom_car'] == 'Administrador') {
 											} else {
