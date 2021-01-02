@@ -6,7 +6,7 @@ require_once("../../backend/class/proveedor.class.php");
 $obj_edo = new proveedor;
 $obj_edo->puntero = $obj_edo->getFirstDelete();
 
-headerr("Proveedores eliminados");
+headerr("Proveedores Eliminados");
 
 check("Proveedores", 2);
 
@@ -15,7 +15,7 @@ check("Proveedores", 2);
 <!-- Lista -->
 <div class="container-fluid px-3 pt-3 pb-5 mb-5">
 	<a class="btn btn-success btn-lg" href="edo_menu.php"><i class="fas fa-arrow-circle-left"></i></a>
-	<h2 class="text-center p-3">Proveedores eliminados</h2>
+	<h2 class="text-center p-3">Proveedores Eliminados</h2>
 	<div class="row justify-content-center">
 		<div class="col-12 py-2">
 			<div class="table-responsive">

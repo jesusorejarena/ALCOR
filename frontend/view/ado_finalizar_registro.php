@@ -116,6 +116,3 @@ headerr("Termina de Registrarte");
 footer();
 
 ?>
-
-SELECT cor_ado FROM empleado WHERE cor_ado='' AND cla_ado IS NULL AND fky_preseg1 IS NULL AND re1_ado IS NULL AND fky_preseg2 IS NULL AND re2_ado IS NULL;
-¡Fallo! No se puede terminar de registrar el empleado, porque ya existe

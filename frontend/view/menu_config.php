@@ -13,7 +13,7 @@ checkAdmin();
 	<div class="row justify-content-center">
 		<div class="col-12 col-md-4">
 			<div class="card rounded px-3 py-4">
-				<h3 class="card-title text-center">Configuración del Sistema</h3>
+				<h3 class="card-title text-center">Historial</h3>
 				<div class="card-body">
 					<h5 class="pt-1">Empresa:</h5>
 					<div class="row">
@@ -57,7 +57,7 @@ checkAdmin();
 			<div class="card rounded px-3 py-4">
 				<h3 class="card-title text-center">Base de Datos</h3>
 				<div class="card-body">
-					<a class="btn btn-primary btn-block" href="../../database/respaldo/respaldo_db.php">Respaldar</a>
+					<a class="btn btn-primary btn-block" href="../../database/backup/backup_db.php">Respaldar</a>
 				</div>
 			</div>
 		</div>

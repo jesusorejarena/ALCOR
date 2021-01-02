@@ -29,7 +29,7 @@ check("Productos", 3);
 			<div class="card rounded">
 				<h2 class="card-title text-center pt-4">Modificar Producto</h2>
 				<form action="../../backend/controller/producto.php" method="POST" class="was-validation" id="formulario" novalidate>
-					<input type="hidden" name="cod_per" value="<?php echo $permiso['cod_per']; ?>">
+					<input type="hidden" name="cod_per" value="<?php echo $producto['cod_pro']; ?>">
 					<div class="card-body">
 						<div class="row">
 							<div class="col-12">

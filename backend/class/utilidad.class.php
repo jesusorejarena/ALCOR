@@ -22,11 +22,14 @@ class utilidad
 		$this->connect();
 		ini_set("date.timezone", "America/Caracas");
 		setlocale(LC_ALL, "es_ES");
+		mb_internal_encoding('UTF-8');
+		mb_http_output('UTF-8');
 	}
 
 	public function connect()
 	{
 		$this->con_bda = new mysqli($this->nom_ser, $this->usu_ser, $this->cla_ser, $this->nom_bda);
+		$this->con_bda->set_charset("utf8");
 	}
 
 	public function run()

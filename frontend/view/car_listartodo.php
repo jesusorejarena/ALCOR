@@ -21,7 +21,7 @@ checkAdmin();
 			<div class="card-header">
 				<div class="row">
 					<div class="col-6">
-						<a class="btn btn-danger" href="car_reportepdf_listar.php"><i class="fas fa-file-pdf mr-1"></i> Descargar listado
+						<a class="btn btn-danger" href="car_reportes/car_reportepdf_enlace.php"><i class="fas fa-file-pdf mr-1"></i> Descargar listado
 							por PDF</i></a>
 					</div>
 				</div>

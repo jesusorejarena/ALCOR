@@ -48,12 +48,12 @@ switch ($_REQUEST["run"]) {
 
 	case 'updateStatusI':
 		$obj_edo->updateStatusI();
-		header("Location: ../../frontend/view/edo_listar.php");
+		header("Location: ../../frontend/view/edo_listartodo.php");
 		break;
 
 	case 'updateStatusA':
 		$obj_edo->updateStatusA();
-		header("Location: ../../frontend/view/edo_listar.php");
+		header("Location: ../../frontend/view/edo_listartodo.php");
 		break;
 
 	case 'delete':

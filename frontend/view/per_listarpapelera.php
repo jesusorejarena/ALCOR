@@ -21,7 +21,7 @@ checkAdmin();
 <!-- Lista -->
 <div class="container-fluid px-3 pt-3 pb-5 mb-5">
 	<a class="btn btn-success btn-lg" href="rol_menu.php"><i class="fas fa-arrow-circle-left"></i></a>
-	<h2 class="text-center p-3">Permisos eliminados</h2>
+	<h2 class="text-center p-3">Permisos Eliminados</h2>
 	<div class="row justify-content-center">
 		<div class="col-12 py-2">
 			<div class="table-responsive">
