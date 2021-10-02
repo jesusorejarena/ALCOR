@@ -40,7 +40,7 @@ headerr("Registrar Datos de la Empresa");
 							<div class="col-12 col-md-6">
 								<div class="form-group">
 									<label for="rif">RIF:</label>
-									<input type="text" name="rif_emp" id="rif" class="form-control" placeholder="Teléfono" />
+									<input type="text" name="rif_emp" id="rif" class="form-control" placeholder="RIF" />
 									<small id="rifDiv" class="invalid-feedback"></small>
 								</div>
 							</div>

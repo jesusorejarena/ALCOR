@@ -1,9 +1,8 @@
-
 <?php
 
 require_once("tema_session.php");
 
-headerr("Menu de Empleados");
+headerr("Menú de Empleados");
 
 checkAdmin();
 
@@ -15,7 +14,7 @@ checkAdmin();
 		<!-- Cargos -->
 		<div class="col-12 col-md-4 p-1">
 			<div class="card rounded px-3 py-4">
-				<h3 class="card-title text-center">Empleados</h3>
+				<h3 class="card-title text-center">Menú de Empleados</h3>
 				<div class="card-body">
 					<a class="btn btn-outline-primary btn-block" href="ado_registrar.php">Registrar</a>
 					<a class="btn btn-outline-primary btn-block" href="ado_listartodo.php">Listar</a>

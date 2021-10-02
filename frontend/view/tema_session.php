@@ -71,48 +71,41 @@ function headerr($titulo)
 				<link rel='stylesheet' href='../css/estilos.css' />
 			</head>
 
-			<body class='m-0 p-0'>
+			<body>
 
-				<!-- screenUp -->
-				<span class='screenUp' id='screenUp'><i class='fas fa-arrow-circle-up'></i></span>
+			<!-- Comienza el nav -->
 
-				<!-- Nav -->
-				<header>
-					<nav class='navbar navbar-expand-lg navbar-dark bg-primary'>
-						<!-- Nombre de la App -->
-						<a href='ado_inicio.php' class='navbar-brand px-5'>
-							<img src='../img/logo2.png' width='150'>
-						</a>
+				<div class='bg-light container-fluid px-4 px-md-5'>
+					<div class='container'>
+						<div class='row'>
+							<div class='col-12'>
+								<header class='header'>
+									<nav class='navbar navbar-expand-md navbar-light form-control-static'>
 
-						<!-- Menu de hamburguesa -->
-						<button
-							class='navbar-toggler'
-							type='button'
-							data-toggle='collapse'
-							data-target='#navbarNavAltMarkup'
-							aria-controls='navbarNavAltMarkup'
-							aria-expanded='false'
-							aria-label='Toggle navigation'
-						>
-							<span class='navbar-toggler-icon'></span>
-						</button>
+										<!--Menu de hamburguesa-->
+										<button class='navbar-toggler' type='button' data-toggle='collapse' data-target='#collapsibleNavbar'>
+											<span class='navbar-toggler-icon'></span>
+										</button>
 
-						<!-- Menu -->
-						<div class='collapse navbar-collapse justify-content-end text-center' id='navbarNavAltMarkup'>
-							<div class='navbar-nav'>
-								<a class='nav-link active' href='ado_inicio.php'>Inicio</a>
-								";
+										<!--Nombre de la app-->
+										<a href='inicio.html' class='navbar-brand'><img class='img-fluid' src='' alt='Logo de Fasty' width='100rm'></a>
+
+										<!--Botones de las secciones-->
+										<div class='collapse navbar-collapse justify-content-end' id='collapsibleNavbar'>
+											<ul class='navbar-nav'>
+												<li class='nav-item m-1 text-center'><a class='nav-link active' href='ado_inicio.php'>Inicio</a></li>
+						";
 
 	if ($_SESSION['cargo'] == 1) {
 		echo "
-								<a href='emp_modificar.php' class='nav-link active'>Empresa</a>
-								<a href='rol_menu.php' class='nav-link active'>Roles</a>
-								<a href='ado_menu.php' class='nav-link active'>Empleados</a>
-								<a href='edo_menu.php' class='nav-link active'>Proveedores</a>
-								<a href='pro_menu.php' class='nav-link active'>Productos</a>
-								<a href='ven_menu.php' class='nav-link active'>Ventas</a>
-								<a href='for_menu.php' class='nav-link active'>Formularios</a>
-								<a href='menu_config.php' class='nav-link active'>Configuración</a>
+								<li class='nav-item m-1 text-center'><a href='emp_modificar.php' class='nav-link active'>Empresa</a></li>
+								<li class='nav-item m-1 text-center'><a href='rol_menu.php' class='nav-link active'>Roles</a></li>
+								<li class='nav-item m-1 text-center'><a href='ado_menu.php' class='nav-link active'>Empleados</a></li>
+								<li class='nav-item m-1 text-center'><a href='edo_menu.php' class='nav-link active'>Proveedores</a></li>
+								<li class='nav-item m-1 text-center'><a href='pro_menu.php' class='nav-link active'>Productos</a></li>
+								<li class='nav-item m-1 text-center'><a href='ven_menu.php' class='nav-link active'>Ventas</a></li>
+								<li class='nav-item m-1 text-center'><a href='for_menu.php' class='nav-link active'>Formularios</a></li>
+								<li class='nav-item m-1 text-center'><a href='menu_config.php' class='nav-link active'>Configuración</a></li>
 												";
 	} else {
 		// verifica el cargo
@@ -131,10 +124,10 @@ function headerr($titulo)
 				// extrae los nombres y url de la tabla modulo con el codigo del modulo de permiso
 
 				echo "
-							<li class='nav-item'>
-								<a href='$modulo[url_mod]' class='nav-link active'>$modulo[nom_mod]</a>
-							</li>
-						";
+											<li class='nav-item m-1 text-center'>
+												<a href='$modulo[url_mod]' class='nav-link active'>$modulo[nom_mod]</a>
+											</li>
+										";
 
 				// termina el ciclo
 			}
@@ -142,11 +135,33 @@ function headerr($titulo)
 	}
 
 	echo "
-								<a href='cerrar_sesion.php' class='nav-link text-light btn btn-sesion'><i class='fas fa-power-off'></i></a>
+												<li class='nav-item m-1 text-center'>
+													<a href='cerrar_sesion.php' class='btn btn-primary'>
+														<i class='fas fa-power-off'></i>
+													</a>
+												</li>
+											</ul>
+										</div>
+									</nav>
+								</header>
 							</div>
 						</div>
-					</nav>
-				</header>";
+					</div>
+				</div>
+
+				<!-- Termina el nav -->
+
+				<!-- Comienza onda -->
+
+				<div style='height: 70px; overflow: hidden;'><svg viewBox='0 0 500 150' preserveAspectRatio='none' style='height: 100%; width: 100%;'>
+						<path d='M0.00,49.98 C149.99,150.00 271.49,-49.98 500.00,49.98 L500.00,0.00 L0.00,0.00 Z' style='stroke: none; fill: #f8f9fa;'></path>
+					</svg>
+				</div>
+
+				<!-- Termina onda -->
+
+				<span class='screenUp' id='screenUp'><i class='fas fa-chevron-up'></i></span>
+			";
 }
 
 function footer()
