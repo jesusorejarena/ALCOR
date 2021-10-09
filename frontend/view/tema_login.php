@@ -41,7 +41,7 @@ function headerr($titulo)
 										</button>
 
 										<!--Nombre de la app-->
-										<a href='inicio.html' class='navbar-brand'><img class='img-fluid' src='' alt='Logo de Fasty' width='100rm'></a>
+										<a href='inicio.php' class='navbar-brand'><img class='img-fluid' src='' alt='Logo de Fasty' width='100rm'></a>
 
 										<!--Botones de las secciones-->
 										<div class='collapse navbar-collapse justify-content-end' id='collapsibleNavbar'>
@@ -65,6 +65,9 @@ function headerr($titulo)
 												</li>
 												<li class='nav-item m-1 text-center'>
 													<a href='inicio.php#section6' class='nav-link active'>Contacto</a>
+												</li>
+												<li class='nav-item my-1 mx-2 text-center'>
+													<a href='ado_signup.php' class='btn btn-outline-primary shadow-sm'>Registrate</a>
 												</li>
 												<li class='nav-item my-1 mx-2 text-center'>
 													<a href='ado_login.php' class='btn btn-primary shadow-sm'>Ingresar</a>
@@ -128,6 +131,7 @@ function footer()
 									<h6><a class='text-dark' href='inicio.php#section4'>Historia</a></h6>
 									<h6><a class='text-dark' href='inicio.php#section5'>Ubicación</a></h6>
 									<h6><a class='text-dark' href='inicio.php#section6'>Contacto</a></h6>
+									<h6><a class='text-dark' href='ado_signup.php'>Registrarse</a></h6>
 									<h6><a class='text-dark' href='ado_login.php'>Ingresar</a></h6>
 								</div>
 								<div class='col-12 col-md-3 text-left my-2'>
