@@ -3,7 +3,9 @@
 <head>
 	<meta charset='UTF-8'>
 	<title>Lista de Prendas</title>
-	<link rel='stylesheet' href='../../css/estilospdf.css'>
+	<style>
+			.head{background-color:#fff;color:#000;border:none}.footer{font-size:15px;background-color:#fff;color:#000;border:none}table{width:100%;text-align:center;border-collapse:collapse}th{font-size:20px}td{font-size:15px}td,th{border:1px solid #000;padding:7px}.nada{border:none;padding:15px}.espacio{border:none;padding:7px}
+		</style>
 </head>
 
 <body>

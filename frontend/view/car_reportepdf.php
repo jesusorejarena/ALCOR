@@ -29,14 +29,18 @@ $dompdf->loadHtml("
 
 				<meta charset='UTF-8'>
 				<title>Reporte del Cargo N° $cod_car</title>
-				<link rel='stylesheet' href='../css/estilospdf.css'>
-
+				<style>
+					.head { background-color: #ffffff; color: #000000; border: none; } .footer { font-size: 15px; background-color:
+					#ffffff; color: #000000; border: none; } table { width: 100%; text-align: center; border-collapse: collapse; } th
+					{ font-size: 20px; } td { font-size: 15px; } th, td { border: 1px solid black; padding: 7px; } .nada { border:
+					none; padding: 15px; } .espacio { border: none; padding: 7px; }
+				</style>
 			</head>
 
 			<body>
 				<table>
 					<tr class='head'>
-						<th class='head' colspan='1' style='text-align: center;'><img src='../img/logo3.png' width='250px'></th>
+						<th class='head' colspan='1' style='text-align: left;'><img src='../img/logo3.png' width='250px'></th>
 						<th class='head' colspan='3' style='text-align: center;'><h3>Reporte del Cargo <br> N° $cod_car</h3></th>
 						<th class='head' colspan='2'></th>
 					</tr>

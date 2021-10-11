@@ -8,7 +8,7 @@ use Dompdf\Dompdf;
 // instantiate and use the dompdf class
 $dompdf = new Dompdf();
 
-$archivo = "http://localhost/Servidor-Local/SIP/frontend/view/car_reportes/car_reportepdf_listar.php";
+$archivo = "http://localhost/Server/SIP/frontend/view/car_reportes/car_reportepdf_listar.php";
 
 $html=file_get_contents($archivo);
 
