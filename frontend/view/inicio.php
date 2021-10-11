@@ -8,13 +8,13 @@ headerr("Inicio");
 
 <!-- Comienza banner -->
 
-<div id="section1" class="bg-light container-fluid pt-md-5 px-2 px-md-5">
+<div id="section1" class="bg-light container-fluid pt-xl-5 px-2 px-xl-5">
 	<div class="container">
 		<div class="row d-flex align-items-center">
-			<div class="col-12 col-md-7 text-center my-4 my-md-2 p-md-2">
+			<div class="col-12 col-xl-7 text-center my-4 my-xl-2 p-xl-2">
 				<img class="img-fluid" src="../img/undraw_Location_tracking_re_n3ok.svg" alt="" width="60%">
 			</div>
-			<div class="col-12 col-md-5 text-center mt-md-4 pt-md-4">
+			<div class="col-12 col-xl-5 text-center mt-xl-4 pt-xl-4">
 				<h2 class="display-4 mb-3">Haz tu pedido</h2>
 				<h5>para recoger la ropa desde la puerta de tu casa, llamando al 0276-3477705</h5>
 			</div>
@@ -35,7 +35,7 @@ headerr("Inicio");
 
 <!-- Comienza body -->
 
-<div class="container px-4 px-md-5">
+<div class="container px-4 px-xl-5">
 	<div class="row">
 		<div class="col-12">
 
@@ -43,12 +43,12 @@ headerr("Inicio");
 
 			<!-- Caja 1 -->
 
-			<div class="container my-5 px-4 my-md-5 px-md-5">
+			<div class="container my-5 px-4 my-xl-5 px-xl-5">
 				<div class="row">
-					<div class="col-12 col-md-6 text-center">
+					<div class="col-12 col-xl-6 text-center">
 						<img class="img-fluid" src="../img/undraw_wishes_icyp.svg" alt="Pregunta" width="80%">
 					</div>
-					<div class="col-12 col-md-6 my-3 my-md-5">
+					<div class="col-12 col-xl-6 my-3 my-xl-5">
 						<h2 class="text-center text-primary font-weight-bold mb-3">Frescura</h2>
 						<p class="text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus ea est dolores
 							doloremque soluta, quaerat neque vitae harum aspernatur repellat voluptatem enim earum voluptate
@@ -59,18 +59,18 @@ headerr("Inicio");
 
 			<!-- Caja 2 -->
 
-			<div class="container my-5 px-4 my-md-5 px-md-5">
+			<div class="container my-5 px-4 my-xl-5 px-xl-5">
 				<div class="row">
-					<div class="d-md-none col-12 col-md-6 text-center">
+					<div class="d-xl-none col-12 col-xl-6 text-center">
 						<img class="img-fluid" src="../img/undraw_science_fqhl.svg" alt="Telefono" width="80%">
 					</div>
-					<div class="col-12 col-md-6 my-3 my-md-5">
+					<div class="col-12 col-xl-6 my-3 my-xl-5">
 						<h2 class="text-center text-primary font-weight-bold mb-3">Los mejores productos</h2>
 						<p class="text-left">
 							No importa en que plataforma estes Fasty siempre estara contigo.
 						</p>
 					</div>
-					<div class="d-none d-md-block col-12 col-md-6 text-center">
+					<div class="d-none d-xl-block col-12 col-xl-6 text-center">
 						<img class="img-fluid" src="../img/undraw_science_fqhl.svg" alt="Telefono" width="80%">
 					</div>
 				</div>
@@ -78,12 +78,12 @@ headerr("Inicio");
 
 			<!-- Caja 3 -->
 
-			<div class="container mt-5 px-4 my-md-5 px-md-5">
+			<div class="container mt-5 px-4 my-xl-5 px-xl-5">
 				<div class="row">
-					<div class="col-12 col-md-6 text-center">
+					<div class="col-12 col-xl-6 text-center">
 						<img class="img-fluid" src="../img/undraw_career_progress_ivdb.svg" alt="Pregunta" width="80%">
 					</div>
-					<div class="col-12 col-md-6 my-3 my-md-5">
+					<div class="col-12 col-xl-6 my-3 my-xl-5">
 						<h2 class="text-center text-primary font-weight-bold mb-3">Toda tu ropa con un cuidado especial</h2>
 						<p class="text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus ea est dolores
 							doloremque soluta, quaerat neque vitae harum aspernatur repellat voluptatem enim earum voluptate
@@ -94,9 +94,9 @@ headerr("Inicio");
 
 			<!-- Caja 4 -->
 
-			<div id="section2" class="container mb-5 px-1 my-md-3 p-md-5">
+			<div id="section2" class="container mb-5 px-1 my-xl-3 p-xl-5">
 				<div class="row">
-					<div class="col-12 col-md-6 text-center my-3">
+					<div class="col-12 col-xl-6 text-center my-3">
 						<div class="row">
 							<div class="col-12">
 								<h2 class=" my-3 text-primary font-weight-bold">Misión</h2>
@@ -108,7 +108,7 @@ headerr("Inicio");
 							</div>
 						</div>
 					</div>
-					<div class="col-12 col-md-6 text-center my-3">
+					<div class="col-12 col-xl-6 text-center my-3">
 						<div class="row">
 							<div class="col-12">
 								<h2 class=" my-3 text-primary font-weight-bold">Visión</h2>
@@ -125,11 +125,11 @@ headerr("Inicio");
 
 			<!-- Caja 5 -->
 
-			<div id="section3" class="container mt-3 p-2 mt-md-3 p-md-5">
+			<div id="section3" class="container mt-3 p-2 mt-xl-3 p-xl-5">
 				<h2 class="text-primary font-weight-bold mb-3">Testimonios</h2>
 				<div class="row">
 					<!-- Card 1 -->
-					<div class="col-md-4 p-4">
+					<div class="col-xl-4 p-4">
 						<div class="card">
 							<div class="card-body">
 								<h5 class="card-title">Special title treatment</h5>
@@ -139,7 +139,7 @@ headerr("Inicio");
 					</div>
 
 					<!-- Card 2 -->
-					<div class="col-md-4">
+					<div class="col-xl-4">
 						<div class="card">
 							<div class="card-body">
 								<h5 class="card-title">Special title treatment</h5>
@@ -149,7 +149,7 @@ headerr("Inicio");
 					</div>
 
 					<!-- Card 3 -->
-					<div class="col-md-4 p-4">
+					<div class="col-xl-4 p-4">
 						<div class="card">
 							<div class="card-body">
 								<h5 class="card-title">Special title treatment</h5>
@@ -162,16 +162,16 @@ headerr("Inicio");
 
 			<!-- Caja 6 -->
 
-			<div id="section4" class="container mt-3 p-2 mt-md-3 p-md-5">
+			<div id="section4" class="container mt-3 p-2 mt-xl-3 p-xl-5">
 				<h2 class="text-primary font-weight-bold mb-4">Historia</h2>
 				<div class="row ">
 					<div class="col-12 d-flex justify-content-center align-items-center">
 						<div class="card mb-3" style="max-width: 700px;">
 							<div class="row no-gutters">
-								<div class="col-md-4 d-flex align-items-center">
+								<div class="col-xl-4 d-flex align-items-center">
 									<img class="img-fluid" src="../img/undraw_window_shopping_b96y.svg" alt="Seguridad">
 								</div>
-								<div class="col-md-8">
+								<div class="col-xl-8">
 									<div class="card-body">
 										<p class="card-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolores qui eveniet
 											corrupti mollitia natus, consequatur perspiciatis dolorum aperiam alias vel repellat similique
@@ -189,7 +189,7 @@ headerr("Inicio");
 
 			<!-- Comienza Ubicación -->
 
-			<div id="section5" class="container mt-3 p-2 mt-md-3 p-md-5">
+			<div id="section5" class="container mt-3 p-2 mt-xl-3 p-xl-5">
 				<h2 class="text-primary font-weight-bold mb-4">Ubicación</h2>
 				<div class="row">
 					<div class="col-12 d-flex justify-content-center align-items-center">
@@ -202,33 +202,33 @@ headerr("Inicio");
 
 			<!-- Comienza formulario -->
 
-			<div id="section6" class="container mt-5 p-2 mt-md-3 p-md-5">
+			<div id="section6" class="container mt-5 p-2 mt-xl-3 p-xl-5">
 				<h2 class="text-primary font-weight-bold text-center mb-4">Contacto</h2>
 				<div class="row d-flex justify-content-center align-items-center">
-					<div class="col-md-6">
+					<div class="col-xl-6">
 						<form class="needs-validation" novalidate>
 							<div class="form-row">
-								<div class="col-md-6 mb-3">
+								<div class="col-xl-6 mb-3">
 									<label for="nombre">Nombre:</label>
 									<input type="text" name="nom_for" id="nombre" class="form-control" placeholder="Nombre" />
 									<small id="nombreDiv" class="invalid-feedback"></small>
 								</div>
-								<div class="col-md-6 mb-3">
+								<div class="col-xl-6 mb-3">
 									<label for="apellido">Apellido:</label>
 									<input type="text" name="ape_for" id="apellido" class="form-control" placeholder="Apellido" />
 									<small id="apellidoDiv" class="invalid-feedback"></small>
 								</div>
-								<div class="col-md-6 mb-3">
+								<div class="col-xl-6 mb-3">
 									<label for="telefono">Teléfono:</label>
 									<input type="text" name="tel_for" id="telefono" class="form-control" placeholder="Teléfono" />
 									<small id="telefonoDiv" class="invalid-feedback"></small>
 								</div>
-								<div class="col-md-6 mb-3">
+								<div class="col-xl-6 mb-3">
 									<label for="correo">Correo:</label>
 									<input type="correo" name="cor_for" id="correo" class="form-control" placeholder="Correo" />
 									<small id="correoDiv" class="invalid-feedback"></small>
 								</div>
-								<div class="col-md-12 mb-3">
+								<div class="col-xl-12 mb-3">
 									<label for="asunto">Asunto:</label>
 									<textarea type="text" name="asu_for" id="asunto" class="form-control" placeholder="Asunto" rows="3"></textarea>
 									<small id="asuntoDiv" class="invalid-feedback"></small>

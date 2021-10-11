@@ -5,20 +5,20 @@ require_once("utilidad.class.php");
 class instalacion extends utilidad
 {
 
-	public $cod_ado;
-	public $nom_ado;
-	public $ape_ado;
-	public $gen_ado;
-	public $nac_ado;
-	public $tip_ado;
-	public $ced_ado;
-	public $tel_ado;
-	public $cor_ado;
+	public $cod_usu;
+	public $nom_usu;
+	public $ape_usu;
+	public $gen_usu;
+	public $nac_usu;
+	public $tip_usu;
+	public $ced_usu;
+	public $tel_usu;
+	public $cor_usu;
 	public $fky_preseg1;
-	public $re1_ado;
+	public $re1_usu;
 	public $fky_preseg2;
-	public $cla_ado;
-	public $dir_ado;
+	public $cla_usu;
+	public $dir_usu;
 
 
 	function positionAdmin()
@@ -32,6 +32,9 @@ class instalacion extends utilidad
 							VALUES
 								('Administrador',
 								'$cre_car',
+								'A'),
+								('Cliente',
+								'$cre_car',
 								'A');";
 
 		return $this->run();
@@ -39,47 +42,47 @@ class instalacion extends utilidad
 
 	function employeeAdmin()
 	{
-		$cre_ado = date("y-m-d h:i:s");
-		$clave = sha1($this->cla_ado);
-		$respuesta1 = sha1(strtoupper($this->re1_ado));
-		$respuesta2 = sha1(strtoupper($this->re2_ado));
+		$cre_usu = date("y-m-d h:i:s");
+		$clave = sha1($this->cla_usu);
+		$respuesta1 = sha1(strtoupper($this->re1_usu));
+		$respuesta2 = sha1(strtoupper($this->re2_usu));
 
-		$this->que_bda = "INSERT INTO empleado
-								(nom_ado, 
-								ape_ado, 
-								gen_ado, 
-								nac_ado,
-								tip_ado, 
-								ced_ado, 
-								tel_ado, 
-								cor_ado, 
-								cla_ado, 
-								dir_ado, 
+		$this->que_bda = "INSERT INTO usuario
+								(nom_usu, 
+								ape_usu, 
+								gen_usu, 
+								nac_usu,
+								tip_usu, 
+								ced_usu, 
+								tel_usu, 
+								cor_usu, 
+								cla_usu, 
+								dir_usu, 
 								cod_car,
 								fky_preseg1,
-								re1_ado,
+								re1_usu,
 								fky_preseg2,
-								re2_ado,
-								cre_ado,
-								est_ado,
-								bas_ado)
+								re2_usu,
+								cre_usu,
+								est_usu,
+								bas_usu)
 							VALUES
-								('$this->nom_ado',
-								'$this->ape_ado',
-								'$this->gen_ado',
-								'$this->nac_ado',
-								'$this->tip_ado',
-								'$this->ced_ado',
-								'$this->tel_ado',
-								'$this->cor_ado',
+								('$this->nom_usu',
+								'$this->ape_usu',
+								'$this->gen_usu',
+								'$this->nac_usu',
+								'$this->tip_usu',
+								'$this->ced_usu',
+								'$this->tel_usu',
+								'$this->cor_usu',
 								'$clave',
-								'$this->dir_ado',
+								'$this->dir_usu',
 								'1',
 								'$this->fky_preseg1',
 								'$respuesta1',
 								'$this->fky_preseg2',
 								'$respuesta2',
-								'$cre_ado',
+								'$cre_usu',
 								'A',
 								'A');";
 

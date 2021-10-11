@@ -16,7 +16,7 @@ check("Productos", 3);
 <div class="container px-3 pt-3 pb-5 mb-5">
 	<a class="btn btn-success btn-lg" href="pro_menu.php"><i class="fas fa-arrow-circle-left"></i></a>
 	<div class="row justify-content-center">
-		<div class="col-12 col-md-6 p-2">
+		<div class="col-12 col-xl-6 p-2">
 			<div class="card rounded">
 				<h2 class="card-title text-center pt-4">Registrar Producto</h2>
 				<form action="../../backend/controller/producto.php" method="POST" class="was-validation" id="formulario" novalidate>
@@ -36,14 +36,14 @@ check("Productos", 3);
 									<small id="descripcionDiv" class="invalid-feedback"></small>
 								</div>
 							</div>
-							<div class="col-12 col-md-6">
+							<div class="col-12 col-xl-6">
 								<div class="form-group">
 									<label for="precio">Precio:</label>
 									<input type="text" name="pre_pro" id="precio" placeholder="Precio:" class="form-control">
 									<small id="precioDiv" class="invalid-feedback"></small>
 								</div>
 							</div>
-							<div class="col-12 col-md-6">
+							<div class="col-12 col-xl-6">
 								<div class="form-group">
 									<label for="cantidad">Cantidad:</label>
 									<input type="text" name="can_pro" id="cantidad" placeholder="Cantidad:" class="form-control">

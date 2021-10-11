@@ -12,7 +12,7 @@ check("Proveedores", 2);
 <div class="container px-3 pt-3 pb-5 mb-5">
 	<a class="btn btn-success btn-lg" href="edo_menu.php"><i class="fas fa-arrow-circle-left"></i></a>
 	<div class="row justify-content-center">
-		<div class="col-12 col-md-6 p-2">
+		<div class="col-12 col-xl-6 p-2">
 			<div class="card rounded">
 				<h2 class="card-title text-center pt-4">Registrar Proveedor</h2>
 				<form action="../../backend/controller/proveedor.php" method="POST" class="was-validation" id="formulario" novalidate>
@@ -39,21 +39,21 @@ check("Proveedores", 2);
 									<small id="direccionDiv" class="invalid-feedback"></small>
 								</div>
 							</div>
-							<div class="col-12 col-md-6">
+							<div class="col-12 col-xl-6">
 								<div class="form-group">
 									<label for="telefono">Teléfono:</label>
 									<input type="text" name="tel_edo" id="telefono" placeholder="Ejemplo: 04241234567" class="form-control">
 									<small id="telefonoDiv" class="invalid-feedback"></small>
 								</div>
 							</div>
-							<div class="col-12 col-md-6">
+							<div class="col-12 col-xl-6">
 								<div class="form-group">
 									<label for="correo">Correo:</label>
 									<input type="email" name="cor_edo" id="correo" placeholder="Ejemplo: alcor@gmail.com" class="form-control">
 									<small id="correoDiv" class="invalid-feedback"></small>
 								</div>
 							</div>
-							<div class="col-12 col-md-6">
+							<div class="col-12 col-xl-6">
 								<div class="form-group">
 									<label for="nacionalidad">Tipo:</label>
 									<select name="tip_edo" id="nacionalidad" class="form-control">
@@ -65,7 +65,7 @@ check("Proveedores", 2);
 									<small id="nacionalidadDiv" class="invalid-feedback"></small>
 								</div>
 							</div>
-							<div class="col-12 col-md-6">
+							<div class="col-12 col-xl-6">
 								<div class="form-group">
 									<label for="rif">RIF:</label>
 									<input type="text" name="rif_edo" id="rif" placeholder="35161987-3" class="form-control">

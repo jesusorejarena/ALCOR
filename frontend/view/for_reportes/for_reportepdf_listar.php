@@ -30,10 +30,10 @@
 
 		require_once("../../../backend/class/formulario.class.php");
 
-		$obj_ado = new formulario;
-		$obj_ado->puntero = $obj_ado->getAll();
+		$obj_usu = new formulario;
+		$obj_usu->puntero = $obj_usu->getAll();
 
-		while (($formulario = $obj_ado->extractData()) > 0) {
+		while (($formulario = $obj_usu->extractData()) > 0) {
 
 			echo "
 						<tr class='tr'>

@@ -1,28 +1,28 @@
 <?php
 
-require_once("../class/empleado.class.php");
+require_once("../class/usuario.class.php");
 
-$obj_ado = new empleado;
+$obj_usu = new usuario;
 
-$correo = $_POST['cor_ado'];
-$clave = $_POST['cla_ado'];
+$correo = $_POST['cor_usu'];
+$clave = $_POST['cla_usu'];
 
-$obj_ado->puntero = $obj_ado->getSession($correo, $clave);
+$obj_usu->puntero = $obj_usu->getSession($correo, $clave);
 
 switch ($_REQUEST["run"]) {
 	case 'session':
-		$empleado = $obj_ado->extractData();
+		$usuario = $obj_usu->extractData();
 
-		if ($empleado['cor_ado'] == $correo && $empleado['cla_ado'] == sha1($clave) && $empleado['est_ado'] == 'A' && $empleado['bas_ado'] == 'A') {
+		if ($usuario['cor_usu'] == $correo && $usuario['cla_usu'] == sha1($clave) && $usuario['est_usu'] == 'A' && $usuario['bas_usu'] == 'A') {
 			session_start();
 			$_SESSION['activo'] = true;
-			$_SESSION['codigo'] = $empleado['cod_ado'];
-			$_SESSION['cargo'] = $empleado['cod_car'];
+			$_SESSION['codigo'] = $usuario['cod_usu'];
+			$_SESSION['cargo'] = $usuario['cod_car'];
 			$_SESSION["time"] = time();
 
-			header('Location: ../../frontend/view/ado_inicio.php');
+			header('Location: ../../frontend/view/usu_inicio.php');
 		} else {
-			header('Location: ../../frontend/view/ado_login.php');
+			header('Location: ../../frontend/view/usu_login.php');
 		}
 		break;
 }

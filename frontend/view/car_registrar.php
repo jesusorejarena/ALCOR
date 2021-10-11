@@ -12,7 +12,7 @@ checkAdmin();
 <div class="container px-3 pt-3 pb-5 mb-5">
 	<a class="btn btn-success btn-lg" href="rol_menu.php"><i class="fas fa-arrow-circle-left"></i></a>
 	<div class="row justify-content-center">
-		<div class="col-12 col-md-6 p-2">
+		<div class="col-12 col-xl-6 p-2">
 			<div class="card rounded">
 				<h2 class="card-title text-center pt-4">Registrar Cargo</h2>
 				<form action="../../backend/controller/cargo.php" method="POST" class="was-validation" id="formulario" novalidate>

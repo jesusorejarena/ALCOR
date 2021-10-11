@@ -9,7 +9,7 @@ $obj_emp->assignValue();
 switch ($_REQUEST["run"]) {
 	case 'create':
 		$obj_emp->create();
-		header("Location: ../../frontend/view/ado_login.php");
+		header("Location: ../../frontend/view/usu_login.php");
 		break;
 
 	case 'update':

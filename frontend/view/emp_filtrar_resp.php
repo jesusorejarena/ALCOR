@@ -9,10 +9,10 @@ checkAdmin();
 ?>
 
 <!-- Formulario -->
-<div class="container p-3 p-md-2">
+<div class="container p-3 p-xl-2">
 	<a class="btn btn-success btn-lg" href="menu_config.php"><i class="fas fa-arrow-circle-left"></i></a>
 	<div class="row justify-content-center">
-		<div class="col-12 col-md-6 p-2">
+		<div class="col-12 col-xl-6 p-2">
 			<div class="card rounded">
 				<h2 class="card-title text-center pt-4">Filtrar Empresa - Historial</h2>
 				<form action="emp_filtrado_resp.php" method="POST" novalidate>
@@ -24,13 +24,13 @@ checkAdmin();
 									<input type="text" name="nom_emp" id="nom_emp" class="form-control" placeholder="Nombre" />
 								</div>
 							</div>
-							<div class="col-12 col-md-6">
+							<div class="col-12 col-xl-6">
 								<div class="form-group">
 									<label for="tel_emp">Teléfono:</label>
 									<input type="text" name="tel_emp" id="tel_emp" class="form-control" placeholder="Teléfono" />
 								</div>
 							</div>
-							<div class="col-12 col-md-6">
+							<div class="col-12 col-xl-6">
 								<div class="form-group">
 									<label for="rif_emp">RIF:</label>
 									<input type="text" name="rif_emp" id="rif_emp" class="form-control" placeholder="RIF" />
@@ -48,13 +48,13 @@ checkAdmin();
 									<input type="email" name="cor_emp" id="cor_emp" class="form-control" placeholder="Correo" />
 								</div>
 							</div>
-							<div class="col-12 col-md-6">
+							<div class="col-12 col-xl-6">
 								<div class="form-group">
 									<label for="hou_emp">Horario Uno:</label>
 									<input type="text" name="hou_emp" id="hou_emp" class="form-control" placeholder="Horario Uno" />
 								</div>
 							</div>
-							<div class="col-12 col-md-6">
+							<div class="col-12 col-xl-6">
 								<div class="form-group">
 									<label for="hod_emp">Horario Dos:</label>
 									<input type="text" name="hod_emp" id="hod_emp" class="form-control" placeholder="Horario Dos" />

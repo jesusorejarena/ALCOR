@@ -17,7 +17,7 @@ check("Productos", 3);
 <div class="container px-3 pt-3 pb-5 mb-5">
 	<a class="btn btn-success btn-lg" href="pro_menu.php"><i class="fas fa-arrow-circle-left"></i></a>
 	<div class="row justify-content-center">
-		<div class="col-12 col-md-6 p-2">
+		<div class="col-12 col-xl-6 p-2">
 			<div class="card rounded">
 				<h2 class="card-title text-center pt-4">Filtrar Producto</h2>
 				<form action="pro_filtrado.php" method="POST" class="was-validation" id="formulario" novalidate>
@@ -35,13 +35,13 @@ check("Productos", 3);
 									<textarea name="des_pro" id="des_pro" placeholder="Descripción" class="form-control"></textarea>
 								</div>
 							</div>
-							<div class="col-12 col-md-6">
+							<div class="col-12 col-xl-6">
 								<div class="form-group">
 									<label for="pre_pro">Precio:</label>
 									<input type="text" name="pre_pro" id="pre_pro" placeholder="Precio:" class="form-control">
 								</div>
 							</div>
-							<div class="col-12 col-md-6">
+							<div class="col-12 col-xl-6">
 								<div class="form-group">
 									<label for="can_pro">Cantidad:</label>
 									<input type="text" name="can_pro" id="can_pro" placeholder="Cantidad:" class="form-control">
@@ -60,7 +60,7 @@ check("Productos", 3);
 									</select>
 								</div>
 							</div>
-							<div class="col-12 col-md-6">
+							<div class="col-12 col-xl-6">
 								<div class="form-group">
 									<label for="est_pro">Estatus:</label>
 									<select name="est_pro" id="est_pro" class="form-control">
@@ -70,7 +70,7 @@ check("Productos", 3);
 									</select>
 								</div>
 							</div>
-							<div class="col-12 col-md-6">
+							<div class="col-12 col-xl-6">
 								<div class="form-group">
 									<label for="bas_pro"> Activo/Papelera:</label>
 									<select name="bas_pro" id="bas_pro" class="form-control">

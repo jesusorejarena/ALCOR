@@ -16,10 +16,10 @@ checkAdmin();
 ?>
 
 <!-- Formulario -->
-<div class="container p-3 p-md-2">
-	<a class="btn btn-success btn-lg" href="ado_inicio.php"><i class="fas fa-arrow-circle-left"></i></a>
+<div class="container p-3 p-xl-2">
+	<a class="btn btn-success btn-lg" href="usu_inicio.php"><i class="fas fa-arrow-circle-left"></i></a>
 	<div class="row justify-content-center">
-		<div class="col-12 col-md-6 p-2">
+		<div class="col-12 col-xl-6 p-2">
 			<div class="card rounded">
 				<h2 class="card-title text-center pt-4">Datos de la empresa</h2>
 				<form action="../../backend/controller/empresa.php" method="POST" class="was-validation" id="formulario" novalidate>
@@ -33,14 +33,14 @@ checkAdmin();
 									<small id="alfanumericoDiv" class="invalid-feedback"></small>
 								</div>
 							</div>
-							<div class="col-12 col-md-6">
+							<div class="col-12 col-xl-6">
 								<div class="form-group">
 									<label for="telefono">Teléfono:</label>
 									<input type="text" name="tel_emp" id="telefono" class="form-control" value="<?php echo $empresa['tel_emp']; ?>" placeholder="Teléfono" />
 									<small id="telefonoDiv" class="invalid-feedback"></small>
 								</div>
 							</div>
-							<div class="col-12 col-md-6">
+							<div class="col-12 col-xl-6">
 								<div class="form-group">
 									<label for="rifCompleto">RIF:</label>
 									<input type="text" name="rif_emp" id="rifCompleto" class="form-control" value="<?php echo $empresa['rif_emp']; ?>" placeholder="RIF" />
@@ -61,14 +61,14 @@ checkAdmin();
 									<small id="correoDiv" class="invalid-feedback"></small>
 								</div>
 							</div>
-							<div class="col-12 col-md-6">
+							<div class="col-12 col-xl-6">
 								<div class="form-group">
 									<label for="horario1">Horario Uno:</label>
 									<input type="text" name="hou_emp" id="horario1" class="form-control" value="<?php echo $empresa['hou_emp']; ?>" placeholder="Horario Uno" />
 									<small id="horario1Div" class="invalid-feedback"></small>
 								</div>
 							</div>
-							<div class="col-12 col-md-6">
+							<div class="col-12 col-xl-6">
 								<div class="form-group">
 									<label for="horario2">Horario Dos:</label>
 									<input type="text" name="hod_emp" id="horario2" class="form-control" value="<?php echo $empresa['hod_emp']; ?>" placeholder="Horario Dos" />

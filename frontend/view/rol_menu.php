@@ -13,7 +13,7 @@ checkAdmin();
 	<h2 class="text-center p-3">Menú de roles</h2>
 	<div class="row justify-content-center p-3">
 		<!-- Cargos -->
-		<div class="col-12 col-md-4 p-1">
+		<div class="col-12 col-xl-4 p-1">
 			<div class="card rounded px-3 py-4">
 				<h3 class="card-title text-center">Cargos</h3>
 				<div class="card-body">
@@ -25,7 +25,7 @@ checkAdmin();
 			</div>
 		</div>
 		<!-- Modulos -->
-		<div class="col-12 col-md-4 p-1">
+		<div class="col-12 col-xl-4 p-1">
 			<div class="card rounded px-3 py-4">
 				<h3 class="card-title text-center">Módulos</h3>
 				<div class="card-body">
@@ -34,7 +34,7 @@ checkAdmin();
 			</div>
 		</div>
 		<!-- Permisos -->
-		<div class="col-12 col-md-4 p-1">
+		<div class="col-12 col-xl-4 p-1">
 			<div class="card rounded px-3 py-4">
 				<h3 class="card-title text-center">Permisos</h3>
 				<div class="card-body">

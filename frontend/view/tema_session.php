@@ -24,7 +24,7 @@ function check($menu, $cod_mod)
 		//compara el nombre del modulo con el nombre del modulo por parametro
 		if ($modulo['nom_mod'] == $menu) {
 		} else {
-			header("Location: ado_inicio.php");
+			header("Location: usu_inicio.php");
 		}
 	}
 }
@@ -33,7 +33,7 @@ function checkAdmin()
 {
 	if ($_SESSION['cargo'] == 1) {
 	} else {
-		header("Location: ado_inicio.php");
+		header("Location: usu_inicio.php");
 	}
 }
 
@@ -55,7 +55,7 @@ function headerr($titulo)
 		$obj_mod = new modulo;
 		$obj_per = new permiso;
 	} else {
-		header('Location: ado_login.php');
+		header('Location: usu_login.php');
 	}
 
 	echo "
@@ -75,12 +75,12 @@ function headerr($titulo)
 
 			<!-- Comienza el nav -->
 
-				<div class='bg-light container-fluid px-4 px-md-5'>
+				<div class='bg-light container-fluid px-4 px-xl-5'>
 					<div class='container'>
 						<div class='row'>
 							<div class='col-12'>
 								<header class='header'>
-									<nav class='navbar navbar-expand-md navbar-light form-control-static'>
+									<nav class='navbar navbar-expand-xl navbar-light form-control-static'>
 
 										<!--Menu de hamburguesa-->
 										<button class='navbar-toggler' type='button' data-toggle='collapse' data-target='#collapsibleNavbar'>
@@ -93,19 +93,24 @@ function headerr($titulo)
 										<!--Botones de las secciones-->
 										<div class='collapse navbar-collapse justify-content-end' id='collapsibleNavbar'>
 											<ul class='navbar-nav'>
-												<li class='nav-item m-1 text-center'><a class='nav-link active' href='ado_inicio.php'>Inicio</a></li>
+												<li class='nav-item m-1 text-center'><a class='nav-link active' href='usu_inicio.php'>Inicio</a></li>
 						";
 
 	if ($_SESSION['cargo'] == 1) {
 		echo "
 								<li class='nav-item m-1 text-center'><a href='emp_modificar.php' class='nav-link active'>Empresa</a></li>
 								<li class='nav-item m-1 text-center'><a href='rol_menu.php' class='nav-link active'>Roles</a></li>
-								<li class='nav-item m-1 text-center'><a href='ado_menu.php' class='nav-link active'>Empleados</a></li>
+								<li class='nav-item m-1 text-center'><a href='usu_menu.php' class='nav-link active'>Usuarios</a></li>
+								<li class='nav-item m-1 text-center'><a href='pre_menu.php' class='nav-link active'>Prendas</a></li>
 								<li class='nav-item m-1 text-center'><a href='edo_menu.php' class='nav-link active'>Proveedores</a></li>
 								<li class='nav-item m-1 text-center'><a href='pro_menu.php' class='nav-link active'>Productos</a></li>
 								<li class='nav-item m-1 text-center'><a href='ven_menu.php' class='nav-link active'>Ventas</a></li>
 								<li class='nav-item m-1 text-center'><a href='for_menu.php' class='nav-link active'>Formularios</a></li>
 								<li class='nav-item m-1 text-center'><a href='menu_config.php' class='nav-link active'>Configuración</a></li>
+												";
+	} else if ($_SESSION['cargo'] == 2) {
+		echo "
+								<li class='nav-item m-1 text-center'><a href='usu_pedidos.php' class='nav-link active'>Pedidos</a></li>
 												";
 	} else {
 		// verifica el cargo

@@ -11,7 +11,7 @@ checkAdmin();
 <div class="container-fluid p-3">
 	<h2 class="text-center p-3">Configuración</h2>
 	<div class="row justify-content-center">
-		<div class="col-12 col-md-4">
+		<div class="col-12 col-xl-4">
 			<div class="card rounded px-3 py-4">
 				<h3 class="card-title text-center">Historial</h3>
 				<div class="card-body">
@@ -30,10 +30,10 @@ checkAdmin();
 						<div class="col-6"><a class="btn btn-primary btn-block" href="per_listartodo_resp.php">Lista</a></div>
 						<div class="col-6"><a class="btn btn-primary btn-block" href="per_filtrar_resp.php">Filtrar</a></div>
 					</div>
-					<h5 class="pt-3">Empleados:</h5>
+					<h5 class="pt-3">Usuarios:</h5>
 					<div class="row">
-						<div class="col-6"><a class="btn btn-primary btn-block" href="ado_listartodo_resp.php">Lista</a></div>
-						<div class="col-6"><a class="btn btn-primary btn-block" href="ado_filtrar_resp.php">Filtrar</a></div>
+						<div class="col-6"><a class="btn btn-primary btn-block" href="usu_listartodo_resp.php">Lista</a></div>
+						<div class="col-6"><a class="btn btn-primary btn-block" href="usu_filtrar_resp.php">Filtrar</a></div>
 					</div>
 					<h5 class="pt-3">Proveedores:</h5>
 					<div class="row">
@@ -53,7 +53,7 @@ checkAdmin();
 				</div>
 			</div>
 		</div>
-		<div class="col-12 col-md-4">
+		<div class="col-12 col-xl-4">
 			<div class="card rounded px-3 py-4">
 				<h3 class="card-title text-center">Base de Datos</h3>
 				<div class="card-body">

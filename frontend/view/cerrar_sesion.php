@@ -4,6 +4,6 @@ session_start();
 
 session_destroy();
 
-header('Location: ado_login.php');
+header('Location: usu_login.php');
 
 exit;

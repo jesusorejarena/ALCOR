@@ -8,7 +8,7 @@ function headerr($titulo)
 	$obj_ins->contador = $obj_ins->check();
 
 	if (($obj_ins->count()) == 0) {
-		header("Location: ins_ado_registrar.php");
+		header("Location: ins_usu_registrar.php");
 	}
 
 	echo "
@@ -28,12 +28,12 @@ function headerr($titulo)
 
 				<!-- Comienza el nav -->
 
-				<div class='bg-light container-fluid px-4 px-md-5'>
+				<div class='bg-light container-fluid px-4 px-xl-5'>
 					<div class='container'>
 						<div class='row'>
 							<div class='col-12'>
 								<header class='header'>
-									<nav class='navbar navbar-expand-md navbar-light form-control-static'>
+									<nav class='navbar navbar-expand-xl navbar-light form-control-static'>
 
 										<!--Menu de hamburguesa-->
 										<button class='navbar-toggler' type='button' data-toggle='collapse' data-target='#collapsibleNavbar'>
@@ -67,10 +67,10 @@ function headerr($titulo)
 													<a href='inicio.php#section6' class='nav-link active'>Contacto</a>
 												</li>
 												<li class='nav-item my-1 mx-2 text-center'>
-													<a href='ado_signup.php' class='btn btn-outline-primary shadow-sm'>Registrate</a>
+													<a href='usu_signup.php' class='btn btn-outline-primary shadow-sm'>Registrate</a>
 												</li>
 												<li class='nav-item my-1 mx-2 text-center'>
-													<a href='ado_login.php' class='btn btn-primary shadow-sm'>Ingresar</a>
+													<a href='usu_login.php' class='btn btn-primary shadow-sm'>Ingresar</a>
 												</li>
 											</ul>
 										</div>
@@ -100,23 +100,23 @@ function footer()
 				<!-- Comienza footer -->
 
 				<footer class='bg-light'>
-					<div class='container-fluid px-4 px-md-5'>
+					<div class='container-fluid px-4 px-xl-5'>
 						<div class='container'>
 							<div class='row'>
-								<div class='col-12 col-md-3 text-center'>
+								<div class='col-12 col-xl-3 text-center'>
 									<img class='img-fluid' src='../../img/LogoFasty_Logo-Completo-Normal-Recortada.png' alt='Logo de Fasty' width='200rm'>
 								</div>
-								<div class='col-12 col-md-3 text-left my-2'>
+								<div class='col-12 col-xl-3 text-left my-2'>
 									<h6><a class='text-dark' href='inicio.php#section1'>Inicio</a></h6>
 									<h6><a class='text-dark' href='inicio.php#section2'>Misión y Visión</a></h6>
 									<h6><a class='text-dark' href='inicio.php#section3'>Testimonios</a></h6>
 									<h6><a class='text-dark' href='inicio.php#section4'>Historia</a></h6>
 									<h6><a class='text-dark' href='inicio.php#section5'>Ubicación</a></h6>
 									<h6><a class='text-dark' href='inicio.php#section6'>Contacto</a></h6>
-									<h6><a class='text-dark' href='ado_signup.php'>Registrarse</a></h6>
-									<h6><a class='text-dark' href='ado_login.php'>Ingresar</a></h6>
+									<h6><a class='text-dark' href='usu_signup.php'>Registrarse</a></h6>
+									<h6><a class='text-dark' href='usu_login.php'>Ingresar</a></h6>
 								</div>
-								<div class='col-12 col-md-3 text-left my-2'>
+								<div class='col-12 col-xl-3 text-left my-2'>
 									<h6 class='text-dark'><b>Dirección: </b></h6>
 									<h6 class='text-dark'>$empresa[dir_emp]</h6>
 									<h6 class='text-dark'><b>E-mail: </b> </h6>
@@ -124,7 +124,7 @@ function footer()
 									<h6 class='text-dark'><b>Teléfono: </b></h6>
 									<h6 class='text-dark'>$empresa[tel_emp]</h6>
 								</div>
-								<div class='col-12 col-md-3 text-left my-2'>
+								<div class='col-12 col-xl-3 text-left my-2'>
 									<h6 class='text-dark'><b>Horario</b></h6>
 									<h6 class='text-dark'>$empresa[hou_emp]</h6>
 									<h6 class='text-dark'>$empresa[hod_emp]</h6>

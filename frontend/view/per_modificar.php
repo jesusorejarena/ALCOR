@@ -29,14 +29,14 @@ checkAdmin();
 <div class="container px-3 pt-3 pb-5 mb-5">
 	<a class="btn btn-success btn-lg" href="per_listartodo.php"><i class="fas fa-arrow-circle-left"></i></a>
 	<div class="row justify-content-center">
-		<div class="col-12 col-md-6 p-2">
+		<div class="col-12 col-xl-6 p-2">
 			<div class="card rounded">
 				<h2 class="card-title text-center pt-4">Modificar Permisos</h2>
 				<form action="../../backend/controller/permiso.php" method="POST" class="was-validation" id="formulario" novalidate>
 					<input type="hidden" name="cod_per" value="<?php echo $permiso['cod_per']; ?>">
 					<div class="card-body">
 						<div class="row">
-							<div class="col-12 col-md-6">
+							<div class="col-12 col-xl-6">
 								<div class="form-group">
 									<label for="cargo">Cargo:</label>
 									<select name="cod_car" id="cargo" class="form-control">
@@ -52,7 +52,7 @@ checkAdmin();
 									<small id="cargoDiv" class="invalid-feedback"></small>
 								</div>
 							</div>
-							<div class="col-12 col-md-6">
+							<div class="col-12 col-xl-6">
 								<div class="form-group">
 									<label for="modulo">Módulo:</label>
 									<select name="cod_mod" id="modulo" class="form-control">

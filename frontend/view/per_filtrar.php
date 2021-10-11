@@ -24,7 +24,7 @@ checkAdmin();
 <div class="container px-3 pt-3 pb-5 mb-5">
 	<a class="btn btn-success btn-lg" href="rol_menu.php"><i class="fas fa-arrow-circle-left"></i></a>
 	<div class="row justify-content-center">
-		<div class="col-12 col-md-6 p-2">
+		<div class="col-12 col-xl-6 p-2">
 			<div class="card rounded">
 				<h4 class="card-title text-center pt-4">Filtrar Permisos</h4>
 				<form action="per_filtrado.php" method="POST">
@@ -36,7 +36,7 @@ checkAdmin();
 									<input type="text" name="cod_per" id="cod_per" class="form-control" placeholder="Código" />
 								</div>
 							</div>
-							<div class="col-12 col-md-6">
+							<div class="col-12 col-xl-6">
 								<div class="form-group">
 									<label for="fky_cargo">Cargo:</label>
 									<select name="fky_cargo" id="fky_cargo" class="form-control">
@@ -51,7 +51,7 @@ checkAdmin();
 									</select>
 								</div>
 							</div>
-							<div class="col-12 col-md-6">
+							<div class="col-12 col-xl-6">
 								<div class="form-group">
 									<label for="cod_mod">Módulo:</label>
 									<select name="cod_mod" id="cod_mod" class="form-control">
@@ -63,7 +63,7 @@ checkAdmin();
 									</select>
 								</div>
 							</div>
-							<div class="col-12 col-md-6">
+							<div class="col-12 col-xl-6">
 								<div class="form-group">
 									<label for="est_per">Estatus:</label>
 									<select name="est_per" id="est_per" class="form-control">
@@ -73,7 +73,7 @@ checkAdmin();
 									</select>
 								</div>
 							</div>
-							<div class="col-12 col-md-6">
+							<div class="col-12 col-xl-6">
 								<div class="form-group">
 									<label for="bas_per">Estado:</label>
 									<select name="bas_per" id="bas_per" class="form-control">

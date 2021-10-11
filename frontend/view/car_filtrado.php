@@ -47,8 +47,10 @@ checkAdmin();
 												<td>$cargo[nom_car]</td>
 									";
 
-							if ($cargo['cod_car'] == 1 || $cargo['nom_car'] == 'Administrador') {
+							if ($cargo['cod_car'] == 1 || $cargo['nom_car'] == 'Administrador' || $cargo['cod_car'] == 2 || $cargo['nom_car'] == 'Cliente') {
 								echo "
+												<td></td>
+												<td></td>
 												<td></td>
 												<td></td>
 												<td></td>
