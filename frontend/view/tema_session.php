@@ -73,40 +73,78 @@ function headerr($titulo)
 
 			<body>
 
-			<!-- Comienza el nav -->
+				<!-- Comienza nav superior -->
 
-				<div class='bg-light container-fluid px-4 px-md-5'>
-					<div class='container'>
+				<div class='container-fluid fixed-top bg-white shadow-lg py-2'>
+					<div class='row d-flex justify-content-between align-items-center'>
+						<div class='col-3 col-lg-6 py-2'>
+							<a class='navbar-toggler py-2' type='button'>
+								<i id='bars' class='fas fa-bars'></i>
+							</a>
+						</div>
+
+						<div id='contenido2' class='col-9 col-lg-6 text-right'>
+							<a href='ado_inicio.php'>
+								<img
+									loading='lazy'
+									class='img-fluid'
+									src='../img/Logo-Solo.png'
+									alt=''
+									width='300rem'
+								/>
+							</a>
+						</div>
+					</div>
+				</div>
+
+				<!-- Termina nav superior -->
+
+				<!-- Comienza sideBar -->
+				<div id='sideBar' class='bg-white shadow-lg'>
+					<div class='container-fluid mt-5'>
 						<div class='row'>
 							<div class='col-12'>
-								<header class='header'>
-									<nav class='navbar navbar-expand-md navbar-light form-control-static'>
-
-										<!--Menu de hamburguesa-->
-										<button class='navbar-toggler' type='button' data-toggle='collapse' data-target='#collapsibleNavbar'>
-											<span class='navbar-toggler-icon'></span>
-										</button>
-
-										<!--Nombre de la app-->
-										<a href='inicio.html' class='navbar-brand'><img class='img-fluid' src='' alt='Logo de Fasty' width='100rm'></a>
-
-										<!--Botones de las secciones-->
-										<div class='collapse navbar-collapse justify-content-end' id='collapsibleNavbar'>
-											<ul class='navbar-nav'>
-												<li class='nav-item m-1 text-center'><a class='nav-link active' href='ado_inicio.php'>Inicio</a></li>
-						";
+								<a href='ado_inicio.php' class='row text-dark mt-5 py-2 my-2 border-bottom'>
+									<div class='col-3 text-center'></div>
+									<div class='col-9 px-0 text-left'>Inicio</div>
+								</a>
+					";
 
 	if ($_SESSION['cargo'] == 1) {
 		echo "
-								<li class='nav-item m-1 text-center'><a href='emp_modificar.php' class='nav-link active'>Empresa</a></li>
-								<li class='nav-item m-1 text-center'><a href='rol_menu.php' class='nav-link active'>Roles</a></li>
-								<li class='nav-item m-1 text-center'><a href='ado_menu.php' class='nav-link active'>Empleados</a></li>
-								<li class='nav-item m-1 text-center'><a href='edo_menu.php' class='nav-link active'>Proveedores</a></li>
-								<li class='nav-item m-1 text-center'><a href='pro_menu.php' class='nav-link active'>Productos</a></li>
-								<li class='nav-item m-1 text-center'><a href='ven_menu.php' class='nav-link active'>Ventas</a></li>
-								<li class='nav-item m-1 text-center'><a href='for_menu.php' class='nav-link active'>Formularios</a></li>
-								<li class='nav-item m-1 text-center'><a href='menu_config.php' class='nav-link active'>Configuración</a></li>
-												";
+								<a href='emp_modificar.php' class='row text-dark py-2 my-2 border-bottom'>
+									<div class='col-3 text-center'></div>
+									<div class='col-9 px-0 text-left'>Empresa</div>
+								</a>
+								<a href='rol_menu.php' class='row text-dark py-2 my-2 border-bottom'>
+									<div class='col-3 text-center'></div>
+									<div class='col-9 px-0 text-left'>Roles</div>
+								</a>
+								<a href='ado_menu.php' class='row text-dark py-2 my-2 border-bottom'>
+									<div class='col-3 text-center'></div>
+									<div class='col-9 px-0 text-left'>Empleados</div>
+								</a>
+								<a href='edo_menu.php' class='row text-dark py-2 my-2 border-bottom'>
+									<div class='col-3 text-center'></div>
+									<div class='col-9 px-0 text-left'>Proveedores</div>
+								</a>
+								<a href='pro_menu.php' class='row text-dark py-2 my-2 border-bottom'>
+									<div class='col-3 text-center'></div>
+									<div class='col-9 px-0 text-left'>Productos</div>
+								</a>
+								<a href='ven_menu.php' class='row text-dark py-2 my-2 border-bottom'>
+									<div class='col-3 text-center'></div>
+									<div class='col-9 px-0 text-left'>Ventas</div>
+								</a>
+								<a href='for_menu.php' class='row text-dark py-2 my-2 border-bottom'>
+									<div class='col-3 text-center'></div>
+									<div class='col-9 px-0 text-left'>Formularios</div>
+								</a>
+								<a href='menu_config.php' class='row text-dark py-2 my-2 border-bottom'>
+									<div class='col-3 text-center'></div>
+									<div class='col-9 px-0 text-left'>Configuración</div>
+								</a>
+				";
 	} else {
 		// verifica el cargo
 		if ($_SESSION['cargo'] >= 2) {
@@ -124,10 +162,11 @@ function headerr($titulo)
 				// extrae los nombres y url de la tabla modulo con el codigo del modulo de permiso
 
 				echo "
-											<li class='nav-item m-1 text-center'>
-												<a href='$modulo[url_mod]' class='nav-link active'>$modulo[nom_mod]</a>
-											</li>
-										";
+								<a href='$modulo[url_mod]' class='row text-dark py-2 my-2 border-bottom'>
+									<div class='col-3 text-center'></div>
+									<div class='col-9 px-0 text-left'>$modulo[nom_mod]</div>
+								</a>
+				";
 
 				// termina el ciclo
 			}
@@ -135,21 +174,31 @@ function headerr($titulo)
 	}
 
 	echo "
-												<li class='nav-item m-1 text-center'>
-													<a href='cerrar_sesion.php' class='btn btn-primary'>
-														<i class='fas fa-power-off'></i>
-													</a>
-												</li>
-											</ul>
-										</div>
-									</nav>
-								</header>
+								<a href='cerrar_sesion.php' class='row text-dark py-2 my-2'>
+									<div class='col-3 text-center'>
+										<i class='fas fa-sign-out-alt ism'></i>
+									</div>
+									<div class='col-9 px-0 text-left'>Cerrar sesión</div>
+								</a>
+								<div class='row text-dark text-center pt-4'>
+									<div class='col-12'>
+										<a href='ado_inicio.php'>
+											<img
+												loading='lazy'
+												class='img-fluid'
+												src='../img/Logo-Cuadrado.png'
+												alt=''
+												width='200rem'
+											/>
+										</a>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 
-				<!-- Termina el nav -->
+				<!-- Termina sideBar -->
 
 				<!-- Comienza onda -->
 
@@ -170,6 +219,7 @@ function footer()
 				<script src='../js/jquery-3.5.1.min.js'></script>
 				<script src='../css/bootstrap-4.5.2/js/bootstrap.bundle.min.js'></script>
 				<script src='../js/screenUp.js'></script>
+				<script src='../js/sideBar.js'></script>
 
 			</body>
 				
