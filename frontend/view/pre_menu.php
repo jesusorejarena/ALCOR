@@ -22,7 +22,6 @@ check("Prendas", 3);
 					<a class="btn btn-outline-primary btn-block" href="pre_registrar.php">Registrar</a>
 					<a class="btn btn-outline-primary btn-block" href="pre_listartodo.php">Listar</a>
 					<a class="btn btn-outline-primary btn-block" href="pre_filtrar.php">Filtrar</a>
-					<a class="btn btn-outline-primary btn-block" href="pre_listarpapelera.php">Papelera</a>
 				</div>
 			</div>
 		</div>

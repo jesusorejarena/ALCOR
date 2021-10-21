@@ -56,7 +56,7 @@ check("Proveedores", 2);
 													<td>$proveedor[act_edo]</td>
 													<td>$proveedor[eli_edo]</td>
 													<td>$proveedor[res_edo]</td>
-													<td><button type='submit' class='btn btn-success' name='run' value='restore'><i class='fas fa-redo-alt'></i></button></td>
+													<td><button type='submit' class='btn btn-success py-2' name='run' value='restore'><i class='fas fa-redo-alt'></i></button></td>
 													<td><button type='button' data-toggle='modal' class='btn btn-danger' data-target='#modalDelete$proveedor[cod_edo]'><i class='fas fa-trash'></i></button></td>
 													<div class='modal fade' id='modalDelete$proveedor[cod_edo]' tabindex='-1' aria-labelledby='exampleModalLabel' aria-hidden='true'>
 														<div class='modal-dialog modal-sm'>

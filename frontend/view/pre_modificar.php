@@ -11,7 +11,7 @@ $obj_pre->assignValue();
 $obj_pre->puntero = $obj_pre->getByCode();
 $prenda = $obj_pre->extractData();
 
-headerr("Modificar Prendas");
+headerr("Modificar Prenda");
 
 check("Prendas", 3);
 
@@ -19,18 +19,17 @@ check("Prendas", 3);
 
 <!-- Formulario -->
 <div class="container px-3 pt-3 pb-5 mb-5">
-	<a class="btn btn-success btn-lg" href="pre_listar.php"><i class="fas fa-arrow-circle-left"></i></a>
+	<a class="btn btn-success btn-lg" href="pre_listartodo.php"><i class="fas fa-arrow-circle-left"></i></a>
 	<div class="row justify-content-center">
 		<div class="col-12 col-xl-6 p-2">
 			<div class="card rounded">
-				<h2 class="card-title text-center pt-4">Modificar Prendas</h2>
-				<form action="../../backend/controller/prenda.php" method="POST" class="was-validation" id="formulario" novalidate>
-					<input type="hidden" name="cod_per" value="<?php echo $prenda['cod_pre']; ?>">
+				<h2 class="card-title text-center pt-4">Modificar Prenda</h2>
+				<form action="../../backend/controller/prenda.php" method="POST" class="was-validation my-0" id="formulario" novalidate>
+					<input type="hidden" name="cod_pre" value="<?php echo $prenda['cod_pre']; ?>">
 					<div class="card-body">
 						<div class="row">
 							<div class="col-12">
 								<div class="form-group">
-									<input type="hidden" name="cod_pre" value="<?php echo $prenda['cod_pre']; ?>">
 									<label for="alfanumerico">Nombre:</label>
 									<input type="text" name="nom_pre" id="alfanumerico" placeholder="Nombre:" value="<?php echo $prenda['nom_pre'] ?>" class="form-control">
 									<small id="alfanumericoDiv" class="invalid-feedback"></small>
@@ -39,11 +38,18 @@ check("Prendas", 3);
 							<div class="col-12">
 								<div class="form-group">
 									<label for="descripcion">Descripción:</label>
-									<textarea name="des_pre" id="descripcion" placeholder="Descripción" value="<?php echo $prenda['des_pre'] ?>" class="form-control"></textarea>
+									<textarea name="des_pre" id="descripcion" placeholder="Descripción" value="asd" class="form-control"><?php echo $prenda['des_pre'] ?></textarea>
 									<small id="descripcionDiv" class="invalid-feedback"></small>
 								</div>
 							</div>
-							<div class="col-12 col-xl-4">
+							<div class="col-12 col-xl-6">
+								<div class="form-group">
+									<label for="precio">Precio:</label>
+									<input type="number" name="pre_pre" id="precio" placeholder="Precio:" value="<?php echo $prenda['pre_pre'] ?>" class="form-control">
+									<small id="precioDiv" class="invalid-feedback"></small>
+								</div>
+							</div>
+							<div class="col-12 col-xl-6">
 								<div class="form-group">
 									<label for="estatus">Estatus:</label>
 									<select name="est_pre" id="estatus" class="form-control">

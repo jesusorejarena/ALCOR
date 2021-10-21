@@ -40,13 +40,8 @@ check("Usuarios", 1);
 						<th>Modificado</th>
 						<th>Eliminado</th>
 						<th>Restaurado</th>
-						<th>Estatus</th>
-						<th>Estado</th>
-						<th>PDF</th>
-						<th>Editar</th>
-						<th>Restaurar</th>
-						<th>Eliminar</th>
-					</thead>
+						<th>Constancia PDF</th>
+						<th>Acciones</th>
 					<tbody>
 						<?php
 						while (($usuario = $obj_usu->extractData()) > 0) {
@@ -56,94 +51,91 @@ check("Usuarios", 1);
 							$cargo = $obj_car->extractData();
 
 							echo "<form action='../../backend/controller/usuario.php' method='POST'>
-												<tr>
-													<input type='hidden' name='cod_usu' value='$usuario[cod_usu]'>
-													<td>$usuario[cod_usu]</td>
-													<td>$usuario[nom_usu]</td>
-													<td>$usuario[ape_usu]</td>";
+											<tr>
+												<input type='hidden' name='cod_usu' value='$usuario[cod_usu]'>
+												<td>$usuario[cod_usu]</td>
+												<td>$usuario[nom_usu]</td>
+												<td>$usuario[ape_usu]</td>";
 
 							if ($usuario['gen_usu'] == "H") {
-								echo "<td>Hombre</td>";
+								echo "		<td>Hombre</td>";
 							} else {
-								echo "<td>Mujer</td>";
+								echo "		<td>Mujer</td>";
 							}
 
-							echo "<td>$usuario[nac_usu]</td>";
+							echo "			<td>$usuario[nac_usu]</td>";
 
 							if ($usuario['nac_usu'] == "V") {
-								echo "<td>Venezolano</td>";
+								echo "		<td>Venezolano</td>";
 							} else {
-								echo "<td>Extranjero</td>";
+								echo "		<td>Extranjero</td>";
 							}
 							echo "
-													<td>$usuario[ced_usu]</td>
-													<td>$usuario[tel_usu]</td>
-													<td>$usuario[cor_usu]</td>
-													<td>$cargo[nom_car]</td>";
+												<td>$usuario[ced_usu]</td>
+												<td>$usuario[tel_usu]</td>
+												<td>$usuario[cor_usu]</td>
+												<td>$cargo[nom_car]</td>";
 
 							if ($usuario['cod_usu'] == 1 || $usuario['cod_car'] == 1) {
 								echo "
-																<td></td>
-																<td></td>
-																<td></td>
-																<td></td>
-																<td></td>
-																<td></td>
-																<td></td>
-																<td></td>
-																<td></td>
-														";
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+												<td></td>
+													";
 							} else {
 								echo "
-																<td>$usuario[dir_usu]</td>
-																<td>$usuario[cre_usu]</td>
-																<td>$usuario[act_usu]</td>
-																<td>$usuario[eli_usu]</td>
-																<td>$usuario[res_usu]</td>
-									";
-
-
-								if ($usuario['est_usu'] == "A") {
-									echo "
-													<td><button class='btn btn-success' type='submit' name='run' value='updateStatusI'><i class='fas fa-check'></button></td>
+												<td>$usuario[dir_usu]</td>
+												<td>$usuario[cre_usu]</td>
+												<td>$usuario[act_usu]</td>
+												<td>$usuario[eli_usu]</td>
+												<td>$usuario[res_usu]</td>
 								";
-								} else {
-									echo "
-													<td><button class='btn btn-danger' type='submit' name='run' value='updateStatusA'><i class='fas fa-times-circle'></button></td>";
-								}
 
 								if ($usuario['bas_usu'] == "A") {
-									echo "<td><b class='text-success'>Activo</b></td>";
+									echo "	<td><b class='text-success'>Activo</b></td>";
 								} else {
-									echo "<td><b class='text-danger'>Papelera</b></td>";
+									echo "	<td><b class='text-danger'>Papelera</b></td>";
 								}
 
 								echo "
-													<td><a class='btn btn-danger' href='usu_reportepdf.php?cod_usu=$usuario[cod_usu]'><i class='fas fa-file-pdf'></i></a></td>
-													<td><a class='btn btn-warning' href='usu_modificar.php?cod_usu=$usuario[cod_usu]'><i class='fas fa-edit'></i></a></td>
-													<td><button type='submit' class='btn btn-success' name='run' value='restore'><i class='fas fa-redo-alt'></i></button></td>
-													<td><button type='button' data-toggle='modal' class='btn btn-danger' data-target='#modalDelete$usuario[cod_usu]'><i class='fas fa-trash'></i></button></td>
-													<div class='modal fade' id='modalDelete$usuario[cod_usu]' tabindex='-1' aria-labelledby='exampleModalLabel' aria-hidden='true'>
-														<div class='modal-dialog modal-sm'>
-															<div class='modal-content'>
-																<div class='modal-header'>
-																	<h5 class='modal-title' id='exampleModalLabel'>¿Estas seguro de enviar a la papelera?</h5>
-																	<button type='button' class='close' data-dismiss='modal' aria-label='Close'>
-																		<span aria-hidden='true'>&times;</span>
-																	</button>
-																</div>
-																<div class='modal-body d-flex justify-content-around'>
-																	<button type='submit' name='run' value='firstDelete' class='btn btn-light'>Eliminar</button>
-																	<button type='button' class='btn btn-danger' data-dismiss='modal'>Cerrar</button>
-																</div>
+												<td>
+													<div class='btn-group' role='group'>";
+								if ($usuario['est_usu'] == "A") {
+									echo "		<button class='btn btn-success py-2' type='submit' name='run' value='updateStatusI'><i class='fas fa-check'></i></button>";
+								} else {
+									echo "		<button class='btn btn-danger py-2' type='submit' name='run' value='updateStatusA'><i class='fas fa-times-circle'></i></button>";
+								}
+								echo "			<a class='btn btn-danger py-2' href='usu_reportepdf.php?cod_usu=$usuario[cod_usu]'><i class='fas fa-file-pdf'></i></a>
+														<a class='btn btn-warning py-2' href='usu_modificar.php?cod_usu=$usuario[cod_usu]'><i class='fas fa-edit'></i></a>
+														<button type='submit' class='btn btn-success' name='run' value='restore'><i class='fas fa-redo-alt'></i></button>
+														<button type='button' data-toggle='modal' class='btn btn-danger py-2' data-target='#modalDelete$usuario[cod_usu]'><i class='fas fa-trash'></i></button>
+													</div>
+												</td>
+												<div class='modal fade' id='modalDelete$usuario[cod_usu]' tabindex='-1' aria-labelledby='exampleModalLabel' aria-hidden='true'>
+													<div class='modal-dialog modal-sm'>
+														<div class='modal-content'>
+															<div class='modal-header'>
+																<h5 class='modal-title' id='exampleModalLabel'>¿Estas seguro de enviar a la papelera?</h5>
+																<button type='button' class='close' data-dismiss='modal' aria-label='Close'>
+																	<span aria-hidden='true'>&times;</span>
+																</button>
+															</div>
+															<div class='modal-body d-flex justify-content-around'>
+																<button type='submit' name='run' value='firstDelete' class='btn btn-light'>Eliminar</button>
+																<button type='button' class='btn btn-danger' data-dismiss='modal'>Cerrar</button>
 															</div>
 														</div>
-													</div>";
+													</div>
+												</div>";
 							}
 							echo "
-												</tr>
-											</form>
-										";
+											</tr>
+										</form>
+									";
 						}
 						?>
 					</tbody>

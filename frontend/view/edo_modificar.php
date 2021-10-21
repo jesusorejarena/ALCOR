@@ -19,7 +19,7 @@ check("Proveedores", 2);
 
 <!-- Formulario -->
 <div class="container px-3 pt-3 pb-5 mb-5">
-	<a class="btn btn-success btn-lg" href="per_listar.php"><i class="fas fa-arrow-circle-left"></i></a>
+	<a class="btn btn-success btn-lg" href="per_listartodo.php"><i class="fas fa-arrow-circle-left"></i></a>
 	<div class="row justify-content-center">
 		<div class="col-12 col-xl-6 p-2">
 			<div class="card rounded">
@@ -38,7 +38,7 @@ check("Proveedores", 2);
 							<div class="col-12 col-xl-12">
 								<div class="form-group">
 									<label for="descripcion">Descripción:</label>
-									<textarea name="des_edo" id="descripcion" value="<?php echo $proveedor['des_edo']; ?>" placeholder="Descripción:" class="form-control"></textarea>
+									<textarea name="des_edo" id="descripcion" placeholder="Descripción:" class="form-control"><?php echo $proveedor['des_edo']; ?></textarea>
 									<small id="descripcionDiv" class="invalid-feedba"></small>
 								</div>
 							</div>

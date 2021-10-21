@@ -41,7 +41,7 @@ function headerr($titulo)
 										</button>
 
 										<!--Nombre de la app-->
-										<a href='inicio.php' class='navbar-brand'><img class='img-fluid' src='' alt='Logo de Fasty' width='100rm'></a>
+										<a href='inicio.php' class='navbar-brand'><img class='img-fluid' src='../img/Logo-Solo.png' alt='Logo' width='300rm'></a>
 
 										<!--Botones de las secciones-->
 										<div class='collapse navbar-collapse justify-content-end' id='collapsibleNavbar'>
@@ -122,7 +122,7 @@ function footer()
 						<div class='container'>
 							<div class='row'>
 								<div class='col-12 col-xl-3 text-center'>
-									<img class='img-fluid' src='../../img/LogoFasty_Logo-Completo-Normal-Recortada.png' alt='Logo de Fasty' width='200rm'>
+									<img class='img-fluid' src='../img/Logo-Cuadrado.png' alt='Logo' width='200rm'>
 								</div>
 								<div class='col-12 col-xl-3 text-left my-2'>
 									<h6><a class='text-dark' href='inicio.php#section1'>Inicio</a></h6>

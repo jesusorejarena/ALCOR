@@ -29,12 +29,7 @@ checkAdmin();
 							<th>Modificado</th>
 							<th>Restaurado</th>
 							<th>Eliminado</th>
-							<th>Estatus</th>
-							<th>Estado</th>
-							<th>PDF</th>
-							<th>Restaurar</th>
-							<th>Editar</th>
-							<th>Eliminar</th>
+							<th>Acciones</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -54,11 +49,6 @@ checkAdmin();
 												<td></td>
 												<td></td>
 												<td></td>
-												<td></td>
-												<td></td>
-												<td></td>
-												<td></td>
-												<td></td>
 										";
 							} else {
 								echo "
@@ -66,44 +56,35 @@ checkAdmin();
 											<td>$cargo[act_car]</td>
 											<td>$cargo[res_car]</td>
 											<td>$cargo[eli_car]</td>
-									";
-
+											<td>
+												<div class='btn-group' role='group'>";
 								if ($cargo['est_car'] == "A") {
-									echo "
-													<td><button class='btn btn-success' type='submit' name='run' value='updateStatusI'><i class='fas fa-check'></button></td>
-								";
+									echo "	<button class='btn btn-success py-2' type='submit' name='run' value='updateStatusI'><i class='fas fa-check'></i></button>";
 								} else {
-									echo "
-													<td><button class='btn btn-danger' type='submit' name='run' value='updateStatusA'><i class='fas fa-times-circle'></button></td>";
+									echo "	<button class='btn btn-danger py-2' type='submit' name='run' value='updateStatusA'><i class='fas fa-times-circle'></i></button>";
 								}
-
-								if ($cargo['bas_car'] == "A") {
-									echo "<td><b class='text-success'>Activo</b></td>";
-								} else {
-									echo "<td><b class='text-danger'>Papelera</b></td>";
-								}
-
-								echo "
-											<td><a class='btn btn-danger' href='car_reportepdf.php?cod_car=$cargo[cod_car]'><i class='fas fa-file-pdf'></i></a></td>
-											<td><button type='submit' class='btn btn-success' name='run' value='restore'><i class='fas fa-redo-alt'></i></button></td>
-											<td><a class='btn btn-warning' href='car_modificar.php?cod_car=$cargo[cod_car]'><i class='fas fa-edit'></i></a></td>
-											<td><button type='button' data-toggle='modal' class='btn btn-danger' data-target='#modalDelete$cargo[cod_car]'><i class='fas fa-trash'></i></button></td>
-													<div class='modal fade' id='modalDelete$cargo[cod_car]' tabindex='-1' aria-labelledby='exampleModalLabel' aria-hidden='true'>
-														<div class='modal-dialog modal-sm'>
-															<div class='modal-content'>
-																<div class='modal-header'>
-																	<h5 class='modal-title' id='exampleModalLabel'>¿Estas seguro de enviar a la papelera?</h5>
-																	<button type='button' class='close' data-dismiss='modal' aria-label='Close'>
-																		<span aria-hidden='true'>&times;</span>
-																	</button>
-																</div>
-																<div class='modal-body d-flex justify-content-around'>
-																	<button type='submit' name='run' value='firstDelete' class='btn btn-light'>Eliminar</button>
-																	<button type='button' class='btn btn-danger' data-dismiss='modal'>Cerrar</button>
-																</div>
-															</div>
+								echo "		<a class='btn btn-danger py-2' href='car_reportepdf.php?cod_car=$cargo[cod_car]'><i class='fas fa-file-pdf'></i></a>
+													<a class='btn btn-warning py-2' href='car_modificar.php?cod_car=$cargo[cod_car]'><i class='fas fa-edit'></i></a>
+													<button type='submit' class='btn btn-success py-2' name='run' value='restore'><i class='fas fa-redo-alt'></i></button>
+													<button type='button' data-toggle='modal' class='btn btn-danger py-2' data-target='#modalDelete$cargo[cod_car]'><i class='fas fa-trash'></i></button>
+												</div>
+											</td>
+											<div class='modal fade' id='modalDelete$cargo[cod_car]' tabindex='-1' aria-labelledby='exampleModalLabel' aria-hidden='true'>
+												<div class='modal-dialog modal-sm'>
+													<div class='modal-content'>
+														<div class='modal-header'>
+															<h5 class='modal-title' id='exampleModalLabel'>¿Estas seguro de enviar a la papelera?</h5>
+															<button type='button' class='close' data-dismiss='modal' aria-label='Close'>
+																<span aria-hidden='true'>&times;</span>
+															</button>
+														</div>
+														<div class='modal-body d-flex justify-content-around'>
+															<button type='submit' name='run' value='firstDelete' class='btn btn-light'>Eliminar</button>
+															<button type='button' class='btn btn-danger' data-dismiss='modal'>Cerrar</button>
 														</div>
 													</div>
+												</div>
+											</div>
 										";
 							}
 							echo "

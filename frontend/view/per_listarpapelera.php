@@ -61,7 +61,7 @@ checkAdmin();
 													<td>$permiso[act_per]</td>
 													<td>$permiso[res_per]</td>
 													<td>$permiso[eli_per]</td>
-													<td><button type='submit' class='btn btn-success' name='run' value='restore'><i class='fas fa-redo-alt'></i></button></td>
+													<td><button type='submit' class='btn btn-success py-2' name='run' value='restore'><i class='fas fa-redo-alt'></i></button></td>
 													<td><button type='button' data-toggle='modal' class='btn btn-danger' data-target='#modalDelete$permiso[cod_per]'><i class='fas fa-trash'></i></button></td>
 													<div class='modal fade' id='modalDelete$permiso[cod_per]' tabindex='-1' aria-labelledby='exampleModalLabel' aria-hidden='true'>
 														<div class='modal-dialog modal-sm'>

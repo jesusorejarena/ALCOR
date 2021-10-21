@@ -23,7 +23,7 @@ check("Productos", 3);
 		<div class="col-12 py-2">
 			<div class="card-header">
 				<div class="row">
-					<div class="col-6">
+					<div class="col-12">
 						<a class="btn btn-danger" href="pro_reportes/pro_reportepdf_enlace.php"><i class="fas fa-file-pdf mr-1"></i> Descargar listado
 							por PDF</i></a>
 					</div>
@@ -43,10 +43,7 @@ check("Productos", 3);
 							<th>Modificado</th>
 							<th>Eliminado</th>
 							<th>Restaurado</th>
-							<th>Estatus</th>
-							<th>PDF</th>
-							<th>Editar</th>
-							<th>Eliminar</th>
+							<th>Acciones</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -70,20 +67,18 @@ check("Productos", 3);
 													<td>$producto[act_pro]</td>
 													<td>$producto[eli_pro]</td>
 													<td>$producto[res_pro]</td>
-									";
-
+													<td>
+														<div class='btn-group' role='group'>";
 							if ($producto['est_pro'] == "A") {
-								echo "
-													<td><button class='btn btn-success' type='submit' name='run' value='updateStatusI'><i class='fas fa-check'></button></td>
-								";
+								echo "				<button class='btn btn-success py-2' type='submit' name='run' value='updateStatusI'><i class='fas fa-check'></i></button>";
 							} else {
-								echo "
-													<td><button class='btn btn-danger' type='submit' name='run' value='updateStatusA'><i class='fas fa-times-circle'></button></td>";
+								echo "				<button class='btn btn-danger py-2' type='submit' name='run' value='updateStatusA'><i class='fas fa-times-circle'></i></button>";
 							}
-							echo "
-													<td><a class='btn btn-danger' href='pro_reportepdf.php?cod_pro=$producto[cod_pro]'><i class='fas fa-file-pdf'></i></a></td>
-													<td><a class='btn btn-warning' href='pro_modificar.php?cod_pro=$producto[cod_pro]'><i class='fas fa-edit'></i></a></td>
-													<td><button type='button' data-toggle='modal' class='btn btn-danger' data-target='#modalDelete$producto[cod_pro]'><i class='fas fa-trash'></i></button></td>
+							echo "					<a class='btn btn-danger py-2' href='pro_reportepdf.php?cod_pro=$producto[cod_pro]'><i class='fas fa-file-pdf'></i></a>
+															<a class='btn btn-warning py-2' href='pro_modificar.php?cod_pro=$producto[cod_pro]'><i class='fas fa-edit'></i></a>
+															<button type='button' data-toggle='modal' class='btn btn-danger py-2' data-target='#modalDelete$producto[cod_pro]'><i class='fas fa-trash'></i></button>
+														</div>
+													</td>
 													<div class='modal fade' id='modalDelete$producto[cod_pro]' tabindex='-1' aria-labelledby='exampleModalLabel' aria-hidden='true'>
 														<div class='modal-dialog modal-sm'>
 															<div class='modal-content'>

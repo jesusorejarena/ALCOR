@@ -73,16 +73,6 @@ function headerr($titulo)
 
 			<body>
 
-<<<<<<< HEAD
-			<!-- Comienza el nav -->
-
-				<div class='bg-light container-fluid px-4 px-xl-5'>
-					<div class='container'>
-						<div class='row'>
-							<div class='col-12'>
-								<header class='header'>
-									<nav class='navbar navbar-expand-xl navbar-light form-control-static'>
-=======
 				<!-- Comienza nav superior -->
 
 				<div class='container-fluid fixed-top bg-white shadow-lg py-2'>
@@ -92,10 +82,9 @@ function headerr($titulo)
 								<i id='bars' class='fas fa-bars'></i>
 							</a>
 						</div>
->>>>>>> 385985cd048ecd9abd40d421457332ee67cc2791
 
 						<div id='contenido2' class='col-9 col-lg-6 text-right'>
-							<a href='ado_inicio.php'>
+							<a href='usu_inicio.php'>
 								<img
 									loading='lazy'
 									class='img-fluid'
@@ -115,7 +104,7 @@ function headerr($titulo)
 					<div class='container-fluid mt-5'>
 						<div class='row'>
 							<div class='col-12'>
-								<a href='ado_inicio.php' class='row text-dark mt-5 py-2 my-2 border-bottom'>
+								<a href='usu_inicio.php' class='row text-dark mt-5 py-2 my-2 border-bottom'>
 									<div class='col-3 text-center'></div>
 									<div class='col-9 px-0 text-left'>Inicio</div>
 								</a>
@@ -131,9 +120,13 @@ function headerr($titulo)
 									<div class='col-3 text-center'></div>
 									<div class='col-9 px-0 text-left'>Roles</div>
 								</a>
-								<a href='ado_menu.php' class='row text-dark py-2 my-2 border-bottom'>
+								<a href='usu_menu.php' class='row text-dark py-2 my-2 border-bottom'>
 									<div class='col-3 text-center'></div>
 									<div class='col-9 px-0 text-left'>Empleados</div>
+								</a>
+								<a href='pre_menu.php' class='row text-dark py-2 my-2 border-bottom'>
+									<div class='col-3 text-center'></div>
+									<div class='col-9 px-0 text-left'>Prendas</div>
 								</a>
 								<a href='edo_menu.php' class='row text-dark py-2 my-2 border-bottom'>
 									<div class='col-3 text-center'></div>
@@ -193,7 +186,7 @@ function headerr($titulo)
 								</a>
 								<div class='row text-dark text-center pt-4'>
 									<div class='col-12'>
-										<a href='ado_inicio.php'>
+										<a href='usu_inicio.php'>
 											<img
 												loading='lazy'
 												class='img-fluid'

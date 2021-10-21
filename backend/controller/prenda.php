@@ -35,16 +35,6 @@ switch ($_REQUEST["run"]) {
 		}
 		break;
 
-	case 'restore':
-		$obj_pre->restore();
-		header("Location: ../../frontend/view/pre_listarpapelera.php");
-		break;
-
-	case 'firstDelete':
-		$obj_pre->firstDelete();
-		header("Location: ../../frontend/view/pre_listartodo.php");
-		break;
-
 	case 'updateStatusI':
 		$obj_pre->resultado = $obj_pre->updateStatusI();
 		header("Location: ../../frontend/view/pre_listartodo.php");

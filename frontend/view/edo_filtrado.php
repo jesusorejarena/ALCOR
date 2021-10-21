@@ -35,12 +35,8 @@ check("Proveedores", 2);
 							<th>Modificado</th>
 							<th>Eliminado</th>
 							<th>Restaurado</th>
-							<th>Estatus</th>
 							<th>Estado</th>
-							<th>PDF</th>
-							<th>Editar</th>
-							<th>Restaurar</th>
-							<th>Eliminar</th>
+							<th>Acciones</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -62,30 +58,27 @@ check("Proveedores", 2);
 													<td>$proveedor[eli_edo]</td>
 													<td>$proveedor[res_edo]</td>
 									";
-
-
-							if ($proveedor['est_edo'] == "A") {
-								echo "
-													<td><button class='btn btn-success' type='submit' name='run' value='updateStatusI'><i class='fas fa-check'></button></td>
-								";
-							} else {
-								echo "
-													<td><button class='btn btn-danger' type='submit' name='run' value='updateStatusA'><i class='fas fa-times-circle'></button></td>";
-							}
-
 							if ($proveedor['bas_edo'] == "A") {
 								echo "<td><b class='text-success'>Activo</b></td>";
 							} else {
 								echo "<td><b class='text-danger'>Papelera</b></td>";
 							}
-
-							echo "<td><a class='btn btn-danger' href='edo_reportepdf.php?cod_edo=$proveedor[cod_edo]'><i class='fas fa-file-pdf'></i></a></td>
-													<td><a class='btn btn-warning' href='edo_modificar.php?cod_edo=$proveedor[cod_edo]'><i class='fas fa-edit'></i></a></td>
-													<td><button type='submit' class='btn btn-success' name='run' value='restore'><i class='fas fa-redo-alt'></i></button></td>
-													<td><button type='submit' class='btn btn-danger' name='run' value='firstDelete'><i class='fas fa-trash'></i></button></td>
-												</tr>
-											</form>
-										";
+							echo "	<td>
+												<div class='btn-group' role='group'>";
+							if ($proveedor['est_edo'] == "A") {
+								echo "		<button class='btn btn-success py-2' type='submit' name='run' value='updateStatusI'><i class='fas fa-check'></i></button>";
+							} else {
+								echo "		<button class='btn btn-danger py-2' type='submit' name='run' value='updateStatusA'><i class='fas fa-times-circle'></i></button>";
+							}
+							echo "			<a class='btn btn-danger py-2' href='edo_reportepdf.php?cod_edo=$proveedor[cod_edo]'><i class='fas fa-file-pdf'></i></a>
+													<a class='btn btn-warning py-2' href='edo_modificar.php?cod_edo=$proveedor[cod_edo]'><i class='fas fa-edit'></i></a>
+													<button type='submit' class='btn btn-success py-2' name='run' value='restore'><i class='fas fa-redo-alt'></i></button>
+													<button type='submit' class='btn btn-danger' name='run' value='firstDelete'><i class='fas fa-trash'></i></button>
+												</div>
+											</td>
+										</tr>
+									</form>
+								";
 						}
 						?>
 					</tbody>

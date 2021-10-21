@@ -347,14 +347,12 @@ CREATE TABLE IF NOT EXISTS prenda (
 	`pre_pre` float(11,2) NOT NULL,
 	`cre_pre` datetime NOT NULL,
 	`act_pre` datetime DEFAULT NULL,
-	`eli_pre` datetime DEFAULT NULL,
 	`res_pre` datetime DEFAULT NULL,
 	`est_pre` enum('A','I') NOT NULL,
-	`bas_pre` enum('A','B') NOT NULL,
 	PRIMARY KEY (`cod_pre`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-DELIMITER $$
+/* DELIMITER $$
 CREATE TRIGGER `prenda_AD` AFTER DELETE ON `prenda` FOR EACH ROW INSERT INTO prenda_resp(nom_pre, des_pre, pre_pre, cre_pre, act_pre, eli_pre, res_pre, est_pre, bas_pre) VALUES(OLD.nom_pre, OLD.des_pre, OLD.pre_pre, OLD.cre_pre, OLD.act_pre, OLD.eli_pre, OLD.res_pre, OLD.est_pre, OLD.bas_pre)
 $$
 DELIMITER ;
@@ -372,4 +370,53 @@ CREATE TABLE IF NOT EXISTS prenda_resp (
 	`est_pre` enum('A','I') NULL,
 	`bas_pre` enum('A','B') NULL,
 	PRIMARY KEY (`cod_pre`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4; */
+
+/* -------------------------------------------------- */
+
+DROP TABLE IF EXISTS pedido;
+CREATE TABLE IF NOT EXISTS pedido (
+	`cod_ped` int(11) NOT NULL AUTO_INCREMENT,
+	`pre_ped` float(11,2) NOT NULL,
+	`cre_ped` datetime NOT NULL,
+	`act_ped` datetime DEFAULT NULL,
+	`eli_ped` datetime DEFAULT NULL,
+	`res_ped` datetime DEFAULT NULL,
+	`est_ped` enum('A','I') NOT NULL,
+	`bas_ped` enum('A','B') NOT NULL,
+	PRIMARY KEY (`cod_ped`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+DROP TABLE IF EXISTS pedido_relacion;
+CREATE TABLE IF NOT EXISTS pedido_relacion (
+	`cod_ped_rel` int(11) NOT NULL AUTO_INCREMENT,
+	`cod_ped` int(11) NOT NULL,
+	`cod_pre` int(11) NOT NULL,
+	`cant_ped_rel` int(11) NOT NULL,
+	PRIMARY KEY (`cod_ped_rel`),
+	INDEX `cod_ped` (`cod_ped`),
+	INDEX `cod_pre` (`cod_pre`),
+	FOREIGN KEY (`cod_ped`) REFERENCES `pedido` (`cod_ped`) ON UPDATE CASCADE,
+	FOREIGN KEY (`cod_pre`) REFERENCES `prenda` (`cod_pre`) ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+
+/* DELIMITER $$
+CREATE TRIGGER `pedido_AD` AFTER DELETE ON `pedido` FOR EACH ROW INSERT INTO pedido_resp(nom_ped, des_ped, pre_ped, cre_ped, act_ped, eli_ped, res_ped, est_ped, bas_ped) VALUES(OLD.nom_ped, OLD.des_ped, OLD.pre_ped, OLD.cre_ped, OLD.act_ped, OLD.eli_ped, OLD.res_ped, OLD.est_ped, OLD.bas_ped)
+$$
+DELIMITER ;
+
+DROP TABLE IF EXISTS pedido_resp;
+CREATE TABLE IF NOT EXISTS pedido_resp (
+	`cod_ped` int(11) NOT NULL AUTO_INCREMENT,
+	`nom_ped` varchar(50) NULL,
+	`des_ped` varchar(100) NULL,
+	`pre_ped` float(11,2) NULL,
+	`cre_ped` datetime NULL,
+	`act_ped` datetime DEFAULT NULL,
+	`eli_ped` datetime DEFAULT NULL,
+	`res_ped` datetime DEFAULT NULL,
+	`est_ped` enum('A','I') NULL,
+	`bas_ped` enum('A','B') NULL,
+	PRIMARY KEY (`cod_ped`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4; */

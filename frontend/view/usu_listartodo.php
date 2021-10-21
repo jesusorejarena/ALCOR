@@ -23,7 +23,7 @@ check("Usuarios", 1);
 		<div class="col-12 py-2">
 			<div class="card-header">
 				<div class="row">
-					<div class="col-6">
+					<div class="col-12">
 						<a class="btn btn-danger" href="usu_reportes/usu_reportepdf_enlace.php"><i class="fas fa-file-pdf mr-1"></i> Descargar listado
 							por PDF</i></a>
 					</div>
@@ -48,11 +48,8 @@ check("Usuarios", 1);
 							<th>Modificado</th>
 							<th>Eliminado</th>
 							<th>Restaurado</th>
-							<th>Estatus</th>
-							<th>PDF</th>
 							<th>Constancia PDF</th>
-							<th>Editar</th>
-							<th>Eliminar</th>
+							<th>Acciones</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -91,39 +88,34 @@ check("Usuarios", 1);
 
 							if ($usuario['cod_usu'] == 1 || $usuario['cod_car'] == 1) {
 								echo "
-																<td></td>
-																<td></td>
-																<td></td>
-																<td></td>
-																<td></td>
-																<td></td>
-																<td></td>
-																<td></td>
-																<td></td>
+													<td></td>
+													<td></td>
+													<td></td>
+													<td></td>
+													<td></td>
+													<td></td>
+													<td></td>
 														";
 							} else {
 								echo "
-																<td>$usuario[dir_usu]</td>
-																<td>$usuario[cre_usu]</td>
-																<td>$usuario[act_usu]</td>
-																<td>$usuario[eli_usu]</td>
-																<td>$usuario[res_usu]</td>
-									";
-
-								if ($usuario['est_usu'] == "A") {
-									echo "
-													<td><button class='btn btn-success' type='submit' name='run' value='updateStatusI'><i class='fas fa-check'></button></td>
-								";
-								} else {
-									echo "
-													<td><button class='btn btn-danger' type='submit' name='run' value='updateStatusA'><i class='fas fa-times-circle'></button></td>";
-								}
-
-								echo "
-													<td><a class='btn btn-danger' href='usu_reportepdf.php?cod_usu=$usuario[cod_usu]'><i class='fas fa-file-pdf'></i></a></td>
+													<td>$usuario[dir_usu]</td>
+													<td>$usuario[cre_usu]</td>
+													<td>$usuario[act_usu]</td>
+													<td>$usuario[eli_usu]</td>
+													<td>$usuario[res_usu]</td>
 													<td><a class='btn btn-danger' href='usu_reportepdf_constancia.php?cod_usu=$usuario[cod_usu]'><i class='fas fa-user'></i></a></td>
-													<td><a class='btn btn-warning' href='usu_modificar.php?cod_usu=$usuario[cod_usu]'><i class='fas fa-edit'></i></a></td>
-													<td><button type='button' data-toggle='modal' class='btn btn-danger' data-target='#modalDelete$usuario[cod_usu]'><i class='fas fa-trash'></i></button></td>
+													<td>
+														<div class='btn-group' role='group'>";
+								if ($usuario['est_usu'] == "A") {
+									echo "				<button class='btn btn-success py-2' type='submit' name='run' value='updateStatusI'><i class='fas fa-check'></i></button>";
+								} else {
+									echo "				<button class='btn btn-danger py-2' type='submit' name='run' value='updateStatusA'><i class='fas fa-times-circle'></i></button>";
+								}
+								echo "					<a class='btn btn-danger py-2' href='usu_reportepdf.php?cod_usu=$usuario[cod_usu]'><i class='fas fa-file-pdf'></i></a>
+																<a class='btn btn-warning py-2' href='usu_modificar.php?cod_usu=$usuario[cod_usu]'><i class='fas fa-edit'></i></a>
+															<button type='button' data-toggle='modal' class='btn btn-danger py-2' data-target='#modalDelete$usuario[cod_usu]'><i class='fas fa-trash'></i></button>
+														</div>
+													</td>
 													<div class='modal fade' id='modalDelete$usuario[cod_usu]' tabindex='-1' aria-labelledby='exampleModalLabel' aria-hidden='true'>
 														<div class='modal-dialog modal-sm'>
 															<div class='modal-content'>

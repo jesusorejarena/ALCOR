@@ -36,12 +36,8 @@ checkAdmin();
 							<th>Modificado</th>
 							<th>Eliminado</th>
 							<th>Restaurado</th>
-							<th>Estatus</th>
 							<th>Estado</th>
-							<th>PDF</th>
-							<th>Editar</th>
-							<th>Restaurar</th>
-							<th>Eliminar</th>
+							<th>Acciones</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -67,44 +63,43 @@ checkAdmin();
 								<td>$permiso[eli_per]</td>
 								<td>$permiso[res_per]</td>";
 
-							if ($permiso['est_per'] == "A") {
-								echo "
-								<td><button class='btn btn-success' type='submit' name='run' value='updateStatusI'><i class='fas fa-check'></button></td>
-						";
-							} else {
-								echo "
-								<td><button class='btn btn-danger' type='submit' name='run' value='updateStatusA'><i class='fas fa-times-circle'></button></td>";
-							}
-
 							if ($permiso['bas_per'] == "A") {
 								echo "<td><b class='text-success'>Activo</b></td>";
 							} else {
 								echo "<td><b class='text-danger'>Papelera</b></td>";
 							}
 
-							echo "
-								<td><a class='btn btn-danger' href='per_reportepdf.php?cod_per=$permiso[cod_per]'><i class='fas fa-file-pdf'></i></a></td>
-								<td><a class='btn btn-warning' href='per_modificar.php?cod_per=$permiso[cod_per]'><i class='fas fa-edit'></i></a></td>
-								<td><button type='submit' class='btn btn-success' name='run' value='restore'><i class='fas fa-redo-alt'></i></button></td>
-								<td><button type='button' data-toggle='modal' class='btn btn-danger' data-target='#modalDelete$permiso[cod_per]'><i class='fas fa-trash'></i></button></td>
-													<div class='modal fade' id='modalDelete$permiso[cod_per]' tabindex='-1' aria-labelledby='exampleModalLabel' aria-hidden='true'>
-														<div class='modal-dialog modal-sm'>
-															<div class='modal-content'>
-																<div class='modal-header'>
-																	<h5 class='modal-title' id='exampleModalLabel'>¿Estas seguro de enviar a la papelera?</h5>
-																	<button type='button' class='close' data-dismiss='modal' aria-label='Close'>
-																		<span aria-hidden='true'>&times;</span>
-																	</button>
-																</div>
-																<div class='modal-body d-flex justify-content-around'>
-																	<button type='submit' name='run' value='firstDelete' class='btn btn-light'>Eliminar</button>
-																	<button type='button' class='btn btn-danger' data-dismiss='modal'>Cerrar</button>
-																</div>
-															</div>
-														</div>
+							echo "<td>
+											<div class='btn-group' role='group'>";
+							if ($permiso['est_per'] == "A") {
+								echo "	<button class='btn btn-success py-2' type='submit' name='run' value='updateStatusI'><i class='fas fa-check'></i></button>";
+							} else {
+								echo "	<button class='btn btn-danger py-2' type='submit' name='run' value='updateStatusA'><i class='fas fa-times-circle'></i></button>";
+							}
+							echo "		<a class='btn btn-danger py-2' href='per_reportepdf.php?cod_per=$permiso[cod_per]'><i class='fas fa-file-pdf'></i></a>
+												<a class='btn btn-warning py-2' href='per_modificar.php?cod_per=$permiso[cod_per]'><i class='fas fa-edit'></i></a>
+												<button type='submit' class='btn btn-success py-2' name='run' value='restore'><i class='fas fa-redo-alt'></i></button>
+												<button type='button' data-toggle='modal' class='btn btn-danger py-2' data-target='#modalDelete$permiso[cod_per]'><i class='fas fa-trash'></i></button>
+											</div>
+										</td>
+										<div class='modal fade' id='modalDelete$permiso[cod_per]' tabindex='-1' aria-labelledby='exampleModalLabel' aria-hidden='true'>
+											<div class='modal-dialog modal-sm'>
+												<div class='modal-content'>
+													<div class='modal-header'>
+														<h5 class='modal-title' id='exampleModalLabel'>¿Estas seguro de enviar a la papelera?</h5>
+														<button type='button' class='close' data-dismiss='modal' aria-label='Close'>
+															<span aria-hidden='true'>&times;</span>
+														</button>
 													</div>
-							</tr>
-						</form>
+													<div class='modal-body d-flex justify-content-around'>
+														<button type='submit' name='run' value='firstDelete' class='btn btn-light'>Eliminar</button>
+														<button type='button' class='btn btn-danger' data-dismiss='modal'>Cerrar</button>
+													</div>
+												</div>
+											</div>
+										</div>
+									</tr>
+								</form>
 						";
 						}
 						?>

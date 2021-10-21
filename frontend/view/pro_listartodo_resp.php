@@ -35,8 +35,8 @@ checkAdmin();
 							<th>Modificado</th>
 							<th>Eliminado</th>
 							<th>Restaurado</th>
-							<th>Estatus</th>
 							<th>Estado</th>
+							<th>Estatus</th>
 						</tr>
 					</thead>
 					<tbody>

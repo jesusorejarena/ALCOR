@@ -47,17 +47,6 @@ check("Prendas", 3);
 									</select>
 								</div>
 							</div>
-							<div class="col-12 col-xl-6">
-								<div class="form-group">
-									<label for="bas_pre"> Activo/Papelera:</label>
-									<select name="bas_pre" id="bas_pre" class="form-control">
-										<option value="">Todos
-										<option>
-										<option value="A">Activo</option>
-										<option value="B">En papelera</option>
-									</select>
-								</div>
-							</div>
 						</div>
 					</div>
 					<div class="card-footer d-flex justify-content-between">

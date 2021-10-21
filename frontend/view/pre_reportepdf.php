@@ -80,19 +80,6 @@ $dompdf->loadHtml("
 						<td class='td' colspan='2'>$prenda[cre_pre]</td>
 						<td class='td' colspan='2'>$prenda[act_pre]</td>
 					</tr>
-					<tr class='espacio'>
-						<th class='espacio' colspan='6'></th>
-					</tr>
-					<tr class='tr'>
-						<th class='th' colspan='2'>Estado</th>
-						<th class='th' colspan='2'>Eliminado</th>
-						<th class='th' colspan='2'>Restaurado</th>
-					</tr>
-					<tr class='tr'>
-						<td class='td' colspan='2'>$prenda[bas_pre]</td>
-						<td class='td' colspan='2'>$prenda[eli_pre]</td>
-						<td class='td' colspan='2'>$prenda[res_pre]</td>
-					</tr>
 					<tr class='nada'>
 						<th class='nada' colspan='6'></th>
 					</tr>

@@ -30,8 +30,7 @@ check("Formularios", 5);
 							<th>Correo</th>
 							<th>Asunto</th>
 							<th>Fecha de Registro</th>
-							<th>PDF</th>
-							<th>Eliminar</th>
+							<th>Acciones</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -47,8 +46,12 @@ check("Formularios", 5);
 													<td>$formulario[cor_for]</td>
 													<td>$formulario[asu_for]</td>
 													<td>$formulario[cre_for]</td>
-													<td><a class='btn btn-danger' href='for_reportepdf.php?cod_for=$formulario[cod_for]'><i class='fas fa-file-pdf'></i></a></td>
-													<td><button type='button' data-toggle='modal' class='btn btn-danger' data-target='#modalDelete$formulario[cod_for]'><i class='fas fa-trash'></i></button></td>
+													<td>
+														<div class='btn-group' role='group'>
+															<a class='btn btn-danger py-2' href='for_reportepdf.php?cod_for=$formulario[cod_for]'><i class='fas fa-file-pdf'></i></a>
+															<button type='button' data-toggle='modal' class='btn btn-danger py-2' data-target='#modalDelete$formulario[cod_for]'><i class='fas fa-trash'></i></button>
+														</div>
+													</td>
 													<div class='modal fade' id='modalDelete$formulario[cod_for]' tabindex='-1' aria-labelledby='exampleModalLabel' aria-hidden='true'>
 														<div class='modal-dialog modal-sm'>
 															<div class='modal-content'>

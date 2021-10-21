@@ -23,7 +23,7 @@ check("Productos", 3);
 
 <!-- Formulario -->
 <div class="container px-3 pt-3 pb-5 mb-5">
-	<a class="btn btn-success btn-lg" href="pro_listar.php"><i class="fas fa-arrow-circle-left"></i></a>
+	<a class="btn btn-success btn-lg" href="pro_listartodo.php"><i class="fas fa-arrow-circle-left"></i></a>
 	<div class="row justify-content-center">
 		<div class="col-12 col-xl-6 p-2">
 			<div class="card rounded">
@@ -43,7 +43,7 @@ check("Productos", 3);
 							<div class="col-12">
 								<div class="form-group">
 									<label for="descripcion">Descripción:</label>
-									<textarea name="des_pro" id="descripcion" placeholder="Descripción" value="<?php echo $producto['des_pro'] ?>" class="form-control"></textarea>
+									<textarea name="des_pro" id="descripcion" placeholder="Descripción" class="form-control"><?php echo $producto['des_pro'] ?></textarea>
 									<small id="descripcionDiv" class="invalid-feedback"></small>
 								</div>
 							</div>
