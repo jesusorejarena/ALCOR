@@ -57,3 +57,21 @@ body {
 }
 
 /* ---------------------------- */
+
+/* SideBar */
+
+#sideBar {
+	position: fixed;
+	width: 240px;
+	height: 100%;
+	left: -240px;
+	transition: all 200ms linear;
+	z-index: 1000;
+	overflow-x: hidden;
+}
+
+#sideBar.active {
+	left: 0;
+}
+
+/* ------- */

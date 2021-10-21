@@ -19,10 +19,15 @@ $cargo = $obj_car->extractData();
 
 ?>
 
-<div class="container-fluid p-3">
+<div class="container-fluid px-3 pt-3 pb-5 mb-5">
 	<h2 class="text-center p-3">Cuenta</h2>
+<<<<<<< HEAD:frontend/view/usu_inicio.php
 	<div class="row justify-content-center">
 		<div class="col-12 col-xl-4">
+=======
+	<div class="row justify-content-center p-3">
+		<div class="col-12 col-md-4 p-1">
+>>>>>>> 385985cd048ecd9abd40d421457332ee67cc2791:frontend/view/ado_inicio.php
 			<div class="card rounded px-3 py-4">
 				<h3 class="card-title text-center">Información</h3>
 				<div class="card-body">
@@ -37,7 +42,11 @@ $cargo = $obj_car->extractData();
 				</div>
 			</div>
 		</div>
+<<<<<<< HEAD:frontend/view/usu_inicio.php
 		<div class="col-12 col-xl-4">
+=======
+		<div class="col-12 col-md-4 p-1">
+>>>>>>> 385985cd048ecd9abd40d421457332ee67cc2791:frontend/view/ado_inicio.php
 			<div class="card rounded px-3 py-4">
 				<h3 class="card-title text-center">Configuración</h3>
 				<div class="card-body">
