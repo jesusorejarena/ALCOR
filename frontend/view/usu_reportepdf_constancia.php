@@ -40,7 +40,7 @@ $dompdf->loadHtml("
 <html>
 	<head>
 		<meta charset='UTF-8' />
-		<title>Reporte del Usuario N° $cod_usu</title>
+		<title>Reporte del Empleado N° $cod_usu</title>
 		<link rel='stylesheet' href='../css/estilospdf.css' />
 	</head>
 
@@ -116,7 +116,7 @@ $dompdf->setPaper('A4', 'vertical');
 // Render the HTML as PDF
 $dompdf->render();
 
-$nombre = "Constancia_de_Trabajo_del_Usuario_$cod_usu.pdf";
+$nombre = "Constancia_de_Trabajo_del_Empleado_$cod_usu.pdf";
 
 // Output the generated PDF to Browser
 $dompdf->stream($nombre);

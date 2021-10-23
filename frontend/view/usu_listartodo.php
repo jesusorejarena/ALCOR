@@ -9,7 +9,7 @@ $obj_usu->puntero = $obj_usu->getAll();
 
 $obj_car = new cargo;
 
-headerr("Lista de Usuarios");
+headerr("Lista de Empleados");
 
 check("Usuarios", 1);
 
@@ -18,7 +18,7 @@ check("Usuarios", 1);
 <!-- Lista -->
 <div class="container-fluid px-3 pt-3 pb-5 mb-5">
 	<a class="btn btn-success btn-lg" href="usu_menu.php"><i class="fas fa-arrow-circle-left"></i></a>
-	<h2 class="text-center p-3">Lista de Usuarios</h2>
+	<h2 class="text-center p-3">Lista de Empleados</h2>
 	<div class="row justify-content-center">
 		<div class="col-12 py-2">
 			<div class="card-header">

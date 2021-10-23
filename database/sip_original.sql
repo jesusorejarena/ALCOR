@@ -378,13 +378,14 @@ DROP TABLE IF EXISTS pedido;
 CREATE TABLE IF NOT EXISTS pedido (
 	`cod_ped` int(11) NOT NULL AUTO_INCREMENT,
 	`pre_ped` float(11,2) NOT NULL,
+	`cod_usu` int(11) NOT NULL,
 	`cre_ped` datetime NOT NULL,
 	`act_ped` datetime DEFAULT NULL,
 	`eli_ped` datetime DEFAULT NULL,
-	`res_ped` datetime DEFAULT NULL,
-	`est_ped` enum('A','I') NOT NULL,
-	`bas_ped` enum('A','B') NOT NULL,
-	PRIMARY KEY (`cod_ped`)
+	`est_ped` enum('P','V', 'T') NOT NULL,
+	PRIMARY KEY (`cod_ped`),
+	INDEX `cod_usu` (`cod_usu`),
+	FOREIGN KEY (`cod_usu`) REFERENCES `usuario` (`cod_usu`) ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 DROP TABLE IF EXISTS pedido_relacion;
@@ -392,7 +393,7 @@ CREATE TABLE IF NOT EXISTS pedido_relacion (
 	`cod_ped_rel` int(11) NOT NULL AUTO_INCREMENT,
 	`cod_ped` int(11) NOT NULL,
 	`cod_pre` int(11) NOT NULL,
-	`cant_ped_rel` int(11) NOT NULL,
+	`can_ped_rel` int(11) NOT NULL,
 	PRIMARY KEY (`cod_ped_rel`),
 	INDEX `cod_ped` (`cod_ped`),
 	INDEX `cod_pre` (`cod_pre`),

@@ -47,6 +47,6 @@ switch ($_REQUEST["run"]) {
 
 	case 'delete':
 		$obj_pre->delete();
-		header("Location: ../../frontend/view/pre_listarpapelera.php");
+		header("Location: ../../frontend/view/pre_listartodo.php");
 		break;
 }

@@ -36,27 +36,13 @@ body {
 
 /* -------- */
 
-/* Backgrounds, textos e iconos */
+/* saveButton */
 
-.bg-blanco {
-	background-color: #efefef !important;
+.saveButton {
+	position: fixed;
+	bottom: 10px;
+	z-index: 2;
 }
-
-.texto-nav {
-	color: #ffffff !important;
-}
-
-.texto-nav:hover {
-	color: #1d96f3 !important;
-}
-
-.icon {
-	color: #ffffff;
-	padding: 3px 3px 3px 3px;
-	font-size: 100%;
-}
-
-/* ---------------------------- */
 
 /* SideBar */
 

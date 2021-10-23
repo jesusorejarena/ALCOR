@@ -34,7 +34,7 @@ $dompdf->loadHtml("
 			<head>
 
 				<meta charset='UTF-8'>
-				<title>Reporte del Usuario N° $cod_usu</title>
+				<title>Reporte del Empleado N° $cod_usu</title>
 				<style>
 			.head{background-color:#fff;color:#000;border:none}.footer{font-size:15px;background-color:#fff;color:#000;border:none}table{width:100%;text-align:center;border-collapse:collapse}th{font-size:20px}td{font-size:15px}td,th{border:1px solid #000;padding:7px}.nada{border:none;padding:15px}.espacio{border:none;padding:7px}
 		</style>
@@ -45,7 +45,7 @@ $dompdf->loadHtml("
 				<table>
 					<tr class='head'>
 						<th class='head' colspan='1' style='text-align: left;'><img src='../img/logo3.png' width='250px'></th>
-						<th class='head' colspan='3' style='text-align: center;'><h3>Reporte del Usuario <br> N° $cod_usu</h3></th>
+						<th class='head' colspan='3' style='text-align: center;'><h3>Reporte del Empleado <br> N° $cod_usu</h3></th>
 						<th class='head' colspan='2'></th>
 					</tr>
 					<tr class='nada'>
@@ -147,7 +147,7 @@ $dompdf->setPaper('A4', 'landscape');
 // Render the HTML as PDF
 $dompdf->render();
 
-$nombre = "Reporte_Usuario_$cod_usu.pdf";
+$nombre = "Reporte_Empleado_$cod_usu.pdf";
 
 // Output the generated PDF to Browser
 $dompdf->stream($nombre);

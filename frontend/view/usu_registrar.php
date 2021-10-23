@@ -6,7 +6,7 @@ require_once("../../backend/class/cargo.class.php");
 $obj_car = new cargo;
 $obj_car->puntero = $obj_car->getAllActive();
 
-headerr("Registrar Usuario");
+headerr("Registrar Empleado");
 
 check("Usuarios", 1);
 
@@ -18,7 +18,7 @@ check("Usuarios", 1);
 	<div class="row justify-content-center">
 		<div class="col-12 col-xl-6 p-2">
 			<div class="card rounded">
-				<h2 class="card-title text-center pt-4">Registrar Usuario</h2>
+				<h2 class="card-title text-center pt-4">Registrar Empleado</h2>
 				<form action="../../backend/controller/usuario.php" method="POST" class="was-validation" id="formulario" novalidate>
 					<div class="card-body">
 						<div class="row">

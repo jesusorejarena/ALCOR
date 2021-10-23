@@ -37,6 +37,14 @@ function checkAdmin()
 	}
 }
 
+function checkClient()
+{
+	if ($_SESSION['cargo'] == 2) {
+	} else {
+		header("Location: usu_inicio.php");
+	}
+}
+
 function headerr($titulo)
 {
 	ini_set("session.cookie_lifetime", "36000");
@@ -69,13 +77,14 @@ function headerr($titulo)
 				<link rel='stylesheet' href='../css/bootstrap-4.5.2/css/bootstrap.min.css' />
 				<link rel='stylesheet' href='../css/fontawesome-free-5.15.0/css/all.min.css' />
 				<link rel='stylesheet' href='../css/estilos.css' />
+				<script src='../js/jquery-3.5.1.min.js'></script>
 			</head>
 
 			<body>
 
 				<!-- Comienza nav superior -->
 
-				<div class='container-fluid fixed-top bg-white shadow-lg py-2'>
+				<div class='container-fluid fixed-top bg-light py-2'>
 					<div class='row d-flex justify-content-between align-items-center'>
 						<div class='col-3 col-lg-6 py-2'>
 							<a class='navbar-toggler py-2' type='button'>
@@ -100,7 +109,7 @@ function headerr($titulo)
 				<!-- Termina nav superior -->
 
 				<!-- Comienza sideBar -->
-				<div id='sideBar' class='bg-white shadow-lg'>
+				<div id='sideBar' class='bg-light shadow-lg'>
 					<div class='container-fluid mt-5'>
 						<div class='row'>
 							<div class='col-12'>
@@ -149,9 +158,17 @@ function headerr($titulo)
 									<div class='col-9 px-0 text-left'>Configuración</div>
 								</a>
 				";
+	}
+	if ($_SESSION['cargo'] == 2) {
+		echo "
+								<a href='realizar_pedido.php' class='row text-dark py-2 my-2 border-bottom'>
+									<div class='col-3 text-center'></div>
+									<div class='col-9 px-0 text-left'>Realizar pedido</div>
+								</a>
+				";
 	} else {
 		// verifica el cargo
-		if ($_SESSION['cargo'] >= 2) {
+		if ($_SESSION['cargo'] >= 3) {
 			// asigna el cargo sesion al codigo de permiso
 			$obj_per->cod_car = $_SESSION['cargo'];
 			$obj_per->puntero = $obj_per->getMenu();
@@ -220,7 +237,6 @@ function headerr($titulo)
 function footer()
 {
 	echo "
-				<script src='../js/jquery-3.5.1.min.js'></script>
 				<script src='../css/bootstrap-4.5.2/js/bootstrap.bundle.min.js'></script>
 				<script src='../js/screenUp.js'></script>
 				<script src='../js/sideBar.js'></script>

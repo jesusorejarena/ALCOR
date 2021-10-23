@@ -107,7 +107,7 @@ class cargo extends utilidad
 
 	function getAllActive()
 	{
-		$this->que_bda = "SELECT * FROM cargo WHERE est_car='A' AND bas_car='A';";
+		$this->que_bda = "SELECT * FROM cargo WHERE est_car='A' AND bas_car='A' AND nom_car != 'Cliente' AND nom_car != 'Administrador';";
 
 		return $this->run();
 	} // fin de getAllActive
