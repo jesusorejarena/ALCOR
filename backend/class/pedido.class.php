@@ -33,22 +33,6 @@ class pedido extends utilidad
 		return $this->run();
 	} // fin de create
 
-	function update()
-	{
-		$act_ped = date("y-m-d h:i:s");
-
-		$this->que_bda = "UPDATE pedido
-								SET
-									pre_ped='$this->pre_ped',
-									cod_usu='$this->cod_usu',
-									act_ped='$act_ped',
-									est_ped='$this->est_ped'
-								WHERE
-									cod_ped='$this->cod_ped';";
-
-		return $this->run();
-	} // fin de update
-
 	function updateStatusV()
 	{
 		$act_ped = date("y-m-d h:i:s");
@@ -56,6 +40,7 @@ class pedido extends utilidad
 		$this->que_bda = "UPDATE pedido
 							SET 
 								act_ped='$act_ped',
+								pre_ped='$this->pre_ped',
 								est_ped='V'
 							WHERE
 								cod_ped='$this->cod_ped';";

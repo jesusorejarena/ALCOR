@@ -161,6 +161,10 @@ function headerr($titulo)
 	}
 	if ($_SESSION['cargo'] == 2) {
 		echo "
+								<a href='mis_pedidos.php' class='row text-dark py-2 my-2 border-bottom'>
+									<div class='col-3 text-center'></div>
+									<div class='col-9 px-0 text-left'>Mis pedidos</div>
+								</a>
 								<a href='realizar_pedido.php' class='row text-dark py-2 my-2 border-bottom'>
 									<div class='col-3 text-center'></div>
 									<div class='col-9 px-0 text-left'>Realizar pedido</div>

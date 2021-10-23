@@ -46,10 +46,11 @@ $usuario = $obj_usu->extractData();
 <div class="container px-3 pt-3 pb-5 mb-5">
 	<div class="row justify-content-center">
 		<div class="col-12 col-xl-4 p-2">
-			<h2 class='text-center p-2'>Detalles <?php echo $pedido['cod_ped']; ?></h2>
+			<h2 class='text-center p-2'>Detalles</h2>
 			<div class="card rounded">
 				<form action="../../backend/controller/pedido.php" method="POST" class="was-validation" id="formulario" novalidate>
 					<input type="hidden" name="cod_ped" value="<?php echo $pedido['cod_ped'] ?>" />
+					<input type="hidden" name="pre_ped" value="<?php echo $total; ?>" />
 					<div class="card-body">
 						<div class="row">
 							<div class="col-12">
