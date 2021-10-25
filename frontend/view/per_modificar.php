@@ -27,7 +27,7 @@ checkAdminOrClient(1);
 
 <!-- Formulario -->
 <div class="container px-3 pt-3 pb-5 mb-5">
-	<a class="btn btn-outline-primary btn-lg" href="per_listartodo.php"><i class="fas fa-arrow-circle-left"></i></a>
+	<a class="btn btn-outline-primary btn-lg" href="per_modificar.php"><i class="fas fa-arrow-circle-left"></i></a>
 	<div class="row justify-content-center">
 		<div class="col-12 col-xl-6 p-2">
 			<div class="card rounded-lg shadow my-3 px-3 py-4">

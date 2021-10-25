@@ -16,7 +16,7 @@ $obj_ped = new pedido;
 ?>
 
 <!-- Lista -->
-<div class="container-fluid px-3 pt-3 pb-5 mb-5">
+<div class="container px-3 pt-3 pb-5 mb-5">
 	<h2 class="text-center text-primary font-weight-bold p-3">Lista de Prendas</h2>
 	<div class="row justify-content-center">
 		<div class="col-12 py-2">

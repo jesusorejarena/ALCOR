@@ -10,7 +10,7 @@ headerr("Cambiar preguntas de seguridad");
 ?>
 
 <!-- Formulario -->
-<div class="container p-3 p-xl-2">
+<div class="container px-3 pt-3 pb-5 mb-5">
 	<a class="btn btn-outline-primary btn-lg" href="usu_inicio.php"><i class="fas fa-arrow-circle-left"></i></a>
 	<div class="row justify-content-center">
 		<div class="col-12 col-xl-6 p-2">
