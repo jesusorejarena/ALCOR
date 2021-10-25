@@ -31,9 +31,8 @@ function footer()
 					</div>
 				</div>
 
-				<script src='../../frontend/js/jquery-3.5.1.min.js'></script>
 				<script src='../../frontend/css/bootstrap-4.5.2/js/bootstrap.bundle.min.js'></script>
-				<script src='../../frontend/js/screenUp.js'></script>
+				<script src='../../frontend/js/sideBar.js'></script>
 
 			</body>
 				

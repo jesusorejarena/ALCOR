@@ -6,12 +6,13 @@ require_once("../../backend/class/pedido_relacion.class.php");
 require_once("../../backend/class/usuario.class.php");
 require_once("../../backend/class/prenda.class.php");
 
-headerr("Finalizar Pedido");
+headerr("Terminar Pedido");
 
-checkClient();
+check('Pedidos', 5);
 
 $obj_ped = new pedido;
-$obj_ped->puntero = $obj_ped->getLastOrderP($_SESSION['codigo']);
+$obj_ped->cod_ped = $_REQUEST['cod_ped'];
+$obj_ped->puntero = $obj_ped->getOrderByCode();
 $pedido = $obj_ped->extractData();
 
 if ($pedido > 0) {
@@ -45,9 +46,9 @@ $usuario = $obj_usu->extractData();
 <!-- Formulario -->
 <div class="container px-3 pt-3 pb-5 mb-5">
 	<div class="row justify-content-center">
-		<div class="col-12 col-xl-4 p-2">
-			<h2 class='text-center p-2'>Detalles</h2>
-			<div class="card rounded">
+		<div class="col-12 col-xl-4 p-md-2 mr-xl-5">
+			<h2 class='text-center text-primary font-weight-bold p-2'>Detalles</h2>
+			<div class="card rounded-lg shadow my-3 px-3 py-4">
 				<form action="../../backend/controller/pedido.php" method="POST" class="was-validation" id="formulario" novalidate>
 					<input type="hidden" name="cod_ped" value="<?php echo $pedido['cod_ped'] ?>" />
 					<input type="hidden" name="pre_ped" value="<?php echo $total; ?>" />
@@ -79,14 +80,15 @@ $usuario = $obj_usu->extractData();
 							</div>
 						</div>
 					</div>
-					<div class="card-footer d-flex justify-content-center">
-						<button type="submit" class="btn btn-primary" name="run" value="updateStatusV">Finalizar</button>
+					<div class="px-4 pb-3 d-flex justify-content-between">
+						<button type="submit" class="btn btn-danger" name="run" value="delete">Cancelar pedido</button>
+						<button type="submit" class="btn btn-primary" name="run" value="updateStatusT">Terminado</button>
 					</div>
 				</form>
 			</div>
 		</div>
-		<div class="col-12 col-xl-8 p-2">
-			<h2 class='text-center p-2'>Prendas agregadas</h2>
+		<div class="col-12 col-xl-7 pt-5 p-md-3">
+			<h2 class='text-center text-primary font-weight-bold p-2'>Prendas agregadas</h2>
 			<div class="row justify-content-center">
 				<div class="col-12">
 					<div class="table-responsive">

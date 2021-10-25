@@ -293,7 +293,7 @@ class usuario extends utilidad
 
 	function getAll()
 	{
-		$this->que_bda = "SELECT * FROM usuario WHERE bas_usu='A';";
+		$this->que_bda = "SELECT * FROM usuario WHERE bas_usu='A' ORDER BY cod_usu DESC;";
 
 		return $this->run();
 	} // fin de getAll
@@ -307,7 +307,7 @@ class usuario extends utilidad
 
 	function getFirstDelete()
 	{
-		$this->que_bda = "SELECT * FROM usuario WHERE bas_usu='B';";
+		$this->que_bda = "SELECT * FROM usuario WHERE bas_usu='B' ORDER BY cod_usu DESC;";
 
 		return $this->run();
 	} // fin de getFirstDelete
@@ -354,7 +354,7 @@ class usuario extends utilidad
 		$filter11 = ($this->est_usu != "") ? "AND est_usu='$this->est_usu'" : "";
 		$filter12 = ($this->bas_usu != "") ? "AND bas_usu='$this->bas_usu'" : "";
 
-		$this->que_bda = "SELECT * FROM usuario WHERE 1=1 $filter1 $filter2 $filter3 $filter4 $filter5 $filter6 $filter7 $filter8 $filter9 $filter10 $filter11 $filter12;";
+		$this->que_bda = "SELECT * FROM usuario WHERE 1=1 $filter1 $filter2 $filter3 $filter4 $filter5 $filter6 $filter7 $filter8 $filter9 $filter10 $filter11 $filter12 ORDER BY cod_usu DESC;";
 
 		return $this->run();
 	} // fin de filter
@@ -375,7 +375,7 @@ class usuario extends utilidad
 
 	function getBackup()
 	{
-		$this->que_bda = "SELECT * FROM usuario_resp;";
+		$this->que_bda = "SELECT * FROM usuario_resp ORDER BY cod_usu DESC;";
 
 		return $this->run();
 	} // fin de getBackup
@@ -396,7 +396,7 @@ class usuario extends utilidad
 		$filter11 = ($this->est_usu != "") ? "AND est_usu='$this->est_usu'" : "";
 		$filter12 = ($this->bas_usu != "") ? "AND bas_usu='$this->bas_usu'" : "";
 
-		$this->que_bda = "SELECT * FROM usuario_resp WHERE 1=1 $filter1 $filter2 $filter3 $filter4 $filter5 $filter6 $filter7 $filter8 $filter9 $filter10 $filter11 $filter12;";
+		$this->que_bda = "SELECT * FROM usuario_resp WHERE 1=1 $filter1 $filter2 $filter3 $filter4 $filter5 $filter6 $filter7 $filter8 $filter9 $filter10 $filter11 $filter12 ORDER BY cod_usu DESC;";
 
 		return $this->run();
 	} // fin de filterBackup

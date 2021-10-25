@@ -11,8 +11,7 @@
 <body>
 	<table>
 		<tr class='head'>
-			<th class='head' colspan='1' style='text-align: left;'><img src='../img/logo3.png' width='250px'></th>
-			<th class='head' colspan='5' style='text-align: right;'>
+			<th class='head' colspan='6' style='text-align: left;'>
 				<h3>Lista de Permisos</h3>
 			</th>
 		</tr>
@@ -20,9 +19,9 @@
 			<th class='nada'></th>
 		</tr>
 		<tr class='tr'>
-			<th class="th">Código</th>
-			<th class="th">Cargo</th>
-			<th class="th">Módulo</th>
+			<th class="th" colspan='1'>Código</th>
+			<th class="th" colspan='3'>Cargo</th>
+			<th class="th" colspan='2'>Módulo</th>
 		</tr>
 		<?php
 
@@ -49,9 +48,9 @@
 
 			echo "
 						<tr class='tr'>
-							<td class='td'>$permiso[cod_per]</td>
-							<td class='td'>$cargo[nom_car]</td>
-							<td class='td'>$modulo[nom_mod]</td>
+							<td class='td' colspan='1'>$permiso[cod_per]</td>
+							<td class='td' colspan='3'>$cargo[nom_car]</td>
+							<td class='td' colspan='2'>$modulo[nom_mod]</td>
 						</tr>
 			";
 		}

@@ -206,7 +206,7 @@ headerr("Inicio");
 				<h2 class="text-primary font-weight-bold text-center mb-4">Contacto</h2>
 				<div class="row d-flex justify-content-center align-items-center">
 					<div class="col-xl-6">
-						<form class="needs-validation" novalidate>
+						<form action="../../backend/controller/formulario.php" method="POST" class="was-validation" id="formulario" novalidate>
 							<div class="form-row">
 								<div class="col-xl-6 mb-3">
 									<label for="nombre">Nombre:</label>

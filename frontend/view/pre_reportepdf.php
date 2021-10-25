@@ -38,9 +38,7 @@ $dompdf->loadHtml("
 			<body>
 				<table>
 					<tr class='head'>
-						<th class='head' colspan='1' style='text-align: left;'><img src='../img/logo3.png' width='250px'></th>
-						<th class='head' colspan='3' style='text-align: center;'><h3>Reporte del Prenda <br> N° $cod_pre</h3></th>
-						<th class='head' colspan='2'></th>
+						<th class='head' colspan='6' style='text-align: center;'><h3>Reporte de la Prenda<br> N° $cod_pre</th>
 					</tr>
 					<tr class='nada'>
 						<th class='nada' colspan='6'></th>
@@ -62,10 +60,7 @@ $dompdf->loadHtml("
 					</tr>
 					<tr class='tr'>
 						<td class='td' colspan='4'>$prenda[des_pre]</td>
-						<td class='td' colspan=''>$prenda[pre_pre]</td>
-					</tr>
-					<tr class='espacio'>
-						<th class='espacio' colspan='6'></th>
+						<td class='td' colspan='2'>$prenda[pre_pre]</td>
 					</tr>
 					<tr class='espacio'>
 						<th class='espacio' colspan='6'></th>
@@ -84,25 +79,31 @@ $dompdf->loadHtml("
 						<th class='nada' colspan='6'></th>
 					</tr>
 					<tr class='footer'>
-							<td class='footer' colspan='1' style='text-align: left;'>
-								<p><b>Dirección: </b>$empresa[dir_emp]<br>
-								<b>E-mail: </b>$empresa[cor_emp]<br>
-								<b>Teléfono: </b>$empresa[tel_emp]</p>
-							</td>
-							<td class='footer' colspan='3' style='text-align: center;'>
-								<p>
+						<td class='footer' colspan='6' style='text-align: center;'>
+							<p>
+								<b>
 									$empresa[nom_emp]<br>
 									$empresa[rif_emp]<br>
-								</p>
-							</td>
-							<td class='footer' colspan='2' style='text-align: right;'>
-								<p>
-									<b>Horario:</b><br>
-									$empresa[hou_emp]<br>
-									$empresa[hod_emp]<br>
-								</p>
-							</td>
-						</tr>
+								</b>
+							</p>
+						</td>
+					</tr>
+					<tr class='footer'>
+						<td class='footer' colspan='3' style='text-align: left;'>
+							<p>
+								<b>Dirección: </b>$empresa[dir_emp]<br>
+								<b>E-mail: </b>$empresa[cor_emp]<br>
+								<b>Teléfono: </b>$empresa[tel_emp]
+							</p>
+						</td>
+						<td class='footer' colspan='3' style='text-align: right;'>
+							<p>
+								<b>Horario:</b><br>
+								$empresa[hou_emp]<br>
+								$empresa[hod_emp]<br>
+							</p>
+						</td>
+					</tr>
 				</table>
 			</body>
 
@@ -116,7 +117,7 @@ $dompdf->setPaper('A4', 'landscape');
 // Render the HTML as PDF
 $dompdf->render();
 
-$nombre = "Reporte_preducto_$cod_pre.pdf";
+$nombre = "Reporte_prenda_$cod_pre.pdf";
 
 // Output the generated PDF to Browser
 $dompdf->stream($nombre);

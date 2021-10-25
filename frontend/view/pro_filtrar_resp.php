@@ -7,9 +7,9 @@ $obj_edo = new proveedor;
 $obj_edo->assignValue();
 $obj_edo->puntero = $obj_edo->getBackup();
 
-headerr("Filtrar producto - Historial");
+headerr("Filtrar producto - Auditoria");
 
-checkAdmin();
+checkAdminOrClient(1);
 
 ?>
 
@@ -18,8 +18,8 @@ checkAdmin();
 	<a class="btn btn-success btn-lg" href="menu_config.php"><i class="fas fa-arrow-circle-left"></i></a>
 	<div class="row justify-content-center">
 		<div class="col-12 col-xl-6 p-2">
-			<div class="card rounded">
-				<h2 class="card-title text-center pt-4">Filtrar Producto - Historial</h2>
+			<div class="card rounded-lg shadow my-3 px-3 py-4">
+				<h2 class="card-title text-center text-primary font-weight-bold pt-4">Filtrar Producto - Auditoria</h2>
 				<form action="pro_filtrado_resp.php" method="POST" class="was-validation" id="formulario" novalidate>
 					<div class="card-body">
 						<div class="row">
@@ -51,19 +51,20 @@ checkAdmin();
 								<div class="form-group">
 									<label for="cod_edo">Proveedor:</label>
 									<select name="cod_edo" id="cod_edo" class="form-control">
-										<option value="">Todos<option>
-										<?php while (($proveedor = $obj_edo->extractData()) > 0) {
-											echo "<option value='$proveedor[cod_edo]'>$proveedor[nom_edo]</option>";
-										}
-										?>
+										<option value="">Todos
+										<option>
+											<?php while (($proveedor = $obj_edo->extractData()) > 0) {
+												echo "<option value='$proveedor[cod_edo]'>$proveedor[nom_edo]</option>";
+											}
+											?>
 									</select>
 								</div>
 							</div>
 						</div>
 					</div>
-					<div class="card-footer d-flex justify-content-between">
+					<div class="px-4 pb-3 d-flex justify-content-between">
 						<button type="reset" class="btn btn-success">Limpiar</button>
-						<button type="submit" class="btn btn-primary" name="run" value="update">Guardar</button>
+						<button type="submit" class="btn btn-primary">Filtrar</button>
 					</div>
 				</form>
 			</div>

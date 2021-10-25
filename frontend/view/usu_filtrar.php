@@ -17,8 +17,8 @@ check("Usuarios", 1);
 	<a class="btn btn-success btn-lg" href="usu_menu.php"><i class="fas fa-arrow-circle-left"></i></a>
 	<div class="row justify-content-center">
 		<div class="col-12 col-xl-6 p-2">
-			<div class="card rounded">
-				<h2 class="card-title text-center pt-4">Filtrar Empleado</h2>
+			<div class="card rounded-lg shadow my-3 px-3 py-4">
+				<h2 class="card-title text-center text-primary font-weight-bold pt-4">Filtrar Empleado</h2>
 				<form action="usu_filtrado.php" method="POST" class="was-validation" novalidate>
 					<div class="card-body">
 						<div class="row">
@@ -106,7 +106,7 @@ check("Usuarios", 1);
 								<div class="form-group">
 									<label for="estatus">Activo/Inactivo:</label>
 									<select name="est_usu" id="estatus" class="form-control">
-										<option value="">General</option>
+										<option value="">Todos</option>
 										<option value="A">Activo</option>
 										<option value="I">Inactivo</option>
 									</select>
@@ -116,7 +116,7 @@ check("Usuarios", 1);
 								<div class="form-group">
 									<label for="basura">Activo/Papelera:</label>
 									<select name="bas_usu" id="basura" class="form-control">
-										<option value="">General</option>
+										<option value="">Todos</option>
 										<option value="A">Activo</option>
 										<option value="B">En papelera</option>
 									</select>
@@ -124,7 +124,7 @@ check("Usuarios", 1);
 							</div>
 						</div>
 					</div>
-					<div class="card-footer d-flex justify-content-between">
+					<div class="px-4 pb-3 d-flex justify-content-between">
 						<button type="reset" class="btn btn-success">Limpiar</button>
 						<button type="submit" class="btn btn-primary">Filtrar</button>
 					</div>

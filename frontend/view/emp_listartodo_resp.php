@@ -7,16 +7,16 @@ $obj_emp = new empresa;
 $obj_emp->assignValue();
 $obj_emp->puntero = $obj_emp->getBackup();
 
-headerr("Lista de Empresa - Historial");
+headerr("Lista de Empresa - Auditoria");
 
-checkAdmin();
+checkAdminOrClient(1);
 
 ?>
 
 <!-- Lista -->
 <div class="container-fluid px-3 pt-3 pb-5 mb-5">
 	<a class="btn btn-success btn-lg" href="menu_config.php"><i class="fas fa-arrow-circle-left"></i></a>
-	<h2 class="text-center p-3">Lista de Empresa - Historial</h2>
+	<h2 class="text-center text-primary font-weight-bold p-3">Lista de Empresa - Auditoria</h2>
 	<div class="row justify-content-center">
 		<div class="col-12 py-2">
 			<div class="table-responsive">

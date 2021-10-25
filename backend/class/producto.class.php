@@ -88,6 +88,17 @@ class producto extends utilidad
 		return $this->run();
 	} // fin de updateStatusI
 
+	function updateStock()
+	{
+		$this->que_bda = "UPDATE producto
+								SET
+									can_pro='$this->can_pro'
+								WHERE
+									cod_pro='$this->cod_pro';";
+
+		return $this->run();
+	} // fin de updateStock
+
 	function restore()
 	{
 		$res_pro = date("y-m-d h:i:s");
@@ -116,20 +127,9 @@ class producto extends utilidad
 		return $this->run();
 	} // fin de firstDelete
 
-	function sale()
-	{
-		$this->que_bda = "UPDATE producto
-								SET
-									can_pro='$this->can_pro'
-								WHERE
-									cod_pro='$this->cod_pro';";
-
-		return $this->run();
-	} // fin de sale
-
 	function getAll()
 	{
-		$this->que_bda = "SELECT * FROM producto WHERE bas_pro='A'";
+		$this->que_bda = "SELECT * FROM producto WHERE bas_pro='A' ORDER BY cod_pro DESC;";
 
 		return $this->run();
 	} // fin de getAll
@@ -150,7 +150,7 @@ class producto extends utilidad
 
 	function getFirstDelete()
 	{
-		$this->que_bda = "SELECT * FROM producto WHERE bas_pro='B'";
+		$this->que_bda = "SELECT * FROM producto WHERE bas_pro='B' ORDER BY cod_pro DESC;";
 
 		return $this->run();
 	} // fin de getFirstDelete
@@ -175,7 +175,7 @@ class producto extends utilidad
 		$filter7 = ($this->est_pro != "") ? "AND est_pro='$this->est_pro'" : "";
 		$filter8 = ($this->bas_pro != "") ? "AND bas_pro='$this->bas_pro'" : "";
 
-		$this->que_bda = "SELECT * FROM producto WHERE 1=1 $filter1 $filter2 $filter3 $filter4 $filter5 $filter6 $filter7 $filter8";
+		$this->que_bda = "SELECT * FROM producto WHERE 1=1 $filter1 $filter2 $filter3 $filter4 $filter5 $filter6 $filter7 $filter8 ORDER BY cod_pro DESC;";
 
 		return $this->run();
 	} // fin de filter
@@ -199,7 +199,7 @@ class producto extends utilidad
 		$filter7 = ($this->est_pro != "") ? "AND est_pro='$this->est_pro'" : "";
 		$filter8 = ($this->bas_pro != "") ? "AND bas_pro='$this->bas_pro'" : "";
 
-		$this->que_bda = "SELECT * FROM producto_resp WHERE 1=1 $filter1 $filter2 $filter3 $filter4 $filter5 $filter6 $filter7 $filter8";
+		$this->que_bda = "SELECT * FROM producto_resp WHERE 1=1 $filter1 $filter2 $filter3 $filter4 $filter5 $filter6 $filter7 $filter8 ORDER BY cod_pro DESC;";
 
 		return $this->run();
 	} // fin de filterBackup

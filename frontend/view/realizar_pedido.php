@@ -4,20 +4,20 @@ require_once("tema_session.php");
 require_once("../../backend/class/prenda.class.php");
 require_once("../../backend/class/pedido.class.php");
 
+headerr("Realizar Pedido");
+
+checkAdminOrClient(2);
+
 $obj_pre = new prenda;
 $obj_pre->puntero = $obj_pre->getAll();
 
 $obj_ped = new pedido;
 
-headerr("Realizar Pedido");
-
-checkClient();
-
 ?>
 
 <!-- Lista -->
 <div class="container-fluid px-3 pt-3 pb-5 mb-5">
-	<h2 class="text-center p-3">Lista de Prendas</h2>
+	<h2 class="text-center text-primary font-weight-bold p-3">Lista de Prendas</h2>
 	<div class="row justify-content-center">
 		<div class="col-12 py-2">
 			<div class="table-responsive">
@@ -100,8 +100,7 @@ checkClient();
 							console.log('Error en la llamada');
 						}
 					}).then(function(texto2) {
-						console.log(texto2);
-						window.location = "finalizar_pedido.php";
+						window.location = `ver_pedido.php?cod_ped=${texto}&info=true`;
 					})
 				}
 			}

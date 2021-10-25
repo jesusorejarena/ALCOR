@@ -8,8 +8,7 @@ function check($menu, $cod_mod)
 	$obj_mod = new modulo;
 	$obj_per = new permiso;
 
-	if ($_SESSION['cargo'] >= 2) {
-
+	if ($_SESSION['cargo'] >= 3) {
 		// busca los codigos del cargo en permisos
 		$obj_per->cod_car = $_SESSION['cargo'];
 		$obj_per->cod_mod = $cod_mod;
@@ -29,19 +28,12 @@ function check($menu, $cod_mod)
 	}
 }
 
-function checkAdmin()
+function checkAdminOrClient($cargo)
 {
-	if ($_SESSION['cargo'] == 1) {
+	if ($_SESSION['cargo'] == $cargo) {
 	} else {
 		header("Location: usu_inicio.php");
-	}
-}
-
-function checkClient()
-{
-	if ($_SESSION['cargo'] == 2) {
-	} else {
-		header("Location: usu_inicio.php");
+		echo "Chao";
 	}
 }
 
@@ -84,37 +76,30 @@ function headerr($titulo)
 
 				<!-- Comienza nav superior -->
 
-				<div class='container-fluid fixed-top bg-light py-2'>
-					<div class='row d-flex justify-content-between align-items-center'>
-						<div class='col-3 col-lg-6 py-2'>
-							<a class='navbar-toggler py-2' type='button'>
-								<i id='bars' class='fas fa-bars'></i>
-							</a>
-						</div>
+				<!-- Comienza el nav -->
 
-						<div id='contenido2' class='col-9 col-lg-6 text-right'>
-							<a href='usu_inicio.php'>
-								<img
-									loading='lazy'
-									class='img-fluid'
-									src='../img/Logo-Solo.png'
-									alt=''
-									width='300rem'
-								/>
+				<div class='bg-light container-fluid'>
+					<div class='row navbar navbar-light align-items-center'>
+						<div class='col-12 d-flex justify-content-start'>
+							<a class='button-toggler py-2' type='button'>
+								<i id='bars' class='fas fa-bars' style='font-size: 24px'></i>
 							</a>
 						</div>
 					</div>
 				</div>
 
+				<!-- Termina el nav -->
+
 				<!-- Termina nav superior -->
 
 				<!-- Comienza sideBar -->
 				<div id='sideBar' class='bg-light shadow-lg'>
-					<div class='container-fluid mt-5'>
+					<div class='container-fluid mt-2'>
 						<div class='row'>
 							<div class='col-12'>
-								<a href='usu_inicio.php' class='row text-dark mt-5 py-2 my-2 border-bottom'>
-									<div class='col-3 text-center'></div>
+								<a href='usu_inicio.php' class='row text-dark py-2 my-2 border-bottom'>
+									<div class='col-3 text-center'>
+										<i class='fas fa-home'></i></div>
 									<div class='col-9 px-0 text-left'>Inicio</div>
 								</a>
 					";
@@ -122,51 +107,61 @@ function headerr($titulo)
 	if ($_SESSION['cargo'] == 1) {
 		echo "
 								<a href='emp_modificar.php' class='row text-dark py-2 my-2 border-bottom'>
-									<div class='col-3 text-center'></div>
+									<div class='col-3 text-center'>
+										<i class='fas fa-store'></i></div>
 									<div class='col-9 px-0 text-left'>Empresa</div>
 								</a>
 								<a href='rol_menu.php' class='row text-dark py-2 my-2 border-bottom'>
-									<div class='col-3 text-center'></div>
+									<div class='col-3 text-center'>
+										<i class='fas fa-users-cog'></i></div>
 									<div class='col-9 px-0 text-left'>Roles</div>
 								</a>
 								<a href='usu_menu.php' class='row text-dark py-2 my-2 border-bottom'>
-									<div class='col-3 text-center'></div>
+									<div class='col-3 text-center'>
+										<i class='fas fa-users','></i></div>
 									<div class='col-9 px-0 text-left'>Empleados</div>
 								</a>
 								<a href='pre_menu.php' class='row text-dark py-2 my-2 border-bottom'>
-									<div class='col-3 text-center'></div>
+									<div class='col-3 text-center'>
+										<i class='fas fa-tshirt','></i></div>
 									<div class='col-9 px-0 text-left'>Prendas</div>
 								</a>
 								<a href='edo_menu.php' class='row text-dark py-2 my-2 border-bottom'>
-									<div class='col-3 text-center'></div>
+									<div class='col-3 text-center'>
+										<i class='fas fa-truck','></i></div>
 									<div class='col-9 px-0 text-left'>Proveedores</div>
 								</a>
 								<a href='pro_menu.php' class='row text-dark py-2 my-2 border-bottom'>
-									<div class='col-3 text-center'></div>
+									<div class='col-3 text-center'>
+										<i class='fas fa-shopping-basket'></i></div>
 									<div class='col-9 px-0 text-left'>Productos</div>
 								</a>
-								<a href='ven_menu.php' class='row text-dark py-2 my-2 border-bottom'>
-									<div class='col-3 text-center'></div>
-									<div class='col-9 px-0 text-left'>Ventas</div>
+								<a href='pedidos.php' class='row text-dark py-2 my-2 border-bottom'>
+									<div class='col-3 text-center'>
+										<i class='fas fa-receipt','></i></div>
+									<div class='col-9 px-0 text-left'>Pedidos</div>
 								</a>
 								<a href='for_menu.php' class='row text-dark py-2 my-2 border-bottom'>
-									<div class='col-3 text-center'></div>
+									<div class='col-3 text-center'>
+										<i class='fas fa-clipboard-list'></i></div>
 									<div class='col-9 px-0 text-left'>Formularios</div>
 								</a>
 								<a href='menu_config.php' class='row text-dark py-2 my-2 border-bottom'>
-									<div class='col-3 text-center'></div>
-									<div class='col-9 px-0 text-left'>Configuración</div>
+									<div class='col-3 text-center'>
+										<i class='fas fa-server'></i></div>
+									<div class='col-9 px-0 text-left'>Auditoria y Respaldo</div>
 								</a>
 				";
-	}
-	if ($_SESSION['cargo'] == 2) {
+	} else if ($_SESSION['cargo'] == 2) {
 		echo "
 								<a href='mis_pedidos.php' class='row text-dark py-2 my-2 border-bottom'>
-									<div class='col-3 text-center'></div>
+									<div class='col-3 text-center'>
+										<i class='fas fa-clipboard-list'></i></div>
 									<div class='col-9 px-0 text-left'>Mis pedidos</div>
 								</a>
 								<a href='realizar_pedido.php' class='row text-dark py-2 my-2 border-bottom'>
-									<div class='col-3 text-center'></div>
+									<div class='col-3 text-center'>
+										<i class='fas fa-receipt'></i></div>
 									<div class='col-9 px-0 text-left'>Realizar pedido</div>
 								</a>
 				";
@@ -188,7 +183,9 @@ function headerr($titulo)
 
 				echo "
 								<a href='$modulo[url_mod]' class='row text-dark py-2 my-2 border-bottom'>
-									<div class='col-3 text-center'></div>
+									<div class='col-3 text-center'>
+										<i class='$modulo[ico_mod]'></i>
+									</div>
 									<div class='col-9 px-0 text-left'>$modulo[nom_mod]</div>
 								</a>
 				";
@@ -225,15 +222,6 @@ function headerr($titulo)
 
 				<!-- Termina sideBar -->
 
-				<!-- Comienza onda -->
-
-				<div style='height: 70px; overflow: hidden;'><svg viewBox='0 0 500 150' preserveAspectRatio='none' style='height: 100%; width: 100%;'>
-						<path d='M0.00,49.98 C149.99,150.00 271.49,-49.98 500.00,49.98 L500.00,0.00 L0.00,0.00 Z' style='stroke: none; fill: #f8f9fa;'></path>
-					</svg>
-				</div>
-
-				<!-- Termina onda -->
-
 				<span class='screenUp' id='screenUp'><i class='fas fa-chevron-up'></i></span>
 			";
 }
@@ -241,6 +229,7 @@ function headerr($titulo)
 function footer()
 {
 	echo "
+				<script src='../js/validaciones.js'></script>
 				<script src='../css/bootstrap-4.5.2/js/bootstrap.bundle.min.js'></script>
 				<script src='../js/screenUp.js'></script>
 				<script src='../js/sideBar.js'></script>

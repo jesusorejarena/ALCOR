@@ -11,8 +11,7 @@
 <body>
 	<table>
 		<tr class='head'>
-			<th class='head' colspan='1' style='text-align: left;'><img src='../img/logo3.png' width='250px'></th>
-			<th class='head' colspan='5' style='text-align: right;'>
+			<th class='head' colspan='7' style='text-align: left;'>
 				<h3>Lista de Proveedores</h3>
 			</th>
 		</tr>
@@ -20,14 +19,13 @@
 			<th class='nada'></th>
 		</tr>
 		<tr class='tr'>
-			<th class='th'>Código</th>
-			<th class='th'>Nombre</th>
-			<th class='th'>Descripción</th>
-			<th class='th'>Dirección</th>
-			<th class='th'>Teléfono</th>
-			<th class='th'>Correo</th>
-			<th class='th'>Tipo</th>
-			<th class='th'>RIF</th>
+			<th class='th' colspan='1'>Código</th>
+			<th class='th' colspan='1'>Nombre</th>
+			<th class='th' colspan='1'>Descripción</th>
+			<th class='th' colspan='1'>Dirección</th>
+			<th class='th' colspan='1'>Teléfono</th>
+			<th class='th' colspan='1'>Correo</th>
+			<th class='th' colspan='1'>RIF</th>
 		</tr>
 		<?php
 
@@ -40,14 +38,13 @@
 
 			echo "
 					<tr>
-						<td class='td'>$proveedor[cod_edo]</td>
-						<td class='td'>$proveedor[nom_edo]</td>
-						<td class='td'>$proveedor[des_edo]</td>
-						<td class='td'>$proveedor[dir_edo]</td>
-						<td class='td'>$proveedor[tel_edo]</td>
-						<td class='td'>$proveedor[cor_edo]</td>
-						<td class='td'>$proveedor[tip_edo]</td>
-						<td class='td'>$proveedor[rif_edo]</td>
+						<td class='td' colspan='1'>$proveedor[cod_edo]</td>
+						<td class='td' colspan='1'>$proveedor[nom_edo]</td>
+						<td class='td' colspan='1'>$proveedor[des_edo]</td>
+						<td class='td' colspan='1'>$proveedor[dir_edo]</td>
+						<td class='td' colspan='1'>$proveedor[tel_edo]</td>
+						<td class='td' colspan='1'>$proveedor[cor_edo]</td>
+						<td class='td' colspan='1'>$proveedor[tip_edo]-$proveedor[rif_edo]</td>
 					</tr>
 			";
 		}

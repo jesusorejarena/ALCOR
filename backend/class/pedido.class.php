@@ -35,11 +35,9 @@ class pedido extends utilidad
 
 	function updateStatusV()
 	{
-		$act_ped = date("y-m-d h:i:s");
 
 		$this->que_bda = "UPDATE pedido
 							SET 
-								act_ped='$act_ped',
 								pre_ped='$this->pre_ped',
 								est_ped='V'
 							WHERE
@@ -62,46 +60,65 @@ class pedido extends utilidad
 		return $this->run();
 	} // fin de updateStatusT
 
-	function getAll()
+	function getAllOrderT()
 	{
-		$this->que_bda = "SELECT * FROM pedido;";
+		$this->que_bda = "SELECT * FROM pedido WHERE est_ped='T' ORDER BY cod_ped DESC;";
 
 		return $this->run();
 	} // fin de getAll
 
-	function getByCode()
+	function getOrderByCode()
 	{
 		$this->que_bda = "SELECT * FROM pedido WHERE cod_ped='$this->cod_ped';";
 
 		return $this->run();
-	} // fin de getByCode
+	} // fin de getOrderByCode
 
-	function getLastOrderP($user)
+	function getOrderByCodeUser()
 	{
-		$this->que_bda = "SELECT * FROM pedido WHERE cod_usu='$user' AND est_ped='P' ORDER BY cod_ped DESC LIMIT 1;";
+		$this->que_bda = "SELECT * FROM pedido WHERE cod_usu='$this->cod_usu' AND cod_ped='$this->cod_ped';";
+
+		return $this->run();
+	} // fin de getOrderByCodeUser
+
+	function getFirstOrderV()
+	{
+		$this->que_bda = "SELECT * FROM pedido WHERE est_ped='V' ORDER BY cod_ped ASC;";
+
+		return $this->run();
+	} // fin de getFirstOrderP
+
+	function getLastOrderP()
+	{
+		$this->que_bda = "SELECT * FROM pedido WHERE cod_usu='$this->cod_usu' AND est_ped='P' ORDER BY cre_ped DESC LIMIT 1;";
 
 		return $this->run();
 	} // fin de getLastOrderP
 
-	function getLastOrderV($user)
+	function getLastOrderPUnlimited()
 	{
-		$this->que_bda = "SELECT * FROM pedido WHERE cod_usu='$user' AND est_ped='V' ORDER BY cod_ped DESC LIMIT 1;";
+		$this->que_bda = "SELECT * FROM pedido WHERE cod_usu='$this->cod_usu' AND est_ped='P' ORDER BY cre_ped ASC;";
 
 		return $this->run();
-	} // fin de getLastOrderV
+	} // fin de getLastOrderPUnlimited
 
-	function getLastOrderT($user)
+	function getLastOrderVUnlimited()
 	{
-		$this->que_bda = "SELECT * FROM pedido WHERE cod_usu='$user' AND est_ped='T' ORDER BY cod_ped DESC LIMIT 1;";
+		$this->que_bda = "SELECT * FROM pedido WHERE cod_usu='$this->cod_usu' AND est_ped='V' ORDER BY cre_ped DESC;";
 
 		return $this->run();
-	} // fin de getLastOrderT
+	} // fin de getLastOrderVUnlimited
+
+	function getLastOrderTLimited()
+	{
+		$this->que_bda = "SELECT * FROM pedido WHERE cod_usu='$this->cod_usu' AND est_ped='T' ORDER BY act_ped DESC LIMIT 3;";
+
+		return $this->run();
+	} // fin de getLastOrderTLimited
 
 	function delete()
 	{
-		$this->que_bda = "DELETE FROM pedido
-								WHERE
-									cod_ped='$this->cod_ped';";
+		$this->que_bda = "DELETE FROM pedido WHERE cod_ped='$this->cod_ped';";
 
 		return $this->run();
 	} // fin de delete

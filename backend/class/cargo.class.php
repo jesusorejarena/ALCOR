@@ -100,7 +100,7 @@ class cargo extends utilidad
 
 	function getAll()
 	{
-		$this->que_bda = "SELECT * FROM cargo WHERE bas_car='A';";
+		$this->que_bda = "SELECT * FROM cargo WHERE bas_car='A' ORDER BY cod_car DESC;";
 
 		return $this->run();
 	} // fin de getAll
@@ -121,7 +121,7 @@ class cargo extends utilidad
 
 	function getFirstDelete()
 	{
-		$this->que_bda = "SELECT * FROM cargo WHERE bas_car='B';";
+		$this->que_bda = "SELECT * FROM cargo WHERE bas_car='B' ORDER BY cod_car DESC;";
 
 		return $this->run();
 	} // fin de getFirstDelete
@@ -142,7 +142,7 @@ class cargo extends utilidad
 		$filter3 = ($this->est_car != "") ? "AND est_car='$this->est_car'" : "";
 		$filter4 = ($this->bas_car != "") ? "AND bas_car='$this->bas_car'" : "";
 
-		$this->que_bda = "SELECT * FROM cargo WHERE	1=1 $filter1 $filter2 $filter3 $filter4;";
+		$this->que_bda = "SELECT * FROM cargo WHERE	1=1 $filter1 $filter2 $filter3 $filter4 ORDER BY cod_car DESC;";
 
 		return $this->run();
 	} // fin de filter
@@ -156,7 +156,7 @@ class cargo extends utilidad
 
 	function getBackup()
 	{
-		$this->que_bda = "SELECT * FROM cargo_resp;";
+		$this->que_bda = "SELECT * FROM cargo_resp ORDER BY cod_car DESC;";
 
 		return $this->run();
 	} // fin de getBackup
@@ -168,7 +168,7 @@ class cargo extends utilidad
 		$filter3 = ($this->est_car != "") ? "AND est_car='$this->est_car'" : "";
 		$filter4 = ($this->bas_car != "") ? "AND bas_car='$this->bas_car'" : "";
 
-		$this->que_bda = "SELECT * FROM cargo_resp WHERE	1=1 $filter1 $filter2 $filter3 $filter4;";
+		$this->que_bda = "SELECT * FROM cargo_resp WHERE	1=1 $filter1 $filter2 $filter3 $filter4 ORDER BY cod_car DESC;";
 
 		return $this->run();
 	} // fin de filterBackup

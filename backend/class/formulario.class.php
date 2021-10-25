@@ -37,16 +37,14 @@ class formulario extends utilidad
 
 	function getAll()
 	{
-		$this->que_bda = "SELECT * FROM formulario;";
+		$this->que_bda = "SELECT * FROM formulario ORDER BY cod_for DESC;";
 
 		return $this->run();
 	} // fin de getAll
 
 	function delete()
 	{
-		$this->que_bda = "DELETE FROM formulario
-								WHERE
-									cod_for='$this->cod_for';";
+		$this->que_bda = "DELETE FROM formulario WHERE cod_for='$this->cod_for';";
 
 		return $this->run();
 	} // fin de delete
@@ -61,14 +59,14 @@ class formulario extends utilidad
 		$filter5 = ($this->cor_for != "") ? "AND cor_for LIKE '%$this->cor_for%'" : "";
 		$filter6 = ($this->asu_for != "") ? "AND asu_for LIKE '%$this->asu_for%'" : "";
 
-		$this->que_bda = "SELECT * FROM formulario WHERE 1=1 $filter1 $filter2 $filter3 $filter4 $filter4 $filter5 $filter6;";
+		$this->que_bda = "SELECT * FROM formulario WHERE 1=1 $filter1 $filter2 $filter3 $filter4 $filter4 $filter5 $filter6 ORDER BY cod_for DESC;";
 
 		return $this->run();
 	} // fin de filter
 
 	function getBackup()
 	{
-		$this->que_bda = "SELECT * FROM formulario_resp;";
+		$this->que_bda = "SELECT * FROM formulario_resp ORDER BY cod_for DESC;";
 
 		return $this->run();
 	} // fin de getBackup
@@ -83,7 +81,7 @@ class formulario extends utilidad
 		$filter5 = ($this->cor_for != "") ? "AND cor_for LIKE '%$this->cor_for%'" : "";
 		$filter6 = ($this->asu_for != "") ? "AND asu_for LIKE '%$this->asu_for%'" : "";
 
-		$this->que_bda = "SELECT * FROM formulario_resp WHERE 1=1 $filter1 $filter2 $filter3 $filter4 $filter4 $filter5 $filter6;";
+		$this->que_bda = "SELECT * FROM formulario_resp WHERE 1=1 $filter1 $filter2 $filter3 $filter4 $filter4 $filter5 $filter6 ORDER BY cod_for DESC;";
 
 		return $this->run();
 	} // fin de filterBackup

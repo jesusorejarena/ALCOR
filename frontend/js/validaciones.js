@@ -19,6 +19,7 @@
 					let correo = document.getElementById('correo')?.value;
 					let direccion = document.getElementById('direccion')?.value;
 					let descripcion = document.getElementById('descripcion')?.value;
+					let asunto = document.getElementById('asunto')?.value;
 					let contrasena = document.getElementById('contrasena')?.value;
 					let repetirContrasena = document.getElementById('repetirContrasena')?.value;
 					let pregunta1 = document.getElementById('pregunta1')?.value;
@@ -176,6 +177,17 @@
 							mensaje(e, 'descripcionDiv', 'descripcion', 'La descripción es muy larga');
 						} else {
 							resetearError('descripcionDiv', 'descripcion');
+						}
+					}
+
+					// Validacion de asunto
+					if (asunto != undefined) {
+						if (asunto.length == 0) {
+							mensaje(e, 'asuntoDiv', 'asunto', 'Ingrese un asunto');
+						} else if (asunto.length > 100) {
+							mensaje(e, 'asuntoDiv', 'asunto', 'El asunto es muy largo');
+						} else {
+							resetearError('asuntoDiv', 'asunto');
 						}
 					}
 

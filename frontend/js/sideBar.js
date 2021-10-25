@@ -5,7 +5,7 @@ function codigo() {
 	document.getElementById('bars').classList.toggle('fa-times');
 }
 
-const btnToggle = document.querySelector('.navbar-toggler');
+const btnToggle = document.querySelector('.button-toggler');
 
 btnToggle.addEventListener('click', function () {
 	codigo();

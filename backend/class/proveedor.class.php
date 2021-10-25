@@ -119,21 +119,21 @@ class proveedor extends utilidad
 									eli_edo='$eli_edo',
 									bas_edo='B'
 								WHERE
-									cod_edo='$this->cod_edo';";
+									cod_edo='$this->cod_edo' ORDER BY cod_edo DESC;";
 
 		return $this->run();
 	} // fin de firstDelete
 
 	function getAll()
 	{
-		$this->que_bda = "SELECT * FROM proveedor WHERE bas_edo='A';";
+		$this->que_bda = "SELECT * FROM proveedor WHERE bas_edo='A' ORDER BY cod_edo DESC;";
 
 		return $this->run();
 	} // fin de getAll
 
 	function getAllActive()
 	{
-		$this->que_bda = "SELECT * FROM proveedor WHERE est_edo='A' AND bas_edo='A';";
+		$this->que_bda = "SELECT * FROM proveedor WHERE est_edo='A' AND bas_edo='A' ORDER BY cod_edo DESC;";
 
 		return $this->run();
 	} // fin de getAllActive
@@ -147,7 +147,7 @@ class proveedor extends utilidad
 
 	function getFirstDelete()
 	{
-		$this->que_bda = "SELECT * FROM proveedor WHERE bas_edo='B'";
+		$this->que_bda = "SELECT * FROM proveedor WHERE bas_edo='B' ORDER BY cod_edo DESC;";
 
 		return $this->run();
 	} // fin de getFirstDelete
@@ -174,14 +174,14 @@ class proveedor extends utilidad
 		$filter9 = ($this->est_edo != "") ? "AND est_edo='$this->est_edo'" : "";
 		$filter10 = ($this->bas_edo != "") ? "AND bas_edo='$this->bas_edo'" : "";
 
-		$this->que_bda = "SELECT * FROM proveedor WHERE 1=1 $filter1 $filter2 $filter3 $filter4 $filter5 $filter6 $filter7 $filter8 $filter9 $filter10;";
+		$this->que_bda = "SELECT * FROM proveedor WHERE 1=1 $filter1 $filter2 $filter3 $filter4 $filter5 $filter6 $filter7 $filter8 $filter9 $filter10 ORDER BY cod_edo DESC;";
 
 		return $this->run();
 	} // fin de filter
 
 	function getBackup()
 	{
-		$this->que_bda = "SELECT * FROM proveedor_resp;";
+		$this->que_bda = "SELECT * FROM proveedor_resp ORDER BY cod_edo DESC;";
 
 		return $this->run();
 	} // fin de getBackup
@@ -200,7 +200,7 @@ class proveedor extends utilidad
 		$filter9 = ($this->est_edo != "") ? "AND est_edo='$this->est_edo'" : "";
 		$filter10 = ($this->bas_edo != "") ? "AND bas_edo='$this->bas_edo'" : "";
 
-		$this->que_bda = "SELECT * FROM proveedor_resp WHERE 1=1 $filter1 $filter2 $filter3 $filter4 $filter5 $filter6 $filter7 $filter8 $filter9 $filter10;";
+		$this->que_bda = "SELECT * FROM proveedor_resp WHERE 1=1 $filter1 $filter2 $filter3 $filter4 $filter5 $filter6 $filter7 $filter8 $filter9 $filter10 ORDER BY cod_edo DESC;";
 
 		return $this->run();
 	} // fin de filterBackup

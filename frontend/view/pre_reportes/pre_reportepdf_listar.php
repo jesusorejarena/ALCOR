@@ -11,8 +11,7 @@
 <body>
 	<table>
 		<tr class='head'>
-			<th class='head' colspan='1' style='text-align: left;'><img src='../img/logo3.png' width='250px'></th>
-			<th class='head' colspan='5' style='text-align: right;'>
+			<th class='head' colspan='6' style='text-align: left;'>
 				<h3>Lista de Prendas</h3>
 			</th>
 		</tr>
@@ -20,10 +19,10 @@
 			<th class='nada'></th>
 		</tr>
 		<tr class='tr'>
-			<th class="th">Código</th>
-			<th class="th">Nombre</th>
-			<th class="th">Descripción</th>
-			<th class="th">Precio</th>
+			<th class="th" colspan='1'>Código</th>
+			<th class="th" colspan='2'>Nombre</th>
+			<th class="th" colspan='2'>Descripción</th>
+			<th class="th" colspan='6'>Precio</th>
 		</tr>
 		<?php
 
@@ -35,10 +34,10 @@
 		while (($prenda = $obj_pre->extractData()) > 0) {
 			echo "
 						<tr class='tr'>
-							<td class='td'>$prenda[cod_pre]</td>
-							<td class='td'>$prenda[nom_pre]</td>
-							<td class='td'>$prenda[des_pre]</td>
-							<td class='td'>$prenda[pre_pre]</td>
+							<td class='td' colspan='1'>$prenda[cod_pre]</td>
+							<td class='td' colspan='2'>$prenda[nom_pre]</td>
+							<td class='td' colspan='2'>$prenda[des_pre]</td>
+							<td class='td' colspan='6'>$prenda[pre_pre]</td>
 						</tr>
 			";
 		}

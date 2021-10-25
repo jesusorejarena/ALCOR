@@ -68,7 +68,7 @@ class empresa extends utilidad
 
 	function getBackup()
 	{
-		$this->que_bda = "SELECT * FROM empresa_resp;";
+		$this->que_bda = "SELECT * FROM empresa_resp ORDER BY cod_emp DESC;";
 
 		return $this->run();
 	} // fin de getByCode
@@ -84,7 +84,7 @@ class empresa extends utilidad
 		$filter7 = ($this->hou_emp != "") ? "AND hou_emp LIKE '%$this->hou_emp%'" : "";
 		$filter8 = ($this->hod_emp != "") ? "AND hod_emp LIKE '%$this->hod_emp%'" : "";
 
-		$this->que_bda = "SELECT * FROM empresa_resp WHERE	1=1 $filter1 $filter2 $filter3 $filter4 $filter5 $filter6 $filter7 $filter8;";
+		$this->que_bda = "SELECT * FROM empresa_resp WHERE	1=1 $filter1 $filter2 $filter3 $filter4 $filter5 $filter6 $filter7 $filter8 ORDER BY cod_emp DESC;";
 
 		return $this->run();
 	} // fin de filterBackup

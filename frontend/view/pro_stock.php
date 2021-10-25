@@ -6,9 +6,9 @@ require_once("../../backend/class/producto.class.php");
 $obj_pro = new producto;
 $obj_pro->puntero = $obj_pro->getAll();
 
-headerr("Registrar Ventas");
+headerr("Actualizar Stock");
 
-check("Ventas", 4);
+check("Productos", 3);
 
 ?>
 
@@ -16,8 +16,8 @@ check("Ventas", 4);
 <div class="container px-3 pt-3 pb-5 mb-5">
 	<div class="row justify-content-center">
 		<div class="col-12 col-xl-6 p-2">
-			<div class="card rounded">
-				<h2 class="card-title text-center pt-4">Registrar Venta</h2>
+			<div class="card rounded-lg shadow my-3 px-3 py-4">
+				<h2 class="card-title text-center text-primary font-weight-bold pt-4">Actualizar stock</h2>
 				<form action="../../backend/controller/producto.php" method="POST" class="was-validation" id="formulario" novalidate>
 					<div class="card-body">
 						<div class="row">
@@ -43,9 +43,9 @@ check("Ventas", 4);
 							</div>
 						</div>
 					</div>
-					<div class="card-footer d-flex justify-content-between">
+					<div class="px-4 pb-3 d-flex justify-content-between">
 						<button type="reset" class="btn btn-success">Limpiar</button>
-						<button type="submit" class="btn btn-primary" name="run" value="sale">Guardar</button>
+						<button type="submit" class="btn btn-primary" name="run" value="updateStock">Guardar</button>
 					</div>
 				</form>
 			</div>

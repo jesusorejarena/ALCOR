@@ -20,29 +20,38 @@ $cargo = $obj_car->extractData();
 ?>
 
 <div class="container-fluid px-3 pt-3 pb-5 mb-5">
-	<h2 class="text-center p-3">Cuenta</h2>
-	<div class="row justify-content-center p-3">
-		<div class="col-12 col-md-4 p-1">
-			<div class="card rounded px-3 py-4">
-				<h3 class="card-title text-center">Información</h3>
-				<div class="card-body">
-					<?php echo "
-						<p><b>Nombre:</b> $usuario[nom_usu]</p>
-						<p><b>Apellido:</b> $usuario[ape_usu]</p>
+	<div class="row mt-5 mb-3">
+		<div class="col-12">
+			<h1 class="text-center text-primary font-weight-bold">Inicio</h1>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-12">
+			<div id="section1" class="container border shadow my-3 px-4 py-5 my-xl-3 px-xl-5 py-xl-5">
+				<div class="row">
+					<div class="col-12 col-xl-6">
+						<?php echo "
+						<p><b>Nombre(s):</b> $usuario[nom_usu]</p>
+						<p><b>Apellido(s):</b> $usuario[ape_usu]</p>
 						<p><b>Teléfono:</b> $usuario[tel_usu]</p>
 						<p><b>Correo:</b> $usuario[cor_usu]</p>
 						<p><b>Cargo:</b> $cargo[nom_car]</p>
 						<p><b>Dirección:</b> $usuario[dir_usu]</p>
 					"; ?>
-				</div>
-			</div>
-		</div>
-		<div class="col-12 col-md-4 p-1">
-			<div class="card rounded px-3 py-4">
-				<h3 class="card-title text-center">Configuración</h3>
-				<div class="card-body">
-					<a class="btn btn-outline-primary btn-block" href="usu_cambiar_preguntas.php">Cambiar preguntas de seguridad</a>
-					<a class="btn btn-outline-primary btn-block" href="usu_cambiar_contrasena.php">Cambiar contraseña</a>
+					</div>
+					<div class="col-12 col-xl-6">
+						<div class="row my-4">
+							<div class="col-12">
+								<h3 class="text-center text-primary font-weight-bold">Configuración</h3>
+							</div>
+						</div>
+						<div class="row my-3">
+							<div class="col-12">
+								<a class="btn btn-outline-primary btn-block" href="usu_cambiar_preguntas.php">Cambiar preguntas de seguridad</a>
+								<a class="btn btn-outline-primary btn-block" href="usu_cambiar_contrasena.php">Cambiar contraseña</a>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>

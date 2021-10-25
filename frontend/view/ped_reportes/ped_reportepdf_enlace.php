@@ -8,7 +8,7 @@ use Dompdf\Dompdf;
 // instantiate and use the dompdf class
 $dompdf = new Dompdf();
 
-$archivo = "http://localhost/Server/SIP/frontend/view/pre_reportes/pre_reportepdf_listar.php";
+$archivo = "http://localhost/Server/SIP/frontend/view/ped_reportes/ped_reportepdf_listar.php";
 
 $html=file_get_contents($archivo);
 
@@ -23,4 +23,4 @@ $dompdf->setPaper('A3', 'landscape');
 $dompdf->render();
 
 // Output the generated PDF to Browser
-$dompdf->stream("Lista_de_prendas.pdf");
+$dompdf->stream("Listado_de_Pedidos.pdf");

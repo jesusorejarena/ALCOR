@@ -31,7 +31,7 @@ switch ($_REQUEST["run"]) {
 		} else {
 			$message = "Usuario registrado exitosamente";
 			$obj_usu->message($message) == true;
-			header("refresh:1; url=../../frontend/view/usu_signup.php");
+			header("refresh:1; url=../../frontend/view/usu_login.php");
 		}
 		break;
 

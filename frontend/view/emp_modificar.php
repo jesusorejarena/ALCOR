@@ -11,26 +11,25 @@ $empresa = $obj_emp->extractData();
 
 headerr("Modificar - Empresa");
 
-checkAdmin();
+checkAdminOrClient(1);
 
 ?>
 
 <!-- Formulario -->
 <div class="container p-3 p-xl-2">
-	<a class="btn btn-success btn-lg" href="usu_inicio.php"><i class="fas fa-arrow-circle-left"></i></a>
 	<div class="row justify-content-center">
 		<div class="col-12 col-xl-6 p-2">
-			<div class="card rounded">
-				<h2 class="card-title text-center pt-4">Datos de la empresa</h2>
+			<div class="card rounded-lg shadow my-3 px-3 py-4">
+				<h2 class="card-title text-center text-primary font-weight-bold pt-4">Datos de la empresa</h2>
 				<form action="../../backend/controller/empresa.php" method="POST" class="was-validation" id="formulario" novalidate>
 					<input type="hidden" name="cod_emp" id="cod_emp" value="<?php echo $empresa['cod_emp']; ?>">
 					<div class="card-body">
 						<div class="row">
 							<div class="col-12">
 								<div class="form-group">
-									<label for="alfanumerico">Nombre:</label>
-									<input type="text" name="nom_emp" id="alfanumerico" class="form-control" value="<?php echo $empresa['nom_emp']; ?>" placeholder="Nombre" />
-									<small id="alfanumericoDiv" class="invalid-feedback"></small>
+									<label for="nombre">Nombre:</label>
+									<input type="text" name="nom_emp" id="nombre" class="form-control" value="<?php echo $empresa['nom_emp']; ?>" placeholder="Nombre" />
+									<small id="nombreDiv" class="invalid-feedback"></small>
 								</div>
 							</div>
 							<div class="col-12 col-xl-6">
@@ -80,7 +79,7 @@ checkAdmin();
 							</div>
 						</div>
 					</div>
-					<div class="card-footer d-flex justify-content-between">
+					<div class="px-4 pb-3 d-flex justify-content-between">
 						<button type="reset" class="btn btn-success">Limpiar</button>
 						<button type="submit" class="btn btn-primary" name="run" value="update">Guardar</button>
 					</div>
@@ -89,8 +88,6 @@ checkAdmin();
 		</div>
 	</div>
 </div>
-
-<script src="../js/validaciones.js"></script>
 
 <?php
 

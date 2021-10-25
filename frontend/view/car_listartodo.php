@@ -8,14 +8,14 @@ $obj_car->puntero = $obj_car->getAll();
 
 headerr("Lista de Cargos");
 
-checkAdmin();
+checkAdminOrClient(1);
 
 ?>
 
 <!-- Lista -->
 <div class="container-fluid px-3 pt-3 pb-5 mb-5">
 	<a class="btn btn-success btn-lg" href="rol_menu.php"><i class="fas fa-arrow-circle-left"></i></a>
-	<h2 class="text-center p-3">Lista de Cargos</h2>
+	<h2 class="text-center text-primary font-weight-bold p-3">Lista de Cargos</h2>
 	<div class="row justify-content-center">
 		<div class="col-12 py-2">
 			<div class="card-header">

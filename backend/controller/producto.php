@@ -55,21 +55,21 @@ switch ($_REQUEST["run"]) {
 		header("Location: ../../frontend/view/pro_listartodo.php");
 		break;
 
-	case 'sale':
+	case 'updateStock':
 		$obj_pro->cod_pro = $obj_pro->cod_pro;
 		$obj_pro->puntero = $obj_pro->getByCode();
 		$producto = $obj_pro->extractData();
 		if (($producto['can_pro']) >= $obj_pro->com_pro) {
 			$can_pro = ($producto['can_pro']) - ($obj_pro->com_pro);
 			$obj_pro->can_pro = $can_pro;
-			$obj_pro->resultado = $obj_pro->sale();
+			$obj_pro->resultado = $obj_pro->updateStock();
 			$message = "Venta realizada exitosamente";
 			$obj_pro->message($message) == false;
-			header("refresh:1; url=../../frontend/view/ven_menu.php");
+			header("refresh:1; url=../../frontend/view/pro_stock.php");
 		} else {
 			$message = "Error al realizar la venta, revisa la cantidad";
 			$obj_pro->message($message) == false;
-			header("refresh:1; url=../../frontend/view/ven_menu.php");
+			header("refresh:1; url=../../frontend/view/pro_stock.php");
 		}
 		break;
 

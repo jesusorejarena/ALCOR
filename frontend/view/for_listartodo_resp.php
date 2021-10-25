@@ -6,16 +6,16 @@ require_once("../../backend/class/formulario.class.php");
 $obj_for = new formulario;
 $obj_for->puntero = $obj_for->getBackup();
 
-headerr("Lista de Formularios - Historial");
+headerr("Lista de Formularios - Auditoria");
 
-checkAdmin();
+checkAdminOrClient(1);
 
 ?>
 
 <!-- Lista -->
 <div class="container-fluid px-3 pt-3 pb-5 mb-5">
 	<a class="btn btn-success btn-lg" href="menu_config.php"><i class="fas fa-arrow-circle-left"></i></a>
-	<h2 class="text-center p-3">Lista de Formularios - Historial</h2>
+	<h2 class="text-center text-primary font-weight-bold p-3">Lista de Formularios - Auditoria</h2>
 	<div class="row justify-content-center">
 		<div class="col-12 py-2">
 			<div class="table-responsive">

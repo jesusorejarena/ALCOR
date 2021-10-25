@@ -17,9 +17,9 @@ headerr("Registrar Datos de la Empresa");
 <div class="container p-3 p-xl-2">
 	<div class="row justify-content-center">
 		<div class="col-12 col-xl-6 p-2">
-			<div class="card rounded">
-				<h2 class="card-title text-center pt-4">Registrar Datos de la Empresa</h2>
-				<form action="../../backend/controller/empresa.php" method="POST">
+			<div class="card rounded-lg shadow my-3 px-3 py-4">
+				<h2 class="card-title text-center text-primary font-weight-bold pt-4">Registrar Datos de la Empresa</h2>
+				<form action="../../backend/controller/empresa.php" method="POST" class="was-validation" id="formulario" novalidate>
 					<input type="hidden" name="cod_emp" id="cod_emp">
 					<div class="card-body">
 						<div class="row">
@@ -39,9 +39,9 @@ headerr("Registrar Datos de la Empresa");
 							</div>
 							<div class="col-12 col-xl-6">
 								<div class="form-group">
-									<label for="rif">RIF:</label>
-									<input type="text" name="rif_emp" id="rif" class="form-control" placeholder="RIF" />
-									<small id="rifDiv" class="invalid-feedback"></small>
+									<label for="rifCompleto">RIF:</label>
+									<input type="text" name="rif_emp" id="rifCompleto" class="form-control" placeholder="RIF" />
+									<small id="rifCompletoDiv" class="invalid-feedback"></small>
 								</div>
 							</div>
 							<div class="col-12">
@@ -74,7 +74,7 @@ headerr("Registrar Datos de la Empresa");
 							</div>
 						</div>
 					</div>
-					<div class="card-footer d-flex justify-content-between">
+					<div class="px-4 pb-3 d-flex justify-content-between">
 						<button type="reset" class="btn btn-success">Limpiar</button>
 						<button type="submit" class="btn btn-primary" name="run" value="create">Guardar</button>
 					</div>

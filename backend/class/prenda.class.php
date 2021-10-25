@@ -80,7 +80,7 @@ class prenda extends utilidad
 
 	function getAll()
 	{
-		$this->que_bda = "SELECT * FROM prenda;";
+		$this->que_bda = "SELECT * FROM prenda ORDER BY cod_pre DESC;";
 
 		return $this->run();
 	} // fin de getAll
@@ -109,7 +109,7 @@ class prenda extends utilidad
 		$filter4 = ($this->pre_pre != "") ? "AND pre_pre LIKE '%$this->pre_pre%'" : "";
 		$filter5 = ($this->est_pre != "") ? "AND est_pre='$this->est_pre'" : "";
 
-		$this->que_bda = "SELECT * FROM prenda WHERE 1=1 $filter1 $filter2 $filter3 $filter4 $filter5";
+		$this->que_bda = "SELECT * FROM prenda WHERE 1=1 $filter1 $filter2 $filter3 $filter4 $filter5 ORDER BY cod_pre DESC";
 
 		return $this->run();
 	} // fin de filter

@@ -4,16 +4,16 @@ require_once("tema_session.php");
 
 headerr("Menú de Configuración");
 
-checkAdmin();
+checkAdminOrClient(1);
 
 ?>
 
 <div class="container-fluid p-3">
-	<h2 class="text-center p-3">Configuración</h2>
+	<h1 class="text-center text-primary font-weight-bold p-3">Auditoria y Respaldo</h1>
 	<div class="row justify-content-center">
 		<div class="col-12 col-xl-4">
-			<div class="card rounded px-3 py-4">
-				<h3 class="card-title text-center">Historial</h3>
+			<div class="card rounded-lg shadow my-3 px-3 py-4">
+				<h4 class="card-title text-center text-primary font-weight-bold">Menú de Formularios</h4>
 				<div class="card-body">
 					<h5 class="pt-1">Empresa:</h5>
 					<div class="row">
@@ -54,8 +54,8 @@ checkAdmin();
 			</div>
 		</div>
 		<div class="col-12 col-xl-4">
-			<div class="card rounded px-3 py-4">
-				<h3 class="card-title text-center">Base de Datos</h3>
+			<div class="card rounded-lg shadow my-3 px-3 py-4">
+				<h3 class="card-title text-center text-primary font-weight-bold">Respaldo de Base de Datos</h3>
 				<div class="card-body">
 					<a class="btn btn-primary btn-block" href="../../database/backup/backup_db.php">Respaldar</a>
 				</div>

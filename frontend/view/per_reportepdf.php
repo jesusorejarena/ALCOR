@@ -42,17 +42,15 @@ $dompdf->loadHtml("
 				<meta charset='UTF-8'>
 				<title>Reporte del Permiso N° $cod_per</title>
 				<style>
-			.head{background-color:#fff;color:#000;border:none}.footer{font-size:15px;background-color:#fff;color:#000;border:none}table{width:100%;text-align:center;border-collapse:collapse}th{font-size:20px}td{font-size:15px}td,th{border:1px solid #000;padding:7px}.nada{border:none;padding:15px}.espacio{border:none;padding:7px}
-		</style>
+					.head{background-color:#fff;color:#000;border:none}.footer{font-size:15px;background-color:#fff;color:#000;border:none}table{width:100%;text-align:center;border-collapse:collapse}th{font-size:20px}td{font-size:15px}td,th{border:1px solid #000;padding:7px}.nada{border:none;padding:15px}.espacio{border:none;padding:7px}
+				</style>
 
 			</head>
 
 			<body>
 				<table>
 					<tr class='head'>
-						<th class='head' colspan='1' style='text-align: left;'><img src='../img/logo3.png' width='250px'></th>
-						<th class='head' colspan='3' style='text-align: center;'><h3>Reporte del Permiso <br> N° $cod_per</h3></th>
-						<th class='head' colspan='2'></th>
+						<th class='head' colspan='6' style='text-align: center;'><h3>Reporte del Permiso<br> N° $cod_per</th>
 					</tr>
 					<tr class='nada'>
 						<th class='nada' colspan='6'></th>
@@ -97,25 +95,31 @@ $dompdf->loadHtml("
 						<th class='nada' colspan='6'></th>
 					</tr>
 					<tr class='footer'>
-							<td class='footer' colspan='1' style='text-align: left;'>
-								<p><b>Dirección: </b>$empresa[dir_emp]<br>
-								<b>E-mail: </b>$empresa[cor_emp]<br>
-								<b>Teléfono: </b>$empresa[tel_emp]</p>
-							</td>
-							<td class='footer' colspan='3' style='text-align: center;'>
-								<p>
+						<td class='footer' colspan='6' style='text-align: center;'>
+							<p>
+								<b>
 									$empresa[nom_emp]<br>
 									$empresa[rif_emp]<br>
-								</p>
-							</td>
-							<td class='footer' colspan='2' style='text-align: right;'>
-								<p>
-									<b>Horario:</b><br>
-									$empresa[hou_emp]<br>
-									$empresa[hod_emp]<br>
-								</p>
-							</td>
-						</tr>
+								</b>
+							</p>
+						</td>
+					</tr>
+					<tr class='footer'>
+						<td class='footer' colspan='3' style='text-align: left;'>
+							<p>
+								<b>Dirección: </b>$empresa[dir_emp]<br>
+								<b>E-mail: </b>$empresa[cor_emp]<br>
+								<b>Teléfono: </b>$empresa[tel_emp]
+							</p>
+						</td>
+						<td class='footer' colspan='3' style='text-align: right;'>
+							<p>
+								<b>Horario:</b><br>
+								$empresa[hou_emp]<br>
+								$empresa[hod_emp]<br>
+							</p>
+						</td>
+					</tr>
 				</table>
 			</body>
 

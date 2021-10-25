@@ -106,7 +106,7 @@ class permiso extends utilidad
 
 	function getAll()
 	{
-		$this->que_bda = "SELECT * FROM permiso WHERE bas_per='A';";
+		$this->que_bda = "SELECT * FROM permiso WHERE bas_per='A' ORDER BY cod_per DESC;";
 
 		return $this->run();
 	} // fin de getAll
@@ -134,7 +134,7 @@ class permiso extends utilidad
 
 	function getFirstDelete()
 	{
-		$this->que_bda = "SELECT * FROM permiso WHERE bas_per='B';";
+		$this->que_bda = "SELECT * FROM permiso WHERE bas_per='B' ORDER BY cod_per DESC;";
 
 		return $this->run();
 	} // fin de getFirstDelete
@@ -156,14 +156,14 @@ class permiso extends utilidad
 		$filter4 = ($this->est_per != "") ? "AND est_per='$this->est_per'" : "";
 		$filter5 = ($this->bas_per != "") ? "AND bas_per='$this->bas_per'" : "";
 
-		$this->que_bda = "SELECT * FROM permiso WHERE 1=1 $filter1 $filter2 $filter3 $filter4 $filter5;";
+		$this->que_bda = "SELECT * FROM permiso WHERE 1=1 $filter1 $filter2 $filter3 $filter4 $filter5 ORDER BY cod_per DESC;";
 
 		return $this->run();
 	} // fin de filter
 
 	function getBackup()
 	{
-		$this->que_bda = "SELECT * FROM permiso_resp;";
+		$this->que_bda = "SELECT * FROM permiso_resp ORDER BY cod_per DESC;";
 
 		return $this->run();
 	} // fin de getBackup
@@ -177,7 +177,7 @@ class permiso extends utilidad
 		$filter4 = ($this->est_per != "") ? "AND est_per='$this->est_per'" : "";
 		$filter5 = ($this->bas_per != "") ? "AND bas_per='$this->bas_per'" : "";
 
-		$this->que_bda = "SELECT * FROM permiso_resp WHERE 1=1 $filter1 $filter2 $filter3 $filter4 $filter5;";
+		$this->que_bda = "SELECT * FROM permiso_resp WHERE 1=1 $filter1 $filter2 $filter3 $filter4 $filter5 ORDER BY cod_per DESC;";
 
 		return $this->run();
 	} // fin de filterBackup

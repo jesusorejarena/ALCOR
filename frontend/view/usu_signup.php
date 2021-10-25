@@ -87,14 +87,6 @@ headerr("Registrate");
 												- Al menos un digito.
 											</div>
 										</div>
-										<div class="col-12 pt-3">
-											<div class="form-group">
-												<div class="custom-control custom-checkbox">
-													<input type="checkbox" class="custom-control-input" id="checkbox">
-													<label class="custom-control-label" for="checkbox">Aceptas nuestras politicas de <a href="#">privacidad</a>.</label>
-												</div>
-											</div>
-										</div>
 									</div>
 									<div class="row justify-content-end">
 										<div class="col-12">

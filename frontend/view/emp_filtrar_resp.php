@@ -2,9 +2,9 @@
 
 require_once("tema_session.php");
 
-headerr("Filtrar Empresa - Historial");
+headerr("Filtrar Empresa - Auditoria");
 
-checkAdmin();
+checkAdminOrClient(1);
 
 ?>
 
@@ -13,8 +13,8 @@ checkAdmin();
 	<a class="btn btn-success btn-lg" href="menu_config.php"><i class="fas fa-arrow-circle-left"></i></a>
 	<div class="row justify-content-center">
 		<div class="col-12 col-xl-6 p-2">
-			<div class="card rounded">
-				<h2 class="card-title text-center pt-4">Filtrar Empresa - Historial</h2>
+			<div class="card rounded-lg shadow my-3 px-3 py-4">
+				<h2 class="card-title text-center text-primary font-weight-bold pt-4">Filtrar Empresa - Auditoria</h2>
 				<form action="emp_filtrado_resp.php" method="POST" novalidate>
 					<div class="card-body">
 						<div class="row">
@@ -62,7 +62,7 @@ checkAdmin();
 							</div>
 						</div>
 					</div>
-					<div class="card-footer d-flex justify-content-between">
+					<div class="px-4 pb-3 d-flex justify-content-between">
 						<button type="reset" class="btn btn-success">Limpiar</button>
 						<button type="submit" class="btn btn-primary">Filtrar</button>
 				</form>

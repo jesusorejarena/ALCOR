@@ -11,8 +11,8 @@ headerr("Cambiar contraseña");
 	<a class="btn btn-success btn-lg" href="usu_inicio.php"><i class="fas fa-arrow-circle-left"></i></a>
 	<div class="row justify-content-center">
 		<div class="col-12 col-xl-6 p-2">
-			<div class="card rounded">
-				<h2 class="card-title text-center pt-4">Cambiar contraseña</h2>
+			<div class="card rounded-lg shadow my-3 px-3 py-4">
+				<h2 class="card-title text-center text-primary font-weight-bold pt-4">Cambiar contraseña</h2>
 				<form action="../../backend/controller/usuario.php" method="POST" class="was-validation" id="formulario" novalidate>
 					<input type="hidden" name="cod_usu" value="<?php echo $_SESSION['codigo']; ?>">
 					<div class="card-body">
@@ -48,7 +48,7 @@ headerr("Cambiar contraseña");
 							</div>
 						</div>
 					</div>
-					<div class="card-footer d-flex justify-content-between">
+					<div class="px-4 pb-3 d-flex justify-content-between">
 						<button type="reset" class="btn btn-success">Limpiar</button>
 						<button type="submit" class="btn btn-primary" name="run" value="changePassword">Cambiar contraseña</button>
 					</div>

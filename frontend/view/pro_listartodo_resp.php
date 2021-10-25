@@ -9,16 +9,16 @@ $obj_pro->puntero = $obj_pro->getBackup();
 
 $obj_edo = new proveedor;
 
-headerr("Lista de Productos - Historial");
+headerr("Lista de Productos - Auditoria");
 
-checkAdmin();
+checkAdminOrClient(1);
 
 ?>
 
 <!-- Lista -->
 <div class="container-fluid px-3 pt-3 pb-5 mb-5">
 	<a class="btn btn-success btn-lg" href="menu_config.php"><i class="fas fa-arrow-circle-left"></i></a>
-	<h2 class="text-center p-3">Productos Eliminados - Historial</h2>
+	<h2 class="text-center text-primary font-weight-bold p-3">Productos Eliminados - Auditoria</h2>
 	<div class="row justify-content-center">
 		<div class="col-12 py-2">
 			<div class="table-responsive">

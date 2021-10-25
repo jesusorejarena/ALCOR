@@ -22,6 +22,7 @@ function headerr($titulo)
 				<link rel='stylesheet' href='../css/bootstrap-4.5.2/css/bootstrap.min.css' />
 				<link rel='stylesheet' href='../css/fontawesome-free-5.15.0/css/all.min.css' />
 				<link rel='stylesheet' href='../css/estilos.css' />
+				<script src='../js/jquery-3.5.1.min.js'></script>
 			</head>
 
 			<body>
@@ -153,10 +154,11 @@ function footer()
 
 				<!-- Termina footer -->
 
-				<script src='../js/jquery-3.5.1.min.js'></script>
+				<script src='../js/validaciones.js'></script>
 				<script src='../css/bootstrap-4.5.2/js/bootstrap.bundle.min.js'></script>
 				<script src='../js/screenUp.js'></script>
-
+				<script src='../js/sideBar.js'></script>
+				
 			</body>
 				
 		</html>
