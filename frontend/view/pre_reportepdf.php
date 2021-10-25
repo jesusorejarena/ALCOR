@@ -21,6 +21,13 @@ use Dompdf\Dompdf;
 
 // instantiate and use the dompdf class
 $dompdf = new Dompdf();
+
+if ($prenda['est_pre'] == "A") {
+	$estatus = "Activo";
+} else {
+	$estatus = "Inactivo";
+}
+
 $dompdf->loadHtml("
 
 		<html>
@@ -71,7 +78,7 @@ $dompdf->loadHtml("
 						<th class='th' colspan='2'>Modificado</th>
 					</tr>
 					<tr class='tr'>
-						<td class='td' colspan='2'>$prenda[est_pre]</td>
+						<td class='td' colspan='2'>$estatus</td>
 						<td class='td' colspan='2'>$prenda[cre_pre]</td>
 						<td class='td' colspan='2'>$prenda[act_pre]</td>
 					</tr>

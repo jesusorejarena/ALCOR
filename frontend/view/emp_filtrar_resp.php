@@ -10,7 +10,7 @@ checkAdminOrClient(1);
 
 <!-- Formulario -->
 <div class="container p-3 p-xl-2">
-	<a class="btn btn-success btn-lg" href="menu_config.php"><i class="fas fa-arrow-circle-left"></i></a>
+	<a class="btn btn-outline-primary btn-lg" href="menu_config.php"><i class="fas fa-arrow-circle-left"></i></a>
 	<div class="row justify-content-center">
 		<div class="col-12 col-xl-6 p-2">
 			<div class="card rounded-lg shadow my-3 px-3 py-4">
@@ -63,7 +63,7 @@ checkAdminOrClient(1);
 						</div>
 					</div>
 					<div class="px-4 pb-3 d-flex justify-content-between">
-						<button type="reset" class="btn btn-success">Limpiar</button>
+						<button type="reset" class="btn btn-outline-primary">Limpiar</button>
 						<button type="submit" class="btn btn-primary">Filtrar</button>
 				</form>
 			</div>

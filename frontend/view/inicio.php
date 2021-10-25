@@ -203,8 +203,15 @@ headerr("Inicio");
 			<!-- Comienza formulario -->
 
 			<div id="section6" class="container mt-5 p-2 mt-xl-3 p-xl-5">
-				<h2 class="text-primary font-weight-bold text-center mb-4">Contacto</h2>
+				<h2 class="text-primary font-weight-bold mb-4">Contactanos</h2>
 				<div class="row d-flex justify-content-center align-items-center">
+					<div class="col-xl-6">
+						<div class="row text-center">
+							<div class="col-12 mt-5">
+								<img class="img-fluid" src="../img/undraw_Forms_re_pkrt.svg" alt="Servicio" width="70%">
+							</div>
+						</div>
+					</div>
 					<div class="col-xl-6">
 						<form action="../../backend/controller/formulario.php" method="POST" class="was-validation" id="formulario" novalidate>
 							<div class="form-row">
@@ -239,7 +246,6 @@ headerr("Inicio");
 								<button type="submit" class="btn btn-primary" name="run" value="create">Guardar</button>
 							</div>
 						</form>
-
 					</div>
 				</div>
 			</div>

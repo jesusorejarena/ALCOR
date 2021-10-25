@@ -17,7 +17,7 @@ check('Pedidos', 5);
 
 <!-- Lista -->
 <div class="container-fluid px-3 pt-3 pb-5 mb-5">
-	<a class="btn btn-success btn-lg" href="pedidos.php"><i class="fas fa-arrow-circle-left"></i></a>
+	<a class="btn btn-outline-primary btn-lg" href="pedidos.php"><i class="fas fa-arrow-circle-left"></i></a>
 	<h2 class="text-center text-primary font-weight-bold p-3">Lista de pedidos terminados</h2>
 	<div class="row justify-content-center">
 		<div class="col-12 py-2">

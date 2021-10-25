@@ -343,7 +343,8 @@ CREATE TABLE IF NOT EXISTS prenda (
 	`act_pre` datetime DEFAULT NULL,
 	`res_pre` datetime DEFAULT NULL,
 	`est_pre` enum('A','I') NOT NULL,
-	PRIMARY KEY (`cod_pre`)
+	PRIMARY KEY (`cod_pre`),
+	UNIQUE KEY `nom_pre` (`nom_pre`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 /* -------------------------------------------------- */

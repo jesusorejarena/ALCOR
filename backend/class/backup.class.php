@@ -60,7 +60,7 @@ class backup extends utilidad
 		}
 
 		//Guardando el archivo
-		$backup_file_name = 'SIP_backup.sql';
+		$backup_file_name = 'sip_backup.sql';
 		$fileHandler = fopen($backup_file_name, 'w+');
 		fwrite($fileHandler, $outsql);
 		fclose($fileHandler);

@@ -11,7 +11,7 @@
 <body>
 	<table>
 		<tr class='head'>
-			<th class='head' colspan='6' style='text-align: left;'>
+			<th class='head' colspan='7' style='text-align: left;'>
 				<h3>Lista de Productos</h3>
 			</th>
 		</tr>
@@ -19,12 +19,13 @@
 			<th class='nada'></th>
 		</tr>
 		<tr class='tr'>
-			<th class="th">Código</th>
-			<th class="th">Nombre</th>
-			<th class="th">Descripción</th>
-			<th class="th">Precio</th>
-			<th class="th">Cantidad</th>
-			<th class="th">Proveedor</th>
+			<th class="th" colspan='1'>Código</th>
+			<th class="th" colspan='1'>Nombre</th>
+			<th class="th" colspan='1'>Descripción</th>
+			<th class="th" colspan='1'>Precio</th>
+			<th class="th" colspan='1'>Cantidad</th>
+			<th class="th" colspan='1'>Proveedor</th>
+			<th class='th' colspan='1'>Estatus</th>
 		</tr>
 		<?php
 
@@ -42,14 +43,23 @@
 			$obj_edo->puntero = $obj_edo->filter();
 			$proveedor = $obj_edo->extractData();
 
+			
+
+			if ($producto['est_pro'] == "A") {
+				$estatus = "Activo";
+			} else {
+				$estatus = "Inactivo";
+			}
+
 			echo "
 						<tr class='tr'>
-							<td class='td'>$producto[cod_pro]</td>
-							<td class='td'>$producto[nom_pro]</td>
-							<td class='td'>$producto[des_pro]</td>
-							<td class='td'>$producto[pre_pro]</td>
-							<td class='td'>$producto[can_pro]</td>
-							<td class='td'>$proveedor[nom_edo]</td>
+							<td class='td' colspan='1'>$producto[cod_pro]</td>
+							<td class='td' colspan='1'>$producto[nom_pro]</td>
+							<td class='td' colspan='1'>$producto[des_pro]</td>
+							<td class='td' colspan='1'>$producto[pre_pro]</td>
+							<td class='td' colspan='1'>$producto[can_pro]</td>
+							<td class='td' colspan='1'>$proveedor[nom_edo]</td>
+							<td class='td' colspan='1'>$estatus</td>
 						</tr>
 			";
 		}

@@ -62,11 +62,11 @@ switch ($_REQUEST["run"]) {
 		if ($obj_edo->resultado == false) {
 			$message = "Problemas para eliminar el proveedor, puede que este proveedor este asignado a algun usuario";
 			$obj_edo->message($message) == false;
-			header("refresh:3; url=../../frontend/view/edo_listartodo.php");
+			header("refresh:2; url=../../frontend/view/edo_listarpapelera.php");
 		} else {
 			$message = "Proveedor eliminado exitosamente";
 			$obj_edo->message($message) == true;
-			header("refresh:3; url=../../frontend/view/edo_listartodo.php");
+			header("refresh:1; url=../../frontend/view/edo_listarpapelera.php");
 		}
 		break;
 }

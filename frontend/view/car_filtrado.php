@@ -15,7 +15,7 @@ checkAdminOrClient(1);
 
 <!-- Lista -->
 <div class="container-fluid px-3 pt-3 pb-5 mb-5">
-	<a class="btn btn-success btn-lg" href="rol_menu.php"><i class="fas fa-arrow-circle-left"></i></a>
+	<a class="btn btn-outline-primary btn-lg" href="rol_menu.php"><i class="fas fa-arrow-circle-left"></i></a>
 	<h2 class="text-center text-primary font-weight-bold p-3">Cargos Filtrados</h2>
 	<div class="row justify-content-center">
 		<div class="col-12 py-2">
@@ -29,6 +29,7 @@ checkAdminOrClient(1);
 							<th>Modificado</th>
 							<th>Restaurado</th>
 							<th>Eliminado</th>
+							<th>Estado</th>
 							<th>Acciones</th>
 						</tr>
 					</thead>
@@ -49,13 +50,22 @@ checkAdminOrClient(1);
 												<td></td>
 												<td></td>
 												<td></td>
+												<td></td>
 										";
 							} else {
 								echo "
 											<td>$cargo[cre_car]</td>
 											<td>$cargo[act_car]</td>
 											<td>$cargo[res_car]</td>
-											<td>$cargo[eli_car]</td>
+											<td>$cargo[eli_car]</td>";
+
+								if ($cargo['bas_car'] == "A") {
+									echo "<td><b class='text-success'>Activo</b></td>";
+								} else {
+									echo "<td><b class='text-danger'>Papelera</b></td>";
+								}
+
+								echo "
 											<td>
 												<div class='btn-group' role='group'>";
 								if ($cargo['est_car'] == "A") {

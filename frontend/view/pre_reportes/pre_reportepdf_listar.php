@@ -4,8 +4,49 @@
 	<meta charset='UTF-8'>
 	<title>Lista de Prendas</title>
 	<style>
-			.head{background-color:#fff;color:#000;border:none}.footer{font-size:15px;background-color:#fff;color:#000;border:none}table{width:100%;text-align:center;border-collapse:collapse}th{font-size:20px}td{font-size:15px}td,th{border:1px solid #000;padding:7px}.nada{border:none;padding:15px}.espacio{border:none;padding:7px}
-		</style>
+		.head {
+			background-color: #fff;
+			color: #000;
+			border: none
+		}
+
+		.footer {
+			font-size: 15px;
+			background-color: #fff;
+			color: #000;
+			border: none
+		}
+
+		table {
+			width: 100%;
+			text-align: center;
+			border-collapse: collapse
+		}
+
+		th {
+			font-size: 20px
+		}
+
+		td {
+			font-size: 15px
+		}
+
+		td,
+		th {
+			border: 1px solid #000;
+			padding: 7px
+		}
+
+		.nada {
+			border: none;
+			padding: 15px
+		}
+
+		.espacio {
+			border: none;
+			padding: 7px
+		}
+	</style>
 </head>
 
 <body>
@@ -20,9 +61,10 @@
 		</tr>
 		<tr class='tr'>
 			<th class="th" colspan='1'>Código</th>
-			<th class="th" colspan='2'>Nombre</th>
+			<th class="th" colspan='1'>Nombre</th>
 			<th class="th" colspan='2'>Descripción</th>
-			<th class="th" colspan='6'>Precio</th>
+			<th class="th" colspan='1'>Precio</th>
+			<th class="th" colspan='1'>Precio</th>
 		</tr>
 		<?php
 
@@ -32,12 +74,22 @@
 		$obj_pre->puntero = $obj_pre->getAll();
 
 		while (($prenda = $obj_pre->extractData()) > 0) {
+
+			
+
+			if ($prenda['est_pre'] == "A") {
+				$estatus = "Activo";
+			} else {
+				$estatus = "Inactivo";
+			}
+
 			echo "
 						<tr class='tr'>
 							<td class='td' colspan='1'>$prenda[cod_pre]</td>
-							<td class='td' colspan='2'>$prenda[nom_pre]</td>
+							<td class='td' colspan='1'>$prenda[nom_pre]</td>
 							<td class='td' colspan='2'>$prenda[des_pre]</td>
-							<td class='td' colspan='6'>$prenda[pre_pre]</td>
+							<td class='td' colspan='1'>$prenda[pre_pre]</td>
+							<td class='td' colspan='1'>$estatus</td>
 						</tr>
 			";
 		}

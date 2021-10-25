@@ -51,11 +51,11 @@ switch ($_REQUEST["run"]) {
 		if ($obj_per->resultado == false) {
 			$message = "Problemas para eliminar el permiso, puede que este permiso este asignado a algun usuario";
 			$obj_per->message($message) == false;
-			header("refresh:3; url=../../frontend/view/per_listartodo.php");
+			header("refresh:3; url=../../frontend/view/per_listarpapelera.php");
 		} else {
 			$message = "Permiso eliminado exitosamente";
 			$obj_per->message($message) == true;
-			header("refresh:3; url=../../frontend/view/per_listartodo.php");
+			header("refresh:3; url=../../frontend/view/per_listarpapelera.php");
 		}
 		break;
 

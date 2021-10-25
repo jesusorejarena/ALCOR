@@ -11,7 +11,7 @@
 <body>
 	<table>
 		<tr class='head'>
-			<th class='head' colspan='6' style='text-align: left;'>
+			<th class='head' colspan='11' style='text-align: left;'>
 				<h3>Lista de Usuarios</h3>
 			</th>
 		</tr>
@@ -19,17 +19,18 @@
 			<th class='nada'></th>
 		</tr>
 		<tr class='tr'>
-			<th class='th'>Código</th>
-			<th class='th'>Nombre</th>
-			<th class='th'>Apellido</th>
-			<th class='th'>Genero</th>
-			<th class='th'>Fecha de Nacimiento</th>
-			<th class='th'>Tipo</th>
-			<th class='th'>Cédula</th>
-			<th class='th'>Teléfono</th>
-			<th class='th'>Correo</th>
-			<th class='th'>Cargo</th>
-			<th class='th'>Dirección</th>
+			<th class='th' colspan='1'>Código</th>
+			<th class='th' colspan='1'>Nombre</th>
+			<th class='th' colspan='1'>Apellido</th>
+			<th class='th' colspan='1'>Genero</th>
+			<th class='th' colspan='1'>Fecha de Nacimiento</th>
+			<th class='th' colspan='1'>Tipo</th>
+			<th class='th' colspan='1'>Cédula</th>
+			<th class='th' colspan='1'>Teléfono</th>
+			<th class='th' colspan='1'>Correo</th>
+			<th class='th' colspan='1'>Cargo</th>
+			<th class='th' colspan='1'>Dirección</th>
+			<th class='th' colspan='1'>Estatus</th>
 		</tr>
 		<?php
 
@@ -47,41 +48,50 @@
 			$obj_car->puntero = $obj_car->filter();
 			$cargo = $obj_car->extractData();
 
+			
+
+			if ($usuario['est_usu'] == "A") {
+				$estatus = "Activo";
+			} else {
+				$estatus = "Inactivo";
+			}
+
 			echo "
 						<tr class='tr'>
-							<td class='td'>$usuario[cod_usu]</td>
-							<td class='td'>$usuario[nom_usu]</td>
-							<td class='td'>$usuario[ape_usu]</td>";
+							<td class='td' colspan='1'>$usuario[cod_usu]</td>
+							<td class='td' colspan='1'>$usuario[nom_usu]</td>
+							<td class='td' colspan='1'>$usuario[ape_usu]</td>";
 
 			if ($usuario['gen_usu'] == "H") {
-				echo "<td class='td'>Hombre</td>";
+				echo "<td class='td' colspan='1'>Hombre</td>";
 			} else {
-				echo "<td class='td'>Mujer</td>";
+				echo "<td class='td' colspan='1'>Mujer</td>";
 			}
 
-			echo "<td class='td'>$usuario[nac_usu]</td>";
+			echo "<td class='td' colspan='1'>$usuario[nac_usu]</td>";
 
 			if ($usuario['tip_usu'] == "V") {
-				echo "<td class='td'>Venezolano</td>";
+				echo "<td class='td' colspan='1'>Venezolano</td>";
 			} else {
-				echo "<td class='td'>Extranjero</td>";
+				echo "<td class='td' colspan='1'>Extranjero</td>";
 			}
 			echo "
-							<td class='td'>$usuario[ced_usu]</td>
-							<td class='td'>$usuario[tel_usu]</td>
-							<td class='td'>$usuario[cor_usu]</td>
-							<td class='td'>$cargo[nom_car]</td>";
+							<td class='td' colspan='1'>$usuario[ced_usu]</td>
+							<td class='td' colspan='1'>$usuario[tel_usu]</td>
+							<td class='td' colspan='1'>$usuario[cor_usu]</td>
+							<td class='td' colspan='1'>$cargo[nom_car]</td>";
 
 			if ($usuario['cod_usu'] == 1 || $usuario['cod_car'] == 1) {
 				echo "
-							<td class='td'></td>
+							<td class='td' colspan='1'></td>
 				";
 			} else {
 				echo "
-							<td class='td'>$usuario[dir_usu]</td>
+							<td class='td' colspan='1'>$usuario[dir_usu]</td>
 				";
 			}
 			echo "
+							<td class='td' colspan='1'>$estatus</td>
 						</tr>
 			";
 		}

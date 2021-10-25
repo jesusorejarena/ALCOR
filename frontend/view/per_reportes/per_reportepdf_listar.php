@@ -4,14 +4,55 @@
 	<meta charset='UTF-8'>
 	<title>Lista de Permisos</title>
 	<style>
-			.head{background-color:#fff;color:#000;border:none}.footer{font-size:15px;background-color:#fff;color:#000;border:none}table{width:100%;text-align:center;border-collapse:collapse}th{font-size:20px}td{font-size:15px}td,th{border:1px solid #000;padding:7px}.nada{border:none;padding:15px}.espacio{border:none;padding:7px}
-		</style>
+		.head {
+			background-color: #fff;
+			color: #000;
+			border: none
+		}
+
+		.footer {
+			font-size: 15px;
+			background-color: #fff;
+			color: #000;
+			border: none
+		}
+
+		table {
+			width: 100%;
+			text-align: center;
+			border-collapse: collapse
+		}
+
+		th {
+			font-size: 20px
+		}
+
+		td {
+			font-size: 15px
+		}
+
+		td,
+		th {
+			border: 1px solid #000;
+			padding: 7px
+		}
+
+		.nada {
+			border: none;
+			padding: 15px
+		}
+
+		.espacio {
+			border: none;
+			padding: 7px
+		}
+	</style>
 </head>
 
 <body>
 	<table>
 		<tr class='head'>
-			<th class='head' colspan='6' style='text-align: left;'>
+			<th class='head' colspan='7' style='text-align: left;'>
 				<h3>Lista de Permisos</h3>
 			</th>
 		</tr>
@@ -22,6 +63,7 @@
 			<th class="th" colspan='1'>Código</th>
 			<th class="th" colspan='3'>Cargo</th>
 			<th class="th" colspan='2'>Módulo</th>
+			<th class='th' colspan='1'>Estatus</th>
 		</tr>
 		<?php
 
@@ -46,11 +88,20 @@
 			$obj_mod->puntero = $obj_mod->filter();
 			$modulo = $obj_mod->extractData();
 
+			
+
+			if ($permiso['est_per'] == "A") {
+				$estatus = "Activo";
+			} else {
+				$estatus = "Inactivo";
+			}
+
 			echo "
 						<tr class='tr'>
 							<td class='td' colspan='1'>$permiso[cod_per]</td>
 							<td class='td' colspan='3'>$cargo[nom_car]</td>
 							<td class='td' colspan='2'>$modulo[nom_mod]</td>
+							<td class='td' colspan='1'>$estatus</td>
 						</tr>
 			";
 		}

@@ -99,7 +99,7 @@ headerr("Termina de Registrarte");
 						</div>
 					</div>
 					<div class="px-4 pb-3 d-flex justify-content-between">
-						<button type="reset" class="btn btn-success">Limpiar</button>
+						<button type="reset" class="btn btn-outline-primary">Limpiar</button>
 						<button type="submit" class="btn btn-primary" name="run" value="finishRegistration">Registrarme</button>
 					</div>
 				</form>

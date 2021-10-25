@@ -42,7 +42,7 @@ checkAdminOrClient(1);
 							<div class="col-12 col-xl-6">
 								<div class="form-group">
 									<label for="rifCompleto">RIF:</label>
-									<input type="text" name="rif_emp" id="rifCompleto" class="form-control" value="<?php echo $empresa['rif_emp']; ?>" placeholder="RIF" />
+									<input type="text" name="rif_emp" id="rifCompleto" class="form-control" value="<?php echo $empresa['rif_emp']; ?>" placeholder="Ejemplo: J-30161557-3" />
 									<small id="rifCompletoDiv" class="invalid-feedback"></small>
 								</div>
 							</div>
@@ -80,7 +80,7 @@ checkAdminOrClient(1);
 						</div>
 					</div>
 					<div class="px-4 pb-3 d-flex justify-content-between">
-						<button type="reset" class="btn btn-success">Limpiar</button>
+						<button type="reset" class="btn btn-outline-primary">Limpiar</button>
 						<button type="submit" class="btn btn-primary" name="run" value="update">Guardar</button>
 					</div>
 				</form>

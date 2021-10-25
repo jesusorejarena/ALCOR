@@ -27,6 +27,19 @@ use Dompdf\Dompdf;
 
 // instantiate and use the dompdf class
 $dompdf = new Dompdf();
+
+if ($producto['est_pro'] == "A") {
+	$estatus = "Activo";
+} else {
+	$estatus = "Inactivo";
+}
+
+if ($producto['bas_pro'] == "A") {
+	$estado = "Activo";
+} else {
+	$estado = "Papelera";
+}
+
 $dompdf->loadHtml("
 
 		<html>
@@ -81,7 +94,7 @@ $dompdf->loadHtml("
 						<th class='th' colspan='2'>Modificado</th>
 					</tr>
 					<tr class='tr'>
-						<td class='td' colspan='2'>$producto[est_pro]</td>
+						<td class='td' colspan='2'>$estatus</td>
 						<td class='td' colspan='2'>$producto[cre_pro]</td>
 						<td class='td' colspan='2'>$producto[act_pro]</td>
 					</tr>
@@ -94,7 +107,7 @@ $dompdf->loadHtml("
 						<th class='th' colspan='2'>Restaurado</th>
 					</tr>
 					<tr class='tr'>
-						<td class='td' colspan='2'>$producto[bas_pro]</td>
+						<td class='td' colspan='2'>$estado</td>
 						<td class='td' colspan='2'>$producto[eli_pro]</td>
 						<td class='td' colspan='2'>$producto[res_pro]</td>
 					</tr>

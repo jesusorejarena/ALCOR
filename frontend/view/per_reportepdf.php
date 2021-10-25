@@ -33,6 +33,19 @@ use Dompdf\Dompdf;
 
 // instantiate and use the dompdf class
 $dompdf = new Dompdf();
+
+if ($permiso['est_per'] == "A") {
+	$estatus = "Activo";
+} else {
+	$estatus = "Inactivo";
+}
+
+if ($permiso['bas_per'] == "A") {
+	$estado = "Activo";
+} else {
+	$estado = "Papelera";
+}
+
 $dompdf->loadHtml("
 
 		<html>
@@ -74,7 +87,7 @@ $dompdf->loadHtml("
 						<th class='th' colspan='2'>Ultima Modificación</th>
 					</tr>
 					<tr class='tr'>
-						<td class='td' colspan='2'>$permiso[est_per]</td>
+						<td class='td' colspan='2'>$estatus</td>
 						<td class='td' colspan='2'>$permiso[cre_per]</td>
 						<td class='td' colspan='2'>$permiso[act_per]</td>
 					</tr>
@@ -87,7 +100,7 @@ $dompdf->loadHtml("
 						<th class='th' colspan='2'>Fecha de Restauración</th>
 					</tr>
 					<tr class='tr'>
-						<td class='td' colspan='2'>$permiso[bas_per]</td>
+						<td class='td' colspan='2'>$estado</td>
 						<td class='td' colspan='2'>$permiso[eli_per]</td>
 						<td class='td' colspan='2'>$permiso[res_per]</td>
 					</tr>

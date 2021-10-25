@@ -293,7 +293,7 @@ class usuario extends utilidad
 
 	function getAll()
 	{
-		$this->que_bda = "SELECT * FROM usuario WHERE bas_usu='A' ORDER BY cod_usu DESC;";
+		$this->que_bda = "SELECT * FROM usuario WHERE bas_usu='A' AND cod_car != '2' ORDER BY cod_usu DESC;";
 
 		return $this->run();
 	} // fin de getAll

@@ -21,6 +21,19 @@ use Dompdf\Dompdf;
 
 // instantiate and use the dompdf class
 $dompdf = new Dompdf();
+
+if ($cargo['est_car'] == "A") {
+	$estatus = "Activo";
+} else {
+	$estatus = "Inactivo";
+}
+
+if ($cargo['bas_car'] == "A") {
+	$estado = "Activo";
+} else {
+	$estado = "Papelera";
+}
+
 $dompdf->loadHtml("
 
 		<html>
@@ -62,7 +75,7 @@ $dompdf->loadHtml("
 						<th class='th' colspan='2'>Modificado</th>
 					</tr>
 					<tr class='tr'>
-						<td class='td' colspan='2'>$cargo[est_car]</td>
+						<td class='td' colspan='2'>$estatus</td>
 						<td class='td' colspan='2'>$cargo[cre_car]</td>
 						<td class='td' colspan='2'>$cargo[act_car]</td>
 					</tr>
@@ -75,7 +88,7 @@ $dompdf->loadHtml("
 						<th class='th' colspan='2'>Restaurado</th>
 					</tr>
 					<tr class='tr'>
-						<td class='td' colspan='2'>$cargo[bas_car]</td>
+						<td class='td' colspan='2'>$estado</td>
 						<td class='td' colspan='2'>$cargo[eli_car]</td>
 						<td class='td' colspan='2'>$cargo[res_car]</td>
 					</tr>
