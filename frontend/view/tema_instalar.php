@@ -33,6 +33,7 @@ function footer()
 				<script src='../js/validaciones.js'></script>
 				<script src='../css/bootstrap/js/bootstrap.bundle.min.js'></script>
 				<script src='../js/screenUp.js'></script>
+				<script src='../js/showPassword.js'></script>
 
 			</body>
 				
