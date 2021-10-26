@@ -14,7 +14,7 @@ check('Pedidos', 5);
 <!-- Lista -->
 <div class="container px-3 pt-3 pb-5 mb-5">
 	<h2 class="text-center text-primary font-weight-bold p-3">Pedidos</h2>
-	<div class="row mt-2 mb-4 mb-md-0 text-right">
+	<div class="row mt-2 mb-4 mb-xl-0 text-right">
 		<div class="col-12">
 			<a href="ped_listartodo.php" class="btn btn-primary">Lista de pedidos terminados</a>
 		</div>

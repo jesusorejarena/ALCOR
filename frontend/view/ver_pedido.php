@@ -47,7 +47,7 @@ $usuario = $obj_usu->extractData();
 <!-- Formulario -->
 <div class="container px-3 pt-3 pb-5 mb-5">
 	<div class="row justify-content-center">
-		<div class="col-12 col-xl-4 p-md-2 mr-xl-5">
+		<div class="col-12 col-xl-4 p-xl-2 mr-xl-5">
 			<h2 class='text-center text-primary font-weight-bold p-2'>Detalles</h2>
 			<div class="card rounded-lg shadow my-3 px-3 py-4">
 				<form action="../../backend/controller/pedido.php" method="POST" class="was-validation" id="formulario" novalidate>
@@ -94,7 +94,7 @@ $usuario = $obj_usu->extractData();
 				</form>
 			</div>
 		</div>
-		<div class="col-12 col-xl-7 pt-5 p-md-3">
+		<div class="col-12 col-xl-7 pt-5 p-xl-3">
 			<h2 class='text-center text-primary font-weight-bold p-2'>Prendas agregadas</h2>
 			<div class="row justify-content-center">
 				<div class="col-12">
