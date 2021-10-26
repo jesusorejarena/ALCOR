@@ -8,7 +8,7 @@ $obj_usu->puntero = $obj_usu->getFirstDelete();
 
 headerr("Empleados Eliminados");
 
-check("Usuarios", 1);
+check("Empleados", 1);
 
 ?>
 

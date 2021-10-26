@@ -11,7 +11,7 @@ $obj_edo = new proveedor;
 
 headerr("Lista de productos");
 
-check("Productos", 3);
+check("Productos", 4);
 
 ?>
 

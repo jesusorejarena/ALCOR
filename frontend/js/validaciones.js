@@ -34,6 +34,23 @@
 					let producto = document.getElementById('producto')?.value;
 					let instagram = document.getElementById('instagram')?.value;
 					let twitter = document.getElementById('twitter')?.value;
+					let tituloBanner = document.getElementById('tituloBanner')?.value;
+					let descripcionBanner = document.getElementById('descripcionBanner')?.value;
+					let tituloContenido1 = document.getElementById('tituloContenido1')?.value;
+					let descripcionContenido1 = document.getElementById('descripcionContenido1')?.value;
+					let tituloContenido2 = document.getElementById('tituloContenido2')?.value;
+					let descripcionContenido2 = document.getElementById('descripcionContenido2')?.value;
+					let tituloContenido3 = document.getElementById('tituloContenido3')?.value;
+					let descripcionContenido3 = document.getElementById('descripcionContenido3')?.value;
+					let mision = document.getElementById('mision')?.value;
+					let vision = document.getElementById('vision')?.value;
+					let tituloTestimonio1 = document.getElementById('tituloTestimonio1')?.value;
+					let descripcionTestimonio1 = document.getElementById('descripcionTestimonio1')?.value;
+					let tituloTestimonio2 = document.getElementById('tituloTestimonio2')?.value;
+					let descripcionTestimonio2 = document.getElementById('descripcionTestimonio2')?.value;
+					let tituloTestimonio3 = document.getElementById('tituloTestimonio3')?.value;
+					let descripcionTestimonio3 = document.getElementById('descripcionTestimonio3')?.value;
+					let historia = document.getElementById('historia')?.value;
 
 					// Validacion de nombre
 					if (nombre != undefined) {
@@ -322,16 +339,205 @@
 						}
 					}
 
+					// Validacion de tituloBanner
+					if (tituloBanner != undefined) {
+						if (tituloBanner.length == 0) {
+							mensaje(e, 'tituloBannerDiv', 'tituloBanner', 'Ingrese un titulo');
+						} else if (tituloBanner.length > 50) {
+							mensaje(e, 'tituloBannerDiv', 'tituloBanner', 'El titulo es muy largo');
+						} else {
+							resetearError('tituloBannerDiv', 'tituloBanner');
+						}
+					}
+
+					// Validacion de descripcionBanner
+					if (descripcionBanner != undefined) {
+						if (descripcionBanner.length == 0) {
+							mensaje(e, 'descripcionBannerDiv', 'descripcionBanner', 'Ingrese una descripción');
+						} else if (descripcionBanner.length > 200) {
+							mensaje(e, 'descripcionBannerDiv', 'descripcionBanner', 'La descripción es muy larga');
+						} else {
+							resetearError('descripcionBannerDiv', 'descripcionBanner');
+						}
+					}
+
+					// Validacion de tituloContenido1
+					if (tituloContenido1 != undefined) {
+						if (tituloContenido1.length == 0) {
+							mensaje(e, 'tituloContenido1Div', 'tituloContenido1', 'Ingrese un titulo');
+						} else if (tituloContenido1.length > 50) {
+							mensaje(e, 'tituloContenido1Div', 'tituloContenido1', 'El titulo es muy largo');
+						} else {
+							resetearError('tituloContenido1Div', 'tituloContenido1');
+						}
+					}
+
+					// Validacion de descripcionContenido1
+					if (descripcionContenido1 != undefined) {
+						if (descripcionContenido1.length == 0) {
+							mensaje(e, 'descripcionContenido1Div', 'descripcionContenido1', 'Ingrese una descripción');
+						} else if (descripcionContenido1.length > 250) {
+							mensaje(e, 'descripcionContenido1Div', 'descripcionContenido1', 'La descripción es muy larga');
+						} else {
+							resetearError('descripcionContenido1Div', 'descripcionContenido1');
+						}
+					}
+
+					// Validacion de tituloContenido2
+					if (tituloContenido2 != undefined) {
+						if (tituloContenido2.length == 0) {
+							mensaje(e, 'tituloContenido2Div', 'tituloContenido2', 'Ingrese un titulo');
+						} else if (tituloContenido2.length > 50) {
+							mensaje(e, 'tituloContenido2Div', 'tituloContenido2', 'El titulo es muy largo');
+						} else {
+							resetearError('tituloContenido2Div', 'tituloContenido2');
+						}
+					}
+
+					// Validacion de descripcionContenido2
+					if (descripcionContenido2 != undefined) {
+						if (descripcionContenido2.length == 0) {
+							mensaje(e, 'descripcionContenido2Div', 'descripcionContenido2', 'Ingrese una descripción');
+						} else if (descripcionContenido2.length > 250) {
+							mensaje(e, 'descripcionContenido2Div', 'descripcionContenido2', 'La descripción es muy larga');
+						} else {
+							resetearError('descripcionContenido2Div', 'descripcionContenido2');
+						}
+					}
+
+					// Validacion de tituloContenido3
+					if (tituloContenido3 != undefined) {
+						if (tituloContenido3.length == 0) {
+							mensaje(e, 'tituloContenido3Div', 'tituloContenido3', 'Ingrese un titulo');
+						} else if (tituloContenido3.length > 50) {
+							mensaje(e, 'tituloContenido3Div', 'tituloContenido3', 'El titulo es muy largo');
+						} else {
+							resetearError('tituloContenido3Div', 'tituloContenido3');
+						}
+					}
+
+					// Validacion de descripcionContenido3
+					if (descripcionContenido3 != undefined) {
+						if (descripcionContenido3.length == 0) {
+							mensaje(e, 'descripcionContenido3Div', 'descripcionContenido3', 'Ingrese una descripción');
+						} else if (descripcionContenido3.length > 250) {
+							mensaje(e, 'descripcionContenido3Div', 'descripcionContenido3', 'La descripción es muy larga');
+						} else {
+							resetearError('descripcionContenido3Div', 'descripcionContenido3');
+						}
+					}
+
+					// Validacion de mision
+					if (mision != undefined) {
+						if (mision.length == 0) {
+							mensaje(e, 'misionDiv', 'mision', 'Ingrese una descripción para la misión');
+						} else if (mision.length > 300) {
+							mensaje(e, 'misionDiv', 'mision', 'La descripción para la misión es muy larga');
+						} else {
+							resetearError('misionDiv', 'mision');
+						}
+					}
+
+					// Validacion de vision
+					if (vision != undefined) {
+						if (vision.length == 0) {
+							mensaje(e, 'visionDiv', 'vision', 'Ingrese una descripción para la visión');
+						} else if (vision.length > 300) {
+							mensaje(e, 'visionDiv', 'vision', 'La descripción para la visión es muy larga');
+						} else {
+							resetearError('visionDiv', 'vision');
+						}
+					}
+
+					// Validacion de tituloTestimonio1
+					if (tituloTestimonio1 != undefined) {
+						if (tituloTestimonio1.length == 0) {
+							mensaje(e, 'tituloTestimonio1Div', 'tituloTestimonio1', 'Ingrese el nombre del testigo');
+						} else if (tituloTestimonio1.length > 50) {
+							mensaje(e, 'tituloTestimonio1Div', 'tituloTestimonio1', 'El nombre del testigo es muy largo');
+						} else {
+							resetearError('tituloTestimonio1Div', 'tituloTestimonio1');
+						}
+					}
+
+					// Validacion de descripcionTestimonio1
+					if (descripcionTestimonio1 != undefined) {
+						if (descripcionTestimonio1.length == 0) {
+							mensaje(e, 'descripcionTestimonio1Div', 'descripcionTestimonio1', 'Ingrese una descripción');
+						} else if (descripcionTestimonio1.length > 250) {
+							mensaje(e, 'descripcionTestimonio1Div', 'descripcionTestimonio1', 'La descripción es muy larga');
+						} else {
+							resetearError('descripcionTestimonio1Div', 'descripcionTestimonio1');
+						}
+					}
+
+					// Validacion de tituloTestimonio2
+					if (tituloTestimonio2 != undefined) {
+						if (tituloTestimonio2.length == 0) {
+							mensaje(e, 'tituloTestimonio2Div', 'tituloTestimonio2', 'Ingrese el nombre del testigo');
+						} else if (tituloTestimonio2.length > 50) {
+							mensaje(e, 'tituloTestimonio2Div', 'tituloTestimonio2', 'El nombre del testigo es muy largo');
+						} else {
+							resetearError('tituloTestimonio2Div', 'tituloTestimonio2');
+						}
+					}
+
+					// Validacion de descripcionTestimonio2
+					if (descripcionTestimonio2 != undefined) {
+						if (descripcionTestimonio2.length == 0) {
+							mensaje(e, 'descripcionTestimonio2Div', 'descripcionTestimonio2', 'Ingrese una descripción');
+						} else if (descripcionTestimonio2.length > 250) {
+							mensaje(e, 'descripcionTestimonio2Div', 'descripcionTestimonio2', 'La descripción es muy larga');
+						} else {
+							resetearError('descripcionTestimonio2Div', 'descripcionTestimonio2');
+						}
+					}
+
+					// Validacion de tituloTestimonio3
+					if (tituloTestimonio3 != undefined) {
+						if (tituloTestimonio3.length == 0) {
+							mensaje(e, 'tituloTestimonio3Div', 'tituloTestimonio3', 'Ingrese el nombre del testigo');
+						} else if (tituloTestimonio3.length > 50) {
+							mensaje(e, 'tituloTestimonio3Div', 'tituloTestimonio3', 'El nombre del testigo es muy largo');
+						} else {
+							resetearError('tituloTestimonio3Div', 'tituloTestimonio3');
+						}
+					}
+
+					// Validacion de descripcionTestimonio3
+					if (descripcionTestimonio3 != undefined) {
+						if (descripcionTestimonio3.length == 0) {
+							mensaje(e, 'descripcionTestimonio3Div', 'descripcionTestimonio3', 'Ingrese una descripción');
+						} else if (descripcionTestimonio3.length > 250) {
+							mensaje(e, 'descripcionTestimonio3Div', 'descripcionTestimonio3', 'La descripción es muy larga');
+						} else {
+							resetearError('descripcionTestimonio3Div', 'descripcionTestimonio3');
+						}
+					}
+
+					// Validacion de historia
+					if (historia != undefined) {
+						if (historia.length == 0) {
+							mensaje(e, 'historiaDiv', 'historia', 'Ingresa la historia de la empresa');
+						} else if (historia.length > 1000) {
+							mensaje(e, 'historiaDiv', 'historia', 'La historia es muy larga');
+						} else {
+							resetearError('historiaDiv', 'historia');
+						}
+					}
+
+					/* 
+
 					// Validacion de instagram
 					if (instagram != undefined) {
 						if (instagram.length == 0) {
-							mensaje(e, 'instagramDiv', 'instagram', 'Ingrese el Instagram');
+							mensaje(e, 'instagram', 'instagram', 'Ingrese el Instagram');
 						} else if (instagram.length > 29) {
-							mensaje(e, 'instagramDiv', 'instagram', 'El nombre de usuario es muy largo');
+							mensaje(e, 'instagram', 'instagram', 'El nombre de usuario es muy largo');
 						} else if (instagramValidar(instagram) === false) {
-							mensaje(e, 'instagramDiv', 'instagram', 'Ingrese un nombre de usuario valido');
+							mensaje(e, 'instagram', 'instagram', 'Ingrese un nombre de usuario valido');
 						} else {
-							resetearError('instagramDiv', 'instagram');
+							resetearError('instagram', 'instagram');
 						}
 					}
 
@@ -346,7 +552,7 @@
 						} else {
 							resetearError('twitterDiv', 'twitter');
 						}
-					}
+					} */
 				},
 				false
 			);
@@ -371,12 +577,14 @@ function correoValidar(texto) {
 }
 
 function contrasenaValidar(texto) {
-	const claveExpresion = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z])(?=.*[.*/#$%&Â¡!_\-,@:;?Â¿])(?=.*[a-zA-Z.*/#$%&Â¡!_\-,@:;?Â¿]).{8,20}$/;
+	const claveExpresion =
+		/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z])(?=.*[.*/#$%&Â¡!_\-,@:;?Â¿])(?=.*[a-zA-Z.*/#$%&Â¡!_\-,@:;?Â¿]).{8,20}$/;
 	return claveExpresion.test(texto);
 }
 
 function alfanumericoValidar(texto) {
-	const alfanumericoExpresion = /^[a-zA-ZÀ-ÿ\u00f1\u00d10-9]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d10-9]*)*[a-zA-ZÀ-ÿ\u00f1\u00d10-9]+$/;
+	const alfanumericoExpresion =
+		/^[a-zA-ZÀ-ÿ\u00f1\u00d10-9]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d10-9]*)*[a-zA-ZÀ-ÿ\u00f1\u00d10-9]+$/;
 	return alfanumericoExpresion.test(texto);
 }
 
@@ -384,7 +592,6 @@ function numericoValidar(texto) {
 	const numericoExpresion = /[0-9]/;
 	return numericoExpresion.test(texto);
 }
-
 
 function rifCompletoValidar(texto) {
 	const cedulaExpresion = /^[JGVEP][-][0-9]{8}[-][0-9]{1}$/;

@@ -10,8 +10,6 @@ class pedido extends utilidad
 	public $cod_usu;
 	public $cre_ped;
 	public $act_ped;
-	public $eli_ped;
-	public $res_ped;
 	public $est_ped;
 
 

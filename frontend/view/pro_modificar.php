@@ -17,7 +17,7 @@ $obj_edo->puntero = $obj_edo->getAllActive();
 
 headerr("Modificar Producto");
 
-check("Productos", 3);
+check("Productos", 4);
 
 ?>
 

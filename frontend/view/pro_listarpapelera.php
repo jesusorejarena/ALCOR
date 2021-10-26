@@ -8,7 +8,7 @@ $obj_pro->puntero = $obj_pro->getFirstDelete();
 
 headerr("Productos Eliminados");
 
-check("Productos", 3);
+check("Productos", 4);
 
 ?>
 

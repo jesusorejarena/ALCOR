@@ -8,7 +8,7 @@ $obj_edo->puntero = $obj_edo->getAllActive();
 
 headerr("Registrar Producto");
 
-check("Productos", 3);
+check("Productos", 4);
 
 ?>
 

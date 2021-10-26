@@ -4,7 +4,7 @@ require_once("tema_session.php");
 
 headerr("Menú de Empleados");
 
-checkAdminOrClient(1);
+check("Empleados", 1);
 
 ?>
 

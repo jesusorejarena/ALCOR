@@ -8,7 +8,7 @@ $obj_pre->puntero = $obj_pre->getAll();
 
 headerr("Lista de Prendas");
 
-check("Prendas", 3);
+check("Prendas", 2);
 
 ?>
 

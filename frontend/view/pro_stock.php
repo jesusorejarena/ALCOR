@@ -8,7 +8,7 @@ $obj_pro->puntero = $obj_pro->getAll();
 
 headerr("Actualizar Stock");
 
-check("Productos", 3);
+check("Productos", 4);
 
 ?>
 

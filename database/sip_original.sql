@@ -126,12 +126,29 @@ CREATE TABLE IF NOT EXISTS empresa (
 	`rif_emp` varchar(12) NOT NULL,
 	`hou_emp` varchar(19) NOT NULL,
 	`hod_emp` varchar(19) DEFAULT NULL,
+	`ban_tit_emp` varchar(100) NOT NULL,
+	`ban_par_emp` TEXT NOT NULL,
+	`tit_1_emp` varchar(100) NOT NULL,
+	`par_1_emp` TEXT NOT NULL,
+	`tit_2_emp` varchar(100) NOT NULL,
+	`par_2_emp` TEXT NOT NULL,
+	`tit_3_emp` varchar(100) NOT NULL,
+	`par_3_emp` TEXT NOT NULL,
+	`mis_emp` TEXT NOT NULL,
+	`vis_emp` TEXT NOT NULL,
+	`tes_tit_1_emp` varchar(50) NOT NULL,
+	`tes_1_emp` TEXT NOT NULL,
+	`tes_tit_2_emp` varchar(50) NOT NULL,
+	`tes_2_emp` TEXT NOT NULL,
+	`tes_tit_3_emp` varchar(50) NOT NULL,
+	`tes_3_emp` TEXT NOT NULL,
+	`his_emp` TEXT NOT NULL,
 	`act_emp` datetime DEFAULT NULL,
 	PRIMARY KEY (`cod_emp`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 DELIMITER $$
-CREATE TRIGGER `empresa_AU` AFTER UPDATE ON `empresa` FOR EACH ROW INSERT INTO empresa_resp(nom_emp, tel_emp, dir_emp, cor_emp, rif_emp, hou_emp, hod_emp, act_emp) VALUES(OLD.nom_emp, OLD.tel_emp, OLD.dir_emp, OLD.cor_emp, OLD.rif_emp, OLD.hou_emp, OLD.hod_emp, OLD.act_emp)
+CREATE TRIGGER `empresa_AU` AFTER UPDATE ON `empresa` FOR EACH ROW INSERT INTO empresa_resp(nom_emp, tel_emp, dir_emp, cor_emp, rif_emp, hou_emp, hod_emp, ban_tit_emp, ban_par_emp, tit_1_emp, par_1_emp, tit_2_emp, par_2_emp, tit_3_emp, par_3_emp, mis_emp, vis_emp, tes_tit_1_emp, tes_1_emp, tes_tit_2_emp, tes_2_emp, tes_tit_3_emp, tes_3_emp, his_emp, act_emp) VALUES(OLD.nom_emp, OLD.tel_emp, OLD.dir_emp, OLD.cor_emp, OLD.rif_emp, OLD.hou_emp, OLD.hod_emp, OLD.ban_tit_emp, OLD.ban_par_emp, OLD.tit_1_emp, OLD.par_1_emp, OLD.tit_2_emp, OLD.par_2_emp, OLD.tit_3_emp, OLD.par_3_emp, OLD.mis_emp, OLD.vis_emp, OLD.tes_tit_1_emp, OLD.tes_1_emp, OLD.tes_tit_2_emp, OLD.tes_2_emp, OLD.tes_tit_3_emp, OLD.tes_3_emp, OLD.his_emp, OLD.act_emp)
 $$
 DELIMITER ;
 
@@ -145,6 +162,23 @@ CREATE TABLE IF NOT EXISTS empresa_resp (
 	`rif_emp` varchar(12) NULL,
 	`hou_emp` varchar(19) NULL,
 	`hod_emp` varchar(19) DEFAULT NULL,
+	`ban_tit_emp` varchar(50) NULL,
+	`ban_par_emp` TEXT NULL,
+	`tit_1_emp` varchar(50) NULL,
+	`par_1_emp` TEXT NULL,
+	`tit_2_emp` varchar(50) NULL,
+	`par_2_emp` TEXT NULL,
+	`tit_3_emp` varchar(50) NULL,
+	`par_3_emp` TEXT NULL,
+	`mis_emp` TEXT NULL,
+	`vis_emp` TEXT NULL,
+	`tes_tit_1_emp` varchar(50) NULL,
+	`tes_1_emp` TEXT NULL,
+	`tes_tit_2_emp` varchar(50) NULL,
+	`tes_2_emp` TEXT NULL,
+	`tes_tit_3_emp` varchar(50) NULL,
+	`tes_3_emp` TEXT NULL,
+	`his_emp` TEXT NULL,
 	`act_emp` datetime DEFAULT NULL,
 	PRIMARY KEY (`cod_emp`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;

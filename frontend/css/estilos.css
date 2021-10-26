@@ -22,15 +22,17 @@ body {
 
 .screenUp {
 	display: none;
-	padding: 1px 8px;
+	padding: 1px 10px;
 	background: #1d96f3;
-	font-size: 24px;
+	font-size: 28px;
 	color: #fff;
 	cursor: pointer;
 	position: fixed;
 	bottom: 10px;
 	right: 10px;
 	z-index: 2;
+	margin-right: 20px;
+	margin-bottom: 10px;
 	border-radius: 40px;
 }
 
@@ -65,10 +67,10 @@ body {
 /* Centrado */
 
 .abs-center {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 100vh;
 }
 
 /* ------- */

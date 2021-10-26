@@ -8,7 +8,7 @@ $obj_edo->puntero = $obj_edo->getFirstDelete();
 
 headerr("Proveedores Eliminados");
 
-check("Proveedores", 2);
+check("Proveedores", 3);
 
 ?>
 

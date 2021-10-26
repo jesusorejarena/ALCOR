@@ -1,4 +1,4 @@
-document.getElementById('ShowPassword').addEventListener('click', () => {
+document.getElementById('ShowPassword')?.addEventListener('click', () => {
 	let change = document.getElementById('contrasena');
 	let icon = document.getElementById('iconEye');
 

@@ -8,7 +8,7 @@ function check($menu, $cod_mod)
 	$obj_mod = new modulo;
 	$obj_per = new permiso;
 
-	if ($_SESSION['cargo'] >= 3) {
+	if ($_SESSION['cargo'] >= 2) {
 		// busca los codigos del cargo en permisos
 		$obj_per->cod_car = $_SESSION['cargo'];
 		$obj_per->cod_mod = $cod_mod;

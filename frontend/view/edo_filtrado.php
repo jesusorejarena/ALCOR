@@ -9,7 +9,7 @@ $obj_edo->puntero = $obj_edo->filter();
 
 headerr("Proveedores Filtrados");
 
-check("Proveedores", 2);
+check("Proveedores", 3);
 
 ?>
 

@@ -13,7 +13,7 @@ $prenda = $obj_pre->extractData();
 
 headerr("Modificar Prenda");
 
-check("Prendas", 3);
+check("Prendas", 2);
 
 ?>
 

@@ -7,7 +7,7 @@ $obj_pre = new prenda;
 
 headerr("Menu de Prendas");
 
-check("Prendas", 3);
+check("Prendas", 2);
 
 ?>
 

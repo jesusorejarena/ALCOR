@@ -8,7 +8,7 @@ $obj_edo->puntero = $obj_edo->getAll();
 
 headerr("Lista de Proveedores");
 
-check("Proveedores", 2);
+check("Proveedores", 3);
 
 ?>
 

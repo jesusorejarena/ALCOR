@@ -7,7 +7,7 @@ $obj_edo = new proveedor;
 
 headerr("Filtrar Proveedores");
 
-check("Proveedores", 2);
+check("Proveedores", 3);
 
 ?>
 

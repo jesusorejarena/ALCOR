@@ -8,7 +8,7 @@ $obj_for->puntero = $obj_for->getAll();
 
 headerr("Lista de Formularios");
 
-check("Formularios", 5);
+check("Formularios", 6);
 
 ?>
 

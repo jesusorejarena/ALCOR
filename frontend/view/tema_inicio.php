@@ -90,7 +90,6 @@ function headerr($titulo)
 
 function footer()
 {
-
 	require_once("../../backend/class/empresa.class.php");
 
 	$obj_emp = new empresa;

@@ -9,7 +9,7 @@ $obj_pro->puntero = $obj_pro->filter();
 
 headerr("Productos Filtrados");
 
-check("Productos", 3);
+check("Productos", 4);
 
 ?>
 

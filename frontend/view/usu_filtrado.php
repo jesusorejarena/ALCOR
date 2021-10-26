@@ -12,7 +12,7 @@ $obj_car = new cargo;
 
 headerr("Empleados Filtrados");
 
-check("Usuarios", 1);
+check("Empleados", 1);
 
 ?>
 

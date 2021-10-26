@@ -11,7 +11,7 @@ $obj_car = new cargo;
 
 headerr("Lista de Empleados");
 
-check("Usuarios", 1);
+check("Empleados", 1);
 
 ?>
 

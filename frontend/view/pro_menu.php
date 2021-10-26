@@ -7,7 +7,7 @@ $obj_pro = new producto;
 
 headerr("Menu de Productos");
 
-check("Productos", 3);
+check("Productos", 4);
 
 ?>
 

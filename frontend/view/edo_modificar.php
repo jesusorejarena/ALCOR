@@ -13,7 +13,7 @@ $proveedor = $obj_edo->extractData();
 
 headerr("Modificar Proveedor");
 
-check("Proveedores", 2);
+check("Proveedores", 3);
 
 ?>
 

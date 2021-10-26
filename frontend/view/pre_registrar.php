@@ -4,7 +4,7 @@ require_once("tema_session.php");
 
 headerr("Registrar Prendas");
 
-check("Prendas", 3);
+check("Prendas", 2);
 
 ?>
 

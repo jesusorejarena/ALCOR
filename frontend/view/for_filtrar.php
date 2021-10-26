@@ -4,7 +4,7 @@ require_once("tema_session.php");
 
 headerr("Filtrar Formularios");
 
-check("Formularios", 5);
+check("Formularios", 6);
 
 ?>
 

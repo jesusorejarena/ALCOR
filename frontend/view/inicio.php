@@ -4,7 +4,31 @@ require_once("tema_inicio.php");
 
 headerr("Inicio");
 
+require_once("../../backend/class/empresa.class.php");
+
+$obj_emp = new empresa;
+$obj_emp->puntero = $obj_emp->getByCode();
+$empresa = $obj_emp->extractData();
+
 ?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <!-- Comienza banner -->
 
@@ -15,8 +39,12 @@ headerr("Inicio");
 				<img class="img-fluid" src="../img/undraw_Location_tracking_re_n3ok.svg" alt="" width="60%">
 			</div>
 			<div class="col-12 col-xl-5 text-center">
-				<h2 class="display-4 mb-3">Haz tu pedido</h2>
-				<h5>El mejor servicio de lavandería con los mejores productos para el cuidado de tu ropa ¡registrate y obtén un 10% de descuento en tu primera orden!</h5>
+				<h2 class="display-4 mb-3">
+					<?php echo $empresa['ban_tit_emp']; ?>
+				</h2>
+				<h5>
+					<?php echo $empresa['ban_par_emp']; ?>
+				</h5>
 			</div>
 		</div>
 	</div>
@@ -49,9 +77,11 @@ headerr("Inicio");
 						<img class="img-fluid" src="../img/undraw_wishes_icyp.svg" alt="Pregunta" width="80%">
 					</div>
 					<div class="col-12 col-xl-6 my-3 my-xl-5">
-						<h2 class="text-center text-primary font-weight-bold mb-5">Frescura</h2>
+						<h2 class="text-center text-primary font-weight-bold mb-5">
+							<?php echo $empresa['tit_1_emp']; ?>
+						</h2>
 						<p class="text-left" style="font-size: 20px;">
-							Prueba nuestra gran variedad de olores cítricos para tu ropa !Siéntete fresco todos los días vayas a donde vayas!.
+							<?php echo $empresa['par_1_emp']; ?>
 						</p>
 					</div>
 				</div>
@@ -65,9 +95,11 @@ headerr("Inicio");
 						<img class="img-fluid" src="../img/undraw_science_fqhl.svg" alt="Telefono" width="80%">
 					</div>
 					<div class="col-12 col-xl-6 my-3 my-xl-5">
-						<h2 class="text-center text-primary font-weight-bold mb-5">Los mejores productos</h2>
+						<h2 class="text-center text-primary font-weight-bold mb-5">
+							<?php echo $empresa['tit_2_emp']; ?>
+						</h2>
 						<p class="text-left" style="font-size: 20px;">
-							Te ofrecemos las mejores marcas del mercado para tu ropa, desde suavizantes hasta aromatizantes que serán tus aliados en tu dia a dia.
+							<?php echo $empresa['par_2_emp']; ?>
 						</p>
 					</div>
 					<div class="d-none d-xl-block col-12 col-xl-6 text-center">
@@ -84,9 +116,11 @@ headerr("Inicio");
 						<img class="img-fluid" src="../img/undraw_career_progress_ivdb.svg" alt="Pregunta" width="80%">
 					</div>
 					<div class="col-12 col-xl-6 my-3 my-xl-5">
-						<h2 class="text-center text-primary font-weight-bold mb-5">Toda tu ropa con un cuidado especial</h2>
+						<h2 class="text-center text-primary font-weight-bold mb-5">
+							<?php echo $empresa['tit_3_emp']; ?>
+						</h2>
 						<p class="text-left" style="font-size: 20px;">
-							Nos mantenemos fieles a nuestro lema !que ni una arruga en tu outfit arruine tu dia! Tus pedidos incluyen el mejor servicio de planchado de la ciudad.
+							<?php echo $empresa['par_3_emp']; ?>
 						</p>
 					</div>
 				</div>
@@ -102,7 +136,7 @@ headerr("Inicio");
 							<div class="col-12">
 								<h2 class=" my-3 text-primary font-weight-bold">Misión</h2>
 								<p class="mx-2" style="font-size: 20px;">
-									Ofrecer servicios de lavandería con productos de la más alta calidad, contando con una red de clientes sólida que se ve fortificada por los excelentes servicios que proveemos.
+									<?php echo $empresa['mis_emp']; ?>
 								</p>
 							</div>
 							<div class="col-12 mt-3">
@@ -115,7 +149,7 @@ headerr("Inicio");
 							<div class="col-12">
 								<h2 class=" my-3 text-primary font-weight-bold">Visión</h2>
 								<p class="mx-2" style="font-size: 20px;">
-									Ser la mejor red de servicio de lavandería en el Estado Táchira, con la mejor calidad de productos del mercado, conocidos por nuestra habilidad para apropiar, posicionar y comercializar el servicio de primera calidad que generen bienestar.
+									<?php echo $empresa['vis_emp']; ?>
 								</p>
 							</div>
 							<div class="col-12 mt-3">
@@ -131,7 +165,7 @@ headerr("Inicio");
 							<div class="col-12">
 								<h2 class=" my-3 text-primary font-weight-bold">Misión</h2>
 								<p class="mx-2" style="font-size: 20px;">
-									Ofrecer servicios de lavandería con productos de la más alta calidad, contando con una red de clientes sólida que se ve fortificada por los excelentes servicios que proveemos.
+									<?php echo $empresa['mis_emp']; ?>
 								</p>
 							</div>
 						</div>
@@ -141,7 +175,7 @@ headerr("Inicio");
 							<div class="col-12">
 								<h2 class=" my-3 text-primary font-weight-bold">Visión</h2>
 								<p class="mx-2" style="font-size: 20px;">
-									Ser la mejor red de servicio de lavandería en el Estado Táchira, con la mejor calidad de productos del mercado, conocidos por nuestra habilidad para apropiar, posicionar y comercializar el servicio de primera calidad que generen bienestar.
+									<?php echo $empresa['vis_emp']; ?>
 								</p>
 							</div>
 						</div>
@@ -165,9 +199,11 @@ headerr("Inicio");
 				<div class="col-xl-4 pt-4">
 					<div class="card shadow">
 						<div class="card-body">
-							<h4 class="card-title">Daniel Vera</h4>
+							<h4 class="card-title">
+								<?php echo $empresa['tes_tit_1_emp']; ?>
+							</h4>
 							<p class="card-text">
-								Los trajes no son realmente lo mio, sin embargo desde que retomamos las reuniones en la oficina Rosedal Dry Cleaning se encarga de mantenerlos listos en todo momento.
+								<?php echo $empresa['tes_1_emp']; ?>
 							</p>
 						</div>
 					</div>
@@ -177,9 +213,11 @@ headerr("Inicio");
 				<div class="col-xl-4">
 					<div class="card shadow">
 						<div class="card-body">
-							<h4 class="card-title">Stephanny Cubillos</h4>
+							<h4 class="card-title">
+								<?php echo $empresa['tes_tit_2_emp']; ?>
+							</h4>
 							<p class="card-text">
-								Como psicóloga siempre debo dar la mejor versión de mi, de mis pacientes me encargo yo, pero de mis outfits se encarga Rosedal Dry Cleaning.
+								<?php echo $empresa['tes_2_emp']; ?>
 							</p>
 						</div>
 					</div>
@@ -189,9 +227,11 @@ headerr("Inicio");
 				<div class="col-xl-4 pt-4">
 					<div class="card shadow">
 						<div class="card-body">
-							<h4 class="card-title">Naomi Guerrero</h4>
+							<h4 class="card-title">
+								<?php echo $empresa['tes_tit_3_emp']; ?>
+							</h4>
 							<p class="card-text">
-								Yo soy bien coqueta y me gusta ir de fiesta todos los fines de semana, esto significa que cada vestido que uso tiene que estar en perfectas condiciones para siempre brillar en la disco.
+								<?php echo $empresa['tes_3_emp']; ?>
 							</p>
 						</div>
 					</div>
@@ -212,7 +252,9 @@ headerr("Inicio");
 							</div>
 							<div class="col-xl-8">
 								<div class="card-body">
-									<p class="card-text">La empresa Rosedal Dry Cleaning C.A. fue fundada en el año 1960 con el objeto de realizar servicio de lavandería con altos estándares de calidad para el cuidado de la ropa, con productos de la más alta calidad, para poder cumplir con las exigencias en los diferentes clientes del comercio, industrias y persona común. Asimismo, la empresa cuenta con una amplia infraestructura que le permite lograr sus objetivos, como el tener varios servicios de lavado y planchado, este se ha posicionado en los primeros lugares en el mercado del Estado Táchira desplazando a otras empresas. Actualmente, la empresa está a cargo del Sr. Jairo Orejarena quien funge como su presidente y principal administrador.</p>
+									<p class="card-text">
+										<?php echo $empresa['his_emp']; ?>
+									</p>
 								</div>
 							</div>
 						</div>

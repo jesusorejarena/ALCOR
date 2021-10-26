@@ -4,7 +4,7 @@ require_once("tema_session.php");
 
 headerr("Menú de Proveedores");
 
-check("Proveedores", 2);
+check("Proveedores", 3);
 
 ?>
 

@@ -9,7 +9,7 @@ $obj_pre->puntero = $obj_pre->filter();
 
 headerr("Prendas Filtrados");
 
-check("Prendas", 3);
+check("Prendas", 2);
 
 ?>
 
