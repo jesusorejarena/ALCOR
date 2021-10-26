@@ -46,7 +46,7 @@ headerr("Instalación");
 							<div class="col-12 col-xl-6">
 								<div class="form-group">
 									<label for="nacimiento">Fecha de Nacimiento:</label>
-									<input type="date" name="nac_usu" id="nacimiento" class="form-control" />
+									<input type="date" max='<?php echo date("Y-m-d"); ?>' name="nac_usu" id="nacimiento" class="form-control" />
 									<small id="nacimientoDiv" class="invalid-feedback"></small>
 								</div>
 							</div>
@@ -134,8 +134,13 @@ headerr("Instalación");
 							<div class="col-12 col-xl-6">
 								<div class="form-group">
 									<label for="contrasena">Contraseña:</label>
-									<input type="password" name="cla_usu" id="contrasena" class="form-control" placeholder="Contraseña" />
-									<small id="contrasenaDiv" class="invalid-feedback"></small>
+									<div class="input-group mb-3">
+										<input type="password" name="cla_usu" id="contrasena" class="form-control" placeholder="Contraseña" />
+										<div class="input-group-append">
+											<button class="btn btn-outline-primary" type="button" id="ShowPassword"><i id="iconEye" class="fas fa-eye"></i></button>
+										</div>
+										<small id="contrasenaDiv" class="invalid-feedback"></small>
+									</div>
 								</div>
 							</div>
 							<div class="col-12 col-xl-6">

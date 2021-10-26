@@ -61,7 +61,7 @@ check("Usuarios", 1);
 							<div class="col-12 col-xl-6">
 								<div class="form-group">
 									<label for="nacimiento">Fecha de nacimiento:</label>
-									<input type="date" name="nac_usu" id="nacimiento" placeholder="Fecha de nacimiento:" value="<?php echo $usuario['nac_usu']; ?>" class="form-control">
+									<input type="date" max='<?php echo date("Y-m-d"); ?>' name="nac_usu" id="nacimiento" placeholder="Fecha de nacimiento:" value="<?php echo $usuario['nac_usu']; ?>" class="form-control">
 									<small id="nacimientoDiv" class="invalid-feedback"></small>
 								</div>
 							</div>

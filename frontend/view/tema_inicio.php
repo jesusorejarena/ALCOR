@@ -19,10 +19,10 @@ function headerr($titulo)
 				<meta name='viewport' content='width=device-width, initial-scale=1.0' />
 				<title>$titulo</title>
 				<link rel='shortcut icon' href='' type='image/x-icon' />
-				<link rel='stylesheet' href='../css/bootstrap-4.5.2/css/bootstrap.min.css' />
-				<link rel='stylesheet' href='../css/fontawesome-free-5.15.0/css/all.min.css' />
+				<link rel='stylesheet' href='../css/bootstrap/css/bootstrap.min.css' />
+				<link rel='stylesheet' href='../css/fontawesome-free/css/all.min.css' />
 				<link rel='stylesheet' href='../css/estilos.css' />
-				<script src='../js/jquery-3.5.1.min.js'></script>
+				<script src='../js/jquery.min.js'></script>
 			</head>
 
 			<body>
@@ -155,9 +155,8 @@ function footer()
 				<!-- Termina footer -->
 
 				<script src='../js/validaciones.js'></script>
-				<script src='../css/bootstrap-4.5.2/js/bootstrap.bundle.min.js'></script>
+				<script src='../css/bootstrap/js/bootstrap.bundle.min.js'></script>
 				<script src='../js/screenUp.js'></script>
-				<script src='../js/sideBar.js'></script>
 				
 			</body>
 				

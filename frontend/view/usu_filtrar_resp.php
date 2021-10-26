@@ -50,7 +50,7 @@ checkAdminOrClient(1);
 							<div class="col-12 col-xl-6">
 								<div class="form-group">
 									<label for="nacimiento">Fecha de Nacimiento:</label>
-									<input type="date" name="nac_usu" id="nacimiento" class="form-control" />
+									<input type="date" max='<?php echo date("Y-m-d"); ?>' name="nac_usu" id="nacimiento" class="form-control" />
 									<small id="nacimientoDiv" class="invalid-feedback"></small>
 								</div>
 							</div>

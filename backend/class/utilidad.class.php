@@ -63,13 +63,13 @@ class utilidad
 
 		if ($this->resultado == true) {
 			echo "
-					<div class='alert alert-success py-5 my-5'>
+					<div class='alert alert-success py-3 text-center'>
 						<strong>$message</strong>.
 					</div>
 				";
 		} else {
 			echo "
-					<div class='alert alert-danger py-5 my-5'>
+					<div class='alert alert-danger py-3 text-center'>
 						<strong>¡Fallo!</strong> $message <br>
 					</div>";
 		}

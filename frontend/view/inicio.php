@@ -163,7 +163,7 @@ headerr("Inicio");
 			<div class="row">
 				<!-- Card 1 -->
 				<div class="col-xl-4 pt-4">
-					<div class="card">
+					<div class="card shadow">
 						<div class="card-body">
 							<h4 class="card-title">Daniel Vera</h4>
 							<p class="card-text">
@@ -175,7 +175,7 @@ headerr("Inicio");
 
 				<!-- Card 2 -->
 				<div class="col-xl-4">
-					<div class="card">
+					<div class="card shadow">
 						<div class="card-body">
 							<h4 class="card-title">Stephanny Cubillos</h4>
 							<p class="card-text">
@@ -187,7 +187,7 @@ headerr("Inicio");
 
 				<!-- Card 3 -->
 				<div class="col-xl-4 pt-4">
-					<div class="card">
+					<div class="card shadow">
 						<div class="card-body">
 							<h4 class="card-title">Naomi Guerrero</h4>
 							<p class="card-text">
@@ -205,7 +205,7 @@ headerr("Inicio");
 			<h2 class="text-primary font-weight-bold mb-5">Historia</h2>
 			<div class="row ">
 				<div class="col-12 d-flex justify-content-center align-items-center">
-					<div class="card mb-3 p-4" style="max-width: 900px;">
+					<div class="card mb-3 p-4 shadow" style="max-width: 900px;">
 						<div class="row no-gutters">
 							<div class="col-xl-4 d-flex align-items-center">
 								<img class="img-fluid" src="../img/undraw_business_deal_cpi9.svg" alt="Seguridad">

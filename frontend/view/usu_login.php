@@ -36,9 +36,12 @@ headerr("Iniciar Sesión");
 										<label for="contra_repart">Ingrese una contraseña:</label>
 										<div class="input-group mb-3">
 											<div class="input-group-prepend">
-												<span class="input-group-text" id="contrasena"><i class="fas fa-lock"></i></span>
+												<span class="input-group-text"><i class="fas fa-lock"></i></span>
 											</div>
 											<input type="password" name="cla_usu" id="contrasena" class="form-control" placeholder="Contraseña" />
+											<div class="input-group-append">
+												<button class="btn btn-outline-primary" type="button" id="ShowPassword"><i id="iconEye" class="fas fa-eye"></i></button>
+											</div>
 										</div>
 									</div>
 									<div class="row justify-content-between">

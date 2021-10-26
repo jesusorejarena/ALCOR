@@ -19,6 +19,9 @@ $obj_ped = new pedido;
 <div class="container px-3 pt-3 pb-5 mb-5">
 	<h2 class="text-center text-primary font-weight-bold p-3">Lista de Prendas</h2>
 	<div class="row justify-content-center">
+		<div id="alert">
+
+		</div>
 		<div class="col-12 py-2">
 			<div class="table-responsive">
 				<table class="table table-bordered table-hover text-center">
@@ -58,53 +61,76 @@ $obj_ped = new pedido;
 <script>
 	document.getElementById('guardarPedido').addEventListener('click', (e) => {
 
-		e.preventDefault();
 
-		let form = new FormData()
+		let forms = document.getElementsByClassName('forms');
 
-		let data = form;
+		for (let j = 0; j < forms.length; j++) {
 
-		data.append('cod_usu', <?php echo $_SESSION['codigo']; ?>);
-		data.append('run', 'create');
 
-		fetch('../../backend/controller/pedido.php', {
-			method: 'POST',
-			body: data
-		}).then(function(response) {
-			if (response.ok) {
-				return response.text();
-			} else {
-				console.log('Error en la llamada');
-			}
-		}).then(function(texto) {
-			let forms = document.getElementsByClassName('forms');
-			for (let i = 0; i < forms.length; i++) {
+			let input = forms[j].getElementsByClassName('can_ped_rel')[0].value;
 
-				console.log(parseInt(forms[i].getElementsByClassName('can_ped_rel')[0].value) > 0);
+			if (input > 0) {
 
-				if (parseInt(forms[i].getElementsByClassName('can_ped_rel')[0].value) > 0) {
-					let dataRelation = new FormData();
+				e.preventDefault();
 
-					dataRelation.append('cod_ped', texto);
-					dataRelation.append('cod_pre', forms[i].getElementsByClassName('cod_pre')[0].value);
-					dataRelation.append('can_ped_rel', forms[i].getElementsByClassName('can_ped_rel')[0].value);
-					dataRelation.append('run', 'create');
+				let form = new FormData()
 
-					fetch('../../backend/controller/pedido_relacion.php', {
-						method: 'POST',
-						body: dataRelation
-					}).then(function(response2) {
-						if (response2.ok) {
-							return response2.text();
-						} else {
-							console.log('Error en la llamada');
+				let data = form;
+
+				data.append('cod_usu', <?php echo $_SESSION['codigo']; ?>);
+				data.append('run', 'create');
+
+				fetch('../../backend/controller/pedido.php', {
+					method: 'POST',
+					body: data
+				}).then(function(response) {
+					if (response.ok) {
+						return response.text();
+					} else {
+						console.log('Error en la llamada');
+					}
+				}).then(function(texto) {
+					for (let i = 0; i < forms.length; i++) {
+
+						console.log(parseInt(forms[i].getElementsByClassName('can_ped_rel')[0].value) > 0);
+
+						if (parseInt(forms[i].getElementsByClassName('can_ped_rel')[0].value) > 0) {
+							let dataRelation = new FormData();
+
+							dataRelation.append('cod_ped', texto);
+							dataRelation.append('cod_pre', forms[i].getElementsByClassName('cod_pre')[0].value);
+							dataRelation.append('can_ped_rel', forms[i].getElementsByClassName('can_ped_rel')[0].value);
+							dataRelation.append('run', 'create');
+
+							fetch('../../backend/controller/pedido_relacion.php', {
+								method: 'POST',
+								body: dataRelation
+							}).then(function(response2) {
+								if (response2.ok) {
+									return response2.text();
+								} else {
+									console.log('Error en la llamada');
+								}
+							}).then(function(texto2) {
+								window.location = `ver_pedido.php?cod_ped=${texto}&info=true`;
+							})
 						}
-					}).then(function(texto2) {
-						window.location = `ver_pedido.php?cod_ped=${texto}&info=true`;
-					})
-				}
+					}
+				})
+				break;
+			} else {
+				let alerta = document.getElementById("alert")
+				alerta.innerHTML = `
+					<div class="alert alert-danger">
+						Agrega prendas a tu pedido si quieres continuar
+					</div>
+					`;
+
+				setTimeout(() => {
+					alerta.innerHTML = ""
+				}, 2000)
 			}
-		})
+		}
 	})
 </script>
 

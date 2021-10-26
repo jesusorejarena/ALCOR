@@ -13,7 +13,7 @@ switch ($_REQUEST["run"]) {
 		if ($obj_usu->resultado == false) {
 			$message = "El usuario que intenta registrar ya existe o puede que algunos datos ya esten registrados en el sistema, por favor ingrese otro";
 			$obj_usu->message($message) == false;
-			header("refresh:3; url=../../frontend/view/usu_registrar.php");
+			header("refresh:2; url=../../frontend/view/usu_registrar.php");
 		} else {
 			$message = "Usuario registrado exitosamente";
 			$obj_usu->message($message) == true;
@@ -27,7 +27,7 @@ switch ($_REQUEST["run"]) {
 		if ($obj_usu->resultado == false) {
 			$message = "El usuario que intenta registrar ya existe";
 			$obj_usu->message($message) == false;
-			header("refresh:3; url=../../frontend/view/usu_signup.php");
+			header("refresh:2; url=../../frontend/view/usu_signup.php");
 		} else {
 			$message = "Usuario registrado exitosamente";
 			$obj_usu->message($message) == true;
@@ -95,7 +95,7 @@ switch ($_REQUEST["run"]) {
 		if ($obj_usu->resultado == false) {
 			$message = "El usuario que intenta actualizar puede que tenga información registrada en otro usuario en el sistema, por favor verifique";
 			$obj_usu->message($message) == false;
-			header("refresh:3; url=../../frontend/view/usu_listartodo.php");
+			header("refresh:2; url=../../frontend/view/usu_listartodo.php");
 		} else {
 			$message = "Usuario actualizado exitosamente";
 			$obj_usu->message($message) == true;
