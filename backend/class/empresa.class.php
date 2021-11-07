@@ -66,6 +66,7 @@ class empresa extends utilidad
 								'$this->cor_emp',
 								'$this->rif_emp',
 								'$this->hou_emp',
+								'$this->hod_emp',
 								'$this->ban_tit_emp',
 								'$this->ban_par_emp',
 								'$this->tit_1_emp',

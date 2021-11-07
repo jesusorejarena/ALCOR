@@ -7,9 +7,9 @@ headerr("Registrar Datos de la Empresa");
 ?>
 
 <!-- Formulario -->
-<div class="container px-3 pt-3 pb-5 mb-5">
+<div class="container-fluid px-3 pt-3 pb-5 mb-5">
 	<div class="row justify-content-center">
-		<div class="col-12 col-xl-6 p-2">
+		<div class="col-12 p-2">
 			<div class="card rounded-lg shadow my-3 px-3 py-4">
 				<h2 class="card-title text-center text-primary font-weight-bold pt-4">Registrar Datos de la Empresa</h2>
 				<form action="../../backend/controller/empresa.php" method="POST" class="was-validation" id="formulario" novalidate>
