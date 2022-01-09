@@ -42,7 +42,7 @@ function headerr($titulo)
 										</button>
 
 										<!--Nombre de la app-->
-										<a href='inicio.php' class='navbar-brand'><img class='img-fluid' src='../img/Logo-Solo.png' alt='Logo' width='300rm'></a>
+										<a href='inicio.php' class='navbar-brand mr-0'><img class='img-fluid' src='../img/Logo-Solo.png' alt='Logo' width='200rm'></a>
 
 										<!--Botones de las secciones-->
 										<div class='collapse navbar-collapse justify-content-end' id='collapsibleNavbar'>

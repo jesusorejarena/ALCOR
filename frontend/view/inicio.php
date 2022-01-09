@@ -12,24 +12,6 @@ $empresa = $obj_emp->extractData();
 
 ?>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <!-- Comienza banner -->
 
 <div id="section1" class="bg-light container-fluid pt-xl-5 px-2 px-xl-5">
@@ -54,8 +36,10 @@ $empresa = $obj_emp->extractData();
 
 <!-- Comienza onda -->
 
-<div style="height: 150px; overflow: hidden;"><svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;">
-		<path d="M0.00,49.98 C149.99,150.00 271.49,-49.98 500.00,49.98 L500.00,0.00 L0.00,0.00 Z" style="stroke: none; fill: #f8f9fa;"></path>
+<div style="height: 150px; overflow: hidden;"><svg viewBox="0 0 500 150" preserveAspectRatio="none"
+		style="height: 100%; width: 100%;">
+		<path d="M0.00,49.98 C149.99,150.00 271.49,-49.98 500.00,49.98 L500.00,0.00 L0.00,0.00 Z"
+			style="stroke: none; fill: #f8f9fa;"></path>
 	</svg>
 </div>
 
@@ -210,7 +194,7 @@ $empresa = $obj_emp->extractData();
 				</div>
 
 				<!-- Card 2 -->
-				<div class="col-xl-4">
+				<div class="col-xl-4 pt-4 pt-md-0">
 					<div class="card shadow">
 						<div class="card-body">
 							<h4 class="card-title">
@@ -271,7 +255,9 @@ $empresa = $obj_emp->extractData();
 			<h2 class="text-primary font-weight-bold mb-4">Ubicación</h2>
 			<div class="row">
 				<div class="col-12 d-flex justify-content-center align-items-center">
-					<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d587.6589199699653!2d-72.22778767883113!3d7.759863072106896!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e666caf7219d23d%3A0x7a22305b61538af5!2sLavanderia%20y%20Tintorer%C3%ADa%20Rosedal%20Dry%20Cleaning!5e0!3m2!1ses!2sve!4v1633148012099!5m2!1ses!2sve" width="1000" height="600" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+					<iframe
+						src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d587.6589199699653!2d-72.22778767883113!3d7.759863072106896!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e666caf7219d23d%3A0x7a22305b61538af5!2sLavanderia%20y%20Tintorer%C3%ADa%20Rosedal%20Dry%20Cleaning!5e0!3m2!1ses!2sve!4v1633148012099!5m2!1ses!2sve"
+						width="1000" height="600" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
 				</div>
 			</div>
 		</div>
@@ -291,7 +277,8 @@ $empresa = $obj_emp->extractData();
 					</div>
 				</div>
 				<div class="col-xl-6">
-					<form action="../../backend/controller/formulario.php" method="POST" class="was-validation" id="formulario" novalidate>
+					<form action="../../backend/controller/formulario.php" method="POST" class="was-validation" id="formulario"
+						novalidate>
 						<div class="form-row">
 							<div class="col-xl-6 mb-3">
 								<label for="nombre">Nombre:</label>
@@ -315,7 +302,8 @@ $empresa = $obj_emp->extractData();
 							</div>
 							<div class="col-xl-12 mb-3">
 								<label for="asunto">Asunto:</label>
-								<textarea type="text" name="asu_for" id="asunto" class="form-control" placeholder="Asunto" rows="3"></textarea>
+								<textarea type="text" name="asu_for" id="asunto" class="form-control" placeholder="Asunto"
+									rows="3"></textarea>
 								<small id="asuntoDiv" class="invalid-feedback"></small>
 							</div>
 						</div>
@@ -332,14 +320,15 @@ $empresa = $obj_emp->extractData();
 
 	</div>
 </div>
-</div>
 
 <!-- Termina el body -->
 
 <!-- Comienza onda -->
 
-<div class='mt-2' style='height: 150px; overflow: hidden;'><svg viewBox='0 0 500 150' preserveAspectRatio='none' style='height: 100%; width: 100%;'>
-		<path d='M0.00,49.98 C149.99,150.00 349.20,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z' style='stroke: none; fill: #f8f9fa;'></path>
+<div class='mt-2' style='height: 150px; overflow: hidden;'><svg viewBox='0 0 500 150' preserveAspectRatio='none'
+		style='height: 100%; width: 100%;'>
+		<path d='M0.00,49.98 C149.99,150.00 349.20,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z'
+			style='stroke: none; fill: #f8f9fa;'></path>
 	</svg>
 </div>
 
